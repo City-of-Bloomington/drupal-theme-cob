@@ -1,0 +1,18 @@
+name = COB
+description = City of Bloomington Theme
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/screen.css
+
+regions[sidebar_first]  = Top sidebar
+regions[sidebar_second] = Bottom sidebar
+regions[content] = Content
+regions[header] = Header
+regions[footer] = Footer
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[page_top] = Page Top
+regions[page_bottom] = Page Bottom
