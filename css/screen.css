@@ -19,13 +19,8 @@ h2 a { color:darkred; }
 .clearfix { clear:both; }
 .submitted { font-size:90%; font-weight:bold; }
 
-#om-maximenu-mega-dropdowns {
-	overflow:auto;
-	background-color:#036;
-	font-weight:bold;
-}
-#om-maximenu-mega-dropdowns a        { color:white; }
-#om-maximenu-mega-dropdowns .om-leaf { border-right:2px solid white; }
+#menubar { height:28px; background-color:#036; }
+.om-link { color:white; font-weight:bold; border-right:2px solid white; }
 
 #breadcrumb {
 	background-color:#ccc;

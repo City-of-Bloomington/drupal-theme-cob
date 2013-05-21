@@ -116,10 +116,10 @@
 
     </div></div> <!-- /.section, /#header -->
 
-    <?php if ($main_menu_tree): ?>
-      <div id="navigation"><div class="section">
-		<?php echo $main_menu_tree; ?>
-      </div></div> <!-- /.section, /#navigation -->
+    <?php if ($page['menubar']): ?>
+		<div id="menubar">
+		<?php echo render($page['menubar']); ?>
+		</div>
     <?php endif; ?>
 
     <?php if ($title || $breadcrumb): ?>
