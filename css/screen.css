@@ -4,6 +4,7 @@ ul.menu { list-style-position:inside; }
 h1 { font-size:180%; font-weight:bold; color:darkred; }
 h2 { font-size:140%; font-weight:bold; }
 h2 a { color:darkred; }
+h3 { font-weight:bold; }
 
 #header { overflow:auto; }
 #logo { float:left; }
@@ -38,3 +39,6 @@ h2 a { color:darkred; }
 .node-teaser {  }
 .node-news-release {  }
 .node-news-release .field-name-field-image { float:left; margin:6px; }
+
+
+.node .content ol { list-style:decimal outside none; padding:4em; }
