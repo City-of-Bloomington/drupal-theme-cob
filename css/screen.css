@@ -21,7 +21,7 @@ h3 { font-weight:bold; }
 .submitted { font-size:90%; font-weight:bold; }
 
 #menubar { height:28px; background-color:#036; }
-.om-link { color:white; font-weight:bold; border-right:2px solid white; }
+#menubar .om-link { color:white; font-weight:bold; border-right:2px solid white; }
 
 #breadcrumb {
 	background-color:#ccc;
@@ -41,4 +41,7 @@ h3 { font-weight:bold; }
 .node-news-release .field-name-field-image { float:left; margin:6px; }
 
 
-.node .content ol { list-style:decimal outside none; padding:4em; }
+.node .content ol, .node .content ul { padding-left:2em; }
+.node .content ol { list-style:decimal outside none; }
+.node .content ul { list-style:disc outside none; }
+.node .content ul ul { list-style-type:circle; }
