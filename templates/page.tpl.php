@@ -73,97 +73,110 @@
  */
 ?>
 
-  <div id="page-wrapper"><div id="page">
+<div id="page">
+	<div id="header">
+	<?php
+		echo theme('links__system_main_menu', array(
+			'links'      => $main_menu,
+			'attributes' => array(
+				'id' => 'main-menu',
+				'class'      => array('links')
+			)
+		));
+		echo render($page['header']);
 
-    <div id="header"><div class="section">
+		$home_text = t('Home');
+		if ($logo) {
+			echo "
+			<a href=\"$front_page\" title=\"$home_text\" rel=\"home\" id=\"logo\">
+				<img src=\"$logo\"    alt=\"$home_text\" />
+			</a>
+			";
+		}
+
+		if ($site_name || $site_slogan) {
+			echo "<div id=\"name-and-slogan\">";
+			if ($site_name) {
+					echo "
+					<div id=\"site_name\">
+						<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
+							<span>$site_name</span>
+						</a>
+					</div>
+					";
+			}
+			if ($site_slogan) {
+				echo "<div id=\"site-slogan\">$site_slogan</div>";
+			}
+			echo "</div>";
+		}
+	?>
+	</div> <!-- , /#header -->
+	<?php
+		if ($page['menubar']) {
+			echo "<div id=\"menubar\">";
+			echo render($page['menubar']);
+			echo "</div>";
+		}
+
+		if ($title || $breadcrumb) {
+			echo "<div id=\"breadcrumb\">";
+			echo render($title_prefix);
+			if ($title) {
+				echo "<h1 class=\"title\" id=\"page-title\">$title</h1>";
+			}
+			echo render($title_suffix);
+			if ($breadcrumb) {
+				echo $breadcrumb;
+			}
+			echo "</div>";
+		}
+
+		echo $messages;
+	?>
+	<div id="main" class="clearfix">
 		<?php
-			echo theme('links__system_main_menu', array(
-				'links'      => $main_menu,
-				'attributes' => array(
-					'id' => 'main-menu',
-					'class'      => array('links')
-				)
-			));
+			if ($page['sidebar_first']) {
+				echo '<div id="sidebar-first" class="column sidebar">';
+				echo render($page['sidebar_first']);
+				echo '</div>';
+			}
+			if ($page['sidebar_second']) {
+				echo '<div id="sidebar-second" class="column sidebar">';
+				echo render($page['sidebar_second']);
+				echo '</div>';
+			}
+
 		?>
-      <?php print render($page['header']); ?>
-
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name"><strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong></div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-          <?php endif; ?>
-
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
-      <?php endif; ?>
-
-
-    </div></div> <!-- /.section, /#header -->
-
-    <?php if ($page['menubar']): ?>
-		<div id="menubar">
-		<?php echo render($page['menubar']); ?>
-		</div>
-    <?php endif; ?>
-
-    <?php if ($title || $breadcrumb): ?>
-      <div id="breadcrumb">
-		<?php print render($title_prefix); ?>
-		<?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-		<?php print render($title_suffix); ?>
-		<?php if ($breadcrumb): ?>
-			<?php print $breadcrumb; ?>
-		<?php endif; ?>
-      </div>
-    <?php endif; ?>
-
-    <?php print $messages; ?>
-
-    <div id="main-wrapper"><div id="main" class="clearfix">
-
-      <?php if ($page['sidebar_first']): ?>
-        <div id="sidebar-first" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar_first']); ?>
-        </div></div> <!-- /.section, /#sidebar-first -->
-      <?php endif; ?>
-
-      <?php if ($page['sidebar_second']): ?>
-        <div id="sidebar-second" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar_second']); ?>
-        </div></div> <!-- /.section, /#sidebar-second -->
-      <?php endif; ?>
-
-      <div id="content" class="column"><div class="section">
-        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-        <a id="main-content"></a>
-        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-        <?php print render($page['content']); ?>
-        <?php print $feed_icons; ?>
-      </div></div> <!-- /.section, /#content -->
-
-    </div></div> <!-- /#main, /#main-wrapper -->
-
-    <div id="footer"><div class="section">
-      <?php print render($page['footer']); ?>
+		<div id="content" class="column">
+			<div id="main-content">
+			<?php
+				if ($page['highlighted']) {
+					echo '<div id="highlighted">';
+					echo render($page['highlighted']);
+					echo '</div>';
+				}
+				if ($tabs) {
+					echo '<div class="tabs">';
+					echo render($tabs);
+					echo '</div>';
+				}
+				echo render($page['help']);
+				if ($action_links) {
+					echo '<ul class="action-links">';
+					echo render($action_links);
+					echo '</ul>';
+				}
+				echo render($page['content']);
+				echo $feed_icons;
+			?>
+			</div>
+		</div> <!-- /#content -->
+	</div> <!-- /#main -->
+	
+	<div id="footer">
 		<?php
+			echo render($page['footer']);
 			echo theme('links__system_secondary_menu', array(
 				'links' => $secondary_menu,
 				'attributes' => array(
@@ -172,6 +185,5 @@
 				)
 			));
 		?>
-    </div></div> <!-- /.section, /#footer -->
-
-  </div></div> <!-- /#page, /#page-wrapper -->
+	</div> <!-- /#footer -->
+</div> <!-- /#page -->
