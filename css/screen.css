@@ -8,7 +8,8 @@ h3 { font-weight:bold; }
 
 #header { overflow:auto; }
 #logo { float:left; }
-#name-and-slogan { margin-left:80px; }
+#name-and-slogan { margin-left:80px; font-weight:bold; }
+#site_name { font-size:180%; }
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu a { color:white; }
 #main-menu li {
@@ -16,7 +17,7 @@ h3 { font-weight:bold; }
 	border-right:2px solid white;
 }
 
-#main-wrapper { padding:4px; }
+#main { padding:4px; }
 .clearfix { clear:both; }
 .submitted { font-size:90%; font-weight:bold; }
 
@@ -36,12 +37,14 @@ h3 { font-weight:bold; }
 	border-radius:5px 5px 0 0;
 }
 
+.field-name-field-inset-image { float:right; }
+
 .node-teaser {  }
 .node-news-release {  }
 .node-news-release .field-name-field-image { float:left; margin:6px; }
 
 
-.node .content ol, .node .content ul { padding-left:2em; }
-.node .content ol { list-style:decimal outside none; }
-.node .content ul { list-style:disc outside none; }
-.node .content ul ul { list-style-type:circle; }
+.content ol, .content ul { padding-left:2em; }
+.content ol { list-style:decimal outside none; }
+.content ul { list-style:disc outside none; }
+.content ul ul { list-style-type:circle; }
