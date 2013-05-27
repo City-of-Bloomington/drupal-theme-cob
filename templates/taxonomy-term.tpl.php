@@ -33,6 +33,7 @@
  * - $is_front: Flags true when presented in the front page.
  * - $logged_in: Flags true when the current user is a logged-in member.
  * - $is_admin: Flags true when the current user is an administrator.
+ * - $vid: Vocabulary ID for the term
  *
  * @see template_preprocess()
  * @see template_preprocess_taxonomy_term()
@@ -50,23 +51,28 @@
   <div class="content">
 	<?php
 		echo render($content);
-		$parents = taxonomy_get_parents($term->tid);
-		if ($parents) {
-			foreach ($parents as $parent) {
-				taxonomy_term_build_content($parent);
-				echo render($parent->content);
+		if ($view_mode == 'full') {
+			$parents = taxonomy_get_parents($term->tid);
+			if ($parents) {
+				foreach ($parents as $parent) {
+					taxonomy_term_build_content($parent);
+					echo render($parent->content);
+				}
 			}
-		}
 
-		$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
-		if ($locations) {
-			$l = $locations[0];
-			if (isset($l['latitude']) && isset($l['longitude'])
-				&& ($l['latitude']!=0 || $l['longitude']!=0)) {
-				echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
+			$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
+			if ($locations) {
+				$l = $locations[0];
+				if (isset($l['latitude']) && isset($l['longitude'])
+					&& ($l['latitude']!=0 || $l['longitude']!=0)) {
+					echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
+				}
 			}
-		}
 
+			$terms = taxonomy_get_children($term->tid, $vid);
+			$a = taxonomy_term_view_multiple($terms, 'teaser');
+			echo drupal_render($a);
+		}
 	?>
   </div>
 
