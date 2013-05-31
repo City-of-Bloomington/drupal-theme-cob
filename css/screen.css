@@ -39,9 +39,7 @@ h3 { font-weight:bold; }
 
 .field-name-field-inset-image { float:right; }
 
-.node-teaser {  }
-.node-news-release {  }
-.node-news-release .field-name-field-image { float:left; margin:6px; }
+.field-name-field-logo { float:left; margin:6px; }
 
 
 .content ol, .content ul { padding-left:2em; }
