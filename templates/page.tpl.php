@@ -136,11 +136,6 @@
 	?>
 	<div id="main" class="clearfix">
 		<?php
-			if ($page['sidebar_first']) {
-				echo '<div id="sidebar-first" class="column sidebar">';
-				echo render($page['sidebar_first']);
-				echo '</div>';
-			}
 			if ($page['sidebar_second']) {
 				echo '<div id="sidebar-second" class="column sidebar">';
 				echo render($page['sidebar_second']);
@@ -169,6 +164,12 @@
 				}
 				echo render($page['content']);
 				echo $feed_icons;
+				
+				if ($page['sidebar_first']) {
+				echo '<div id="sidebar-first" class="column sidebar">';
+				echo render($page['sidebar_first']);
+				echo '</div>';
+			}
 			?>
 			</div>
 		</div> <!-- /#content -->
