@@ -41,7 +41,7 @@ h3 { font-weight:bold; }
 
 .field-name-field-logo { float:left; margin:6px; }
 
-
+.content { overflow:auto; }
 .content ol, .content ul { padding-left:2em; }
 .content ol { list-style:decimal outside none; }
 .content ul { list-style:disc outside none; }
