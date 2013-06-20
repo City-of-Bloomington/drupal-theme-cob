@@ -27,9 +27,7 @@ ul.menu { list-style-position:inside; }
 .breadcrumb a { color:black; }
 
 .sidebar h2 {
-	background-color:#600; color:white; font-weight:bold;
 	padding:.25em;
-	border-radius:5px 5px 0 0;
 }
 
 .field-name-field-inset-image { float:right; }

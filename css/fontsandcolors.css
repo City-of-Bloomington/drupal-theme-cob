@@ -4,9 +4,12 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-colo
 
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
+	a.om-link  { font-size:1.3em; font-family: arial,sans-serif; }
+	#menubar > li  { font-size:1em; }
+	li.mbLogo, li.urLogo { font-weight:bold; 
 }
 
-html {font-size:100%; }
+html { font-size:100%; }
 
 /*heading 1*/
 h1 {
@@ -22,7 +25,8 @@ h2 {
 	margin:0 0 .5em 0; 
 }
 
-#sidebar-first h2 { font-size:1.2em; padding:.25em; }
+#sidebar-first h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
+
 
 /*heading 3*/
 h3 {
@@ -37,10 +41,39 @@ h4 {
 }
 
 #sidebar-first h4 { font-size:1.1em; }
+#menubar .menuItem h4 { 
+	font-size:1.1em; font-weight:bold; 
+	color:#810303;
+	margin:.4em 0; 
+}
 
 h5 {
 	font-size:1em; font-weight:bold;
 	margin: 0 0 .5em 0;
 }
 
+legend { background-color:#5a8fdc; color:white; }
+table { border:1px solid #999999; }
+td { background-color:inherit; border:1px solid #999999; font-weight:bold; }
+th { border:1px solid #999999; background-color:#e0e0e0;  }
+
+#banner a { color:black; }
+.breadcrumbs { color:black; }
+.breadcrumbs li a { color:black; }
 #main-menu a { color:white; }
+#title { background-color:#efefef; }
+
+/* menuBar Styles */
+
+#menubar { background-color:#003366; }
+#menubar a.main-nav-tab { color:white; }	
+#menubar .menuItem li { color:black; }
+#menubar .menuItem h4 { color:#810303; }
+
+
+#content { border-right:1px solid #cccccc; font-size:1em; }
+#footer {border-top:1px solid #cccccc; color:#003366; font-size:.9em; }
+#content table { border:1px solid #999999; }
+#content td { background-color:inherit; border:1px solid #999999; }
+#content th { background-color:#e0e0e0; border:1px solid #999999; }
+#content th a { color:#3366cc; background-color:inherit; }
