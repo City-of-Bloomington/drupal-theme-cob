@@ -96,17 +96,17 @@
 
 		if ($site_name || $site_slogan) {
 			echo "<div id=\"name-and-slogan\">";
+			if ($site_slogan) {
+				echo "<div id=\"site-slogan\">$site_slogan</div>";
+			}
 			if ($site_name) {
 					echo "
 					<div id=\"site_name\">
 						<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
-							<span>$site_name</span>
+							<h1>$site_name</h1>
 						</a>
 					</div>
 					";
-			}
-			if ($site_slogan) {
-				echo "<div id=\"site-slogan\">$site_slogan</div>";
 			}
 			echo "</div>";
 		}
@@ -136,9 +136,9 @@
 	?>
 	<div id="main" class="clearfix">
 		<?php
-			if ($page['sidebar_second']) {
-				echo '<div id="sidebar-second" class="column sidebar">';
-				echo render($page['sidebar_second']);
+			if ($page['sidebar_first']) {
+				echo '<div id="sidebar-first" class="column sidebar">';
+				echo render($page['sidebar_first']);
 				echo '</div>';
 			}
 
@@ -165,9 +165,9 @@
 				echo render($page['content']);
 				echo $feed_icons;
 				
-				if ($page['sidebar_first']) {
-				echo '<div id="sidebar-first" class="column sidebar">';
-				echo render($page['sidebar_first']);
+				if ($page['sidebar_second']) {
+				echo '<div id="sidebar-second" class="column sidebar">';
+				echo render($page['sidebar_second']);
 				echo '</div>';
 			}
 			?>

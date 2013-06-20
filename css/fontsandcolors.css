@@ -1,0 +1,46 @@
+a { color:#0066CC; }
+hr { background-color:#003366; }
+body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-color:white;  border-left:1px solid #cccccc; border-right:1px solid #cccccc; }
+
+@media screen and (min-width:500px) {
+	body { font-size:13px; }
+}
+
+html {font-size:100%; }
+
+/*heading 1*/
+h1 {
+	font-size:1.5em; font-weight:bold; font-family: georgia,sans-serif;
+	margin:0 0 .25em 0; padding:0; clear:both; color:black;
+}
+#site_name h1 { font-size:1.25em; color:darkred; }
+#title h1 { color:darkred;  }
+
+/*heading 2*/
+h2 {
+	font-family: georgia,sans-serif; font-size:1.4em; font-weight:bold;
+	margin:0 0 .5em 0; 
+}
+
+#sidebar-first h2 { font-size:1.2em; padding:.25em; }
+
+/*heading 3*/
+h3 {
+	font-size:1.3em; font-weight:bold;
+	margin:0 0 .5em 0; padding:0;
+}	
+
+/*heading 4 */
+h4 {
+	font-size:1.2em; font-weight:bold;
+	margin:0 0 .5em 0px; padding:0;
+}
+
+#sidebar-first h4 { font-size:1.1em; }
+
+h5 {
+	font-size:1em; font-weight:bold;
+	margin: 0 0 .5em 0;
+}
+
+#main-menu a { color:white; }
