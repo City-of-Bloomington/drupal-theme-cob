@@ -3,32 +3,51 @@ ul.menu { list-style-position:inside; }
 
 
 #header { overflow:auto; }
-#logo { float:left; }
-#name-and-slogan { margin-left:80px; }
+
 #site_name { font-size:180%; }
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu li {
 	display:inline-block; float:left; padding:6px 4px;
 	border-right:2px solid white;
 }
+#content { 	width:100%; margin:0; padding:.25em 0; }
+#main { width:99%; padding:0 .5% 0 .5%; line-height:1.25;}
+#footer { padding:1em 2em 2em 1em; clear:both; }
+#sidebar-first { padding:0 .75%; }
+#logo { margin-left:.5em; }
+#logo img { display:block; }
+#logo a { display:inline-block; }
 
-#main { padding:4px; }
+@media screen and (min-width:800px) {
+	#logo { float:left; padding:.5%; height:8em; }
+	#sidebar-first { width:29%; float:left; clear:right; padding:0 .75%; }
+	#content { float:left; width:67%; padding:0 .5% 0 1%; line-height:1.25; }
+	#menubar {  position:relative; }
+}
+
+@media screen and (max-width:799px) {
+	#logo { height:12em; }
+}
+
 .clearfix { clear:both; }
 .submitted { font-size:90%; font-weight:bold; }
 
 #menubar { height:28px; background-color:#036; }
-#menubar .om-link { color:white; font-weight:bold; border-right:2px solid white; }
 
 #breadcrumb {
 	background-color:#ccc;
 	padding:0.5em;
 	font-size:0.9em;
 }
+
 .breadcrumb a { color:black; }
 
 .sidebar h2 {
 	padding:.25em;
 }
+
+#title { padding:.5em .25em; margin:.25em 0; }
+
 
 .field-name-field-inset-image { float:right; }
 

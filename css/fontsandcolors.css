@@ -4,7 +4,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-colo
 
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
-	a.om-link  { font-size:1.3em; font-family: arial,sans-serif; }
+	a.om-link  { font-size:1.3em; font-family: arial,sans-serif; color:white; }
 	#menubar > li  { font-size:1em; }
 	li.mbLogo, li.urLogo { font-weight:bold; 
 }

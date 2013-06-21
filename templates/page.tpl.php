@@ -84,32 +84,34 @@
 			)
 		));
 		echo render($page['header']);
-
+		echo "
+			<div id=\"logo\">
+		";
+		
 		$home_text = t('Home');
 		if ($logo) {
 			echo "
-			<a href=\"$front_page\" title=\"$home_text\" rel=\"home\" id=\"logo\">
-				<img src=\"$logo\"    alt=\"$home_text\" />
-			</a>
+				<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
+					<img src=\"$logo\"    alt=\"$home_text\" />
+				</a>
 			";
 		}
-
-		if ($site_name || $site_slogan) {
-			echo "<div id=\"name-and-slogan\">";
-			if ($site_slogan) {
-				echo "<div id=\"site-slogan\">$site_slogan</div>";
-			}
-			if ($site_name) {
-					echo "
-					<div id=\"site_name\">
-						<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
-							<h1>$site_name</h1>
-						</a>
-					</div>
-					";
-			}
-			echo "</div>";
+		if ($site_name) {
+			echo "
+				<div id=\"site_name\">
+					<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
+					<h1>$site_name</h1>
+					</a>
+					
+				</div>
+			";	
 		}
+		
+		echo "</div>";
+
+			if ($site_slogan) {
+				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
+			}			
 	?>
 	</div> <!-- , /#header -->
 	<?php
@@ -135,14 +137,6 @@
 		echo $messages;
 	?>
 	<div id="main" class="clearfix">
-		<?php
-			if ($page['sidebar_first']) {
-				echo '<div id="sidebar-first" class="column sidebar">';
-				echo render($page['sidebar_first']);
-				echo '</div>';
-			}
-
-		?>
 		<div id="content" class="column">
 			<div id="main-content">
 			<?php
@@ -169,9 +163,17 @@
 				echo '<div id="sidebar-second" class="column sidebar">';
 				echo render($page['sidebar_second']);
 				echo '</div>';
-			}
+				}
 			?>
 			</div>
+			<?php
+			if ($page['sidebar_first']) {
+				echo '<div id="sidebar-first" class="column sidebar">';
+				echo render($page['sidebar_first']);
+				echo '</div>';
+			}
+
+		?>
 		</div> <!-- /#content -->
 	</div> <!-- /#main -->
 	
