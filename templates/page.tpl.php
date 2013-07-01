@@ -99,9 +99,11 @@
 		if ($site_name) {
 			echo "
 				<div id=\"site_name\">
-					<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
-					<h1>$site_name</h1>
-					</a>
+					<h1>
+						<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
+						$site_name
+						</a>
+					</h1>
 					
 				</div>
 			";	

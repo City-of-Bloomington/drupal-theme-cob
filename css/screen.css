@@ -4,7 +4,6 @@ ul.menu { list-style-position:inside; }
 
 #header { overflow:auto; }
 
-#site_name { font-size:180%; }
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu li {
 	display:inline-block; float:left; padding:6px 4px;
@@ -16,17 +15,26 @@ ul.menu { list-style-position:inside; }
 #sidebar-first { padding:0 .75%; }
 #logo { margin-left:.5em; }
 #logo img { display:block; }
-#logo a { display:inline-block; }
+#logo a { display:block; color:black; }
+
+#block-search-form { display:inline-block; padding-top:.5em; margin-top:.5em; height:4em; line-height:4em; }
+#pageTools fieldset { border:0; margin:0; }
+input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5em; margin:0; height:2.5em; }
+#block-search-form h4 { display:inline; }
+#edit-submit { position:relative; height:2.5em; padding:.15em .5em; text-indent:0; }
 
 @media screen and (min-width:800px) {
 	#logo { float:left; padding:.5%; height:8em; }
 	#sidebar-first { width:29%; float:left; clear:right; padding:0 .75%; }
-	#content { float:left; width:67%; padding:0 .5% 0 1%; line-height:1.25; }
+	#main-content { float:left; width:67%; padding:0 .5% 0 1%; line-height:1.25; }
 	#menubar {  position:relative; }
 }
 
-@media screen and (max-width:799px) {
+@media screen and (max-device-width: 810px) {
+	* { -webkit-text-size-adjust: 100%; }
 	#logo { height:12em; }
+	#block-search-form { width:75%; }
+	#block-search-form input { max-width:60%; float:left; }
 }
 
 .clearfix { clear:both; }
