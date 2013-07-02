@@ -4,6 +4,19 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
+function cob_preprocess_page(&$vars)
+{
+	/*
+	if (!empty($vars['page']['content']['system_main']['term_heading']['term']['field_location_term'])) {
+		$tid = $vars['page']['content']['system_main']['term_heading']['term']['field_location_term']['#items'][0]['tid'];
+		$locations = location_load_locations("taxonomy:$tid", 'genid');
+		if ($locations) {
+			$vars['location'] = $locations[0];
+		}
+	}
+	*/
+}
+
 function cob_preprocess_node(&$variables)
 {
 	$variables['submitted'] = t('!date', array('!date'=>$variables['date']));

@@ -6,3 +6,6 @@
 .megadropdown-item { display:inline-block; padding:.5em 1em; margin:0; border-right:1px solid white; }
 .megadropdown-link { color:white; font-weight:bold; }
 .megadropdown-region ul { margin:0; padding:0; }
+
+#social-media-links { float:right; }
+#social-media-links li { display:inline-block; }

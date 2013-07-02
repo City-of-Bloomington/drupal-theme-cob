@@ -117,6 +117,11 @@
 	?>
 	</div> <!-- , /#header -->
 	<div id="menubar">
+		<ul id="social-media-links">
+			<li><a href="http://facebook.com/cityofbloomington">Facebook</a></li>
+			<li><a href="https://twitter.com/citybloomington">Twitter</a></li>
+			<li><a href="http://youtube.com/user/cityofbloomington">Youtube</a></li>
+		</ul>
 		<ul class="megadropdown">
 		<?php
 			$links = array(
@@ -144,7 +149,6 @@
 			}
 		?>
 		</ul>
-		<?php if (isset($page['menubar'])) { echo render($page['menubar']); } ?>
 	</div>
 	<?php
 		if ($title || $breadcrumb) {
