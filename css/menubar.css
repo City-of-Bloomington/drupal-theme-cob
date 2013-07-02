@@ -1,8 +1,8 @@
-@media only screen and (min-width:800px)
-{
-	ul#menuBar { list-style-type:none; display:inline-block; padding:0; margin:.25em 0; width:100%; }
-	#menuBar ul { margin:0; padding:0; }
-	#menuBar li.sm { display:inline-block; float:right; padding:.75em .5em; height:1.7em; }
-	li.main-nav-item { display:inline-block; margin:0; border-right:1px solid white; }
-	a.om-link { margin:.5em .5em; display:block; line-height:1.7em;  }
+#menubar { background-color:#036; }
+#megadropdown {
+	list-style-type:none; display:inline-block;
+	padding:0; margin:.25em 0;
 }
+.megadropdown-item { display:inline-block; padding:.5em 1em; margin:0; border-right:1px solid white; }
+.megadropdown-link { color:white; font-weight:bold; }
+.megadropdown-region ul { margin:0; padding:0; }

@@ -87,7 +87,7 @@
 		echo "
 			<div id=\"logo\">
 		";
-		
+
 		$home_text = t('Home');
 		if ($logo) {
 			echo "
@@ -104,25 +104,49 @@
 						$site_name
 						</a>
 					</h1>
-					
+
 				</div>
-			";	
+			";
 		}
-		
+
 		echo "</div>";
 
 			if ($site_slogan) {
 				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
-			}			
+			}
 	?>
 	</div> <!-- , /#header -->
+	<div id="menubar">
+		<ul class="megadropdown">
+		<?php
+			$links = array(
+				'menu_government' => array('text'=>'My Government', 'node_id'=>2),
+				'menu_want'       => array('text'=>'I Want To',     'node_id'=>3),
+				'menu_learn'      => array('text'=>'Learn About',   'node_id'=>4),
+				'menu_students'   => array('text'=>'Students',      'node_id'=>5),
+				'menu_business'   => array('text'=>'Businesses',    'node_id'=>6),
+				'menu_residents'  => array('text'=>'Residents',     'node_id'=>7),
+				'menu_visitors'   => array('text'=>'Visitors',      'node_id'=>8)
+			);
+			$attributes = array('attributes'=>array('class'=>'megadropdown-link'));
+			foreach ($links as $region_id=>$link) {
+				$a_href = l($link['text'], 'node/'.$link['node_id'], $attributes);
+				echo "
+				<li class=\"megadropdown-item\">
+					$a_href
+					<div id=\"$region_id\" class=\"megadropdown-region\">
+				";
+					if (isset($page[$region_id])) { echo render($page[$region_id]); }
+				echo "
+					</div>
+				</li>
+				";
+			}
+		?>
+		</ul>
+		<?php if (isset($page['menubar'])) { echo render($page['menubar']); } ?>
+	</div>
 	<?php
-		if ($page['menubar']) {
-			echo "<div id=\"menubar\">";
-			echo render($page['menubar']);
-			echo "</div>";
-		}
-
 		if ($title || $breadcrumb) {
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
@@ -160,7 +184,7 @@
 				}
 				echo render($page['content']);
 				echo $feed_icons;
-				
+
 				if ($page['sidebar_second']) {
 				echo '<div id="sidebar-second" class="column sidebar">';
 				echo render($page['sidebar_second']);
@@ -178,7 +202,7 @@
 		?>
 		</div> <!-- /#content -->
 	</div> <!-- /#main -->
-	
+
 	<div id="footer">
 		<?php
 			echo render($page['footer']);
