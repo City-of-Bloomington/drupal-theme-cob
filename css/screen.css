@@ -3,7 +3,6 @@ ul.menu { list-style-position:inside; }
 
 
 #header { overflow:auto; }
-#block-search-form { float:right; }
 
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu li {
@@ -19,7 +18,7 @@ ul.menu { list-style-position:inside; }
 #logo img { display:block; }
 #logo a { display:block; color:black; }
 
-#block-search-form { display:inline-block; padding-top:.5em; margin-top:.5em; height:4em; line-height:4em; }
+#block-search-form { float:right; display:inline-block; padding-top:.5em; margin-top:.5em; height:4em; line-height:4em; }
 #pageTools fieldset { border:0; margin:0; }
 input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5em; margin:0; height:2.5em; }
 #block-search-form h4 { display:inline; }

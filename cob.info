@@ -12,7 +12,6 @@ stylesheets[all][] = css/menubar.css
 scripts[] = js/overlay.js
 
 regions[sidebar_first]  = Top sidebar
-regions[sidebar_second] = Bottom sidebar
 regions[content] = Content
 regions[header] = Header
 regions[menubar] = Menubar

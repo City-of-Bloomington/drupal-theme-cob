@@ -188,12 +188,6 @@
 				}
 				echo render($page['content']);
 				echo $feed_icons;
-
-				if ($page['sidebar_second']) {
-				echo '<div id="sidebar-second" class="column sidebar">';
-				echo render($page['sidebar_second']);
-				echo '</div>';
-				}
 			?>
 			</div>
 			<?php
