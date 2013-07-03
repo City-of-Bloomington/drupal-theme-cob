@@ -137,7 +137,7 @@
 			foreach ($links as $region_id=>$link) {
 				$a_href = l($link['text'], 'node/'.$link['node_id'], $attributes);
 				echo "
-				<li class=\"megadropdown-item\">
+				<li class=\"main-nav-item\">
 					$a_href
 					<div id=\"$region_id\" class=\"megadropdown-region\">
 				";
