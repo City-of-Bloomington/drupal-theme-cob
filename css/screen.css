@@ -3,12 +3,14 @@ ul.menu { list-style-position:inside; }
 
 
 #header { overflow:auto; }
+#block-search-form { float:right; }
 
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu li {
 	display:inline-block; float:left; padding:6px 4px;
 	border-right:2px solid white;
 }
+#page { margin:0 auto 1em; width:95%; }
 #content { 	width:100%; margin:0; padding:.25em 0; }
 #main { width:99%; padding:0 .5% 0 .5%; line-height:1.25;}
 #footer { padding:1em 2em 2em 1em; clear:both; }
