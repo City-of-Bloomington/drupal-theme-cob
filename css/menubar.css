@@ -1,15 +1,16 @@
 .megadropdown-region { display:none; }
 @media only screen and (min-width:800px)
 {
-	#megadropdown {
+	.megadropdown {
 		list-style-type:none; display:inline-block;
-		padding:0; margin:.25em 0; width:100%;
+		padding:0; margin:.25em 0; width:100%; position:relative;
 	}
 
-	#megadropdown ul { margin:0; padding:0; }
-	.main-nav-item { display:inline-block; padding:.5em 1em; margin:0; border-right:1px solid white; }
-	.megadropdown-link { color:white; font-weight:bold; }
-	.megadropdown-region ul { background:url('../images/icons/arrow.png') right no-repeat; padding-right:15px; margin:.5em; display:block; line-height:1.7em; padding:0; }
+	.megadropdown ul { margin:0; padding:0; }
+	.main-nav-item { display:inline-block; margin:0; border-right:1px solid white; }
+	.megadropdown-link { background:url('../images/arrow.png') right no-repeat;
+		padding-right:15px; 
+		margin:.5em; display:block; line-height:1.7em; }
 
 	#social-media-links { float:right; }
 	#social-media-links li { display:inline-block; }
