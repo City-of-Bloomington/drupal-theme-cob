@@ -6,6 +6,9 @@
  */
 function cob_preprocess_page(&$vars)
 {
+	if (isset($vars['page']['content']['system_main']['term_heading']['term']['field_sponsors']['#items'])) {
+		$vars['sponsors'] = &$vars['page']['content']['system_main']['term_heading']['term']['field_sponsors']['#items'];
+	}
 	/*
 	if (!empty($vars['page']['content']['system_main']['term_heading']['term']['field_location_term'])) {
 		$tid = $vars['page']['content']['system_main']['term_heading']['term']['field_location_term']['#items'][0]['tid'];

@@ -193,6 +193,9 @@
 			<?php
 			if ($page['sidebar_first']) {
 				echo '<div id="sidebar-first" class="column sidebar">';
+				if (isset($sponsors)) {
+					include $directory.'/includes/sponsors.php';
+				}
 				echo render($page['sidebar_first']);
 				echo '</div>';
 			}
