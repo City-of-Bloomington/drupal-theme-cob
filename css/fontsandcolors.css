@@ -4,7 +4,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-colo
 
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
-	li.mbLogo, li.urLogo { font-weight:bold; 
+	li.mbLogo, li.urLogo { font-weight:bold;
 }
 
 html { font-size:100%; }
@@ -20,17 +20,18 @@ h1 {
 /*heading 2*/
 h2 {
 	font-family: georgia,sans-serif; font-size:1.4em; font-weight:bold;
-	margin:0 0 .5em 0; 
+	margin:0 0 .5em 0;
 }
 
-#sidebar-first h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
+#sidebar-first  h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
+#sidebar-second h2 { font-size:1.2em; }
 
 
 /*heading 3*/
 h3 {
 	font-size:1.3em; font-weight:bold;
 	margin:0 0 .5em 0; padding:0;
-}	
+}
 
 /*heading 4 */
 h4 {
@@ -39,10 +40,10 @@ h4 {
 }
 
 #sidebar-first h4 { font-size:1.1em; }
-.megadropdown-region h4 { 
-	font-size:1.1em; font-weight:bold; 
+.megadropdown-region h4 {
+	font-size:1.1em; font-weight:bold;
 	color:#810303;
-	margin:.4em 0; 
+	margin:.4em 0;
 }
 
 h5 {
@@ -77,3 +78,5 @@ a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:whi
 #content td { background-color:inherit; border:1px solid #999999; }
 #content th { background-color:#e0e0e0; border:1px solid #999999; }
 #content th a { color:#3366cc; background-color:inherit; }
+
+#sidebar-second { background-color:#eee; }
