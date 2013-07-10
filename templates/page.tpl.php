@@ -186,13 +186,14 @@
 					echo render($action_links);
 					echo '</ul>';
 				}
+				
 				echo render($page['content']);
 				echo $feed_icons;
 			?>
 			</div>
 			<?php
 			if ($page['sidebar_first']) {
-				echo '<div id="sidebar-first" class="column sidebar">';
+				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
 				if (isset($sponsors)) {
 					include $directory.'/includes/sponsors.php';
 				}

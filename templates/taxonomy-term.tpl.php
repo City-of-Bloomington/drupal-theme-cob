@@ -41,39 +41,65 @@
  *
  * @ingroup themeable
  */
+
+/**
+ * Generate any sidebar HTML that might be needed
+ */
+$column_class = '';
+$sidebar_second = '';
+if ($view_mode == 'full') {
+	/*
+	$parents = taxonomy_get_parents($term->tid);
+	if ($parents) {
+		foreach ($parents as $parent) {
+			taxonomy_term_build_content($parent);
+			echo render($parent->content);
+		}
+	}
+	*/
+
+	/*
+	$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
+	if ($locations) {
+		$l = $locations[0];
+		if (isset($l['latitude']) && isset($l['longitude'])
+			&& ($l['latitude']!=0 || $l['longitude']!=0)) {
+			echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
+		}
+	}
+	*/
+	$children = taxonomy_get_children($term->tid, $vid);
+	if (count($children)) {
+		$sidebar_second .= "
+		<div id=\"sidebar-second\">
+			<div>
+				<h2>$term_name</h2>
+				<ul>
+		";
+			foreach ($children as $t) {
+				$sidebar_second .= "<li>".l($t->name, "taxonomy/term/{$t->tid}")."</li>";
+			}
+		$sidebar_second .= "
+				</ul>
+			</div>
+		</div>
+		";
+	}
+}
+if ($sidebar_second) { $column_class = ' two-column'; }
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
+<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php echo "$classes $column_class"; ?>">
 
-  <?php if (!$page): ?>
-    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-  <?php endif; ?>
+	<?php if (!$page): ?>
+		<h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+	<?php endif; ?>
 
-  <div class="content">
+	<div class="content">
 	<?php
 		echo render($content);
-		if ($view_mode == 'full') {
-			$parents = taxonomy_get_parents($term->tid);
-			if ($parents) {
-				foreach ($parents as $parent) {
-					taxonomy_term_build_content($parent);
-					echo render($parent->content);
-				}
-			}
-
-			$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
-			if ($locations) {
-				$l = $locations[0];
-				if (isset($l['latitude']) && isset($l['longitude'])
-					&& ($l['latitude']!=0 || $l['longitude']!=0)) {
-					echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
-				}
-			}
-
-			$terms = taxonomy_get_children($term->tid, $vid);
-			$a = taxonomy_term_view_multiple($terms, 'teaser');
-			echo drupal_render($a);
-		}
 	?>
-  </div>
-
+	</div>
 </div>
+<?php
+	if ($sidebar_second) { echo $sidebar_second; }
+?>

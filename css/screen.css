@@ -4,6 +4,9 @@ ul.menu { list-style-position:inside; }
 
 
 #header { overflow:auto; }
+#logo     { margin-left:.5em; }
+#logo img { display:block; }
+#logo a   { display:block; color:black; }
 
 #main-menu { background-color:black; overflow:auto; font-size:0.9em; }
 #main-menu li {
@@ -11,25 +14,26 @@ ul.menu { list-style-position:inside; }
 	border-right:2px solid white;
 }
 #page { margin:0 auto 1em; width:95%; }
-#content { 	width:100%; margin:0; padding:.25em 0; }
-#main { width:99%; padding:0 .5% 0 .5%; line-height:1.25;}
-#footer { padding:1em 2em 2em 1em; clear:both; }
+#main    { padding:0 .5% 0 .5%; line-height:1.25;}
+#content { margin:0; padding:.25em 0; }
 #sidebar-first { padding:0 .75%; }
-#logo { margin-left:.5em; }
-#logo img { display:block; }
-#logo a { display:block; color:black; }
+#footer { padding:1em 2em 2em 1em; clear:both; }
 
 #block-search-form { float:right; display:inline-block; padding-top:.5em; margin-top:.5em; height:4em; line-height:4em; }
+#block-search-form h4 { display:inline; }
+
 #pageTools fieldset { border:0; margin:0; }
 input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5em; margin:0; height:2.5em; }
-#block-search-form h4 { display:inline; }
 #edit-submit { position:relative; height:2.5em; padding:.15em .5em; text-indent:0; }
 
 @media screen and (min-width:800px) {
 	#logo { float:left; padding:.5%; height:8em; }
-	#sidebar-first { width:29%; float:left; clear:right; padding:0 .75%; }
-	#main-content { float:left; width:67%; padding:0 .5% 0 1%; line-height:1.25; }
-	#menubar {  position:relative; }
+	#menubar { position:relative; }
+	#main-content   { float:left;  width:67%; padding:0 .5% 0 1%; }
+	#sidebar-first  { float:left;  width:29%; padding:0 .75%; }
+
+	#main-content .two-column .content { float:left; width:67%; }
+	#sidebar-second                    { float:left; width:30%; }
 }
 
 @media screen and (max-device-width: 810px) {
@@ -42,24 +46,16 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 .clearfix { clear:both; }
 .submitted { font-size:90%; font-weight:bold; }
 
-#breadcrumb {
-	background-color:#ccc;
-	padding:0.5em;
-	font-size:0.9em;
-}
-
+#breadcrumb { background-color:#ccc; padding:0.5em; font-size:0.9em; }
 .breadcrumb a { color:black; }
 
-.sidebar h2 {
-	padding:.25em;
-}
+.sidebar h2 { padding:.25em; }
 
 #title { padding:.5em .25em; margin:.25em 0; }
 
 
 .field-name-field-inset-image { float:right; }
-
-.field-name-field-logo { float:left; margin:6px; }
+.field-name-field-logo        { float:left; margin:6px; }
 
 .content { overflow:auto; }
 .content ol, .content ul { padding-left:2em; }
