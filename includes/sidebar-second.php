@@ -48,5 +48,19 @@ if (isset($term) && $term['#view_mode'] == 'full') {
 			</ul>
 		</div>
 		";
+
+	}
+
+	if (   $term['field_running_from']
+		|| $term['field_cost']
+		|| $term['field_ages']
+		|| $term['field_registration']) {
+
+		echo '<div class=\"sidebar-item\">';
+		if ($term['field_running_from']) { echo render($term['field_running_from']); }
+		if ($term['field_cost'])         { echo render($term['field_cost']); }
+		if ($term['field_ages'])         { echo render($term['field_ages']); }
+		if ($term['field_registration']) { echo render($term['field_registration']); }
+		echo '</div>';
 	}
 }

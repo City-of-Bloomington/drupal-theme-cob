@@ -50,6 +50,10 @@
 	?>
 	<div class="content">
 	<?php
+		hide($content['field_running_from']);
+		hide($content['field_cost']);
+		hide($content['field_ages']);
+		hide($content['field_registration']);
 		echo render($content);
 	?>
 	</div>
