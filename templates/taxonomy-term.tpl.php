@@ -41,23 +41,16 @@
  * @ingroup themeable
  */
 
-// Generate any sidebar HTML that might be needed
-$column_class = '';
-$sidebar_second = '';
-include $directory."/includes/sidebar-second.php";
-if ($sidebar_second) { $column_class = ' two-column'; }
-
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php echo "$classes $column_class"; ?>">
-
-	<?php if (!$page) { echo "<h2><a href=\"$term_url\">$term_name</a></h2>"; } ?>
-
+<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php echo "$classes"; ?>">
+	<?php
+		if (!$page) {
+			echo "<h2><a href=\"$term_url\">$term_name</a></h2>";
+		}
+	?>
 	<div class="content">
 	<?php
 		echo render($content);
 	?>
 	</div>
-	<?php
-		if ($sidebar_second) { echo $sidebar_second; }
-	?>
 </div>

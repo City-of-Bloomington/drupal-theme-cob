@@ -6,8 +6,12 @@
  */
 function cob_preprocess_page(&$vars)
 {
-	if (isset($vars['page']['content']['system_main']['term_heading']['term']['field_sponsors']['#items'])) {
-		$vars['sponsors'] = &$vars['page']['content']['system_main']['term_heading']['term']['field_sponsors']['#items'];
+	if (isset(           $vars['page']['content']['system_main']['term_heading']['term'])) {
+		$vars['term'] = &$vars['page']['content']['system_main']['term_heading']['term'];
+
+		if (isset(               $vars['term']['field_sponsors']['#items'])) {
+			$vars['sponsors'] = &$vars['term']['field_sponsors']['#items'];
+		}
 	}
 	/*
 	if (!empty($vars['page']['content']['system_main']['term_heading']['term']['field_location_term'])) {

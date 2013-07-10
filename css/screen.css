@@ -32,8 +32,7 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 	#main-content   { float:left;  width:67%; padding:0 .5% 0 1%; }
 	#sidebar-first  { float:left;  width:29%; padding:0 .75%; }
 
-	#main-content .two-column .content { float:left; width:67%; }
-	#sidebar-second                    { float:left; width:30%; }
+	#sidebar-second { float:right; width:30%; }
 }
 
 @media screen and (max-device-width: 810px) {

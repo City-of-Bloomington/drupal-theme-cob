@@ -11,7 +11,8 @@ stylesheets[all][] = css/menubar.css
 
 scripts[] = js/overlay.js
 
-regions[sidebar_first]  = Top sidebar
+regions[sidebar_first]  = Outer sidebar
+regions[sidebar_second] = Inner sidebar
 regions[content] = Content
 regions[header] = Header
 regions[menubar] = Menubar
@@ -27,4 +28,3 @@ regions[highlighted] = Highlighted
 regions[help] = Help
 regions[page_top] = Page Top
 regions[page_bottom] = Page Bottom
-

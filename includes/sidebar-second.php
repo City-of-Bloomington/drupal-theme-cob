@@ -13,49 +13,40 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
-$items = '';
-if ($view_mode == 'full') {
-	/*
-	$parents = taxonomy_get_parents($term->tid);
-	if ($parents) {
-		foreach ($parents as $parent) {
-			taxonomy_term_build_content($parent);
-			echo render($parent->content);
-		}
+/*
+$parents = taxonomy_get_parents($term->tid);
+if ($parents) {
+	foreach ($parents as $parent) {
+		taxonomy_term_build_content($parent);
+		echo render($parent->content);
 	}
-	*/
+}
+*/
 
-	/*
-	$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
-	if ($locations) {
-		$l = $locations[0];
-		if (isset($l['latitude']) && isset($l['longitude'])
-			&& ($l['latitude']!=0 || $l['longitude']!=0)) {
-			echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
-		}
+/*
+$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
+if ($locations) {
+	$l = $locations[0];
+	if (isset($l['latitude']) && isset($l['longitude'])
+		&& ($l['latitude']!=0 || $l['longitude']!=0)) {
+		echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
 	}
-	*/
-	$children = taxonomy_get_children($term->tid, $vid);
+}
+*/
+if (isset($term) && $term['#view_mode'] == 'full') {
+	$children = taxonomy_get_children($term['#term']->tid, $term['#term']->vid);
 	if (count($children)) {
-		$items .= "
+		echo "
 		<div class=\"sidebar-item\">
-			<h2>$term_name</h2>
+			<h2>{$term['#term']->name}</h2>
 			<ul>
 		";
 			foreach ($children as $t) {
-				$sidebar_second .= "<li>".l($t->name, "taxonomy/term/{$t->tid}")."</li>";
+				echo "<li>".l($t->name, "taxonomy/term/{$t->tid}")."</li>";
 			}
-		$items .= "
+		echo "
 			</ul>
 		</div>
 		";
 	}
-}
-
-if ($items) {
-	$sidebar_second = "
-		<div id=\"sidebar-second\" class=\"sidebar\">
-			$items
-		</div>
-	";
 }

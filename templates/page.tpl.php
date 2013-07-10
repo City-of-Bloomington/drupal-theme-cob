@@ -186,7 +186,14 @@
 					echo render($action_links);
 					echo '</ul>';
 				}
-				
+
+				echo '<div id="sidebar-second" class="region region-sidebar-second sidebar">';
+				include $directory.'/includes/sidebar-second.php';
+				if ($page['sidebar_second']) {
+					echo render($page['sidebar_second']);
+				}
+				echo '</div>';
+
 				echo render($page['content']);
 				echo $feed_icons;
 			?>
