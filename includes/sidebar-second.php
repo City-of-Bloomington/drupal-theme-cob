@@ -56,7 +56,7 @@ if (isset($term) && $term['#view_mode'] == 'full') {
 		|| isset($term['field_ages'])
 		|| isset($term['field_registration'])) {
 
-		echo '<div class=\"sidebar-item\">';
+		echo '<div class="sidebar-item">';
 		if (isset($term['field_running_from'])) { echo render($term['field_running_from']); }
 		if (isset($term['field_cost']))         { echo render($term['field_cost']); }
 		if (isset($term['field_ages']))         { echo render($term['field_ages']); }
@@ -65,7 +65,7 @@ if (isset($term) && $term['#view_mode'] == 'full') {
 	}
 
 	if (isset($term['field_contact_info'])) {
-		echo '<div class=\"sidebar-item\">';
+		echo '<div class="sidebar-item">';
 		echo render($term['field_contact_info']);
 		echo '</div>';
 	}
