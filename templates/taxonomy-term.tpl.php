@@ -54,6 +54,15 @@
 		hide($content['field_cost']);
 		hide($content['field_ages']);
 		hide($content['field_registration']);
+		hide($content['field_contact_info']);
+
+		if ($vid == 11) {
+			$locations = location_load_locations("taxonomy:$tid", 'genid');
+			if ($locations) {
+				$l = $locations[0];
+				echo gmap_simple_map($l['latitude'], $l['longitude'], null, null, 14);
+			}
+		}
 		echo render($content);
 	?>
 	</div>
