@@ -11,7 +11,7 @@ html { font-size:100%; }
 
 /*heading 1*/
 h1 {
-	font-size:1.5em; font-weight:bold; font-family: georgia,sans-serif;
+	font-size:1.5em; font-weight:bold; font-family: palatino, serif;
 	margin:0 0 .25em 0; padding:0; clear:both; color:black;
 }
 #site_name h1 { font-size:1.25em; }
@@ -19,8 +19,8 @@ h1 {
 
 /*heading 2*/
 h2 {
-	font-family: georgia,sans-serif; font-size:1.4em; font-weight:bold;
-	margin:0 0 .5em 0;
+	font-family: palatino, serif; font-size:1.4em; font-weight:bold;
+	margin:0 0 .5em 0; color:darkred; 
 }
 
 #sidebar-first  h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
@@ -79,4 +79,5 @@ a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:whi
 #content th { background-color:#e0e0e0; border:1px solid #999999; }
 #content th a { color:#3366cc; background-color:inherit; }
 
-#sidebar-second { background-color:#eee; }
+.sidebar-item { background-color:#eee; }
+.sidebar-item .field-label { color:darkred; }
