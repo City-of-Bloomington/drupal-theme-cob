@@ -1,6 +1,7 @@
 body { line-height:1; }
 p { margin-bottom:1em; }
 ul.menu { list-style-position:inside; }
+img { border:0; max-width:98%; height:auto; margin:.25em; }
 
 
 #header { overflow:auto; }
