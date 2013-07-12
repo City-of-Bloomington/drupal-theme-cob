@@ -55,6 +55,8 @@
 		hide($content['field_ages']);
 		hide($content['field_registration']);
 		hide($content['field_contact_info']);
+		hide($content['field_sidebar_image']);
+		hide($content['field_instructor']);
 
 		if ($vid == 11) {
 			$locations = location_load_locations("taxonomy:$tid", 'genid');

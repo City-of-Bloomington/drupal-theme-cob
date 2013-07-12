@@ -22,9 +22,9 @@ ul.menu { list-style-position:inside; }
 @media screen and (min-width:800px) {
 	#logo { float:left; padding:.5%; height:8em; }
 	#menubar { position:relative; }
-	#main-content   { float:left;  width:65%; padding:0 .5% 0 1%; }
-	#sidebar-first  { float:left;  width:30%; padding:0 .75%; }
-	#sidebar-second { float:right; width:31%; padding:0 1%; }
+	#main-content   { float:left;  width:68%; padding:0 1%; }
+	#sidebar-first  { float:left;  width:28%; padding:0 1%; }
+	#sidebar-second { float:right; width:38%; padding:0 1%; }
 }
 
 .sidebar-item { margin: .5em 0; padding:0 .5em; }
@@ -47,9 +47,8 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 .clearfix { clear:both; }
 .submitted { font-size:90%; font-weight:bold; }
 
-#breadcrumb { background-color:#ccc; padding:0.5em; font-size:0.9em; }
-.breadcrumb a { color:black; }
-
+#breadcrumb {  padding:0.5em; font-size:0.9em; }
+.breadcrumb a { margin: 0 .25em; background:url('../images/breadcrumb.gif') center right no-repeat ; padding-right:10px; }
 #title { padding:.5em .25em; margin:.25em 0; }
 
 

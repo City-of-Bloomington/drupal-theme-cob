@@ -57,8 +57,9 @@ td { background-color:inherit; border:1px solid #999999; font-weight:bold; }
 th { border:1px solid #999999; background-color:#e0e0e0;  }
 
 #banner a { color:black; }
-.breadcrumbs { color:black; }
-.breadcrumbs li a { color:black; }
+#breadcrumb { background-color:#ddd; }
+.breadcrumb { color:black; }
+.breadcrumb li a { color:black; }
 #main-menu a { color:white; }
 #title { background-color:#efefef; }
 #edit-search-block-form--2 input { border:2px solid grey; }
@@ -80,4 +81,4 @@ a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:whi
 #content th a { color:#3366cc; background-color:inherit; }
 
 .sidebar-item { background-color:#eee; }
-.sidebar-item .field-label { color:darkred; }
+.sidebar-item .field-label { font-size:1.1em; }
