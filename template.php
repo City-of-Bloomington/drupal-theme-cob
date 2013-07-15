@@ -11,7 +11,11 @@ function cob_preprocess_page(&$vars)
 		if (isset(           $vars['page']['content']['system_main']['nodes'][$nid])) {
 			$vars['node'] = &$vars['page']['content']['system_main']['nodes'][$nid];
 
-			if (  isset($vars['node']['field_program']['#items'][0]['target_id'])) {
+			if (isset(               $vars['node']['field_sponsors']['#items'])) {
+				$vars['sponsors'] = &$vars['node']['field_sponsors']['#items'];
+			}
+
+			if (isset(  $vars['node']['field_program']['#items'][0]['target_id'])) {
 				$pid = &$vars['node']['field_program']['#items'][0]['target_id'];
 				$query = new EntityFieldQuery();
 				$type = 'node';

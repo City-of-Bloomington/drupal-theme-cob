@@ -11,16 +11,16 @@ echo "
 ";
 	foreach ($sponsors as $s) {
 		echo "<div>";
-		if (isset($s['taxonomy_term']->field_logo['und'][0]['uri'])) {
+		if (isset($s['entity']->field_logo['und'][0]['uri'])) {
 			echo theme('image_style', array(
-				'path'=>$s['taxonomy_term']->field_logo['und'][0]['uri'],
+				'path'=>$s['entity']->field_logo['und'][0]['uri'],
 				'style_name'=>'thumbnail'
 			));
 		}
 		echo "
-			<div>".l($s['taxonomy_term']->name, "taxonomy/term/$s[tid]")."</div>
+			<div>".l($s['entity']->title, "node/$s[target_id]")."</div>
 		";
-			$u = $s['taxonomy_term']->field_link_url['und'][0]['url'];
+			$u = $s['entity']->field_link_url['und'][0]['url'];
 		echo "
 			<div>".l($u, $u)."</div>
 		</div>
