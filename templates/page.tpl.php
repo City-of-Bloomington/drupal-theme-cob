@@ -201,6 +201,9 @@
 			<?php
 			if ($page['sidebar_first']) {
 				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
+				if (isset($siblings)) {
+					include $directory.'/includes/siblings.php';
+				}
 				if (isset($sponsors)) {
 					include $directory.'/includes/sponsors.php';
 				}

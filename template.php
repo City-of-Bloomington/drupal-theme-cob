@@ -10,6 +10,21 @@ function cob_preprocess_page(&$vars)
 		$nid = arg(1);
 		if (isset(           $vars['page']['content']['system_main']['nodes'][$nid])) {
 			$vars['node'] = &$vars['page']['content']['system_main']['nodes'][$nid];
+
+			if (  isset($vars['node']['field_program']['#items'][0]['target_id'])) {
+				$pid = &$vars['node']['field_program']['#items'][0]['target_id'];
+				$query = new EntityFieldQuery();
+				$type = 'node';
+				$entities = $query->entityCondition('entity_type', $type)
+				  ->entityCondition('bundle', 'program')
+				  ->propertyCondition('status', 1)
+				  ->propertyCondition('nid', $nid, '<>')
+				  ->fieldCondition('field_program', 'target_id', $pid);
+				$results = $entities->execute();
+				if (!empty($results[$type])) {
+					$vars['siblings'] = node_load_multiple(array_keys($results[$type]));
+				}
+			}
 		}
 	}
 }
