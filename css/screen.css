@@ -55,6 +55,7 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 
 .field-name-field-logo        { float:left; margin:6px; }
 
+.node .content { overflow:auto; }
 .content ol, .content ul { padding-left:2em; }
 .content ol { list-style:decimal outside none; }
 .content ul { list-style:disc outside none; }
