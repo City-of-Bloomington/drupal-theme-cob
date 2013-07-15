@@ -99,6 +99,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_ages']);
 		hide($content['field_registration']);
 		hide($content['field_instructor']);
+		hide($content['field_sponsors']);
 
 		hide($content['comments']);
 		hide($content['links']);
