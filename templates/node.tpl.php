@@ -79,34 +79,34 @@
  *
  * @ingroup themeable
  */
-?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
+	echo $user_picture;
+	echo render($title_prefix);
 
-  <?php print $user_picture; ?>
+	if (!$page) {
+		echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+	}
+	echo render($title_suffix);
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+	if ($display_submitted) {
+		echo "<div class=\"submitted\">$submitted</div>";
+	}
 
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
+	echo "<div class=\"content\"$content_attributes>";
+		hide($content['field_sidebar_image']);
+		hide($content['field_running_from']);
+		hide($content['field_cost']);
+		hide($content['field_ages']);
+		hide($content['field_registration']);
+		hide($content['field_instructor']);
 
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
+		hide($content['comments']);
+		hide($content['links']);
 
-  <?php print render($content['links']); ?>
+		echo render($content);
+	echo "</div>";
 
-  <?php print render($content['comments']); ?>
+	echo render($content['links']);
+	echo render($content['comments']);
 
-</div>
+echo "</div>";

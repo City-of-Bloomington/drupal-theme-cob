@@ -6,22 +6,12 @@
  */
 function cob_preprocess_page(&$vars)
 {
-	if (isset(           $vars['page']['content']['system_main']['term_heading']['term'])) {
-		$vars['term'] = &$vars['page']['content']['system_main']['term_heading']['term'];
-
-		if (isset(               $vars['term']['field_sponsors']['#items'])) {
-			$vars['sponsors'] = &$vars['term']['field_sponsors']['#items'];
+	if (arg(0) == 'node') {
+		$nid = arg(1);
+		if (isset(           $vars['page']['content']['system_main']['nodes'][$nid])) {
+			$vars['node'] = &$vars['page']['content']['system_main']['nodes'][$nid];
 		}
 	}
-	/*
-	if (!empty($vars['page']['content']['system_main']['term_heading']['term']['field_location_term'])) {
-		$tid = $vars['page']['content']['system_main']['term_heading']['term']['field_location_term']['#items'][0]['tid'];
-		$locations = location_load_locations("taxonomy:$tid", 'genid');
-		if ($locations) {
-			$vars['location'] = $locations[0];
-		}
-	}
-	*/
 }
 
 function cob_preprocess_node(&$variables)

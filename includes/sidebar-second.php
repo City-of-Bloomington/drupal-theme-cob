@@ -33,50 +33,29 @@ if ($locations) {
 	}
 }
 */
-if (isset($term) && $term['#view_mode'] == 'full') {
-	$children = taxonomy_get_children($term['#term']->tid, $term['#term']->vid);
-	if (count($children)) {
-		echo "
-		<div class=\"sidebar-item\">
-			<h2>{$term['#term']->name}</h2>
-			<ul>
-		";
-			foreach ($children as $t) {
-				echo "<li>".l($t->name, "taxonomy/term/{$t->tid}")."</li>";
-			}
-		echo "
-			</ul>
-		</div>
-		";
+if (isset($node) && $node['#view_mode'] == 'full') {
+	if (isset($node['field_sidebar_image'])) {
+		echo render($node['field_sidebar_image']);
+	}
 
-	}
-	
-	if (isset($term['field_contact_info'])) {
-		echo '<div class="sidebar-item">';
-		echo render($term['field_contact_info']);
-		echo '</div>';
-	}
-	
-	if (isset($term['field_sidebar_image'])) {
-		echo '<div class="sidebar-item">';
-		echo render($term['field_sidebar_image']);
+	if (   isset($node['field_running_from'])
+		|| isset($node['field_cost'])
+		|| isset($node['field_ages'])
+		|| isset($node['field_registration'])
+		|| isset($node['field_instructor'])) {
+
+		echo '<div class=\"sidebar-item\">';
+		if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
+		if (isset($node['field_cost']))         { echo render($node['field_cost']); }
+		if (isset($node['field_ages']))         { echo render($node['field_ages']); }
+		if (isset($node['field_registration'])) { echo render($node['field_registration']); }
+		if (isset($node['field_instructor']))   { echo render($node['field_instructor']); }
 		echo '</div>';
 	}
 
-	if (   isset($term['field_running_from'])
-		|| isset($term['field_cost'])
-		|| isset($term['field_ages'])
-		|| isset($term['field_instructor'])
-		|| isset($term['field_registration'])) {
-
-		echo '<div class="sidebar-item">';
-		if (isset($term['field_running_from'])) { echo render($term['field_running_from']); }
-		if (isset($term['field_cost']))         { echo render($term['field_cost']); }
-		if (isset($term['field_ages']))         { echo render($term['field_ages']); }
-		if (isset($term['field_instructor']))	{ echo render($term['field_instructor']); }
-		if (isset($term['field_registration'])) { echo render($term['field_registration']); }
+	if (isset($node['field_contact_info'])) {
+		echo '<div class=\"sidebar-item\">';
+		echo render($node['field_contact_info']);
 		echo '</div>';
 	}
-
-	
 }
