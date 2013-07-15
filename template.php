@@ -14,6 +14,9 @@ function cob_preprocess_page(&$vars)
 			if (isset(               $vars['node']['field_sponsors']['#items'])) {
 				$vars['sponsors'] = &$vars['node']['field_sponsors']['#items'];
 			}
+			if (isset(                 $vars['node']['field_department']['#object']->field_department['und'])) {
+				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
+			}
 
 			if (isset(  $vars['node']['field_program']['#items'][0]['target_id'])) {
 				$pid = &$vars['node']['field_program']['#items'][0]['target_id'];
