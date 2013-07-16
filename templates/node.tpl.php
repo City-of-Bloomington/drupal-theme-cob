@@ -101,6 +101,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_instructor']);
 		hide($content['field_sponsors']);
 		hide($content['field_department']);
+		hide($content['field_contact_info']);
 
 		hide($content['comments']);
 		hide($content['links']);
