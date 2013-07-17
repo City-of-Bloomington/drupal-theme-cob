@@ -22,21 +22,9 @@ function cob_preprocess_page(&$vars)
 				$vars['location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
 			}
 
-			if ($vars['node']['#bundle'] == 'program'
-				&& isset( $vars['node']['field_program']['#items'][0]['target_id'])) {
-				$pid   = &$vars['node']['field_program']['#items'][0]['target_id'];
-				$query = new EntityFieldQuery();
-				$type  = 'node';
-
-				$query->entityCondition('entity_type', $type)
-					  ->entityCondition('bundle', 'program')
-					  ->propertyCondition('status', 1)
-					  ->propertyCondition('nid', $nid, '<>')
-					  ->fieldCondition('field_program', 'target_id', $pid);
-				$results = $query->execute();
-				if (!empty($results[$type])) {
-					$vars['siblings'] = node_load_multiple(array_keys($results[$type]));
-				}
+			if (   $vars['node']['#bundle'] == 'program'
+				|| $vars['node']['#bundle'] == 'location') {
+				$vars['siblings'] = cob_node_siblings($vars['node']);
 			}
 		}
 	}

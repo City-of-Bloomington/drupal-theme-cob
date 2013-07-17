@@ -5,9 +5,10 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param array $siblings
  */
+$title = ucfirst($node['#bundle'])."s";
 echo "
 <div class=\"block\">
-	<h2>Related Programs</h2>
+	<h2>Related $title</h2>
 	<ul>
 ";
 	foreach ($siblings as $s) {
