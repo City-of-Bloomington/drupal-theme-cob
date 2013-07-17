@@ -196,6 +196,10 @@
 
 				echo render($page['content']);
 				echo $feed_icons;
+				
+				if (isset($programs)) {
+					include $directory.'/includes/programs.php';
+				}
 			?>
 			</div>
 			<?php

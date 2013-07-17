@@ -26,6 +26,10 @@ function cob_preprocess_page(&$vars)
 				|| $vars['node']['#bundle'] == 'location') {
 				$vars['siblings'] = cob_node_siblings($vars['node']);
 			}
+
+			if ($vars['node']['#bundle'] == 'location') {
+				$vars['programs'] = cob_location_programs($nid);
+			}
 		}
 	}
 }
