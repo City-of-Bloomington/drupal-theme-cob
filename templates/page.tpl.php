@@ -133,7 +133,7 @@
 				'menu_residents'  => array('text'=>'Residents',     'node_id'=>7),
 				'menu_visitors'   => array('text'=>'Visitors',      'node_id'=>8)
 			);
-			$attributes = array('attributes'=>array('class'=>'megadropdown-link'));
+			$attributes = array('attributes'=>array('class'=>array('megadropdown-link')));
 			foreach ($links as $region_id=>$link) {
 				$a_href = l($link['text'], 'node/'.$link['node_id'], $attributes);
 				echo "
