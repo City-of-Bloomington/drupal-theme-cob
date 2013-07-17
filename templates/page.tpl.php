@@ -210,6 +210,9 @@
 				if (isset($sponsors)) {
 					include $directory.'/includes/sponsors.php';
 				}
+				if (isset($location)) {
+					include $directory.'/includes/location.php';
+				}
 				echo render($page['sidebar_first']);
 				echo '</div>';
 			}

@@ -93,6 +93,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 	}
 
 	echo "<div class=\"content\"$content_attributes>";
+
 		hide($content['field_sidebar_image']);
 		hide($content['field_running_from']);
 		hide($content['field_cost']);
@@ -102,6 +103,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_sponsors']);
 		hide($content['field_department']);
 		hide($content['field_contact_info']);
+		hide($content['field_location']);
 
 		hide($content['comments']);
 		hide($content['links']);

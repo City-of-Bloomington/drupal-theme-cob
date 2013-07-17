@@ -5,9 +5,10 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param object $department
  */
+$title = l($department->title, 'node/'.$department->nid);
 echo "
 <div class=\"block\">
-	<h2>{$department->title}</h2>
+	<h2>$title</h2>
 ";
 	$contact_info = field_view_field('node', $department, 'field_contact_info', array('label'=>'hidden'));
 	echo render($contact_info);

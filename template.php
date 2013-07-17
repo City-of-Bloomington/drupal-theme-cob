@@ -18,16 +18,22 @@ function cob_preprocess_page(&$vars)
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
 
-			if (isset(  $vars['node']['field_program']['#items'][0]['target_id'])) {
-				$pid = &$vars['node']['field_program']['#items'][0]['target_id'];
+			if (isset($vars['node']['field_location']['#object'])) {
+				$vars['location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
+			}
+
+			if ($vars['node']['#bundle'] == 'program'
+				&& isset( $vars['node']['field_program']['#items'][0]['target_id'])) {
+				$pid   = &$vars['node']['field_program']['#items'][0]['target_id'];
 				$query = new EntityFieldQuery();
-				$type = 'node';
-				$entities = $query->entityCondition('entity_type', $type)
-				  ->entityCondition('bundle', 'program')
-				  ->propertyCondition('status', 1)
-				  ->propertyCondition('nid', $nid, '<>')
-				  ->fieldCondition('field_program', 'target_id', $pid);
-				$results = $entities->execute();
+				$type  = 'node';
+
+				$query->entityCondition('entity_type', $type)
+					  ->entityCondition('bundle', 'program')
+					  ->propertyCondition('status', 1)
+					  ->propertyCondition('nid', $nid, '<>')
+					  ->fieldCondition('field_program', 'target_id', $pid);
+				$results = $query->execute();
 				if (!empty($results[$type])) {
 					$vars['siblings'] = node_load_multiple(array_keys($results[$type]));
 				}
