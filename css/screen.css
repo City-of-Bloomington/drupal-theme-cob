@@ -53,10 +53,25 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 #title { padding:.5em .25em; margin:.25em 0; }
 
 
-.field-name-field-logo        { float:left; margin:6px; }
+.field-name-field-logo        { float:left; margin:6px; padding:0; }
 
 .node .content { overflow:auto; }
 .content ol, .content ul { padding-left:2em; }
 .content ol { list-style:decimal outside none; }
 .content ul { list-style:disc outside none; }
 .content ul ul { list-style-type:circle; }
+
+.views-field-field-logo { margin:0; padding:0; }
+
+
+@media screen and (min-device-width:500px) {
+	.viewGrouping { width:31.3%; float:left; padding:0 .5% 0 1%; border-left:2px solid #eee; }
+	#block-views-resources-of-dept-block { width:48%; margin:0 .5%; }
+}
+
+@media screen and (max-device-width:499px) {
+	.viewGrouping{ float:none; margin:0; padding:0; width:100%; }
+}
+
+.views-field-title { margin:.25em 0; }
+

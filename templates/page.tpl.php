@@ -186,7 +186,9 @@
 					echo render($action_links);
 					echo '</ul>';
 				}
-
+				if (isset($node['field_banner'])){
+					echo render($node['field_banner']);
+				}
 				echo '<div id="sidebar-second" class="region region-sidebar-second sidebar">';
 				include $directory.'/includes/sidebar-second.php';
 				if ($page['sidebar_second']) {
