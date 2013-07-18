@@ -198,7 +198,7 @@
 
 				echo render($page['content']);
 				echo $feed_icons;
-				
+
 				if (isset($programs)) {
 					include $directory.'/includes/programs.php';
 				}
@@ -207,18 +207,7 @@
 			<?php
 			if ($page['sidebar_first']) {
 				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
-				if (isset($department)) {
-					include $directory.'/includes/department.php';
-				}
-				if (isset($siblings)) {
-					include $directory.'/includes/siblings.php';
-				}
-				if (isset($sponsors)) {
-					include $directory.'/includes/sponsors.php';
-				}
-				if (isset($location)) {
-					include $directory.'/includes/location.php';
-				}
+				include $directory.'/includes/sidebar-first.php';
 				echo render($page['sidebar_first']);
 				echo '</div>';
 			}

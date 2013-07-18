@@ -99,6 +99,16 @@
 
   <div class="content"<?php print $content_attributes; ?>>
 	<?php
+		if (!isset($content['field_logo'])) {
+			$parent = cob_logo_parent($node->nid);
+			if ($parent) {
+				$content['field_logo'] = field_view_field('node', $parent, 'field_logo', [
+					'label'=>'hidden',
+					'settings'=>['image_style'=>'thumbnail']
+				]);
+			}
+		}
+
 		// We hide the comments and links now so that we can render them later.
 		hide($content['comments']);
 		hide($content['links']);

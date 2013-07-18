@@ -13,26 +13,6 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
-/*
-$parents = taxonomy_get_parents($term->tid);
-if ($parents) {
-	foreach ($parents as $parent) {
-		taxonomy_term_build_content($parent);
-		echo render($parent->content);
-	}
-}
-*/
-
-/*
-$locations = location_load_locations("taxonomy:{$term->tid}", 'genid');
-if ($locations) {
-	$l = $locations[0];
-	if (isset($l['latitude']) && isset($l['longitude'])
-		&& ($l['latitude']!=0 || $l['longitude']!=0)) {
-		echo gmap_simple_map($l['latitude'], $l['longitude'], '', '', '14');
-	}
-}
-*/
 if (isset($node) && $node['#view_mode'] == 'full') {
 	if (isset($node['field_sidebar_image'])) {
 		echo render($node['field_sidebar_image']);
