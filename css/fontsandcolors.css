@@ -25,6 +25,7 @@ h2 {
 
 #sidebar-first  h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
 #sidebar-second h2 { font-size:1.2em; }
+#sidebar-first h2 a { color:white; }
 
 
 /*heading 3*/
