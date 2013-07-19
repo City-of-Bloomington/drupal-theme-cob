@@ -30,7 +30,7 @@ function cob_preprocess_page(&$vars)
 			if (   $vars['node']['#bundle'] == 'location'
 				|| $vars['node']['#bundle'] == 'department'
 				|| $vars['node']['#bundle'] == 'board_or_commission') {
-				$vars['programs'] = cob_node_programs($vars['node']);
+				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
 		}
 	}
