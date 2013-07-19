@@ -27,8 +27,10 @@ function cob_preprocess_page(&$vars)
 				$vars['siblings'] = cob_node_siblings($vars['node']);
 			}
 
-			if ($vars['node']['#bundle'] == 'location') {
-				$vars['programs'] = cob_location_programs($nid);
+			if (   $vars['node']['#bundle'] == 'location'
+				|| $vars['node']['#bundle'] == 'department'
+				|| $vars['node']['#bundle'] == 'board_or_commission') {
+				$vars['programs'] = cob_node_programs($vars['node']);
 			}
 		}
 	}

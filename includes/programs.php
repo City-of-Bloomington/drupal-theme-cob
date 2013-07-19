@@ -8,13 +8,11 @@
 echo "
 <div class=\"block\">
 	<h2>Programs</h2>
-	<ul>
 ";
 	foreach ($programs as $p) {
 		$n = node_view($p, 'teaser');
 		echo render($n);
 	}
 echo "
-	</ul>
 </div>
 ";
