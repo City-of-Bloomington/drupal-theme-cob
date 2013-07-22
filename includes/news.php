@@ -7,7 +7,7 @@
  */
 echo "
 <div class=\"block\">
-	<h2>News</h2>
+	<h3>News</h3>
 ";
 	foreach ($news as $node) {
 		$n = node_view($node, 'sidebar');

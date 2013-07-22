@@ -39,7 +39,5 @@ if (isset($node) && $node['#view_mode'] == 'full') {
 		echo '</div>';
 	}
 
-	if (isset($news)) {
-		include $directory.'/includes/news.php';
-	}
+	
 }

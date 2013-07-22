@@ -16,3 +16,6 @@ if (isset($sponsors)) {
 if (isset($location)) {
 	include $directory.'/includes/location.php';
 }
+if (isset($news)) {
+		include $directory.'/includes/news.php';
+	}
