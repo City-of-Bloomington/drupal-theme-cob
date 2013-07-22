@@ -198,10 +198,15 @@
 
 				echo render($page['content']);
 				echo $feed_icons;
-
+				
+				echo '<div class="directLinks">';
+				
 				if (isset($programs)) {
 					include $directory.'/includes/programs.php';
+					
 				}
+				
+				echo '</div>';
 			?>
 			</div>
 			<?php
