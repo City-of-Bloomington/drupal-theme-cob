@@ -199,12 +199,11 @@
 				echo render($page['content']);
 				echo $feed_icons;
 
-				echo '<div class="directLinks">';
-					if (!empty($programs)) {
-						include $directory.'/includes/programs.php';
-
-					}
-				echo '</div>';
+				if (!empty($programs)) {
+					echo '<div class="directLinks">';
+					include $directory.'/includes/programs.php';
+					echo '</div>';
+				}
 			?>
 			</div>
 			<?php

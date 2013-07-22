@@ -11,18 +11,18 @@
  * This will display the deprtment information of
  * the current node's department
  */
-if (isset($department)) {
+if (!empty($department)) {
 	include $directory.'/includes/department.php';
 }
-if (isset($siblings)) {
+if (!empty($siblings)) {
 	include $directory.'/includes/siblings.php';
 }
-if (isset($sponsors)) {
+if (!empty($sponsors)) {
 	include $directory.'/includes/sponsors.php';
 }
-if (isset($location)) {
+if (!empty($location)) {
 	include $directory.'/includes/location.php';
 }
-if (isset($news)) {
+if (!empty($news)) {
 		include $directory.'/includes/news.php';
 }
