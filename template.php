@@ -34,7 +34,6 @@ function cob_preprocess_page(&$vars)
 			}
 
 			$vars['news'] = cob_node_references($vars['node'], 'news');
-
 		}
 	}
 }
