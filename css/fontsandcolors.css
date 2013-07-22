@@ -20,7 +20,7 @@ h1 {
 /*heading 2*/
 h2 {
 	font-family: palatino, serif; font-size:1.4em; font-weight:bold;
-	margin:0 0 .5em 0; color:darkred; 
+	margin:0 0 .25em 0; color:darkred; 
 }
 
 #sidebar-first  h2 { font-size:1.2em; padding:.25em; background-color:darkred; color:white; }
@@ -33,6 +33,7 @@ h3 {
 	font-size:1.3em; font-weight:bold;
 	margin:0 0 .5em 0; padding:0;
 }
+#sidebar-first h3 { font-size:1em; font-weight:bold; }
 
 /*heading 4 */
 h4 {

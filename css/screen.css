@@ -59,10 +59,11 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 .content ul ul { list-style-type:circle; }
 
 .node-teaser img { margin:0; padding:0; }
-
+.block { margin:1em 0; }
 
 @media screen and (min-device-width:500px) {
-	.node-teaser { overflow:auto; width:31.3%; float:left; padding:0 .5% 0 1%; border-left:2px solid #eee; }
+	.programsTeaser { clear:left; width:98%; }
+	.node-teaser { overflow:auto; width:31.3%; float:left; padding:0 .5% 0 0; border-left:2px solid #eee; }
 	#block-views-resources-of-dept-block, 	#block-views-services-of-a-dept-block { width:48%; margin:0 .5%; float:left; overflow:auto; }
  
 }
