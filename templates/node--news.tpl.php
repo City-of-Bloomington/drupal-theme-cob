@@ -85,11 +85,11 @@
 		echo $user_picture;
 
 		echo render($title_prefix);
-		
+
 			if (!$page && $view_mode='sidebar') {
 				echo "<h3$title_attributes><a href=\"$node_url\">$title</a></h3>";
 			}
-			
+
 			elseif (!$page) {
 				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
 			}
@@ -117,6 +117,7 @@
 		hide($content['field_contact_info']);
 		hide($content['field_location']);
 		hide($content['field_program']);
+		hide($content['field_service']);
 
 		// We hide the comments and links now so that we can render them later.
 		hide($content['comments']);
