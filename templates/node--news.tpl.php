@@ -105,6 +105,13 @@
 				]);
 			}
 		}
+		hide($content['field_banner']);
+		hide($content['field_sidebar_image']);
+		hide($content['field_sponsors']);
+		hide($content['field_department']);
+		hide($content['field_contact_info']);
+		hide($content['field_location']);
+		hide($content['field_program']);
 
 		// We hide the comments and links now so that we can render them later.
 		hide($content['comments']);
