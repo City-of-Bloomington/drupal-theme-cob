@@ -6,7 +6,7 @@
  * @param array $programs
  */
 echo "
-<div class=\"programsTeaser block\">
+<div class=\"programs teaserView block\">
 	<h2>Programs</h2>
 ";
 	foreach ($programs as $p) {

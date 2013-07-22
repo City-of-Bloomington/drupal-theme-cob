@@ -6,11 +6,11 @@
  * @param array $sponsors
  */
 echo "
-<div class=\"block\">
+<div class=\"block sponsors teaserView\">
 	<h2>Sponsors</h2>
 ";
 	foreach ($sponsors as $s) {
-		echo "<div>";
+		echo "<div class=\"item\">";
 		if (isset($s['entity']->field_logo['und'][0]['uri'])) {
 			echo theme('image_style', array(
 				'path'=>$s['entity']->field_logo['und'][0]['uri'],
@@ -18,11 +18,11 @@ echo "
 			));
 		}
 		echo "
-			<div>".l($s['entity']->title, "node/$s[target_id]")."</div>
+			".l($s['entity']->title, "node/$s[target_id]")."
 		";
 			$u = $s['entity']->field_link_url['und'][0]['url'];
 		echo "
-			<div>".l($u, $u)."</div>
+			".l($u, $u)."
 		</div>
 		";
 	}
