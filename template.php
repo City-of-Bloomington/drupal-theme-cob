@@ -32,6 +32,9 @@ function cob_preprocess_page(&$vars)
 				|| $vars['node']['#bundle'] == 'board_or_commission') {
 				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
+
+			$vars['news'] = cob_node_references($vars['node'], 'news');
+
 		}
 	}
 }

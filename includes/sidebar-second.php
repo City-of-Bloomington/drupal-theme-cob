@@ -38,4 +38,8 @@ if (isset($node) && $node['#view_mode'] == 'full') {
 		echo render($node['field_contact_info']);
 		echo '</div>';
 	}
+
+	if (isset($news)) {
+		include $directory.'/includes/news.php';
+	}
 }

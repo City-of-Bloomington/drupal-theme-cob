@@ -81,25 +81,22 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-
-  <?php print $user_picture; ?>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-		<div>FOR IMMEDIATE RELEASE</div>
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
 	<?php
-		if (!isset($content['field_logo'])) {
+		echo $user_picture;
+
+		echo render($title_prefix);
+		if (!$page) {
+			echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+		}
+		echo render($title_suffix);
+		if ($display_submitted) {
+			echo "<div class=\"submitted\">$submitted</div>";
+		}
+	?>
+
+	<div class="content"<?php print $content_attributes; ?>>
+	<?php
+		if (!isset($content['field_logo']) && $view_mode != 'sidebar') {
 			$parent = cob_logo_parent($node->nid);
 			if ($parent) {
 				$content['field_logo'] = field_view_field('node', $parent, 'field_logo', [
@@ -114,10 +111,10 @@
 		hide($content['links']);
 		print render($content);
 	?>
-  </div>
+	</div>
 
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
+	<?php
+		echo render($content['links']);
+		echo render($content['comments']);
+	?>
 </div>
