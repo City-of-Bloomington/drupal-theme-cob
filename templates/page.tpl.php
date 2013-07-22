@@ -200,7 +200,7 @@
 				echo $feed_icons;
 
 				echo '<div class="directLinks">';
-					if (isset($programs)) {
+					if (!empty($programs)) {
 						include $directory.'/includes/programs.php';
 
 					}
