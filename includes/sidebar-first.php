@@ -14,6 +14,9 @@
 if (!empty($department)) {
 	include $directory.'/includes/department.php';
 }
+if (!empty($departments)) {
+	include $directory.'/includes/departments.php';
+}
 if (!empty($siblings)) {
 	include $directory.'/includes/siblings.php';
 }
