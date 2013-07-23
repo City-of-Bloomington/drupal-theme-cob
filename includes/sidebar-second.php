@@ -42,4 +42,13 @@ if (isset($node) && $node['#view_mode'] == 'full') {
 		echo render($node['field_contact_info']);
 		echo '</div>';
 	}
+
+	if (isset($related)) {
+		foreach ($related as $type=>$nodes) {
+			if (!empty($nodes)) {
+				$$type = $nodes;
+				include "$directory/includes/related_{$type}.php";
+			}
+		}
+	}
 }

@@ -67,8 +67,8 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 	#main-content .teaserView { clear:left; width:98%; }
 	.node-teaser { overflow:auto; width:31.3%; float:left; padding:0 .5% 0 0; border-left:2px solid #eee; }
 	.diptych .block { width:48%; margin:0 .5%; float:left; overflow:auto; }
-	#sidebar-first .teaserView img { float:left; }
-	#sidebar-first .teaserView .item { clear:right; width:100%; min-height:1%; overflow:auto; }
+	.sidebar .teaserView img { float:left; }
+	.sidebar .teaserView .item { clear:right; width:100%; min-height:1%; overflow:auto; }
 }
 
 @media screen and (max-device-width:499px) {
@@ -76,4 +76,3 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 }
 
 .views-field-title { margin:.25em 0; }
-
