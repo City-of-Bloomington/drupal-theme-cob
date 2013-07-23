@@ -199,6 +199,13 @@
 				echo render($page['content']);
 				echo $feed_icons;
 
+				if (!empty($pages) || !empty($services)) {
+					echo '<div class="diptych">';
+					if (!empty($pages))    { include $directory.'/includes/pages.php'; }
+					if (!empty($services)) { include $directory.'/includes/services.php'; }
+					echo '</div>';
+				}
+
 				if (!empty($programs)) {
 					echo '<div class="directLinks">';
 					include $directory.'/includes/programs.php';
