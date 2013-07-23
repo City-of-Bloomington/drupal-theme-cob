@@ -44,6 +44,7 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['news']     = cob_nodes_related_by_topics($vars['node'], 'news');
 				break;
 
 				case 'service':
