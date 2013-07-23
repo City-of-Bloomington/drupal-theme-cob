@@ -83,9 +83,20 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 	echo $user_picture;
 	echo render($title_prefix);
 
+	
 	if (!$page) {
-		echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+		
+		if($view_mode=='teaser') {
+			echo "<h3$title_attributes><a href=\"$node_url\">$title</a></h3>";
+		}
+		
+		else {
+				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+		}	
 	}
+	
+	
+	
 	echo render($title_suffix);
 
 	if ($display_submitted) {
