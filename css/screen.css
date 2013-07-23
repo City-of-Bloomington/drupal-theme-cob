@@ -23,8 +23,8 @@ img { border:0; max-width:98%; height:auto; margin:.25em; }
 @media screen and (min-width:800px) {
 	#logo { float:left; padding:.5%; height:8em; }
 	#menubar { position:relative; }
-	#main-content   { float:left;  width:68%; padding:0 1%; }
-	#sidebar-first  { float:left;  width:28%; padding:0 1%; }
+	#main-content   { float:left;  width:67%; padding:0 1%; }
+	#sidebar-first  { float:left;  clear:right; width:29%; }
 	#sidebar-second { float:right; width:38%; padding:0 1%; }
 }
 
