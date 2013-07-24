@@ -4,6 +4,12 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
+function cob_preprocess_html(&$vars)
+{
+	$p = $_SERVER['SERVER_PORT']==443 ? 'https' : 'http';
+	drupal_add_css("$p://$_SERVER[SERVER_NAME]/Font-Awesome/css/font-awesome.css", ['type'=>'external']);
+}
+
 function cob_preprocess_page(&$vars)
 {
 	if (arg(0) == 'node') {

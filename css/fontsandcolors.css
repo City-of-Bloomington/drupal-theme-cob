@@ -74,6 +74,7 @@ th { border:1px solid #999999; background-color:#e0e0e0;  }
 
 /* menuBar Styles */
 a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:white; }
+#social-media-links a { font-size:1.7em; color:white; }
 .megadropdown > li  { font-size:1em; }
 .megadropdown { background-color:#003366; }
 .megadropdown-region li { color:black; }

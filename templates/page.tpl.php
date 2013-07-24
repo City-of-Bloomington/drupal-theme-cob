@@ -117,11 +117,6 @@
 	?>
 	</div> <!-- , /#header -->
 	<div id="menubar">
-		<ul id="social-media-links">
-			<li><a href="http://facebook.com/cityofbloomington">Facebook</a></li>
-			<li><a href="https://twitter.com/citybloomington">Twitter</a></li>
-			<li><a href="http://youtube.com/user/cityofbloomington">Youtube</a></li>
-		</ul>
 		<ul class="megadropdown">
 		<?php
 			$links = array(
@@ -148,6 +143,20 @@
 				";
 			}
 		?>
+			<li id="social-media-links">
+				<a href="http://facebook.com/cityofbloomington">
+					<i class="icon-facebook"></i>
+					<span class="hidden-label">Facebook</span>
+				</a>
+				<a href="https://twitter.com/citybloomington">
+					<i class="icon-twitter"></i>
+					<span class="hidden-label">Twitter</span>
+				</a>
+				<a href="http://youtube.com/user/cityofbloomington">
+					<i class="icon-youtube"></i>
+					<span class="hidden-label">Youtube</span>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<?php
