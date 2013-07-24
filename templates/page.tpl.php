@@ -85,7 +85,8 @@
 		));
 		echo render($page['header']);
 		echo "
-			<div id=\"logo\">
+			<div id=\"topRow\">
+				<div id=\"logo\">
 		";
 
 		$home_text = t('Home');
@@ -109,7 +110,7 @@
 			";
 		}
 
-		echo "</div>";
+		echo "</div></div>";
 
 			if ($site_slogan) {
 				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
