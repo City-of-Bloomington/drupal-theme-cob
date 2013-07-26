@@ -5,7 +5,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-colo
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
 	li.mbLogo, li.urLogo { font-weight:bold; }
-	#main-content { border-right:1px solid #ccc; }
+	#sidebar-first{ border-left:1px solid #ccc; }
 }
 
 html { font-size:100%; }
@@ -93,4 +93,4 @@ a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 
 .sidebar-item { background-color:#eee; }
 .sidebar-item .field-label { font-size:1.1em; }
-#sidebar-first .block { border-top:1px solid #ccc; }
+#sidebar-first .block { border-bottom:1px solid #ccc; }

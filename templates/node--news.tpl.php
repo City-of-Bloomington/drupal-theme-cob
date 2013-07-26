@@ -87,15 +87,18 @@
 		echo render($title_prefix);
 
 			if (!$page && $view_mode='sidebar') {
-				echo "<div>$title_attributes<a href=\"$node_url\">$title</a></div>";
+				echo "<div>$title_attributes<a href=\"$node_url\">$title</a></div>
+					<div>$date</div>
+				";
 			}
 
 			elseif (!$page) {
 				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+			
+			echo render($title_suffix);
+			if ($display_submitted) {
+				echo "<div class=\"submitted\">$submitted</div>";
 			}
-		echo render($title_suffix);
-		if ($display_submitted) {
-			echo "<div class=\"submitted\">$submitted</div>";
 		}
 	?>
 

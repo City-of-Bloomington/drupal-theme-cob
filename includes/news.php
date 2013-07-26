@@ -6,7 +6,7 @@
  * @param array $news
  */
 echo "
-<div class=\"block\">
+<div class=\"block news\">
 	<h2>News</h2>
 ";
 	foreach ($news as $node) {

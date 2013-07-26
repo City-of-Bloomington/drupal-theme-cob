@@ -19,7 +19,6 @@ img { border:0; max-width:98%; height:auto; margin:.25em; }
 #page { margin:0 auto 1em; width:95%; }
 #main    { width:100%; margin:0; padding:.25em 0; }
 #content { margin:0; padding:.25em 0; line-height:1.25; }
-#sidebar-first { padding:0 .75%; }
 #footer { padding:1em 2em 2em 1em; clear:both; }
 
 @media screen and (min-width:800px) {
@@ -27,6 +26,8 @@ img { border:0; max-width:98%; height:auto; margin:.25em; }
 	#menubar { position:relative; }
 	#main-content   { float:left;  width:67%; padding:0 .5% 0 1%; }
 	#sidebar-first  { float:left;  clear:right; width:29%; }
+	#sidebar-first .block { padding:1em 0 1em 2%; }
+	#main-content .block { padding:.5% 0; }
 	#sidebar-second { float:right; width:38%; padding:0 1%; }
 }
 
@@ -61,7 +62,6 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 .content ul ul { list-style-type:circle; }
 
 .node-teaser img { margin:0; padding:0; }
-.block { margin:1em 0; }
 
 .diptych { overflow:auto; }
 @media screen and (min-device-width:500px) {
@@ -70,7 +70,7 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 	.node-teaser { overflow:auto; width:31%; float:left; padding:0 1%; }
 	.diptych .block { width:48%; margin:0 .5%; float:left; overflow:auto; }
 	.sidebar .teaserView img { float:left; }
-	.sidebar .teaserView .item { clear:right; width:100%; min-height:1%; overflow:auto; }
+	.sidebar .teaserView .item { clear:right; width:100%; min-height:1%; overflow:auto; margin:.5em 0; }
 }
 
 @media screen and (max-device-width:499px) {
@@ -79,3 +79,6 @@ input#edit-search-block-form--2 { display:inline-block; padding:.15em 0 .15em .5
 
 .views-field-title { margin:.25em 0; }
 .hidden-label { font-size:0; height:1px; overflow:hidden; }
+
+.node-news div { display:inline; }
+.node-news {margin-bottom:.25em; }
