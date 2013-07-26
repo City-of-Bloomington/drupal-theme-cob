@@ -87,7 +87,7 @@
 		echo render($title_prefix);
 
 			if (!$page && $view_mode='sidebar') {
-				echo "<h3$title_attributes><a href=\"$node_url\">$title</a></h3>";
+				echo "<div>$title_attributes<a href=\"$node_url\">$title</a></div>";
 			}
 
 			elseif (!$page) {

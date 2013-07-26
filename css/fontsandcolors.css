@@ -1,6 +1,6 @@
 a { color:#0066CC; }
 hr { background-color:#003366; }
-body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-color:white;  border-left:1px solid #cccccc; border-right:1px solid #cccccc; }
+body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-color:white; }
 
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
@@ -12,15 +12,15 @@ html { font-size:100%; }
 
 /*heading 1*/
 h1 {
-	font-size:1.5em; font-weight:bold; font-family: palatino, serif;
+	font-size:1.5em; font-weight:bold; font-family: georgia, serif;
 	margin:0 0 .25em 0; padding:0; clear:both; color:black;
 }
 #site_name h1 { font-size:1.25em; }
-#title h1 { color:darkred;  }
+#page-title{ color:darkred;  }
 
 /*heading 2*/
 h2 {
-	font-family: palatino, serif; font-size:1.4em; font-weight:bold;
+	font-family: georgia, serif; font-size:1.4em; font-weight:bold;
 	margin:0 0 .25em 0; color:darkred; 
 }
 
@@ -64,7 +64,7 @@ td { background-color:inherit; border:1px solid #999999; font-weight:bold; }
 th { border:1px solid #999999; background-color:#e0e0e0;  }
 
 #banner a { color:black; }
-#breadcrumb { background-color:#ddd; }
+#breadcrumb { background-color:#efefef; }
 .breadcrumb { color:black; }
 .breadcrumb li a { color:black; }
 #main-menu a { color:white; }
@@ -73,15 +73,18 @@ th { border:1px solid #999999; background-color:#e0e0e0;  }
 #edit-submit { background-color:darkred; color:white; border:2px solid darkred;  }
 
 /* menuBar Styles */
-a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:white; }
-#social-media-links a { font-size:1.7em; color:white; }
+
+@media screen and (min-width:500px) {
+	* { -webkit-text-size-adjust: 100%; }
+a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
+.sm-links a { font-size:1.3em; color:white; }
 .megadropdown > li  { font-size:1em; }
 .megadropdown { background-color:#003366; }
 .megadropdown-region li { color:black; }
 .megadropdown-region h4 { color:#810303; }
+}
 
-
-#content { border-right:1px solid #cccccc; font-size:1em; }
+#content {font-size:1em; }
 #footer { border-top:1px solid #cccccc; color:#003366; font-size:.9em; }
 #content table { border:1px solid #999999; }
 #content td { background-color:inherit; border:1px solid #999999; }
@@ -90,3 +93,4 @@ a.megadropdown-link  { font-size:1.3em; font-family: arial,sans-serif; color:whi
 
 .sidebar-item { background-color:#eee; }
 .sidebar-item .field-label { font-size:1.1em; }
+#sidebar-first .block { border-top:1px solid #ccc; }

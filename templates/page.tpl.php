@@ -117,19 +117,14 @@
 			}
 	?>
 	</div> <!-- , /#header -->
-	<div id="menubar">
 		<ul class="megadropdown">
 		<?php
 			$links = array(
 				'menu_government' => array('text'=>'My Government', 'node_id'=>2),
 				'menu_want'       => array('text'=>'I Want To',     'node_id'=>3),
 				'menu_learn'      => array('text'=>'Learn About',   'node_id'=>4),
-				'menu_students'   => array('text'=>'Students',      'node_id'=>5),
-				'menu_business'   => array('text'=>'Businesses',    'node_id'=>6),
-				'menu_residents'  => array('text'=>'Residents',     'node_id'=>7),
-				'menu_visitors'   => array('text'=>'Visitors',      'node_id'=>8)
 			);
-			$attributes = array('attributes'=>array('class'=>array('megadropdown-link')));
+			$attributes = array('attributes'=>array('class'=>array('main-nav-tab withDD')));
 			foreach ($links as $region_id=>$link) {
 				$a_href = l($link['text'], 'node/'.$link['node_id'], $attributes);
 				echo "
@@ -144,22 +139,37 @@
 				";
 			}
 		?>
-			<li id="social-media-links">
-				<a href="http://facebook.com/cityofbloomington">
-					<i class="icon-facebook"></i>
-					<span class="hidden-label">Facebook</span>
-				</a>
+			<li class="main-nav-item">
+				<a href="/content/students" class="main-nav-tab">Students</a>
+			</li>
+			<li class="main-nav-item">
+				<a href="/content/businesses" class="main-nav-tab">Businesses</a>
+			</li>
+			<li class="main-nav-item">
+				<a href="/content/residents" class="main-nav-tab">Residents</a>
+			</li>
+			<li class="main-nav-item">
+				<a href="/content/visitors" class="main-nav-tab">Visitors</a>
+			</li>
+			<li class="sm-links">
 				<a href="https://twitter.com/citybloomington">
 					<i class="icon-twitter"></i>
 					<span class="hidden-label">Twitter</span>
 				</a>
+			</li>
+			<li class="sm-links">
 				<a href="http://youtube.com/user/cityofbloomington">
 					<i class="icon-youtube"></i>
 					<span class="hidden-label">Youtube</span>
 				</a>
 			</li>
+			<li class="sm-links">
+				<a href="http://facebook.com/cityofbloomington">
+					<i class="icon-facebook"></i>
+					<span class="hidden-label">Facebook</span>
+				</a>
+			<li>
 		</ul>
-	</div>
 	<?php
 		if ($title || $breadcrumb) {
 			echo "<div id=\"breadcrumb\">";

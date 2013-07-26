@@ -1,19 +1,17 @@
 .megadropdown-region { display:none; }
+
 @media only screen and (min-width:800px)
 {
 	.megadropdown {
 		list-style-type:none; display:inline-block;
-		padding:0; margin:.25em 0; width:100%;
+		padding:0; margin:.25em 0; width:100%; position:relative;
 	}
-
+	a.withDD { background:url('../images/arrow.png') right no-repeat; padding-right:15px; }
 	.megadropdown ul { margin:0; padding:0; }
-	.main-nav-item { display:inline-block; margin:0; border-right:1px solid white; }
-	.megadropdown-link { background:url('../images/arrow.png') right no-repeat;
-		padding-right:15px;
-		margin:.5em; display:block; line-height:1.7em; }
-
-	#social-media-links { display:inline-block; margin-left:2em; }
-	#social-media-links a { display:inline-block; vertical-align:middle; }
+	.main-nav-item { display:table-cell; margin:0; border-right:1px solid white; }
+	a.main-nav-tab { margin:.5em; display:block; line-height:1.6em; }
+	li.sm-links { display:table-cell; padding:.5em .5em; height:1.2em; }
+	.sm-links a { display:inline-block; vertical-align:middle; }
 	.megadropdown-region {
 		position:absolute;
 		left:0;
