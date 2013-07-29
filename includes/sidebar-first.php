@@ -29,3 +29,12 @@ if (!empty($location)) {
 if (!empty($news)) {
 		include $directory.'/includes/news.php';
 }
+
+if (isset($related)) {
+		foreach ($related as $type=>$nodes) {
+			if (!empty($nodes)) {
+				$$type = $nodes;
+				include "$directory/includes/related_{$type}.php";
+			}
+		}
+	}
