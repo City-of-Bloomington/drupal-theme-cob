@@ -26,7 +26,7 @@ if (isset($node) && $node['#view_mode'] == 'full') {
 		|| isset($node['field_program'])
 		|| isset($node['field_service'])) {
 
-		echo '<div class="sidebar-item">';
+		echo '<div class="block">';
 		if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
 		if (isset($node['field_cost']))         { echo render($node['field_cost']); }
 		if (isset($node['field_ages']))         { echo render($node['field_ages']); }
@@ -38,7 +38,7 @@ if (isset($node) && $node['#view_mode'] == 'full') {
 	}
 
 	if (isset($node['field_contact_info'])) {
-		echo '<div class="sidebar-item">';
+		echo '<div class="block">';
 		echo render($node['field_contact_info']);
 		echo '</div>';
 	}
