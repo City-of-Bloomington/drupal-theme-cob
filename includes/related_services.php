@@ -7,7 +7,7 @@
  */
 echo "
 <div class=\"block\">
-	<h3>Related Services</h3>
+	<h2>Related Services</h2>
 	<ul>
 ";
 	foreach ($services as $s) {
