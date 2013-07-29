@@ -3,13 +3,13 @@
  * @copyright 2013 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param array $programs
+ * @param array $data['programs']
  */
 echo "
 <div class=\"programs teaserView block\">
 	<h2>Programs</h2>
 ";
-	foreach ($programs as $p) {
+	foreach ($data['programs'] as $p) {
 		$n = node_view($p, 'teaser');
 		echo render($n);
 	}

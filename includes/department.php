@@ -9,14 +9,14 @@
  * @copyright 2013 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param object $department
+ * @param object $data['department']
  */
-$title = l($department->title, 'node/'.$department->nid);
+$title = l($data['department']->title, 'node/'.$data['department']->nid);
 echo "
 <div class=\"block\">
 	<h2>$title</h2>
 ";
-	$contact_info = field_view_field('node', $department, 'field_contact_info', array('label'=>'hidden'));
+	$contact_info = field_view_field('node', $data['department'], 'field_contact_info', array('label'=>'hidden'));
 	echo render($contact_info);
 
 echo "

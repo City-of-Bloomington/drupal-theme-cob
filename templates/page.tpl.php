@@ -210,7 +210,36 @@
 					echo render($node['field_banner']);
 				}
 				echo '<div id="sidebar-second" class="region region-sidebar-second sidebar">';
-				include $directory.'/includes/sidebar-second.php';
+				if (isset($node) && $node['#view_mode'] == 'full') {
+					if (isset($node['field_sidebar_image'])) {
+						echo render($node['field_sidebar_image']);
+					}
+
+					if (   isset($node['field_running_from'])
+						|| isset($node['field_cost'])
+						|| isset($node['field_ages'])
+						|| isset($node['field_registration'])
+						|| isset($node['field_instructor'])
+						|| isset($node['field_program'])
+						|| isset($node['field_service'])) {
+
+						echo '<div class="sidebar-item">';
+						if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
+						if (isset($node['field_cost']))         { echo render($node['field_cost']); }
+						if (isset($node['field_ages']))         { echo render($node['field_ages']); }
+						if (isset($node['field_registration'])) { echo render($node['field_registration']); }
+						if (isset($node['field_instructor']))   { echo render($node['field_instructor']); }
+						if (isset($node['field_program']))      { echo render($node['field_program']); }
+						if (isset($node['field_service']))      { echo render($node['field_service']); }
+						echo '</div>';
+					}
+
+					if (isset($node['field_contact_info'])) {
+						echo '<div class="sidebar-item">';
+						echo render($node['field_contact_info']);
+						echo '</div>';
+					}
+				}
 				if ($page['sidebar_second']) {
 					echo render($page['sidebar_second']);
 				}
@@ -220,24 +249,33 @@
 				echo $feed_icons;
 
 				echo '<div class="directLinks">';
-				
+
 				if (!empty($pages) || !empty($services)) {
 					echo '<div class="diptych">';
-					if (!empty($pages))    { include $directory.'/includes/pages.php'; }
-					if (!empty($services)) { include $directory.'/includes/services.php'; }
+					if (!empty($pages))    { cob_include('pages',    ['pages'   => $pages]); }
+					if (!empty($services)) { cob_include('services', ['services'=> $services]); }
 					echo '</div>';
 				}
-
-				if (!empty($programs)) {
-					include $directory.'/includes/programs.php';
-				}
+				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
 				echo '</div>';
 			?>
 			</div>
 			<?php
 			if ($page['sidebar_first']) {
 				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
-				include $directory.'/includes/sidebar-first.php';
+				if (!empty($department))  { cob_include('department',  ['department' =>$department ]); }
+				if (!empty($departments)) { cob_include('departments', ['departments'=>$departments]); }
+				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>$siblings   ]); }
+				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>$sponsors   ]); }
+				if (!empty($location))    { cob_include('location',    ['location'   =>$location   ]); }
+				if (!empty($news))        { cob_include('news',        ['news'       =>$news       ]); }
+				if (isset($related)) {
+					foreach ($related as $type=>$nodes) {
+						if (!empty($nodes)) {
+							cob_include("related_{$type}", [$type=>$nodes]);
+						}
+					}
+				}
 				echo render($page['sidebar_first']);
 				echo '</div>';
 			}

@@ -10,7 +10,7 @@ echo "
 	<h3>Related News</h3>
 	<ul>
 ";
-	foreach ($news as $node) {
+	foreach ($data['news'] as $node) {
 		$n = node_view($node, 'sidebar');
 		echo render($n);
 	}

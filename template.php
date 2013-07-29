@@ -69,7 +69,7 @@ function cob_preprocess_page(&$vars)
 
 function cob_preprocess_node(&$variables)
 {
-	$variables['submitted'] = t('!date', array('!date'=>$variables['date']));
+	$variables['submitted'] = t('@date', ['@date'=>date('m/j/Y', $variables['created'])]);
 }
 
 /**
@@ -84,4 +84,20 @@ function cob_breadcrumb($variables) {
 		$output = '<div class="breadcrumb">' . implode('', $breadcrumb) . '</div>';
 		return $output;
 	}
+}
+
+/**
+ * Includes a named file allowing data to be passed to the include
+ *
+ * By passing data to a function that does the include, we prevent
+ * variables from getting clobbered in the global scope.
+ * Include files can each refer to their own variables without
+ * worrying about whether that variable exists in the global scope or not.
+ *
+ * @param string $name The filename inside of /includes/
+ * @param array $data Local variables to be used inside the include
+ */
+function cob_include($name, array $data=null)
+{
+	include __DIR__."/includes/$name.php";
 }

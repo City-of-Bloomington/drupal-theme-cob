@@ -3,13 +3,13 @@
  * @copyright 2013 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param array $news
+ * @param array $data['news']
  */
 echo "
 <div class=\"block news\">
 	<h2>News</h2>
 ";
-	foreach ($news as $node) {
+	foreach ($data['news'] as $node) {
 		$n = node_view($node, 'sidebar');
 		echo render($n);
 	}
