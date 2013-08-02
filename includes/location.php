@@ -10,9 +10,6 @@ echo "
 <div class=\"block\">
 	<h2>$title</h2>
 ";
-	$contact_info = field_view_field('node', $data['location'], 'field_contact_info', array('label'=>'hidden'));
-	echo render($contact_info);
-
 	// "Geo" microformat, see http://microformats.org/wiki/geo
 	if (isset($data['location']->location['latitude']) && isset($data['location']->location['longitude'])) {
 		// Assume that 0, 0 is invalid.
@@ -20,6 +17,9 @@ echo "
 			echo gmap_simple_map($data['location']->location['latitude'], $data['location']->location['longitude'], '', '', '14');
 		}
 	}
+	
+	$contact_info = field_view_field('node', $data['location'], 'field_contact_info', array('label'=>'hidden'));
+	echo render($contact_info);
 echo "
 </div>
 ";
