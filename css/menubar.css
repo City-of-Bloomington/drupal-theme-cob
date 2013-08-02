@@ -26,3 +26,98 @@
 	}
 }
 .main-nav-item-active .megadropdown-region { display:block; }
+.nav-button { display: none; } /* hide the navigation button by default */
+
+@media only screen and (max-width: 799px) {
+
+/* Navigation Button
+	-------------------------------------------------------- */
+
+	.nav-button {
+		display: block;
+		width: 25%;
+		height: 2.5em;
+		cursor: pointer;
+		border: 0 none;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+		box-shadow: 0 0 4px rgba(0,0,0,.7) inset;
+		border-radius: 5px;
+		z-index: 999;
+		background-color:#003366;
+		color:white;
+		margin-right:.5em;
+		padding:.15em .5em;
+	}
+
+	.nav-button.open {
+		background-image: url('../images/close-icon-large.png');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 25%, 100%;
+		text-indent:-1000px;
+	}
+	.primary-nav li {
+		display: none;
+		width: 100%;
+		font-family: Arial;
+	}
+	.primary-nav li a {
+		display: block;
+		width: 90%;
+		padding: 10px 2%;
+		font-size: 1.2em;
+		font-weight: bold;
+		text-shadow: -1px -1px 0 rgba(0,0,0,.15);
+		color: white;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(0,0,0,.2);
+		border-top: 1px solid rgba(255,255,255,.1); 
+	}
+	.primary-nav li a:hover {
+		background-color: rgba(0,0,0,.5);
+		border-top-color: transparent;
+	}
+	.primary-nav > li:first-child {
+		border-top: 1px solid rgba(0,0,0,.2);
+	}
+
+	/* Toggle the navigation bar open  */
+
+	.primary-nav.open { 
+	
+	}
+	.primary-nav.open li { 
+		display: block; 
+	}
+	/* Submenus ? optional .parent class indicates dropdowns */
+
+	.primary-nav > li:hover > a {
+		background: rgba(0,0,0,.5);
+		border-bottom-color: transparent;
+	}
+	
+	.primary-nav li.parent > a:after {
+		content: "";
+		color: rgba(255,255,255,.5);
+		float: right;
+	}
+	.primary-nav li.parent > a:hover {
+		background: rgba(0,0,0,.75);
+	}
+	.primary-nav li ul {
+		display: none;
+		background: rgba(0,0,0,.5);
+		border-top: 0 none;
+		padding: 0;
+	}
+	.primary-nav li ul a {
+		border: 0 none;
+		font-size: 1em;
+		padding: 1em 2%;
+		font-weight: normal;
+	}
+	.primary-nav li:hover ul {
+		display: block;
+		border-top: 0 none;
+	}
+}

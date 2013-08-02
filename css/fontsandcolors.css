@@ -74,12 +74,13 @@ th { border:1px solid #999999; background-color:#e0e0e0;  }
 
 /* menuBar Styles */
 
+.megadropdown { background-color:#003366; }
+
 @media screen and (min-width:500px) {
 	* { -webkit-text-size-adjust: 100%; }
 a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 .sm-links a { font-size:1.3em; color:white; }
 .megadropdown > li  { font-size:1em; }
-.megadropdown { background-color:#003366; }
 .megadropdown-region li { color:black; }
 .megadropdown-region h4 { color:#810303; }
 }
@@ -91,6 +92,6 @@ a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 #content th { background-color:#e0e0e0; border:1px solid #999999; }
 #content th a { color:#3366cc; background-color:inherit; }
 
-.sidebar-item { background-color:#eee; }
-.sidebar-item .field-label { font-size:1.1em; }
+#sidebar-second .block { background-color:#eee; }
+.block .field-label { font-size:1.1em; }
 #sidebar-first .block { border-bottom:1px solid #ccc; }
