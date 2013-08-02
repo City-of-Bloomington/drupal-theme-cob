@@ -115,9 +115,11 @@
 			if ($site_slogan) {
 				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
 			}
+			echo "<button class=\"nav-button\">Menu</button>
+			";
 	?>
 	</div> <!-- , /#header -->
-		<ul class="megadropdown">
+		<ul class="megadropdown primary-nav">
 		<?php
 			$links = array(
 				'menu_government' => array('text'=>'My Government', 'node_id'=>2),
@@ -235,7 +237,7 @@
 					}
 
 					if (isset($node['field_contact_info'])) {
-						echo '<div class="sidebar-item">';
+						echo '<div class="block">';
 						echo render($node['field_contact_info']);
 						echo '</div>';
 					}
