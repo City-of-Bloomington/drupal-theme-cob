@@ -47,6 +47,7 @@ function cob_preprocess_page(&$vars)
 
 			if ($bundle == 'program' || $bundle == 'location') {
 				$vars['siblings'] = cob_node_siblings($vars['node']);
+				$vars['children'] = cob_node_references($vars['node'], $bundle);
 			}
 
 			if (   $bundle == 'location'

@@ -474,6 +474,8 @@
 						echo render($node['field_contact_info']);
 						echo '</div>';
 					}
+
+					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}
 				if ($page['sidebar_second']) {
 					echo render($page['sidebar_second']);
