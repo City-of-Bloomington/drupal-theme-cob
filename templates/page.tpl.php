@@ -127,13 +127,13 @@
 			}
 			echo "<button class=\"nav-button\">Menu</button>
 			";
-	?>	
+	?>
 	</div> <!-- , /#header -->
 		<ul class="megadropdown primary-nav">
 				<li class="main-nav-item">
 					<a href="" class="withDD main-nav-tab">My Government</a>
 					<div class="megadropdown-region" id="governmentItem">
-						<div class="smleft">	
+						<div class="smleft">
 								<div class="topics">
 									<ul>
 									<div class="item">
@@ -200,7 +200,7 @@
 									<option value="">Sanitation</option>
 									<option value="">Street</option>
 									<option value="">Traffic</option>
-									<option value="">Utilities</option>		
+									<option value="">Utilities</option>
 									</select>
 								</form>
 								</div>
@@ -208,9 +208,9 @@
 						<div class="smright">
 							<p>
 								<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactus.png" />
-							</p>						
+							</p>
 						</div>
-					</div>	
+					</div>
 				</li>
 				<li class="main-nav-item">
 					<a href="" class="main-nav-tab withDD">I Want to</a>
@@ -255,7 +255,7 @@
 							<div class="smright">
 								<h4>Pay Your Utility Bill</h4>
 								<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthinsurance.png" /></p>
-							</div>	
+							</div>
 					</div>
 				</li>
 				<li class="main-nav-item">
@@ -289,8 +289,8 @@
 										<li>Neighborhoods</li>
 										<li><a href="/news">News</a></li>
 										<li>Parking</li>
-										<li>Parks & Recreation Programs</li>
-										<li>Pets & Adoptable Animals</li>
+										<li>Parks &amp; Recreation Programs</li>
+										<li>Pets &amp; Adoptable Animals</li>
 									</div>
 									<div class="item">
 										<li>Public Safety</li>
@@ -301,7 +301,7 @@
 										<li>Volunteering</li>
 									</div>
 								</ul>
-							</div>					
+							</div>
 						<div class="smbottom">
 							<h4>Community Facilities</h4>
 							<p>Directions, hours, other info</p>
@@ -331,7 +331,7 @@
 								<option value="/drupal/content/bryan-park">Bryan Park</option>
 								<option value="">Building Trades Park</option>
 								<option value="">Clear Creek Trail</option>
-								<option value="">Crestmont Park & Garden</option>
+								<option value="">Crestmont Park &amp; Garden</option>
 								<option value="">Goat Farm</option>
 								<option value="">Griffy Lake Nature Preserve</option>
 								<option value="">Highland Village Park</option>
@@ -350,7 +350,7 @@
 								<option value="">Sherwood OaksPark</option>
 								<option value="">Skate Park</option>
 								<option value="">Southeast Park</option>
-								<option>Third Street Park</option>
+								<option value="">Third Street Park</option>
 								<option value="">Twin Lakes Sports Park</option>
 								<option value="">Upper Cascades Park</option>
 								<option value="">Wappehani Mountain Bike Park</option>
@@ -498,6 +498,7 @@
 				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>$sponsors   ]); }
 				if (!empty($location))    { cob_include('location',    ['location'   =>$location   ]); }
 				if (!empty($news))        { cob_include('news',        ['news'       =>$news       ]); }
+				if (!empty($coordinates)) { cob_include('map',         ['coordinates'=>$coordinates]); }
 				if (isset($related)) {
 					foreach ($related as $type=>$nodes) {
 						if (!empty($nodes)) {

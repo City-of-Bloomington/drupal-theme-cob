@@ -26,8 +26,23 @@ function cob_preprocess_page(&$vars)
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
 
-			if (isset($vars['node']['field_location']['#object'])) {
+			/**
+			 * Pulls the location coordinates from nodes that are referenced to the current node.
+			 * This is when content types other than locations point to a location node.
+			 * ie. a  Program node that has a location_field that points to a Location node.
+			 * When displaying (Program)Pilates we grab the information from (Location)Twin Lakes
+			 */
+			if (isset(               $vars['node']['field_location']['#object'])) {
 				$vars['location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
+			}
+
+			/**
+			 * Pulls the location coordinates for actual Location nodes
+			 * So, when displaying a Location node, we can display the map for that location
+			 * ie. When displaying Twin Lakes, we show a map to Twin Lakes.
+			 */
+			if (isset(                  $vars['node']['locations']['#locations'][0])) {
+				$vars['coordinates'] = &$vars['node']['locations']['#locations'][0];
 			}
 
 			if ($bundle == 'program' || $bundle == 'location') {

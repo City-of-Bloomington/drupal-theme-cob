@@ -83,20 +83,20 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 	echo $user_picture;
 	echo render($title_prefix);
 
-	
+
 	if (!$page) {
-		
+
 		if($view_mode=='teaser') {
 			echo "<h3$title_attributes><a href=\"$node_url\">$title</a></h3>";
 		}
-		
+
 		else {
 				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
-		}	
+		}
 	}
-	
-	
-	
+
+
+
 	echo render($title_suffix);
 
 	if ($display_submitted) {
@@ -118,6 +118,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_location']);
 		hide($content['field_program']);
 		hide($content['field_service']);
+		hide($content['locations']);
 
 		hide($content['comments']);
 		hide($content['links']);
