@@ -75,6 +75,9 @@
 
 <div id="page">
 	<div id="header">
+		<div id="topRow">
+		<div id="mobileMenu"><button class="nav-button">Menu</button></div>
+
 	<?php
 		echo theme('links__system_main_menu', array(
 			'links'      => $main_menu,
@@ -83,29 +86,21 @@
 				'class'      => array('links')
 			)
 		));
-		echo "
-			<div id=\"headerLinks\">
-				<ul>
-					<li><i class=\"icon-star\"></i>Bloomington Portal</li>
-					<li> <i class=\"icon-comments\"></i>uReport</li>
-					<li class=\"last\"><i class=\"icon-user\"></i>myBloomington</li>
-				</ul>
-			</div>
-			<div id=\"topRow\">
-		";
-		echo render($page['header']);
-		echo "
-			<div id=\"logo\">
-		";
 
 		$home_text = t('Home');
 		if ($logo) {
 			echo "
+			<div id=\"logo\">
 				<a href=\"$front_page\" title=\"$home_text\" rel=\"home\">
 					<img src=\"$logo\"    alt=\"$home_text\" />
 				</a>
+				</div>
 			";
 		}
+		
+		echo "</div> <!--topRow -->";
+		
+		
 		if ($site_name) {
 			echo "
 				<div id=\"site_name\">
@@ -118,17 +113,24 @@
 				</div>
 			";
 		}
-
-		echo "</div>
-		</div>";
+echo "
+			<div id=\"headerLinks\">
+				<ul>
+					<li><i class=\"icon-star\"></i>Dashboard</li>
+					<li> <i class=\"icon-comments\"></i>uReport</li>
+					<li class=\"last\"><i class=\"icon-user\"></i>myBloomington</li>
+				</ul>
+			</div>
+		";
 
 			if ($site_slogan) {
 				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
 			}
-			echo "<button class=\"nav-button\">Menu</button>
-			";
+			
+			echo render($page['header']);
+
 	?>
-	</div> <!-- , /#header -->
+	</div> <!--/#header -->
 		<ul class="megadropdown primary-nav">
 				<li class="main-nav-item">
 					<a href="" class="withDD main-nav-tab">My Government</a>

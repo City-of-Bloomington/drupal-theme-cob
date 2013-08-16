@@ -2,22 +2,25 @@ a { color:#0066CC; }
 li a.active { color:#0066cc; }
 hr { background-color:#003366; }
 body { font-family: Arial, Helvetica, sans-serif; font-size:1em; background-color:white; }
+html { font-size:100%; }
 
 @media screen and (min-width:500px) {
 	body { font-size:13px; }
 	li.mbLogo, li.urLogo { font-weight:bold; }
-	#sidebar-first{ border-left:1px solid #ccc; }
+	#sidebar-first { border-left:1px solid #ccc; }
 }
-
-html { font-size:100%; }
 
 /*heading 1*/
 h1 {
 	font-size:1.5em; font-weight:bold; font-family: georgia, serif;
 	margin:0 0 .25em 0; padding:0; clear:both; color:black;
 }
-#site_name h1 { font-size:1.25em; }
-#page-title{ color:darkred;  }
+
+
+#site_name h1 { font-size:1.25em; clear:both;  }
+
+
+#page-title { color:darkred;  }
 
 /*heading 2*/
 h2 {
@@ -64,20 +67,25 @@ table { border:1px solid #999999; }
 td { background-color:inherit; border:1px solid #999999; font-weight:bold; }
 th { border:1px solid #999999; background-color:#e0e0e0;  }
 
-#banner a { color:black; }
+#header a { color:black; }
 #breadcrumb { background-color:#efefef; }
 .breadcrumb { color:black; }
 .breadcrumb li a { color:black; }
 #main-menu a { color:white; }
 #title { background-color:#efefef; }
 #edit-search-block-form--2 input { border:2px solid grey; }
-#edit-submit { background-color:darkred; color:white; border:2px solid darkred;  }
+#edit-submit--2 { background-color:darkred; color:white; border:2px solid darkred;  }
+
+
+#headerLinks { font-size:.9em; }
 
 /* menuBar Styles */
 
 .megadropdown { background-color:#003366; }
 
 @media screen and (min-width:500px) {
+	#headerLinks { background-color:inherit; font-size:1em; }
+
 	* { -webkit-text-size-adjust: 100%; }
 a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 .sm-links a { font-size:1.3em; color:white; }
