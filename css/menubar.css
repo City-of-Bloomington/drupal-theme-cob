@@ -58,7 +58,7 @@
 /* Navigation Button
 	-------------------------------------------------------- */
 
-		#mobileMenu { width:20%; height:3em; float:left; }
+		#mobileMenu { width:20%; height:3em; margin-left:78%; }
 
 	.nav-button {
 		display: block;
@@ -68,7 +68,9 @@
 		border: 0 none;
 		z-index: 999;
 		color:#003366;
-		padding:0; 
+		padding:0;
+		margin:.25em;
+		background: url('../images/listwhite.png') center center no-repeat #003366;
 	}
 	
 

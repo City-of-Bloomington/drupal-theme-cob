@@ -74,7 +74,7 @@ th { border:1px solid #999999; background-color:#e0e0e0;  }
 #main-menu a { color:white; }
 #title { background-color:#efefef; }
 #edit-search-block-form--2 input { border:2px solid grey; }
-#edit-submit--2 { background-color:darkred; color:white; border:2px solid darkred;  }
+#edit-submit--2 { background-color:darkred; color:white; font-weight:bold; border:2px solid darkred;  }
 
 
 #headerLinks { font-size:.9em; }

@@ -76,7 +76,6 @@
 <div id="page">
 	<div id="header">
 		<div id="topRow">
-		<div id="mobileMenu"><button class="nav-button">Menu</button></div>
 
 	<?php
 		echo theme('links__system_main_menu', array(
@@ -98,7 +97,7 @@
 			";
 		}
 		
-		echo "</div> <!--topRow -->";
+		echo "<div id=\"mobileMenu\"><button class=\"nav-button\"></button></div>";
 		
 		
 		if ($site_name) {
@@ -114,13 +113,14 @@
 			";
 		}
 echo "
-			<div id=\"headerLinks\">
-				<ul>
-					<li><i class=\"icon-star\"></i>Dashboard</li>
-					<li> <i class=\"icon-comments\"></i>uReport</li>
-					<li class=\"last\"><i class=\"icon-user\"></i>myBloomington</li>
-				</ul>
-			</div>
+		</div> <!--topRow -->
+		<div id=\"headerLinks\">
+			<ul>
+				<li><i class=\"icon-star\"></i>Dashboard</li>
+				<li> <i class=\"icon-comments\"></i>uReport</li>
+				<li class=\"last\"><i class=\"icon-user\"></i>myBloomington</li>
+			</ul>
+		</div>
 		";
 
 			if ($site_slogan) {
