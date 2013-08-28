@@ -5,16 +5,20 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param array $data['siblings']
  */
-$title = ucfirst($node['#bundle'])."s";
+$title = '';
+$list  = '';
+$c = 0;
+foreach ($data['siblings'] as $s) {
+	$list.= '<li>'.l($s->title, "node/{$s->nid}").'</li>';
+
+	if ($c == 0) { $title = ucfirst($s->type).'s'; }
+	$c++;
+}
 echo "
 <div class=\"block\">
 	<h2>Related $title</h2>
 	<ul>
-";
-	foreach ($data['siblings'] as $s) {
-		echo l($s->title, "node/{$s->nid}");
-	}
-echo "
+		$list
 	</ul>
 </div>
 ";
