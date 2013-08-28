@@ -60,6 +60,7 @@ function cob_preprocess_page(&$vars)
 			$vars['pages']       = cob_node_references($vars['node'], 'page');
 			$vars['services']    = cob_node_references($vars['node'], 'service');
 			$vars['departments'] = cob_node_references($vars['node'], 'department');
+			$vars['webforms']    = cob_node_references($vars['node'], 'webform');
 
 			switch ($bundle) {
 				case 'page':

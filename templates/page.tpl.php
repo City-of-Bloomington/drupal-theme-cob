@@ -96,10 +96,10 @@
 				</div>
 			";
 		}
-		
+
 		echo "<div id=\"mobileMenu\"><button class=\"nav-button\"></button></div>";
-		
-		
+
+
 		if ($site_name) {
 			echo "
 				<div id=\"site_name\">
@@ -126,7 +126,7 @@ echo "
 			if ($site_slogan) {
 				echo "<div id=\"site-slogan\"><h2>$site_slogan</h2></div>";
 			}
-			
+
 			echo render($page['header']);
 
 	?>
@@ -461,7 +461,7 @@ echo "
 						if (isset($node['field_registration'])) { echo render($node['field_registration']); }
 						if (isset($node['field_instructor']))   { echo render($node['field_instructor']); }
 						if (isset($node['field_program']))      { echo render($node['field_program']); }
-						
+
 						echo '</div>';
 					}
 
@@ -470,7 +470,7 @@ echo "
 						echo render($node['field_hours_of_operation']);
 						echo '</div>';
 					}
-					
+
 					if (isset($node['field_contact_info'])) {
 						echo '<div class="block">';
 						echo render($node['field_contact_info']);
@@ -496,6 +496,7 @@ echo "
 					echo '</div>';
 				}
 				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
+				if (!empty($webforms))     { cob_include('webforms', ['webforms'=> $webforms]); }
 				echo '</div>';
 			?>
 			</div>
