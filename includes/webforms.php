@@ -7,12 +7,13 @@
  */
 echo "
 <div class=\"block\">
-	<h3>Forms</h3>
+	<h2>Forms</h2>
+	<ul>
 ";
-	foreach ($data['webforms'] as $node) {
-		$n = node_view($node, 'teaser');
-		echo render($n);
+	foreach ($data['webforms'] as $w) {
+		echo '<li>'.l($w->title, "node/{$w->nid}").'</li>';
 	}
 echo "
+</ul>
 </div>
 ";

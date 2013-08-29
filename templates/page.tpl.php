@@ -179,7 +179,8 @@ echo "
 									<h4>City Departments</h4>
 									<form action="URL">
 									<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
-									<option value="">Animal Care and Control</option>
+									<option value="">Select a department</option>
+									<option value="/drupal/content/animal-care-and-control">Animal Care and Control</option>
 									<option value="">Bloomington Transit</option>
 									<option value="">City Clerk</option>
 									<option value="">Community and Family Resources (CFRD)</option>
@@ -283,7 +284,7 @@ echo "
 										<li>Grants and Funding</li>
 										<li>Health Resources</li>
 										<li>Historic Preservation</li>
-										<li>Housing</li>
+										<li><?php echo l("Housing", "taxonomy/term/9"); ?></li>
 									</div>
 									<div class="item">
 										<li>Legislation</li>
@@ -454,14 +455,14 @@ echo "
 						|| isset($node['field_program'])
 						|| isset($node['field_service'])) {
 
-						echo '<div class="sidebar-item">';
+						
+						echo '<div class="block">';
+						if (isset($node['field_program'])) { echo render($node['field_program']); }
 						if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
 						if (isset($node['field_cost']))         { echo render($node['field_cost']); }
 						if (isset($node['field_ages']))         { echo render($node['field_ages']); }
 						if (isset($node['field_registration'])) { echo render($node['field_registration']); }
 						if (isset($node['field_instructor']))   { echo render($node['field_instructor']); }
-						if (isset($node['field_program']))      { echo render($node['field_program']); }
-
 						echo '</div>';
 					}
 
@@ -495,8 +496,8 @@ echo "
 					if (!empty($services)) { cob_include('services', ['services'=> $services]); }
 					echo '</div>';
 				}
-				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
 				if (!empty($webforms))     { cob_include('webforms', ['webforms'=> $webforms]); }
+				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
 				echo '</div>';
 			?>
 			</div>
