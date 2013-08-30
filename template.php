@@ -52,7 +52,8 @@ function cob_preprocess_page(&$vars)
 
 			if (   $bundle == 'location'
 				|| $bundle == 'department'
-				|| $bundle == 'board_or_commission') {
+				|| $bundle == 'board_or_commission'
+				|| $bundle == 'topic') {
 				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
 
