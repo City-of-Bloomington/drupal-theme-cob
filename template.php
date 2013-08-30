@@ -57,7 +57,6 @@ function cob_preprocess_page(&$vars)
 				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
 
-			$vars['news']        = cob_node_references($vars['node'], 'news');
 			$vars['pages']       = cob_node_references($vars['node'], 'page');
 			$vars['services']    = cob_node_references($vars['node'], 'service');
 			$vars['departments'] = cob_node_references($vars['node'], 'department');
@@ -68,17 +67,11 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
-					$vars['related']['news']     = cob_nodes_related_by_topics($vars['node'], 'news');
 				break;
 
 				case 'service':
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
-				break;
-
-				case 'news':
-					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
-					$vars['related']['news']     = cob_nodes_related_by_topics($vars['node'], 'news');
 				break;
 			}
 		}
