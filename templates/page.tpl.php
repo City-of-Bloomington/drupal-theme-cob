@@ -455,7 +455,6 @@ echo "
 						|| isset($node['field_program'])
 						|| isset($node['field_service'])) {
 
-						
 						echo '<div class="block">';
 						if (isset($node['field_program'])) { echo render($node['field_program']); }
 						if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
@@ -502,11 +501,10 @@ echo "
 			?>
 			</div>
 			<?php
-			if ($page['sidebar_first']) {
-				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
+			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
 				if (!empty($department))  { cob_include('department',  ['department' =>$department ]); }
 				if (!empty($departments)) { cob_include('departments', ['departments'=>$departments]); }
-				if (!empty($boards_or_commissions)) { cob_include('boards_or_commissions', ['boards_or_commissions'=>$boards_or_commissions]); }
+				if (!empty($boards))      { cob_include('boards',      ['boards'     =>$boards     ]); }
 				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>$siblings   ]); }
 				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>$sponsors   ]); }
 				if (!empty($location))    { cob_include('location',    ['location'   =>$location   ]); }
@@ -519,9 +517,10 @@ echo "
 						}
 					}
 				}
-				echo render($page['sidebar_first']);
-				echo '</div>';
-			}
+				if ($page['sidebar_first']) {
+					echo render($page['sidebar_first']);
+				}
+			echo '</div>';
 
 		?>
 		</div> <!-- /#content -->

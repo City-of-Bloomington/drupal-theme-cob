@@ -9,14 +9,14 @@
  * @copyright 2013 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param array $data['boards_or_commissions]
+ * @param array $data['boards']
  */
 echo "
 <div class=\"block\">
 	<h2>Boards</h2>
 	<ul>
 ";
-	foreach ($data['boards_or_commissions'] as $b) {
+	foreach ($data['boards'] as $b) {
 		echo '<li>'.l($b->title, "node/{$b->nid}").'</li>';
 	}
 echo "
