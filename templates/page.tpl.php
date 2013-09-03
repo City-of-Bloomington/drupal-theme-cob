@@ -506,6 +506,7 @@ echo "
 				echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
 				if (!empty($department))  { cob_include('department',  ['department' =>$department ]); }
 				if (!empty($departments)) { cob_include('departments', ['departments'=>$departments]); }
+				if (!empty($boards_or_commissions)) { cob_include('boards_or_commissions', ['boards_or_commissions'=>$boards_or_commissions]); }
 				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>$siblings   ]); }
 				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>$sponsors   ]); }
 				if (!empty($location))    { cob_include('location',    ['location'   =>$location   ]); }

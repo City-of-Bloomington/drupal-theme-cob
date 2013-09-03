@@ -61,6 +61,9 @@ function cob_preprocess_page(&$vars)
 			$vars['services']    = cob_node_references($vars['node'], 'service');
 			$vars['departments'] = cob_node_references($vars['node'], 'department');
 			$vars['webforms']    = cob_node_references($vars['node'], 'webform');
+			$vars['boards_or_commissions']    = cob_node_references($vars['node'], 'board_or_commission');
+			
+			
 
 			switch ($bundle) {
 				case 'page':
@@ -78,6 +81,7 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
 					
 				break;
+
 			}
 		}
 	}
