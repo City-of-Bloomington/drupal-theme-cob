@@ -67,11 +67,16 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
+
 				break;
 
 				case 'service':
+					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
+					
 				break;
 			}
 		}
