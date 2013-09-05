@@ -489,13 +489,14 @@ echo "
 
 				echo '<div class="directLinks">';
 
-				if (!empty($pages) || !empty($services)) {
-					echo '<div class="diptych">';
+				if (!empty($pages) || !empty($services) || !empty($webforms)) {
+					echo '<div class="columnLists">';
 					if (!empty($pages))    { cob_include('pages',    ['pages'   => $pages]); }
 					if (!empty($services)) { cob_include('services', ['services'=> $services]); }
+					if (!empty($webforms))     { cob_include('webforms', ['webforms'=> $webforms]); }
 					echo '</div>';
 				}
-				if (!empty($webforms))     { cob_include('webforms', ['webforms'=> $webforms]); }
+				
 				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
 				echo '</div>';
 			?>
