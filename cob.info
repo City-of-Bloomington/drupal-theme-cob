@@ -9,7 +9,7 @@ stylesheets[all][] = css/screen.css
 stylesheets[all][] = css/fontsandcolors.css
 stylesheets[all][] = css/menubar.css
 
-scripts[] = js/overlay.js
+scripts[] = js/cob.js
 
 regions[sidebar_first]  = Outer sidebar
 regions[sidebar_second] = Inner sidebar

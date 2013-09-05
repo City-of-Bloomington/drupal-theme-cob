@@ -105,20 +105,21 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 
 	echo "<div class=\"content\"$content_attributes>";
 
-		hide($content['field_banner']);
-		hide($content['field_sidebar_image']);
-		hide($content['field_running_from']);
-		hide($content['field_cost']);
-		hide($content['field_ages']);
-		hide($content['field_registration']);
-		hide($content['field_instructor']);
-		hide($content['field_sponsors']);
-		hide($content['field_department']);
-		hide($content['field_contact_info']);
-		hide($content['field_location']);
-		hide($content['field_program']);
-		hide($content['field_service']);
-		hide($content['locations']);
+		hide($content['field_banner'        ]);
+		hide($content['field_sidebar_image' ]);
+		hide($content['field_running_from'  ]);
+		hide($content['field_cost'          ]);
+		hide($content['field_ages'          ]);
+		hide($content['field_registration'  ]);
+		hide($content['field_instructor'    ]);
+		hide($content['field_sponsors'      ]);
+		hide($content['field_department'    ]);
+		hide($content['field_contact_info'  ]);
+		hide($content['field_location'      ]);
+		hide($content['field_program'       ]);
+		hide($content['field_service'       ]);
+		hide($content['field_location_group']);
+		hide($content['locations'           ]);
 
 		hide($content['comments']);
 		hide($content['links']);

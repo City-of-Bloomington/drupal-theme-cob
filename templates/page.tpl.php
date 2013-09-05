@@ -447,21 +447,23 @@ echo "
 						echo render($node['field_sidebar_image']);
 					}
 
-					if (   isset($node['field_running_from'])
-						|| isset($node['field_cost'])
-						|| isset($node['field_ages'])
-						|| isset($node['field_registration'])
-						|| isset($node['field_instructor'])
-						|| isset($node['field_program'])
-						|| isset($node['field_service'])) {
+					if (   isset($node['field_running_from'  ])
+						|| isset($node['field_cost'          ])
+						|| isset($node['field_ages'          ])
+						|| isset($node['field_registration'  ])
+						|| isset($node['field_instructor'    ])
+						|| isset($node['field_program'       ])
+						|| isset($node['field_service'       ])
+						|| isset($node['field_location_group'])) {
 
 						echo '<div class="block">';
-						if (isset($node['field_program'])) { echo render($node['field_program']); }
-						if (isset($node['field_running_from'])) { echo render($node['field_running_from']); }
-						if (isset($node['field_cost']))         { echo render($node['field_cost']); }
-						if (isset($node['field_ages']))         { echo render($node['field_ages']); }
-						if (isset($node['field_registration'])) { echo render($node['field_registration']); }
-						if (isset($node['field_instructor']))   { echo render($node['field_instructor']); }
+						if (isset($node['field_location_group'])) { echo render($node['field_location_group']); }
+						if (isset($node['field_program'       ])) { echo render($node['field_program'       ]); }
+						if (isset($node['field_running_from'  ])) { echo render($node['field_running_from'  ]); }
+						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
+						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
+						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
+						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
 						echo '</div>';
 					}
 
@@ -491,26 +493,34 @@ echo "
 
 				if (!empty($pages) || !empty($services) || !empty($webforms)) {
 					echo '<div class="columnLists">';
-					if (!empty($pages))    { cob_include('pages',    ['pages'   => $pages]); }
-					if (!empty($services)) { cob_include('services', ['services'=> $services]); }
-					if (!empty($webforms))     { cob_include('webforms', ['webforms'=> $webforms]); }
+					if (!empty($pages   )) { cob_include('pages',    ['pages'   => &$pages   ]); }
+					if (!empty($services)) { cob_include('services', ['services'=> &$services]); }
+					if (!empty($webforms)) { cob_include('webforms', ['webforms'=> &$webforms]); }
 					echo '</div>';
 				}
-				
-				if (!empty($programs))     { cob_include('programs', ['programs'=> $programs]); }
+				if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
 				echo '</div>';
 			?>
 			</div>
 			<?php
 			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
-				if (!empty($department))  { cob_include('department',  ['department' =>$department ]); }
-				if (!empty($departments)) { cob_include('departments', ['departments'=>$departments]); }
-				if (!empty($boards))      { cob_include('boards',      ['boards'     =>$boards     ]); }
-				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>$siblings   ]); }
-				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>$sponsors   ]); }
-				if (!empty($location))    { cob_include('location',    ['location'   =>$location   ]); }
-				if (!empty($news))        { cob_include('news',        ['news'       =>$news       ]); }
-				if (!empty($coordinates)) { cob_include('map',         ['coordinates'=>$coordinates]); }
+				if (!empty($field_location)) {
+					cob_include('location', ['location' => &$field_location]);
+				}
+				if (!empty($location)) {
+					cob_include('map', ['location' => &$location]);
+				}
+				if (isset($node) && $node['#bundle']=='location_group' && !empty($children)) {
+					cob_include('map', ['locations'=>&$children]);
+				}
+
+				if (!empty($department))  { cob_include('department',  ['department' =>&$department ]); }
+				if (!empty($departments)) { cob_include('departments', ['departments'=>&$departments]); }
+				if (!empty($boards))      { cob_include('boards',      ['boards'     =>&$boards     ]); }
+				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>&$siblings   ]); }
+				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>&$sponsors   ]); }
+				if (!empty($news))        { cob_include('news',        ['news'       =>&$news       ]); }
+
 				if (isset($related)) {
 					foreach ($related as $type=>$nodes) {
 						if (!empty($nodes)) {

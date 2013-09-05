@@ -28,32 +28,42 @@ function cob_preprocess_page(&$vars)
 
 			/**
 			 * Pulls the location coordinates from nodes that are referenced to the current node.
-			 * This is when content types other than locations point to a location node.
+			 * This is when nodes point to a location node.
 			 * ie. a  Program node that has a location_field that points to a Location node.
 			 * When displaying (Program)Pilates we grab the information from (Location)Twin Lakes
+			 *
+			 * Keep in mind that Location nodes also have a field_location that points to their
+			 * parent location.
 			 */
-			if (isset(               $vars['node']['field_location']['#object'])) {
-				$vars['location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
+			if (isset(                     $vars['node']['field_location']['#object'])) {
+				$vars['field_location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
 			}
 
-			/**
-			 * Pulls the location coordinates for actual Location nodes
-			 * So, when displaying a Location node, we can display the map for that location
-			 * ie. When displaying Twin Lakes, we show a map to Twin Lakes.
-			 */
-			if (isset(                  $vars['node']['locations']['#locations'][0])) {
-				$vars['coordinates'] = &$vars['node']['locations']['#locations'][0];
-			}
 
-			if ($bundle == 'program' || $bundle == 'location') {
+			if ($bundle == 'program') {
 				$vars['siblings'] = cob_node_siblings($vars['node']);
 				$vars['children'] = cob_node_references($vars['node'], $bundle);
+			}
+			if ($bundle == 'location') {
+				/**
+				 * Pulls the location coordinates for actual Location nodes
+				 * So, when displaying a Location node, we can display the map for that location
+				 * ie. When displaying Twin Lakes, we show a map to Twin Lakes.
+				 */
+				if (isset(               $vars['node']['locations']['#locations'][0])) {
+					$vars['location'] = &$vars['node']['locations']['#locations'][0];
+				}
+				$vars['siblings'] = cob_node_siblings($vars['node']);
+			}
+			if ($bundle == 'location_group') {
+				$vars['children'] = cob_node_references($vars['node'], 'location');
 			}
 
 			if (   $bundle == 'location'
 				|| $bundle == 'department'
 				|| $bundle == 'board_or_commission'
-				|| $bundle == 'topic') {
+				|| $bundle == 'topic'
+				|| $bundle == 'sponsor') {
 				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
 
@@ -116,4 +126,28 @@ function cob_breadcrumb($variables) {
 function cob_include($name, array $data=null)
 {
 	include __DIR__."/includes/$name.php";
+}
+
+
+function cob_renderGeoForLocation(&$l)
+{
+	$title = '';
+	if (isset($l->title)) {
+		$title = '<span class="fn">'.l($l->title, "node/{$l->nid}").'</span>';
+	}
+	$location = isset($l->location) ? $l->location : $l;
+
+	// "Geo" microformat, see http://microformats.org/wiki/geo
+	if (isset($location['latitude']) && isset($location['longitude'])) {
+		// Assume that 0, 0 is invalid.
+		if ($location['latitude'] != 0 || $location['longitude'] != 0) {
+			echo "
+			<div class=\"geo\">
+				$title
+				<span class=\"latitude\">$location[latitude]</span>
+				<span class=\"longitude\">$location[longitude]</span>
+			</div>
+			";
+		}
+	}
 }

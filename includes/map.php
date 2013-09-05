@@ -3,18 +3,21 @@
  * @copyright 2013 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param object $data['coordinates']
+ * @param object $data['location'] The main location for the map
+ * @param arary $data['locations'] Any additional locations to display
  */
 echo "
-<div class=\"block\">
+<div class=\"hcards\">
 ";
-	// "Geo" microformat, see http://microformats.org/wiki/geo
-	if (isset($data['coordinates']['latitude']) && isset($data['coordinates']['longitude'])) {
-		// Assume that 0, 0 is invalid.
-		if ($data['coordinates']['latitude'] != 0 || $data['coordinates']['longitude'] != 0) {
-			echo gmap_simple_map($data['coordinates']['latitude'], $data['coordinates']['longitude'], '', '', '14');
+	if (isset($data['location'])) {
+		cob_renderGeoForLocation($data['location']);
+	}
+	if (isset($data['locations'])) {
+		foreach ($data['locations'] as $l) {
+			cob_renderGeoForLocation($l);
 		}
 	}
 echo "
 </div>
 ";
+drupal_add_js('https://maps.googleapis.com/maps/api/js?sensor=false','external');

@@ -10,14 +10,8 @@ echo "
 <div class=\"block\">
 	<h2>$title</h2>
 ";
-	// "Geo" microformat, see http://microformats.org/wiki/geo
-	if (isset($data['location']->location['latitude']) && isset($data['location']->location['longitude'])) {
-		// Assume that 0, 0 is invalid.
-		if ($data['location']->location['latitude'] != 0 || $data['location']->location['longitude'] != 0) {
-			echo gmap_simple_map($data['location']->location['latitude'], $data['location']->location['longitude'], '', '', '14');
-		}
-	}
-	
+	cob_include('map', ['location'=> &$data['location']->location]);
+
 	$contact_info = field_view_field('node', $data['location'], 'field_contact_info', array('label'=>'hidden'));
 	echo render($contact_info);
 echo "

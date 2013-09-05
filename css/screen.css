@@ -47,7 +47,7 @@ input#edit-search-block-form--2 { display:block; float:left; width:15em; height:
 #sidebar-second .block { margin: .5em 0; padding:.5em; }
 #sidebar-second .block .field { margin:.25em 0; }
 
-@media screen and (min-width:800px) and (min-device-width:800px) {	
+@media screen and (min-width:800px) and (min-device-width:800px) {
 	#site_name { margin:0; display:block; }
 	#headerLinks { margin-left:63%; padding:0; clear:none; }
 	#headerLinks li { padding: 0 .5em 0 0; }
@@ -104,3 +104,6 @@ button, .button {
 	color:black;
 	font-size:1em;
 }
+
+.map { width:98%; height:300px; }
+.geo { display:none; }
