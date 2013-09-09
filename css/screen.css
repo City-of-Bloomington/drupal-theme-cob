@@ -5,6 +5,7 @@ p { margin:0 0 .5em 0; }
 li { margin:0 0 .25em 0; }
 ul.menu { list-style-position:inside; }
 img { border:0; max-width:98%; height:auto; margin:.25em; }
+td, th { padding:.25em; }
 
 /*Overall Template */
 

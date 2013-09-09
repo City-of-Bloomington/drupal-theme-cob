@@ -64,8 +64,8 @@ h5 {
 
 legend { background-color:#5a8fdc; font-size:1.1em; color:white; }
 table { border:1px solid #999999; }
-td { background-color:inherit; border:1px solid #999999; font-weight:bold; }
-th { border:1px solid #999999; background-color:#e0e0e0;  }
+td { background-color:inherit; border:1px solid #ddd;  }
+th { border:1px solid #ddd; background-color:#efefef; font-weight:bold;  }
 
 #header a { color:black; }
 #breadcrumb { background-color:#efefef; }
@@ -94,11 +94,8 @@ a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 .megadropdown-region h4 { color:#810303; }
 }
 
-#content {font-size:1em; }
+#content { font-size:1em; }
 #footer { border-top:1px solid #cccccc; color:#003366; font-size:.9em; }
-#content table { border:1px solid #999999; }
-#content td { background-color:inherit; border:1px solid #999999; }
-#content th { background-color:#e0e0e0; border:1px solid #999999; }
 #content th a { color:#3366cc; background-color:inherit; }
 
 #sidebar-second .block { background-color:#eee; }

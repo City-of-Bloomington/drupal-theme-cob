@@ -271,6 +271,7 @@ echo "
 									<div class="item">
 										<li>About Bloomington</li>
 										<li>Accessibility</li>
+										<li><?php echo l("Animals", "node/91"); ?></li>
 										<li>Arts & Culture</li>
 										<li>Biking and Walking</li>
 										<li>Business</li>
@@ -293,7 +294,6 @@ echo "
 										<li><a href="/news">News</a></li>
 										<li>Parking</li>
 										<li>Parks &amp; Recreation Programs</li>
-										<li>Pets &amp; Adoptable Animals</li>
 									</div>
 									<div class="item">
 										<li>Public Safety</li>
