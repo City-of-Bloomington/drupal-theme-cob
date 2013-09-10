@@ -293,12 +293,13 @@ echo "
 										<li>Neighborhoods</li>
 										<li><a href="/news">News</a></li>
 										<li>Parking</li>
-										<li>Parks &amp; Recreation Programs</li>
+										<li><?php echo l("Parks & Recreation Programs", "node/103"); ?></li>
 									</div>
 									<div class="item">
 										<li>Public Safety</li>
 										<li>Residential Services</li>
 										<li>Roads and Traffic</li>
+										<li><?php echo l("Sports & Fitness", "node/102"); ?></li>
 										<li>Sustainable City</a></li>
 										<li>Trash and Recycling</li>
 										<li>Volunteering</li>

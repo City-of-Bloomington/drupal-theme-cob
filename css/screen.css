@@ -108,3 +108,5 @@ button, .button {
 
 .map { width:98%; height:300px; }
 .geo { display:none; }
+
+.field-name-field-registration a { background:url('../images/registerbutton.png') bottom left no-repeat; width:100%; min-height:3em; text-indent:-9999px; display:block; }
