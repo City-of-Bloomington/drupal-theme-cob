@@ -67,11 +67,12 @@ function cob_preprocess_page(&$vars)
 				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
 			}
 
-			$vars['pages']       = cob_node_references($vars['node'], 'page');
-			$vars['services']    = cob_node_references($vars['node'], 'service');
-			$vars['departments'] = cob_node_references($vars['node'], 'department');
-			$vars['webforms']    = cob_node_references($vars['node'], 'webform');
-			$vars['boards']      = cob_node_references($vars['node'], 'board_or_commission');
+			$vars['pages']           = cob_node_references($vars['node'], 'page'               );
+			$vars['services']        = cob_node_references($vars['node'], 'service'            );
+			$vars['departments']     = cob_node_references($vars['node'], 'department'         );
+			$vars['webforms']        = cob_node_references($vars['node'], 'webform'            );
+			$vars['boards']          = cob_node_references($vars['node'], 'board_or_commission');
+			$vars['location_groups'] = cob_node_references($vars['node'], 'location_group'     );
 
 			switch ($bundle) {
 				case 'page':

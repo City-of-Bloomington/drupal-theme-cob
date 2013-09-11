@@ -515,12 +515,13 @@ echo "
 					cob_include('map', ['locations'=>&$children]);
 				}
 
-				if (!empty($department))  { cob_include('department',  ['department' =>&$department ]); }
-				if (!empty($departments)) { cob_include('departments', ['departments'=>&$departments]); }
-				if (!empty($boards))      { cob_include('boards',      ['boards'     =>&$boards     ]); }
-				if (!empty($siblings))    { cob_include('siblings',    ['siblings'   =>&$siblings   ]); }
-				if (!empty($sponsors))    { cob_include('sponsors',    ['sponsors'   =>&$sponsors   ]); }
-				if (!empty($news))        { cob_include('news',        ['news'       =>&$news       ]); }
+				if (!empty($department))      { cob_include('department'     , ['department'     =>&$department     ]); }
+				if (!empty($departments))     { cob_include('departments'    , ['departments'    =>&$departments    ]); }
+				if (!empty($boards))          { cob_include('boards'         , ['boards'         =>&$boards         ]); }
+				if (!empty($siblings))        { cob_include('siblings'       , ['siblings'       =>&$siblings       ]); }
+				if (!empty($sponsors))        { cob_include('sponsors'       , ['sponsors'       =>&$sponsors       ]); }
+				if (!empty($news))            { cob_include('news'           , ['news'           =>&$news           ]); }
+				if (!empty($location_groups)) { cob_include('location_groups', ['location_groups'=>&$location_groups]); }
 
 				if (isset($related)) {
 					foreach ($related as $type=>$nodes) {
