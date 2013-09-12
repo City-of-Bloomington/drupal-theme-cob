@@ -285,7 +285,7 @@ echo "
 										<li>Grants and Funding</li>
 										<li>Health Resources</li>
 										<li>Historic Preservation</li>
-										<li><?php echo l("Housing", "taxonomy/term/9"); ?></li>
+										<li><?php echo l("Housing", "node/93"); ?></li>
 									</div>
 									<div class="item">
 										<li>Legislation</li>
