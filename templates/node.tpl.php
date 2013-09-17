@@ -120,6 +120,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_service'       ]);
 		hide($content['field_location_group']);
 		hide($content['locations'           ]);
+		hide($content['field_board_or_commission']);
 
 		hide($content['comments']);
 		hide($content['links']);

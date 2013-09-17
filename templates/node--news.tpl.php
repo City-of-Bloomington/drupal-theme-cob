@@ -94,7 +94,7 @@
 
 			elseif (!$page) {
 				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
-			
+
 			echo render($title_suffix);
 			if ($display_submitted) {
 				echo "<div class=\"submitted\">$submitted</div>";
@@ -121,6 +121,7 @@
 		hide($content['field_location']);
 		hide($content['field_program']);
 		hide($content['field_service']);
+		hide($content['field_board_or_commission']);
 
 		// We hide the comments and links now so that we can render them later.
 		hide($content['comments']);

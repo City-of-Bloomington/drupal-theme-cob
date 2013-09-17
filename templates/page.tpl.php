@@ -501,7 +501,7 @@ echo "
 					';
 					if (!empty($webforms)) { cob_include('webforms', ['webforms'=> &$webforms]); }
 					echo '</div>';
-					
+
 				}
 				if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
 				echo '</div>';
@@ -509,6 +509,7 @@ echo "
 			</div>
 			<?php
 			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
+				if (!empty($node['field_board_or_commission'])) { echo render($node['field_board_or_commission']); }
 				if (!empty($field_location)) {
 					cob_include('location', ['location' => &$field_location]);
 				}
