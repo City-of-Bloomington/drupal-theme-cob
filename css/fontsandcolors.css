@@ -100,3 +100,5 @@ a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 #sidebar-second .block { background-color:#eee; }
 .block .field-label { font-size:1.1em; }
 #sidebar-first .block { border-bottom:1px solid #ccc; }
+
+.node-program.node-teaser { border-bottom:1px solid #ccc; }
