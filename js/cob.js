@@ -1,15 +1,28 @@
 jQuery(document).ready(function($) {
-	$(".nav-button").click(function () {
-		$(".nav-button,.primary-nav").toggleClass("open");
-	});
-
-	$('.megadropdown .main-nav-item').bind('mouseover', function() {
-		$(this).addClass('main-nav-item-active');
-	});
-
-	$('.megadropdown .main-nav-item').bind('mouseleave', function() {
-		$(this).removeClass('main-nav-item-active');
-	});
+		var ua = navigator.userAgent;
+		function is_touch_device(){
+			try {
+				document.createEvent("TouchEvent");
+				return true;
+			} catch (e) {
+				return false;
+			}
+		}
+	
+		
+			$(".nav-button").click(function () {
+				$(".nav-button,.primary-nav").toggleClass("open");
+			});
+		
+		if (is_touch_device() == false) {
+			$('.megadropdown .main-nav-item').bind('mouseover', function() {
+				$(this).addClass('main-nav-item-active');
+			});
+		
+			$('.megadropdown .main-nav-item').bind('mouseleave', function() {
+				$(this).removeClass('main-nav-item-active');
+			});
+		}
 
 	$('.hcards').each(function () {
 		var locations = $(this).find('.geo'),
