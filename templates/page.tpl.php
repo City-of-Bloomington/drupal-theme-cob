@@ -136,7 +136,7 @@ echo "
 					<a href="" class="withDD main-nav-tab">My Government</a>
 					<div class="megadropdown-region" id="governmentItem">
 						<div class="smleft">
-								<div class="topics">
+								<div class=fourcolumns>
 									<ul>
 									<div class="item">
 										<li><h4>Mayor Mark Kruzan</h4></li>
@@ -210,7 +210,7 @@ echo "
 						</div>
 						<div class="smright">
 							<p>
-								<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactus.png" />
+								<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactrectangle.png" />
 							</p>
 						</div>
 					</div>
@@ -220,7 +220,7 @@ echo "
 
 					<div class="megadropdown-region">
 						<div class="smleft">
-							<div class="topics">
+							<div class=fourcolumns>
 								<ul>
 									<div class="item">
 										<li><h4>Apply</h4></li>
@@ -257,7 +257,7 @@ echo "
 						</div>
 							<div class="smright">
 								<h4>Pay Your Utility Bill</h4>
-								<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthinsurance.png" /></p>
+								<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/utilityrectangle.png" /></p>
 							</div>
 					</div>
 				</li>
@@ -266,7 +266,7 @@ echo "
 
 					<div class="megadropdown-region">
 						<div class="smleft">
-							<div class="topics">
+							<div class=fourcolumns>
 								<ul>
 									<div class="item">
 										<li>About Bloomington</li>
@@ -368,7 +368,7 @@ echo "
 					</div>
 						<div class="smright">
 							<h4>Health Insurance Info</h4>
-							<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthinsurance.png" /></p>
+							<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthcarerectangle.png" /></p>
 						</div>
 					</div>
 				</li>

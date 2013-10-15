@@ -24,14 +24,20 @@
 		box-sizing: border-box;
 		display:none;
 	}
-	.smleft { float:left; width:81%; padding:.5%; }
-	.smright {float:left; width:15%; padding:.5%; }
+	.smleft { float:left; width:77%; padding:.5%; }
+	.smright {float:left; width:20%; padding:.5%; }
 	.smbottom { 
 		-webkit-column-count:2; -moz-column-count:2; column-count:2;
 	}
-	.topics { 
+	.fourcolumns { 
 		margin:0 0 .5em 0; 
 		-webkit-column-count:4; -moz-column-count:4; column-count:4;
+		column-gap:0; -moz-column-gap:0; -webkit-column-gap:0;
+		min-width:250px;
+	}
+		.threecolumns { 
+		margin:0 0 .5em 0; 
+		-webkit-column-count:3; -moz-column-count:3; column-count:3;
 		column-gap:0; -moz-column-gap:0; -webkit-column-gap:0;
 		min-width:250px;
 	}
@@ -55,7 +61,7 @@
 	.item { display:inline-block; }
 	
 
-@media only screen and (max-width: 799px) {
+@media only screen and (max-width: 799px) and (max-device-width: 799px){
 
 /* Navigation Button
 	-------------------------------------------------------- */

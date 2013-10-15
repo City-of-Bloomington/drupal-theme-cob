@@ -133,51 +133,54 @@ echo "
 	</div> <!--/#header -->
 		<ul class="megadropdown primary-nav">
 				<li class="main-nav-item">
-					<a href="" class="withDD main-nav-tab">My Government</a>
+					<a href="/drupal/node/127" class="withDD main-nav-tab">My Government</a>
 					<div class="megadropdown-region" id="governmentItem">
 						<div class="smleft">
-								<div class="topics">
+								<div class="fourcolumns">
 									<ul>
-									<div class="item">
+									<li><ul>
 										<li><h4>Mayor Mark Kruzan</h4></li>
 										<li><a href="/news">City News</a></li>
 										<li>State of the City Address</li>
 										<li>Proclamations</li>
 										<li>More</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul>
 										<li><h4>Bloomington Common Council</h4></li>
 										<li>Meeting Schedule and Agenda</li>
 										<li>Meeting Minutes</li>
 										<li>Contacting the Council</li>
 										<li>Find your Council Representative</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul>
 										<li><h4>Topics</h4></li>
 										<li>Citizen Involvement</li>
 										<li>City Projects</li>
 										<li>City Initiatives</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul>
 										<li>Doing Business with the City</li>
 										<li>Employment Opportunities</li>
 										<li>Municipal Code</li>
 										<li>See more about Government</li>
-									</div>
+									</ul></li>
 									</ul>
 								</div>
 								<div class="smbottom">
 									<h4>City Boards and Commissions</h4>
 									<form action="URL">
+										<fieldset>
 										<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
 											<option>Animal Control Commission</option>
 											<option>Bicycle and Pedestrian Safety Commission</option>
 											<option>Bloomington Community Arts Commission</option>
 											<option>Bloomington Digital Underground Advisory Committee</option>
 										</select>
+										</fieldset>
 									</form>
 									<h4>City Departments</h4>
 									<form action="URL">
+										<fieldset>
 									<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
 									<option value="">Select a department</option>
 									<option value="/drupal/content/animal-care-and-control">Animal Care and Control</option>
@@ -205,12 +208,13 @@ echo "
 									<option value="">Traffic</option>
 									<option value="">Utilities</option>
 									</select>
+										</fieldset>
 								</form>
 								</div>
 						</div>
 						<div class="smright">
 							<p>
-								<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactus.png" />
+								<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactrectangle.png" />
 							</p>
 						</div>
 					</div>
@@ -220,30 +224,30 @@ echo "
 
 					<div class="megadropdown-region">
 						<div class="smleft">
-							<div class="topics">
+							<div class="fourcolumns">
 								<ul>
-									<div class="item">
+									<li><ul class="item">
 										<li><h4>Apply</h4></li>
 										<li>City Jobs</li>
 										<li>Board & Commissions</li>
 										<li>Foster a shelter animal</li>
 										<li>Pet behavior consultation</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li><h4>Pay</h4></li>
 										<li>Parking Ticket</li>
 										<li>Utility Bill</li>
 										<li>Parks & Recreation Dept Facilities</li>
 										<li>Park Shelterhouses</li>
 										<li>Tee Time</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li><h4>Sign Up</h4></li>
 										<li>Citizen's Academy</li>
 										<li>Parks & Recreation Dept programs</li>
 										<li>Utilities Services</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li><h4>Report</h4></li>
 										<li>Things related to:</li>
 										<li>Land and Housing</li>
@@ -251,13 +255,13 @@ echo "
 										<li>Parks & Trails</li>
 										<li>Utilities</li>
 										<li>Quality of Living, City Comments</li>
-									</div>
+									</ul></li>
 								</ul>
 							</div>
 						</div>
 							<div class="smright">
 								<h4>Pay Your Utility Bill</h4>
-								<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthinsurance.png" /></p>
+								<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/utilitiesrectangle.png" /></p>
 							</div>
 					</div>
 				</li>
@@ -266,9 +270,9 @@ echo "
 
 					<div class="megadropdown-region">
 						<div class="smleft">
-							<div class="topics">
+							<div class="fourcolumns">
 								<ul>
-									<div class="item">
+									<li><ul class="item">
 										<li>About Bloomington</li>
 										<li>Accessibility</li>
 										<li><?php echo l("Animals", "node/91"); ?></li>
@@ -277,8 +281,8 @@ echo "
 										<li>Business</li>
 										<li>Civic Engagement</li>
 										<li>Community Events</li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li>Diversity</li>
 										<li>Employment</li>
 										<li><?php echo l("Farmers Market", "node/40"); ?></li>
@@ -286,24 +290,24 @@ echo "
 										<li>Health Resources</li>
 										<li>Historic Preservation</li>
 										<li><?php echo l("Housing", "node/93"); ?></li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li>Legislation</li>
 										<li>Maps, GIS, Location Tools</li>
 										<li>Neighborhoods</li>
 										<li><a href="/news">News</a></li>
 										<li><?php echo l("Parking", "node/92"); ?></li>
 										<li><?php echo l("Parks & Recreation Programs", "node/103"); ?></li>
-									</div>
-									<div class="item">
+									</ul></li>
+									<li><ul class="item">
 										<li>Public Safety</li>
 										<li>Residential Services</li>
 										<li>Roads and Traffic</li>
 										<li><?php echo l("Sports & Fitness", "node/102"); ?></li>
-										<li>Sustainable City</a></li>
+										<li>Sustainable City</li>
 										<li>Trash and Recycling</li>
 										<li>Volunteering</li>
-									</div>
+									</ul></li>
 								</ul>
 							</div>
 						<div class="smbottom">
@@ -368,7 +372,7 @@ echo "
 					</div>
 						<div class="smright">
 							<h4>Health Insurance Info</h4>
-							<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthinsurance.png" /></p>
+							<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthcarerectangle.png" /></p>
 						</div>
 					</div>
 				</li>
@@ -421,69 +425,77 @@ echo "
 	?>
 	<div id="main" class="clearfix">
 		<div id="content" class="column">
-			<div id="frontpageCurrent">
-			<?php
-				if ($tabs) {
-					echo '<div class="tabs">';
-					echo render($tabs);
-					echo '</div>';
-				}
-				echo render($page['help']);
-				if ($action_links) {
-					echo '<ul class="action-links">';
-					echo render($action_links);
-					echo '</ul>';
-				}
-
-				echo $feed_icons;
-
-				echo '
-						<div id="frontpageNews">
-							<h2>City News Highlights</h2>
+			<div id="frontpagelargeColumn">
+				<?php
+					if ($tabs) {
+						echo '<div class="tabs">';
+						echo render($tabs);
+						echo '</div>';
+					}
+					echo render($page['help']);
+					if ($action_links) {
+						echo '<ul class="action-links">';
+						echo render($action_links);
+						echo '</ul>';
+					}
+				?>
+				<div id="frontpageCurrent">
+					<div id="frontpageNews">
+						<h2>City News Highlights</h2>
 	
-							<ul><li>Bloomington Offers Opportunity to Educate Children on Gardening and Healthy Eating</li>
-								<li>MOSAIC Presents A Diversity Film Festival</li>
-								<li>City of Bloomington Arts Commission Announces April 2012 Grant Recipients</li>
-								<li>First Annual Eco-Hero Award Contest</li>
-								<li>Teens Serve the Community on Global Youth Service Day</li>
-								<li>More News...</li>
-							</ul>
+						<ul><li>Bloomington Offers Opportunity to Educate Children on Gardening and Healthy Eating</li>
+							<li>MOSAIC Presents A Diversity Film Festival</li>
+							<li>City of Bloomington Arts Commission Announces April 2012 Grant Recipients</li>
+							<li>First Annual Eco-Hero Award Contest</li>
+							<li>Teens Serve the Community on Global Youth Service Day</li>
+							<li>More News...</li>
+						</ul>
+					</div>
+	
+					<div id="frontpageEvents">
+						<h2>Upcoming Events</h2>
+						<h4>Thu, Oct 3</h4>
+						<div class="frontpageEventListings">
+						<ul>
+							<li>SilverSneakers Cardio Circuit</li>
+							<li>SilverSneakers Muscle Strength and Range of Movement</li>
+							<li>Bloomington Digital Underground Advisory Committee</li>
+							<li>Commission on the Status of Women</li>
+							<li>Bloomington Walking Club</li>
+						</ul>
+						<h4>Fri, Oct 4</h4>
+						<ul><li>Hola Bloomington</li></ul>
 						</div>
-
-						<div id="frontpageEvents">
-							<h2>Upcoming Events</h2>
-							<h4>Thu, Oct 3</h4>
-							<div class="frontpageEventListings">
-							<ul>
-								<li>SilverSneakers Cardio Circuit</li>
-								<li>SilverSneakers Muscle Strength and Range of Movement</li>
-								<li>Bloomington Digital Underground Advisory Committee</li>
-								<li>Commission on the Status of Women</li>
-								<li>Bloomington Walking Club</li>
-							</ul>
-							<h4>Fri, Oct 4</h4>
-							<ul><li>Hola Bloomington</li></ul>
-							</div>
-						</div>';
-		?>
+					</div>
+				</div>
+				<div id="frequentlyRequested">
+					<div id="frcol1">
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/parksrectangle.jpg" />
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/ureportrectangle.png" />
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthcarerectangle.png" />
+					</div>
+					<div id="frcol2">
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactrectangle.png" />
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/employmentrectangle.png" />
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/adopttodayrectangle.png" />
+					</div>
+				</div>
 			</div>
-		<?php
-			echo '<div id="frontpageFeatured">
-					<div id="homepageFeaturedNews"
-						<div class="featuredItem">
+			<div id="frontpageFeatured">
+				<div id="homepageFeaturedNews">
+					<div class="featuredItem">
 						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/shermie.jpg" />
 						<h4>Test City Celebrates Be Kind to Animals Week in 2013</h4>
 						<p>Mayor Mark Kruzan announced that the City of Bloomington will recognize Be Kind to Animals Week, May 5 - 13, 2012, in conjunction with American Humane Associations annual national celebration.</p>
-						</div>
-						<div class="featuredItem">
-							<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/brain-exhibit.jpg" />
-							<h4>Brain Extravaganza set to Invate Bloomington</h4>
-							<p>Twenty-two brains will soon be displayed throughout the Bloomington community from late April until October of this year. Sponsored by Jill Bolte Taylor BRAINS, Inc, these brains stand 5 feet tall, and will be a sight to see!</p>
-						</div>
 					</div>
-				</div>';
-		?>
-			</div> <!-- /#content -->
+					<div class="featuredItem">
+						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/brain-exhibit.jpg" />
+						<h4>Brain Extravaganza set to Invate Bloomington</h4>
+						<p>Twenty-two brains will soon be displayed throughout the Bloomington community from late April until October of this year. Sponsored by Jill Bolte Taylor BRAINS, Inc, these brains stand 5 feet tall, and will be a sight to see!</p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /#content -->
 	</div> <!-- /#main -->
 
 	<div id="footer">
