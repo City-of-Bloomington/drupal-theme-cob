@@ -82,10 +82,11 @@ input#edit-search-block-form--2 { display:block; float:left; width:15em; height:
 	.boxIcons span { display:inline-block; margin:.25%; }
 	#frontpageCurrent { width:100%; overflow:auto; margin-bottom:.5em; }
 	#frequentlyRequested { width:100%; }
-	#frcol1 { width:49%; float:left; }
-	#frcol2 { width:49%; margin-left:50%;  }
+	.frrow1 { width:100%; clear:both; margin-bottom:1em; }
 	.boxIcons img { margin:0; }
 	.boxIcons { clear:both; }
+	.homepageFeaturedservice img { float:left; }
+	.homepageFeaturedservice { float:left; width:50%;  }
 }
 
 #frontpageEvents ul { list-style-type:none; margin:.25em 0; padding:0; }
