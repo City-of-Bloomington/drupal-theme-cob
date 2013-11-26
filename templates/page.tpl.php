@@ -184,12 +184,14 @@ echo "
 						|| isset($node['field_registration'  ])
 						|| isset($node['field_instructor'    ])
 						|| isset($node['field_program'       ])
+						|| isset($node['field_project'       ])
 						|| isset($node['field_service'       ])
 						|| isset($node['field_location_group'])) {
 
 						echo '<div class="block">';
 						if (isset($node['field_location_group'])) { echo render($node['field_location_group']); }
 						if (isset($node['field_program'       ])) { echo render($node['field_program'       ]); }
+						if (isset($node['field_project'       ])) { echo render($node['field_project'       ]); }
 						if (isset($node['field_running_from'  ])) { echo render($node['field_running_from'  ]); }
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
@@ -234,6 +236,7 @@ echo "
 
 				}
 				if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
+				if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';
 			?>
 			</div>
