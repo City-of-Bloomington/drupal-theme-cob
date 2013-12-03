@@ -200,15 +200,22 @@ echo "
 						echo '</div>';
 					}
 
-					if (isset($node['field_hours_of_operation'])) {
-						echo '<div class="block">';
-						echo render($node['field_hours_of_operation']);
-						echo '</div>';
-					}
 
 					if (isset($node['field_contact_info'])) {
 						echo '<div class="block">';
 						echo render($node['field_contact_info']);
+						echo '</div>';
+					}
+					
+					if (isset($node['field_staff'])) {
+						echo '<div class="block">';
+						echo render($node['field_staff']);
+						echo '</div>';
+					}
+
+					if (isset($node['field_hours_of_operation'])) {
+						echo '<div class="block">';
+						echo render($node['field_hours_of_operation']);
 						echo '</div>';
 					}
 
