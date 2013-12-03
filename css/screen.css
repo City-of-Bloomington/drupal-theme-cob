@@ -1,5 +1,7 @@
 body { line-height:1; }
 legend { padding:.25em; }
+em { font-style:italic; }
+strong { font-weight:bold; }
 i { padding:0 .25em; }
 p { margin:0 0 .5em 0; }
 li { margin:0 0 .25em 0; }
