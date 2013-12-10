@@ -177,6 +177,9 @@ echo "
 					if (isset($node['field_sidebar_image'])) {
 						echo render($node['field_sidebar_image']);
 					}
+				if (isset($node['field_sidebar_image_caption'])){
+					echo render($node['field_sidebar_image_caption']);
+					}	
 
 					if (   isset($node['field_running_from'  ])
 						|| isset($node['field_cost'          ])
@@ -191,6 +194,7 @@ echo "
 						echo '<div class="block">';
 						if (isset($node['field_location_group'])) { echo render($node['field_location_group']); }
 						if (isset($node['field_program'       ])) { echo render($node['field_program'       ]); }
+						if (isset($node['field_service'       ])) { echo render($node['field_service'       ]); }
 						if (isset($node['field_project'       ])) { echo render($node['field_project'       ]); }
 						if (isset($node['field_running_from'  ])) { echo render($node['field_running_from'  ]); }
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
