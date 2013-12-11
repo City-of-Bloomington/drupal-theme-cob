@@ -107,6 +107,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 
 		hide($content['field_banner'        ]);
 		hide($content['field_sidebar_image' ]);
+		hide($content['field_sidebar_image_caption' ]);
 		hide($content['field_running_from'  ]);
 		hide($content['field_cost'          ]);
 		hide($content['field_ages'          ]);
