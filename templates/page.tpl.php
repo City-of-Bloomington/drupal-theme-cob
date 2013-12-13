@@ -182,6 +182,7 @@ echo "
 					}	
 
 					if (   isset($node['field_running_from'  ])
+						|| isset($node['field_meetings'      ])
 						|| isset($node['field_cost'          ])
 						|| isset($node['field_ages'          ])
 						|| isset($node['field_registration'  ])
@@ -197,6 +198,7 @@ echo "
 						if (isset($node['field_service'       ])) { echo render($node['field_service'       ]); }
 						if (isset($node['field_project'       ])) { echo render($node['field_project'       ]); }
 						if (isset($node['field_running_from'  ])) { echo render($node['field_running_from'  ]); }
+						if (isset($node['field_meetings'	  ])) { echo render($node['field_meetings'		]); }
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
 						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }

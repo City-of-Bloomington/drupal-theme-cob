@@ -70,6 +70,7 @@ function cob_preprocess_page(&$vars)
 			$vars['news']            = cob_node_references($vars['node'], 'news'               , false, 'chronological', 10);
 			$vars['pages']           = cob_node_references($vars['node'], 'page'               );
 			$vars['services']        = cob_node_references($vars['node'], 'service'            );
+			$vars['projects']        = cob_node_references($vars['node'], 'project'            );
 			$vars['departments']     = cob_node_references($vars['node'], 'department'         );
 			$vars['webforms']        = cob_node_references($vars['node'], 'webform'            );
 			$vars['boards']          = cob_node_references($vars['node'], 'board_or_commission');
@@ -80,6 +81,7 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
 					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
 
 				break;
@@ -88,6 +90,15 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
 					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
+					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
+				break;
+			
+			case 'project':
+					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
+					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
+					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
+					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
 					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
 				break;
 			}
