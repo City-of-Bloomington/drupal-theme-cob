@@ -202,7 +202,7 @@ echo "
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
 						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
-						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
+						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }					
 						echo '</div>';
 					}
 
@@ -227,6 +227,15 @@ echo "
 
 					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}
+				
+				if (isset($node['field_park_amb_pic']) && ($node['field_park_ambassador_info'])) {
+					echo '<div class="block">';
+					echo render($node['field_park_amb_pic']);
+					echo render($node['field_park_ambassador_info'	]);
+					echo '</div>';
+				}
+
+
 				if ($page['sidebar_second']) {
 					echo render($page['sidebar_second']);
 				}

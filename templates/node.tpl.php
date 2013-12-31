@@ -126,6 +126,9 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['locations'           ]);
 		hide($content['field_board_or_commission']);
 		hide($content['field_meetings']);
+		hide($content['field_park_ambassador_info']);
+		hide($content['field_park_amb_pic']);
+		
 
 		hide($content['comments']);
 		hide($content['links']);
