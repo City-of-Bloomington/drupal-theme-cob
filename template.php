@@ -93,7 +93,7 @@ function cob_preprocess_page(&$vars)
 					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
 					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
 				break;
-			
+
 			case 'project':
 					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
 					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
@@ -163,4 +163,90 @@ function cob_renderGeoForLocation(&$l)
 			";
 		}
 	}
+}
+
+function cob_webform_element(&$variables)
+{
+	// Ensure defaults.
+	$variables['element'] += ['#title_display' => 'before'];
+
+	$element = $variables['element'];
+
+	// All elements using this for display only are given the "display" type.
+	if (isset($element['#format']) && $element['#format'] == 'html') {
+		$type = 'display';
+	}
+	else {
+		$type = ($element['#webform_component']['type'] == 'select' && isset($element['#type']))
+			? $element['#type']
+			: $element['#webform_component']['type'];
+	}
+
+	// Convert the parents array into a string, excluding the "submitted" wrapper.
+	$nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
+	$parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
+
+	$wrapper_attributes = isset($element['#wrapper_attributes'])
+		? $element['#wrapper_attributes']
+		: ['class' => []];
+	$wrapper_classes = [
+		'form-item',
+		'webform-component',
+		'webform-component-' . str_replace('_', '-', $type),
+		'webform-component--' . $parents
+	];
+
+	if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
+		$wrapper_classes[] = 'webform-container-inline';
+	}
+	$wrapper_attributes['class'] = array_merge($wrapper_classes, $wrapper_attributes['class']);
+	$output = '<div ' . drupal_attributes($wrapper_attributes) . '>' . "\n";
+
+	// If #title_display is none, set it to invisible instead - none only used if
+	// we have no title at all to use.
+	if ($element['#title_display'] == 'none') {
+		$variables['element']['#title_display'] = 'invisible';
+		$element['#title_display'] = 'invisible';
+		if (empty($element['#attributes']['title']) && !empty($element['#title'])) {
+			$element['#attributes']['title'] = $element['#title'];
+		}
+	}
+	// If #title is not set, we don't display any label or required marker.
+	if (!isset($element['#title'])) {
+		$element['#title_display'] = 'none';
+	}
+	$prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . webform_filter_xss($element['#field_prefix']) . '</span> ' : '';
+	$suffix = isset($element['#field_suffix']) ? '<span class="field-suffix">' . webform_filter_xss($element['#field_suffix']) . '</span>'  : '';
+
+	// We want to render the description before the element, not after
+	$description = (!empty($element['#description']))
+		? '<div class="description">' . $element['#description'] . "</div>\n"
+		: '';
+
+	switch ($element['#title_display']) {
+	case 'inline':
+	case 'before':
+	case 'invisible':
+		$output .= theme('form_element_label', $variables);
+		$output .= $description;
+		$output .= $prefix . $element['#children'] . $suffix . "\n";
+		break;
+
+	case 'after':
+		$output .= $description;
+		$output .= $prefix . $element['#children'] . $suffix;
+		$output .= theme('form_element_label', $variables) . "\n";
+		break;
+
+	case 'none':
+	case 'attribute':
+		// Output no label and no required marker, only the children.
+		$output .= $description;
+		$output .= $prefix . $element['#children'] . $suffix . "\n";
+		break;
+	}
+
+	$output .= "</div>\n";
+
+	return $output;
 }
