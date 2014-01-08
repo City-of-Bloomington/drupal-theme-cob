@@ -115,7 +115,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_instructor'    ]);
 		hide($content['field_sponsors'      ]);
 		hide($content['field_department'    ]);
-		hide($content['field_contact_info'  ]);		
+		hide($content['field_contact_info'  ]);
 		hide($content['field_hours_of_operation'  ]);
 		hide($content['field_staff'  		]);
 		hide($content['field_location'      ]);
@@ -128,7 +128,8 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_meetings']);
 		hide($content['field_park_ambassador_info']);
 		hide($content['field_park_amb_pic']);
-		
+		hide($content['field_link_url']);
+
 
 		hide($content['comments']);
 		hide($content['links']);

@@ -133,7 +133,7 @@ echo "
 	</div> <!--/#header -->
 	<?php
 		include __DIR__.'/../includes/dropdowns.php';
-	
+
 		if ($title || $breadcrumb) {
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
@@ -179,7 +179,7 @@ echo "
 					}
 				if (isset($node['field_sidebar_image_caption'])){
 					echo render($node['field_sidebar_image_caption']);
-					}	
+					}
 
 					if (   isset($node['field_running_from'  ])
 						|| isset($node['field_meetings'      ])
@@ -202,7 +202,7 @@ echo "
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
 						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
-						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }					
+						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
 						echo '</div>';
 					}
 
@@ -212,7 +212,7 @@ echo "
 						echo render($node['field_contact_info']);
 						echo '</div>';
 					}
-					
+
 					if (isset($node['field_staff'])) {
 						echo '<div class="block">';
 						echo render($node['field_staff']);
@@ -227,7 +227,7 @@ echo "
 
 					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}
-				
+
 				if (isset($node['field_park_amb_pic']) && ($node['field_park_ambassador_info'])) {
 					echo '<div class="block">';
 					echo render($node['field_park_amb_pic']);
@@ -290,6 +290,12 @@ echo "
 						}
 					}
 				}
+				if (isset($node['field_link_url'])) {
+					echo '<div class="block">';
+					echo render($node['field_link_url']);
+					echo '</div>';
+				}
+
 				if ($page['sidebar_first']) {
 					echo render($page['sidebar_first']);
 				}
