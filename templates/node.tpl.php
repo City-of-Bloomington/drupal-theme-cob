@@ -125,9 +125,13 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_location_group']);
 		hide($content['locations'           ]);
 		hide($content['field_board_or_commission']);
-		hide($content['field_meetings']);
+		hide($content['field_meetings'		]);
 		hide($content['field_park_ambassador_info']);
-		hide($content['field_park_amb_pic']);
+		hide($content['field_park_amb_pic'	]);
+		hide($content['field_members'	    ]);
+		hide($content['field_topics'	    ]);
+		hide($content['field_link_url'		]);
+
 		hide($content['field_link_url']);
 
 

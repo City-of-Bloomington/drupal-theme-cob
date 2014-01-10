@@ -246,20 +246,31 @@ echo "
 
 				echo '<div class="directLinks">';
 
-				if (!empty($pages) || !empty($services) || !empty($webforms)) {
-					echo '<div class="columnLists">';
-					if (!empty($pages   )) { cob_include('pages',    ['pages'   => &$pages   ]); }
-					if (!empty($services)) { cob_include('services', ['services'=> &$services]); }
-					echo '</div>
-					<div class="columnLists">
-					';
-					if (!empty($webforms)) { cob_include('webforms', ['webforms'=> &$webforms]); }
-					echo '</div>';
-
-				}
-				if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
-				if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
+					if (!empty($pages) || !empty($services) || !empty($webforms)) {
+						echo '<div class="columnLists">';
+						if (!empty($pages   )) { cob_include('pages',    ['pages'   => &$pages   ]); }
+						if (!empty($services)) { cob_include('services', ['services'=> &$services]); }
+						echo '</div>
+						<div class="columnLists">
+						';
+						if (!empty($webforms)) { cob_include('webforms', ['webforms'=> &$webforms]); }
+						echo '</div>';
+	
+					}
+					if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
+					if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';
+				
+				if (isset($node['field_members'])) {
+					echo '<div class="block">';
+					echo render($node['field_members']);
+					echo '</div>';
+				}
+				if (isset($node['field_topics'])) {
+					echo '<div class="block">';
+					echo render($node['field_topics']);
+					echo '</div>';
+				}
 			?>
 			</div>
 			<?php
