@@ -129,7 +129,7 @@ input#edit-search-block-form--2 { display:block; float:left; width:15em; height:
 
 @media screen and (min-device-width:500px) and (min-width:500px) {
 	.teaserView { position:relative; overflow:auto; }
-	#main-content .teaserView { clear:left; width:98%; }
+	#main-content .teaserView { clear:left; }
 	.node-teaser { clear:both; margin:1em 0; padding:.5em 0; overflow:hidden; }
 	.node-teaser img { float:left; margin-right:1%; padding-bottom:.5em; width:auto; height:6em; }
 	.columnLists .block { margin-right:1em; float:left; overflow:auto; }

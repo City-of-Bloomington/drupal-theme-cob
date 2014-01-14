@@ -266,6 +266,13 @@ echo "
 					echo render($node['field_members']);
 					echo '</div>';
 				}
+				
+				if (isset($node['field_meeting_schedule'])) {
+					echo '<div class="block">';
+					echo render($node['field_meeting_schedule']);
+					echo '</div>';
+				}
+				
 				if (isset($node['field_topics'])) {
 					echo '<div class="block">';
 					echo render($node['field_topics']);
