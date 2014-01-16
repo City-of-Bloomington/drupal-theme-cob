@@ -83,19 +83,11 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 	echo $user_picture;
 	echo render($title_prefix);
 
-
 	if (!$page) {
-
-		if($view_mode=='teaser') {
-			echo "<h3$title_attributes><a href=\"$node_url\">$title</a></h3>";
-		}
-
-		else {
-				echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
-		}
+		$h = $view_mode=='teaser' ? 'h3' : 'h2';
+		$i = $logged_in ? " (node/{$node->nid})" : '';
+		echo "<$h$title_attributes><a href=\"$node_url\">$title$i</a></$h>";
 	}
-
-
 
 	echo render($title_suffix);
 

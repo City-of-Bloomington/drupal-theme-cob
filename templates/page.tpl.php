@@ -138,7 +138,8 @@ echo "
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
 			if ($title) {
-				echo "<h1 class=\"title\" id=\"page-title\">$title</h1>";
+				$i = $logged_in && isset($node) ? " (node/{$node['body']['#object']->nid})" : '';
+				echo "<h1 class=\"title\" id=\"page-title\">$title$i</h1>";
 			}
 			echo render($title_suffix);
 			if ($breadcrumb) {
@@ -255,24 +256,24 @@ echo "
 						';
 						if (!empty($webforms)) { cob_include('webforms', ['webforms'=> &$webforms]); }
 						echo '</div>';
-	
+
 					}
 					if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
 					if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';
-				
+
 				if (isset($node['field_members'])) {
 					echo '<div class="block">';
 					echo render($node['field_members']);
 					echo '</div>';
 				}
-				
+
 				if (isset($node['field_meeting_schedule'])) {
 					echo '<div class="block">';
 					echo render($node['field_meeting_schedule']);
 					echo '</div>';
 				}
-				
+
 				if (isset($node['field_topics'])) {
 					echo '<div class="block">';
 					echo render($node['field_topics']);

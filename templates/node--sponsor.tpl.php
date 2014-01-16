@@ -84,7 +84,8 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 
 	echo render($title_prefix);
 	if (!$page && $view_mode!='sidebar') {
-		echo "<h2$title_attributes><a href=\"$node_url\">$title</a></h2>";
+		$i = $logged_in ? " (node/{$node->nid})" : '';
+		echo "<h2$title_attributes><a href=\"$node_url\">$title$i</a></h2>";
 	}
 	echo render($title_suffix);
 
