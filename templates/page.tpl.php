@@ -178,9 +178,15 @@ echo "
 					if (isset($node['field_sidebar_image'])) {
 						echo render($node['field_sidebar_image']);
 					}
+				
 				if (isset($node['field_sidebar_image_caption'])){
 					echo render($node['field_sidebar_image_caption']);
 					}
+
+				if (isset($node) && $node['#bundle'] == 'program') {
+					cob_include('upcoming_events', ['events' => cob_upcoming_events($node['#node']->nid)]);
+					}
+
 
 					if (   isset($node['field_running_from'  ])
 						|| isset($node['field_meetings'      ])
@@ -220,9 +226,9 @@ echo "
 						echo '</div>';
 					}
 
-					if (isset($node['field_hours_of_operation'])) {
+					if (isset($node['field_hours'])) {
 						echo '<div class="block">';
-						echo render($node['field_hours_of_operation']);
+						echo render($node['field_hours']);
 						echo '</div>';
 					}
 
@@ -301,10 +307,6 @@ echo "
 				if (!empty($sponsors))        { cob_include('sponsors'       , ['sponsors'       =>&$sponsors       ]); }
 				if (!empty($news))            { cob_include('news'           , ['news'           =>&$news           ]); }
 				if (!empty($location_groups)) { cob_include('location_groups', ['location_groups'=>&$location_groups]); }
-
-				if (isset($node) && $node['#bundle'] == 'program') {
-					cob_include('upcoming_events', ['events' => cob_upcoming_events($node['#node']->nid)]);
-				}
 
 				if (isset($related)) {
 					foreach ($related as $type=>$nodes) {
