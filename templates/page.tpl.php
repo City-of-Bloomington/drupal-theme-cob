@@ -179,12 +179,15 @@ echo "
 						echo render($node['field_sidebar_image']);
 					}
 				
-				if (isset($node['field_sidebar_image_caption'])){
-					echo render($node['field_sidebar_image_caption']);
+					if (isset($node['field_sidebar_image_caption'])) {
+						echo render($node['field_sidebar_image_caption']);
 					}
 
-				if (isset($node) && $node['#bundle'] == 'program') {
-					cob_include('upcoming_events', ['events' => cob_upcoming_events($node['#node']->nid)]);
+					if (isset($node) && $node['#bundle'] == 'program') {
+						$events = cob_upcoming_events($node['#node']->nid);
+						if (count($events)) {
+							cob_include('upcoming_events', ['events' => $events]);
+						}
 					}
 
 
