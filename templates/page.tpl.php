@@ -178,14 +178,14 @@ echo "
 					if (isset($node['field_sidebar_image'])) {
 						echo render($node['field_sidebar_image']);
 					}
-				
+
 					if (isset($node['field_sidebar_image_caption'])) {
 						echo render($node['field_sidebar_image_caption']);
 					}
 
 					if (isset($node) && $node['#bundle'] == 'program') {
 						$events = cob_upcoming_events($node['#node']->nid);
-						if (count($events)) {
+						if ($events->rowCount()) {
 							cob_include('upcoming_events', ['events' => $events]);
 						}
 					}
