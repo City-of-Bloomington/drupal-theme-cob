@@ -96,7 +96,7 @@
 									<li><ul class="item">
 										<li><h4>Apply</h4></li>
 										<li>City Jobs</li>
-										<li>Board & Commissions</li>
+										<li>Board &amp; Commissions</li>
 										<li>Foster a shelter animal</li>
 										<li>Pet behavior consultation</li>
 									</ul></li>
@@ -104,14 +104,14 @@
 										<li><h4>Pay</h4></li>
 										<li>Parking Ticket</li>
 										<li>Utility Bill</li>
-										<li>Parks & Recreation Dept Facilities</li>
+										<li>Parks &amp; Recreation Dept Facilities</li>
 										<li>Park Shelterhouses</li>
 										<li>Tee Time</li>
 									</ul></li>
 									<li><ul class="item">
 										<li><h4>Sign Up</h4></li>
 										<li>Citizen's Academy</li>
-										<li>Parks & Recreation Dept programs</li>
+										<li>Parks &amp; Recreation Dept programs</li>
 										<li>Utilities Services</li>
 									</ul></li>
 									<li><ul class="item">
@@ -119,13 +119,13 @@
 										<li>Things related to:</li>
 										<li>Land and Housing</li>
 										<li>Traffic, Roads and Sidewalks</li>
-										<li>Parks & Trails</li>
+										<li>Parks &amp; Trails</li>
 										<li>Utilities</li>
 										<li>Quality of Living, City Comments</li>
 									</ul></li>
 								</ul>
 							</div>
-						</d 
+						</div>
 					</div>
 				</li>
 				<li class="main-nav-item">
