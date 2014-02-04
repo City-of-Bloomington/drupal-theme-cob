@@ -15,21 +15,16 @@
  */
 echo "
 <div class=\"block\">
-
 ";
-
 	foreach ($data['events'] as $row) {
 		$date = new DateTime($row->date);
-		$s = $date->format('D, F j, Y g:ia');
-		print_r($s);
 		echo "
 		<h4>{$row->title}</h4>
-		<div>$row-></div>
-		<div>$s</div>
-		<div>".l("More Info", "node/{$row->event_node_id}")."</div>
+		<div></div>
+		<div>{$date->format('D, F j, Y g:ia')}</div>
+		<div>".l('More Info', "node/{$row->event_node_id}")."</div>
 		";
 	}
 echo "
-
 </div>
 ";
