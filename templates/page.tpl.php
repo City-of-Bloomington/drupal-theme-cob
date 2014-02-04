@@ -182,6 +182,10 @@ echo "
 					if (isset($node['field_sidebar_image_caption'])) {
 						echo render($node['field_sidebar_image_caption']);
 					}
+					
+					if (isset($node['field_description'])) {
+						echo render($node['field_description']);
+					}
 
 					if (isset($node) && $node['#bundle'] == 'program') {
 						$events = cob_upcoming_events($node['#node']->nid);
