@@ -138,7 +138,7 @@ echo "
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
 			if ($title) {
-				$i = $logged_in && isset($node) ? " (node/{$node['body']['#object']->nid})" : '';
+				$i = $logged_in && isset($node) ? " (node/{$node['#node']->nid})" : '';
 				echo "<h1 class=\"title\" id=\"page-title\">$title$i</h1>";
 			}
 			echo render($title_suffix);
