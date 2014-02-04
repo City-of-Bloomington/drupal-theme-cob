@@ -10,12 +10,12 @@ img { border:0; max-width:98%; height:auto; margin:.25em; }
 td, th { padding:.25em; }
 
 
-/* 
+/*
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
+@media
 only screen and (max-width: 640px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
@@ -24,14 +24,14 @@ thead:after { visibility: hidden; display: block; font-size: 0; content: " "; cl
 
 	/* Force table to not be like tables anymore */
 	table { width:100%; position:relative; line-height:1.25em; }
-	table, thead, tbody, th, td { 
+	table, thead, tbody, th, td {
 		display: block;  font-size:.9em;
 	}
 	thead { float:left; }
 	tbody { width:auto; position:relative; white-space:nowrap;  overflow-x:auto; }
 	tbody tr { display:inline-block; vertical-align:top; }
 	td { text-wrap:normal; vertical-align:top;  }
-	
+
 }
 
 /*Overall Template */
@@ -168,3 +168,4 @@ button, .button {
 
 .field-name-field-registration a { background:url('../images/registerbutton.png') bottom left no-repeat; width:100%; min-height:3em; text-indent:-9999px; display:block; }
 
+#open311Client { width:100%; }
