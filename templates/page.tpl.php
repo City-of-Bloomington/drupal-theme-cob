@@ -184,7 +184,9 @@ echo "
 					}
 					
 					if (isset($node['field_description'])) {
+						echo '<div class="block">';
 						echo render($node['field_description']);
+						echo '</div>';
 					}
 
 					if (isset($node) && $node['#bundle'] == 'program') {
@@ -215,8 +217,12 @@ echo "
 						if (isset($node['field_meetings'	  ])) { echo render($node['field_meetings'		]); }
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
-						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
 						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
+						if (isset($node['field_holds'    ])) { echo render($node['field_holds'   			]); }
+						if (isset($node['field_electricity'    ])) { echo render($node['field_electricity'  ]); }
+						if (isset($node['field_accessible'    ])) { echo render($node['field_accessible'    ]); }
+						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
+
 						echo '</div>';
 					}
 
@@ -271,6 +277,8 @@ echo "
 						echo '</div>';
 
 					}
+					
+					if (!empty($park_shelters))     { cob_include('park_shelters', ['park_shelters'=> &$park_shelters]); }
 					if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
 					if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';

@@ -70,6 +70,7 @@ function cob_preprocess_page(&$vars)
 			$vars['news']            = cob_node_references($vars['node'], 'news'               , false, 'chronological', 10);
 			$vars['pages']           = cob_node_references($vars['node'], 'page'               );
 			$vars['services']        = cob_node_references($vars['node'], 'service'            );
+			$vars['park_shelters']   = cob_node_references($vars['node'], 'park_shelter'       );
 			$vars['projects']        = cob_node_references($vars['node'], 'project'            );
 			$vars['departments']     = cob_node_references($vars['node'], 'department'         );
 			$vars['webforms']        = cob_node_references($vars['node'], 'webform'            );
