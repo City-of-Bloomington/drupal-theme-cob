@@ -68,6 +68,10 @@ input#edit-search-block-form--2 { display:block; float:left; width:15em; height:
 .breadcrumb a { margin: 0 .25em; background:url('../images/breadcrumb.gif') center right no-repeat ; padding-right:10px; }
 #title { padding:.5em .25em; margin:.25em 0; }
 
+.toc { border:2px solid black; }
+.toc .hd { background-color:#036; color:#fff; }
+div.toc ol { list-style-type:none; padding:0; }
+
 /* Homepage Styles */
 
 
