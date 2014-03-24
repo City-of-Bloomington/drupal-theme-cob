@@ -266,10 +266,11 @@ echo "
 
 				echo '<div class="directLinks">';
 
-					if (!empty($pages) || !empty($services) || !empty($webforms)) {
+					if (!empty($pages) || !empty($services) || !empty($webforms) || !empty($residential_services)) {
 						echo '<div class="columnLists">';
 						if (!empty($pages   )) { cob_include('pages',    ['pages'   => &$pages   ]); }
 						if (!empty($services)) { cob_include('services', ['services'=> &$services]); }
+						if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }
 						echo '</div>
 						<div class="columnLists">
 						';

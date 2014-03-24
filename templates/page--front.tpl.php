@@ -168,19 +168,15 @@ echo "
 				?>
 				<div id="frontpageCurrent">
 					<div id="frontpageNews">
-						<h2>City News Highlights</h2>
-	
-						<ul><li>Bloomington Offers Opportunity to Educate Children on Gardening and Healthy Eating</li>
-							<li>MOSAIC Presents A Diversity Film Festival</li>
-							<li>City of Bloomington Arts Commission Announces April 2012 Grant Recipients</li>
-							<li>First Annual Eco-Hero Award Contest</li>
-							<li>Teens Serve the Community on Global Youth Service Day</li>
-							<li>More News...</li>
-						</ul>
+					<h2>City News Highlights</h2>
+						<p>5 most recently published (after the first two)</p>
+						<p>sidebar view</p>
+						<p>View more link</p>
 					</div>
 	
 					<div id="frontpageEvents">
 						<h2>Upcoming Events</h2>
+						<p>Next 10 events</p>
 						<h4>Thu, Oct 3</h4>
 						<div class="frontpageEventListings">
 						<ul>
@@ -192,6 +188,7 @@ echo "
 						</ul>
 						<h4>Fri, Oct 4</h4>
 						<ul><li>Hola Bloomington</li></ul>
+						<p>View more link</p>
 						</div>
 					</div>
 				</div>
@@ -220,6 +217,7 @@ echo "
 			</div>
 			<div id="frontpageFeatured">
 				<div id="homepageFeaturedNews">
+					<p>Two most recently published</p>
 					<div class="featuredItem">
 						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/shermie.jpg" />
 						<h4>Test City Celebrates Be Kind to Animals Week in 2013</h4>
