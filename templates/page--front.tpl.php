@@ -134,7 +134,7 @@ echo "
 	<?php
 		include __DIR__.'/../includes/dropdowns.php';
 
-		
+
 		if ($title || $breadcrumb) {
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
@@ -169,11 +169,18 @@ echo "
 				<div id="frontpageCurrent">
 					<div id="frontpageNews">
 					<h2>City News Highlights</h2>
-						<p>5 most recently published (after the first two)</p>
-						<p>sidebar view</p>
-						<p>View more link</p>
+					<?php
+						$news = cob_nodes_recent('news', 7);
+						$featuredNews    = array_slice($news, 0, 2);
+						$highlightedNews = array_slice($news, 2);
+
+						foreach ($highlightedNews as $node) {
+							$n = node_view($node, 'sidebar');
+							echo render($n);
+						}
+					?>
 					</div>
-	
+
 					<div id="frontpageEvents">
 						<h2>Upcoming Events</h2>
 						<p>Next 10 events</p>
@@ -212,22 +219,17 @@ echo "
 							<h4>Employment Opportunities</h4><p>See current City openings</p>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 			<div id="frontpageFeatured">
 				<div id="homepageFeaturedNews">
-					<p>Two most recently published</p>
-					<div class="featuredItem">
-						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/shermie.jpg" />
-						<h4>Test City Celebrates Be Kind to Animals Week in 2013</h4>
-						<p>Mayor Mark Kruzan announced that the City of Bloomington will recognize Be Kind to Animals Week, May 5 - 13, 2012, in conjunction with American Humane Associations annual national celebration.</p>
-					</div>
-					<div class="featuredItem">
-						<img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/brain-exhibit.jpg" />
-						<h4>Brain Extravaganza set to Invate Bloomington</h4>
-						<p>Twenty-two brains will soon be displayed throughout the Bloomington community from late April until October of this year. Sponsored by Jill Bolte Taylor BRAINS, Inc, these brains stand 5 feet tall, and will be a sight to see!</p>
-					</div>
+				<?php
+					foreach ($featuredNews as $node) {
+						$n = node_view($node, 'teaser');
+						echo render($n);
+					}
+				?>
 				</div>
 			</div>
 		</div> <!-- /#content -->
