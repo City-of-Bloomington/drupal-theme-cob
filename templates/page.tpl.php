@@ -182,7 +182,7 @@ echo "
 					if (isset($node['field_sidebar_image_caption'])) {
 						echo render($node['field_sidebar_image_caption']);
 					}
-					
+
 					if (isset($node['field_description'])) {
 						echo '<div class="block">';
 						echo render($node['field_description']);
@@ -218,8 +218,8 @@ echo "
 						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
 						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
 						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
-						if (isset($node['field_holds'    ])) { echo render($node['field_holds'   			]); }
-						if (isset($node['field_electricity'    ])) { echo render($node['field_electricity'  ]); }
+						if (isset($node['field_holds'         ])) { echo render($node['field_holds'   	    ]); }
+						if (isset($node['field_electricity'   ])) { echo render($node['field_electricity'   ]); }
 						if (isset($node['field_accessible'    ])) { echo render($node['field_accessible'    ]); }
 						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
 
@@ -244,13 +244,8 @@ echo "
 						echo render($node['field_hours']);
 						echo '</div>';
 					}
-					if (isset($node['field_committee_id'])) {
-						echo '<div class="block">';
-						echo render($node['field_committee_id']);
-						echo '</div>';
-					}
-					
-					
+
+					if (!empty($node['field_committee_id']['data'])) { cob_include('committee_sidebar', ['committee'=>&$node['field_committee_id']['data']]); }
 
 					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}
@@ -258,7 +253,7 @@ echo "
 				if (isset($node['field_park_amb_pic']) && ($node['field_park_ambassador_info'])) {
 					echo '<div class="block">';
 					echo render($node['field_park_amb_pic']);
-					echo render($node['field_park_ambassador_info'	]);
+					echo render($node['field_park_ambassador_info']);
 					echo '</div>';
 				}
 
@@ -277,7 +272,8 @@ echo "
 						echo '<div class="columnLists">';
 						if (!empty($pages   )) { cob_include('pages',    ['pages'   => &$pages   ]); }
 						if (!empty($services)) { cob_include('services', ['services'=> &$services]); }
-						if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }
+						if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }
+						if (!empty($residential_services)) { cob_include('residential_services', ['residential_services'=> &$residential_services]); }
 						echo '</div>
 						<div class="columnLists">
 						';
@@ -285,17 +281,13 @@ echo "
 						echo '</div>';
 
 					}
-					
-					if (!empty($park_shelters))     { cob_include('park_shelters', ['park_shelters'=> &$park_shelters]); }
+
+					if (!empty($park_shelters)){ cob_include('park_shelters', ['park_shelters'=> &$park_shelters]); }
 					if (!empty($programs))     { cob_include('programs', ['programs'=> &$programs]); }
 					if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';
 
-				if (isset($node['field_members'])) {
-					echo '<div class="block">';
-					echo render($node['field_members']);
-					echo '</div>';
-				}
+				if (!empty($node['field_committee_id']['data'])) { cob_include('committee_members', ['committee'=>&$node['field_committee_id']['data']]); }
 
 				if (isset($node['field_meeting_schedule'])) {
 					echo '<div class="block">';

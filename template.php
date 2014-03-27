@@ -25,11 +25,21 @@ function cob_preprocess_page(&$vars)
 			if (isset(                 $vars['node']['field_department']['#object']->field_department['und'])) {
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
-			if (isset(                 $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
+			if (isset(                          $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
 				$vars['board_or_commission'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
 			}
-			if (isset(                 $vars['node']['field_division']['#object']->field_division['und'])) {
+			if (isset(               $vars['node']['field_division']['#object']->field_division['und'])) {
 				$vars['division'] = &$vars['node']['field_division']['#object']->field_division['und'][0]['entity'];
+			}
+			/**
+			 * Loads committee information from Committee Manager
+			 */
+			if (isset($vars['node']['field_committee_id']['#items'][0]['value'])) {
+				$id = $vars['node']['field_committee_id']['#items'][0]['value'];
+				$url = "http://apps.bloomington.in.gov/committee_manager/committees/view?format=json;committee_id=$id";
+				$response = drupal_http_request($url);
+
+				$vars['node']['field_committee_id']['data'] = json_decode($response->data);
 			}
 
 			/**

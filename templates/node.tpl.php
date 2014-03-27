@@ -130,14 +130,18 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_meeting_schedule']);
 		hide($content['field_topics'	    ]);
 		hide($content['field_link_url'		]);
-		hide($content['field_committee_id'	]);
-
-		hide($content['field_link_url']);
+		hide($content['field_committee_id'  ]);
+		hide($content['field_link_url'      ]);
 
 
 		hide($content['comments']);
 		hide($content['links']);
 
+
+		if (!empty($content['field_committee_id']['data'])) {
+			module_load_include('php', 'markdown', 'markdown');
+			echo Markdown($content['field_committee_id']['data']->info->description);
+		}
 		echo render($content);
 	echo "</div>";
 
