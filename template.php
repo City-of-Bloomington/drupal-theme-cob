@@ -25,6 +25,12 @@ function cob_preprocess_page(&$vars)
 			if (isset(                 $vars['node']['field_department']['#object']->field_department['und'])) {
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
+			if (isset(                 $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
+				$vars['board_or_commission'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
+			}
+			if (isset(                 $vars['node']['field_division']['#object']->field_division['und'])) {
+				$vars['division'] = &$vars['node']['field_division']['#object']->field_division['und'][0]['entity'];
+			}
 
 			/**
 			 * Pulls the location coordinates from nodes that are referenced to the current node.

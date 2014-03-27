@@ -244,6 +244,13 @@ echo "
 						echo render($node['field_hours']);
 						echo '</div>';
 					}
+					if (isset($node['field_committee_id'])) {
+						echo '<div class="block">';
+						echo render($node['field_committee_id']);
+						echo '</div>';
+					}
+					
+					
 
 					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}

@@ -130,6 +130,7 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_meeting_schedule']);
 		hide($content['field_topics'	    ]);
 		hide($content['field_link_url'		]);
+		hide($content['field_committee_id'	]);
 
 		hide($content['field_link_url']);
 

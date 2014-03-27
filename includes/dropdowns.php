@@ -6,13 +6,13 @@
 								<div class="fourcolumns">
 									<ul>
 									<li><ul class="item">
-										<li><h4><a href="/mayor">Mayor Mark Kruzan</a></h4></li>
-										<li><a href="/news">City News</a></li>
+										<li><h4><?php echo l("Mayor Mark Kruzan", "node/643"); ?></h4></li>
+										<li><?php echo l("City News", "news"); ?></li>
 										<li><a href="/proclamations">Proclamations</a></li>
 										<li>More</li>
 									</ul></li>
 									<li><ul class="item">
-										<li><h4><a href="/council">Bloomington Common Council</a></h4></li>
+										<li><h4><?php echo l("Bloomington Common Council", "node/310"); ?></h4></li>
 										<li>Meeting Schedule and Agenda</li>
 										<li>Meeting Minutes</li>
 										<li>Contacting the Council</li>
@@ -37,43 +37,44 @@
 									<form action="URL">
 										<fieldset>
 										<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
-											<option value="/node/96">Animal Control Commission</option>
-											<option value="/node/296">Bicycle and Pedestrian Safety Commission</option>
-											<option value="/node/307">Bloomington Arts Commission</option>
-											<option value="/node/316">Bloomington Digital Underground Advisory Committee</option>
-											<option value="/node/167">Bloomington Historic Preservation Commission</option>
-											<option value="/node/321">Bloomington Human Rights Commission</option>
-											<option value="/node/322">Bloomington Industrial Development Advisory Commission</option>
-											<option value="/node/328">Bloomington Redevlopment Commission</option>
-											<option value="/node/171">Bloomington Urban Enterprise Association</option>
-											<option value="/node/351">Board of Housing Quality Appeals</option>
-											<option value="/node/352">Board of Park Commissioners</option>
-											<option value="/node/353">Board of Public Safety</option>
-											<option value="/node/354">Board of Public Works</option>
-											<option value="/node/355">Board of Zoning Appeals</option>
-											<option value="/node/448">Commission on Aging</option>
-											<option value="/node/428">Commission on Hispanic and Latino Affairs</option>
-											<option value="/node/436">Commission on Sustainability</option>
-											<option value="/node/452">Commission on the Status of Black Males</option>
-											<option value="/node/453">Commission on the Status of Children and Youth</option>
-											<option value="/node/46">Commission on the Status of Women</option>
-											<option value="/node/178">Council for Community Accessibility</option>
-											<option value="/node/33">Dr. Martin Luther King, Jr. Commission</option>
-											<option value="/node/483">Economic Development Commission</option>
-											<option value="/node/503">Environmental Commission</option>
-											<option value="/node/593">Housing Authority Board</option>
-											<option value="/node/594">Housing Trust Fund Board of Directors/option>
-											<option value="/node/648">MPO Citizens Advisory Committee</option>
-											<option value="/node/649">MPO Policy Committee</option>
-											<option value="/node/650">MPO Technical Advisory Committee</option>
-											<option value="/node/725">Plan Commission</option>
-											<option value="/node/948">Plat Committee</option>
-											<option value="/node/734">Public Transit Corporation</option>
-											<option value="/node/772">Sidewalk Committee</option>
-											<option value="/node/810">Telecommunications Council</option>
-											<option value="/node/831">Traffic Commission</option>
-											<option value="/node/500">Tree Commission</option>
-											<option value="/node/839">Utilities Service Board</option>
+											<option value="">Select a board or commission</option>
+											<option value="node/96">Animal Control Commission</option>
+											<option value="node/296">Bicycle and Pedestrian Safety Commission</option>
+											<option value="node/307">Bloomington Arts Commission</option>
+											<option value="node/316">Bloomington Digital Underground Advisory Committee</option>
+											<option value="node/167">Bloomington Historic Preservation Commission</option>
+											<option value="node/321">Bloomington Human Rights Commission</option>
+											<option value="node/322">Bloomington Industrial Development Advisory Commission</option>
+											<option value="node/328">Bloomington Redevlopment Commission</option>
+											<option value="node/171">Bloomington Urban Enterprise Association</option>
+											<option value="node/351">Board of Housing Quality Appeals</option>
+											<option value="node/352">Board of Park Commissioners</option>
+											<option value="node/353">Board of Public Safety</option>
+											<option value="node/354">Board of Public Works</option>
+											<option value="node/355">Board of Zoning Appeals</option>
+											<option value="node/448">Commission on Aging</option>
+											<option value="node/428">Commission on Hispanic and Latino Affairs</option>
+											<option value="node/436">Commission on Sustainability</option>
+											<option value="node/452">Commission on the Status of Black Males</option>
+											<option value="node/453">Commission on the Status of Children and Youth</option>
+											<option value="node/46">Commission on the Status of Women</option>
+											<option value="node/178">Council for Community Accessibility</option>
+											<option value="node/33">Dr. Martin Luther King, Jr. Commission</option>
+											<option value="node/483">Economic Development Commission</option>
+											<option value="node/503">Environmental Commission</option>
+											<option value="node/593">Housing Authority Board</option>
+											<option value="node/594">Housing Trust Fund Board of Directors/option>
+											<option value="node/648">MPO Citizens Advisory Committee</option>
+											<option value="node/649">MPO Policy Committee</option>
+											<option value="node/650">MPO Technical Advisory Committee</option>
+											<option value="node/725">Plan Commission</option>
+											<option value="node/948">Plat Committee</option>
+											<option value="node/734">Public Transit Corporation</option>
+											<option value="node/772">Sidewalk Committee</option>
+											<option value="node/810">Telecommunications Council</option>
+											<option value="node/831">Traffic Commission</option>
+											<option value="node/500">Tree Commission</option>
+											<option value="node/839">Utilities Service Board</option>
 										</select>
 										</fieldset>
 									</form>
@@ -83,24 +84,24 @@
 									<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
 									<option value="">Select a department</option>
 									<option value="/animalshelter">Animal Care and Control</option>
-									<option value="/node/329">Bloomington Transit</option>
+									<option value="node/329">Bloomington Transit</option>
 									<option value="/clerk">City Clerk</option>
 									<option value="/cfrd">Community and Family Resources (CFRD)</option>
 									<option value="/controller">Controller</option>
 									<option value="/council">Council Office</option>
-									<option value="/node/37">Economic &amp; Sustainable Development</option>
+									<option value="node/37">Economic &amp; Sustainable Development</option>
 									<option value="/engineering">Engineering</option>
 									<option value="/fire">Fire</option>
 									<option value="/hand">Housing and Neighborhood Development (HAND)</option>
-									<option value="/node/27">Human Resources</option>
+									<option value="node/27">Human Resources</option>
 									<option value="/its">Information &amp; Technology Services (ITS)</option>
 									<option value="/legal">Legal</option>
 									<option value="/mayor">Office of the Mayor (OOTM)</option>
-									<option value="/node/28">Parking Enforcement</option>
+									<option value="node/28">Parking Enforcement</option>
 									<option value="/parks">Parks and Recreation</option>
 									<option value="/planning">Planning</option>
 									<option value="/police">Police</option>
-									<option value="/node/51">Public Works</option>
+									<option value="node/51">Public Works</option>
 									<option value="/risk">Risk Management</option>
 									<option value="/sanitation">Sanitation</option>
 									<option value="/street">Street</option>
@@ -128,8 +129,8 @@
 										<ul>
 											<li><h4>Apply</h4></li>
 											<li><a href="/jobs">City Jobs</a></li>
-											<li><a href="/node/132">Board &amp; Commissions</a></li>
-											<li><a href="/node/129">See more</a></li>
+											<li><?php echo l("Board or Commission", "node/132"); ?></li>
+											<li><?php echo l("See more", "node/129"); ?></li>
 										</ul>
 										<ul>
 										<li><h4>Report</h4></li>
@@ -138,23 +139,23 @@
 									</li>
 									<li><ul class="item">
 										<li><h4>Pay</h4></li>
-										<li><a href="/node/29">Parking Ticket</a></li>
-										<li><a href="/node/912">Utility Bill</a></li>
-										<li><a href="/node/129">See more</a></li>
+										<li><?php echo l("Parking Ticket", "node/29"); ?></li>
+										<li><?php echo l("Utility Bill", "node/912"); ?></li>
+										<li><?php echo l("See more", "node/129"); ?></li>
 									</ul></li>
 									<li><ul class="item">
 										<li><h4>Sign Up</h4></li>
 										<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Parks &amp; Recreation Dept programs</a></li>
 										<li>Utilities Services</li>
-										<li><a href="/node/234">Pet behavior consultation</a></li>
-										<li><a href="/node/129">See more</a></li>
+										<li><?php echo l("Pet behavior consultation", "node/29"); ?></li>
+										<li><?php echo l("See more", "node/129"); ?></li>
 									</ul></li>
 									<li><ul class="item">
 											<li><h4>Reserve</h4></li>
 											<li><a href="/node/716">Parks &amp; Recreation Dept Facilities</a></li>
 											<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Park Shelterhouses</a></li>
 											<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Tee Time</a></li>
-											<li><a href="/node/129">See more</a></li>	
+											<li><?php echo l("See more", "node/129"); ?></li>
 									</ul>
 									</li>
 								</ul>
@@ -212,17 +213,20 @@
 							<form action="URL">
 								<fieldset>
 									<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
-										<option value="">Allison-Jukebox Community Center</option>
-										<option value="">Banneker Community Center</option>
-										<option value="">Bryan Park Pool</option>
-										<option value="">Cascades Golf Course</option>
-										<option value="">Frank Southern Ice Arena</option>
-										<option value="">Griffy Lake Boathouse</option>
-										<option value="">Mills Pool</option>
-										<option value="">Skate Park</option>
-										<option value="">Twin Lakes Recreation Center</option>
-										<option value="">Twin Lakes Sports Park</option>
-										<option>Winslow Sports Complex</option>
+										<option value="">Select a facility/option>
+										<option value="node/188">Allison-Jukebox Community Center</option>
+										<option value="node/193">Banneker Community Center</option>
+										<option value="node/77">Bryan Park Pool</option>
+										<option value="node/392">Butler Park Community Gardens</option>
+										<option value="node/225">Cascades Golf Course</option>
+										<option value="node/550">Frank Southern Ice Arena</option>
+										<option value="node/206">Griffy Lake Boathouse</option>
+										<option value="node/370">Mills Pool</option>
+										<option value="node/773">Skate Park</option>
+										<option value="node/13">Twin Lakes Recreation Center</option>
+										<option value="node/109">Twin Lakes Sports Park</option>
+										<option value="node/850">Willie Streeter Community Gardens</option>
+										<option value="node/215">Winslow Sports Complex</option>
 									</select>
 								</fieldset>
 							</form>
@@ -231,58 +235,62 @@
 							<form action="URL">
 								<fieldset>
 								<select name="URL" onchange="window.location.href= this.form.URL.options[this.form.URL.selectedIndex].value">
-								<option value="">Broadview Park</option>
-								<option value="/drupal/content/bryan-park">Bryan Park</option>
-								<option value="">Building Trades Park</option>
-								<option value="">Clear Creek Trail</option>
-								<option value="">Crestmont Park &amp; Garden</option>
-								<option value="">Goat Farm</option>
-								<option value="">Griffy Lake Nature Preserve</option>
-								<option value="">Highland Village Park</option>
-								<option value="">Latimer Woods</option>
-								<option value="">Leonard Springs Nature Park</option>
-								<option value="">Lower Cascades Park</option>
-								<option value="">Miller-Showers Park</option>
-								<option value="">Olcott Park</option>
-								<option value="">Park Ridge East Park</option>
-								<option value="">Park Ridge Park</option>
-								<option value="">Peoples Park</option>
-								<option value="">RCA Park</option>
-								<option value="">Rev Ernest D Butler Park</option>
-								<option value="">Schmalz Farm Park</option>
-								<option value="">Seminary Square Park</option>
-								<option value="">Sherwood OaksPark</option>
-								<option value="">Skate Park</option>
-								<option value="">Southeast Park</option>
-								<option value="">Third Street Park</option>
-								<option value="">Twin Lakes Sports Park</option>
-								<option value="">Upper Cascades Park</option>
-								<option value="">Wappehani Mountain Bike Park</option>
-								<option value="">Willie Streeter Community Gardens</option>
-								<option value="">Winslow Sports Complex</option>
-								<option value="">Winslow Woods Park</option>
+								<option value="">Select a park or trail</option>
+								<option value="node/186">B-Line Trail</option>
+								<option value="node/187">Bloomington Rail Trail</option>
+								<option value="node/14">Broadview Park</option>
+								<option value="node/15">Bryan Park</option>
+								<option value="node/185">Building Trades Park</option>
+								<option value="node/189">Clear Creek Trail</option>
+								<option value="node/230">Ferguson Dog Park</option>
+								<option value="node/557">Goat Farm</option>
+								<option value="node/206">Griffy Lake Nature Preserve</option>
+								<option value="node/231">Highland Village Park</option>
+								<option value="node/207">Jackson Creek Trail</option>
+								<option value="node/208">Latimer Woods</option>
+								<option value="node/209">Leonard Springs Nature Park</option>
+								<option value="node/205">Lower Cascades Park</option>
+								<option value="node/210">Miller-Showers Park</option>
+								<option value="node/211">Olcott Park</option>
+								<option value="node/712">Park Ridge East Park</option>
+								<option value="node/212">Park Ridge Park</option>
+								<option value="node/295">Peoples Park</option>
+								<option value="node/39">RCA Park</option>
+								<option value="node/204">Rev Ernest D Butler Park</option>
+								<option value="node/949">Schmalz Farm Park</option>
+								<option value="node/766">Seminary Square Park</option>
+								<option value="node/950">Sherwood OaksPark</option>
+								<option value="node/773">Skate Park</option>
+								<option value="node/213">Southeast Park</option>
+								<option value="node/817">Third Street Park</option>
+								<option value="node/109">Twin Lakes Sports Park</option>
+								<option value="node/403">Upper Cascades Park</option>
+								<option value="node/214">Wappehani Mountain Bike Park</option>
+								<option value="node/850">Willie Streeter Community Gardens</option>
+								<option value="node/215">Winslow Sports Complex</option>
+								<option value="node/216">Winslow Woods Park</option>
 								</select>
 								</fieldset>
 							</form>
 						</div>
 					</div>
 						<div class="smright">
-							<h4>Health Insurance Info</h4>
-							<p><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthcarerectangle.png" /></p>
+							<h4><a href="/node/572">Health Insurance Info</a></h4>
+							<p><a href="/node/572"><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/healthcarerectangle.png" /></a></p>
 						</div>
 					</div>
 				</li>
 			<li class="main-nav-item">
-				<a href="/content/students" class="main-nav-tab">Students</a>
+				<a href="/node/5" class="main-nav-tab">Students</a>
 			</li>
 			<li class="main-nav-item">
-				<a href="/content/businesses" class="main-nav-tab">Businesses</a>
+				<a href="/node/951" class="main-nav-tab">Businesses</a>
 			</li>
 			<li class="main-nav-item">
-				<a href="/content/residents" class="main-nav-tab">Residents</a>
+				<a href="/node/7" class="main-nav-tab">Residents</a>
 			</li>
 			<li class="main-nav-item">
-				<a href="/content/visitors" class="main-nav-tab">Visitors</a>
+				<a href="/node/8" class="main-nav-tab">Visitors</a>
 			</li>
 			<li class="sm-links">
 				<a href="https://twitter.com/citybloomington">
