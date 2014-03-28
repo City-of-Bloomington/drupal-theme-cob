@@ -11,14 +11,14 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param object $data['board_or_commission']
  */
-$title = l($data['board_or_commission']->title, 'node/'.$data['board_or_commission']->nid);
+$title = l($data['board']->title, 'node/'.$data['board']->nid);
 echo "
 <div class=\"block\">
 	<h2>$title</h2>
 ";
-	$contact_info = field_view_field('node', $data['board_or_commission'], 'field_contact_info', array('label'=>'hidden'));
-	echo render($contact_info);
 
+
+	
 echo "
 </div>
 ";

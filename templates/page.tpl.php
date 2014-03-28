@@ -304,7 +304,6 @@ echo "
 			</div>
 			<?php
 			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
-				if (!empty($node['field_board_or_commission'])) { echo render($node['field_board_or_commission']); }
 				if (!empty($field_location)) {
 					cob_include('location', ['location' => &$field_location]);
 				}
@@ -318,6 +317,7 @@ echo "
 				if (!empty($department))      { cob_include('department'     , ['department'     =>&$department     ]); }
 				if (!empty($departments))     { cob_include('departments'    , ['departments'    =>&$departments    ]); }
 				if (!empty($boards))          { cob_include('boards'         , ['boards'         =>&$boards         ]); }
+				if (!empty($board))           { cob_include('board'          , ['board'          =>&$board          ]); }
 				if (!empty($siblings))        { cob_include('siblings'       , ['siblings'       =>&$siblings       ]); }
 				if (!empty($sponsors))        { cob_include('sponsors'       , ['sponsors'       =>&$sponsors       ]); }
 				if (!empty($news))            { cob_include('news'           , ['news'           =>&$news           ]); }

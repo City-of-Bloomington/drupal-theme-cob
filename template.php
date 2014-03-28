@@ -26,7 +26,7 @@ function cob_preprocess_page(&$vars)
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
 			if (isset(                          $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
-				$vars['board_or_commission'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
+				$vars['board'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
 			}
 			if (isset(               $vars['node']['field_division']['#object']->field_division['und'])) {
 				$vars['division'] = &$vars['node']['field_division']['#object']->field_division['und'][0]['entity'];
