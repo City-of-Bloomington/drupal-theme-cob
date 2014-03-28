@@ -16,9 +16,9 @@ echo "
 <div class=\"block\">
 	<h2>$title</h2>
 ";
-
-
-	
+	if (!empty(    $data['board']->field_committee_id['data']->info->contactInfo)) {
+		echo '<p>'.$data['board']->field_committee_id['data']->info->contactInfo.'</p>';
+	}
 echo "
 </div>
 ";
