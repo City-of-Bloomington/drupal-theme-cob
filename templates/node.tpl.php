@@ -97,9 +97,26 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 
 	echo "<div class=\"content\"$content_attributes>";
 
+		/**
+		 * Notice: Why are all these fields hidden?
+		 *
+		 * This is how we are moving these fields to sidebars
+		 *
+		 * We do, in fact, want these fields displayed.  It's just that we don't
+		 * want to display them in the main content area.  These fields are being
+		 * rendered in the outer page.tpl.php, not inside this node.tpl.php.
+		 * Thus, here in the node.tpl.php, they are hidden, so that we do not
+		 * render them more than once.
+		 *
+		 * Important:
+		 * Do *not* add fields to this list unless they are being
+		 * rendered in sidebars.  Otherwise, the field will *never* be rendered.
+		 * For normal control of whether a field is displayed or not, you should
+		 * use the Drupal interface: Structure -> Content Type -> Manage Display.
+		 * This allows you to set different fields for different view modes.
+		 */
 		hide($content['field_banner'        ]);
 		hide($content['field_sidebar_image' ]);
-		hide($content['field_featured_image' ]);
 		hide($content['field_sidebar_image_caption' ]);
 		hide($content['field_description' ]);
 		hide($content['field_running_from'  ]);
@@ -132,7 +149,6 @@ echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
 		hide($content['field_link_url'		]);
 		hide($content['field_committee_id'  ]);
 		hide($content['field_link_url'      ]);
-
 
 		hide($content['comments']);
 		hide($content['links']);
