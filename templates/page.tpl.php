@@ -179,8 +179,10 @@ echo "
 						echo render($node['field_sidebar_image']);
 					}
 
-					if (isset($node['field_sidebar_image_caption'])) {
-						echo render($node['field_sidebar_image_caption']);
+					if (isset($node['field_sidebar_caption'])) {
+						echo '<div class="block">';
+						echo render($node['field_sidebar_caption']);
+						echo '</div>';
 					}
 
 					if (isset($node['field_description'])) {

@@ -26,12 +26,14 @@
 	}
 	.smleft { float:left; width:77%; padding:.5%; }
 	.smright {float:left; width:20%; padding:.5%; }
-	.smbottom { 
-		-webkit-column-count:2; -moz-column-count:2; column-count:2;
-	}
 	.fourcolumns { 
 		margin:0 0 .5em 0; 
 		-webkit-column-count:4; -moz-column-count:4; column-count:4;
+		min-width:250px;
+	}
+	.fivecolumns { 
+		margin:0 0 .5em 0; 
+		-webkit-column-count:5; -moz-column-count:5; column-count:5;
 		column-gap:0; -moz-column-gap:0; -webkit-column-gap:0;
 		min-width:250px;
 	}
@@ -41,12 +43,11 @@
 		column-gap:0; -moz-column-gap:0; -webkit-column-gap:0;
 		min-width:250px;
 	}
-}
-.main-nav-item-active .megadropdown-region { display:block; }
-.nav-button { display: none; } /* hide the navigation button by default */
-
-
+	.nav-button { display: none; } /* hide the navigation button by default */
+	.main-nav-item-active .megadropdown-region { display:block; }
 	.main-nav-item-active .megadropdown-region { display:block; width:100%; }
+}
+
 	
 	.megadropdown .megadropdown-region table { border:0; }
 	.megadropdown .megadropdown-region tr { border:0; }
@@ -54,14 +55,14 @@
 	
 	.megadropdown form { margin:0; padding:0; display:inline; height:1em; }
 	.megadropdown form fieldset { margin:0; padding:0; border:0; display:inline; }
-	.megadropdown .megadropdown-region li { display:block; float:none; margin:.4em 0; }
+	.megadropdown .megadropdown-region li { display:block; float:none; margin:.5em 0; }
 	
 	
 	
 	.item { display:inline-block; }
 	
 
-@media only screen and (max-width: 799px) and (max-device-width: 799px){
+@media only screen and (max-width: 799px)  {
 
 /* Navigation Button
 	-------------------------------------------------------- */

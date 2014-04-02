@@ -49,14 +49,15 @@ h4 {
 	margin:0 0 .5em 0px; padding:0;
 }
 
-h4 a { color:black; }
-
 #sidebar-first h4 { font-size:1.1em; }
 .megadropdown-region h4 {
-	font-size:1.1em; font-weight:bold;
-	color:#810303;
+	font-size:1.1em;
+	font-weight:bold;
 	margin:.4em 0;
 }
+
+.megadropdown-region h4 a { color:black; font-weight:bold; }
+
 
 h5 {
 	font-size:1em; font-weight:bold;
@@ -90,12 +91,14 @@ th { border:1px solid #ddd; background-color:#efefef; font-weight:bold;  }
 	* { -webkit-text-size-adjust: 100%; }
 a.main-nav-tab { font-size:1.2em; font-family: arial,sans-serif; color:white; }
 .sm-links a { font-size:1.3em; color:white; }
-.megadropdown > li  { font-size:1em; }
+.megadropdown > li  { font-size:1.1em; }
 .megadropdown-region li { color:black; }
-.megadropdown-region h4 { color:#810303; }
 .homepageFeaturedservice { }
 
 }
+
+#homepageFeaturedNews .title a { color:black; font-weight:bold; font-size:1.1em; }
+
 
 #content { font-size:1em; }
 #footer { border-top:1px solid #cccccc; color:#003366; font-size:.9em; }

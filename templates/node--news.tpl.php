@@ -88,8 +88,8 @@
 
 			if (!$page && $view_mode='sidebar') {
 				echo "
-				<div>$title_attributes<a href=\"$node_url\">$title</a></div>
-				<div>$date</div>
+				<div class=\"title\">$title_attributes<a href=\"$node_url\">$title</a> - </div>
+				<div class=\"date\">$date</div>
 				";
 			}
 

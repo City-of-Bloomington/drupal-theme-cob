@@ -202,21 +202,22 @@ echo "
 				<div id="frequentlyRequested">
 					<h2>Frequently Requested</h2>
 					<div class="frRow">
-						<div class="homepageFeaturedservice"><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/parks.png" />
-							<h4>Parks and Recreation Services</h4>
+						<div class="homepageFeaturedservice"><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">
+							<img src="/media/m/2014/3/7/100/5319dea183301.png" /></a>
+							<h4><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Parks and Recreation Services</a></h4>
 							<p>Sign up for tee times, classes and leagues, and reserve park shelters</p>
 						</div>
-						<div class="homepageFeaturedservice"><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/ureport_0.png" />
-							<h4>Report Issues</h4><p>Notify the City of community issues, such as potholes, graffiti, malfunctioning street lights, and more.</p>
+						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/ureport"><img src="/media/m/2014/3/31/100/5339b5be251ff.png" /></a>
+							<h4><a href="<?php echo $base_path; ?>/ureport">Report Issues</a></h4><p>Notify the City of community issues, such as potholes, graffiti, malfunctioning street lights, and more.</p>
 						</div>
 					</div>
 					<div class="frRow">
-						<div class="homepageFeaturedservice"><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/contactus_1.png" />
-							<h4>Contact the City</h4>
+						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/contact"><img src="/media/m/2014/3/6/100/5318b4fc606c9.png" /></a>
+							<h4><a href="<?php echo $base_path; ?>/contact">Contact the City</a></h4>
 							<p>Staff directory, primary phone numbers, and other contact options</p>
 						</div>
-						<div class="homepageFeaturedservice"><img src="http://rogue.bloomington.in.gov/drupal/sites/default/files/logo.png" />
-							<h4>Employment Opportunities</h4><p>See current City openings</p>
+						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/jobs"><img src="/media/m/2014/3/31/100/5339b3453b324.png" /></a>
+							<h4><a href="<?php echo $base_path; ?>/jobs">Employment Opportunities</a></h4><p>See current City openings</p>
 						</div>
 					</div>
 
