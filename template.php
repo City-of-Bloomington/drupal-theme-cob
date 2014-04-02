@@ -25,6 +25,9 @@ function cob_preprocess_page(&$vars)
 			if (isset(                 $vars['node']['field_department']['#object']->field_department['und'])) {
 				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
 			}
+			if (isset(                 $vars['node']['field_division']['#object']->field_division['und'])) {
+				$vars['division'] = &$vars['node']['field_division']['#object']->field_division['und'][0]['entity'];
+			}
 			if (isset(            $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
 				$vars['board'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
 				if (!empty($vars['board']->field_committee_id['und'][0]['value'])) {
@@ -92,6 +95,7 @@ function cob_preprocess_page(&$vars)
 			$vars['webforms']        = cob_node_references($vars['node'], 'webform'            );
 			$vars['boards']          = cob_node_references($vars['node'], 'board_or_commission');
 			$vars['location_groups'] = cob_node_references($vars['node'], 'location_group'     );
+			$vars['divisions'] = cob_node_references($vars['node'], 'division'     );
 
 			switch ($bundle) {
 				case 'page':

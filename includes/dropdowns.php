@@ -110,7 +110,7 @@
 									<li><?php echo l("Housing", "node/93"); ?></li>
 								</ul>
 								<ul class="item">
-									<li><?php echo l("Maps & GIS", "node/94"); ?></li>										
+									<li><?php echo l("Maps & GIS", "node/264"); ?></li>										
 									<li><?php echo l("Neighborhoods", "node/265"); ?></li>
 									<li><a href="/news">News</a></li>
 									<li><?php echo l("Parking", "node/92"); ?></li>

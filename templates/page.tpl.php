@@ -318,6 +318,8 @@ echo "
 
 				if (!empty($department))      { cob_include('department'     , ['department'     =>&$department     ]); }
 				if (!empty($departments))     { cob_include('departments'    , ['departments'    =>&$departments    ]); }
+				if (!empty($division))        { cob_include('division'       , ['division'       =>&$division       ]); }
+				if (!empty($divisions))       { cob_include('divisions'      , ['divisions'      =>&$divisions      ]); } 
 				if (!empty($boards))          { cob_include('boards'         , ['boards'         =>&$boards         ]); }
 				if (!empty($board))           { cob_include('board'          , ['board'          =>&$board          ]); }
 				if (!empty($siblings))        { cob_include('siblings'       , ['siblings'       =>&$siblings       ]); }
