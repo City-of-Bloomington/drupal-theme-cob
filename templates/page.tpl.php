@@ -306,6 +306,11 @@ echo "
 			</div>
 			<?php
 			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
+			
+				if ($page['sidebar_first']) {
+					echo render($page['sidebar_first']);
+				}
+			
 				if (!empty($field_location)) {
 					cob_include('location', ['location' => &$field_location]);
 				}
@@ -341,9 +346,7 @@ echo "
 					echo '</div>';
 				}
 
-				if ($page['sidebar_first']) {
-					echo render($page['sidebar_first']);
-				}
+				
 			echo '</div>';
 
 		?>
