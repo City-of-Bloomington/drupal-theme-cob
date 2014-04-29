@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -71,6 +70,10 @@
  *
  * @ingroup themeable
  */
+if (isset($node)
+	&& isset(   $page['content']['system_main']['nodes'][$node->nid])) {
+	$content = &$page['content']['system_main']['nodes'][$node->nid];
+}
 ?>
 
 <div id="page">
@@ -138,7 +141,7 @@ echo "
 			echo "<div id=\"breadcrumb\">";
 			echo render($title_prefix);
 			if ($title) {
-				$i = $logged_in && isset($node) ? " (node/{$node['#node']->nid})" : '';
+				$i = $logged_in && isset($node) ? " (node/{$node->nid})" : '';
 				echo "<h1 class=\"title\" id=\"page-title\">$title$i</h1>";
 			}
 			echo render($title_suffix);
@@ -170,92 +173,90 @@ echo "
 					echo render($action_links);
 					echo '</ul>';
 				}
-				if (isset($node['field_banner'])){
-					echo render($node['field_banner']);
+				if (isset($content['field_banner'])){
+					echo render($content['field_banner']);
 				}
 				echo '<div id="sidebar-second" class="region region-sidebar-second sidebar">';
-				if (isset($node) && $node['#view_mode'] == 'full') {
-					if (isset($node['field_sidebar_image'])) {
-						echo render($node['field_sidebar_image']);
+				if (isset($node)) {
+					if (isset($content['field_sidebar_image'])) {
+						echo render($content['field_sidebar_image']);
 					}
 
-					if (isset($node['field_sidebar_caption'])) {
+					if (isset($content['field_sidebar_caption'])) {
 						echo '<div class="block">';
-						echo render($node['field_sidebar_caption']);
+						echo render($content['field_sidebar_caption']);
 						echo '</div>';
 					}
 
-					if (isset($node['field_description'])) {
+					if (isset($content['field_description'])) {
 						echo '<div class="block">';
-						echo render($node['field_description']);
+						echo render($content['field_description']);
 						echo '</div>';
 					}
 
-					if (isset($node) && $node['#bundle'] == 'program') {
-						$events = cob_upcoming_events($node['#node']->nid);
+					if (isset($node) && $node->type == 'program') {
+						$events = cob_upcoming_events($node->nid);
 						if ($events->rowCount()) {
 							cob_include('upcoming_events', ['events' => $events]);
 						}
 					}
 
 
-					if (   isset($node['field_running_from'  ])
-						|| isset($node['field_meetings'      ])
-						|| isset($node['field_cost'          ])
-						|| isset($node['field_ages'          ])
-						|| isset($node['field_registration'  ])
-						|| isset($node['field_instructor'    ])
-						|| isset($node['field_program'       ])
-						|| isset($node['field_project'       ])
-						|| isset($node['field_service'       ])
-						|| isset($node['field_location_group'])) {
+					if (   isset($content['field_running_from'  ])
+						|| isset($content['field_meetings'      ])
+						|| isset($content['field_cost'          ])
+						|| isset($content['field_ages'          ])
+						|| isset($content['field_registration'  ])
+						|| isset($content['field_instructor'    ])
+						|| isset($content['field_program'       ])
+						|| isset($content['field_project'       ])
+						|| isset($content['field_service'       ])
+						|| isset($content['field_location_group'])) {
 
 						echo '<div class="block">';
-						if (isset($node['field_location_group'])) { echo render($node['field_location_group']); }
-						if (isset($node['field_program'       ])) { echo render($node['field_program'       ]); }
-						if (isset($node['field_service'       ])) { echo render($node['field_service'       ]); }
-						if (isset($node['field_project'       ])) { echo render($node['field_project'       ]); }
-						if (isset($node['field_running_from'  ])) { echo render($node['field_running_from'  ]); }
-						if (isset($node['field_meetings'	  ])) { echo render($node['field_meetings'		]); }
-						if (isset($node['field_cost'          ])) { echo render($node['field_cost'          ]); }
-						if (isset($node['field_ages'          ])) { echo render($node['field_ages'          ]); }
-						if (isset($node['field_instructor'    ])) { echo render($node['field_instructor'    ]); }
-						if (isset($node['field_holds'         ])) { echo render($node['field_holds'   	    ]); }
-						if (isset($node['field_electricity'   ])) { echo render($node['field_electricity'   ]); }
-						if (isset($node['field_accessible'    ])) { echo render($node['field_accessible'    ]); }
-						if (isset($node['field_registration'  ])) { echo render($node['field_registration'  ]); }
-
+						if (isset($content['field_location_group'])) { echo render($content['field_location_group']); }
+						if (isset($content['field_program'       ])) { echo render($content['field_program'       ]); }
+						if (isset($content['field_service'       ])) { echo render($content['field_service'       ]); }
+						if (isset($content['field_project'       ])) { echo render($content['field_project'       ]); }
+						if (isset($content['field_running_from'  ])) { echo render($content['field_running_from'  ]); }
+						if (isset($content['field_meetings'	     ])) { echo render($content['field_meetings'	  ]); }
+						if (isset($content['field_cost'          ])) { echo render($content['field_cost'          ]); }
+						if (isset($content['field_ages'          ])) { echo render($content['field_ages'          ]); }
+						if (isset($content['field_instructor'    ])) { echo render($content['field_instructor'    ]); }
+						if (isset($content['field_holds'         ])) { echo render($content['field_holds'   	  ]); }
+						if (isset($content['field_electricity'   ])) { echo render($content['field_electricity'   ]); }
+						if (isset($content['field_accessible'    ])) { echo render($content['field_accessible'    ]); }
+						if (isset($content['field_registration'  ])) { echo render($content['field_registration'  ]); }
 						echo '</div>';
 					}
 
 
-					if (isset($node['field_contact_info'])) {
+					if (isset($content['field_contact_info'])) {
 						echo '<div class="block">';
-						echo render($node['field_contact_info']);
+						echo render($content['field_contact_info']);
 						echo '</div>';
 					}
 
-					if (isset($node['field_staff'])) {
+					if (isset($content['field_staff'])) {
 						echo '<div class="block">';
-						echo render($node['field_staff']);
+						echo render($content['field_staff']);
 						echo '</div>';
 					}
 
-					if (isset($node['field_hours'])) {
+					if (isset($content['field_hours'])) {
 						echo '<div class="block">';
-						echo render($node['field_hours']);
+						echo render($content['field_hours']);
 						echo '</div>';
 					}
 
-					if (!empty($node['field_committee_id']['data'])) { cob_include('committee_sidebar', ['committee'=>&$node['field_committee_id']['data']]); }
-
+					if (!empty($committee_data)) { cob_include('committee_sidebar', ['committee'=>$committee_data]); }
 					if (!empty($children)) { cob_include('children', ['children'=>$children, 'title'=>$title]); }
 				}
 
-				if (isset($node['field_park_amb_pic']) && ($node['field_park_ambassador_info'])) {
+				if (isset($content['field_park_amb_pic']) && ($content['field_park_ambassador_info'])) {
 					echo '<div class="block">';
-					echo render($node['field_park_amb_pic']);
-					echo render($node['field_park_ambassador_info']);
+					echo render($content['field_park_amb_pic']);
+					echo render($content['field_park_ambassador_info']);
 					echo '</div>';
 				}
 
@@ -289,42 +290,42 @@ echo "
 					if (!empty($projects))     { cob_include('projects', ['projects'=> &$projects]); }
 				echo '</div>';
 
-				if (!empty($node['field_committee_id']['data'])) { cob_include('committee_members', ['committee'=>&$node['field_committee_id']['data']]); }
+				if (!empty($committee_data)) { cob_include('committee_members', ['committee'=>$committee_data]); }
 
-				if (isset($node['field_meeting_schedule'])) {
+				if (isset($content['field_meeting_schedule'])) {
 					echo '<div class="block">';
-					echo render($node['field_meeting_schedule']);
+					echo render($content['field_meeting_schedule']);
 					echo '</div>';
 				}
 
-				if (isset($node['field_topics'])) {
+				if (isset($content['field_topics'])) {
 					echo '<div class="block">';
-					echo render($node['field_topics']);
+					echo render($content['field_topics']);
 					echo '</div>';
 				}
 			?>
 			</div>
 			<?php
 			echo '<div id="sidebar-first" class="region region-sidebar-first sidebar">';
-			
+
 				if ($page['sidebar_first']) {
 					echo render($page['sidebar_first']);
 				}
-			
+
 				if (!empty($field_location)) {
 					cob_include('location', ['location' => &$field_location]);
 				}
 				if (!empty($location)) {
 					cob_include('map', ['location' => &$location]);
 				}
-				if (isset($node) && $node['#bundle']=='location_group' && !empty($children)) {
+				if (isset($node) && $node->type=='location_group' && !empty($children)) {
 					cob_include('map', ['locations'=>&$children]);
 				}
 
 				if (!empty($department))      { cob_include('department'     , ['department'     =>&$department     ]); }
 				if (!empty($departments))     { cob_include('departments'    , ['departments'    =>&$departments    ]); }
 				if (!empty($division))        { cob_include('division'       , ['division'       =>&$division       ]); }
-				if (!empty($divisions))       { cob_include('divisions'      , ['divisions'      =>&$divisions      ]); } 
+				if (!empty($divisions))       { cob_include('divisions'      , ['divisions'      =>&$divisions      ]); }
 				if (!empty($boards))          { cob_include('boards'         , ['boards'         =>&$boards         ]); }
 				if (!empty($board))           { cob_include('board'          , ['board'          =>&$board          ]); }
 				if (!empty($siblings))        { cob_include('siblings'       , ['siblings'       =>&$siblings       ]); }
@@ -340,13 +341,13 @@ echo "
 					}
 				}
 
-				if (isset($node['field_link_url'])) {
+				if (isset($content['field_link_url'])) {
 					echo '<div class="block">';
-					echo render($node['field_link_url']);
+					echo render($content['field_link_url']);
 					echo '</div>';
 				}
 
-				
+
 			echo '</div>';
 
 		?>

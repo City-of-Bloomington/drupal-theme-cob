@@ -174,9 +174,9 @@ echo "
 						$featuredNews    = array_slice($news, 0, 2);
 						$highlightedNews = array_slice($news, 2);
 
-						foreach ($highlightedNews as $node) {
-							$n = node_view($node, 'sidebar');
-							echo render($n);
+						foreach ($highlightedNews as $n) {
+							$v = node_view($n, 'sidebar');
+							echo render($v);
 						}
 					?>
 					</div>
@@ -226,9 +226,9 @@ echo "
 			<div id="frontpageFeatured">
 				<div id="homepageFeaturedNews">
 				<?php
-					foreach ($featuredNews as $node) {
-						$n = node_view($node, 'teaser');
-						echo render($n);
+					foreach ($featuredNews as $n) {
+						$v = node_view($n, 'teaser');
+						echo render($v);
 					}
 				?>
 				</div>

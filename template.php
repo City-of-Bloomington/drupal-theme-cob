@@ -15,31 +15,31 @@ function cob_preprocess_page(&$vars)
 	if (arg(0) == 'node') {
 		$nid = arg(1);
 
-		if (isset(           $vars['page']['content']['system_main']['nodes'][$nid])) {
-			$vars['node'] = &$vars['page']['content']['system_main']['nodes'][$nid];
-			$bundle = &$vars['node']['#bundle'];
+		if (isset(   $vars['page']['content']['system_main']['nodes'][$nid])) {
+			$node = &$vars['page']['content']['system_main']['nodes'][$nid];
+			$bundle = &$node['#bundle'];
 
-			if (isset(               $vars['node']['field_sponsors']['#items'])) {
-				$vars['sponsors'] = &$vars['node']['field_sponsors']['#items'];
+			if (isset(               $node['field_sponsors']['#items'])) {
+				$vars['sponsors'] = &$node['field_sponsors']['#items'];
 			}
-			if (isset(                 $vars['node']['field_department']['#object']->field_department['und'])) {
-				$vars['department'] = &$vars['node']['field_department']['#object']->field_department['und'][0]['entity'];
+			if (isset(                 $node['field_department']['#object']->field_department['und'])) {
+				$vars['department'] = &$node['field_department']['#object']->field_department['und'][0]['entity'];
 			}
-			if (isset(            $vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
-				$vars['board'] = &$vars['node']['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
+			if (isset(            $node['field_board_or_commission']['#object']->field_board_or_commission['und'])) {
+				$vars['board'] = &$node['field_board_or_commission']['#object']->field_board_or_commission['und'][0]['entity'];
 				if (!empty($vars['board']->field_committee_id['und'][0]['value'])) {
 					$vars['board']->field_committee_id['data'] = cob_committee_data($vars['board']->field_committee_id['und'][0]['value']);
 				}
 			}
-			if (isset(               $vars['node']['field_division']['#object']->field_division['und'])) {
-				$vars['division'] = &$vars['node']['field_division']['#object']->field_division['und'][0]['entity'];
+			if (isset(               $node['field_division']['#object']->field_division['und'])) {
+				$vars['division'] = &$node['field_division']['#object']->field_division['und'][0]['entity'];
 			}
 			/**
 			 * Loads committee information from Committee Manager
 			 */
-			if (isset($vars['node']['field_committee_id']['#items'][0]['value'])) {
-				$id = $vars['node']['field_committee_id']['#items'][0]['value'];
-				$vars['node']['field_committee_id']['data'] = cob_committee_data($id);
+			if (isset($node['field_committee_id']['#items'][0]['value'])) {
+				$id = $node['field_committee_id']['#items'][0]['value'];
+				$vars['committee_data'] = cob_committee_data($id);
 			}
 
 			/**
@@ -51,14 +51,13 @@ function cob_preprocess_page(&$vars)
 			 * Keep in mind that Location nodes also have a field_location that points to their
 			 * parent location.
 			 */
-			if (isset(                     $vars['node']['field_location']['#object'])) {
-				$vars['field_location'] = &$vars['node']['field_location']['#object']->field_location['und'][0]['entity'];
+			if (isset(                     $node['field_location']['#object'])) {
+				$vars['field_location'] = &$node['field_location']['#object']->field_location['und'][0]['entity'];
 			}
 
-
 			if ($bundle == 'program') {
-				$vars['siblings'] = cob_node_siblings($vars['node']);
-				$vars['children'] = cob_node_references($vars['node'], $bundle);
+				$vars['siblings'] = cob_node_siblings($node);
+				$vars['children'] = cob_node_references($node, $bundle);
 			}
 			if ($bundle == 'location') {
 				/**
@@ -66,13 +65,13 @@ function cob_preprocess_page(&$vars)
 				 * So, when displaying a Location node, we can display the map for that location
 				 * ie. When displaying Twin Lakes, we show a map to Twin Lakes.
 				 */
-				if (isset(               $vars['node']['locations']['#locations'][0])) {
-					$vars['location'] = &$vars['node']['locations']['#locations'][0];
+				if (isset(               $node['locations']['#locations'][0])) {
+					$vars['location'] = &$node['locations']['#locations'][0];
 				}
-				$vars['siblings'] = cob_node_siblings($vars['node']);
+				$vars['siblings'] = cob_node_siblings($node);
 			}
 			if ($bundle == 'location_group') {
-				$vars['children'] = cob_node_references($vars['node'], 'location');
+				$vars['children'] = cob_node_references($node, 'location');
 			}
 
 			if (   $bundle == 'location'
@@ -80,45 +79,26 @@ function cob_preprocess_page(&$vars)
 				|| $bundle == 'board_or_commission'
 				|| $bundle == 'topic'
 				|| $bundle == 'sponsor') {
-				$vars['programs'] = cob_node_references($vars['node'], 'program', true);
+				$vars['programs'] = cob_node_references($node, 'program', true);
 			}
 
-			$vars['news']            = cob_node_references($vars['node'], 'news'               , false, 'chronological', 10);
-			$vars['pages']           = cob_node_references($vars['node'], 'page'               );
-			$vars['services']        = cob_node_references($vars['node'], 'service'            );
-			$vars['park_shelters']   = cob_node_references($vars['node'], 'park_shelter'       );
-			$vars['projects']        = cob_node_references($vars['node'], 'project'            );
-			$vars['departments']     = cob_node_references($vars['node'], 'department'         );
-			$vars['webforms']        = cob_node_references($vars['node'], 'webform'            );
-			$vars['boards']          = cob_node_references($vars['node'], 'board_or_commission');
-			$vars['location_groups'] = cob_node_references($vars['node'], 'location_group'     );
-			$vars['divisions']       = cob_node_references($vars['node'], 'division'           );
+			$vars['news']            = cob_node_references($node, 'news'               , false, 'chronological', 10);
+			$vars['pages']           = cob_node_references($node, 'page'               );
+			$vars['services']        = cob_node_references($node, 'service'            );
+			$vars['park_shelters']   = cob_node_references($node, 'park_shelter'       );
+			$vars['projects']        = cob_node_references($node, 'project'            );
+			$vars['departments']     = cob_node_references($node, 'department'         );
+			$vars['webforms']        = cob_node_references($node, 'webform'            );
+			$vars['boards']          = cob_node_references($node, 'board_or_commission');
+			$vars['location_groups'] = cob_node_references($node, 'location_group'     );
+			$vars['divisions']       = cob_node_references($node, 'division'           );
 
-			switch ($bundle) {
-				case 'page':
-					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
-					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
-					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
-					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
-					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
-
-				break;
-
-				case 'service':
-					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
-					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
-					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
-					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
-					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
-				break;
-
-			case 'project':
-					$vars['related']['pages']    = cob_nodes_related_by_topics($vars['node'], 'page');
-					$vars['related']['services'] = cob_nodes_related_by_topics($vars['node'], 'service');
-					$vars['related']['programs'] = cob_nodes_related_by_topics($vars['node'], 'program');
-					$vars['related']['projects'] = cob_nodes_related_by_topics($vars['node'], 'project');
-					$vars['related']['webforms'] = cob_nodes_related_by_topics($vars['node'], 'webform');
-				break;
+			if ($bundle == 'page' || $bundle == 'service' || $bundle == 'project') {
+				$vars['related']['pages']    = cob_nodes_related_by_topics($node, 'page');
+				$vars['related']['services'] = cob_nodes_related_by_topics($node, 'service');
+				$vars['related']['programs'] = cob_nodes_related_by_topics($node, 'program');
+				$vars['related']['projects'] = cob_nodes_related_by_topics($node, 'project');
+				$vars['related']['webforms'] = cob_nodes_related_by_topics($node, 'webform');
 			}
 		}
 	}
