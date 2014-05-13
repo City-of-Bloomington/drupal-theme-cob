@@ -1,6 +1,6 @@
 "use strict";
 jQuery(document).ready(function($) {
-	var menuItems = $('.megadropdown .main-nav-tab'),
+	var menuItems = $('.megadropdown .withDD'),
 		active    = 'main-nav-item-active';
 
 	menuItems.bind('click', function() {
