@@ -1,28 +1,27 @@
+"use strict";
 jQuery(document).ready(function($) {
-		var ua = navigator.userAgent;
-		function is_touch_device(){
-			try {
-				document.createEvent("TouchEvent");
-				return true;
-			} catch (e) {
-				return false;
-			}
-		}
-	
-		
-			$(".nav-button").click(function () {
-				$(".nav-button,.primary-nav").toggleClass("open");
-			});
-		
-		if (is_touch_device() == false) {
-			$('.megadropdown .main-nav-item').bind('mouseover', function() {
-				$(this).addClass('main-nav-item-active');
-			});
-		
-			$('.megadropdown .main-nav-item').bind('mouseleave', function() {
-				$(this).removeClass('main-nav-item-active');
-			});
-		}
+	var menuItems = $('.megadropdown .main-nav-tab'),
+		active    = 'main-nav-item-active';
+
+	menuItems.bind('click', function() {
+		var li   = $(this).parent(),
+			show = true;
+
+		if (li.hasClass(active)) { show = false; }
+		// Hide all the menu items
+		menuItems.each(function () { $(this).parent().removeClass(active); });
+		// Open the current clicked item
+		if (show) { li.addClass(active); }
+		// Make the a href do nothing
+		return false;
+	});
+
+	// Close the menus when you click outside
+	$(document).bind('click', function () {
+		menuItems.each(function () { $(this).parent().removeClass(active); });
+	});
+
+
 
 	$('.hcards').each(function () {
 		var locations = $(this).find('.geo'),
