@@ -1,9 +1,14 @@
 		<ul class="megadropdown primary-nav">
 				<li class="main-nav-item">
-					<a href="/drupal/node/127" class="withDD main-nav-tab">My Government</a>
+					<a href="<?php echo $base_path; ?>node/127" class="withDD main-nav-tab">My Government</a>
 					<div class="megadropdown-region" id="governmentItem">
 						<div class="smleft">
 								<div class="fourcolumns">
+									<ul class="item">
+										<li><h4>See All:</h4></li>
+										<li><a href="/boards">City Boards and Commissions</a></li>
+										<li><a href="/departments">City Departments</a></li>
+									</ul>
 									<ul class="item">
 										<li><h4><?php echo l("Mayor Mark Kruzan", "node/643"); ?>:</h4></li>
 										<li><?php echo l("City News", "news"); ?></li>
@@ -24,11 +29,7 @@
 										<li><a href="/code">Municipal Code</a></li>
 										<li><?php echo l("See more about Government", "government"); ?></li>
 									</ul>
-									<ul class="item">
-										<li><h4>See All:</h4></li>
-										<li><a href="/boards">City Boards and Commissions</a></li>
-										<li><a href="/departments">City Departments</a></li>
-									</ul>
+									
 								</div>							
 						</div>
 						<div class="smright">
@@ -40,36 +41,36 @@
 					</div>
 				</li>
 				<li class="main-nav-item">
-					<a href="/drupal/node/129" class="main-nav-tab withDD">I Want to</a>
+					<a href="<?php echo $base_path; ?>node/129" class="main-nav-tab withDD">I Want to</a>
 
 					<div class="megadropdown-region">
 						<div class="smleft">
 							<div class="fourcolumns">
 								<ul class="item">
-									<li><h4>Apply:/h4></li>
+									<li><h4><a href="<?php echo $base_path; ?>node/129">Apply:</a></h4></li>
 									<li><a href="/jobs">City Jobs</a></li>
 									<li><?php echo l("Board or Commission", "node/132"); ?></li>
 									<li><?php echo l("See more", "node/129"); ?></li>
 								</ul>
 								<ul>
-									<li><h4>Report:</h4></li>
+									<li><h4><a href="<?php echo $base_path; ?>node/129">Report:</a></h4></li>
 									<li>Use <a href="/ureport">uReport</a> to report issues or comments</li>
 								</ul>
 								<ul class="item">
-									<li><h4>Pay:</h4></li>
+									<li><h4><a href="<?php echo $base_path; ?>node/129">Pay:</a></h4></li>
 									<li><?php echo l("Parking Ticket", "node/29"); ?></li>
 									<li><?php echo l("Utility Bill", "node/912"); ?></li>
 										<li><?php echo l("See more", "node/129"); ?></li>
 								</ul>
 								<ul class="item">
-									<li><h4>Sign Up:</h4></li>
+									<li><h4><a href="<?php echo $base_path; ?>node/129">Sign Up:</a></h4></li>
 									<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Parks &amp; Recreation Dept programs</a></li>
 									<li>Utilities Services</li>
 									<li><?php echo l("Pet behavior consultation", "node/29"); ?></li>
 									<li><?php echo l("See more", "node/129"); ?></li>
 								</ul>
 								<ul class="item">
-									<li><h4>Reserve:</h4></li>
+									<li><h4><a href="<?php echo $base_path; ?>node/129">Reserve:</a></h4></li>
 									<li><a href="/node/716">Parks &amp; Recreation Dept Facilities</a></li>
 									<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Park Shelterhouses</a></li>
 									<li><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Tee Time</a></li>
@@ -92,6 +93,13 @@
 						<div class="smleft">
 							<div class="fivecolumns">
 								<ul class="item">
+									<li><h4>Find Places:</h4></li>
+									<li><?php echo l("City Facilities", "node/98"); ?></li>
+									<li><?php echo l("Community Facilities", "node/130"); ?></li>
+									<li><?php echo l("Parks and Trails", "node/97"); ?></li>
+									<li><?php echo l("Public Parking Garages and Lots", "node/111"); ?></li>
+								</ul>
+								<ul class="item">
 									<li>About Bloomington</li>
 									<li><?php echo l("Accessibility", "node/177"); ?></li>
 									<li><?php echo l("Animals", "node/91"); ?></li>
@@ -112,27 +120,21 @@
 								<ul class="item">
 									<li><?php echo l("Maps & GIS", "node/264"); ?></li>										
 									<li><?php echo l("Neighborhoods", "node/265"); ?></li>
-									<li><a href="/news">News</a></li>
+									<li><a href="<?php echo $base_path; ?>news">News</a></li>
 									<li><?php echo l("Parking", "node/92"); ?></li>
 									<li><?php echo l("Parks & Recreation Programs", "node/103"); ?></li>
 								</ul>
 								<ul class="item">
 									<li><?php echo l("Public Safety", "node/266"); ?></li>
 									<li><?php echo l("Rentals & Reservations", "node/107"); ?></li>
-									<li><a href="/residential-services">Residential Services</a></li>
+									<li><a href="<?php echo $base_path; ?>residential-services">Residential Services</a></li>
 									<li><?php echo l("Roads and Traffic", "node/95"); ?></li>
 									<li><?php echo l("Sports & Fitness", "node/102"); ?></li>
 									<li><?php echo l("Sustainable City", "node/268"); ?></li>
 									<li><?php echo l("Trash & Recycling", "node/940"); ?></li>
 									<li><?php echo l("Volunteering", "node/270"); ?></li>
 								</ul>
-								<ul class="item">
-									<li><h4>Find Places:</h4></li>
-									<li><?php echo l("City Facilities", "node/98"); ?></li>
-									<li><?php echo l("Community Facilities", "node/130"); ?></li>
-									<li><?php echo l("Parks and Trails", "node/97"); ?></li>
-									<li><?php echo l("Public Parking Garages and Lots", "node/111"); ?></li>
-								</ul>
+								
 							</div>
 					</div>
 						<div class="smright">

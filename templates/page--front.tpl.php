@@ -201,7 +201,6 @@ echo "
 				</div>
 				<div id="frequentlyRequested">
 					<h2>Frequently Requested</h2>
-					<div class="frRow">
 						<div class="homepageFeaturedservice"><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">
 							<img src="/media/m/2014/3/7/100/5319dea183301.png" /></a>
 							<h4><a href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wb1000.html?wbp=1">Parks and Recreation Services</a></h4>
@@ -210,8 +209,6 @@ echo "
 						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/ureport"><img src="/media/m/2014/3/31/100/5339b5be251ff.png" /></a>
 							<h4><a href="<?php echo $base_path; ?>/ureport">Report Issues</a></h4><p>Notify the City of community issues, such as potholes, graffiti, malfunctioning street lights, and more.</p>
 						</div>
-					</div>
-					<div class="frRow">
 						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/contact"><img src="/media/m/2014/3/6/100/5318b4fc606c9.png" /></a>
 							<h4><a href="<?php echo $base_path; ?>/contact">Contact the City</a></h4>
 							<p>Staff directory, primary phone numbers, and other contact options</p>
@@ -219,8 +216,6 @@ echo "
 						<div class="homepageFeaturedservice"><a href="<?php echo $base_path; ?>/jobs"><img src="/media/m/2014/3/31/100/5339b3453b324.png" /></a>
 							<h4><a href="<?php echo $base_path; ?>/jobs">Employment Opportunities</a></h4><p>See current City openings</p>
 						</div>
-					</div>
-
 				</div>
 			</div>
 			<div id="frontpageFeatured">
