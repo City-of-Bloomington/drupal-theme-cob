@@ -7,6 +7,7 @@
 		padding:0; margin:.25em 0; width:100%; position:relative;
 	}
 	a.withDD { background:url('../images/arrow.png') right no-repeat; padding-right:15px; }
+	li.main-nav-item-active a.withDD { background:url('../images/arrowup.png') right no-repeat; padding-right:15px; }}
 	.megadropdown ul { margin:0; padding:0; }
 	.main-nav-item { display:table-cell; margin:0; border-right:1px solid white; }
 	a.main-nav-tab { margin:.5em; display:block; line-height:1.6em; }
