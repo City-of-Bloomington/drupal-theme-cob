@@ -84,13 +84,17 @@
 	<h2>Summary of <?php echo $title ?></h2>
 	<div class="btown-pageSummary-container">
 		<article>
-			<?php echo render($content['summary']) ?>
+			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
 			<div class="btown-pageSummary-details">
 				<div class="btown-ext-details">
 					
 				</div>
 				<div class="btown-ext-details">
-					
+					<ul class="btown-pageSummary-contacts">
+						<li><?php echo render($content['field_phone_number']); ?></li>
+						<li><?php echo render($content['field_facebook_page']); ?></li>
+						<li><?php echo render($content['field_twitter_account']); ?></li>
+					</ul>
 				</div>
 			</div>
 		</article>
