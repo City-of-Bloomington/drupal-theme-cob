@@ -1,29 +1,15 @@
 name = COB
 description = City of Bloomington Theme
 package = Core
-version = VERSION
+version = 0.2
 core = 7.x
-stylesheets[screen][] = css/reset.css
 stylesheets[all][] = css/screen.css
-stylesheets[all][] = css/fontsandcolors.css
-stylesheets[all][] = css/menubar.css
 
 scripts[] = js/cob.js
 
-regions[sidebar_first]  = Outer sidebar
-regions[sidebar_second] = Inner sidebar
+regions[header_site] = Site Header
+regions[header_page] = Page Header
+regions[summary_page] = Page Summary
 regions[content] = Content
-regions[header] = Header
-regions[menubar] = Menubar
-regions[menu_government] = Menu: My Government
-regions[menu_want] = Menu: I Want To
-regions[menu_learn] = Menu: Learn About
-regions[menu_students] = Menu: Students
-regions[menu_business] = Menu: Business
-regions[menu_residents] = Menu: Residents
-regions[visitors] = Menu: Visitors
-regions[footer] = Footer
-regions[highlighted] = Highlighted
-regions[help] = Help
-regions[page_top] = Page Top
-regions[page_bottom] = Page Bottom
+regions[footer_page] = Page Footer
+regions[footer_site] = Site Footer

@@ -79,89 +79,34 @@
  *
  * @ingroup themeable
  */
-echo "<div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>";
-	echo $user_picture;
-	echo render($title_prefix);
+?>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-	if (!$page) {
-		$h = $view_mode=='teaser' ? 'h3' : 'h2';
-		$i = $logged_in ? " (node/{$node->nid})" : '';
-		echo "<$h$title_attributes><a href=\"$node_url\">$title$i</a></$h>";
-	}
+  <?php print $user_picture; ?>
 
-	echo render($title_suffix);
+  <?php print render($title_prefix); ?>
+  <?php if (!$page): ?>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
 
-	if ($display_submitted) {
-		echo "<div class=\"submitted\">$submitted</div>";
-	}
+  <?php if ($display_submitted): ?>
+    <div class="submitted">
+      <?php print $submitted; ?>
+    </div>
+  <?php endif; ?>
 
-	echo "<div class=\"content\"$content_attributes>";
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php
+      // We hide the comments and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
+    ?>
+  </div>
 
-		/**
-		 * Notice: Why are all these fields hidden?
-		 *
-		 * This is how we are moving these fields to sidebars
-		 *
-		 * We do, in fact, want these fields displayed.  It's just that we don't
-		 * want to display them in the main content area.  These fields are being
-		 * rendered in the outer page.tpl.php, not inside this node.tpl.php.
-		 * Thus, here in the node.tpl.php, they are hidden, so that we do not
-		 * render them more than once.
-		 *
-		 * Important:
-		 * Do *not* add fields to this list unless they are being
-		 * rendered in sidebars.  Otherwise, the field will *never* be rendered.
-		 * For normal control of whether a field is displayed or not, you should
-		 * use the Drupal interface: Structure -> Content Type -> Manage Display.
-		 * This allows you to set different fields for different view modes.
-		 */
-		hide($content['field_banner'        ]);
-		hide($content['field_sidebar_image' ]);
-		hide($content['field_sidebar_caption' ]);
-		hide($content['field_description' ]);
-		hide($content['field_running_from'  ]);
-		hide($content['field_cost'          ]);
-		hide($content['field_holds'         ]);
-		hide($content['field_electricity'   ]);
-		hide($content['field_accessible'    ]);
-		hide($content['field_ages'          ]);
-		hide($content['field_registration'  ]);
-		hide($content['field_instructor'    ]);
-		hide($content['field_sponsors'      ]);
-		hide($content['field_department'    ]);
-		hide($content['field_contact_info'  ]);
-		hide($content['field_hours'		    ]);
-		hide($content['field_staff'  		]);
-		hide($content['field_location'      ]);
-		hide($content['field_program'       ]);
-		hide($content['field_park_shelter'  ]);
-		hide($content['field_project'       ]);
-		hide($content['field_service'       ]);
-		hide($content['field_location_group']);
-		hide($content['locations'           ]);
-		hide($content['field_board_or_commission']);
-		hide($content['field_meetings'		]);
-		hide($content['field_park_ambassador_info']);
-		hide($content['field_park_amb_pic'	]);
-		hide($content['field_members'	    ]);
-		hide($content['field_meeting_schedule']);
-		hide($content['field_topics'	    ]);
-		hide($content['field_link_url'		]);
-		hide($content['field_committee_id'  ]);
-		hide($content['field_link_url'      ]);
+  <?php print render($content['links']); ?>
 
-		hide($content['comments']);
-		hide($content['links']);
+  <?php print render($content['comments']); ?>
 
-
-		if (!empty($content['field_committee_id']['data'])) {
-			module_load_include('php', 'markdown', 'markdown');
-			echo Markdown($content['field_committee_id']['data']->info->description);
-		}
-		echo render($content);
-	echo "</div>";
-
-	echo render($content['links']);
-	echo render($content['comments']);
-
-echo "</div>";
+</div>
