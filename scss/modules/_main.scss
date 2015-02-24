@@ -1,0 +1,8 @@
+.btown-main {
+    &-container {
+        @include container();
+    }
+
+    @media screen and (min-width: $screen-medium) {
+    }
+}

@@ -1,0 +1,89 @@
+// Colors
+$btown-blue: #315da6;
+$btown-blue-light: #4975ba;
+$btown-blue-dark: #143a7a;
+$cornflower-brightest: #acf2ff;
+
+
+// Font families
+$font-body-copy: 'PT Sans', Verdana, sans-serif;
+$font-headings: Lato, 'Helvetica Neue', Arial, sans-serif;
+
+
+// Viewport size variables
+$screen-large: (1024em/16);
+$screen-medium: (700em/16);
+$screen-small: (400em/16);
+
+// Grid
+$grid-gutter: 2em;
+
+@mixin gridContainer() {
+    @media screen and (min-width: $screen-large) {
+        box-sizing: border-box;
+        max-width: (1000em/16);
+        margin: 0 auto;
+    }
+}
+@mixin nestedGridContainer() {
+    @media screen and (min-width: $screen-medium) {
+        margin: 0 ($grid-gutter*-1);
+    }
+}
+@mixin container {
+    @include gridContainer();
+    @media screen and (min-width: $screen-large) {
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+    }
+}
+
+@mixin grid-4col {
+    box-sizing: border-box;
+    padding: 1em;
+
+    @media screen and (min-width: $screen-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        width: (100%*1/3);
+    }
+}
+
+@mixin grid-8col {
+    box-sizing: border-box;
+    padding: 1em;
+
+    @media screen and (min-width: $screen-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        width: (100%*2/3);
+    }
+}
+
+// Mixins
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+@mixin clearfix() {
+    &:before, &:after {
+        clear: both;
+        content: ' ';
+        display: table;
+    }
+}
+
+@mixin visuallyHidden() {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

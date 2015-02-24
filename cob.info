@@ -3,7 +3,7 @@ description = City of Bloomington Theme
 package = Core
 version = 0.2
 core = 7.x
-stylesheets[all][] = css/screen.css
+stylesheets[all][] = css/main.css
 
 scripts[] = js/cob.js
 

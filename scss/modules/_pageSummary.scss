@@ -1,0 +1,96 @@
+.btown-pageSummary {
+    @include clearfix();
+    background: $btown-blue;
+
+    > h2 {
+        @include visuallyHidden();
+    }
+    &-container {
+        @include gridContainer();
+        
+        > article {
+            color: #fff;
+            @include grid-8col();
+        }
+        > aside {
+            @include grid-4col();
+            position: relative;
+
+            > h3 {
+                color: #fff;
+                font-family: $font-headings;
+                font-size: (30em/16);
+                font-weight: 200;
+                line-height: (36em/30);
+                margin: 0 0 (10em/30) 0;
+            }
+            > a {
+                clear: left;
+                color: $cornflower-brightest;
+                display: inline-block;
+                float: left;
+                font-size: (18em/16);
+                line-height: (22em/18);
+                margin-bottom: (10em/18);
+            }
+        }
+    }
+    &-details {
+        @include nestedGridContainer();
+    }
+
+    @media screen and (min-width: $screen-medium) {
+        &-container {
+            
+            > article {
+                padding-top: 2em;
+                padding-bottom: 2em;
+                position: relative;
+
+                &:after {
+                    background: #fff;
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                        top: 2em;
+                        right: -33px;
+                        bottom: 2em;
+                    width: 1px;
+                }
+                > p {
+                    font-size: (20em/16);
+                    line-height: (30em/20);
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            > aside {
+                padding-top: 2em;
+                padding-bottom: 2em;
+                padding-left: $grid-gutter*2;
+
+                &:before {
+                    background: #fff;
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                        top: 2em;
+                        bottom: 2em;
+                        left: 32px;
+                    width: 1px;
+                }
+            }
+        }
+        &-details {
+            > .btown-ext-details {
+                float: left;
+                padding: 0 $grid-gutter;
+                width: (100%*3/8);
+            }            
+        }
+    }
+}
