@@ -107,12 +107,28 @@
         <?php print render($page['header_page']); ?>
         <?php print render($title_suffix); ?>
     </div>
-    <div class="btown-pageHeader-navigation">
-        <nav class="btown-pageHeader-navigation-container">
-            <a href="#" class="btown-ext-current">About</a>
-            <a href="#">Other Page</a>
-        </nav>
-    </div>
+    <?php
+        if (!empty($node->field_cmis_documents['und'][0]['folder'])) {
+            echo "
+            <div class=\"btown-pageHeader-navigation\">
+                <nav class=\"btown-pageHeader-navigation-container\">
+                    <a href=\"#\" class=\"btown-ext-current\">About</a>
+            ";
+                    foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
+                        if ($key != 'folder') {
+                            if (!empty($value)) {
+                                $label = substr($key, 9);
+                                $url = "{$base_path}node/{$node->nid}/$label";
+                                echo "<a href=\"$url\">$label</a>";
+                            }
+                        }
+                    }
+            echo "
+                </nav>
+            </div>
+            ";
+        }
+    ?>
 </header>
 
 <?php
