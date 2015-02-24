@@ -1,5 +1,5 @@
 .btown-pageHeader {
-    background: url('/img/photo-header-showers.jpg') no-repeat $btown-blue;
+    background: url('photo-header-showers.jpg') no-repeat $btown-blue;
     background-size: cover;
 
     &-container {
@@ -50,7 +50,7 @@
         &-container {
 
             &:before {
-                background: url('/img/photo-header-showers-circle@1x.jpg') no-repeat;
+                background: url('photo-header-showers-circle@1x.jpg') no-repeat;
                 border-radius: 50%;
                 content: ' ';
                 display: block;
@@ -85,6 +85,11 @@
                     }
                 }
             }
+        }
+    }
+    @media screen and (min-resolution: 2dppx) {
+        &-container:before {
+            background: url('photo-header-showers-circle@2x.jpg') no-repeat;
         }
     }
 }

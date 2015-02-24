@@ -87,7 +87,7 @@
 			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
 			<div class="btown-pageSummary-details">
 				<div class="btown-ext-details">
-					
+					Next Meeting
 				</div>
 				<div class="btown-ext-details">
 					<ul class="btown-pageSummary-contacts">
