@@ -81,6 +81,7 @@
  */
 ?>
 <div class="btown-pageSummary">
+	<h2>Summary of <?php echo $title ?></h2>
 	<div class="btown-pageSummary-container">
 		<article>
 			<?php echo render($content['summary']) ?>
