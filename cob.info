@@ -11,5 +11,4 @@ regions[header_site] = Site Header
 regions[header_page] = Page Header
 regions[summary_page] = Page Summary
 regions[content] = Content
-regions[footer_page] = Page Footer
-regions[footer_site] = Site Footer
+regions[footer] = Site Footer
