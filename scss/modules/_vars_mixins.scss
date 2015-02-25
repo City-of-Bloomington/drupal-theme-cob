@@ -1,8 +1,16 @@
 // Colors
+// Btown Blue
 $btown-blue: #315da6;
 $btown-blue-light: #4975ba;
 $btown-blue-dark: #143a7a;
+
+// Cornflower
 $cornflower-brightest: #acf2ff;
+
+// Action Green
+$action-green: #20ac59;
+$action-green-light: #70bf88;
+
 
 
 // Font families
@@ -15,11 +23,45 @@ $screen-large: (1024em/16);
 $screen-medium: (700em/16);
 $screen-small: (400em/16);
 
+
+
+
+// Mixins
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+@mixin clearfix() {
+    &:before, &:after {
+        clear: both;
+        content: ' ';
+        display: table;
+    }
+}
+
+@mixin visuallyHidden() {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+
+
+
 // Grid
 $grid-gutter: 2em;
 
 @mixin gridContainer() {
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $screen-medium) {
+        @include clearfix();
         box-sizing: border-box;
         max-width: (1000em/16);
         margin: 0 auto;
@@ -32,7 +74,7 @@ $grid-gutter: 2em;
 }
 @mixin container {
     @include gridContainer();
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $screen-medium) {
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
     }
@@ -60,30 +102,4 @@ $grid-gutter: 2em;
         padding-right: $grid-gutter;
         width: (100%*2/3);
     }
-}
-
-// Mixins
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
-@mixin clearfix() {
-    &:before, &:after {
-        clear: both;
-        content: ' ';
-        display: table;
-    }
-}
-
-@mixin visuallyHidden() {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
 }

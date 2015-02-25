@@ -114,15 +114,15 @@
                 <nav class=\"btown-pageHeader-navigation-container\">
                     <a href=\"#\" class=\"btown-ext-current\">About</a>
             ";
-                    foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
-                        if ($key != 'folder') {
-                            if (!empty($value)) {
-                                $label = substr($key, 9);
-                                $url = "{$base_path}node/{$node->nid}/$label";
-                                echo "<a href=\"$url\">$label</a>";
-                            }
-                        }
+            foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
+                if ($key != 'folder') {
+                    if (!empty($value)) {
+                        $label = substr($key, 9);
+                        $url = "{$base_path}node/{$node->nid}/$label";
+                        echo "<a href=\"$url\">$label</a>";
                     }
+                }
+            }
             echo "
                 </nav>
             </div>
@@ -135,16 +135,10 @@
     echo $messages;
 
     if ($tabs || $action_links) {
-        echo "
-        <div class=\"btown-siteAdminBar\">
-            <div class=\"btown-SiteAdminBar-container\">
-        ";
-            if ($tabs)         { echo "<div class=\"tabs\">".render($tabs)."</div> "; }
+        echo "<div class=\"btown-siteAdminBar\">";
+            if ($tabs)         { echo render($tabs); }
             if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-        echo "
-            </div>
-        </div>
-        ";
+        echo "</div>";
     }
 
     /*
@@ -158,5 +152,7 @@
 ?>
 
 <footer class="btown-footer">
-    <?php print render($page['footer']); ?>
+    <div class="btown-footer-container">
+        <?php print render($page['footer']); ?>      
+    </div>
 </footer>

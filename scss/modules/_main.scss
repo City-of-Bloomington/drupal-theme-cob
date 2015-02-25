@@ -1,6 +1,24 @@
 .btown-main {
     &-container {
-        @include container();
+        @include gridContainer();
+    }
+
+    &-content {
+        @include grid-8col();
+        
+        h2 {
+            font-weight: bold;
+            font-size: (36rem/16);
+            margin: (36rem/16) 0 (24rem/16) 0;
+        }
+        p {
+            font-size: (18rem/16);
+            line-height: (24rem/16);
+            margin: 1em 0;
+        }
+        &-sidebar {
+            @include grid-4col();
+        }
     }
 
     @media screen and (min-width: $screen-medium) {

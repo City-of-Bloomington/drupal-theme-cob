@@ -110,7 +110,7 @@
 		</div>
 	<?php endif; ?>
 
-	<div class="content"<?php print $content_attributes; ?>>
+	<article class="btown-main-content"<?php print $content_attributes; ?>>
 		<?php
 			// We hide the comments and links now so that we can render them later.
 			hide($content['summary']);
@@ -119,5 +119,8 @@
 			hide($content['facebook']);
 			echo render($content);
 		?>
-	</div>
+	</article>
+	<aside class="btown-main-content-sidebar">
+		Sidebar.
+	</aside>
 </main>
