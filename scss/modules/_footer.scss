@@ -1,0 +1,5 @@
+.btown-footer {
+    &-container {
+        @include container();
+    }
+}

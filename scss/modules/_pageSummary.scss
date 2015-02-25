@@ -39,21 +39,14 @@
         @include nestedGridContainer();
     }
     &-contacts {
-        display: block;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        > li {
+        > a {
+            clear: left;
+            color: #fff;
             display: block;
-            margin: 0;
-            padding: 0;
-            
-            a {
-                color: #fff;
+            float: left;
 
-                &:visited {
-                    color: #fff;
-                }
+            &:visited {
+                color: #fff;
             }
         }
     }
@@ -109,7 +102,12 @@
                 float: left;
                 padding: 0 $grid-gutter;
                 width: (100%*3/8);
-            }            
+            }
+        }
+        &-contacts {
+            float: left;
+            padding: 0 $grid-gutter;
+            width: (100%*3/8);
         }
     }
 }

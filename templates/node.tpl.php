@@ -79,6 +79,8 @@
  *
  * @ingroup themeable
  */
+//echo "<h1>Hi. Output below:</h1>";
+//print_r($content['field_facebook_page']);
 ?>
 <div class="btown-pageSummary">
 	<h2>Summary of <?php echo $title ?></h2>
@@ -89,12 +91,10 @@
 				<div class="btown-ext-details">
 					Next Meeting
 				</div>
-				<div class="btown-ext-details">
-					<ul class="btown-pageSummary-contacts">
-						<li><?php echo render($content['field_phone_number']); ?></li>
-						<li><?php echo render($content['field_facebook_page']); ?></li>
-						<li><?php echo render($content['field_twitter_account']); ?></li>
-					</ul>
+				<div class="btown-pageSummary-contacts">
+						<?php echo render($content['field_phone_number']); ?>
+						<?php echo render($content['field_facebook_page']); ?>
+						<?php echo render($content['field_twitter_account']); ?>
 				</div>
 			</div>
 		</article>
