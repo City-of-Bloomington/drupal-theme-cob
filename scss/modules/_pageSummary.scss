@@ -49,6 +49,26 @@
                 color: #fff;
             }
         }
+        > .btown-ext {
+            @mixin commonCode() {
+                background-repeat: no-repeat;
+                background-position: 0 .1em;
+                background-size: 1.32em;
+                padding-left: 1.5em;
+            }
+            &-phone_number {
+                background: url('../images/phone-square.svg');
+                @include commonCode();
+            }
+            &-facebook-page {
+                background: url('../images/facebook-square.svg');
+                @include commonCode();
+            }
+            &-twitter-account {
+                background: url('../images/twitter-square.svg');
+                @include commonCode();
+            }
+        }
     }
 
     @media screen and (min-width: $screen-medium) {

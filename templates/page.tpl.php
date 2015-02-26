@@ -112,7 +112,7 @@
             echo "
             <div class=\"btown-pageHeader-navigation\">
                 <nav class=\"btown-pageHeader-navigation-container\">
-                    <a href=\"#\" class=\"btown-ext-current\">About</a>
+                    <a href=\"/drupal2/bloomington-arts-commission\" class=\"btown-ext-current\">About</a>
             ";
             foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
                 if ($key != 'folder') {
