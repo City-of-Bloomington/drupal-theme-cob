@@ -1,0 +1,27 @@
+.cob-latestNewsWidget {
+    border-top: .25em solid #d0d0d0; // <- TODO: Turn this into the section divider, featuring the city logo
+    padding-top: 1em;
+
+    @include container();
+
+    &-container {
+        > .cob-main-content {
+            @include grid-6col();
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+    &-heading {
+        color: #8b9fb2; // <- TODO: Turn this into a variable, based on the global color palette.
+        font-family: $font-headings;
+        font-size: (20rem/16);
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    &-moreNews {
+        display: block;
+        float: right;
+    }
+}

@@ -1,11 +1,11 @@
 .cob-main {
     &-container {
         @include container();
+        > .cob-main-content {
+            @include grid-8col();
+        }
     }
-
     &-content {
-        @include grid-8col();
-        
         h2 {
             font-weight: bold;
             font-size: (36rem/16);
@@ -20,6 +20,7 @@
             @include grid-4col();
         }
     }
+
 
     @media screen and (min-width: $screen-medium) {
     }

@@ -152,28 +152,6 @@
     */
 ?>
 
-<div class="cob-pageOverview">
-	<h2>Summary of <?php echo $title ?></h2>
-	<div class="cob-pageOverview-container">
-		<article>
-			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
-			<div class="cob-pageOverview-details">
-				<div class="cob-ext-details">
-					Next Meeting
-				</div>
-				<div class="cob-pageSummary-contacts">
-					<?php echo render($content['field_phone_number']); ?>
-					<?php echo render($content['field_facebook_page']); ?>
-					<?php echo render($content['field_twitter_account']); ?>
-				</div>
-			</div>
-		</article>
-		<aside>
-			Learn about
-		</aside>
-	</div>
-</div>
-<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main-container" role="main"<?php print $attributes; ?>>
 <?php echo render($page['content']); ?>
 </main>
 <footer class="cob-footer">

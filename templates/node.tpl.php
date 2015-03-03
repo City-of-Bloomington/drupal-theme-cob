@@ -82,6 +82,7 @@
 //echo "<h1>Hi. Output below:</h1>";
 //print_r($content['field_facebook_page']);
 ?>
+<?php if($view_mode == 'full'): ?>
 <div class="cob-pageSummary">
 	<h2>Summary of <?php echo $title ?></h2>
 	<div class="cob-pageSummary-container">
@@ -103,8 +104,9 @@
 		</aside>
 	</div>
 </div>
-<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main-container" role="main"<?php print $attributes; ?>>
-
+<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
+	<div class="cob-main-container">
+<?php endif; ?>
 	<?php print $user_picture; ?>
 
 	<?php if ($display_submitted): ?>
@@ -115,18 +117,27 @@
 
 	<article class="cob-main-content"<?php print $content_attributes; ?>>
 		<?php
+			if($view_mode == 'teaser') { echo render($title); }
 			// We hide the comments and links now so that we can render them later.
-			hide($content['summary']);
-			hide($content['telephone']);
-			hide($content['twitter']);
-			hide($content['facebook']);
-
-			if (isset($press_releases)) {
-                cob_include('press_releases', ['press_releases'=>$press_releases]);
-			}
+			hide($content['links']);
+			echo render($content);
 		?>
 	</article>
-	<aside class="cob-main-content-sidebar">
-		Sidebar.
-	</aside>
+
+	<?php if($view_mode == 'full'): ?>
+		<aside class="cob-main-content-sidebar">
+			Optional content sidebar for main content section.
+		</aside>
+	<?php endif; ?>
+	<?php if($view_mode == 'full'): ?>
+		</div><?php /* <- cob-main-container */ ?>
+	<?php endif; ?>
+
+	<?php
+		if (isset($press_releases)) {
+			cob_include('press_releases', ['press_releases'=>$press_releases]);
+		}
+	?>
+<?php if($view_mode == 'full'): ?>
 </main>
+<?php endif; ?>
