@@ -112,15 +112,19 @@
             echo "
             <div class=\"btown-pageHeader-navigation\">
                 <nav class=\"btown-pageHeader-navigation-container\">
-                    <a href=\"/drupal2/bloomington-arts-commission\" class=\"btown-ext-current\">About</a>
             ";
+
+            $p    = current_path();
+            $cc   = ['attributes'=>['class'=>['current']]];
+            $attr = count(explode('/', $p))==2 ? $cc : [];
+            echo l('About', "node/{$node->nid}", $attr);
+
             foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
-                if ($key != 'folder') {
-                    if (!empty($value)) {
-                        $label = substr($key, 9);
-                        $url = "{$base_path}node/{$node->nid}/$label";
-                        echo "<a href=\"$url\">$label</a>";
-                    }
+                if ($key != 'folder' && !empty($value)) {
+                    $label = substr($key, 9);
+                    $url = "node/{$node->nid}/$label";
+                    $attr = strpos($p, $label) ? $cc : [];
+                    echo l(ucfirst($label), $url, $attr);
                 }
             }
             echo "
@@ -153,6 +157,6 @@
 
 <footer class="btown-footer">
     <div class="btown-footer-container">
-        <?php print render($page['footer']); ?>      
+        <?php print render($page['footer']); ?>
     </div>
 </footer>
