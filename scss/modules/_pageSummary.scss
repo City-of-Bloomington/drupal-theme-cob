@@ -6,7 +6,7 @@
         @include visuallyHidden();
     }
     &-container {
-        @include gridContainer();
+        @include container();
         
         > article {
             color: #fff;
@@ -14,6 +14,7 @@
         }
         > aside {
             @include grid-4col();
+            color: #fff;
             position: relative;
 
             > h3 {
@@ -36,9 +37,11 @@
         }
     }
     &-details {
-        @include nestedGridContainer();
+//        @include clearfix();
     }
     &-contacts {
+        @include clearfix();
+
         > a {
             clear: left;
             color: #fff;
@@ -70,7 +73,22 @@
             }
         }
     }
-
+    @media screen and (min-width: $screen-small) {
+        &-details {
+            > .btown-ext-details {
+                box-sizing: border-box;
+                float: left;
+                padding: 0 $grid-gutter 0 0;
+                width: 50%;
+            }
+        }
+        &-contacts {
+            box-sizing: border-box;
+            float: left;
+            padding: 0 0 0 $grid-gutter;
+            width: 50%;
+        }
+    }
     @media screen and (min-width: $screen-medium) {
         &-container {
             
@@ -119,14 +137,10 @@
         }
         &-details {
             > .btown-ext-details {
-                float: left;
-                padding: 0 $grid-gutter;
                 width: (100%*3/8);
             }
         }
         &-contacts {
-            float: left;
-            padding: 0 $grid-gutter;
             width: (100%*3/8);
         }
     }

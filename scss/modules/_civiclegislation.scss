@@ -1,0 +1,22 @@
+.civiclegislation {
+    &-container {
+        @include container(); 
+    
+        > nav {
+            @include grid-3col();
+            text-align: right;
+
+            > a {
+                display: block;
+                font-size: 3em;
+
+                &.active {
+                    font-size: 3.5em;
+                }
+            }
+        }
+    }
+    &-listing {
+        @include grid-9col();
+    }
+}

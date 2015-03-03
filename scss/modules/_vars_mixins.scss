@@ -59,24 +59,38 @@ $screen-small: (400em/16);
 // Grid
 $grid-gutter: 2em;
 
-@mixin gridContainer() {
-    @media screen and (min-width: $screen-medium) {
-        @include clearfix();
-        box-sizing: border-box;
-        max-width: (1000em/16);
-        margin: 0 auto;
-    }
-}
 @mixin nestedGridContainer() {
     @media screen and (min-width: $screen-medium) {
         margin: 0 ($grid-gutter*-1);
     }
 }
 @mixin container {
-    @include gridContainer();
     @media screen and (min-width: $screen-medium) {
+        @include clearfix();
+        box-sizing: border-box;
+        max-width: (1000em/16);
+        margin: 0 auto;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
+    }
+}
+
+@mixin grid-3col {
+    box-sizing: border-box;
+    padding: 1em;
+
+    @media screen and (min-width: $screen-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        width: (100%*1/4);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }
 
@@ -89,6 +103,13 @@ $grid-gutter: 2em;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
         width: (100%*1/3);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }
 
@@ -101,5 +122,31 @@ $grid-gutter: 2em;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
         width: (100%*2/3);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+@mixin grid-9col {
+    box-sizing: border-box;
+    padding: 1em;
+
+    @media screen and (min-width: $screen-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        width: (100%*3/4);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }

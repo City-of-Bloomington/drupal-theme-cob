@@ -1,6 +1,6 @@
 .btown-main {
     &-container {
-        @include gridContainer();
+        @include container();
     }
 
     &-content {

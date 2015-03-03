@@ -4,6 +4,8 @@
 
     &-container {
         @include container();
+        overflow: hidden;
+
         > h1 {
             color: #fff;
             font-weight: 300;
@@ -90,6 +92,7 @@
     @media screen and (min-resolution: 2dppx) {
         &-container:before {
             background: url('photo-header-showers-circle@2x.jpg') no-repeat;
+            background-size: 100% 100%;
         }
     }
 }

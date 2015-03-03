@@ -18,8 +18,14 @@ function cob_preprocess_page(&$vars)
 		if (isset(   $vars['page']['content']['system_main']['nodes'][$nid])) {
 			$node = &$vars['page']['content']['system_main']['nodes'][$nid];
 			$bundle = &$node['#bundle'];
+
 		}
 	}
+}
+
+function cob_preprocess_node(&$vars)
+{
+    $vars['press_releases'] = cob_node_references($vars['elements'], 'press_release', false, 'chronological', 2);
 }
 
 /**

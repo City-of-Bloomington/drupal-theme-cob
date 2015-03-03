@@ -98,6 +98,9 @@
 				</div>
 			</div>
 		</article>
+		<aside>
+			Learn about
+		</aside>
 	</div>
 </div>
 <main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> btown-main-container" role="main"<?php print $attributes; ?>>
@@ -117,7 +120,10 @@
 			hide($content['telephone']);
 			hide($content['twitter']);
 			hide($content['facebook']);
-			echo render($content);
+
+			if (isset($press_releases)) {
+                cob_include('press_releases', ['press_releases'=>$press_releases]);
+			}
 		?>
 	</article>
 	<aside class="btown-main-content-sidebar">
