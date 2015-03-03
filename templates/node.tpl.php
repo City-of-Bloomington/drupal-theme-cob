@@ -82,16 +82,16 @@
 //echo "<h1>Hi. Output below:</h1>";
 //print_r($content['field_facebook_page']);
 ?>
-<div class="btown-pageSummary">
+<div class="cob-pageSummary">
 	<h2>Summary of <?php echo $title ?></h2>
-	<div class="btown-pageSummary-container">
+	<div class="cob-pageSummary-container">
 		<article>
 			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
-			<div class="btown-pageSummary-details">
-				<div class="btown-ext-details">
+			<div class="cob-pageSummary-details">
+				<div class="cob-ext-details">
 					Next Meeting
 				</div>
-				<div class="btown-pageSummary-contacts">
+				<div class="cob-pageSummary-contacts">
 					<?php echo render($content['field_phone_number']); ?>
 					<?php echo render($content['field_facebook_page']); ?>
 					<?php echo render($content['field_twitter_account']); ?>
@@ -103,7 +103,7 @@
 		</aside>
 	</div>
 </div>
-<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> btown-main-container" role="main"<?php print $attributes; ?>>
+<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main-container" role="main"<?php print $attributes; ?>>
 
 	<?php print $user_picture; ?>
 
@@ -113,7 +113,7 @@
 		</div>
 	<?php endif; ?>
 
-	<article class="btown-main-content"<?php print $content_attributes; ?>>
+	<article class="cob-main-content"<?php print $content_attributes; ?>>
 		<?php
 			// We hide the comments and links now so that we can render them later.
 			hide($content['summary']);
@@ -126,7 +126,7 @@
 			}
 		?>
 	</article>
-	<aside class="btown-main-content-sidebar">
+	<aside class="cob-main-content-sidebar">
 		Sidebar.
 	</aside>
 </main>

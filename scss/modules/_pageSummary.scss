@@ -1,6 +1,6 @@
-.btown-pageSummary {
+.cob-pageSummary {
     @include clearfix();
-    background: $btown-blue;
+    background: $cob-blue;
 
     > h2 {
         @include visuallyHidden();
@@ -52,7 +52,7 @@
                 color: #fff;
             }
         }
-        > .btown-ext {
+        > .cob-ext {
             @mixin commonCode() {
                 background-repeat: no-repeat;
                 background-position: 0 .1em;
@@ -75,7 +75,7 @@
     }
     @media screen and (min-width: $screen-small) {
         &-details {
-            > .btown-ext-details {
+            > .cob-ext-details {
                 box-sizing: border-box;
                 float: left;
                 padding: 0 $grid-gutter 0 0;
@@ -136,7 +136,7 @@
             }
         }
         &-details {
-            > .btown-ext-details {
+            > .cob-ext-details {
                 width: (100%*3/8);
             }
         }

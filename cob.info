@@ -9,6 +9,6 @@ scripts[] = js/cob.js
 
 regions[header_site] = Site Header
 regions[header_page] = Page Header
-regions[summary_page] = Page Summary
+regions[overview_page] = Page Overview
 regions[content] = Content
 regions[footer] = Site Footer

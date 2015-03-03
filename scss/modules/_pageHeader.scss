@@ -1,5 +1,5 @@
-.btown-pageHeader {
-    background: url('photo-header-showers.jpg') no-repeat $btown-blue;
+.cob-pageHeader {
+    background: url('photo-header-showers.jpg') no-repeat $cob-blue;
     background-size: cover;
 
     &-container {
@@ -39,7 +39,7 @@
                     text-decoration: none;
                 }
     
-                &.btown-ext-current {
+                &.cob-ext-current {
                     border-bottom: .333em solid $cornflower-brightest;
                     color: $cornflower-brightest;
                     padding-bottom: .777em;

@@ -46,7 +46,7 @@
 $items = $element['#items'];
 foreach ($items as $item) {
     echo <<<EOT
-        <div class="btown-ext-phone_number">{$item['safe_value']}</div>
+        <div class="cob-ext-phone_number">{$item['safe_value']}</div>
 EOT;
 }
 

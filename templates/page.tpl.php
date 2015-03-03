@@ -73,8 +73,8 @@
  */
 ?>
 
-<header class="btown-siteHeader">
-    <div class="btown-siteHeader-container">
+<header class="cob-siteHeader">
+    <div class="cob-siteHeader-container">
         <?php
         /*
         <?php if ($main_menu || $secondary_menu): ?>
@@ -91,7 +91,7 @@
                 $t = t('Home');
                 $alt_attribute = $site_name ? $site_name : $t;
                 echo "
-                <a href=\"$front_page\" class=\"btown-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
+                <a href=\"$front_page\" class=\"cob-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
                     <img src=\"$logo\" alt=\"$alt_attribute\" />
                 </a>
                 ";
@@ -100,8 +100,8 @@
     </div>
 </header>
 
-<header class="btown-pageHeader">
-    <div class="btown-pageHeader-container">
+<header class="cob-pageHeader">
+    <div class="cob-pageHeader-container">
         <?php render($title_prefix) ?>
         <h1><span><?php echo $title; ?></span></h1>
         <?php print render($page['header_page']); ?>
@@ -110,9 +110,9 @@
     <?php
         if (!empty($node->field_cmis_documents['und'][0]['folder'])) {
             echo "
-            <div class=\"btown-pageHeader-navigation\">
-                <nav class=\"btown-pageHeader-navigation-container\">
-                    <a href=\"/drupal2/bloomington-arts-commission\" class=\"btown-ext-current\">About</a>
+            <div class=\"cob-pageHeader-navigation\">
+                <nav class=\"cob-pageHeader-navigation-container\">
+                    <a href=\"/drupal2/bloomington-arts-commission\" class=\"cob-ext-current\">About</a>
             ";
             foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
                 if ($key != 'folder') {
@@ -135,7 +135,7 @@
     echo $messages;
 
     if ($tabs || $action_links) {
-        echo "<div class=\"btown-siteAdminBar\">";
+        echo "<div class=\"cob-siteAdminBar\">";
             if ($tabs)         { echo render($tabs); }
             if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
         echo "</div>";
@@ -151,8 +151,8 @@
     echo $feed_icons;
 ?>
 
-<footer class="btown-footer">
-    <div class="btown-footer-container">
+<footer class="cob-footer">
+    <div class="cob-footer-container">
         <?php print render($page['footer']); ?>      
     </div>
 </footer>
