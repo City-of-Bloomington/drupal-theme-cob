@@ -112,15 +112,19 @@
             echo "
             <div class=\"cob-pageHeader-navigation\">
                 <nav class=\"cob-pageHeader-navigation-container\">
-                    <a href=\"/drupal2/bloomington-arts-commission\" class=\"cob-ext-current\">About</a>
             ";
+
+            $p    = current_path();
+            $cc   = ['attributes'=>['class'=>['current']]];
+            $attr = count(explode('/', $p))==2 ? $cc : [];
+            echo l('About', "node/{$node->nid}", $attr);
+
             foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
-                if ($key != 'folder') {
-                    if (!empty($value)) {
-                        $label = substr($key, 9);
-                        $url = "{$base_path}node/{$node->nid}/$label";
-                        echo "<a href=\"$url\">$label</a>";
-                    }
+                if ($key != 'folder' && !empty($value)) {
+                    $label = substr($key, 9);
+                    $url = "node/{$node->nid}/$label";
+                    $attr = strpos($p, $label) ? $cc : [];
+                    echo l(ucfirst($label), $url, $attr);
                 }
             }
             echo "
@@ -146,13 +150,35 @@
         <div id="breadcrumb"><?php print $breadcrumb; ?></div>
         <?php endif; ?>
     */
-
-    echo render($page['content']);
-    echo $feed_icons;
 ?>
 
+<div class="cob-pageOverview">
+	<h2>Summary of <?php echo $title ?></h2>
+	<div class="cob-pageOverview-container">
+		<article>
+			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
+			<div class="cob-pageOverview-details">
+				<div class="cob-ext-details">
+					Next Meeting
+				</div>
+				<div class="cob-pageSummary-contacts">
+					<?php echo render($content['field_phone_number']); ?>
+					<?php echo render($content['field_facebook_page']); ?>
+					<?php echo render($content['field_twitter_account']); ?>
+				</div>
+			</div>
+		</article>
+		<aside>
+			Learn about
+		</aside>
+	</div>
+</div>
+<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main-container" role="main"<?php print $attributes; ?>>
+<?php echo render($page['content']); ?>
+</main>
 <footer class="cob-footer">
     <div class="cob-footer-container">
-        <?php print render($page['footer']); ?>      
+        <?php echo $feed_icons; ?>
+        <?php print render($page['footer']); ?>
     </div>
 </footer>
