@@ -3,6 +3,7 @@
 $cob-blue: #315da6;
 $cob-blue-light: #4975ba;
 $cob-blue-dark: #143a7a;
+$cob-blue-darkest: #06204b;
 
 // Cornflower
 $cornflower-brightest: #acf2ff;
@@ -12,6 +13,7 @@ $action-green: #20ac59;
 $action-green-light: #70bf88;
 
 // Blue-ish gray
+$cob-gray-dark: #8d98a5;
 $cob-gray-darkest: #585f68;
 
 
@@ -53,7 +55,21 @@ $screen-small: (400em/16);
     position: absolute;
     width: 1px;
 }
-
+@mixin dividedSection() {
+    &:before {
+        background-image: url('../images/bloomington-section-divider-mobile.svg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: ' ';
+        display: block;
+        width: 100%;
+        height: 31px;
+        @media screen and (min-width: $screen-medium){
+            background-image: url('../images/bloomington-section-divider.svg');
+        }
+    }
+}
 
 
 
