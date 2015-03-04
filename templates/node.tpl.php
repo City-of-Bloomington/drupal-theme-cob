@@ -82,6 +82,7 @@
 //echo "<h1>Hi. Output below:</h1>";
 //print_r($content['field_facebook_page']);
 ?>
+
 <?php if($view_mode == 'full'): ?>
 <div class="cob-pageSummary">
 	<h2>Summary of <?php echo $title ?></h2>
@@ -106,38 +107,40 @@
 </div>
 <main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
 	<div class="cob-main-container">
-<?php endif; ?>
-	<?php print $user_picture; ?>
-
-	<?php if ($display_submitted): ?>
-		<div class="submitted">
-			<?php print $submitted; ?>
-		</div>
-	<?php endif; ?>
-
-	<article class="cob-main-content"<?php print $content_attributes; ?>>
-		<?php
-			if($view_mode == 'teaser') { echo render($title); }
-			// We hide the comments and links now so that we can render them later.
-			hide($content['links']);
-			echo render($content);
-		?>
-	</article>
-
-	<?php if($view_mode == 'full'): ?>
+		<?php print $user_picture; ?>
+		<?php if ($display_submitted): ?>
+			<div class="submitted">
+				<?php print $submitted; ?>
+			</div>
+		<?php endif; ?>
+		<article class="cob-main-content"<?php print $content_attributes; ?>>
+			<?php
+				hide($content['links']);
+				echo render($content);
+			?>
+		</article>
 		<aside class="cob-main-content-sidebar">
 			Optional content sidebar for main content section.
 		</aside>
-	<?php endif; ?>
-	<?php if($view_mode == 'full'): ?>
-		</div><?php /* <- cob-main-container */ ?>
-	<?php endif; ?>
+	</div><?php /* <- cob-main-container */ ?>
 
 	<?php
 		if (isset($press_releases)) {
 			cob_include('press_releases', ['press_releases'=>$press_releases]);
 		}
 	?>
-<?php if($view_mode == 'full'): ?>
 </main>
+<?php endif; ?>
+
+<?php if($view_mode == 'teaser'): ?>
+	<article class="cob-main-content"<?php print $content_attributes; ?>>
+		<time><?php echo $date; ?></time>
+		<h2><a href="<?php echo $node_url; ?>"><?php echo render($title); ?></a></h2>
+		<?php 
+			// We hide the comments and links now so that we can render them later.
+			hide($content['comments']);
+			//hide($content['links']);
+			echo render($content);
+		?>
+	</article>
 <?php endif; ?>

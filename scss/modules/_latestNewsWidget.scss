@@ -8,6 +8,15 @@
         > .cob-main-content {
             @include grid-6col();
 
+            > h2 {
+                font-size: (20rem/16);
+                font-weight: 400;
+                line-height: (24rem/16);
+                margin: 0 0 (8rem/16) 0;
+                > a {
+                    color: $cob-blue;
+                }
+            }
             p {
                 font-size: 1rem;
             }
