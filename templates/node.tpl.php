@@ -108,11 +108,6 @@
 <main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
 	<div class="cob-main-container">
 		<?php print $user_picture; ?>
-		<?php if ($display_submitted): ?>
-			<div class="submitted">
-				<?php print $submitted; ?>
-			</div>
-		<?php endif; ?>
 		<article class="cob-main-content"<?php print $content_attributes; ?>>
 			<?php
 				hide($content['links']);
@@ -132,11 +127,13 @@
 </main>
 <?php endif; ?>
 
-<?php if($view_mode == 'teaser'): ?>
+<?php if ($view_mode == 'teaser'): ?>
 	<article class="cob-main-content"<?php print $content_attributes; ?>>
-		<time><?php echo $date; ?></time>
+        <?php
+            if ($display_submitted) { echo "<time>$date</time>"; }
+        ?>
 		<h2><a href="<?php echo $node_url; ?>"><?php echo render($title); ?></a></h2>
-		<?php 
+		<?php
 			// We hide the comments and links now so that we can render them later.
 			hide($content['comments']);
 			//hide($content['links']);
