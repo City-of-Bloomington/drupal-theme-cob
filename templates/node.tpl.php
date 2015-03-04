@@ -149,7 +149,8 @@
 <?php if ($view_mode == 'teaser'): ?>
 	<article class="cob-main-content"<?php print $content_attributes; ?>>
         <?php
-            if ($display_submitted) { echo "<time>$date</time>"; }
+			$formatted_date = format_date($created, 'medium');
+            if ($display_submitted) { echo "<time>$formatted_date</time>"; }
         ?>
 		<h2><a href="<?php echo $node_url; ?>"><?php echo render($title); ?></a></h2>
 		<?php
