@@ -1,13 +1,16 @@
 .civiclegislation {
     &-container {
         @include container(); 
-    
+        > h3:first-child {
+            @include visuallyHidden();
+        }
         > nav {
             @include grid-3col();
             text-align: right;
 
             > a {
                 display: block;
+                float: right;
                 font-size: 3em;
 
                 &.active {
@@ -18,5 +21,26 @@
     }
     &-listing {
         @include grid-9col();
+
+        td {
+            > time {
+            color: $cob-gray-dark;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            vertical-align: middle;
+                > i {
+                    font-style: normal;
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    vertical-align: middle;
+                }
+            }
+            > ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        @include tabularData();
     }
 }

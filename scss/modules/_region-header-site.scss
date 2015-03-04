@@ -1,22 +1,24 @@
 .region-header-site {
     > .block-search {
         box-sizing: border-box;
-        padding: .75em 1em 0 1em;
+        padding: .75em 0 0 0;
 
         .form-item {
             margin: 0;
         }
         .form-text {
+            border: 1px solid $cob-gray-dark;
             box-sizing: border-box;
             width: 100%;
         }        
     }
-    @media screen and (min-width: $screen-small) {
+    @media screen and (min-width: $screen-medium) {
         > .block-search {
             float: right;
             width: 17em;
             
             .form-text {
+                font-size: (14rem/16);
                 padding: .25em;
             }
         }

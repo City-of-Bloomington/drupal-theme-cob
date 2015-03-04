@@ -71,6 +71,27 @@ $screen-small: (400em/16);
     }
 }
 
+@mixin tabularData() {
+    table {
+        width: 100%;
+        > thead {
+            > tr {
+                th, td {
+                    font-weight: 400;
+                    padding: .25em 1em .25em .25em;
+                }
+            }
+        }
+        > tbody {
+            > tr {
+                th, td {
+                    padding: .25em 1em .25em .25em;
+                }
+            }
+        }
+    }
+}
+
 
 
 
@@ -83,6 +104,8 @@ $grid-gutter: 2em;
     }
 }
 @mixin container {
+    margin: 0 1rem;
+
     @media screen and (min-width: $screen-medium) {
         @include clearfix();
         box-sizing: border-box;

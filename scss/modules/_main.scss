@@ -19,6 +19,7 @@
         &-sidebar {
             @include grid-4col();
         }
+        @include tabularData();
     }
 
 
