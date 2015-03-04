@@ -111,11 +111,30 @@
 		<article class="cob-main-content"<?php print $content_attributes; ?>>
 			<?php
 				hide($content['links']);
+				hide($content['field_committee']);
+
 				echo render($content);
 			?>
 		</article>
 		<aside class="cob-main-content-sidebar">
-			Optional content sidebar for main content section.
+        <?php
+            if (!empty($content['field_committee'])) {
+                $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
+                if ($json) {
+                    foreach ($json->seats as $seat) {
+                        foreach ($seat->currentMembers as $member) {
+                            echo "
+                            <div>
+                                <h3>{$member->name}</h3>
+                                <div>{$seat->appointedBy}</div>
+                                <div>{$member->termEnd}</div>
+                            </div>
+                            ";
+                        }
+                    }
+                }
+            }
+        ?>
 		</aside>
 	</div><?php /* <- cob-main-container */ ?>
 
