@@ -30,8 +30,9 @@
  */
 ?>
 
-  <?php if (empty($variables['form']['#block']->subject)): ?>
-    <h2 class="element-invisible"><?php print t('Search form'); ?></h2>
-  <?php endif; ?>
-  <?php print $search_form; ?>
+  <?php if (empty($variables['form']['#block']->subject)){
+    echo'<h2 class="element-invisible">'.t('Search form').'</h2>';
+  }
+  echo $search_form;
+?>
 

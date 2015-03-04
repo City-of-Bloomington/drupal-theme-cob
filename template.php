@@ -57,3 +57,12 @@ function cob_include($name, array $data=null)
 {
 	include __DIR__."/includes/$name.php";
 }
+
+
+function cob_form_alter(&$form, &$form_state, $form_id) {
+	if ($form_id == 'search_block_form') {
+		// HTML5 placeholder attribute
+		$form['search_block_form']['#attributes']['placeholder'] = t('Search Bloomington.in.gov');
+		$form['actions']['#attributes']['class'][] = 'element-invisible';
+	}
+}
