@@ -118,7 +118,7 @@
 		</article>
 		<aside class="cob-main-content-sidebar">
         <?php
-            if (!empty($content['field_committee'])) {
+            if (!empty($content['field_committee']['#items'])) {
                 $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
                 if ($json) {
                     foreach ($json->seats as $seat) {
