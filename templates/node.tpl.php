@@ -84,16 +84,16 @@
 ?>
 
 <?php if($view_mode == 'full'): ?>
-<div class="cob-pageSummary">
+<div class="cob-pageOverview">
 	<h2>Summary of <?php echo $title ?></h2>
-	<div class="cob-pageSummary-container">
+	<div class="cob-pageOverview-container">
 		<article>
 			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
-			<div class="cob-pageSummary-details">
+			<div class="cob-pageOverview-details">
 				<div class="cob-ext-details">
 					Next Meeting
 				</div>
-				<div class="cob-pageSummary-contacts">
+				<div class="cob-pageOverview-contacts">
 					<?php echo render($content['field_phone_number']); ?>
 					<?php echo render($content['field_facebook_page']); ?>
 					<?php echo render($content['field_twitter_account']); ?>

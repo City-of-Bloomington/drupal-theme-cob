@@ -1,4 +1,7 @@
 .cob-footer {
+    background: $cob-gray;
+    border-top: .5em solid $cob-blue;
+
     &-container {
         @include container();
     }
