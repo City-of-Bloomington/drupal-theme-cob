@@ -94,9 +94,10 @@
 					Next Meeting
 				</div>
 				<div class="cob-pageOverview-contacts">
-					<?php echo render($content['field_phone_number']); ?>
 					<?php echo render($content['field_facebook_page']); ?>
 					<?php echo render($content['field_twitter_account']); ?>
+					<?php echo render($content['field_phone_number']); ?>
+					<?php echo render($content['field_email']); ?>
 				</div>
 			</div>
 		</article>
