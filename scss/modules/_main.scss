@@ -1,4 +1,6 @@
 .cob-main {
+    margin: 0 0 4rem 0;
+
     &-container {
         @include container();
         > .cob-main-content {

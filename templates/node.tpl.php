@@ -140,10 +140,10 @@
 	</div><?php /* <- cob-main-container */ ?>
 
 	<?php
-		if (isset($press_releases)) {
+		if (!empty($press_releases)) {
 			cob_include('press_releases', ['press_releases'=>$press_releases]);
 		}
-		if (isset($boards_commissions)) {
+		if (!empty($boards_commissions)) {
 			cob_include('boards_commissions', ['boards_commissions'=>$boards_commissions]);
 		}
 	?>

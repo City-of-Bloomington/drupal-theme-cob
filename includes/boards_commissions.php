@@ -11,15 +11,15 @@
  * @author Dan Hiester <hiesterd@bloomington.in.gov>
  * @param array $data['boards_commissions']
  */
-echo "
-<div class=\"block\">
-	<h2>Boards</h2>
-	<ul>
-";
-	foreach ($data['boards_commissions'] as $b) {
-		echo '<li>'.l($b->title, "node/{$b->nid}").'</li>';
+?>
+<section class="cob-boardsCommissionsWidget block">
+	<h2>Boards &amp; Commissions</h2>
+	<div class="cob-boardsCommissionsWidget-listing">
+<?php
+	foreach ($data['boards_commissions'] as $node) {
+		$n = node_view($node, 'teaser');
+		echo render($n);
 	}
-echo "
-	</ul>
-</div>
-";
+?>
+	</div>
+</section>

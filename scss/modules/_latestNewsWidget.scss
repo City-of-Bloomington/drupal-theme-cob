@@ -1,7 +1,6 @@
 .cob-latestNewsWidget {
-    padding-top: 2em;
     @include container();
-    @include dividedSection();
+    @include sectionDivider();
 
     &-heading {
         color: $cob-gray-dark;
@@ -14,6 +13,8 @@
     &-container {
         > .cob-main-content {
             @include grid-6col();
+            font-size: 1rem;
+            line-height: (22rem/16);
 
             > h2 {
                 font-size: (20rem/16);
@@ -23,9 +24,6 @@
                 > a {
                     color: $cob-blue;
                 }
-            }
-            p {
-                font-size: 1rem;
             }
         }
     }

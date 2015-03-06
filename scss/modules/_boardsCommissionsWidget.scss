@@ -1,0 +1,28 @@
+.cob-boardsCommissionsWidget {
+    @include container();
+    @include sectionDivider();
+
+    > h2 {
+        @include grid-4col;
+        color: $cornflower-darkest;
+        font-size: (48rem/16);
+        font-weight: 300;
+        line-height: 1em;
+        margin-top: 0;
+    }
+    &-listing {
+        @include grid-8col;
+        > article {
+            font-size: 1rem;
+            margin: 0 0 (10rem/16);
+            line-height: (22rem/16);
+
+            > h2 {
+                font-weight: 400;
+                font-size: (24rem/16);
+                line-height: (36em/24);
+                margin: 0;
+            }
+        }
+    }
+}
