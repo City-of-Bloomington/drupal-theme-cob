@@ -42,7 +42,7 @@
     &-contacts {
         @include clearfix();
 
-        > a {
+        > a, div {
             clear: left;
             color: #fff;
             display: block;
@@ -59,16 +59,25 @@
                 background-size: 1.32em;
                 padding-left: 1.5em;
             }
-            &-phone_number {
-                background: url('../images/phone-square.svg');
-                @include commonCode();
-            }
             &-facebook-page {
                 background: url('../images/facebook-square.svg');
                 @include commonCode();
             }
             &-twitter-account {
                 background: url('../images/twitter-square.svg');
+                @include commonCode();
+            }
+            &-phone_number {
+                background: url('../images/phone-square.svg');
+                @include commonCode();
+            }
+            &-email {
+                background: url('../images/envelope-square.svg');
+                box-sizing: border-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
                 @include commonCode();
             }
         }
@@ -141,7 +150,7 @@
             }
         }
         &-contacts {
-            width: (100%*3/8);
+            width: (100%*5/8);
         }
     }
 }
