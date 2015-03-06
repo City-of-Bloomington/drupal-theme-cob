@@ -23,6 +23,9 @@
                 line-height: (36em/24);
                 margin: 0;
             }
+            p:first-child {
+                margin-top: 0;
+            }
         }
     }
 }

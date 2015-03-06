@@ -38,6 +38,12 @@
     }
     &-details {
 //        @include clearfix();
+        > .cob-ext {
+            &-physicalAddress {
+                font-style: normal;
+                white-space: pre;
+            }
+        }
     }
     &-contacts {
         @include clearfix();
@@ -84,7 +90,7 @@
     }
     @media screen and (min-width: $screen-small) {
         &-details {
-            > .cob-ext-details {
+            > .cob-ext-details, .cob-ext-physicalAddress {
                 box-sizing: border-box;
                 float: left;
                 padding: 0 $grid-gutter 0 0;
@@ -145,7 +151,7 @@
             }
         }
         &-details {
-            > .cob-ext-details {
+            > .cob-ext-details, .cob-ext-physicalAddress {
                 width: (100%*3/8);
             }
         }

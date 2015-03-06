@@ -85,19 +85,23 @@
 
 <?php if($view_mode == 'full'): ?>
 <div class="cob-pageOverview">
-	<h2>Summary of <?php echo $title ?></h2>
+	<h2>Summary of <?= $title ?></h2>
 	<div class="cob-pageOverview-container">
 		<article>
-			<?php echo $content['body']['#object']->body['und'][0]['safe_summary']; ?>
+			<?= $content['body']['#object']->body['und'][0]['safe_summary']; ?>
 			<div class="cob-pageOverview-details">
-				<div class="cob-ext-details">
-					Next Meeting
-				</div>
+					<?php
+						if(!empty($content['field_physical_address'])){
+							echo render($content['field_physical_address']);
+						} else {
+							echo '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+						}
+					?>
 				<div class="cob-pageOverview-contacts">
-					<?php echo render($content['field_facebook_page']); ?>
-					<?php echo render($content['field_twitter_account']); ?>
-					<?php echo render($content['field_phone_number']); ?>
-					<?php echo render($content['field_email']); ?>
+					<?= render($content['field_facebook_page']); ?>
+					<?= render($content['field_twitter_account']); ?>
+					<?= render($content['field_phone_number']); ?>
+					<?= render($content['field_email']); ?>
 				</div>
 			</div>
 		</article>
