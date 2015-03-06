@@ -153,7 +153,6 @@
 ?>
 
 <?php echo render($page['content']); ?>
-</main>
 <footer class="cob-footer">
     <div class="cob-footer-container">
         <?php echo $feed_icons; ?>
