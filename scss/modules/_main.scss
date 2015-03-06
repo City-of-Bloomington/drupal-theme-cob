@@ -5,13 +5,18 @@
         @include container();
         > .cob-main-content {
             @include grid-8col();
+            margin-top: 4rem;
         }
     }
     &-content {
+        margin-top: 4rem;
         h2 {
             font-weight: bold;
             font-size: (36rem/16);
             margin: (36rem/16) 0 (24rem/16) 0;
+            &:first-child {
+                margin-top: 0;
+            }
         }
         p {
             font-size: (18rem/16);
@@ -20,6 +25,16 @@
         }
         &-sidebar {
             @include grid-4col();
+            margin-top: 4rem;
+
+            > h2 {
+                font-weight: bold;
+                font-size: (36rem/16);
+                margin: (36rem/16) 0 (24rem/16) 0;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
         }
         @include tabularData();
     }

@@ -124,20 +124,26 @@
 		<aside class="cob-main-content-sidebar">
         <?php
             if (!empty($content['field_committee']['#items'])) {
+				echo '<h2>Members</h2>';
+				echo '<dl class="cob-boardsCommissions-members">';
                 $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
                 if ($json) {
                     foreach ($json->seats as $seat) {
                         foreach ($seat->currentMembers as $member) {
-                            echo "
-                            <div>
-                                <h3>{$member->name}</h3>
-                                <div>{$seat->appointedBy}</div>
-                                <div>{$member->termEnd}</div>
-                            </div>
-                            ";
-                        }
+							$memberName = '';
+							$names = explode(' ', $member->name);
+							foreach($names as $n){
+								$memberName .= "<span>$n</span> ";
+							}
+                            echo <<<EOT
+									<dt>$memberName</dt>
+									<dd>Appointed by: {$seat->appointedBy}</dd>
+									<dd>Term expires: {$member->termEnd}</dd>
+EOT;
+						}
                     }
                 }
+				echo '</dl>';
             }
         ?>
 		</aside>
