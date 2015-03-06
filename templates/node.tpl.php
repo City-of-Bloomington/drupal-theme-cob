@@ -143,6 +143,9 @@
 		if (isset($press_releases)) {
 			cob_include('press_releases', ['press_releases'=>$press_releases]);
 		}
+		if (isset($boards_commissions)) {
+			cob_include('boards_commissions', ['boards_commissions'=>$boards_commissions]);
+		}
 	?>
 </main>
 <?php endif; ?>
