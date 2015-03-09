@@ -35,6 +35,8 @@
         }
         &-listing {
             @include grid-8col;
+            margin-top: 0;
+
             > article {
                 font-size: 1rem;
                 margin: 0 0 (10rem/16);

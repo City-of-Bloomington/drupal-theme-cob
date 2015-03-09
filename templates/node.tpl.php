@@ -80,7 +80,7 @@
  * @ingroup themeable
  */
 //echo "<h1>Hi. Output below:</h1>";
-//print_r($content['field_facebook_page']);
+//print_r($body);
 ?>
 
 <?php if($view_mode == 'full'): ?>
@@ -111,43 +111,45 @@
 	</div>
 </div>
 <main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
-	<div class="cob-main-container">
-		<?php print $user_picture; ?>
-		<article class="cob-main-content"<?php print $content_attributes; ?>>
-			<?php
-				hide($content['links']);
-				hide($content['field_committee']);
+	<?php print $user_picture; ?>
+	<?php
+		if(!empty($body[0]['safe_value'])) { echo "
+			<div class=\"cob-main-container\">
+				<article class=\"cob-main-content\"$content_attributes;>
+			";
+			hide($content['links']);
+			hide($content['field_committee']);
+	
+			echo render($content);
+			echo '</article>';
+			echo '<aside class="cob-main-content-sidebar">';
 
-				echo render($content);
-			?>
-		</article>
-		<aside class="cob-main-content-sidebar">
-        <?php
-            if (!empty($content['field_committee']['#items'])) {
+			if (!empty($content['field_committee']['#items'])) {
 				echo '<h2>Members</h2>';
 				echo '<dl class="cob-boardsCommissions-members">';
-                $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
-                if ($json) {
-                    foreach ($json->seats as $seat) {
-                        foreach ($seat->currentMembers as $member) {
+				$json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
+				if ($json) {
+					foreach ($json->seats as $seat) {
+						foreach ($seat->currentMembers as $member) {
 							$memberName = '';
 							$names = explode(' ', $member->name);
 							foreach($names as $n){
 								$memberName .= "<span>$n</span> ";
 							}
-                            echo <<<EOT
+							echo <<<EOT
 									<dt>$memberName</dt>
 									<dd>Appointed by: {$seat->appointedBy}</dd>
 									<dd>Term expires: {$member->termEnd}</dd>
 EOT;
 						}
-                    }
-                }
+					}
+				}
 				echo '</dl>';
-            }
-        ?>
-		</aside>
-	</div><?php /* <- cob-main-container */ ?>
+			}
+			echo '</aside>';
+			echo '</div>';
+		}
+	?>
 
 	<?php
 		if (!empty($press_releases)) {
