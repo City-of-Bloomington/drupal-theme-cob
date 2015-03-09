@@ -51,5 +51,15 @@
                 }
             }
         }
+        @media screen and (min-width: $screen-medium) {
+            > h2 {
+                font-size: (36rem/16);
+            }
+        }
+        @media screen and (min-width: $screen-large) {
+            > h2 {
+                font-size: (48rem/16);
+            }
+        }
     }
 }
