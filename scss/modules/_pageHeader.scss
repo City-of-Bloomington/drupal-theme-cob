@@ -4,13 +4,15 @@
 
     &-container {
         @include container();
+        margin-top: 0;
+        margin-bottom: 0;
         overflow: hidden;
 
         > h1 {
             color: #fff;
             font-weight: 300;
-            font-size: 1.5em;
-            line-height: 1.7em;
+            font-size: 2rem;
+            line-height: 1.2em;
             text-align: center;
         }
     }

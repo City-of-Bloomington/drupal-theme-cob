@@ -79,8 +79,6 @@
  *
  * @ingroup themeable
  */
-//echo "<h1>Hi. Output below:</h1>";
-//print_r($body);
 ?>
 
 <?php if($view_mode == 'full'): ?>
@@ -90,13 +88,13 @@
 		<article>
 			<?= $content['body']['#object']->body['und'][0]['safe_summary']; ?>
 			<div class="cob-pageOverview-details">
-					<?php
-						if(!empty($content['field_physical_address'])){
-							echo render($content['field_physical_address']);
-						} else {
-							echo '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
-						}
-					?>
+				<?php
+					if(!empty($content['field_physical_address'])){
+						echo render($content['field_physical_address']);
+					} else {
+						echo '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+					}
+				?>
 				<div class="cob-pageOverview-contacts">
 					<?= render($content['field_facebook_page']); ?>
 					<?= render($content['field_twitter_account']); ?>
@@ -113,15 +111,28 @@
 <main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
 	<?php print $user_picture; ?>
 	<?php
-		if(!empty($body[0]['safe_value'])) { echo "
-			<div class=\"cob-main-container\">
-				<article class=\"cob-main-content\"$content_attributes;>
-			";
+		if(!empty($body[0]['safe_value'])) { echo <<<EOT
+			<div class="cob-main-container">
+				<article class="cob-main-content"$content_attributes;>
+EOT;
+			if($node->type == 'press_release') {
+				$formatted_date = format_date($created, 'medium');
+				echo <<<EOT
+					<time>$formatted_date</time>
+EOT;
+			}
+
 			hide($content['links']);
-			hide($content['field_committee']);
-	
+			hide($content['field_board_commission']);
+
+			if($node->type == 'press_release') { echo "<h1>{$node->title}</h1>";}
 			echo render($content);
 			echo '</article>';
+
+/* -------------------------------------
+ * Begin main content area sidebar
+ * -------------------------------------
+ */
 			echo '<aside class="cob-main-content-sidebar">';
 
 			if (!empty($content['field_committee']['#items'])) {
@@ -146,6 +157,7 @@ EOT;
 				}
 				echo '</dl>';
 			}
+
 			echo '</aside>';
 			echo '</div>';
 		}

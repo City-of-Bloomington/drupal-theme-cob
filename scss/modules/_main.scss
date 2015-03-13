@@ -10,6 +10,11 @@
     }
     &-content {
         margin-top: 4rem;
+
+        h1 {
+            font-size: (24rem/16);
+            margin: 0 0 (24rem/16) 0;
+        }
         h2 {
             font-weight: bold;
             font-size: (36rem/16);

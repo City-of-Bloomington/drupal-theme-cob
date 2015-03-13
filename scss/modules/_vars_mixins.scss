@@ -47,6 +47,12 @@ $screen-small: (400em/16);
     }
 }
 
+@mixin forwardLink() {
+    background: url('../images/forward-arrow.svg') no-repeat 0 50%;
+    min-height: (19em/16);
+    padding-left: (18rem/16);
+}
+
 @mixin visuallyHidden() {
     border: 0;
     clip: rect(0 0 0 0);

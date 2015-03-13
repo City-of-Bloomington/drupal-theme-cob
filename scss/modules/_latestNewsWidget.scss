@@ -27,7 +27,8 @@
             }
         }
     }
-    &-moreNews {
+    > a {
+        @include forwardLink();
         display: block;
         float: right;
     }

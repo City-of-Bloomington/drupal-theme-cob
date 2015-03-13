@@ -100,39 +100,74 @@
     </div>
 </header>
 
-<header class="cob-pageHeader">
-    <div class="cob-pageHeader-container">
-        <?php render($title_prefix) ?>
-        <h1><span><?php echo $title; ?></span></h1>
-        <?php print render($page['header_page']); ?>
-        <?php print render($title_suffix); ?>
-    </div>
-    <?php
-        if (!empty($node->field_cmis_documents['und'][0]['folder'])) {
-            echo "
-            <div class=\"cob-pageHeader-navigation\">
-                <nav class=\"cob-pageHeader-navigation-container\">
-            ";
-
-            $p    = current_path();
-            $cc   = ['attributes'=>['class'=>['cob-ext-current']]];
-            $attr = count(explode('/', $p))==2 ? $cc : [];
-            echo l('About', "node/{$node->nid}", $attr);
-
-            foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
-                if ($key != 'folder' && !empty($value)) {
-                    $label = substr($key, 9);
-                    $url = "node/{$node->nid}/$label";
-                    $attr = strpos($p, $label) ? $cc : [];
-                    echo l(ucfirst($label), $url, $attr);
-                }
-            }
-            echo "
-                </nav>
-            </div>
-            ";
+<?php
+    $modifier_class = '';
+    if(isset($node) && $node->type == 'press_release') {
+        $modifier_class = 'mod-pressRelease';
+    }
+?>
+<header class="cob-pageHeader <?= $modifier_class ?>">
+<?php
+    if(isset($node->type)) {
+        switch($node->type) {
+            case 'press_release':
+                ?>
+                    <div class="cob-pageHeader-container">
+                        <h1><span>News Release</span></h1>
+                    </div>
+                <?php
+                break;
+            default:
+// The following markup is replicated below just afterward,
+// because we need both a default header for when a node is present,
+// and a default for when there is no node at all.
+// These two instances may diverge later.
+                ?>
+                    <div class="cob-pageHeader-container">
+                        <?php render($title_prefix) ?>
+                        <h1><span><?= $title; ?></span></h1>
+                        <?php print render($page['header_page']); ?>
+                        <?php print render($title_suffix); ?>
+                    </div>
+                <?php
         }
-    ?>
+    } else {
+        ?>
+            <div class="cob-pageHeader-container">
+                <?php render($title_prefix) ?>
+                <h1><span><?= $title; ?></span></h1>
+                <?php print render($page['header_page']); ?>
+                <?php print render($title_suffix); ?>
+            </div>
+        <?php
+    }
+?>
+<?php
+    if (!empty($node->field_cmis_documents['und'][0]['folder'])) {
+        echo "
+        <div class=\"cob-pageHeader-navigation\">
+            <nav class=\"cob-pageHeader-navigation-container\">
+        ";
+
+        $p    = current_path();
+        $cc   = ['attributes'=>['class'=>['cob-ext-current']]];
+        $attr = count(explode('/', $p))==2 ? $cc : [];
+        echo l('About', "node/{$node->nid}", $attr);
+
+        foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
+            if ($key != 'folder' && !empty($value)) {
+                $label = substr($key, 9);
+                $url = "node/{$node->nid}/$label";
+                $attr = strpos($p, $label) ? $cc : [];
+                echo l(ucfirst($label), $url, $attr);
+            }
+        }
+        echo "
+            </nav>
+        </div>
+        ";
+    }
+?>
 </header>
 
 <?php
