@@ -117,24 +117,36 @@
 EOT;
 			if($node->type == 'press_release') {
 				$formatted_date = format_date($created, 'medium');
-				echo <<<EOT
-					<time>$formatted_date</time>
-EOT;
+				echo "<time>$formatted_date</time>";
 			}
 
 			hide($content['links']);
 			hide($content['field_board_commission']);
+			hide($content['field_press_contacts']);
 
 			if($node->type == 'press_release') { echo "<h1>{$node->title}</h1>";}
+
+/* -------------------------------------
+ * Actually.
+ * Render.
+ * The.
+ * Content.
+ * -------------------------------------
+ */
 			echo render($content);
+
+
 			echo '</article>';
 
 /* -------------------------------------
- * Begin main content area sidebar
+ * Begin main content area sidebar.
  * -------------------------------------
  */
 			echo '<aside class="cob-main-content-sidebar">';
 
+			if (!empty($content['field_press_contacts'])) {
+				echo render($content['field_press_contacts']);
+			}
 			if (!empty($content['field_committee']['#items'])) {
 				echo '<h2>Members</h2>';
 				echo '<dl class="cob-boardsCommissions-members">';
@@ -182,9 +194,16 @@ EOT;
         ?>
 		<h2><a href="<?php echo $node_url; ?>"><?php echo render($title); ?></a></h2>
 		<?php
-			// We hide the comments and links now so that we can render them later.
+			// We hide the comments and links.
 			hide($content['comments']);
 			hide($content['links']);
+/* -------------------------------------
+ * Actually.
+ * Render.
+ * The.
+ * Content.
+ * -------------------------------------
+ */
 			echo render($content);
 		?>
 	</article>

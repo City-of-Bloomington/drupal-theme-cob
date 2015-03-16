@@ -51,9 +51,10 @@ $screen-small: (400em/16);
         content: ' ';
         display: block;
         height: (19rem/16);
+        margin-top: (-9rem/16);
         position: absolute;
             left: 0;
-            top: (2rem/16);
+            top: 50%;
         width: (16rem/16);
     }
 }

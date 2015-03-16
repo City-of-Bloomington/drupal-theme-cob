@@ -36,8 +36,21 @@
                 font-weight: bold;
                 font-size: (36rem/16);
                 margin: (36rem/16) 0 (24rem/16) 0;
+
                 &:first-child {
                     margin-top: 0;
+                }
+            }
+            > .cob-ext-pressContacts {
+                margin: 1.75rem 0 0;
+
+                > dt {
+                    color: $cob-blue-dark;
+                    font-size: (14rem/16);
+                }
+                > dd {
+                    font-size: (14rem/16);
+                    margin: 0;
                 }
             }
         }
