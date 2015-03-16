@@ -34,11 +34,6 @@ $screen-small: (400em/16);
 
 // Mixins
 
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-
 @mixin clearfix() {
     &:before, &:after {
         clear: both;
@@ -48,10 +43,25 @@ $screen-small: (400em/16);
 }
 
 @mixin forwardLink() {
-    background: url('../images/forward-arrow.svg') no-repeat 0 50%;
-    min-height: (19em/16);
     padding-left: (18rem/16);
+    position: relative;
+
+    &:before {
+        background: url('../images/forward-arrow.svg') no-repeat 0 50%;
+        content: ' ';
+        display: block;
+        height: (19rem/16);
+        position: absolute;
+            left: 0;
+            top: (2rem/16);
+        width: (16rem/16);
+    }
 }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
 
 @mixin visuallyHidden() {
     border: 0;
