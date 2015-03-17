@@ -43,15 +43,18 @@ $screen-small: (400em/16);
 }
 
 @mixin forwardLink() {
-    padding-left: (18rem/16);
+    font-family: $font-headings;
+    font-size: (20rem/16);
+    padding-left: (20rem/16);
     position: relative;
+    text-transform: uppercase;
 
     &:before {
         background: url('../images/forward-arrow.svg') no-repeat 0 50%;
         content: ' ';
         display: block;
         height: (19rem/16);
-        margin-top: (-9rem/16);
+        margin-top: (-8rem/16);
         position: absolute;
             left: 0;
             top: 50%;
