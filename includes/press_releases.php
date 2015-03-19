@@ -16,5 +16,5 @@
         }
     ?>
     </div>
-    <?php echo l('More News', 'newsroom'); ?>
+    <?php echo l('City Newsroom', 'newsroom'); ?>
 </section>
