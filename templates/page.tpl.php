@@ -75,28 +75,25 @@
 
 <header class="cob-siteHeader">
     <div class="cob-siteHeader-container">
+        <nav>
         <?php
-        /*
-        <?php if ($main_menu || $secondary_menu): ?>
-            <div id="navigation"><div class="section">
-            <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
-            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
-            </div></div> <!-- /.section, /#navigation -->
-        <?php endif; ?>
-        */
-        ?>
-        <?php
-            if (!empty($page['header_site'])) { echo render($page['header_site']); }
-            if ($logo) {
-                $t = t('Home');
-                $alt_attribute = $site_name ? $site_name : $t;
-                echo "
-                <a href=\"$front_page\" class=\"cob-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
-                    <img src=\"$logo\" alt=\"$alt_attribute\" />
-                </a>
-                ";
+            foreach (taxonomy_get_tree(2, 0, 1) as $t) {
+                echo l($t->name, 'taxonomy/term/'.$t->tid);
             }
         ?>
+        </nav>
+    <?php
+        if (!empty($page['header_site'])) { echo render($page['header_site']); }
+        if ($logo) {
+            $t = t('Home');
+            $alt_attribute = $site_name ? $site_name : $t;
+            echo "
+            <a href=\"$front_page\" class=\"cob-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
+                <img src=\"$logo\" alt=\"$alt_attribute\" />
+            </a>
+            ";
+        }
+    ?>
     </div>
 </header>
 
