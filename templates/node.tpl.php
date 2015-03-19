@@ -151,7 +151,7 @@ hide($content['field_press_contacts']);
                         if (!empty($content['field_committee']['#items'])) {
                             $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
                             if ($json) {
-                                cob_include('committeeMembers.php', ['committee'=>$json]);
+                                cob_include('committeeMembers', ['committee'=>$json]);
                             }
                         }
                     echo "

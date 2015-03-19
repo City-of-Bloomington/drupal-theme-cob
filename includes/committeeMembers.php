@@ -9,7 +9,7 @@
 <h2>Members</h2>
 <dl class="cob-boardsCommissions-members">
 <?php
-    foreach ($data['committe']->seats as $seat) {
+    foreach ($data['committee']->seats as $seat) {
         foreach ($seat->currentMembers as $member) {
             $memberName = '';
             $names = explode(' ', $member->name);
