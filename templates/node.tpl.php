@@ -79,134 +79,89 @@
  *
  * @ingroup themeable
  */
+hide($content['comments']);
+hide($content['links']);
+hide($content['field_board_commission']);
+hide($content['field_press_contacts']);
 ?>
-
-<?php if ($view_mode == 'full'): ?>
-<div class="cob-pageOverview">
-	<h2>Summary of <?= $title ?></h2>
-	<div class="cob-pageOverview-container">
-		<article>
-			<?php
-                if (!empty($content['body'])) {
-                    echo $content['body']['#object']->body['und'][0]['safe_summary'];
-                }
-            ?>
-			<div class="cob-pageOverview-details">
-				<?php
-					echo  !empty($content['field_physical_address'])
-                        ? render($content['field_physical_address'])
-                        : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
-				?>
-				<div class="cob-pageOverview-contacts">
-					<?= render($content['field_facebook_page']); ?>
-					<?= render($content['field_twitter_account']); ?>
-					<?= render($content['field_phone_number']); ?>
-					<?= render($content['field_email']); ?>
-				</div>
-			</div>
-		</article>
-		<aside>
-			Learn about
-		</aside>
-	</div>
-</div>
-<main id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> cob-main" role="main"<?php print $attributes; ?>>
-	<?php print $user_picture; ?>
-	<?php
-		if (!empty($body[0]['safe_value'])) { echo <<<EOT
-			<div class="cob-main-container">
-				<article class="cob-main-content"$content_attributes;>
-EOT;
-			if ($node->type == 'press_release') {
-				$formatted_date = format_date($created, 'medium');
-				echo "<time>$formatted_date</time>";
-			}
-
-			hide($content['links']);
-			hide($content['field_board_commission']);
-			hide($content['field_press_contacts']);
-
-			if ($node->type == 'press_release') { echo "<h1>{$node->title}</h1>"; }
-
-/* -------------------------------------
- * Actually.
- * Render.
- * The.
- * Content.
- * -------------------------------------
- */
-			echo render($content);
-
-
-			echo '</article>';
-
-/* -------------------------------------
- * Begin main content area sidebar.
- * -------------------------------------
- */
-			echo '<aside class="cob-main-content-sidebar">';
-
-			if (!empty($content['field_press_contacts'])) {
-				echo render($content['field_press_contacts']);
-			}
-			if (!empty($content['field_committee']['#items'])) {
-				echo '<h2>Members</h2>';
-				echo '<dl class="cob-boardsCommissions-members">';
-				$json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
-				if ($json) {
-					foreach ($json->seats as $seat) {
-						foreach ($seat->currentMembers as $member) {
-							$memberName = '';
-							$names = explode(' ', $member->name);
-							foreach($names as $n){
-								$memberName .= "<span>$n</span> ";
-							}
-							echo <<<EOT
-                            <dt>$memberName</dt>
-                            <dd>Appointed by: {$seat->appointedBy}</dd>
-                            <dd>Term expires: {$member->termEnd}</dd>
-EOT;
-						}
-					}
-				}
-				echo '</dl>';
-			}
-
-			echo '</aside>';
-			echo '</div>';
-		}
-	?>
-
-	<?php
-		if (!empty($press_releases)) {
-			cob_include('press_releases', ['press_releases'=>$press_releases]);
-		}
-		if (!empty($boards_commissions)) {
-			cob_include('boards_commissions', ['boards_commissions'=>$boards_commissions]);
-		}
-	?>
-</main>
-<?php endif; ?>
-
+<article class="cob-main-content" <?= $content_attributes ?>>
 <?php if ($view_mode == 'teaser'): ?>
-	<article class="cob-main-content"<?php print $content_attributes; ?>>
+    <?php
+        $formatted_date = '';
+        if ($display_submitted) {
+            $d = format_date($created, 'medium');
+            $formatted_date = "<time>$d</time>";
+        }
+        echo "$formatted_date<h2><a href=\"$node_url\">".render($title)."</a></h2>";
+        echo render($content);
+    ?>
+    <?php else: ?>
+    <div class="cob-pageOverview">
+        <h2>Summary of <?= $title ?></h2>
+        <div class="cob-pageOverview-container">
+            <div>
+                <?php
+                    if (!empty($content['body'])) {
+                        echo $content['body']['#object']->body['und'][0]['safe_summary'];
+                    }
+                ?>
+                <div class="cob-pageOverview-details">
+                    <?php
+                        echo  !empty($content['field_physical_address'])
+                            ? render($content['field_physical_address'])
+                            : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+                    ?>
+                    <div class="cob-pageOverview-contacts">
+                        <?= render($content['field_facebook_page']); ?>
+                        <?= render($content['field_twitter_account']); ?>
+                        <?= render($content['field_phone_number']); ?>
+                        <?= render($content['field_email']); ?>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                Learn about
+            </aside>
+        </div>
+    </div>
+    <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+        <?php print $user_picture; ?>
         <?php
-			$formatted_date = format_date($created, 'medium');
-            if ($display_submitted) { echo "<time>$formatted_date</time>"; }
+            if (!empty($body[0]['safe_value'])) {
+                echo "
+                <div class=\"cob-main-container\">
+                    <div class=\"cob-main-content\"$content_attributes;>
+                ";
+                    if ($node->type == 'press_release') {
+                        $formatted_date = format_date($created, 'medium');
+                        echo "
+                        <time>$formatted_date</time>
+                        <h1>{$node->title}</h1>
+                        ";
+                    }
+
+                    echo render($content);
+                    echo "
+                    </div>
+                    <aside class=\"cob-main-content-sidebar\">
+                    ";
+                        if (!empty($content['field_press_contacts'])) {
+                            echo render($content['field_press_contacts']);
+                        }
+                        if (!empty($content['field_committee']['#items'])) {
+                            $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
+                            if ($json) {
+                                cob_include('committeeMembers.php', ['committee'=>$json]);
+                            }
+                        }
+                    echo "
+                    </aside>
+                </div>
+                ";
+            }
+            if (!empty($press_releases))     { cob_include('press_releases',     ['press_releases'    => $press_releases]    ); }
+            if (!empty($boards_commissions)) { cob_include('boards_commissions', ['boards_commissions'=> $boards_commissions]); }
         ?>
-		<h2><a href="<?php echo $node_url; ?>"><?php echo render($title); ?></a></h2>
-		<?php
-			// We hide the comments and links.
-			hide($content['comments']);
-			hide($content['links']);
-/* -------------------------------------
- * Actually.
- * Render.
- * The.
- * Content.
- * -------------------------------------
- */
-			echo render($content);
-		?>
-	</article>
-<?php endif; ?>
+    </div>
+    <?php endif ?>
+</article>
