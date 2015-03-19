@@ -49,5 +49,3 @@ foreach ($items as $item) {
         <address class="cob-ext-physicalAddress">{$item['safe_value']}</address>
 EOT;
 }
-
-?>

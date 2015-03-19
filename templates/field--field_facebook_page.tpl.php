@@ -43,8 +43,6 @@
  *
  * @ingroup themeable
  */
-
-//print_r($element['#items']);
 $items = $element['#items'];
 foreach ($items as $item) {
     foreach ($item['attributes'] as $attr => $value) {
@@ -54,5 +52,3 @@ foreach ($items as $item) {
         <a href="{$item['display_url']}"$attributes>{$item['title']}</a>
 EOT;
 }
-
-?>

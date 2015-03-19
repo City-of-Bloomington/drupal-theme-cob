@@ -28,11 +28,7 @@
  *
  * @see template_preprocess_search_block_form()
  */
-?>
-
-  <?php if (empty($variables['form']['#block']->subject)){
+if (empty($variables['form']['#block']->subject)) {
     echo'<h2 class="element-invisible">'.t('Search form').'</h2>';
-  }
-  echo $search_form;
-?>
-
+}
+echo $search_form;

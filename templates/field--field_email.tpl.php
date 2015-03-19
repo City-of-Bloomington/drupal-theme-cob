@@ -49,6 +49,4 @@ foreach ($items as $item) {
     echo <<<EOT
         <a href="mailto:{$item['safe_value']}" class="cob-ext-email">{$item['safe_value']}</a>
 EOT;
-    }
-
-?>
+}

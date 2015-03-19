@@ -43,26 +43,26 @@
  * @ingroup themeable
  */
 ?><!DOCTYPE html>
-<html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
+<html lang="<?= $language->language; ?>" dir="<?= $language->dir; ?>">
 
-<head profile="<?php print $grddl_profile; ?>">
-  <?php print $head; ?>
-  <title><?php print $head_title; ?></title>
+<head profile="<?= $grddl_profile; ?>">
+  <?= $head; ?>
+  <title><?= $head_title; ?></title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
-  <?php print $styles; ?>
+  <?= $styles; ?>
 </head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<body class="<?= $classes; ?>" <?= $attributes;?>>
   <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
   </div>
   <!--[if lte IE 9]>
 	  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
-  <?php print $scripts; ?>
+  <?= $page_top; ?>
+  <?= $page; ?>
+  <?= $page_bottom; ?>
+  <?= $scripts; ?>
 </body>
 </html>

@@ -43,8 +43,7 @@
  *
  * @ingroup themeable
  */
-
-if(!empty($items)) {
+if (!empty($items)) {
     echo '<dl class="cob-ext-pressContacts">';
     echo '<dt>For more information, please contact:</dt>';
     $items = $element['#items'];
@@ -55,4 +54,3 @@ EOT;
     }
     echo '</dl>';
 }
-?>

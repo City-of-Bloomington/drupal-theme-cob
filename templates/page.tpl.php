@@ -102,13 +102,13 @@
 
 <?php
     $modifier_class = '';
-    if(isset($node) && $node->type == 'press_release') {
+    if (isset($node) && $node->type == 'press_release') {
         $modifier_class = 'mod-pressRelease';
     }
 ?>
 <header class="cob-pageHeader <?= $modifier_class ?>">
 <?php
-    if(isset($node->type)) {
+    if (isset($node->type)) {
         switch($node->type) {
             case 'press_release':
                 ?>

@@ -49,5 +49,3 @@ foreach ($items as $item) {
         <div class="cob-ext-phone_number">{$item['safe_value']}</div>
 EOT;
 }
-
-?>
