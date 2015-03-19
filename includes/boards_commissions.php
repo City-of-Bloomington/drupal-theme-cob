@@ -15,11 +15,11 @@
 <section class="cob-boardsCommissionsWidget block">
 	<h2>Boards &amp; Commissions</h2>
 	<div class="cob-boardsCommissionsWidget-listing">
-<?php
-	foreach ($data['boards_commissions'] as $node) {
-		$n = node_view($node, 'teaser');
-		echo render($n);
-	}
-?>
+    <?php
+        foreach ($data['boards_commissions'] as $node) {
+            $n = node_view($node, 'teaser');
+            echo render($n);
+        }
+    ?>
 	</div>
 </section>
