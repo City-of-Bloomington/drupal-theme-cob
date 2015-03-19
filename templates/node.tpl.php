@@ -86,13 +86,16 @@
 	<h2>Summary of <?= $title ?></h2>
 	<div class="cob-pageOverview-container">
 		<article>
-			<?= $content['body']['#object']->body['und'][0]['safe_summary']; ?>
+			<?php
+                if (!empty($content['body'])) {
+                    echo $content['body']['#object']->body['und'][0]['safe_summary'];
+                }
+            ?>
 			<div class="cob-pageOverview-details">
 				<?php
 					echo  !empty($content['field_physical_address'])
                         ? render($content['field_physical_address'])
                         : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
-					}
 				?>
 				<div class="cob-pageOverview-contacts">
 					<?= render($content['field_facebook_page']); ?>
