@@ -7,8 +7,8 @@
     }
     &-container {
         @include container();
-        
-        > article {
+
+        > div {
             color: #fff;
             @include grid-8col();
         }
@@ -37,7 +37,6 @@
         }
     }
     &-details {
-//        @include clearfix();
         > .cob-ext {
             &-physicalAddress {
                 font-style: normal;
@@ -107,8 +106,8 @@
     }
     @media screen and (min-width: $screen-medium) {
         &-container {
-            
-            > article {
+
+            > div {
                 padding-top: 2em;
                 padding-bottom: 2em;
                 position: relative;

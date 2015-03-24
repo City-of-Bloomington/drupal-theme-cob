@@ -83,6 +83,7 @@ hide($content['comments']);
 hide($content['links']);
 hide($content['field_board_commission']);
 hide($content['field_press_contacts']);
+hide($content['field_committee']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
 <?php if ($view_mode == 'teaser'): ?>
