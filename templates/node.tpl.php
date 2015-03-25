@@ -66,6 +66,11 @@
  * - $logged_in: Flags true when the current user is a logged-in member.
  * - $is_admin: Flags true when the current user is an administrator.
  *
+ * Additional custom variables for COB:
+ * $press_releases: An array of press release nodes associated with this node
+ * $boards_commissions An array of boards nodes associated with this node
+ * $contactInfo: JSON object with contact info from Directory
+ *
  * Field variables: for each field instance attached to the node a corresponding
  * variable is defined; for example, $node->body becomes $body. When needing to
  * access a field's raw values, developers/themers are strongly encouraged to
@@ -108,15 +113,36 @@ hide($content['field_committee']);
                 ?>
                 <div class="cob-pageOverview-details">
                     <?php
-                        echo  !empty($content['field_physical_address'])
-                            ? render($content['field_physical_address'])
-                            : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+                        if (!empty($contactInfo)) {
+                            echo "
+                            <address class=\"cob-ext-physicalAddress\">{$contactInfo->address}
+                            {$contactInfo->city} {$contactInfo->state} {$contactInfo->zip}
+                            </address>
+                            ";
+                        }
+                        else {
+                            echo  !empty($content['field_physical_address'])
+                                ? render($content['field_physical_address'])
+                                : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+                        }
                     ?>
                     <div class="cob-pageOverview-contacts">
                         <?= render($content['field_facebook_page']); ?>
                         <?= render($content['field_twitter_account']); ?>
-                        <?= render($content['field_phone_number']); ?>
-                        <?= render($content['field_email']); ?>
+                        <?php
+                            if (!empty($contactInfo)) {
+                                $phoneNumberFields = ['office', 'fax', 'cell', 'other', 'pager'];
+                                foreach ($phoneNumberFields as $f) {
+                                    if (!empty($contactInfo->$f)) {
+                                        echo "<div class=\"cob-ext-phone_number\">{$contactInfo->$f}</div>";
+                                    }
+                                }
+                            }
+                            else {
+                                echo render($content['field_phone_number']);
+                                echo render($content['field_email']);
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
