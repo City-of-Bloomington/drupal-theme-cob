@@ -7,8 +7,6 @@
             @include grid-8col();
             margin-top: 4rem;
         }
-    }
-    &-content {
 
         h1 {
             font-size: (24rem/16);
@@ -54,8 +52,8 @@
             }
         }
         @include tabularData();
-    }
 
+    }
 
     @media screen and (min-width: $screen-medium) {
     }
