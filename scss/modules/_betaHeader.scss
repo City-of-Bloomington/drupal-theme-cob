@@ -1,0 +1,28 @@
+.cob-betaHeader {
+    background: $cob-nightshade;
+    color: #fff;
+
+    &-container {
+        @include container();
+        background: url('../images/beta-badge.svg') no-repeat 0 .8rem;
+        background-size: 4rem 4rem;
+        padding-left: 10rem;
+
+        > h1 {
+            color: #fff;
+            font-family: $font-headings;
+            font-weight: 300;
+            font-size: 1.5rem;
+            margin: 1rem 0 0 0;
+        }
+    }
+    &-content {
+        > p {
+            @include grid-8col();
+
+            > a {
+                color: $cob-blue-light;
+            }
+        }
+    }
+}

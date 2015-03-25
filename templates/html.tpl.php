@@ -59,6 +59,14 @@
   <!--[if lte IE 9]>
 	  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div class="cob-betaHeader">
+	<div class="cob-betaHeader-container">
+	  <h1>Welcome to beta.bloomington.in.gov</h1>
+	  <div class="cob-betaHeader-content">
+		<p>This website is a work in progress. It is missing some information. We welcome feedback from our community during construction. <a href="#">Learn more about our process.</a></p>
+	  </div>
+	</div>
+  </div>
 
   <?= $page_top; ?>
   <?= $page; ?>
