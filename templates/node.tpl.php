@@ -89,9 +89,13 @@ hide($content['links']);
 hide($content['field_board_commission']);
 hide($content['field_press_contacts']);
 hide($content['field_committee']);
+hide($content['field_directory_dn']);
+hide($content['field_physical_address']);
+hide($content['field_phone_number']);
+hide($content['field_email']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
-<?php if ($view_mode == 'teaser'): ?>
+    <?php if ($view_mode == 'teaser'): ?>
     <?php
         $formatted_date = '';
         if ($display_submitted) {
@@ -114,9 +118,12 @@ hide($content['field_committee']);
                 <div class="cob-pageOverview-details">
                     <?php
                         if (!empty($contactInfo)) {
+                            foreach (['address', 'city', 'state', 'zip'] as $f) {
+                                $$f = !empty($contactInfo->$f) ? $contactInfo->$f : '';
+                            }
                             echo "
-                            <address class=\"cob-ext-physicalAddress\">{$contactInfo->address}
-                            {$contactInfo->city} {$contactInfo->state} {$contactInfo->zip}
+                            <address class=\"cob-ext-physicalAddress\">$address
+                            $city $state $zip
                             </address>
                             ";
                         }
@@ -136,6 +143,9 @@ hide($content['field_committee']);
                                     if (!empty($contactInfo->$f)) {
                                         echo "<div class=\"cob-ext-phone_number\">{$contactInfo->$f}</div>";
                                     }
+                                }
+                                if (!empty($contactInfo->email)) {
+                                    echo "<a href=\"mailto:{$contactInfo->email}\" class=\"cob-ext-email\">{$contactInfo->email}</a>";
                                 }
                             }
                             else {

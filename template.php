@@ -30,6 +30,18 @@ function cob_preprocess_node(&$vars)
 	if (!empty($vars['field_directory_dn'])) {
         $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']);
 	}
+	if (!empty($vars['field_committee'])) {
+        $vars['committee'] = civiclegislation_committee_info($vars['field_committee'][0]['value']);
+        $vars['contactInfo'] = (object)[
+            'name'    => $vars['committee']->info->name,
+            'email'   => $vars['committee']->info->email,
+            'office'  => $vars['committee']->info->phone,
+            'address' => $vars['committee']->info->address,
+            'city'    => $vars['committee']->info->city,
+            'state'   => $vars['committee']->info->state,
+            'zip'     => $vars['committee']->info->zip
+        ];
+	}
 }
 
 /**
