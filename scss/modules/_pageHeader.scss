@@ -7,12 +7,23 @@
         margin-top: 0;
         margin-bottom: 0;
         overflow: hidden;
+            &:before {
+                background: url('photo-header-showers-circle@1x.jpg') no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                content: ' ';
+                display: block;
+                height: 75px;
+                margin: 1rem auto 0;
+                width: 75px;
+            }
 
         > h1 {
             color: #fff;
             font-weight: 300;
             font-size: 2rem;
             line-height: 1.2em;
+            margin: .5rem 0 1rem;
             text-align: center;
         }
     }
@@ -54,10 +65,6 @@
         &-container {
 
             &:before {
-                background: url('photo-header-showers-circle@1x.jpg') no-repeat;
-                border-radius: 50%;
-                content: ' ';
-                display: block;
                 float: left;
                 height: 152px;
                 margin: 27px 27px 0 0;
