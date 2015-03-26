@@ -93,6 +93,7 @@ hide($content['field_directory_dn']);
 hide($content['field_physical_address']);
 hide($content['field_phone_number']);
 hide($content['field_email']);
+hide($content['field_call_to_action']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
     <?php if ($view_mode == 'teaser'): ?>
@@ -155,6 +156,11 @@ hide($content['field_email']);
                         ?>
                     </div>
                 </div>
+                <?php
+                    if (     !empty($content['field_call_to_action'])) {
+                        echo render($content['field_call_to_action']);
+                    }
+                ?>
             </div>
             <aside>
                 Learn about
