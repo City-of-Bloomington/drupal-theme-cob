@@ -185,8 +185,8 @@ hide($content['field_call_to_action']);
 
                     echo render($content);
                     echo "
-                    </div>
-                    <aside class=\"cob-main-content-sidebar\">
+                        </div>
+                        <aside class=\"cob-main-content-sidebar\">
                     ";
                         if (!empty($content['field_press_contacts'])) {
                             echo render($content['field_press_contacts']);

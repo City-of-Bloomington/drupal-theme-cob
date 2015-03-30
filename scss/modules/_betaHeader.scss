@@ -19,6 +19,7 @@
             margin: 1rem 0 0 0;
         }
         > p {
+            margin: .5rem 0 1rem;
 
             > a {
                 color: $cob-blue-light;
@@ -38,6 +39,7 @@
     @media screen and (min-width: $screen-medium) {
         &-content {
             margin-top: 0;
+            margin-bottom: 0;
         }
     }
 }
