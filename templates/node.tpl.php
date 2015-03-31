@@ -168,43 +168,42 @@ hide($content['field_call_to_action']);
         </div>
     </div>
     <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-        <?php print $user_picture; ?>
-        <?php
-            if (!empty($body[0]['safe_value'])) {
+    <?php
+        echo "
+        $user_picture
+        <div class=\"cob-main-container\">
+            <div class=\"cob-main-content\"$content_attributes;>
+        ";
+            if ($node->type == 'press_release') {
+                $formatted_date = format_date($created, 'medium');
                 echo "
-                <div class=\"cob-main-container\">
-                    <div class=\"cob-main-content\"$content_attributes;>
-                ";
-                    if ($node->type == 'press_release') {
-                        $formatted_date = format_date($created, 'medium');
-                        echo "
-                        <time>$formatted_date</time>
-                        <h1>{$node->title}</h1>
-                        ";
-                    }
-
-                    echo render($content);
-                    echo "
-                        </div>
-                        <aside class=\"cob-main-content-sidebar\">
-                    ";
-                        if (!empty($content['field_press_contacts'])) {
-                            echo render($content['field_press_contacts']);
-                        }
-                        if (!empty($content['field_committee']['#items'])) {
-                            $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
-                            if ($json) {
-                                cob_include('committeeMembers', ['committee'=>$json]);
-                            }
-                        }
-                    echo "
-                    </aside>
-                </div>
+                <time>$formatted_date</time>
+                <h1>{$node->title}</h1>
                 ";
             }
-            if (!empty($press_releases))     { cob_include('press_releases',     ['press_releases'    => $press_releases]    ); }
-            if (!empty($boards_commissions)) { cob_include('boards_commissions', ['boards_commissions'=> $boards_commissions]); }
-        ?>
+
+            echo render($content);
+
+            echo "
+            </div>
+            <aside class=\"cob-main-content-sidebar\">
+            ";
+                if (!empty($content['field_press_contacts'])) {
+                    echo render($content['field_press_contacts']);
+                }
+                if (!empty($content['field_committee']['#items'])) {
+                    $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
+                    if ($json) {
+                        cob_include('committeeMembers', ['committee'=>$json]);
+                    }
+                }
+            echo "
+            </aside>
+        </div>
+        ";
+        if (!empty($press_releases))     { cob_include('press_releases',     ['press_releases'    => $press_releases]    ); }
+        if (!empty($boards_commissions)) { cob_include('boards_commissions', ['boards_commissions'=> $boards_commissions]); }
+    ?>
     </div>
     <?php endif ?>
 </article>
