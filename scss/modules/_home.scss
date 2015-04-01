@@ -1,0 +1,15 @@
+.cob-home {
+    &Nav {
+        display: inline-block;
+        > a {
+            display: inline-block;
+        }
+    }
+    @media screen and (min-width: $screen-medium) {
+        &Nav {
+            > a {
+                padding: 1.5em .5em .5em .5em;
+            }
+        }
+    }
+}
