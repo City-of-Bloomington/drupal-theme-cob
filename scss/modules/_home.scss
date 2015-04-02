@@ -1,14 +1,58 @@
 .cob-home {
+    &Header {
+        border-top: 8px solid $cob-blue;
+
+        &-container {
+            @include container();
+        }
+        &-logo {
+            display: inline-block;
+            margin: 7px 0 7px 0;
+            &-image {
+                width: (268rem/16);
+            }
+        }
+    }
     &Nav {
         display: inline-block;
         > a {
+            border-bottom: .25em solid #fff;
             display: inline-block;
+            transition: border-color .25s linear;
+
+            &:hover {
+                border-bottom-color: $cob-gray;
+            }
+        }
+    }
+    &Main {
+        background: url('../images/home-background.jpg') 50% 50% no-repeat $cob-blue;
+        overflow: hidden;
+        &-container {
+            @include container();
+            > label {
+                color: #fff;
+                display: block;
+                font-family: $font-headings;
+                font-size: 2rem;
+                font-weight: 300;
+            }
         }
     }
     @media screen and (min-width: $screen-medium) {
+        &Header {
+            padding-top: 1rem;
+        }
         &Nav {
+            float: right;
+            padding: 1rem 0 0;
+
             > a {
-                padding: 1.5em .5em .5em .5em;
+                padding: 1.5em 1em .25em 1em;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
     }
