@@ -116,29 +116,9 @@ include __DIR__.'/partials/siteHeader.inc';
     }
 ?>
 <?php
-    if (!empty($node->field_cmis_documents['und'][0]['folder'])) {
-        echo "
-        <div class=\"cob-pageHeader-navigation\">
-            <nav class=\"cob-pageHeader-navigation-container\">
-        ";
-
-        $p    = current_path();
-        $cc   = ['attributes'=>['class'=>['cob-ext-current']]];
-        $attr = count(explode('/', $p))==2 ? $cc : [];
-        echo l('About', "node/{$node->nid}", $attr);
-
-        foreach ($node->field_cmis_documents['und'][0] as $key=>$value) {
-            if ($key != 'folder' && !empty($value)) {
-                $label = substr($key, 9);
-                $url = "node/{$node->nid}/$label";
-                $attr = strpos($p, $label) ? $cc : [];
-                echo l(ucfirst($label), $url, $attr);
-            }
-        }
-        echo "
-            </nav>
-        </div>
-        ";
+    if (   !empty($node->field_cmis_documents['und'][0]['folder'])
+        || !empty($node->book['bid'])) {
+        include __DIR__.'/partials/pageHeader-navigation.inc';
     }
 ?>
 </header>
