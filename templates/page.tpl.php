@@ -94,28 +94,18 @@ include __DIR__.'/partials/siteHeader.inc';
                 // because we need both a default header for when a node is present,
                 // and a default for when there is no node at all.
                 // These two instances may diverge later.
-                ?>
-                    <div class="cob-pageHeader-container">
-                        <?php render($title_prefix) ?>
-                        <h1><span><?= $title; ?></span></h1>
-                        <?php print render($page['header_page']); ?>
-                        <?php print render($title_suffix); ?>
-                    </div>
-                <?php
+                echo '<div class="cob-pageHeader-container">';
+
+                if (!empty($node->field_category['und'][0]['tid'])) {
+                    include __DIR__.'/partials/breadcrumbs.inc';
+                }
+                include __DIR__.'/partials/pageHeader-region.inc';
         }
     }
     else {
-        ?>
-            <div class="cob-pageHeader-container">
-                <?php render($title_prefix) ?>
-                <h1><span><?= $title; ?></span></h1>
-                <?php print render($page['header_page']); ?>
-                <?php print render($title_suffix); ?>
-            </div>
-        <?php
+        include __DIR__.'/partials/pageHeader-region.inc';
     }
-?>
-<?php
+    
     if (   !empty($node->field_cmis_documents['und'][0]['folder'])
         || !empty($node->book['bid'])) {
         include __DIR__.'/partials/pageHeader-navigation.inc';
