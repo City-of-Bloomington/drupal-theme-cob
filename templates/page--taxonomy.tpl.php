@@ -72,7 +72,7 @@
  */
 
 include __DIR__.'/partials/homeHeader.inc';
- 
+
 $modifier_class = '';
 if (isset($node) && $node->type == 'press_release') {
     $modifier_class = 'mod-pressRelease';
@@ -90,28 +90,30 @@ if (isset($node) && $node->type == 'press_release') {
 </div>
 <main class="cob-portalMain" role="main">
     <div class="cob-portalMain-container">
-<?php
-    echo $messages;
-    
-    if ($tabs || $action_links) {
-        echo "<div class=\"cob-siteAdminBar\">";
-            if ($tabs)         { echo render($tabs); }
-            if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-        echo "</div>";
-    }
+    <?php
+        echo $messages;
 
-    echo render($page['content']);
-?>
+        if ($tabs || $action_links) {
+            echo "<div class=\"cob-siteAdminBar\">";
+                if ($tabs)         { echo render($tabs); }
+                if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
+            echo "</div>";
+        }
+
+        echo render($page['content']);
+    ?>
     </div>
 </main>
 
 <footer class="cob-footer">
     <div class="cob-footer-container">
-        <?php echo $feed_icons; ?>
-        <?php print render($page['footer']); ?>
+        <?php
+            echo $feed_icons;
+            echo render($page['footer']);
+        ?>
     </div>
 </footer>
 
 <div class="cob-sectionTemplates">
-    
+
 </div>

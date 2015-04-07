@@ -96,17 +96,19 @@ if ($tabs || $action_links) {
                 echo render($search['content']);
             ?>
         </div>
-<?php echo render($page['content']); ?>
+        <?php echo render($page['content']); ?>
     </div>
 </main>
 
 <footer class="cob-footer">
     <div class="cob-footer-container">
-        <?php echo $feed_icons; ?>
-        <?php print render($page['footer']); ?>
+    <?php
+        echo $feed_icons;
+        echo render($page['footer']);
+    ?>
     </div>
 </footer>
 
 <div class="cob-sectionTemplates">
-    
+
 </div>
