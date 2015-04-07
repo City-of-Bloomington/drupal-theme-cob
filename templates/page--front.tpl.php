@@ -70,35 +70,9 @@
  *
  * @ingroup themeable
  */
-?>
 
-<header class="cob-siteHeader">
-    <div class="cob-siteHeader-container">
-        <?php
-            if (!empty($page['header_site'])) { echo render($page['header_site']); }
-            if ($logo) {
-                $t = t('Home');
-                $alt_attribute = $site_name ? $site_name : $t;
-                echo "
-                    <a href=\"$front_page\" class=\"cob-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
-                        <img src=\"$logo\" alt=\"$alt_attribute\" />
-                    </a>
-                ";
-            }
-        ?>
-        <nav class="cob-homeNav">
-            <a href="<?= $front_page ?>">Home</a>
-            <?php
-                foreach (taxonomy_get_tree(2, 0, 1) as $t) {
-                    echo l($t->name, 'taxonomy/term/'.$t->tid);
-                }
-            ?>
-        </nav>
+include __DIR__.'/partials/homeHeader.inc';
 
-    </div>
-</header>
-
-<?php 
 $modifier_class = '';
 if (isset($node) && $node->type == 'press_release') {
     $modifier_class = 'mod-pressRelease';
@@ -113,8 +87,17 @@ if ($tabs || $action_links) {
     echo "</div>";
 }
 ?>
-<main class="cob-main" role="main">
+<main class="cob-homeMain" role="main">
+    <div class="cob-homeMain-container">
+        <div class="cob-homeSearch">
+            <label class="cob-homeSearch-label">How can we help you today?</label>
+            <?php
+                $search = module_invoke('search', 'block_view', 'form');
+                echo render($search['content']);
+            ?>
+        </div>
 <?php echo render($page['content']); ?>
+    </div>
 </main>
 
 <footer class="cob-footer">

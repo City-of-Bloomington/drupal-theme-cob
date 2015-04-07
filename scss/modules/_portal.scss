@@ -1,0 +1,20 @@
+.cob-portal {
+    &Main {
+        
+        &-container {
+            @include container();
+        }
+    }
+    &Search {
+        background: url('../images/home-background.jpg') 50% 15% no-repeat $cob-blue;
+        &-container {
+            @include container();
+        }
+        &-label {
+            color: #fff;
+            font-family: $font-headings;
+            font-weight: 300;
+            font-size: (28rem/16);
+        }
+    }
+}

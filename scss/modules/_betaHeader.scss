@@ -28,9 +28,9 @@
     }
     @media screen and (min-width: $screen-small) {
         &-container {
-            background: url('../images/beta-badge.svg') no-repeat 1rem 1rem;
+            background: url('../images/beta-badge.svg') no-repeat 2rem 1rem;
             background-size: 4rem 4rem;
-            padding-left: 6rem;
+            padding-left: 7rem;
         }
         &-content {
             margin-left: 0;

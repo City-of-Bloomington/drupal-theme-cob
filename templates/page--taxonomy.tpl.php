@@ -78,20 +78,30 @@ if (isset($node) && $node->type == 'press_release') {
     $modifier_class = 'mod-pressRelease';
 }
 
-echo $messages;
-
-if ($tabs || $action_links) {
-    echo "<div class=\"cob-siteAdminBar\">";
-        if ($tabs)         { echo render($tabs); }
-        if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-    echo "</div>";
-}
 ?>
+<div class="cob-portalSearch">
+    <div class="cob-portalSearch-container">
+        <label class="cob-portalSearch-label">How can we help you today?</label>
+        <?php
+            $search = module_invoke('search', 'block_view', 'form');
+            echo render($search['content']);
+        ?>
+    </div>
+</div>
+<main class="cob-portalMain" role="main">
+    <div class="cob-portalMain-container">
+<?php
+    echo $messages;
+    
+    if ($tabs || $action_links) {
+        echo "<div class=\"cob-siteAdminBar\">";
+            if ($tabs)         { echo render($tabs); }
+            if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
+        echo "</div>";
+    }
 
-<main class="cob-homeMain" role="main">
-    <div class="cob-homeMain-container">
-        <label>How can we help you today?</label>
-<?php echo render($page['content']); ?>
+    echo render($page['content']);
+?>
     </div>
 </main>
 
