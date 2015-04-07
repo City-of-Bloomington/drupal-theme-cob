@@ -91,7 +91,27 @@ if (isset($node) && $node->type == 'press_release') {
 <header class="cob-portalHeader">
     <div class="cob-portalHeader-contain">
     <?php
-        include __DIR__.'/partials/pageHeader-region.inc';
+        $term = &$page['content']['system_main']['term_heading']['term']['#term'];
+
+        $tid = $term->tid;
+        $parents = taxonomy_get_parents($tid);
+        if (count($parents)) {
+            // We're viewing a child term
+            // Render the title of the parent for this term
+            $parent = current($parents);
+
+            // Add the parent term to the term variable for the
+            // taxonomy-term.tpl.php template
+            $term = (array)$term;
+            $term['parent'] = $parent;
+            $term = (object)$term;
+
+            echo "<h1><span>{$parent->name}</span></h1>";
+        }
+        else {
+            // We're viewing a top-level term
+            echo "<h1><span>$title</span></h1>";
+        }
     ?>
     </div>
 </header>

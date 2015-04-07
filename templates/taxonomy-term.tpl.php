@@ -41,29 +41,31 @@
  * @ingroup themeable
  */
 if ($page) {
-    $content = render($content);
     echo "
     <div id=\"taxonomy-term-{$term->tid}\" class=\"$classes\">
-        <div class=\"content\">$content</div>
         <section class=\"children\">
     ";
-        $children = taxonomy_get_children($term->tid);
+        if (isset($term->parent)) {
+            $children = taxonomy_get_children($term->parent->tid);
+        }
+        else {
+            $children = taxonomy_get_children($term->tid);
+        }
         foreach ($children as $child) {
-            $t = taxonomy_term_view($child);
-            echo render($t);
+            $options = ['html'=>true];
+            if ($term->tid == $child->tid) {
+                $options['attributes'] = ['class'=>['current']];
+            }
+
+            echo l(
+                "<span class=\"heading\">{$child->name}</span><span class=\"container\">{$child->description}</span>",
+                'taxonomy/term/'.$child->tid,
+                $options
+            );
         }
     echo "
         </section>
     </div>
-    ";
-}
-else {
-    // Markup for a single child term in a list
-    $description = render($content);
-    echo "
-    <a href=\"$term_url\">
-        <span class=\"heading\">$term_name</span>
-        <span class=\"container\"$description</span>
-    </a>
+    <h2>$term_name</h2>
     ";
 }
