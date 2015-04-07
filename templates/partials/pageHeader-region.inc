@@ -5,7 +5,7 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
 echo render($title_prefix);
-echo "<h1><span>$title</span></h1>";
+echo "<h1>$title</h1>";
 echo render($page['header_page']);
 echo render($title_suffix);
 echo '</div>';
