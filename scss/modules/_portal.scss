@@ -3,6 +3,48 @@
         
         &-container {
             @include container();
+
+            .taxonomy-term.vocabulary-categories {
+                a {
+                    display: block;
+                    margin: 0 0 0 0;
+                    padding: .5em 1.5em .5em 1em;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    &.active {
+                        background: $cob-blue;
+                        color: #fff;
+                        > span {
+                            color: #fff;
+                        }
+                    }
+
+                    > .title {
+                        display: block;
+                        font-size: (22rem/16);
+                        font-family: $font-headings;
+                        line-height: 1.2em;
+                    }
+                    > .description {
+                        color: $cob-gray-darkest;
+                        display: block;
+                        font-size: (14rem/16);
+                        line-height: 1.35em;
+                    }
+                }
+            }
+        }
+    }
+    &Header {
+        &-container {
+            @include container();
+            > h1 {
+                font-size: (40rem/16);
+                font-weight: 300;
+                line-height: 1em;
+                margin: 1em 0 .5em 0;
+            }
         }
     }
     &Search {
@@ -15,6 +57,25 @@
             font-family: $font-headings;
             font-weight: 300;
             font-size: (28rem/16);
+        }
+    }
+    @media screen and (min-width: $screen-medium){
+        &Header {
+            &-container {
+                &:after {
+                    border-top: (5rem/16) solid $cob-blue;
+                    border-bottom: (1rem/16) solid $cob-gray;
+                    content: ' ';
+                    display: block;
+                    height: (11rem/16);
+                    margin: 0;
+                }
+            }
+        }
+        &Main-container {
+            .taxonomy-term.vocabulary-categories {
+                @include grid-5col();
+            }
         }
     }
 }

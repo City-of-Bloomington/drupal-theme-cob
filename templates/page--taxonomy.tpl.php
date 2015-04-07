@@ -89,7 +89,7 @@ if (isset($node) && $node->type == 'press_release') {
     </div>
 </div>
 <header class="cob-portalHeader">
-    <div class="cob-portalHeader-contain">
+    <div class="cob-portalHeader-container">
     <?php
         $term = &$page['content']['system_main']['term_heading']['term']['#term'];
 

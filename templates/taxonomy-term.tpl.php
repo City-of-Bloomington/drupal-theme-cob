@@ -58,7 +58,7 @@ if ($page) {
             }
 
             echo l(
-                "<span class=\"heading\">{$child->name}</span><span class=\"container\">{$child->description}</span>",
+                "<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
                 'taxonomy/term/'.$child->tid,
                 $options
             );

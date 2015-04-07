@@ -208,6 +208,27 @@ $grid-gutter: 2rem;
     }
 }
 
+@mixin grid-5col {
+    box-sizing: border-box;
+    margin: 1rem;
+
+    @media screen and (min-width: $screen-medium) {
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        margin-left: 0;
+        margin-right: 0;
+        width: (100%*5/12);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
 @mixin grid-6col {
     box-sizing: border-box;
     margin: 1rem;
