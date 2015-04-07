@@ -88,6 +88,13 @@ if (isset($node) && $node->type == 'press_release') {
         ?>
     </div>
 </div>
+<header class="cob-portalHeader">
+    <div class="cob-portalHeader-contain">
+    <?php
+        include __DIR__.'/partials/pageHeader-region.inc';
+    ?>
+    </div>
+</header>
 <main class="cob-portalMain" role="main">
     <div class="cob-portalMain-container">
     <?php

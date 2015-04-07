@@ -40,22 +40,30 @@
  *
  * @ingroup themeable
  */
-?>
-<div id="taxonomy-term-<?= $term->tid; ?>" class="<?= $classes; ?>">
-    <?php
-        if (!$page) {
-            echo "<h2><a href=\"$term_url\">$term_name</a></h2>";
-        }
-    ?>
-    <div class="content">
-    <?php
+if ($page) {
+    $content = render($content);
+    echo "
+    <div id=\"taxonomy-term-{$term->tid}\" class=\"$classes\">
+        <div class=\"content\">$content</div>
+        <section class=\"children\">
+    ";
         $children = taxonomy_get_children($term->tid);
         foreach ($children as $child) {
             $t = taxonomy_term_view($child);
             echo render($t);
         }
-
-        echo render($content);
-    ?>
+    echo "
+        </section>
     </div>
-</div>
+    ";
+}
+else {
+    // Markup for a single child term in a list
+    $description = render($content);
+    echo "
+    <a href=\"$term_url\">
+        <span class=\"heading\">$term_name</span>
+        <span class=\"container\"$description</span>
+    </a>
+    ";
+}
