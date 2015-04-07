@@ -42,11 +42,12 @@
  */
 ?>
 <div id="taxonomy-term-<?= $term->tid; ?>" class="<?= $classes; ?>">
-  <?php if (!$page): ?>
-    <h2><a href="<?= $term_url; ?>"><?= $term_name; ?></a></h2>
-  <?php endif; ?>
-
-  <div class="content">
+    <?php
+        if (!$page) {
+            echo "<h2><a href=\"$term_url\">$term_name</a></h2>";
+        }
+    ?>
+    <div class="content">
     <?php
         $children = taxonomy_get_children($term->tid);
         foreach ($children as $child) {
@@ -56,5 +57,5 @@
 
         echo render($content);
     ?>
-  </div>
+    </div>
 </div>
