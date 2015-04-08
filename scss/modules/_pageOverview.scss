@@ -17,6 +17,8 @@
             color: #fff;
             position: relative;
 
+            a { color:#fff; }
+
             > h3 {
                 color: #fff;
                 font-family: $font-headings;
@@ -27,13 +29,14 @@
             }
             > a {
                 clear: left;
-                color: $cornflower-brightest;
                 display: inline-block;
                 float: left;
                 font-size: (18em/16);
                 line-height: (22em/18);
                 margin-bottom: (10em/18);
             }
+            ol { list-style-type: none; }
+
         }
     }
     &-details {
