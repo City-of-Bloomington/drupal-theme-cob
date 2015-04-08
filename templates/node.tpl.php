@@ -94,6 +94,8 @@ hide($content['field_physical_address']);
 hide($content['field_phone_number']);
 hide($content['field_email']);
 hide($content['field_call_to_action']);
+hide($content['field_category']);
+hide($content['field_department']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
     <?php if ($view_mode == 'teaser'): ?>
@@ -162,9 +164,14 @@ hide($content['field_call_to_action']);
                     }
                 ?>
             </div>
-            <aside>
-                Learn about
-            </aside>
+            <?php
+                $contentHTML = render($content);
+                $toc = _cob_create_toc($contentHTML,2,2);
+                if ($toc['toc']) {
+                    $contentHTML = $toc['content'];
+                    echo "<aside>$toc[toc]</aside>";
+                }
+            ?>
         </div>
     </div>
     <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
