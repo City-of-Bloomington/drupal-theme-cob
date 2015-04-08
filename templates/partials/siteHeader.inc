@@ -8,11 +8,14 @@
 <header class="cob-siteHeader">
     <div class="cob-siteHeader-container">
         <nav>
-        <?php
-            foreach (taxonomy_get_tree(2, 0, 1) as $t) {
-                echo l($t->name, 'taxonomy/term/'.$t->tid);
-            }
-        ?>
+            <div class="menuLauncher">Menu</div>
+            <div class="menuLinks closed">
+            <?php
+                foreach (taxonomy_get_tree(2, 0, 1) as $t) {
+                    echo l($t->name, 'taxonomy/term/'.$t->tid);
+                }
+            ?>
+            </div>
         </nav>
         <?php
             if (!empty($page['header_site'])) { echo render($page['header_site']); }
