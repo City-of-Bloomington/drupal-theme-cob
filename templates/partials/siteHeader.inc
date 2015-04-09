@@ -7,6 +7,9 @@
 ?>
 <header class="cob-siteHeader">
     <div class="cob-siteHeader-container">
+        <?php
+            if (!empty($page['header_site'])) { echo render($page['header_site']); }
+        ?>
         <nav>
             <div class="menuLauncher">Menu</div>
             <div class="menuLinks closed">
@@ -18,7 +21,6 @@
             </div>
         </nav>
         <?php
-            if (!empty($page['header_site'])) { echo render($page['header_site']); }
             if ($logo) {
                 $t = t('Home');
                 $alt_attribute = $site_name ? $site_name : $t;

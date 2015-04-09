@@ -1,6 +1,34 @@
 .cob-siteHeader {
     border-top: 8px solid $cob-blue;
 
+    nav { display: inline-block; }
+    .menuLauncher {
+        font-weight:bold; color:$cob-blue;
+        border:1px solid $cob-blue;
+        border-radius:4px;
+        padding-right:1em;
+        padding-left:1em;
+        background:url('../images/arrowdown.png') 4px 10px no-repeat;
+    }
+    .menuLinks {
+        background: #fff;
+        border: 1px solid $cob-gray;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, .5);
+        padding: .5em 0;
+        transition: opacity .25s;
+
+        a {
+            padding: .5em 1em;
+            transition: background .25s, color .25s;
+
+            &:hover {
+                background: $cob-blue-darkest;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+
     &-container {
         @include container();
         min-height: 57px;

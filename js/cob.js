@@ -4,18 +4,18 @@ jQuery(function ($) {
             var openMenus   = $('.menuLinks.open'),
                 menu        = $(e.target).siblings('.menuLinks');
             openMenus.removeClass('open');
-            openMenus.addClass('closed');
+            openMenus.   addClass('closed');
 
             menu.removeClass('closed');
-            menu.addClass('open');
+            menu.   addClass('open');
             e.stopPropagation();
         },
         documentClick = function(e) {
             var openMenus   = $('.menuLinks.open');
 
             openMenus.removeClass('open');
-            openMenus.addClass('closed');
+            openMenus.   addClass('closed');
         };
-    $('.menuLauncher').on('click', launcherClick);
-    $(document).on('click', documentClick);
+    $('.menuLauncher').click(launcherClick);
+    $(document       ).click(documentClick);
 });
