@@ -91,6 +91,15 @@ if (isset($node) && $node->type == 'press_release') {
 <header class="cob-portalHeader">
     <div class="cob-portalHeader-container">
     <?php
+        echo $messages;
+
+        if ($tabs || $action_links) {
+            echo "<div class=\"cob-siteAdminBar\">";
+                if ($tabs)         { echo render($tabs); }
+                if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
+            echo "</div>";
+        }
+
         $term = &$page['content']['system_main']['term_heading']['term']['#term'];
 
         $tid = $term->tid;
@@ -106,29 +115,59 @@ if (isset($node) && $node->type == 'press_release') {
             $term['parent'] = $parent;
             $term = (object)$term;
 
-            echo "<h1><span>{$parent->name}</span></h1>";
+            echo "<h1 class=\"cob-portalHeader-title\">{$parent->name}</h1>";
         }
         else {
             // We're viewing a top-level term
-            echo "<h1><span>$title</span></h1>";
+            echo "<h1 class=\"cob-portalHeader-title\">$title</h1>";
         }
     ?>
     </div>
 </header>
 <main class="cob-portalMain" role="main">
-    <div class="cob-portalMain-container">
     <?php
-        echo $messages;
-
-        if ($tabs || $action_links) {
-            echo "<div class=\"cob-siteAdminBar\">";
-                if ($tabs)         { echo render($tabs); }
-                if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-            echo "</div>";
+        if (isset($term->parent)) {
+            $children = taxonomy_get_children($term->parent->tid);
+            $category_is_selected = true;
         }
-
-        echo render($page['content']);
+        else {
+            $children = taxonomy_get_children($term->tid);
+            $category_is_selected = false;
+        }
     ?>
+    <div class="cob-portalMain-container">
+        <div id="taxonomy-term-<?= $term->tid ?>" class="cob-portalSidebar<?= $category_is_selected ? ' cob-state-isSelected' : ''; ?>">
+            <nav class="cob-portalSidebar-nav">
+                <?php
+                    foreach ($children as $child) {
+                        $options = ['html'=>true];
+                        if ($term->tid == $child->tid) {
+                            $options['attributes'] = ['class'=>['current']];
+                        }
+            
+                        echo l(
+                            "<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
+                            'taxonomy/term/'.$child->tid,
+                            $options
+                        );
+                    }
+                ?>
+            </nav>
+        </div>
+
+        <?php if($category_is_selected): ?>
+            <div class="cob-portalContent">
+                <h2 class="cob-portalContent-heading"><?= $term->name ?></h2>
+    
+                <?php
+                    $nodes = node_load_multiple(taxonomy_select_nodes($term->tid));
+                    foreach($nodes as $node) {
+                        $n = node_view($node, 'teaser');
+                        echo render($n);
+                    }
+                ?>
+            </div>
+        <?php endif; ?>
     </div>
 </main>
 

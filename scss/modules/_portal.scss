@@ -1,50 +1,34 @@
 .cob-portal {
+    &Content {
+        @include grid-8col();
+
+        article {
+            margin: 0 0 (14rem/16);
+        }
+        h2:not([class="cob-portalContent-heading"]) {
+            font-size: (24rem/16);
+            font-weight: normal;
+            line-height: (36em/24);
+            margin: 0;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
     &Main {
-        
         &-container {
             @include container();
-
-            .taxonomy-term.vocabulary-categories {
-                a {
-                    display: block;
-                    margin: 0 0 0 0;
-                    padding: .5em 1.5em .5em 1em;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                    &.active {
-                        background: $cob-blue;
-                        color: #fff;
-                        > span {
-                            color: #fff;
-                        }
-                    }
-
-                    > .title {
-                        display: block;
-                        font-size: (22rem/16);
-                        font-family: $font-headings;
-                        line-height: 1.2em;
-                    }
-                    > .description {
-                        color: $cob-gray-darkest;
-                        display: block;
-                        font-size: (14rem/16);
-                        line-height: 1.35em;
-                    }
-                }
-            }
         }
     }
     &Header {
         &-container {
             @include container();
-            > h1 {
-                font-size: (40rem/16);
-                font-weight: 300;
-                line-height: 1em;
-                margin: 1em 0 .5em 0;
-            }
+        }
+        &-title {
+            font-size: (40rem/16);
+            font-weight: 300;
+            line-height: 1em;
+            margin: 1em 0 .5em 0;
         }
     }
     &Search {
@@ -59,7 +43,50 @@
             font-size: (28rem/16);
         }
     }
+    &Sidebar {
+        @include grid-5col();
+        &-nav {
+            a {
+                display: block;
+                margin: 0 0 0 0;
+                padding: .5em 1.5em .5em 1em;
+                &:hover {
+                    text-decoration: none;
+                }
+                &.active {
+                    background: $cob-blue;
+                    color: #fff;
+                    margin-right: -2rem;
+                    > span {
+                        color: #fff;
+                    }
+                }
+        
+                > .title {
+                    display: block;
+                    font-size: (22rem/16);
+                    font-family: $font-headings;
+                    line-height: 1.2em;
+                }
+                > .description {
+                    color: $cob-gray-darkest;
+                    display: block;
+                    font-size: (14rem/16);
+                    line-height: 1.35em;
+                }
+            }
+        }
+    }
     @media screen and (min-width: $screen-medium){
+        &Content {
+            border-left: (1rem/16) solid $cob-blue;
+            padding-top: 1rem;
+
+            &-heading {
+                font-size: (37rem/16);
+                margin: 0 0 (8rem/16) 0;
+            }
+        }
         &Header {
             &-container {
                 &:after {
@@ -72,9 +99,44 @@
                 }
             }
         }
-        &Main-container {
-            .taxonomy-term.vocabulary-categories {
-                @include grid-5col();
+        &Main {
+            &-container {
+                margin-top: 1rem;
+            }
+        }
+        &Sidebar {
+            padding-top: 1rem;
+            &.cob-state-isSelected {
+                @include grid-4col();
+                border-right: (1rem/16) solid $cob-blue;
+                margin-right: -(1rem/16) !important;
+            }
+        }
+    }
+    @media screen and (min-width: $screen-large) {
+        &Content {
+            position: relative;
+                left: 0;
+            transition: left .25s ease-in-out, opacity .25s linear;
+            &.cob-state-empty {
+                left: 5rem;
+                opacity: 0;
+            }
+        }
+        &Sidebar {
+            margin-right: 0;
+
+            &-nav {
+                > a {
+                    > .title {
+//                        font-size: (18rem/16);
+                    }
+                    > .description {
+//                        font-size: (12rem/16);
+//                        line-height: 1.35em;
+                    }
+                }
+                
             }
         }
     }
