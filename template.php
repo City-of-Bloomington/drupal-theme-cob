@@ -19,6 +19,9 @@ function cob_preprocess_page(&$vars)
 			$node = &$vars['page']['content']['system_main']['nodes'][$nid];
 			$bundle = &$node['#bundle'];
 
+			if ($bundle == 'book' && empty($node['field_category'])) {
+                $vars['bookInfo'] = cob_book_info($node['#node']->book);
+			}
 		}
 	}
 }
@@ -27,9 +30,11 @@ function cob_preprocess_node(&$vars)
 {
     $vars['press_releases']     = cob_node_references($vars, 'press_release',    false, 'chronological', 2);
 	$vars['boards_commissions'] = cob_node_references($vars, 'board_commission', false, 'alphabetical');
+
 	if (!empty($vars['field_directory_dn'][0]['value'])) {
         $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']);
 	}
+	
 	if (!empty($vars['field_committee'][0]['value'])) {
         $vars['committee'] = civiclegislation_committee_info($vars['field_committee'][0]['value']);
         $vars['contactInfo'] = (object)[

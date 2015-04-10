@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a node.
@@ -137,20 +136,11 @@ hide($content['field_department']);
                         }
                     ?>
                     <div class="cob-pageOverview-contacts">
-                        <?= render($content['field_facebook_page']); ?>
-                        <?= render($content['field_twitter_account']); ?>
                         <?php
-                            if (!empty($contactInfo)) {
-                                $phoneNumberFields = ['office', 'fax', 'cell', 'other', 'pager'];
-                                foreach ($phoneNumberFields as $f) {
-                                    if (!empty($contactInfo->$f)) {
-                                        echo "<div class=\"cob-ext-phone_number\">{$contactInfo->$f}</div>";
-                                    }
-                                }
-                                if (!empty($contactInfo->email)) {
-                                    echo "<a href=\"mailto:{$contactInfo->email}\" class=\"cob-ext-email\">{$contactInfo->email}</a>";
-                                }
-                            }
+                            echo render($content['field_facebook_page'  ]);
+                            echo render($content['field_twitter_account']);
+
+                            if (!empty($contactInfo)) { cob_include('contactInfo', ['contactInfo' => $contactInfo]); }
                             else {
                                 echo render($content['field_phone_number']);
                                 echo render($content['field_email']);
@@ -178,7 +168,7 @@ hide($content['field_department']);
     <?php
         echo "
         $user_picture
-        <div class=\"cob-main-container\">
+        <div     class=\"cob-main-container\">
             <div class=\"cob-main-content\"$content_attributes;>
         ";
             if ($node->type == 'press_release') {
@@ -195,15 +185,10 @@ hide($content['field_department']);
             </div>
             <aside class=\"cob-main-content-sidebar\">
             ";
-                if (!empty($content['field_press_contacts'])) {
+                if (!empty(     $content['field_press_contacts'])) {
                     echo render($content['field_press_contacts']);
                 }
-                if (!empty($content['field_committee']['#items'])) {
-                    $json = civiclegislation_committee_info($content['field_committee']['#items'][0]['value']);
-                    if ($json) {
-                        cob_include('committeeMembers', ['committee'=>$json]);
-                    }
-                }
+                if (!empty($committee))  { cob_include('committeeMembers',   ['committee'         => $committee]); }
             echo "
             </aside>
         </div>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
@@ -43,12 +42,9 @@
  *
  * @ingroup themeable
  */
-$items = $element['#items'];
-foreach ($items as $item) {
+foreach ($element['#items'] as $item) {
     foreach ($item['attributes'] as $attr => $value) {
         $attributes = " $attr=\"$value\"";
     }
-    echo <<<EOT
-        <a href="{$item['display_url']}"$attributes>{$item['title']}</a>
-EOT;
+    echo "<a href=\"$item[display_url]}\" $attributes>$item[title]</a>";
 }

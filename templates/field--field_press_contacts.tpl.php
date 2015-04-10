@@ -44,13 +44,10 @@
  * @ingroup themeable
  */
 if (!empty($items)) {
-    echo '<dl class="cob-ext-pressContacts">';
-    echo '<dt>For more information, please contact:</dt>';
-    $items = $element['#items'];
-    foreach ($items as $item) {
-        echo <<<EOT
-            <dd>{$item['safe_value']}</dd>
-EOT;
-    }
+    echo '<dl class="cob-ext-pressContacts"><dt>For more information, please contact:</dt>';
+        $items = $element['#items'];
+        foreach ($items as $item) {
+            echo "<dd>$item[safe_value]</dd>";
+        }
     echo '</dl>';
 }

@@ -70,17 +70,10 @@
  *
  * @ingroup themeable
  */
-
 include __DIR__.'/partials/homeHeader.inc';
-
-$modifier_class = '';
-if (isset($node) && $node->type == 'press_release') {
-    $modifier_class = 'mod-pressRelease';
-}
-
 ?>
-<div class="cob-portalSearch">
-    <div class="cob-portalSearch-container">
+<div           class="cob-portalSearch">
+    <div       class="cob-portalSearch-container">
         <label class="cob-portalSearch-label">How can we help you today?</label>
         <?php
             $search = module_invoke('search', 'block_view', 'form');
@@ -88,17 +81,11 @@ if (isset($node) && $node->type == 'press_release') {
         ?>
     </div>
 </div>
-<header class="cob-portalHeader">
+<header  class="cob-portalHeader">
     <div class="cob-portalHeader-container">
     <?php
         echo $messages;
-
-        if ($tabs || $action_links) {
-            echo "<div class=\"cob-siteAdminBar\">";
-                if ($tabs)         { echo render($tabs); }
-                if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-            echo "</div>";
-        }
+        include __DIR__.'/partials/siteAdminBar.inc';
 
         $term = &$page['content']['system_main']['term_heading']['term']['#term'];
 
@@ -108,35 +95,31 @@ if (isset($node) && $node->type == 'press_release') {
             // We're viewing a child term
             // Render the title of the parent for this term
             $parent = current($parents);
+            $title = $parent->name;
 
             // Add the parent term to the term variable for the
             // taxonomy-term.tpl.php template
             $term = (array)$term;
             $term['parent'] = $parent;
             $term = (object)$term;
-
-            echo "<h1 class=\"cob-portalHeader-title\">{$parent->name}</h1>";
         }
-        else {
-            // We're viewing a top-level term
-            echo "<h1 class=\"cob-portalHeader-title\">$title</h1>";
-        }
+        echo "<h1 class=\"cob-portalHeader-title\">$title</h1>";
     ?>
     </div>
 </header>
-<main class="cob-portalMain" role="main">
-    <?php
-        if (isset($term->parent)) {
-            $children = taxonomy_get_children($term->parent->tid);
-            $category_is_selected = true;
-        }
-        else {
-            $children = taxonomy_get_children($term->tid);
-            $category_is_selected = false;
-        }
-    ?>
+<main    class="cob-portalMain" role="main">
     <div class="cob-portalMain-container">
-        <div id="taxonomy-term-<?= $term->tid ?>" class="cob-portalSidebar<?= $category_is_selected ? ' cob-state-isSelected' : ''; ?>">
+        <?php
+            if (isset($term->parent)) {
+                $children = taxonomy_get_children($term->parent->tid);
+                $category_is_selected = 'cob-state-isSelected';
+            }
+            else {
+                $children = taxonomy_get_children($term->tid);
+                $category_is_selected = '';
+            }
+        ?>
+        <div     class="cob-portalSidebar <?= $category_is_selected; ?>" id="taxonomy-term-<?= $term->tid ?>">
             <nav class="cob-portalSidebar-nav">
                 <?php
                     foreach ($children as $child) {
@@ -144,7 +127,7 @@ if (isset($node) && $node->type == 'press_release') {
                         if ($term->tid == $child->tid) {
                             $options['attributes'] = ['class'=>['current']];
                         }
-            
+
                         echo l(
                             "<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
                             'taxonomy/term/'.$child->tid,
@@ -154,32 +137,12 @@ if (isset($node) && $node->type == 'press_release') {
                 ?>
             </nav>
         </div>
-
-        <?php if($category_is_selected): ?>
-            <div class="cob-portalContent">
-                <h2 class="cob-portalContent-heading"><?= $term->name ?></h2>
-    
-                <?php
-                    $nodes = node_load_multiple(taxonomy_select_nodes($term->tid));
-                    foreach($nodes as $node) {
-                        $n = node_view($node, 'teaser');
-                        echo render($n);
-                    }
-                ?>
-            </div>
-        <?php endif; ?>
-    </div>
-</main>
-
-<footer class="cob-footer">
-    <div class="cob-footer-container">
         <?php
-            echo $feed_icons;
-            echo render($page['footer']);
+            if ($category_is_selected) { cob_include('term_nodes', ['term' => $term]); }
         ?>
     </div>
-</footer>
-
-<div class="cob-sectionTemplates">
-
-</div>
+</main>
+<?php
+    include __DIR__.'/partials/footer.inc';
+    include __DIR__.'/partials/sectionTemplates.inc';
+?>

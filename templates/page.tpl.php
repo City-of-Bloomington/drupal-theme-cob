@@ -79,62 +79,25 @@ include __DIR__.'/partials/siteHeader.inc';
     }
 ?>
 <header class="cob-pageHeader <?= $modifier_class ?>">
-<?php
-    if (isset($node->type)) {
-        switch($node->type) {
-            case 'press_release':
-                ?>
-                    <div class="cob-pageHeader-container">
-                        <h1><span>News Release</span></h1>
-                    </div>
-                <?php
-                break;
-            default:
-                // The following markup is replicated below just afterward,
-                // because we need both a default header for when a node is present,
-                // and a default for when there is no node at all.
-                // These two instances may diverge later.
-                if (!empty($node->field_category['und'][0]['tid'])) {
-                    include __DIR__.'/partials/breadcrumbs.inc';
-                }
-                include __DIR__.'/partials/pageHeader-region.inc';
-        }
-    }
-    else {
+    <div class="cob-pageHeader-container">
+    <?php
+        include __DIR__.'/partials/breadcrumbs.inc';
         include __DIR__.'/partials/pageHeader-region.inc';
-    }
-
-    if (   !empty($node->field_cmis_documents['und'][0]['folder'])
-        || !empty($node->book['bid'])) {
+    ?>
+    </div>
+    <?php
         include __DIR__.'/partials/pageHeader-navigation.inc';
-    }
-?>
+    ?>
 </header>
-
 <?php
     echo $messages;
-
-    if ($tabs || $action_links) {
-        echo "<div class=\"cob-siteAdminBar\">";
-            if ($tabs)         { echo render($tabs); }
-            if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-        echo "</div>";
-    }
-
-    /*
-        <?php if ($breadcrumb): ?>
-        <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-        <?php endif; ?>
-    */
+    include __DIR__.'/partials/siteAdminBar.inc';
 ?>
 
 <main class="cob-main" role="main">
 <?php echo render($page['content']); ?>
 </main>
-
-<footer class="cob-footer">
-    <div class="cob-footer-container">
-        <?php echo $feed_icons; ?>
-        <?php print render($page['footer']); ?>
-    </div>
-</footer>
+<?php
+    include __DIR__.'/partials/footer.inc';
+    include __DIR__.'/partials/sectionTemplates.inc';
+?>

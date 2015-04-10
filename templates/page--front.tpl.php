@@ -70,26 +70,15 @@
  *
  * @ingroup themeable
  */
-
 include __DIR__.'/partials/homeHeader.inc';
-
-$modifier_class = '';
-if (isset($node) && $node->type == 'press_release') {
-    $modifier_class = 'mod-pressRelease';
-}
 
 echo $messages;
 
-if ($tabs || $action_links) {
-    echo "<div class=\"cob-siteAdminBar\">";
-        if ($tabs)         { echo render($tabs); }
-        if ($action_links) { echo "<ul class=\"action-links\">".render($action_links)."</ul>"; }
-    echo "</div>";
-}
+include __DIR__.'/partials/siteAdminBar.inc';
 ?>
-<main class="cob-homeMain" role="main">
+<main    class="cob-homeMain" role="main">
     <div class="cob-homeMain-container">
-        <div class="cob-homeSearch">
+        <div       class="cob-homeSearch">
             <label class="cob-homeSearch-label">How can we help you today?</label>
             <?php
                 $search = module_invoke('search', 'block_view', 'form');
@@ -100,15 +89,7 @@ if ($tabs || $action_links) {
     </div>
 </main>
 
-<footer class="cob-footer">
-    <div class="cob-footer-container">
-    <?php
-        echo $feed_icons;
-        echo render($page['footer']);
-    ?>
-    </div>
-</footer>
-
-<div class="cob-sectionTemplates">
-
-</div>
+<?php
+    include __DIR__.'/partials/footer.inc';
+    include __DIR__.'/partials/sectionTemplates.inc';
+?>

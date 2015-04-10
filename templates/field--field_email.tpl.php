@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
@@ -43,10 +42,6 @@
  *
  * @ingroup themeable
  */
-//print_r($element['#items']);
-$items = $element['#items'];
-foreach ($items as $item) {
-    echo <<<EOT
-        <a href="mailto:{$item['safe_value']}" class="cob-ext-email">{$item['safe_value']}</a>
-EOT;
+foreach ($element['#items'] as $item) {
+    echo "<a href=\"mailto:$item[safe_value]\" class=\"cob-ext-email\">$item[safe_value]</a>";
 }

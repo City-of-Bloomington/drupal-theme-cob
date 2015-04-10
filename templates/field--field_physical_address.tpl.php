@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
@@ -43,9 +42,6 @@
  *
  * @ingroup themeable
  */
-$items = $element['#items'];
-foreach ($items as $item) {
-    echo <<<EOT
-        <address class="cob-ext-physicalAddress">{$item['safe_value']}</address>
-EOT;
+foreach ($element['#items'] as $item) {
+    echo "<address class=\"cob-ext-physicalAddress\">$item[safe_value]</address>";
 }

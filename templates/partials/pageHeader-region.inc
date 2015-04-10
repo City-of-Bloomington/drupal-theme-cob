@@ -4,9 +4,14 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
-echo '<div class="cob-pageHeader-container">';
+if (isset($node->type) && $node->type == 'press_release') {
+    $title = 'News Release';
+}
+elseif (!empty($bookInfo->title)) {
+    $title = $bookInfo->title;
+}
+
 echo render($title_prefix);
 echo "<h1>$title</h1>";
-echo render($page['header_page']);
 echo render($title_suffix);
-echo '</div>';
+echo render($page['header_page']);
