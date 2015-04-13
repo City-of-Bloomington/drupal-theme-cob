@@ -70,20 +70,10 @@
                 margin: 1.5em 0 .75em;
             }
             .form-text {
-                background: url('../images/search.svg') no-repeat 95% 50% #fff;
-                border: 2px solid $cob-blue-dark;
-                border-radius: .5em;
                 font-size: (20rem/16);
                 padding: .75em;
-                outline: hidden;
-                overflow: hidden;
-                transition: background-image .5s ease-in-out;
                 width: 17em;
-
-                &:focus {
-                    background-image: none;
-                    outline: hidden;
-                }
+                background-size:1.5em;
             }
         }
     }
