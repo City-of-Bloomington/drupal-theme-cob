@@ -35,12 +35,21 @@
         background: url('../images/home-background.jpg') 50% 15% no-repeat $cob-blue;
         &-container {
             @include container();
+            @include clearfix();
+            vertical-align:middle;
         }
         &-label {
             color: #fff;
             font-family: $font-headings;
             font-weight: 300;
             font-size: (28rem/16);
+            display:inline;
+        }
+        form {
+            float:right; display:inline;
+            margin-top:.3em;
+
+            .form-item { margin:0; }
         }
     }
     &Sidebar {
