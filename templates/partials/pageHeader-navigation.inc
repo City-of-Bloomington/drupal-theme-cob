@@ -26,13 +26,8 @@ if (   !empty($node->field_cmis_documents['und'][0]['folder'])
                 }
             }
         }
-        elseif (!empty($node->book['bid'])) {
-            $tree = book_get_flat_menu($node->book);
-            foreach ($tree as $mlid => $menu_item) {
-                #$attr = !empty($menu_item['in_active_trail']) ? $class_current : [];
-                $attr = $menu_item['title']==$node->title ? $class_current : [];
-                echo l($menu_item['link_title'], $menu_item['link_path'], $attr);
-            }
+        else {
+            echo theme('book_navigation', ['book_link' => $node->book]);
         }
     echo "
         </nav>

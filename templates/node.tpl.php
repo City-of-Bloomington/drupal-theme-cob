@@ -95,6 +95,7 @@ hide($content['field_email']);
 hide($content['field_call_to_action']);
 hide($content['field_category']);
 hide($content['field_department']);
+hide($content['book_navigation']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
     <?php if ($view_mode == 'teaser'): ?>
@@ -169,7 +170,7 @@ hide($content['field_department']);
         echo "
         $user_picture
         <div     class=\"cob-main-container\">
-            <div class=\"cob-main-content\"$content_attributes;>
+            <div class=\"cob-main-content\"$content_attributes>
         ";
             if ($node->type == 'press_release') {
                 $formatted_date = format_date($created, 'medium');
