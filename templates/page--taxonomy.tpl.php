@@ -70,6 +70,11 @@
  *
  * @ingroup themeable
  */
+$term = &$page['content']['system_main']['term_heading']['term']['#term'];
+if (!empty(  $term->parent)) {
+    $title = $term->parent->name;
+}
+
 include __DIR__.'/partials/homeHeader.inc';
 ?>
 <div           class="cob-portalSearch">
@@ -87,22 +92,6 @@ include __DIR__.'/partials/homeHeader.inc';
         echo $messages;
         include __DIR__.'/partials/siteAdminBar.inc';
 
-        $term = &$page['content']['system_main']['term_heading']['term']['#term'];
-
-        $tid = $term->tid;
-        $parents = taxonomy_get_parents($tid);
-        if (count($parents)) {
-            // We're viewing a child term
-            // Render the title of the parent for this term
-            $parent = current($parents);
-            $title = $parent->name;
-
-            // Add the parent term to the term variable for the
-            // taxonomy-term.tpl.php template
-            $term = (array)$term;
-            $term['parent'] = $parent;
-            $term = (object)$term;
-        }
         echo "<h1 class=\"cob-portalHeader-title\">$title</h1>";
     ?>
     </div>

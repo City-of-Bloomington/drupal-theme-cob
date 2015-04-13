@@ -22,8 +22,19 @@ function cob_preprocess_page(&$vars)
 			if ($bundle == 'book' && empty($node['field_category'])) {
                 $vars['bookInfo'] = cob_book_info($node['#node']->book);
 			}
+
 		}
+
 	}
+	elseif (arg(0) == 'taxonomy') {
+        $t = &$vars['page']['content']['system_main']['term_heading']['term']['#term'];
+        $parents = taxonomy_get_parents($t->tid);
+        if (count($parents)) {
+            $t = (array)$t;
+            $t['parent'] = current($parents);
+            $t = (object)$t;
+        }
+    }
 }
 
 function cob_preprocess_node(&$vars)
@@ -34,7 +45,7 @@ function cob_preprocess_node(&$vars)
 	if (!empty($vars['field_directory_dn'][0]['value'])) {
         $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']);
 	}
-	
+
 	if (!empty($vars['field_committee'][0]['value'])) {
         $vars['committee'] = civiclegislation_committee_info($vars['field_committee'][0]['value']);
         $vars['contactInfo'] = (object)[
