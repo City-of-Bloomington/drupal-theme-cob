@@ -43,9 +43,9 @@
                 font-family: $font-headings;
                 font-weight: 300;
                 font-size: (1em);
-                line-height: .8em;
+                line-height: 1.3em;
                 margin: 0 .5em 0 0;
-                padding: 1em .555em;
+                padding: 1em .555em .777em;
                 text-transform: uppercase;
 
                 &:hover {
@@ -55,7 +55,7 @@
                 &.cob-ext-current {
                     border-bottom: .333em solid $cornflower-brightest;
                     color: $cornflower-brightest;
-                    padding-bottom: .777em;
+                    padding-bottom: .444em;
                 }
             }
         }
@@ -106,6 +106,7 @@
                 text-align: left;
 
                 > a {
+
                     &:first-child {
                         margin-left: -.555em;
                     }
