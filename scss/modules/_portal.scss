@@ -38,18 +38,19 @@
             @include clearfix();
             vertical-align:middle;
         }
-        &-label {
-            color: #fff;
-            font-family: $font-headings;
-            font-weight: 300;
-            font-size: (28rem/16);
-            display:inline;
-        }
         form {
-            float:right; display:inline;
             margin-top:.3em;
 
-            .form-item { margin:0; }
+            label {
+                color: #fff;
+                font-family: $font-headings;
+                font-weight: 300;
+                font-size: (28rem/16);
+                display:inline;
+            }
+
+            .form-item {  }
+            .form-actions { }
         }
     }
     &Sidebar {

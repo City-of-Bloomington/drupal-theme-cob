@@ -79,7 +79,6 @@ include __DIR__.'/partials/siteAdminBar.inc';
 <main    class="cob-homeMain" role="main">
     <div class="cob-homeMain-container">
         <div       class="cob-homeSearch">
-            <label class="cob-homeSearch-label">How can we help you today?</label>
             <?php
                 $search = module_invoke('search', 'block_view', 'form');
                 echo render($search['content']);

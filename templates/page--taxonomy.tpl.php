@@ -79,11 +79,12 @@ include __DIR__.'/partials/homeHeader.inc';
 ?>
 <div           class="cob-portalSearch">
     <div       class="cob-portalSearch-container">
-        <label class="cob-portalSearch-label">How can we help you today?</label>
-        <?php
-            $search = module_invoke('search', 'block_view', 'form');
-            echo render($search['content']);
-        ?>
+    <?php
+        $search = module_invoke('search', 'block_view', 'form');
+        #print_r($search);
+        $search['content']['search_block_form']['#attributes']['placeholder'] = 'Search All';
+        echo render($search['content']);
+    ?>
     </div>
 </div>
 <header  class="cob-portalHeader">

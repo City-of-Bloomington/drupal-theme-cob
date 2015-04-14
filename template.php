@@ -91,10 +91,20 @@ function cob_include($name, array $data=null)
 }
 
 
+/**
+ * Override form markup on the site
+ *
+ * @implements hook_form_alter()
+ * @param array $form Drupal array representation of the form
+ * @param array $form_state
+ * @param string $form_id
+ * @see https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_form_alter/7
+ */
 function cob_form_alter(&$form, &$form_state, $form_id) {
 	if ($form_id == 'search_block_form') {
-		// HTML5 placeholder attribute
-		$form['search_block_form']['#attributes']['placeholder'] = t('Search Bloomington.in.gov');
-		$form['actions']['#attributes']['class'][] = 'element-invisible';
+        // https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7
+        $form['search_block_form']['#title_display'] = 'before';
+		$form['search_block_form']['#title'] = 'How can we help you today?';
+		$form['search_block_form']['#attributes']['placeholder'] = 'Search Bloomington.in.gov';
 	}
 }

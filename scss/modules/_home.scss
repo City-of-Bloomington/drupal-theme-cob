@@ -41,11 +41,16 @@
     }
     &Search {
         text-align: center;
-        &-label {
-            color: #fff;
-            font-family: $font-headings;
-            font-size: (18rem/16);
-            font-weight: 300;
+
+        form {
+            label {
+                color: #fff;
+                font-family: $font-headings;
+                font-size: (18rem/16);
+                font-weight: 300;
+            }
+            .form-item {  }
+            .form-actions { }
         }
     }
     @media screen and (min-width: $screen-medium) {
@@ -65,15 +70,18 @@
             }
         }
         &Search {
-            &-label {
-                font-size: (42rem/16);
-                margin: 1.5em 0 .75em;
-            }
-            .form-text {
-                font-size: (20rem/16);
-                padding: .75em;
-                width: 17em;
-                background-size:1.5em;
+            form {
+                label {
+                    font-size: (42rem/16);
+                    margin: 1.5em 0 .75em;
+                }
+                .form-item {
+                    font-size: (20rem/16);
+                    padding: .75em;
+                    width: 17em;
+                    background-size:1.5em;
+                }
+                .form-actions { }
             }
         }
     }
