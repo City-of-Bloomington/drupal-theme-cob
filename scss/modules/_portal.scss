@@ -133,6 +133,17 @@
                 opacity: 0;
             }
         }
+        &Search {
+            &-container {
+                label {
+                    display: inline-block;
+                    width: (5%/12*100);
+                }
+                .form-text {
+                    width: (7%/12*100);
+                }
+            }
+        }
         &Sidebar {
             margin-right: 0;
 
