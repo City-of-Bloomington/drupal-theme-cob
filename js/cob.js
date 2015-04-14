@@ -4,7 +4,7 @@ jQuery(function ($) {
             var openMenus   = $('.menuLinks.open'),
                 menu        = $(e.target).siblings('.menuLinks');
             openMenus.removeClass('open');
-            openMenus.   addClass('closed');
+            setTimeout(function() { openMenus.addClass('closed'); }, 300);
 
             menu.removeClass('closed');
             menu.   addClass('open');
@@ -14,7 +14,7 @@ jQuery(function ($) {
             var openMenus   = $('.menuLinks.open');
 
             openMenus.removeClass('open');
-            openMenus.   addClass('closed');
+            setTimeout(function() { openMenus.addClass('closed'); }, 300);
         };
     $('.menuLauncher').click(launcherClick);
     $(document       ).click(documentClick);

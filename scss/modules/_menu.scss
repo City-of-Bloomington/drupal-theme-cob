@@ -17,7 +17,9 @@
 .menuLinks {
     position:absolute;
     display:inline-table;
+    opacity: 0;
     white-space:nowrap;
+    transition: opacity .2s;
 
     &.open   { opacity: 1; }
     &.closed { top: -10000px; left: -10000px; }
