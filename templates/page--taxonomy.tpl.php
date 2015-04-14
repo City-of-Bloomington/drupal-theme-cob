@@ -82,7 +82,7 @@ include __DIR__.'/partials/homeHeader.inc';
     <?php
         $search = module_invoke('search', 'block_view', 'form');
         #print_r($search);
-        $search['content']['search_block_form']['#attributes']['placeholder'] = 'Search All';
+        $search['content']['search_block_form']['#attributes']['placeholder'] = 'Search all of Bloomington.in.gov';
         echo render($search['content']);
     ?>
     </div>

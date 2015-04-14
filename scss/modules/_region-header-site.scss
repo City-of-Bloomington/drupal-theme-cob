@@ -10,16 +10,24 @@
             border: 1px solid $cob-gray-dark;
             box-sizing: border-box;
             width: 100%;
-        }        
+        }
     }
     @media screen and (min-width: $screen-medium) {
         > .block-search {
             float: right;
             width: 17em;
-            
+
             .form-text {
                 font-size: (14rem/16);
-                padding: .25em;
+                padding: .25em .25em .25em .5em;
+            }
+        }
+    }
+    @media screen and (min-width: $screen-large) {
+        > block-search {
+            width: 33%;
+            .form-text {
+                
             }
         }
     }

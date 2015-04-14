@@ -48,7 +48,11 @@
                 font-size: (28rem/16);
                 display:inline;
             }
-
+            .form-text {
+                box-sizing: border-box;
+                padding-top: (7em/16);
+                padding-bottom: (7em/16);
+            }
             .form-item {  }
             .form-actions { }
         }
@@ -140,6 +144,7 @@
                     width: (5%/12*100);
                 }
                 .form-text {
+                    margin-left: 1rem;
                     width: (7%/12*100);
                 }
             }
