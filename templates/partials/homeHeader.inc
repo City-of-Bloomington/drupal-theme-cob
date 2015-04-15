@@ -12,7 +12,7 @@
             }
         ?>
         <nav class="cob-homeNav">
-            <a href="<?= $front_page ?>">Home</a>
+            <a href="<?= $front_page ?>" class="cob-ext-current">Home</a>
             <?php
                 $class_current = ['attributes'=>['class'=>['cob-ext-current']]];
 
