@@ -83,75 +83,51 @@
  *
  * @ingroup themeable
  */
-hide($content['comments']);
-hide($content['links']);
-hide($content['field_board_commission']);
-hide($content['field_press_contacts']);
-hide($content['field_committee']);
-hide($content['field_directory_dn']);
-hide($content['field_physical_address']);
-hide($content['field_phone_number']);
-hide($content['field_email']);
-hide($content['field_call_to_action']);
-hide($content['field_category']);
-hide($content['field_department']);
-hide($content['book_navigation']);
 ?>
-<article class="cob-main-content" <?= $content_attributes ?>>
-    <?php if ($view_mode == 'teaser'): ?>
-    <?php
-        $formatted_date = '';
-        if ($display_submitted) {
-            $d = format_date($created, 'medium');
-            $formatted_date = "<time>$d</time>";
-        }
-        echo "$formatted_date<h2><a href=\"$node_url\">".render($title)."</a></h2>";
-        echo render($content);
-    ?>
-    <?php else: ?>
-    <?php
-        $contentHTML = render($content);
-        $toc = _cob_create_toc($contentHTML, 2, 2);
-        if ($toc['toc']) { $contentHTML = $toc['content']; }
+<div class="cob-pageOverview">
+    <h2>Summary of <?= $title ?></h2>
+    <div class="cob-pageOverview-container">
+        <div>
+            <?= $safe_summary; ?>
+            <div class="cob-pageOverview-details">
+                <?php
+                    if (!empty($contactInfo)) {
+                        foreach (['address', 'city', 'state', 'zip'] as $f) {
+                            $$f = !empty($contactInfo->$f) ? $contactInfo->$f : '';
+                        }
+                        echo "
+                        <address class=\"cob-ext-physicalAddress\">$address
+                        $city $state $zip
+                        </address>
+                        ";
+                    }
+                    else {
+                        echo  !empty($content['field_physical_address'])
+                            ? render($content['field_physical_address'])
+                            : '<div class="cob-ext-details">More helpful info coming to this space soon.</div>';
+                    }
+                ?>
+                <div class="cob-pageOverview-contacts">
+                    <?php
+                        echo render($content['field_facebook_page'  ]);
+                        echo render($content['field_twitter_account']);
 
-        if (!empty($safe_summary) || !empty($contactInfo) || $toc['toc']
-            || !empty($content['field_call_to_action'])   || !empty($content['field_physical_address'])
-            || !empty($content['field_phone_number'])     || !empty($content['field_email'])
-            || !empty($content['field_facebook_page'])    || !empty($content['field_twitter_account'])) {
-
-            include __DIR__.'/partials/pageOverview.inc';
-        }
-    ?>
-    <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    <?php
-        echo "
-        $user_picture
-        <div     class=\"cob-main-container\">
-            <div class=\"cob-main-content\"$content_attributes>
-        ";
-            if ($node->type == 'press_release') {
-                $formatted_date = format_date($created, 'medium');
-                echo "
-                <time>$formatted_date</time>
-                <h1>{$node->title}</h1>
-                ";
-            }
-            echo "
-                $contentHTML
+                        if (!empty($contactInfo)) { cob_include('contactInfo', ['contactInfo' => $contactInfo]); }
+                        else {
+                            echo render($content['field_phone_number']);
+                            echo render($content['field_email']);
+                        }
+                    ?>
+                </div>
             </div>
-            <aside class=\"cob-main-content-sidebar\">
-            ";
-                if (!empty(     $content['field_press_contacts'])) {
-                    echo render($content['field_press_contacts']);
+            <?php
+                if (     !empty($content['field_call_to_action'])) {
+                    echo render($content['field_call_to_action']);
                 }
-                if (!empty($committee))  { cob_include('committeeMembers',   ['committee'         => $committee]); }
-            echo "
-            </aside>
+            ?>
         </div>
-        ";
-        if (!empty($press_releases))     { cob_include('press_releases',     ['press_releases'    => $press_releases]    ); }
-        if (!empty($boards_commissions)) { cob_include('boards_commissions', ['boards_commissions'=> $boards_commissions]); }
-    ?>
+        <?php
+            if ($toc['toc']) { echo "<aside>$toc[toc]</aside>"; }
+        ?>
     </div>
-    <?php endif ?>
-</article>
+</div>
