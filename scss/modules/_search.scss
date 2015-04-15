@@ -5,9 +5,9 @@
         background-size: 1.25em;
         border: 2px solid $cob-blue-dark;
         border-radius: .5em;
-        outline: hidden;
+        box-sizing: border-box;
+        outline: 0;
         overflow: hidden;
-        transition: background-image .5s ease-in-out;
         padding-left: .75em;
         padding-right: .75em;
 

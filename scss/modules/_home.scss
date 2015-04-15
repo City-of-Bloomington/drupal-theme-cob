@@ -20,8 +20,14 @@
             display: inline-block;
             transition: border-color .25s linear;
 
-            &:hover, &.cob-ext-current {
+            &:hover {
                 border-bottom-color: $cob-gray;
+            }
+
+
+
+            &.cob-ext-current {
+                border-bottom-color: $cob-blue-light;
             }
         }
     }
@@ -71,15 +77,20 @@
         }
         &Search {
             form {
-                label {
-                    font-size: (42rem/16);
-                    margin: 1.5em 0 .75em;
-                }
                 .form-item {
                     font-size: (20rem/16);
                     padding: .75em;
-                    width: 17em;
-                    background-size:1.5em;
+                    background-size: 1.5em;
+
+                    > label {
+                        font-size: (42rem/16);
+                        margin: 1.5em 0 .75em;
+                    }
+                    > input {
+                        font-size: (21rem/16);
+                        padding: .75em 1.5em .75em 1em;
+                        width: 50%; // 6 out of 12 columns
+                    }
                 }
                 .form-actions { }
             }

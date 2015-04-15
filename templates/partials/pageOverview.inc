@@ -119,6 +119,12 @@
                         }
                     ?>
                 </div>
+                <div class="cob-pageOverview-actions">
+                    <a href="#" class="cob-btn-cta cob-mod-pdf">
+                        <span class="cob-ext-title">Link title</span>
+                        <span class="cob-ext-fileSize">Details (e.g. file size)</span>
+                    </a>
+                </div>
             </div>
             <?php
                 if (     !empty($content['field_call_to_action'])) {
