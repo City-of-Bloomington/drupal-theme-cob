@@ -20,8 +20,14 @@
             display: inline-block;
             transition: border-color .25s linear;
 
-            &:hover, &.cob-ext-current {
+            &:hover {
                 border-bottom-color: $cob-gray;
+            }
+
+
+
+            &.cob-ext-current {
+                border-bottom-color: $cob-blue-light;
             }
         }
     }

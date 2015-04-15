@@ -1,0 +1,49 @@
+.cob-btn {
+    &-cta {
+        background: $cob-green;
+        border-bottom: .25rem solid $cob-green-light;
+        border-radius: (10rem/16);
+        box-sizing: border-box;
+        color: #fff;
+        display: inline-block; // The button shouldn't force itself to be alone on a line, we should depend on containers for this
+        font-size: 1rem;
+        line-height: (22em/16);
+        padding: .75rem 1rem;
+        > .cob-ext-fileSize {
+            color: $cob-green-lightest;
+            display: block;
+            font-family: $font-headings;
+            font-size: (14rem/16);
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+        &.cob-mod-pdf {
+            min-height: 5.25rem;
+            padding-left: 5em;
+            position: relative;
+            &:before {
+                background: url('../images/pdf-large.svg') 0 0 / cover ;
+                content: ' ';
+                display: block;
+                height: (50rem/16);
+                margin: 0 0 1rem 0;
+                position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+                width: (50rem/16);
+            }
+        }
+    }
+}
+
+// Enhancements for buttons that live in specific context
+.cob-pageOverview-actions {
+    > .cob-btn-cta {
+        @media screen and (min-width: $screen-large) {
+            width: (5%/8*100);
+        }
+    }
+}
