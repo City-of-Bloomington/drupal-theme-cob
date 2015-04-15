@@ -12,8 +12,10 @@
             }
         ?>
         <nav class="cob-homeNav">
-            <a href="<?= $front_page ?>" class="cob-ext-current">Home</a>
             <?php
+                $class_current = empty($term) ? 'class="cob-ext-current"' : '';
+                echo "<a href=\"$front_page\" $class_current>Home</a>";
+
                 $class_current = ['attributes'=>['class'=>['cob-ext-current']]];
 
                 foreach (taxonomy_get_tree(2, 0, 1) as $t) {
