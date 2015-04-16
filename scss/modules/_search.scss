@@ -21,3 +21,11 @@
     }
 
 }
+.block-system {
+    > .content {
+        > .search-form {
+            @include container();
+            padding-top: 2rem;
+        }
+    }
+}
