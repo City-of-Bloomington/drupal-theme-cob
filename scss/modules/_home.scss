@@ -44,8 +44,25 @@
                 font-weight: 300;
             }
         }
+        &-links {
+            @include container();
+            > a {
+                background: rgba(255, 255, 255, .18);
+                color: #fff;
+                display: block;
+                margin: 0 0 1rem 0;
+                padding: .75em;
+                transition: background-color .25s ease-in-out;
+
+                &:hover {
+                    background: rgba(255, 255, 255, .23);
+                    text-decoration: none;
+                }
+            }
+        }
     }
     &Search {
+        margin-bottom: 2em;
         text-align: center;
 
         form {
@@ -55,13 +72,42 @@
                 font-size: (18rem/16);
                 font-weight: 300;
             }
-            .form-item {  }
+            .form-item {
+                > label {
+                    margin: 0 auto .5em 0;
+                }
+                > input {
+                    margin: 0 auto;
+                    padding: .75em;
+                    width: 95%;
+                }
+            }
             .form-actions { }
         }
     }
     @media screen and (min-width: $screen-medium) {
         &Header {
             padding-top: 1rem;
+        }
+        &Main {
+            &-links {
+                > a {
+                    float: left;
+                    margin: 0 4% 1em;
+                    height: 6em;
+                    position: relative;
+                    text-align: center;
+
+                    > .cob-ext-tileName {
+                        min-height: 2.5em;
+                        position: absolute;
+                            right: .5rem;
+                            bottom: .5rem;
+                            left: .5rem;
+                        vertical-align: middle;
+                    }
+                }
+            }
         }
         &Nav {
             float: right;
@@ -76,6 +122,7 @@
             }
         }
         &Search {
+            margin-bottom: 5em; // Small screens get a lesser value
             form {
                 .form-item {
                     font-size: (20rem/16);
@@ -93,6 +140,38 @@
                     }
                 }
                 .form-actions { }
+            }
+        }
+    }
+    @media screen and (min-width: $screen-medium) and (max-width: $screen-large) {
+        &Main {
+            &-links {
+                > a {
+                    width: 24%;
+                    &:nth-child(3n+1) {
+                        margin-left: 0;
+                    }
+                    &:nth-child(3n+3) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $screen-large) {
+        &Main {
+            &-links {
+                > a {
+                    font-size: (18rem/16);
+                    margin: 0 3.9% 2em;
+                    width: 16%;
+                    &:nth-child(4n+1) {
+                        margin-left: 0;
+                    }
+                    &:nth-child(4n+4) {
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }
