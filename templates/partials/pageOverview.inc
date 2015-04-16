@@ -119,18 +119,11 @@
                         }
                     ?>
                 </div>
-                <div class="cob-pageOverview-actions">
-                    <a href="#" class="cob-btn-cta cob-mod-pdf">
-                        <span class="cob-ext-title">Link title</span>
-                        <span class="cob-ext-fileSize">Details (e.g. file size)</span>
-                    </a>
-                </div>
+                <?php
+                    if (!empty($content['field_call_to_action'])) { echo render($content['field_call_to_action']); }
+                    if (!empty($content['field_attachment'    ])) { echo render($content['field_attachment'    ]); }
+                ?>
             </div>
-            <?php
-                if (     !empty($content['field_call_to_action'])) {
-                    echo render($content['field_call_to_action']);
-                }
-            ?>
         </div>
         <?php
             if ($toc['toc']) { echo "<aside>$toc[toc]</aside>"; }
