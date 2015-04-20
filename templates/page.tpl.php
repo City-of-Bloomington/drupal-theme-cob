@@ -80,10 +80,12 @@ include __DIR__.'/partials/siteHeader.inc';
 ?>
 <header class="cob-pageHeader <?= $modifier_class ?>">
     <div class="cob-pageHeader-container">
-    <?php
-        include __DIR__.'/partials/breadcrumbs.inc';
-        include __DIR__.'/partials/pageHeader-region.inc';
-    ?>
+        <div class="cob-ext-wrap">
+            <?php
+                include __DIR__.'/partials/breadcrumbs.inc';
+                include __DIR__.'/partials/pageHeader-region.inc';
+            ?>
+        </div>
     </div>
     <?php
         include __DIR__.'/partials/pageHeader-navigation.inc';

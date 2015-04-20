@@ -84,7 +84,16 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 echo render($search['content']);
             ?>
         </div>
-        <?php echo render($page['content']); ?>
+        <nav class="cob-homeMain-links">
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Appeal a Parking Ticket</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Jobs</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Parks and Recreation</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Another Link</span></a>
+            <a href="/pay-water-bill-online"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
+            <a href="http://wunderground.com"><span class="cob-ext-tileName">Weather</span></a>
+        </nav>
     </div>
 </main>
 

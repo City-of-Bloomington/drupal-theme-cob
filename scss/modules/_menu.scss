@@ -15,8 +15,9 @@
     cursor: pointer; display: inline-table;
 }
 .menuLinks {
-    position:absolute;
     display:inline-table;
+    position:absolute;
+        z-index: 1000;
     opacity: 0;
     white-space:nowrap;
     transition: opacity .2s;
