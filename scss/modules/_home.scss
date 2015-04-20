@@ -93,10 +93,11 @@
             &-links {
                 > a {
                     float: left;
-                    margin: 0 4% 1em;
+                    margin: 0 10% 1em;
                     height: 6em;
                     position: relative;
                     text-align: center;
+                    width: 35%;
 
                     > .cob-ext-tileName {
                         min-height: 2.5em;
@@ -147,11 +148,10 @@
         &Main {
             &-links {
                 > a {
-                    width: 24%;
-                    &:nth-child(3n+1) {
+                    &:nth-child(2n+1) {
                         margin-left: 0;
                     }
-                    &:nth-child(3n+3) {
+                    &:nth-child(2n+2) {
                         margin-right: 0;
                     }
                 }
