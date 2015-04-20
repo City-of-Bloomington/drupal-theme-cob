@@ -92,6 +92,8 @@ hide($content['field_directory_dn']);
 hide($content['field_physical_address']);
 hide($content['field_phone_number']);
 hide($content['field_email']);
+hide($content['field_facebook_page']);
+hide($content['field_twitter_account']);
 hide($content['field_call_to_action']);
 hide($content['field_attachment']);
 hide($content['field_category']);

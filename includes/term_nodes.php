@@ -9,7 +9,7 @@
 <div    class="cob-portalContent">
     <h2 class="cob-portalContent-heading"><?= $data['term']->name ?></h2>
     <?php
-        $nodes = node_load_multiple(taxonomy_select_nodes($data['term']->tid));
+        $nodes = cob_taxonomy_nodes($data['term']->tid);
         foreach($nodes as $node) {
             $n = node_view($node, 'teaser');
             echo render($n);
