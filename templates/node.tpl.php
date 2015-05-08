@@ -101,8 +101,8 @@ hide($content['field_department']);
 hide($content['book_navigation']);
 ?>
 <article class="cob-main-content" <?= $content_attributes ?>>
-    <?php if ($view_mode == 'teaser'): ?>
-    <?php
+<?php
+    if ($view_mode == 'teaser') {
         $formatted_date = '';
         if ($display_submitted) {
             $d = format_date($created, 'medium');
@@ -110,9 +110,8 @@ hide($content['book_navigation']);
         }
         echo "$formatted_date<h2><a href=\"$node_url\">".render($title)."</a></h2>";
         echo render($content);
-    ?>
-    <?php else: ?>
-    <?php
+    }
+    else {
         $contentHTML = render($content);
         $toc = _cob_create_toc($contentHTML, 2, 2);
         if ($toc['toc']) { $contentHTML = $toc['content']; }
@@ -136,13 +135,11 @@ hide($content['book_navigation']);
 
             include __DIR__.'/partials/pageOverview.inc';
         }
-    ?>
-    <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-    <?php
         echo "
-        $user_picture
-        <div     class=\"cob-main-container\">
-            <div class=\"cob-main-content\"$content_attributes>
+        <div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>
+            $user_picture
+            <div     class=\"cob-main-container\">
+                <div class=\"cob-main-content\"$content_attributes>
         ";
             if ($node->type == 'press_release') {
                 $formatted_date = format_date($created, 'medium');
@@ -159,7 +156,7 @@ hide($content['book_navigation']);
                 if (!empty(     $content['field_press_contacts'])) {
                     echo render($content['field_press_contacts']);
                 }
-                if (!empty($committee))  { cob_include('committeeMembers',   ['committee'         => $committee]); }
+                if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
             echo "
             </aside>
         </div>
@@ -170,7 +167,10 @@ hide($content['book_navigation']);
                 cob_include($type, [$type => $$type, 'title'=>$title]);
             }
         }
-    ?>
-    </div>
-    <?php endif ?>
+
+        echo "
+        </div>
+        ";
+    }
+?>
 </article>

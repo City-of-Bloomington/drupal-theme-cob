@@ -130,7 +130,8 @@
                 echo "
                 <aside>
                     <dl class=\"cob-pageOverview-toc\">
-                        <dt>Learn About</dt>";
+                        <dt>Learn About</dt>
+                ";
                         foreach ($toc['toc'] as $id=>$title) {
                             echo "<dd><a href=\"#$id\">$title</a></dd>";
 
