@@ -126,7 +126,20 @@
             </div>
         </div>
         <?php
-            if ($toc['toc']) { echo "<aside>$toc[toc]</aside>"; }
+            if ($toc['toc']) {
+                echo "
+                <aside>
+                    <dl class=\"cob-pageOverview-toc\">
+                        <dt>Learn About</dt>";
+                        foreach ($toc['toc'] as $id=>$title) {
+                            echo "<dd><a href=\"#$id\">$title</a></dd>";
+
+                        }
+                echo "
+                    </dl>
+                </aside>
+                ";
+            }
         ?>
     </div>
 </div>

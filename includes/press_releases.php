@@ -3,11 +3,11 @@
  * @copyright 2015 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
- * @param array $data['press_releases']
+ * @param array $data['press_releases'=>[], 'title'=>'']
  */
 ?>
-<section class="cob-latestNewsWidget block">
-    <h2  class="cob-latestNewsWidget-heading">Latest News</h2>
+<section class="cob-latestNewsWidget block" id="press_releases">
+    <h2  class="cob-latestNewsWidget-heading"><?= $data['title']; ?></h2>
     <div class="cob-latestNewsWidget-container">
     <?php
         foreach ($data['press_releases'] as $node) {

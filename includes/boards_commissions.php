@@ -9,11 +9,11 @@
  * @copyright 2015 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Dan Hiester <hiesterd@bloomington.in.gov>
- * @param array $data['boards_commissions']
+ * @param array $data['boards_commissions'=>[], 'title'=>'']
  */
 ?>
-<section class="cob-boardsCommissionsWidget block">
-	<h2>Boards &amp; Commissions</h2>
+<section class="cob-boardsCommissionsWidget block" id="boards_commissions">
+	<h2><?= $data['title']; ?></h2>
 	<div class="cob-boardsCommissionsWidget-listing">
     <?php
         foreach ($data['boards_commissions'] as $node) {

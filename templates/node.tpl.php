@@ -117,6 +117,18 @@ hide($content['book_navigation']);
         $toc = _cob_create_toc($contentHTML, 2, 2);
         if ($toc['toc']) { $contentHTML = $toc['content']; }
 
+        // Declare the content types to check for entity relationships
+        // with the current node being displayed
+        $relatedContent = [
+            'press_releases'     => 'Latest News',
+            'boards_commissions' => 'Boards &amp; Commissions'
+        ];
+        foreach ($relatedContent as $type=>$title) {
+            if (!empty($$type)) {
+                $toc['toc'][$type] = $title;
+            }
+        }
+
         if (!empty($safe_summary) || !empty($contactInfo) || $toc['toc']
             || !empty($content['field_call_to_action'])   || !empty($content['field_physical_address'])
             || !empty($content['field_phone_number'])     || !empty($content['field_email'])
@@ -152,8 +164,12 @@ hide($content['book_navigation']);
             </aside>
         </div>
         ";
-        if (!empty($press_releases))     { cob_include('press_releases',     ['press_releases'    => $press_releases]    ); }
-        if (!empty($boards_commissions)) { cob_include('boards_commissions', ['boards_commissions'=> $boards_commissions]); }
+
+        foreach ($relatedContent as $type=>$title) {
+            if (!empty($$type)) {
+                cob_include($type, [$type => $$type, 'title'=>$title]);
+            }
+        }
     ?>
     </div>
     <?php endif ?>
