@@ -85,14 +85,14 @@ include __DIR__.'/partials/siteAdminBar.inc';
             ?>
         </div>
         <nav class="cob-homeMain-links">
-            <a href="/pay-water-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
+            <a href="http://rogue.bloomington.in.gov/drupal2/node/17" class="cob-ext-cloud"><span class="cob-ext-tileName">News</span></a>
+            <a href="/drupal2/pay-water-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-park"><span class="cob-ext-tileName">Parks and Recreation</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The City</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-dog"><span class="cob-ext-tileName">Animal Shelter</span></a>
             <a href="/pay-water-bill-online" class="cob-ext-bolt"><span class="cob-ext-tileName">Arts</span></a>
-            <a href="http://wunderground.com" class="cob-ext-cloud"><span class="cob-ext-tileName">Weather</span></a>
         </nav>
     </div>
 </main>
