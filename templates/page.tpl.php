@@ -77,6 +77,27 @@ include __DIR__.'/partials/siteHeader.inc';
     if (isset($node) && $node->type == 'press_release') {
         $modifier_class = 'mod-pressRelease';
     }
+    if (!empty($node->field_cover_image) || !empty($node->field_page_header_image)) {
+        echo '<style type="text/css">';
+        if (!empty($node->field_cover_image)) {
+            $cover = mediamanager_field_url($node->field_cover_image, 'Cover');
+            echo "
+            .cob-pageHeader { background-image:url('$cover'); }
+            ";
+        }
+        if (!empty($node->field_page_header_image)) {
+            $a1 = mediamanager_field_url($node->field_page_header_image, 'Page Header');
+            $a2 = mediamanager_field_url($node->field_page_header_image, 'Page Header@2');
+
+            echo "
+            .cob-pageHeader-container:before { background-image:url('$a1'); }
+            @media screen and (min-resolution: 2dppx) {
+            .cob-pageHeader-container:before { background-image:url('$a2'); }
+            }
+            ";
+        }
+        echo '</style>';
+    }
 ?>
 <header class="cob-pageHeader <?= $modifier_class ?>">
     <div class="cob-pageHeader-container">
