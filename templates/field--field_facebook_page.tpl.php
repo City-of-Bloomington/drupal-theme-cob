@@ -46,5 +46,5 @@ foreach ($element['#items'] as $item) {
     foreach ($item['attributes'] as $attr => $value) {
         $attributes = " $attr=\"$value\"";
     }
-    echo "<a href=\"$item[display_url]}\" $attributes>$item[title]</a>";
+    echo "<a href=\"$item[display_url]\" $attributes>$item[title]</a>";
 }
