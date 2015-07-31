@@ -62,8 +62,8 @@
   <div class="cob-betaHeader">
 	<div class="cob-betaHeader-container">
 	  <div class="cob-betaHeader-content">
-		<h1>Welcome to beta.bloomington.in.gov</h1>
-		<p>This website is a work in progress. It is missing some information. We welcome feedback from our community during construction. <a href="#">Learn more about our process.</a></p>
+		<h1>Welcome to bloomington.in.gov/alpha</h1>
+		<p>This website is a work in progress. It is missing some information. We welcome feedback from our community during construction. <a href="/alpha/about">Learn more about our process.</a></p>
 	  </div>
 	  <div class="cob-betaHeader-sidebar">
 		<!-- Content for this area deferred for now -->
