@@ -157,7 +157,8 @@ hide($content['field_cover_image']);
                 if (!empty(     $content['field_press_contacts'])) {
                     echo render($content['field_press_contacts']);
                 }
-                if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
+                if (!empty($committee  )) { cob_include('committeeMembers', ['committee'   => $committee  ]); }
+                if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
             echo "
             </aside>
         </div>
