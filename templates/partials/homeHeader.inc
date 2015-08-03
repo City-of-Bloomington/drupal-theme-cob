@@ -18,7 +18,8 @@
 
                 $class_current = ['attributes'=>['class'=>['cob-ext-current']]];
 
-                foreach (taxonomy_get_tree(2, 0, 1) as $t) {
+                $categories = taxonomy_vocabulary_machine_name_load('categories');
+                foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
                     $attr = (  (!empty($term)         && $t->tid == $term->tid)
                             || (!empty($term->parent) && $t->tid == $term->parent->tid ))
                         ? $class_current
