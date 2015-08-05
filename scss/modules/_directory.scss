@@ -1,3 +1,33 @@
 .cob-directory {
+    &-section {
+        @include clearfix();
+        &:not(:first-child) {
+            @include sectionDivider();
+        }
+        > h2 {
+            margin: 1em 0 .25em 0;
+        }
+    }
+    &-dept {
+        &Info {
+            @include grid-3col();
+            > dl {
+                > dt {
+                    display: block;
+                    float: left;
+                    font-weight: bold;
+                    width: 4rem;
+                }
+                > dd {
+                    display: block;
+                    margin: 0 0 0 5rem;
 
+                    &:after {
+                        content: '\A';
+                        white-space: pre;
+                    }
+                }
+            }
+        }
+    }
 }
