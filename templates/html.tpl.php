@@ -59,13 +59,13 @@
   <!--[if lte IE 9]>
 	  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div class="cob-betaHeader">
-	<div class="cob-betaHeader-container">
-	  <div class="cob-betaHeader-content">
+  <div class="cob-alphaHeader">
+	<div class="cob-alphaHeader-container">
+	  <div class="cob-alphaHeader-content">
 		<h1>Welcome to bloomington.in.gov/alpha</h1>
 		<p>This website is a work in progress. It is missing some information. We welcome feedback from our community during construction. <a href="/alpha/about">Learn more about our process.</a></p>
 	  </div>
-	  <div class="cob-betaHeader-sidebar">
+	  <div class="cob-alphaHeader-sidebar">
 		<!-- Content for this area deferred for now -->
 	  </div>
 	</div>
