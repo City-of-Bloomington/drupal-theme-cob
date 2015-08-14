@@ -9,27 +9,8 @@
     <div class="cob-siteHeader-container">
         <?php
             if (!empty($page['header_site'])) { echo render($page['header_site']); }
-        ?>
-        <nav>
-            <div class="menuLauncher">Menu</div>
-            <div class="menuLinks closed">
-            <?php
-                foreach (taxonomy_get_tree(2, 0, 1) as $t) {
-                    echo l($t->name, 'taxonomy/term/'.$t->tid);
-                }
-            ?>
-            </div>
-        </nav>
-        <?php
-            if ($logo) {
-                $t = t('Home');
-                $alt_attribute = $site_name ? $site_name : $t;
-                echo "
-                <a href=\"$front_page\" class=\"cob-siteHeader-logo\" title=\"$t\" rel=\"home\" id=\"logo\">
-                    <img src=\"$logo\" alt=\"$alt_attribute\" />
-                </a>
-                ";
-            }
+            echo cob_http_get(variable_get('cob_assets').'/html/cob-siteHeader-menu.html');
+            echo cob_http_get(variable_get('cob_assets').'/html/cob-siteHeader-logo.html');
         ?>
     </div>
 </header>

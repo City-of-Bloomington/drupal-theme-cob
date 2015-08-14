@@ -46,44 +46,33 @@
 <html lang="<?= $language->language; ?>" dir="<?= $language->dir; ?>">
 
 <head profile="<?= $grddl_profile; ?>">
-  <?= $head; ?>
-  <title><?= $head_title; ?></title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
-  <?= $styles; ?>
+    <?= $head; ?>
+    <title><?= $head_title; ?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+    <?= $styles; ?>
 </head>
 <body class="<?= $classes; ?>" <?= $attributes;?>>
-  <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
-  </div>
-  <!--[if lte IE 9]>
-	  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-  <div class="cob-alphaHeader">
-	<div class="cob-alphaHeader-container">
-	  <div class="cob-alphaHeader-content">
-		<h1>Welcome to bloomington.in.gov/alpha</h1>
-		<p>This website is a work in progress. It is missing some information. We welcome feedback from our community during construction. <a href="/alpha/about">Learn more about our process.</a></p>
-	  </div>
-	  <div class="cob-alphaHeader-sidebar">
-		<!-- Content for this area deferred for now -->
-	  </div>
-	</div>
-  </div>
+    <div id="skip-link">
+        <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
+    </div>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <?= cob_http_get(variable_get('cob_assets').'/html/cob-alphaHeader.html'); ?>
 
-  <?= $page_top; ?>
-  <?= $page; ?>
-  <?= $page_bottom; ?>
-  <?= $scripts; ?>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <?= $page_top; ?>
+    <?= $page; ?>
+    <?= $page_bottom; ?>
+    <?= $scripts; ?>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-9224894-8', 'auto');
-    ga('send', 'pageview');
-
-  </script>
+        ga('create', 'UA-9224894-8', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
