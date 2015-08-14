@@ -51,6 +51,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
     <?= $styles; ?>
+    <?php
+        echo '<link rel="stylesheet" href="'.variable_get('cob_assets').'/css/screen.css'.'" />';
+    ?>
 </head>
 <body class="<?= $classes; ?>" <?= $attributes;?>>
     <div id="skip-link">
