@@ -52,7 +52,8 @@
     <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
     <?= $styles; ?>
     <?php
-        echo '<link rel="stylesheet" href="'.variable_get('cob_assets').'/css/screen.css'.'" />';
+        $ASSETS = variable_get('cob_assets');
+        echo '<link rel="stylesheet" href="'.$ASSETS.'/css/screen.css'.'" />';
     ?>
 </head>
 <body class="<?= $classes; ?>" <?= $attributes;?>>
@@ -62,7 +63,7 @@
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <?= cob_http_get(variable_get('cob_assets').'/html/cob-alphaHeader.html'); ?>
+    <?= cob_http_get($ASSETS.'/html/cob-alphaHeader.html'); ?>
 
     <?= $page_top; ?>
     <?= $page; ?>

@@ -1,6 +1,5 @@
 .cob-latestNewsWidget {
     @include container();
-    @include sectionDivider();
 
     &-heading {
         color: $cob-gray-dark;

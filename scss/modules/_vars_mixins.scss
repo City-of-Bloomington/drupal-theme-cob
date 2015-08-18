@@ -78,28 +78,6 @@ $screen-small: (400em/16);
     position: absolute;
     width: 1px;
 }
-@mixin sectionDivider() {
-    &:before {
-        background-image: url('../images/bloomington-section-divider-mobile.svg');
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: ' ';
-        display: block;
-        margin: 4rem 0;
-        width: 100%;
-        height: 31px;
-        @media screen and (min-width: $screen-medium){
-            background-image: url('../images/bloomington-section-divider.svg');
-        }
-    }
-    &:first-child {
-        margin-top: 4rem;
-        &:before {
-            display: none;
-        }
-    }
-}
 
 @mixin tabularData() {
     table {

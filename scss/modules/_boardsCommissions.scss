@@ -19,12 +19,11 @@
         > dd {
             font-size: (14rem/16);
             margin: 0;
-        }        
+        }
     }
     &Widget {
         @include container();
-        @include sectionDivider();
-    
+        
         > h2 {
             @include grid-4col;
             color: $cornflower-darkest;
@@ -41,7 +40,7 @@
                 font-size: 1rem;
                 margin: 0 0 (10rem/16);
                 line-height: (22rem/16);
-    
+
                 > h2 {
                     font-weight: 400;
                     font-size: (24rem/16);

@@ -1,18 +1,12 @@
 .cob-siteHeader {
-    border-top: 8px solid $cob-blue;
 
     &-container {
         @include container();
-        min-height: 57px;
         .form-item-search-block-form {
             > label {
                 @include visuallyHidden();
             }
         }
-    }
-    &-logo {
-        display: inline-block;
-        margin: 7px 0 7px 0;
     }
     @media screen and (min-width: $screen-small) {
         &-search {

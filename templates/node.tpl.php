@@ -142,35 +142,34 @@ hide($content['field_cover_image']);
             <div     class=\"cob-main-container\">
                 <div class=\"cob-main-content\"$content_attributes>
         ";
-            if ($node->type == 'press_release') {
-                $formatted_date = format_date($created, 'medium');
-                echo "
-                <time>$formatted_date</time>
-                <h1>{$node->title}</h1>
-                ";
-            }
-            echo "
-                $contentHTML
-            </div>
-            <aside class=\"cob-main-content-sidebar\">
-            ";
-                if (!empty(     $content['field_press_contacts'])) {
-                    echo render($content['field_press_contacts']);
+                if ($node->type == 'press_release') {
+                    $formatted_date = format_date($created, 'medium');
+                    echo "
+                    <time>$formatted_date</time>
+                    <h1>{$node->title}</h1>
+                    ";
                 }
-                if (!empty($committee  )) { cob_include('committeeMembers', ['committee'   => $committee  ]); }
-                if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
-            echo "
-            </aside>
-        </div>
-        ";
 
-        foreach ($relatedContent as $type=>$title) {
-            if (!empty($$type)) {
-                cob_include($type, [$type => $$type, 'title'=>$title]);
-            }
-        }
-
+                echo "
+                $contentHTML
+                </div>
+                <aside class=\"cob-main-content-sidebar\">
+                ";
+                    if (!empty(     $content['field_press_contacts'])) {
+                        echo render($content['field_press_contacts']);
+                    }
+                    if (!empty($committee  )) { cob_include('committeeMembers', ['committee'   => $committee  ]); }
+                    if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
+                echo "
+                </aside>
+                ";
+                foreach ($relatedContent as $type=>$title) {
+                    if (!empty($$type)) {
+                        cob_include($type, [$type => $$type, 'title'=>$title]);
+                    }
+                }
         echo "
+            </div>
         </div>
         ";
     }
