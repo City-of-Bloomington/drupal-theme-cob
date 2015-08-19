@@ -1,45 +1,9 @@
 .cob-alphaHeader {
-    background: $cob-nightshade;
-    color: #fff;
-
     &-container {
         @include container();
-        padding: 1px 0;
-        margin: 0;
-
+        margin:0;
     }
     &-content {
         @include grid-8col();
-
-        > h1 {
-            color: #fff;
-            font-family: $font-headings;
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin: 1rem 0 0 0;
-        }
-        > p {
-            margin: .5rem 0 1rem;
-
-            > a {
-                color: $cob-blue-light;
-            }
-        }
-    }
-    @media screen and (min-width: $screen-small) {
-        &-container {
-            background: url('../images/beta-badge.svg') no-repeat 2rem 1rem;
-            background-size: 4rem 4rem;
-            padding-left: 7rem;
-        }
-        &-content {
-            margin-left: 0;
-        }
-    }
-    @media screen and (min-width: $screen-medium) {
-        &-content {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
     }
 }

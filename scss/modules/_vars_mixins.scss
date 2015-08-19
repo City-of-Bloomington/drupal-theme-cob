@@ -18,7 +18,6 @@ $cob-green-lightest: #aaffac;
 $cob-gray: #bcc9d8;
 $cob-gray-dark: #8d98a5;
 $cob-gray-darkest: #585f68;
-$cob-nightshade: #2a2e32; // Darker than darkest
 
 // Font families
 $font-body-copy: 'PT Sans', Verdana, sans-serif;
@@ -28,10 +27,7 @@ $font-headings: Lato, 'Helvetica Neue', Arial, sans-serif;
 // Viewport size variables
 $screen-large: (1024em/16);
 $screen-medium: (700em/16);
-$screen-small: (400em/16);
-
-
-
+$screen-small:  (400em/16);
 
 // Mixins
 
