@@ -41,7 +41,7 @@ function cob_preprocess_node(&$vars)
 {
     $vars['safe_summary'] = !empty($vars['body'][0]['safe_summary']) ? $vars['body'][0]['safe_summary'] : '';
 
-    $vars['press_releases']     = cob_node_references($vars, 'press_release',    false, 'chronological', 2);
+    $vars['news_releases']     = cob_node_references($vars, 'news_release',    false, 'chronological', 2);
 	$vars['boards_commissions'] = cob_node_references($vars, 'board_commission', false, 'alphabetical');
 
 	if (!empty($vars['field_directory_dn'][0]['value'])) {

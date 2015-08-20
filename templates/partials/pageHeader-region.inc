@@ -4,7 +4,7 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
-if (isset($node->type) && $node->type == 'press_release') {
+if (isset($node->type) && $node->type == 'news_release') {
     $title = 'News Release';
 }
 elseif (!empty($bookInfo->title)) {

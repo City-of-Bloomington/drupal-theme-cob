@@ -66,7 +66,7 @@
  * - $is_admin: Flags true when the current user is an administrator.
  *
  * Additional custom variables for COB:
- * $press_releases: An array of press release nodes associated with this node
+ * $news_releases: An array of press release nodes associated with this node
  * $boards_commissions An array of boards nodes associated with this node
  * $contactInfo: JSON object with contact info from Directory
  *

@@ -74,7 +74,7 @@ include __DIR__.'/partials/siteHeader.inc';
 ?>
 <?php
     $modifier_class = '';
-    if (isset($node) && $node->type == 'press_release') {
+    if (isset($node) && $node->type == 'news_release') {
         $modifier_class = 'mod-pressRelease';
     }
     if (!empty($node->field_cover_image) || !empty($node->field_page_header_image)) {

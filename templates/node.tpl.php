@@ -66,7 +66,7 @@
  * - $is_admin: Flags true when the current user is an administrator.
  *
  * Additional custom variables for COB:
- * $press_releases: An array of press release nodes associated with this node
+ * $news_releases: An array of press release nodes associated with this node
  * $boards_commissions An array of boards nodes associated with this node
  * $contactInfo: JSON object with contact info from Directory
  *
@@ -120,7 +120,7 @@ hide($content['field_cover_image']);
         // Declare the content types to check for entity relationships
         // with the current node being displayed
         $relatedContent = [
-            'press_releases'     => 'Latest News',
+            'news_releases'     => 'Latest News',
             'boards_commissions' => 'Boards &amp; Commissions'
         ];
         foreach ($relatedContent as $type=>$title) {
@@ -142,7 +142,7 @@ hide($content['field_cover_image']);
             <div     class=\"cob-main-container\">
                 <div class=\"cob-main-content\"$content_attributes>
         ";
-                if ($node->type == 'press_release') {
+                if ($node->type == 'news_release') {
                     $formatted_date = format_date($created, 'medium');
                     echo "
                     <time>$formatted_date</time>
