@@ -20,7 +20,15 @@ $external_term_links = [
             'title'   => 'MyBloomington',
             'summary' => 'Provides information about City services available to addresses in the vicinity of Bloomington, IN.'
         ],
+    ],
+    12 => [ // Residents -> Getting Around (Production)
+        [
+            'url'     => 'http://bloomington.in.gov/inroads',
+            'title'   => 'inRoads',
+            'summary' => 'inRoads is used to manage and publish road, sidewalk and parking status information including closings, lane reductions, noise permits and parking reservations.'
+        ],
     ]
+
 ];
 ?>
 <div    class="cob-portalContent">
