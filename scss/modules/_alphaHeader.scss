@@ -1,9 +1,0 @@
-.cob-alphaHeader {
-    &-container {
-        @include container();
-        margin:0;
-    }
-    &-content {
-        @include grid-8col();
-    }
-}
