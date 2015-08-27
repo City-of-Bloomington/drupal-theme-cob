@@ -93,9 +93,9 @@ include __DIR__.'/partials/siteAdminBar.inc';
             <a href="/alpha/pay-water-bill-online" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The City</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-dog"><span class="cob-ext-tileName">Animal Shelter</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-bolt"><span class="cob-ext-tileName">Arts</span></a>
-            <a href="/alpha/data" class="cob-ext-park"><span class="cob-ext-tileName">Open Data</span></a>
-            <a href="https://geoserver.bloomington.in.gov/leaflet" class="cob-ext-comments"><span class="cob-ext-tileName">City Maps</span></a>
-            <a href="/alpha/mybloomington" class="cob-ext-dog"><span class="cob-ext-tileName">My Bloomington</span></a>
+            <a href="/alpha/data" class="cob-ext-openData"><span class="cob-ext-tileName">Open Data</span></a>
+            <a href="https://geoserver.bloomington.in.gov/leaflet" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
+            <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
             <a href="/alpha/report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
         </nav>
     </div>

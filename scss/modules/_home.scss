@@ -90,6 +90,9 @@
                     &-binoculars:before {
                         background: url('../images/home/binoculars.svg') no-repeat 50% 50% / 1.25rem;
                     }
+                    &-bloomington:before {
+                        background: url('../images/home/bloomington-logo-white.svg') no-repeat 50% 50% / 3rem;
+                    }
                     &-bolt:before {
                         background: url('../images/home/bolt.svg') no-repeat 50% 50% / 1.25rem;
                     }
@@ -105,8 +108,14 @@
                     &-dog:before {
                         background: url('../images/home/dog.svg') no-repeat 50% .5em / 3rem;
                     }
+                    &-map:before {
+                        background: url('../images/home/map.svg') no-repeat 50% 50% / 3rem;
+                    }
                     &-money:before {
                         background: url('../images/home/money.svg') no-repeat 50% 50% / 1.25rem;
+                    }
+                    &-openData:before {
+                        background: url('../images/home/open-data.svg') no-repeat 50% 50% / 3rem;
                     }
                     &-park:before {
                         background: url('../images/home/park.svg') no-repeat 50% 50% / 1.25rem;
