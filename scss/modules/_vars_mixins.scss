@@ -6,8 +6,11 @@ $cob-blue-dark: #143a7a;
 $cob-blue-darkest: #06204b;
 
 // Cornflower
-$cornflower-brightest: #acf2ff;
-$cornflower-darkest: #12314c;
+$cob-cornflower-lightest: #acf2ff;
+$cob-cornflower-light: #5991c2;
+$cob-cornflower: #447aa8;
+$cob-cornflower-dark: #24537b;
+$cob-cornflower-darkest: #12314c;
 
 // Action Green
 $cob-green: #20ac59;
@@ -15,9 +18,16 @@ $cob-green-light: #70bf88;
 $cob-green-lightest: #aaffac;
 
 // Blue-ish gray
+$cob-gray-light: #d7e5f4;
 $cob-gray: #bcc9d8;
 $cob-gray-dark: #8d98a5;
 $cob-gray-darkest: #585f68;
+$cob-nightshade: #2a2e32; // Darker than darkest
+
+// Warning red
+$cob-red: #b54548;
+$cob-red-dark: #872528;
+$cob-red-darkest: #541214;
 
 // Font families
 $font-body-copy: 'PT Sans', Verdana, sans-serif;
