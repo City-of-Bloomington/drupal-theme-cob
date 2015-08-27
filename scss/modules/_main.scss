@@ -30,19 +30,19 @@
             &-sidebar {
                 @include grid-4col();
                 margin-top: 4rem;
-    
+
                 > h2 {
                     font-weight: 300;
                     font-size: (36rem/16);
                     margin: (36rem/16) 0 (24rem/16) 0;
-    
+
                     &:first-child {
                         margin-top: 0;
                     }
                 }
                 > .cob-ext-pressContacts {
                     margin: 1.75rem 0 0;
-    
+
                     > dt {
                         color: $cob-blue-dark;
                         font-size: (14rem/16);
@@ -56,6 +56,30 @@
             .cob-open311Client {
                 border: none;
                 width: 100%;
+            }
+        }
+    }
+    &-feedback {
+        @include grid-10col();
+        background: $cob-gray;
+        border-top: .5rem solid $cob-blue;
+        color: $cob-nightshade;
+        padding-bottom: 1rem;
+        > h2 {
+            font-size: 2rem;
+            margin: .5em 0 0;
+        }
+        @media screen and (min-width: $screen-medium) {
+            > p {
+                box-sizing: border-box;
+                float: left;
+                width: 66%;
+            }
+            > aside {
+                box-sizing: border-box;
+                float: left;
+                margin: 1rem 0;
+                width: 33%;
             }
         }
     }

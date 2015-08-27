@@ -169,6 +169,13 @@ hide($content['field_cover_image']);
                     }
                 }
         echo "
+                <div class=\"cob-main-feedback\">
+                    <h2>How are we doing?</h2>
+                    <p>This website is still a work in progress. Some information may be missing, but if information you see here is incorrect or out of date, please let us know! We&rsquo;re also interested in how you feel about the direction we&rsquo; taking so far.</p>
+                    <aside>
+                        <a href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform\" class=\"cob-btn-cta\">Send feedback</a>
+                    </aside>
+                </div>
             </div>
         </div>
         ";
