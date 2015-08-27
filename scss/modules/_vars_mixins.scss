@@ -297,3 +297,24 @@ $grid-gutter: 2rem;
         }
     }
 }
+
+@mixin grid-12col {
+    margin: 1rem;
+
+    @media screen and (min-width: $screen-medium) {
+        box-sizing: border-box;
+        float: left;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        margin-left: 0;
+        margin-right: 0;
+        width: (100%);
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}

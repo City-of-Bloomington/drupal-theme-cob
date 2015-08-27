@@ -60,7 +60,7 @@
         }
     }
     &-feedback {
-        @include grid-10col();
+        @include grid-12col();
         background: $cob-gray;
         border-top: .5rem solid $cob-blue;
         color: $cob-nightshade;
