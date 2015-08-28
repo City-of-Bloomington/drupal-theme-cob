@@ -6,28 +6,37 @@
  * @param array $data['contactInfo']
  */
 ?>
-<h2>Staff</h2>
-<dl class="cob-boardsCommissions-members">
-<?php
-    foreach ($data['contactInfo']->people as $person) {
-        $names = !empty($person->displayName)
-            ? $person->displayName
-            : "{$person->firstname} {$person->lastname}";
-            
-        $name = '';
-        foreach (explode(' ', $names) as $n) { $name.= "<span>$n</span> "; }
+<section class="cob-staffListingWidget">
+    <h2>Staff</h2>
+    <table class="cob-boardsCommissions-members">
+        <tbody>
+            <?php
+                foreach ($data['contactInfo']->people as $person) {
+                    echo '<tr>';
+                    $names = !empty($person->displayName)
+                        ? $person->displayName
+                        : "{$person->firstname} {$person->lastname}";
 
-        echo "<dt>$name</dt>";
+                    $name = '';
+                    foreach (explode(' ', $names) as $n) { $name.= "<span>$n</span> "; }
 
-        $phoneNumberFields = ['office', 'fax', 'cell', 'other', 'pager'];
-        foreach ($phoneNumberFields as $f) {
-            if (!empty($person->$f)) {
-                echo "<dd class=\"cob-ext-phone_number\">$f: {$person->$f}</dd>";
-            }
-        }
-        if (!empty($person->email)) {
-            echo "<dd><a href=\"mailto:{$person->email}\" class=\"cob-ext-email\">{$person->email}</a></dd>";
-        }
-    }
-?>
-</dl>
+                    echo "<td>$name</td>";
+
+                $phoneNumberFields = ['office', /*'fax',*/ 'cell', /*'other'*//*, 'pager'*/];
+                    foreach ($phoneNumberFields as $f) {
+                        echo '<td>';
+                        if (!empty($person->$f)) {
+                            echo "{$person->$f}";
+                        }
+                        echo '</td>';
+                    }
+                    if (!empty($person->email)) {
+                        echo "<td><a href=\"mailto:{$person->email}\" class=\"cob-ext-email\">{$person->email}</a></td>";
+                    }
+                    echo '</tr>';
+                }
+            ?>
+
+        </tbody>
+    </table>
+</section>
