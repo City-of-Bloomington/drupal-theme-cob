@@ -60,7 +60,7 @@
     <div id="skip-link">
         <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
     </div>
-    <!--[if lte IE 9]>
+    <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <?= cob_http_get(variable_get('cob_assets').'/html/cob-alphaHeader.html'); ?>
