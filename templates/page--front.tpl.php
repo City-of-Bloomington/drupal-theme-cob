@@ -90,7 +90,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
             <a href="/alpha/pay-water-bill-online" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-park"><span class="cob-ext-tileName">Parks and Recreation</span></a>
-            <a href="/alpha/pay-water-bill-online" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The City</span></a>
+            <a href="/alpha/pay-water-bill-online" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-dog"><span class="cob-ext-tileName">Animal Shelter</span></a>
             <a href="/alpha/pay-water-bill-online" class="cob-ext-bolt"><span class="cob-ext-tileName">Arts</span></a>
             <a href="/alpha/data" class="cob-ext-openData"><span class="cob-ext-tileName">Open Data</span></a>
