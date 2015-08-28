@@ -3,60 +3,62 @@
 
     &-container {
         @include container();
-        > .cob-main-content {
+        > .cob-main-text { // <- Selects only the article element in Main Mode, not Teaser Mode.
             @include grid-8col();
             margin-top: 4rem;
+        }
+    }
+    &-text {
 
-            h1 {
-                font-weight: normal;
-                font-size: (24rem/16);
-                margin: 0 0 (24rem/16) 0;
+        h1 {
+            font-weight: normal;
+            font-size: (24rem/16);
+            margin: 0 0 (24rem/16) 0;
+        }
+        h2 {
+            font-weight: 300;
+            font-size: (36rem/16);
+            margin: (36rem/16) 0 (24rem/16) 0;
+            &:first-child {
+                margin-top: 0;
             }
-            h2 {
+        }
+        p {
+            font-size: (18rem/16);
+            line-height: (24rem/16);
+            margin: 1em 0;
+        }
+        @include tabularData();
+
+        &-sidebar {
+            @include grid-4col();
+            margin-top: 4rem;
+
+            > h2 {
                 font-weight: 300;
                 font-size: (36rem/16);
                 margin: (36rem/16) 0 (24rem/16) 0;
+
                 &:first-child {
                     margin-top: 0;
                 }
             }
-            p {
-                font-size: (18rem/16);
-                line-height: (24rem/16);
-                margin: 1em 0;
-            }
-            @include tabularData();
+            > .cob-ext-pressContacts {
+                margin: 1.75rem 0 0;
 
-            &-sidebar {
-                @include grid-4col();
-                margin-top: 4rem;
-
-                > h2 {
-                    font-weight: 300;
-                    font-size: (36rem/16);
-                    margin: (36rem/16) 0 (24rem/16) 0;
-
-                    &:first-child {
-                        margin-top: 0;
-                    }
+                > dt {
+                    color: $cob-blue-dark;
+                    font-size: (14rem/16);
                 }
-                > .cob-ext-pressContacts {
-                    margin: 1.75rem 0 0;
-
-                    > dt {
-                        color: $cob-blue-dark;
-                        font-size: (14rem/16);
-                    }
-                    > dd {
-                        font-size: (14rem/16);
-                        margin: 0;
-                    }
+                > dd {
+                    font-size: (14rem/16);
+                    margin: 0;
                 }
             }
-            .cob-open311Client {
-                border: none;
-                width: 100%;
-            }
+        }
+        .cob-open311Client {
+            border: none;
+            width: 100%;
         }
     }
     &-feedback {

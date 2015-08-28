@@ -10,12 +10,12 @@
         text-transform: uppercase;
     }
     &-container {
-        > .cob-main-content {
+        @include clearfix();
+        > .cob-main-text {
             @include grid-6col();
-            font-size: 1rem;
             line-height: (22rem/16);
 
-            > h2 {
+            h1 {
                 font-size: (20rem/16);
                 font-weight: 400;
                 line-height: (24rem/16);
@@ -23,6 +23,10 @@
                 > a {
                     color: $cob-blue;
                 }
+            }
+            p {
+                font-size: 1rem;
+                line-height: (22rem/16);
             }
         }
     }

@@ -123,7 +123,7 @@ $grid-gutter: 2rem;
     @media screen and (min-width: $screen-medium) {
         @include clearfix();
         box-sizing: border-box;
-        max-width: (1000em/16);
+        max-width: (937rem/16);
         margin: 0 auto;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;

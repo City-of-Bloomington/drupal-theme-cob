@@ -100,85 +100,84 @@ hide($content['field_category']);
 hide($content['field_department']);
 hide($content['book_navigation']);
 hide($content['field_cover_image']);
-?>
-<article class="cob-main-content" <?= $content_attributes ?>>
-<?php
-    if ($view_mode == 'teaser') {
-        $formatted_date = '';
-        if ($display_submitted) {
-            $d = format_date($created, 'medium');
-            $formatted_date = "<time>$d</time>";
-        }
-        echo "$formatted_date<h2><a href=\"$node_url\">".render($title)."</a></h2>";
-        echo render($content);
+
+// Teaser Mode /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+
+if ($view_mode == 'teaser') {
+    $formatted_date = '';
+    if ($display_submitted) {
+        $d = format_date($created, 'medium');
+        $formatted_date = "<time>$d</time>";
     }
-    else {
-        $contentHTML = render($content);
-        $toc = _cob_create_toc($contentHTML, 2, 2);
-        if ($toc['toc']) { $contentHTML = $toc['content']; }
+    echo '<article class="cob-main-text">';
+    echo "$formatted_date<h1><a href=\"$node_url\">".render($title)."</a></h1>";
+    echo render($content);
+    echo '</article>';
+}
 
-        // Declare the content types to check for entity relationships
-        // with the current node being displayed
-        $relatedContent = [
-            'news_releases'     => 'Latest News',
-            'boards_commissions' => 'Boards &amp; Commissions'
-        ];
-        foreach ($relatedContent as $type=>$title) {
-            if (!empty($$type)) {
-                $toc['toc'][$type] = $title;
-            }
+// Main Mode /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
+else {
+    $contentHTML = render($content);
+    $toc = _cob_create_toc($contentHTML, 2, 2);
+    if ($toc['toc']) { $contentHTML = $toc['content']; }
+
+    // Declare the content types to check for entity relationships
+    // with the current node being displayed
+    $relatedContent = [
+        'news_releases'     => 'Latest News',
+        'boards_commissions' => 'Boards &amp; Commissions'
+    ];
+    foreach ($relatedContent as $type=>$title) {
+        if (!empty($$type)) {
+            $toc['toc'][$type] = $title;
         }
+    }
 
-        if (!empty($safe_summary) || !empty($contactInfo) || $toc['toc']
-            || !empty($content['field_call_to_action'])   || !empty($content['field_physical_address'])
-            || !empty($content['field_phone_number'])     || !empty($content['field_email'])
-            || !empty($content['field_facebook_page'])    || !empty($content['field_twitter_account'])) {
+    if (!empty($safe_summary) || !empty($contactInfo) || $toc['toc']
+        || !empty($content['field_call_to_action'])   || !empty($content['field_physical_address'])
+        || !empty($content['field_phone_number'])     || !empty($content['field_email'])
+        || !empty($content['field_facebook_page'])    || !empty($content['field_twitter_account'])) {
 
-            include __DIR__.'/partials/pageOverview.inc';
-        }
-        echo "
-        <div id=\"node-{$node->nid}\" class=\"$classes\"$attributes>
-            $user_picture
-            <div     class=\"cob-main-container\">
-                <div class=\"cob-main-content\"$content_attributes>
-        ";
+        include __DIR__.'/partials/pageOverview.inc';
+    }
+?>
+    <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
+        <article class="cob-main-text"<?= $content_attributes ?>>
+            <?php
                 if ($node->type == 'news_release') {
                     $formatted_date = format_date($created, 'medium');
                     echo "
-                    <time>$formatted_date</time>
-                    <h1>{$node->title}</h1>
+                        <time>$formatted_date</time>
+                        <h1>{$node->title}</h1>
                     ";
                 }
-
-                echo "
-                $contentHTML
-                </div>
-                <aside class=\"cob-main-content-sidebar\">
-                ";
-                    if (!empty(     $content['field_press_contacts'])) {
-                        echo render($content['field_press_contacts']);
-                    }
-                    if (!empty($committee  )) { cob_include('committeeMembers', ['committee'   => $committee  ]); }
-                echo "
-                </aside>
-                ";
-                foreach ($relatedContent as $type=>$title) {
-                    if (!empty($$type)) {
-                        cob_include($type, [$type => $$type, 'title'=>$title]);
-                    }
-                }
-                if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
-        echo "
-                <div class=\"cob-main-feedback\">
-                    <h2>How are we doing?</h2>
-                    <p>This website is still a work in progress. Some information may be missing, but if information you see here is incorrect or out of date, please let us know! We&rsquo;re also interested in how you feel about the direction we&rsquo;re taking, so far.</p>
-                    <aside>
-                        <a href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform\" class=\"cob-btn-cta\">Send feedback</a>
-                    </aside>
-                </div>
-            </div>
-        </div>
-        ";
-    }
+            ?>
+            <?= $contentHTML ?>
+        </article>
+        <aside class="cob-main-content-sidebar">
+            <?php if (!empty(     $content['field_press_contacts'])): ?>
+                <?= render($content['field_press_contacts']); ?>
+            <?php endif; ?>
+            <?php if (!empty($committee  )): ?>
+                <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
+            <?php endif; ?>
+        </aside>
+    </section>
+    <?php
+        foreach ($relatedContent as $type=>$title) {
+            if (!empty($$type)) {
+                cob_include($type, [$type => $$type, 'title'=>$title]);
+            }
+        }
+        if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
+    ?>
+    <div class="cob-main-feedback">
+        <h1>How are we doing?</h1>
+        <p>This website is still a work in progress. Some information may be missing, but if information you see here is incorrect or out of date, please let us know! We&rsquo;re also interested in how you feel about the direction we&rsquo;re taking, so far.</p>
+        <aside>
+            <a href="https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform" class="cob-btn-cta">Send feedback</a>
+        </aside>
+    </div>
+<?php
+}
 ?>
-</article>

@@ -13,7 +13,7 @@
  */
 ?>
 <section class="cob-boardsCommissionsWidget block" id="boards_commissions">
-	<h2><?= $data['title']; ?></h2>
+	<h1><?= $data['title']; ?></h1>
 	<div class="cob-boardsCommissionsWidget-listing">
     <?php
         foreach ($data['boards_commissions'] as $node) {

@@ -23,8 +23,8 @@
     }
     &Widget {
         @include container();
-        
-        > h2 {
+
+        > h1 {
             @include grid-4col;
             color: $cob-cornflower-darkest;
             font-size: (48rem/16);
@@ -36,29 +36,31 @@
             @include grid-8col;
             margin-top: 0;
 
-            > article {
+            > .cob-main-text {
                 font-size: 1rem;
                 margin: 0 0 (10rem/16);
                 line-height: (22rem/16);
 
-                > h2 {
+                > h1 {
                     font-weight: 400;
                     font-size: (24rem/16);
-                    line-height: (36em/24);
+                    line-height: (32em/24);
                     margin: 0;
                 }
                 p:first-child {
+                    font-size: 1rem;
+                    line-height: (22rem/16);
                     margin-top: 0;
                 }
             }
         }
         @media screen and (min-width: $screen-medium) {
-            > h2 {
+            > h1 {
                 font-size: (36rem/16);
             }
         }
         @media screen and (min-width: $screen-large) {
-            > h2 {
+            > h1 {
                 font-size: (48rem/16);
             }
         }
