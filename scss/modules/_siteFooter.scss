@@ -1,8 +1,54 @@
-.cob-footer {
+.cob-siteFooter {
     background: $cob-nightshade;
     border-top: .5em solid $cob-blue;
 
-    &-container {
-        @include container();
+    &-sitemap {
+        background: $cob-nightshade;
+        color: $cob-gray-dark;
+        min-height: 1rem;
+        padding: 2rem 0;
+        &-container {
+            @include container();
+        }
+        &-col1 {
+            @include grid-5col();
+        }
+        &-col2 {
+            @include grid-5col();
+        }
+        &-col3 {
+            @include grid-2col();
+        }
+        h2 {
+            border-top: (1rem/16) solid;
+            color: $cob-gray;
+            font-size: (18rem/16);
+            padding: .5em 0 0 0;
+            text-transform: uppercase;
+        }
+        a {
+            color: $cob-gray-light;
+        }
+    }
+    &-details {
+        background: #000;
+        min-height: 1rem;
+        &-container {
+            @include container();
+        }
+    }
+    &-legalNav {
+        display: block;
+        margin: 1.5rem 0;
+        text-align: center;
+        > a {
+            color: $cob-gray-dark;
+            display: inline-block;
+            padding: .25em .5em;
+        }
+    }
+    &-copyright {
+        padding: 1rem 0 .5rem;
+        text-align: right;
     }
 }
