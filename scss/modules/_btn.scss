@@ -6,9 +6,10 @@
         box-sizing: border-box;
         color: #fff;
         display: inline-block; // The button shouldn't force itself to be alone on a line, we should depend on containers for this
-        font-size: 1rem;
-        line-height: (22em/16);
-        padding: .75rem 1rem;
+        font-size: (24rem/16);
+        line-height: (36em/24);
+        padding: .25em .5em;
+        text-align: center;
         > .cob-ext-fileSize {
             color: $cob-green-lightest;
             display: block;
@@ -43,7 +44,7 @@
 .cob-pageOverview-actions {
     > .cob-btn-cta {
         @media screen and (min-width: $screen-large) {
-            width: (5%/8*100);
+            min-width: (5%/8*100);
         }
     }
 }
