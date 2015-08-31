@@ -140,44 +140,37 @@ else {
 
         include __DIR__.'/partials/pageOverview.inc';
     }
-?>
-    <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-        <article class="cob-main-text"<?= $content_attributes ?>>
-            <?php
-                if ($node->type == 'news_release') {
-                    $formatted_date = format_date($created, 'medium');
-                    echo "
-                        <time>$formatted_date</time>
-                        <h1>{$node->title}</h1>
-                    ";
-                }
-            ?>
-            <?= $contentHTML ?>
-        </article>
-        <aside class="cob-main-content-sidebar">
-            <?php if (!empty(     $content['field_press_contacts'])): ?>
-                <?= render($content['field_press_contacts']); ?>
-            <?php endif; ?>
-            <?php if (!empty($committee  )): ?>
-                <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
-            <?php endif; ?>
-        </aside>
-    </section>
-    <?php
-        foreach ($relatedContent as $type=>$title) {
-            if (!empty($$type)) {
-                cob_include($type, [$type => $$type, 'title'=>$title]);
-            }
-        }
-        if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
     ?>
-    <div class="cob-main-feedback">
-        <h1>How are we doing?</h1>
-        <p>This website is still a work in progress. Some information may be missing, but if information you see here is incorrect or out of date, please let us know! We&rsquo;re also interested in how you feel about the direction we&rsquo;re taking, so far.</p>
-        <aside>
-            <a href="https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform" class="cob-btn-cta">Send feedback</a>
-        </aside>
-    </div>
-<?php
+        <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
+            <article class="cob-main-text"<?= $content_attributes ?>>
+                <?php
+                    if ($node->type == 'news_release') {
+                        $formatted_date = format_date($created, 'medium');
+                        echo "
+                            <time>$formatted_date</time>
+                            <h1>{$node->title}</h1>
+                        ";
+                    }
+                ?>
+                <?= $contentHTML ?>
+            </article>
+            <aside class="cob-main-content-sidebar">
+                <?php if (!empty(     $content['field_press_contacts'])): ?>
+                    <?= render($content['field_press_contacts']); ?>
+                <?php endif; ?>
+                <?php if (!empty($committee  )): ?>
+                    <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
+                <?php endif; ?>
+            </aside>
+        </section>
+        <?php
+            foreach ($relatedContent as $type=>$title) {
+                if (!empty($$type)) {
+                    cob_include($type, [$type => $$type, 'title'=>$title]);
+                }
+            }
+            if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
+        ?>
+    <?php
 }
 ?>
