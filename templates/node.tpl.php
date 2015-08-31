@@ -155,7 +155,7 @@ else {
                 <?= $contentHTML ?>
             </article>
             <aside class="cob-main-content-sidebar">
-                <?php if (!empty(     $content['field_press_contacts'])): ?>
+                <?php if (!empty($content['field_press_contacts'])): ?>
                     <?= render($content['field_press_contacts']); ?>
                 <?php endif; ?>
                 <?php if (!empty($committee  )): ?>
