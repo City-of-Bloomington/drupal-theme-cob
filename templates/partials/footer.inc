@@ -5,8 +5,13 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
 ?>
-<footer class="cob-footer">
-    <div class="cob-footer-container">
+<footer class="cob-siteFooter">
+    <div class="cob-siteFooter-sitemap">
+        <div class="cob-siteFooter-sitemap-container">
+        </div>
+    </div>
+    <div class="cob-siteFooter-details">
+        <div class="cob-siteFooter-details-container">
     <?php
         echo $feed_icons;
         echo render($page['footer']);
