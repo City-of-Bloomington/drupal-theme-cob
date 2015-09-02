@@ -173,7 +173,7 @@ else {
                     cob_include($type, [$type => $$type, 'title'=>$title]);
                 }
             }
-            if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
+//            if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
         ?>
     <?php
 }
