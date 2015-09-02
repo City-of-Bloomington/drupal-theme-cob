@@ -23,17 +23,15 @@
  * @ingroup themeable
  */
 ?>
-<div class="cob-main-container">
-    <div class="cob-main-contents">
+<section class="cob-main-container">
+    <div class="cob-main-text <?php print $module ?>-results">
         <?php if ($search_results): ?>
-            <h2><?php print t('Search results');?></h2>
-            <ol class="search-results <?php print $module; ?>-results">
-                <?php print $search_results; ?>
-            </ol>
+            <h1><?php print t('Search results');?></h1>
+            <?php print $search_results; ?>
             <?php print $pager; ?>
         <?php else : ?>
-            <h2><?php print t('Your search yielded no results');?></h2>
+            <h1><?php print t('Your search yielded no results');?></h1>
             <?php print search_help('search#noresults', drupal_help_arg()); ?>
         <?php endif; ?>
     </div>
-</div>
+</section>

@@ -120,6 +120,10 @@ else {
     $contentHTML = render($content);
     $toc = _cob_create_toc($contentHTML, 2, 2);
     if ($toc['toc']) { $contentHTML = $toc['content']; }
+    $content_sidebar = false;
+    if($node->type == 'news_release') {
+        $content_sidebar = ' cob-ext-hasSidebar';
+    }
 
     // Declare the content types to check for entity relationships
     // with the current node being displayed
@@ -142,7 +146,7 @@ else {
     }
     ?>
         <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-            <article class="cob-main-text"<?= $content_attributes ?>>
+            <article class="cob-main-text<?=$content_sidebar?>"<?= $content_attributes ?>>
                 <?php
                     if ($node->type == 'news_release') {
                         $formatted_date = format_date($created, 'medium');
