@@ -245,7 +245,6 @@ $grid-gutter: 2rem;
 
     @media screen and (min-width: $screen-medium) {
         box-sizing: border-box;
-        float: left;
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
         margin-left: 0;
