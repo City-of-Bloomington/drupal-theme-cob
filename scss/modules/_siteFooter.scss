@@ -7,16 +7,13 @@
         color: $cob-gray-dark;
         min-height: 1rem;
         padding: 2rem 0;
+        > h1:first-child {
+            @include visuallyHidden();
+        }
         &-container {
             @include container();
         }
-        &-col1 {
-            @include grid-2col();
-        }
-        &-col2 {
-            @include grid-2col();
-        }
-        &-col3 {
+        &-region {
             @include grid-2col();
             > p {
                 font-size: (12rem/16);
@@ -29,7 +26,7 @@
         h2 {
             border-top: (1rem/16) solid;
             color: $cob-gray;
-            font-size: (18rem/16);
+            font-size: (12rem/16);
             padding: .5em 0 0 0;
             text-transform: uppercase;
         }
