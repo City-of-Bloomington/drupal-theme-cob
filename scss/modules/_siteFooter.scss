@@ -11,13 +11,20 @@
             @include container();
         }
         &-col1 {
-            @include grid-5col();
+            @include grid-2col();
         }
         &-col2 {
-            @include grid-5col();
+            @include grid-2col();
         }
         &-col3 {
             @include grid-2col();
+            > p {
+                font-size: (12rem/16);
+            }
+            > .cob-btn-cta {
+                display: block;
+                font-size: (14rem/16);
+            }
         }
         h2 {
             border-top: (1rem/16) solid;
