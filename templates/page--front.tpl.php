@@ -85,7 +85,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
             ?>
         </div>
         <nav class="cob-homeMain-links">
-            <a href="/alpha/newsroom" class="cob-ext-cloud"><span class="cob-ext-tileName">Newsroom</span></a>
+            <a href="/alpha/newsroom" class="cob-ext-newspaper"><span class="cob-ext-tileName">Newsroom</span></a>
             <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
             <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
             <a href="/alpha/jobs" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
