@@ -25,10 +25,11 @@
             @include container();
         }
         &-title {
+            @include grid-12col();
             font-size: (40rem/16);
             font-weight: 300;
             line-height: 1em;
-            margin: 1em 0 .5em 0;
+            margin: 1em 0 0 0;
         }
     }
     &Search {
@@ -102,14 +103,14 @@
             }
         }
         &Header {
-            &-container {
+            &-title {
                 &:after {
                     border-top: (5rem/16) solid $cob-blue;
                     border-bottom: (1rem/16) solid $cob-gray;
                     content: ' ';
                     display: block;
                     height: (11rem/16);
-                    margin: 0;
+                    margin: .5em 0 0 0;
                 }
             }
         }
