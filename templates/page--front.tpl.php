@@ -86,16 +86,16 @@ include __DIR__.'/partials/siteAdminBar.inc';
         </div>
         <nav class="cob-homeMain-links">
             <a href="/alpha/newsroom" class="cob-ext-newspaper"><span class="cob-ext-tileName">Newsroom</span></a>
-            <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
-            <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
-            <a href="/alpha/jobs" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
             <a href="/alpha/parks" class="cob-ext-park"><span class="cob-ext-tileName">Parks and Recreation</span></a>
+            <a href="/alpha/arts" class="cob-ext-arts"><span class="cob-ext-tileName">Arts</span></a>
+            <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
+            <a href="/alpha/maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
+            <a href="/alpha/jobs" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
             <a href="/alpha/contact" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
             <a href="/alpha/animal-shelter" class="cob-ext-dog"><span class="cob-ext-tileName">Animal Shelter</span></a>
-            <a href="/alpha/arts" class="cob-ext-arts"><span class="cob-ext-tileName">Arts</span></a>
             <a href="/data" class="cob-ext-openData"><span class="cob-ext-tileName">Open Data</span></a>
-            <a href="/alpha/maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
-            <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
+            <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
+            <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
             <a href="/alpha/report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
         </nav>
     </div>
