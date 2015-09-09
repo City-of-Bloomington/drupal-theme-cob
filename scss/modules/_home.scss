@@ -45,7 +45,7 @@
         &-links {
             @include container();
             > a {
-                background-color: rgba(0, 0, 0, .25);
+                background: rgba(0, 0, 0, .25);
                 border-radius: .25rem;
                 box-sizing: border-box;
                 color: #fff;
@@ -56,16 +56,77 @@
                 transition: background-color .25s ease-in-out;
 
                 &:before {
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-size: contain;
                     content: ' ';
                     display: block;
                     opacity: .4;
                     position: absolute;
                         top: .5rem;
-                        left: .5rem;
+                        left: 1rem;
                         bottom: .5rem;
                     transition: opacity 1s ease-in-out;
                     width: 1.25em;
                 }
+
+                &.cob-ext {
+                    &-areaChart:before {
+                        background-image: url('../images/home/area-chart.svg');
+                    }
+                    &-arts:before {
+                        background-image: url('../images/home/arts.svg');
+                    }
+                    &-bicycle:before {
+                        background-image: url('../images/home/bicycle.svg');
+                    }
+                    &-binoculars:before {
+                        background-image: url('../images/home/binoculars.svg');
+                    }
+                    &-bloomington:before {
+                        background-image: url('../images/home/bloomington-logo-white.svg');
+                    }
+                    &-bolt:before {
+                        background-image: url('../images/home/bolt.svg');
+                    }
+                    &-briefcase:before {
+                        background-image: url('../images/home/briefcase.svg');
+                    }
+                    &-car:before {
+                        background-image: url('../images/home/car.svg');
+                    }
+                    &-cloud:before {
+                        background-image: url('../images/home/cloud.svg');
+                    }
+                    &-comments:before {
+                        background-image: url('../images/home/comments.svg');
+                    }
+                    &-dog:before {
+                        background-image: url('../images/home/dog.svg');
+                    }
+                    &-map:before {
+                        background-image: url('../images/home/map.svg');
+                    }
+                    &-money:before {
+                        background-image: url('../images/home/money.svg');
+                    }
+                    &-newspaper:before {
+                        background-image: url('../images/home/newspaper.svg');
+                    }
+                    &-openData:before {
+                        background-image: url('../images/home/open-data.svg');
+                    }
+                    &-park:before {
+                        background-image: url('../images/home/park.svg');
+                    }
+                    &-questionCircle:before {
+                        background-image: url('../images/home/question-circle.svg');
+                    }
+                    &-spigot:before {
+                        background-image: url('../images/home/spigot.svg');
+                    }
+                }
+
                 &:hover {
                     background-color: rgba(0, 0, 0, .15);
                     text-decoration: none;
@@ -79,59 +140,6 @@
                 > .cob-ext-tileName {
                     opacity: .7;
                     transition: opacity .25s ease-in-out;
-                }
-                &.cob-ext {
-                    &-areaChart:before {
-                        background: url('../images/home/area-chart.svg') no-repeat 50% 100% / 1.25rem;
-                    }
-                    &-arts:before {
-                        background: url('../images/home/arts.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-bicycle:before {
-                        background: url('../images/home/bicycle.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-binoculars:before {
-                        background: url('../images/home/binoculars.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-bloomington:before {
-                        background: url('../images/home/bloomington-logo-white.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-bolt:before {
-                        background: url('../images/home/bolt.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-briefcase:before {
-                        background: url('../images/home/briefcase.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-car:before {
-                        background: url('../images/home/car.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-cloud:before {
-                        background: url('../images/home/cloud.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-dog:before {
-                        background: url('../images/home/dog.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-map:before {
-                        background: url('../images/home/map.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-money:before {
-                        background: url('../images/home/money.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-newspaper:before {
-                        background: url('../images/home/newspaper.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-openData:before {
-                        background: url('../images/home/open-data.svg') no-repeat 50% 100% / 3rem;
-                    }
-                    &-park:before {
-                        background: url('../images/home/park.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-questionCircle:before {
-                        background: url('../images/home/question-circle.svg') no-repeat 50% 50% / 1.25rem;
-                    }
-                    &-spigot:before {
-                        background: url('../images/home/spigot.svg') no-repeat 50% 50% / 1.5rem;
-                    }
                 }
             }
         }
@@ -187,43 +195,30 @@
 
                     &.cob-ext {
                         &-areaChart:before {
-                            background: url('../images/home/area-chart.svg') no-repeat 50% 100% / 3rem;
                         }
                         &-bicycle:before {
-                            background: url('../images/home/bicycle.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-binoculars:before {
-                            background: url('../images/home/binoculars.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-bolt:before {
-                            background: url('../images/home/bolt.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-briefcase:before {
-                            background: url('../images/home/briefcase.svg') no-repeat 50% 100% / 3rem;
                         }
                         &-car:before {
-                            background: url('../images/home/car.svg') no-repeat 50% 100% / 3rem;
                         }
                         &-comments:before {
-                            background: url('../images/home/comments.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-cloud:before {
-                            background: url('../images/home/cloud.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-dog:before {
-                            background: url('../images/home/dog.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-money:before {
-                            background: url('../images/home/money.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-park:before {
-                            background: url('../images/home/park.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-questionCircle:before {
-                            background: url('../images/home/question-circle.svg') no-repeat 50% .5em / 3rem;
                         }
                         &-spigot:before {
-                            background: url('../images/home/spigot.svg') no-repeat 50% 100% / 3rem;
                         }
                     }
 
