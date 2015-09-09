@@ -174,6 +174,9 @@
         }
         &Main {
             &-links {
+                padding-left: 10%;
+                padding-right: 10%;
+
                 > a {
                     border-radius: .5rem;
                     float: left;
@@ -249,20 +252,23 @@
             }
         }
         &Search {
-            margin-bottom: 5em; // Small screens get a lesser value
+            margin-bottom: 2em; // Small screens get a lesser value
             form {
+                margin: 0;
+                padding: 0;
+
                 .form-item {
                     font-size: (20rem/16);
                     padding: .75em;
                     background-size: 1.5em;
 
                     > label {
-                        font-size: (42rem/16);
-                        margin: 1.5em 0 .75em;
+                        font-size: (30rem/16);
+                        margin: 0 0 .5em;
                     }
                     > input {
-                        font-size: (21rem/16);
-                        padding: .75em 1.5em .75em 1em;
+                        font-size: (18rem/16);
+                        padding: .666em 1.5em .666em 1em;
                         width: 50%; // 6 out of 12 columns
                     }
                 }
@@ -287,6 +293,8 @@
     @media screen and (min-width: $screen-large) {
         &Main {
             &-links {
+                padding: 0;
+
                 > a {
                     font-size: (18rem/16);
                     margin: 0 3.9% 3em;
