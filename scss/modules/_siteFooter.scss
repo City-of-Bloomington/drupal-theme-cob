@@ -18,6 +18,21 @@
             > p {
                 font-size: (12rem/16);
             }
+            > ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                > li {
+                    display: block;
+                    font-size: (12rem/16);
+                    line-height: 1.15em;
+                    margin: 0 0 .75em 0;
+                    > a {
+                        color: $cob-gray-dark;
+                    }
+                }
+            }
             > .cob-btn-cta {
                 display: block;
                 font-size: (14rem/16);
@@ -51,9 +66,5 @@
             display: inline-block;
             padding: .25em .5em;
         }
-    }
-    &-copyright {
-        padding: 1rem 0 .5rem;
-        text-align: right;
     }
 }

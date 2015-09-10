@@ -110,3 +110,20 @@ function cob_form_alter(&$form, &$form_state, $form_id) {
 		$form['search_block_form']['#attributes']['placeholder'] = 'Search Bloomington.in.gov';
 	}
 }
+
+function cob_footer_links($tid) {
+	$categories = taxonomy_get_children($tid);
+	echo '<ul>';
+	foreach ($categories as $category) {
+		echo '<li>';
+		echo l(
+#			"<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
+			$category->name,
+			'taxonomy/term/'.$category->tid
+#			$options
+		);
+		echo '</li>';
+	}
+	echo '</ul>';
+
+}

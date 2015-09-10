@@ -11,18 +11,23 @@
         <div class="cob-siteFooter-sitemap-container">
             <div class="cob-siteFooter-sitemap-region">
                 <h2>Residents</h2>
-            </div>
-            <div class="cob-siteFooter-sitemap-region">
-                <h2>Students</h2>
+                <?= cob_footer_links(2); ?>
             </div>
             <div class="cob-siteFooter-sitemap-region">
                 <h2>Business</h2>
+                <?= cob_footer_links(1); ?>
             </div>
             <div class="cob-siteFooter-sitemap-region">
                 <h2>Visitors</h2>
+                <?= cob_footer_links(3); ?>
+            </div>
+            <div class="cob-siteFooter-sitemap-region">
+                <h2>Students</h2>
+                <?= cob_footer_links(4); ?>
             </div>
             <div class="cob-siteFooter-sitemap-region">
                 <h2>Government</h2>
+                <?= cob_footer_links(5); ?>
             </div>
             <div class="cob-siteFooter-sitemap-region">
                 <p>This site is still a work in progress. You can help identify opportunities for improvement!</p>
@@ -33,6 +38,7 @@
                 ?>
             </div>
         </div>
+<!--        <pre><?php print_r(taxonomy_get_children(1)); ?></pre>  -->
     </div>
     <div class="cob-siteFooter-details">
         <div class="cob-siteFooter-details-container">
@@ -41,7 +47,6 @@
                 <a href="/alpha/privacy">Privacy</a>
                 <a href="/alpha/webpolicy">Web Policy</a>
             </nav>
-            <div class="cob-siteFooter-copyright">Copyright &copy; <?= date("Y") ?> City of Bloomington, Indiana</div>
         </div>
     </div>
 </footer>
