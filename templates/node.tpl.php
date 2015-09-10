@@ -86,7 +86,7 @@
 hide($content['comments']);
 hide($content['links']);
 hide($content['field_board_commission']);
-hide($content['field_press_contacts']);
+hide($content['field_news_contacts']);
 hide($content['field_committee']);
 hide($content['field_directory_dn']);
 hide($content['field_physical_address']);
@@ -121,7 +121,10 @@ else {
     $toc = _cob_create_toc($contentHTML, 2, 2);
     if ($toc['toc']) { $contentHTML = $toc['content']; }
     $content_sidebar = false;
-    if($node->type == 'news_release') {
+    if(
+        $node->type == 'news_release'
+        || $node->type == 'board_commission'
+    ) {
         $content_sidebar = ' cob-ext-hasSidebar';
     }
 
@@ -158,9 +161,9 @@ else {
                 ?>
                 <?= $contentHTML ?>
             </article>
-            <aside class="cob-main-content-sidebar">
-                <?php if (!empty($content['field_press_contacts'])): ?>
-                    <?= render($content['field_press_contacts']); ?>
+            <aside class="cob-main-text-sidebar">
+                <?php if (!empty($content['field_news_contacts'])): ?>
+                    <?= render($content['field_news_contacts']); ?>
                 <?php endif; ?>
                 <?php if (!empty($committee  )): ?>
                     <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
