@@ -100,6 +100,7 @@ hide($content['field_category']);
 hide($content['field_department']);
 hide($content['book_navigation']);
 hide($content['field_cover_image']);
+hide($content['field_page_header_image']);
 
 // Teaser Mode /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
