@@ -14,16 +14,16 @@
                 content: ' ';
                 display: block;
                 height: 75px;
-                margin: 1rem auto .5rem;
+                margin: 1.25rem auto .5rem;
                 width: 75px;
             }
         > .cob-ext-wrap {
             > h1 {
                 color: #fff;
                 font-weight: 300;
-                font-size: 2rem;
+                font-size: (22rem/16);
                 line-height: 1.2em;
-                margin: .5rem 0 1rem;
+                margin: .5rem 0;
                 text-align: center;
             }
             > .breadcrumbs {
@@ -33,6 +33,7 @@
                     color: #fff;
                     display: inline-block;
                     font-family: $font-headings;
+                    font-size: (12rem/16);
                     letter-spacing: .2em;
                     margin: 0 2em 0 0;
                     position: relative;
@@ -53,6 +54,8 @@
 
         &-container  {
             @include container();
+            margin-top: 0;
+            margin-bottom: 0;
             padding-left: 1em;
             padding-right: 1em;
             text-align: center;
@@ -108,6 +111,7 @@
                     text-align: left;
 
                     > a {
+                        font-size: 1rem;
                     }
                 }
                 > h1 {
