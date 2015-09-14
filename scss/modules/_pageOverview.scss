@@ -40,12 +40,10 @@
         }
     }
     &-details {
-        > .cob-ext {
-            &-physicalAddress {
-                font-style: normal;
-                white-space: pre-line;
-            }
-        }
+    }
+    &-physicalAddress {
+        font-style: normal;
+        white-space: pre-line;
     }
     &-contacts {
         @include clearfix();
@@ -112,12 +110,18 @@
 
     @media screen and (min-width: $screen-small) {
         &-details {
-            > .cob-ext-details, .cob-ext-physicalAddress {
+            > .cob-ext-details {
                 box-sizing: border-box;
                 float: left;
                 padding: 0 $grid-gutter 0 0;
                 width: 50%;
             }
+        }
+        &-physicalAddress {
+            box-sizing: border-box;
+            float: left;
+            padding: 0 $grid-gutter 0 0;
+            width: 50%;
         }
         &-contacts {
             box-sizing: border-box;
@@ -173,9 +177,12 @@
             }
         }
         &-details {
-            > .cob-ext-details, .cob-ext-physicalAddress {
+            > .cob-ext-details {
                 width: (100%*3/8);
             }
+        }
+        &-physicalAddress {
+            width: (100%*3/8);
         }
         &-contacts {
             width: (100%*5/8);

@@ -96,7 +96,7 @@
                             $$f = !empty($contactInfo->$f) ? $contactInfo->$f : '';
                         }
                         echo "
-                        <address class=\"cob-ext-physicalAddress\">$address
+                        <address class=\"cob-pageOverview-physicalAddress\">$address
                         $city $state $zip
                         </address>
                         ";
