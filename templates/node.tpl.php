@@ -162,14 +162,16 @@ else {
                 ?>
                 <?= $contentHTML ?>
             </article>
-            <aside class="cob-main-text-sidebar">
-                <?php if (!empty($content['field_news_contacts'])): ?>
-                    <?= render($content['field_news_contacts']); ?>
-                <?php endif; ?>
-                <?php if (!empty($committee  )): ?>
-                    <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
-                <?php endif; ?>
-            </aside>
+            <?php if($content_sidebar !== false): ?>
+                <aside class="cob-main-text-sidebar">
+                    <?php if (!empty($content['field_news_contacts'])): ?>
+                        <?= render($content['field_news_contacts']); ?>
+                    <?php endif; ?>
+                    <?php if (!empty($committee  )): ?>
+                        <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
+                    <?php endif; ?>
+                </aside>
+            <?php endif ?>
         </section>
         <?php
             foreach ($relatedContent as $type=>$title) {
