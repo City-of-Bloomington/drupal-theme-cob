@@ -63,7 +63,7 @@ $external_term_links = [
             foreach ($external_term_links[$tid] as $link) {
                 $items[$link['title']] = "
                 <article class=\"cob-main-content\">
-                    <h2><a href=\"$link[url]\">$link[title]</a></h2>
+                    <h1><a href=\"$link[url]\">$link[title]</a></h1>
                     <div><p>$link[summary]</p></div>
                 </article>
                 ";
