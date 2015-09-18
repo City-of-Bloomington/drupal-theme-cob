@@ -30,7 +30,7 @@
         }
     }
     &Main {
-        background: url('../images/home-background.jpg') 50% 50% no-repeat $cob-blue;
+        background: url('../images/home-background.jpg') 50% 100% / cover no-repeat $cob-blue;
         overflow: hidden;
         &-container {
             @include container();
@@ -134,11 +134,11 @@
                         opacity: .66;
                     }
                     > .cob-ext-tileName {
-                        opacity: .9;
+                        opacity: 1;
                     }
                 }
                 > .cob-ext-tileName {
-                    opacity: .7;
+                    opacity: .8;
                     transition: opacity .25s ease-in-out;
                 }
             }
