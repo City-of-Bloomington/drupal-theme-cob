@@ -1,0 +1,236 @@
+.cob-hero {
+    background: url('../images/home-background.jpg') 50% 100% / cover no-repeat $cob-blue;
+    overflow: hidden;
+
+    &-container {
+        @include container();
+        > label {
+            color: #fff;
+            display: block;
+            font-family: $font-headings;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+    }
+    &-search {
+        margin-bottom: 2em;
+        text-align: center;
+
+        form {
+            label {
+                color: #fff;
+                font-family: $font-headings;
+                font-size: (18rem/16);
+                font-weight: 300;
+            }
+            .form-item {
+                > label {
+                    margin: 0 auto .5em 0;
+                }
+                > input {
+                    margin: 0 auto;
+                    padding: .75em;
+                    width: 95%;
+                }
+            }
+            .form-actions { }
+        }
+    }
+    &-links {
+        @include container();
+        > a {
+            background: rgba(0, 0, 0, .25);
+            border-radius: .25rem;
+            box-sizing: border-box;
+            color: #fff;
+            display: block;
+            margin: 0 0 1rem 0;
+            padding: .75em .75em .75em 3em;
+            position: relative;
+            transition: background-color .25s ease-in-out;
+
+            &:before {
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: contain;
+                content: ' ';
+                display: block;
+                opacity: .4;
+                position: absolute;
+                    top: .5rem;
+                    left: 1rem;
+                    bottom: .5rem;
+                transition: opacity 1s ease-in-out;
+                width: 1.25em;
+            }
+
+            &.cob-ext {
+                &-areaChart:before {
+                    background-image: url('../images/home/area-chart.svg');
+                }
+                &-arts:before {
+                    background-image: url('../images/home/arts.svg');
+                }
+                &-bicycle:before {
+                    background-image: url('../images/home/bicycle.svg');
+                }
+                &-binoculars:before {
+                    background-image: url('../images/home/binoculars.svg');
+                }
+                &-bloomington:before {
+                    background-image: url('../images/home/bloomington-logo-white.svg');
+                }
+                &-bolt:before {
+                    background-image: url('../images/home/bolt.svg');
+                }
+                &-briefcase:before {
+                    background-image: url('../images/home/briefcase.svg');
+                }
+                &-car:before {
+                    background-image: url('../images/home/car.svg');
+                }
+                &-cloud:before {
+                    background-image: url('../images/home/cloud.svg');
+                }
+                &-comments:before {
+                    background-image: url('../images/home/comments.svg');
+                }
+                &-dog:before {
+                    background-image: url('../images/home/dog.svg');
+                }
+                &-map:before {
+                    background-image: url('../images/home/map.svg');
+                }
+                &-money:before {
+                    background-image: url('../images/home/money.svg');
+                }
+                &-newspaper:before {
+                    background-image: url('../images/home/newspaper.svg');
+                }
+                &-openData:before {
+                    background-image: url('../images/home/open-data.svg');
+                }
+                &-park:before {
+                    background-image: url('../images/home/park.svg');
+                }
+                &-questionCircle:before {
+                    background-image: url('../images/home/question-circle.svg');
+                }
+                &-spigot:before {
+                    background-image: url('../images/home/spigot.svg');
+                }
+            }
+
+            &:hover, &:focus {
+                background-color: rgba(0, 0, 0, .15);
+                text-decoration: none;
+                &:before {
+                    opacity: .66;
+                }
+                > .cob-ext-tileName {
+                    opacity: 1;
+                }
+            }
+            > .cob-ext-tileName {
+                opacity: .8;
+                transition: opacity .25s ease-in-out;
+            }
+        }
+    }
+    @media screen and (min-width: $screen-small) {
+    }
+    @media screen and (min-width: $screen-medium) {
+        &-search {
+            margin-bottom: 2em; // Small screens get a lesser value
+            form {
+                margin: 0;
+                padding: 0;
+
+                .form-item {
+                    font-size: (20rem/16);
+                    padding: .75em;
+                    background-size: 1.5em;
+
+                    > label {
+                        font-size: (30rem/16);
+                        margin: 0 0 .5em;
+                    }
+                    > input {
+                        font-size: (18rem/16);
+                        padding: .666em 1.5em .666em 1em;
+                        width: 50%; // 6 out of 12 columns
+                    }
+                }
+                .form-actions { }
+            }
+        }
+        &-links {
+            padding-left: 10%;
+            padding-right: 10%;
+
+            > a {
+                border-radius: .5rem;
+                float: left;
+                height: 9rem;
+                margin: 0 10% 1em;
+                padding: 0;
+                text-align: center;
+                width: 40%;
+
+                &:before {
+                    height: auto;
+                    position: absolute;
+                        top: 1.25rem;
+                        right: .25rem;
+                        bottom: 4.5rem;
+                        left: .25rem;
+                    width: auto;
+                }
+
+                &.cob-ext {
+                }
+
+                > .cob-ext-tileName {
+                    box-sizing: border-box;
+                    line-height: 1.2em;
+                    min-height: 2.5rem;
+                    padding: 0 1rem;
+                    position: absolute;
+                        right: 0;
+                        bottom: 1rem;
+                        left: 0;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $screen-medium) and (max-width: $screen-large) {
+        &-links {
+            > a {
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+                &:nth-child(2n+2) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $screen-large) {
+        &-links {
+            padding: 0;
+
+            > a {
+                font-size: (18rem/16);
+                margin: 0 3.9% 3em;
+                width: 19.15%;
+                &:nth-child(4n+1) {
+                    margin-left: 0;
+                }
+                &:nth-child(4n+4) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
