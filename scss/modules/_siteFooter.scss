@@ -67,6 +67,9 @@
             padding: .25em .5em;
         }
     }
+    &-copyrightNotice {
+        @include visuallyHidden();
+    }
     // Hide the message telling people they will be redirected to the CAS login screen
     #edit-cas-login-redirection-message {
         display: none;
