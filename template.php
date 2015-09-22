@@ -18,11 +18,9 @@ function cob_preprocess_page(&$vars)
 		if (isset(   $vars['page']['content']['system_main']['nodes'][$nid])) {
 			$node = &$vars['page']['content']['system_main']['nodes'][$nid];
 			$bundle = &$node['#bundle'];
-
-			if ($bundle == 'book' && empty($node['field_category'])) {
+            if (isset($node['#node']->book)) {
                 $vars['bookInfo'] = cob_book_info($node['#node']->book);
-			}
-
+            }
 		}
 
 	}
