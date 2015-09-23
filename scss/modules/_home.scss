@@ -29,13 +29,36 @@
             }
         }
     }
-    &Main {
+    &Announcements {
+        background: #fff;
+        min-height: 2rem;
+
+        &-container {
+            @include container();
+        }
+        &-heading {
+            color: $cob-gray-dark;
+            font-size: (16rem/16);
+            text-transform: uppercase;
+        }
+        .cob-main-text {
+            > h1 {
+                font-size: 1rem;
+                line-height: (20rem/16);
+            }
+        }
+    }
+    &News {
+        @include grid-6col();
+        position: relative;
+    }
+    &Events {
+        @include grid-6col();
+        position: relative;
     }
     @media screen and (min-width: $screen-medium) {
         &Header {
             padding-top: 1rem;
-        }
-        &Main {
         }
         &Nav {
             float: right;
@@ -49,13 +72,48 @@
                 }
             }
         }
+        &Announcements {
+            background: $cob-gray-dark;
+            padding: 2rem 0;
+
+            &-heading {
+                font-size: (20rem/16);
+            }
+            &-container {
+                background: #fff;
+                margin: 0 1rem;
+            }
+            &-moreLink {
+                @include forwardLink();
+                position: absolute;
+                    right: $grid-gutter;
+                    bottom: 0;
+            }
+        }
+        &News, &Events {
+            padding-bottom: 3rem;
+        }
     }
     @media screen and (min-width: $screen-medium) and (max-width: $screen-large) {
-        &Main {
+        &Announcements {
         }
     }
     @media screen and (min-width: $screen-large) {
-        &Main {
+        &Announcements {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            &-container {
+                margin: 0 2rem;
+            }
+        }
+    }
+    @media screen and (min-width: $layoutMaxWidth) {
+        &Announcements {
+            &-container {
+                margin: 0 auto;
+                max-width: ($layoutMaxWidth + ($grid-gutter*4));
+                padding: ($grid-gutter) ($grid-gutter*2);
+            }
         }
     }
 }

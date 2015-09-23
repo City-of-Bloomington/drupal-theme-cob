@@ -103,6 +103,38 @@ include __DIR__.'/partials/siteAdminBar.inc';
     </section>
     <section class="cob-homeAnnouncements">
         <div class="cob-homeAnnouncements-container">
+            <div class="cob-homeNews">
+                <h2 class="cob-homeAnnouncements-heading">Latest Updates</h2>
+                <article class="cob-main-text">
+                    <time>September 13, 2015</time>
+                    <h1>BEAD and the BAC Host Free Workshop: “Trademark, Copyright and Contract Law for the Creative Community"</h1>
+                </article>
+                <article class="cob-main-text">
+                    <time>September 13, 2015</time>
+                    <h1>Article headline</h1>
+                </article>
+                <article class="cob-main-text">
+                    <time>September 13, 2015</time>
+                    <h1>Article headline</h1>
+                </article>
+                <a href="#" class="cob-homeAnnouncements-moreLink">City Newsroom</a>
+            </div>
+            <div class="cob-homeEvents">
+                <h2 class="cob-homeAnnouncements-heading">Upcoming City Meetings</h2>
+                <article class="cob-main-text">
+                    <time>October 21, 2015</time>
+                    <h1>Event title</h1>
+                </article>
+                <article class="cob-main-text">
+                    <time>October 21, 2015</time>
+                    <h1>Event title</h1>
+                </article>
+                <article class="cob-main-text">
+                    <time>October 21, 2015</time>
+                    <h1>Event title</h1>
+                </article>
+                <a href="#" class="cob-homeAnnouncements-moreLink">Events Calendar</a>
+            </div>
         </div>
     </section>
 </main>

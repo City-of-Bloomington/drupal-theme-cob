@@ -24,10 +24,10 @@
         }
     }
     @media screen and (min-width: $screen-large) {
-        > block-search {
-            width: 33%;
+        > .block-search {
+            width: (100%*3/12);
             .form-text {
-                
+
             }
         }
     }

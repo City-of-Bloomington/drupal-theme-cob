@@ -39,6 +39,8 @@ $screen-large: (1024em/16);
 $screen-medium: (700em/16);
 $screen-small:  (400em/16);
 
+$layoutMaxWidth: (1160rem/16);
+
 // Mixins
 
 @mixin clearfix() {
@@ -50,6 +52,9 @@ $screen-small:  (400em/16);
 }
 
 @mixin forwardLink() {
+    clear: both;
+    display: block;
+    float: right;
     font-family: $font-headings;
     font-size: (20rem/16);
     padding-left: (20rem/16);
@@ -123,7 +128,7 @@ $grid-gutter: 2rem;
 
     @media screen and (min-width: $screen-medium) {
         box-sizing: border-box;
-        max-width: (1160rem/16);
+        max-width: $layoutMaxWidth;
         margin: 0 auto;
     }
 }
