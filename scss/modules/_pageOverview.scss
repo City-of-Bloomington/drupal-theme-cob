@@ -73,8 +73,12 @@
                 background: url('../images/twitter-square.svg');
                 @include commonCode();
             }
-            &-phone_number {
+            &-phone_number, &-office {
                 background: url('../images/phone-square.svg');
+                @include commonCode();
+            }
+            &-fax {
+                background: url('../images/fax-square.svg');
                 @include commonCode();
             }
             &-email {

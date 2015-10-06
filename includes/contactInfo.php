@@ -8,7 +8,9 @@
 $phoneNumberFields = ['office', 'fax'];
 foreach ($phoneNumberFields as $f) {
     if (!empty($data['contactInfo']->$f)) {
-        echo "<div class=\"cob-ext-phone_number\">{$data['contactInfo']->$f}</div>";
+        $numberType = ucFirst($f);
+        echo "<div class=\"cob-ext-$f\" title=\"$numberType Number\">{$data['contactInfo']->$f}</div>";
+        unset($numberType);
     }
 }
 if (!empty($data['contactInfo']->email)) {
