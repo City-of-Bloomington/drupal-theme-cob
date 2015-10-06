@@ -5,7 +5,7 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param array $data['contactInfo']
  */
-$phoneNumberFields = ['office', 'fax', 'cell', 'other', 'pager'];
+$phoneNumberFields = ['office', 'fax'];
 foreach ($phoneNumberFields as $f) {
     if (!empty($data['contactInfo']->$f)) {
         echo "<div class=\"cob-ext-phone_number\">{$data['contactInfo']->$f}</div>";
