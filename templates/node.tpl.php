@@ -89,6 +89,7 @@ hide($content['field_board_commission']);
 hide($content['field_news_contacts']);
 hide($content['field_committee']);
 hide($content['field_directory_dn']);
+hide($content['field_directory_cn']);
 hide($content['field_physical_address']);
 hide($content['field_phone_number']);
 hide($content['field_email']);
