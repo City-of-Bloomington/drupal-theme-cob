@@ -152,6 +152,13 @@ else {
     ?>
         <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
             <article class="cob-main-text<?=$content_sidebar?>"<?= $content_attributes ?>>
+                <?php if($content_sidebar===false): ?>
+                    <figure class="cob-main-featureImage">
+                        <img src="#" alt="Test image" />
+                        <figcaption>Test image</figcaption>
+                    </figure>
+                <?php endif ?>
+
                 <?php
                     if ($node->type == 'news_release') {
                         $formatted_date = format_date($created, 'medium');
