@@ -3,16 +3,16 @@
 
     &-container {
         @include container();
-        > .cob-main-text { // <- Selects only the article element in Main Mode, not Teaser Mode.
+        > .cob-mainText { // <- Selects only the article element in Main Mode, not Teaser Mode.
             @include grid-10col();
             margin-top: 4rem;
         }
-        > .cob-main-text.cob-ext-hasSidebar {
+        > .cob-mainText.cob-ext-hasSidebar {
             @include grid-8col();
             margin-top: 4rem;
         }
     }
-    &-text {
+    &Text {
 
         h1 {
             font-weight: normal;
@@ -33,6 +33,10 @@
             margin: 1em 0;
         }
         @include tabularData();
+
+        &-image1 {
+            margin: 0 0 1rem 0;
+        }
 
         &-sidebar {
             @include grid-4col();
@@ -65,9 +69,6 @@
             width: 100%;
         }
     }
-    &-featureImage {
-        margin: 0 0 1rem 0;
-    }
     &-feedback {
         @include grid-12col();
         background: $cob-gray;
@@ -97,16 +98,18 @@
     }
 
     @media screen and (min-width: $screen-large) {
-        &-featureImage {
-            box-sizing: border-box;
-            float: right;
-            margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
-            padding: 0 0 ($grid-gutter) ($grid-gutter);
-            width: (100%*6/10); // <- Six child columns inside a ten column parent
-            > img {
-                background-color: $cob-gray-light;
-                min-height: 10rem;
-                width: 100%;
+        &Text {
+            &-image1 {
+                box-sizing: border-box;
+                float: right;
+                margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
+                padding: 0 0 ($grid-gutter) ($grid-gutter);
+                width: (100%*6/10); // <- Six child columns inside a ten column parent
+                > img {
+                    background-color: $cob-gray-light;
+                    min-height: 10rem;
+                    width: 100%;
+                }
             }
         }
     }

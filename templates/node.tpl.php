@@ -111,7 +111,7 @@ if ($view_mode == 'teaser') {
         $d = format_date($created, 'medium');
         $formatted_date = "<time>$d</time>";
     }
-    echo '<article class="cob-main-text">';
+    echo '<article class="cob-mainText">';
     echo "$formatted_date<h1><a href=\"$node_url\">".render($title)."</a></h1>";
     echo render($content);
     echo '</article>';
@@ -151,9 +151,9 @@ else {
     }
     ?>
         <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-            <article class="cob-main-text<?=$content_sidebar?>"<?= $content_attributes ?>>
+            <article class="cob-mainText<?=$content_sidebar?>"<?= $content_attributes ?>>
                 <?php if($content_sidebar===false): ?>
-                    <figure class="cob-main-featureImage">
+                    <figure class="cob-mainText-image1">
                         <img src="#" alt="Test image" />
                         <figcaption>Test image</figcaption>
                     </figure>
@@ -171,7 +171,7 @@ else {
                 <?= $contentHTML ?>
             </article>
             <?php if($content_sidebar !== false): ?>
-                <aside class="cob-main-text-sidebar">
+                <aside class="cob-mainText-sidebar">
                     <?php if (!empty($content['field_news_contacts'])): ?>
                         <?= render($content['field_news_contacts']); ?>
                     <?php endif; ?>
