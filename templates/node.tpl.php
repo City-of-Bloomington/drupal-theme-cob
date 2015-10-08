@@ -102,6 +102,7 @@ hide($content['field_department']);
 hide($content['book_navigation']);
 hide($content['field_cover_image']);
 hide($content['field_page_header_image']);
+hide($content['field_content_image']);
 
 // Teaser Mode /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -152,10 +153,16 @@ else {
     ?>
         <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
             <article class="cob-mainText<?=$content_sidebar?>"<?= $content_attributes ?>>
-                <?php if($content_sidebar===false): ?>
-                    <figure class="cob-mainText-image1">
-                        <img src="#" alt="Test image" />
-                        <figcaption>Test image</figcaption>
+                <?php if(!empty($node->field_content_image)): ?>
+                    <?php
+                        $content_image_url  = mediamanager_field_url($node->field_content_image, 'Content Image');
+                        $content_image_info = _mediamanager_media_info($node->field_content_image['und'][0]['media_id']);
+                    ?>
+                    <figure class="cob-main-content_image">
+                        <img src="<?= $content_image_url ?>" alt="<?= $content_image_info->title ?>" />
+                        <?php if(!empty($content_image_info->description)): ?>
+                            <figcaption><?= $content_image_info->description ?></figcaption>
+                        <?php endif ?>
                     </figure>
                 <?php endif ?>
 

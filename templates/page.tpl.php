@@ -86,8 +86,8 @@ include __DIR__.'/partials/siteHeader.inc';
             ";
         }
         if (!empty($node->field_page_header_image)) {
-            $a1 = mediamanager_field_url($node->field_page_header_image, 'Page Header@1x');
-            $a2 = mediamanager_field_url($node->field_page_header_image, 'Page Header@2x');
+            $a1 = mediamanager_field_url($node->field_page_header_image, 'Page Header');
+            $a2 = mediamanager_field_url($node->field_page_header_image, 'Page Header@2');
 
             echo "
                 .cob-pageHeader-container:before { background-image:url('$a1'); }
