@@ -1,0 +1,8 @@
+.cob-main-container {
+    > .view-content {
+        @include grid-10col();
+        > div {
+            margin: 1rem 0 3rem 0;
+        }
+    }
+}

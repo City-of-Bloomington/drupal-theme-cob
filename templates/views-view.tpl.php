@@ -28,7 +28,6 @@
  */
 ?>
 <section class="cob-main-container <?php print $classes; ?>">
-    <div class="cob-main-text">
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
         <?php print $title; ?>
@@ -89,5 +88,4 @@
         <?php endif; ?>
 
 <?php /* class view */ ?>
-    </div>
 </section>
