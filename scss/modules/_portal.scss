@@ -10,6 +10,16 @@
             font-weight: normal;
             line-height: 1.2em;
             margin: 0;
+            .cob-indicator-externalLink {
+                background: url('../images/external-link.svg') no-repeat 50% 50% / 100% 100%;
+                content: '';
+                display: inline-block;
+                height: .75em;
+                margin: 0 0 -.125em;
+                overflow: hidden;
+                text-indent: -1000em;
+                width: .75em;
+            }
         }
         p {
             font-size: 1rem;
