@@ -27,8 +27,14 @@ $external_term_links = [
             'title'   => 'inRoads',
             'summary' => 'inRoads is used to manage and publish road, sidewalk and parking status information including closings, lane reductions, noise permits and parking reservations.'
         ],
+    ],
+    22 => [ // Visitors -> History and Tourism (Production)
+        [
+            'url'     => 'http://www.visitbloomington.com',
+            'title'   => 'Visit Bloomington',
+            'summary' => 'Proud to promote the area as a tourist destination and strives to provide excellent service and up-to-date information to visitors.'
+        ],
     ]
-
 ];
 ?>
 <div    class="cob-portalContent">
