@@ -13,7 +13,7 @@
     }
     &-container {
         @include clearfix();
-        > .cob-main-text {
+        > .cob-mainText {
             @include grid-6col();
             line-height: (22rem/16);
 
