@@ -34,7 +34,7 @@ $external_term_links = [
             'title'   => 'Visit Bloomington',
             'summary' => 'Proud to promote the area as a tourist destination and strives to provide excellent service and up-to-date information to visitors.'
         ],
-    ]
+    ],
     39 => [ // Government -> Operations -> Code
         [
             'url'     => 'http://bloomington.in.gov/code',
