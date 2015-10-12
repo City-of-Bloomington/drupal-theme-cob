@@ -35,6 +35,13 @@ $external_term_links = [
             'summary' => 'Proud to promote the area as a tourist destination and strives to provide excellent service and up-to-date information to visitors.'
         ],
     ]
+    39 => [ // Government -> Operations -> Code
+        [
+            'url'     => 'http://bloomington.in.gov/code',
+            'title'   => 'Municipal Code',
+            'summary' => 'The Municipal Code is intended to make the laws of the city as accessible as possible to city officials, city employees and private citizens.'
+        ],
+    ]
 ];
 ?>
 <div    class="cob-portalContent">
