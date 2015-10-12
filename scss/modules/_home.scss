@@ -90,6 +90,12 @@
                     bottom: 0;
             }
         }
+        &Header {
+            &-container {
+                padding-left: $grid-gutter;
+                padding-right: $grid-gutter;
+            }
+        }
         &News, &Events {
             padding-bottom: 3rem;
         }
