@@ -5,7 +5,7 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  * @param array $data['contactInfo']
  */
-$phoneNumberFields = ['office', 'fax'];
+$phoneNumberFields = ['office', /*'fax'*/];
 foreach ($phoneNumberFields as $f) {
     if (!empty($data['contactInfo']->$f)) {
         $numberType = ucFirst($f);

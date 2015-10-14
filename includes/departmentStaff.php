@@ -9,6 +9,13 @@
 <section class="cob-staffListingWidget">
     <h2>Staff</h2>
     <table class="cob-boardsCommissions-members">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Office</th>
+                <th>Email Address</th>
+            </th>
+        </thead>
         <tbody>
             <?php
                 foreach ($data['contactInfo']->people as $person) {
@@ -22,7 +29,7 @@
 
                     echo "<td>$name</td>";
 
-                $phoneNumberFields = ['office', /*'fax',*/ 'cell', /*'other'*//*, 'pager'*/];
+                $phoneNumberFields = ['office', /*'fax', 'cell', 'other', 'pager'*/];
                     foreach ($phoneNumberFields as $f) {
                         echo '<td>';
                         if (!empty($person->$f)) {
