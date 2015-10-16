@@ -43,7 +43,7 @@
 // Enhancements for buttons that live in specific context
 .cob-pageOverview-actions {
     > .cob-btn-cta {
-        @media screen and (min-width: $screen-large) {
+        @media screen and (min-width: $viewport-large) {
             min-width: (5%/8*100);
         }
     }

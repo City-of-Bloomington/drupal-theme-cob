@@ -19,7 +19,7 @@
                 }
             }
         }
-        @media screen and (min-width: $screen-medium){
+        @media screen and (min-width: $viewport-medium){
             > nav {
                 > a {
                     clear: right;
@@ -95,7 +95,7 @@
             }
         }
 
-        @media screen and (min-width: $screen-medium) {
+        @media screen and (min-width: $viewport-medium) {
             > dl {
                 > dt {
                     margin-top: 0;

@@ -112,7 +112,7 @@
         }
     }
 
-    @media screen and (min-width: $screen-small) {
+    @media screen and (min-width: $viewport-small) {
         &-details {
             > .cob-ext-details {
                 box-sizing: border-box;
@@ -134,7 +134,7 @@
             width: 50%;
         }
     }
-    @media screen and (min-width: $screen-medium) {
+    @media screen and (min-width: $viewport-medium) {
         &-container {
 
             > div {

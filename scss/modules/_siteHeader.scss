@@ -8,7 +8,7 @@
             }
         }
     }
-    @media screen and (min-width: $screen-small) {
+    @media screen and (min-width: $viewport-small) {
         &-search {
             float: right;
             width: 17em;
@@ -18,7 +18,7 @@
             }
         }
     }
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $viewport-large) {
         &-search {
             width: 33.33333%;
         }

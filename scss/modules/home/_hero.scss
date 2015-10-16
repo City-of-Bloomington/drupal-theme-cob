@@ -137,9 +137,9 @@
             }
         }
     }
-    @media screen and (min-width: $screen-small) {
+    @media screen and (min-width: $viewport-small) {
     }
-    @media screen and (min-width: $screen-medium) {
+    @media screen and (min-width: $viewport-medium) {
         &-search {
             margin-bottom: 2em; // Small screens get a lesser value
             form {
@@ -204,7 +204,7 @@
             }
         }
     }
-    @media screen and (min-width: $screen-medium) and (max-width: $screen-large) {
+    @media screen and (min-width: $viewport-medium) and (max-width: $viewport-large) {
         &-links {
             > a {
                 &:nth-child(2n+1) {
@@ -216,7 +216,7 @@
             }
         }
     }
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $viewport-large) {
         &-links {
             padding: 0;
 

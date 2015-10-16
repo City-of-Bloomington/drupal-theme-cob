@@ -56,7 +56,7 @@
         @include grid-6col();
         position: relative;
     }
-    @media screen and (min-width: $screen-medium) {
+    @media screen and (min-width: $viewport-medium) {
         &Header {
             padding-top: 1rem;
         }
@@ -100,11 +100,11 @@
             padding-bottom: 3rem;
         }
     }
-    @media screen and (min-width: $screen-medium) and (max-width: $screen-large) {
+    @media screen and (min-width: $viewport-medium) and (max-width: $viewport-large) {
         &Announcements {
         }
     }
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $viewport-large) {
         &Announcements {
             padding-top: 4rem;
             padding-bottom: 4rem;

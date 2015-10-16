@@ -12,7 +12,7 @@
             width: 100%;
         }
     }
-    @media screen and (min-width: $screen-medium) {
+    @media screen and (min-width: $viewport-medium) {
         > .block-search {
             float: right;
             width: 17em;
@@ -23,7 +23,7 @@
             }
         }
     }
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $viewport-large) {
         > .block-search {
             width: (100%*3/12);
             .form-text {

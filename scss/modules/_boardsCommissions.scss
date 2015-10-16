@@ -54,12 +54,12 @@
                 }
             }
         }
-        @media screen and (min-width: $screen-medium) {
+        @media screen and (min-width: $viewport-medium) {
             > h1 {
                 font-size: (36rem/16);
             }
         }
-        @media screen and (min-width: $screen-large) {
+        @media screen and (min-width: $viewport-large) {
             > h1 {
                 font-size: (48rem/16);
             }

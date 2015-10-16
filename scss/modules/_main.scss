@@ -79,7 +79,7 @@
             font-size: 2rem;
             margin: .5em 0 0;
         }
-        @media screen and (min-width: $screen-medium) {
+        @media screen and (min-width: $viewport-medium) {
             > p {
                 box-sizing: border-box;
                 float: left;
@@ -94,10 +94,10 @@
         }
     }
 
-    @media screen and (min-width: $screen-medium) {
+    @media screen and (min-width: $viewport-medium) {
     }
 
-    @media screen and (min-width: $screen-large) {
+    @media screen and (min-width: $viewport-large) {
         &-content_image { // <- Name matches Drupal Machine Name
             box-sizing: border-box;
             float: right;
