@@ -188,6 +188,8 @@ else {
                 </aside>
             <?php endif ?>
         </section>
+        <?php include('partials/fsCal.inc'); ?>
+
         <?php
             foreach ($relatedContent as $type=>$title) {
                 if (!empty($$type)) {
