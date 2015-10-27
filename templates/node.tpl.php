@@ -166,6 +166,56 @@ else {
                     </figure>
                 <?php endif ?>
 
+<?php /* start event calendar */ ?>
+                    <section class="cob-upcomingEvents">
+                        <header class="cob-upcomingEvents-header">
+                            <h1>Meeting Schedule</h1>
+                            <a href="#">View Google Calendar</a>
+                        </header>
+                        <ol class="cob-upcomingEvents-list">
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                            <li>
+                                <span class="cob-upcomingEvents-monthDay">October 5</span>
+                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
+                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
+                            </li>
+                        </ol>
+                    </section>
+
                 <?php
                     if ($node->type == 'news_release') {
                         $formatted_date = format_date($created, 'medium');

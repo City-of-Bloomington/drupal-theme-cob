@@ -5,18 +5,19 @@
 @import 'modules/_normalize';
 @import 'modules/_menu';
 @import 'modules/_search';
+@import 'modules/_main';
 
 @import 'modules/_boardsCommissions';
 @import 'modules/_btn';
 @import 'modules/_civiclegislation';
 @import 'modules/_directory';
-@import 'modules/_events';
+@import 'modules/events/_fsCal';
+@import 'modules/events/_upcomingEvents';
 @import 'modules/_home';
 @import 'modules/home/_hero';
 @import 'modules/_icon';
 @import 'modules/_latestNewsWidget';
 @import 'modules/_news';
-@import 'modules/_main';
 @import 'modules/_pageHeader';
 @import 'modules/_pageOverview';
 @import 'modules/_portal';
