@@ -75,7 +75,12 @@
 }
 
 .cob-fsCal {
-    border-top: 1px solid $cob-gray;
+    @include grid-12col();
+    &:before {
+        border-top: 1px solid $cob-gray;
+        content: '';
+        display: block;
+    }
     &-container {
         @include container();
     }
