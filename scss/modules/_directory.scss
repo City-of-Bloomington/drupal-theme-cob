@@ -3,28 +3,63 @@
         @include clearfix();
         > h2 {
             margin: 1em 0 .25em 0;
+            @include grid-12col();
         }
     }
     &-dept {
         &Info {
             @include grid-3col();
             > dl {
+                margin: 0;
                 > dt {
-                    display: block;
-                    float: left;
-                    font-weight: bold;
-                    width: 4rem;
+                    @include visuallyHidden();
                 }
                 > dd {
                     display: block;
-                    margin: 0 0 0 5rem;
-
-                    &:after {
-                        content: '\A';
-                        white-space: pre;
-                    }
+                    margin: 0;
                 }
             }
         }
+        &Staff {
+            @include grid-9col();
+            > table {
+                > thead {
+                    @include visuallyHidden();
+                }
+                > tbody {
+                    tr {
+                        display: block;
+                        margin: 0 0 .5rem 0;
+                        > td {
+                            display: block;
+                        }
+                    }
+                    @media screen and (min-width: $viewport-medium) {
+                        > tr {
+                            display: table-row;
+                            &:first-child {
+                                > td {
+                                    border-top: .25rem solid $cob-blue;
+                                }
+                            }
+                            > td {
+                                border-top: (1rem/16) solid $cob-gray;
+                                display: table-cell;
+                                padding: .25em 1.5em .25em 0;
+                            }
+                        }
+                    }
+                }
+                @media screen and (min-width: $viewport-large) {
+
+                }
+            }
+        }
+    }
+    &-title {
+        color: $cob-cornflower-dark;
+        display: inline-block;
+        font-size: .8em;
+        line-height: .8em;
     }
 }

@@ -193,26 +193,6 @@ else {
                                 <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
                                 <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
                             </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
                         </ol>
                     </section>
 
