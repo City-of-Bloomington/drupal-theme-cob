@@ -103,6 +103,7 @@ hide($content['book_navigation']);
 hide($content['field_cover_image']);
 hide($content['field_page_header_image']);
 hide($content['field_content_image']);
+hide($content['field_google_calendar_id']);
 
 // Teaser Mode /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
@@ -123,23 +124,23 @@ else {
     $contentHTML = render($content);
     $toc = _cob_create_toc($contentHTML, 2, 2);
     if ($toc['toc']) { $contentHTML = $toc['content']; }
-    $content_sidebar = false;
-    if(
-        $node->type == 'news_release'
-        || $node->type == 'board_commission'
-    ) {
+
+    $content_sidebar = '';
+    if (   $node->type == 'news_release'
+        || $node->type == 'board_commission') {
+
         $content_sidebar = ' cob-ext-hasSidebar';
     }
 
     // Declare the content types to check for entity relationships
     // with the current node being displayed
     $relatedContent = [
-        'news_releases'     => 'Latest News',
+        'news_releases'      => 'Latest News',
         'boards_commissions' => 'Boards &amp; Commissions'
     ];
-    foreach ($relatedContent as $type=>$title) {
-        if (!empty($$type)) {
-            $toc['toc'][$type] = $title;
+    foreach ($relatedContent as $t=>$title) {
+        if (!empty($$t)) {
+            $toc['toc'][$t] = $title;
         }
     }
 
@@ -151,83 +152,55 @@ else {
         include __DIR__.'/partials/pageOverview.inc';
     }
     ?>
-        <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-            <article class="cob-mainText<?=$content_sidebar?>"<?= $content_attributes ?>>
-                <?php if(!empty($node->field_content_image)): ?>
-                    <?php
-                        $content_image_url  = mediamanager_field_url($node->field_content_image, 'Content Image');
-                        $content_image_info = _mediamanager_media_info($node->field_content_image['und'][0]['media_id']);
-                    ?>
-                    <figure class="cob-main-content_image">
-                        <img src="<?= $content_image_url ?>" alt="<?= $content_image_info->title ?>" />
-                        <?php if(!empty($content_image_info->description)): ?>
-                            <figcaption><?= $content_image_info->description ?></figcaption>
-                        <?php endif ?>
-                    </figure>
-                <?php endif ?>
-
-<?php /* start event calendar */ ?>
-                    <section class="cob-upcomingEvents">
-                        <header class="cob-upcomingEvents-header">
-                            <h1>Meeting Schedule</h1>
-                            <a href="#">View Google Calendar</a>
-                        </header>
-                        <ol class="cob-upcomingEvents-list">
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                            <li>
-                                <span class="cob-upcomingEvents-monthDay">October 5</span>
-                                <span class="cob-upcomingEvents-dayTime">Wed, 7:00pm&ndash;9:00pm</span>
-                                <span class="cob-upcomingEvents-location">City Hall McCloskey Room</span>
-                            </li>
-                        </ol>
-                    </section>
-
+    <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
+        <article class="cob-mainText<?=$content_sidebar?>"<?= $content_attributes ?>>
+            <?php if (!empty($node->field_content_image)): ?>
                 <?php
-                    if ($node->type == 'news_release') {
-                        $formatted_date = format_date($created, 'medium');
-                        echo "
-                            <time>$formatted_date</time>
-                            <h1>{$node->title}</h1>
-                        ";
-                    }
+                    $content_image_url  =  mediamanager_field_url ($node->field_content_image, 'Content Image');
+                    $content_image_info = _mediamanager_media_info($node->field_content_image['und'][0]['media_id']);
                 ?>
-                <?= $contentHTML ?>
-            </article>
-            <?php if($content_sidebar !== false): ?>
-                <aside class="cob-mainText-sidebar">
-                    <?php if (!empty($content['field_news_contacts'])): ?>
-                        <?= render($content['field_news_contacts']); ?>
-                    <?php endif; ?>
-                    <?php if (!empty($committee  )): ?>
-                        <?= cob_include('committeeMembers', ['committee'   => $committee  ]); ?>
-                    <?php endif; ?>
-                </aside>
+                <figure class="cob-main-content_image">
+                    <img src="<?= $content_image_url ?>" alt="<?= $content_image_info->title ?>" />
+                    <?php if (   !empty($content_image_info->description)): ?>
+                        <figcaption><?= $content_image_info->description ?></figcaption>
+                    <?php endif ?>
+                </figure>
             <?php endif ?>
-        </section>
-        <?php include('partials/fsCal.inc'); ?>
 
-        <?php
-            foreach ($relatedContent as $type=>$title) {
-                if (!empty($$type)) {
-                    cob_include($type, [$type => $$type, 'title'=>$title]);
+            <?php
+                if (!empty($content['field_google_calendar_id']['#items'])) {
+                    $include = $type === 'calendar' ? 'calendar' : 'upcomingEvents';
+                    foreach ($content['field_google_calendar_id']['#items'] as $i) {
+                        cob_include($include, ['calendarId'=>$i['value']]);
+                    }
                 }
-            }
-//            if (!empty($contactInfo)) { cob_include('departmentStaff',  ['contactInfo' => $contactInfo]); }
-        ?>
+
+                if ($node->type == 'news_release') {
+                    $formatted_date = format_date($created, 'medium');
+                    echo "
+                    <time>$formatted_date</time>
+                    <h1>{$node->title}</h1>
+                    ";
+                }
+
+                echo $contentHTML;
+            ?>
+        </article>
+        <?php if ($content_sidebar): ?>
+            <aside class="cob-mainText-sidebar">
+                <?php if (!empty($content['field_news_contacts'])): ?>
+                    <?=   render($content['field_news_contacts']); ?>
+                <?php endif; ?>
+            </aside>
+        <?php endif ?>
+    </section>
     <?php
+        if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
+
+        foreach ($relatedContent as $t=>$title) {
+            if (!empty($$t)) {
+                cob_include($t, [$t => $$t, 'title'=>$title]);
+            }
+        }
 }
 ?>
