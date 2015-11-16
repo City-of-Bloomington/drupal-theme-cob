@@ -1,6 +1,20 @@
 .cob-boardsCommissions {
     &-members {
+        @include container();
         margin: 0;
+
+        > h1 {
+            font-size: (24rem/16);
+            font-weight: normal;
+            @include grid-12col();
+        }
+    }
+    &-member {
+        box-sizing: border-box;
+        @include grid-3col();
+        &:nth-child(4n+2) {
+            clear: both;
+        }
 
         > dt {
             color: $cob-blue-dark;
@@ -20,7 +34,17 @@
             font-size: (14rem/16);
             margin: 0;
         }
+
     }
+    @media screen and (min-width: $viewport-medium) {
+        &-members {
+            > h1 {
+                font-size: (42rem/16);
+                font-weight: 300;
+            }
+        }
+    }
+
     &Widget {
         @include container();
 
