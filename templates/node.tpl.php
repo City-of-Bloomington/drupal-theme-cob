@@ -125,13 +125,6 @@ else {
     $toc = _cob_create_toc($contentHTML, 2, 2);
     if ($toc['toc']) { $contentHTML = $toc['content']; }
 
-    $content_sidebar = '';
-    if (   $node->type == 'news_release'
-        || $node->type == 'board_commission') {
-
-        $content_sidebar = ' cob-ext-hasSidebar';
-    }
-
     // Declare the content types to check for entity relationships
     // with the current node being displayed
     $relatedContent = [
@@ -153,7 +146,7 @@ else {
     }
     ?>
     <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-        <article class="cob-mainText<?=$content_sidebar?>"<?= $content_attributes ?>>
+        <article class="cob-mainText"<?= $content_attributes ?>>
             <?php if (!empty($node->field_content_image)): ?>
                 <?php
                     $content_image_url  =  mediamanager_field_url ($node->field_content_image, 'Content Image');
@@ -166,6 +159,9 @@ else {
                     <?php endif ?>
                 </figure>
             <?php endif ?>
+            <?php if (!empty($content['field_news_contacts'])): ?>
+                <?=   render($content['field_news_contacts']); ?>
+            <?php endif; ?>
 
             <?php
                 if (!empty($content['field_google_calendar_id']['#items'])) {
@@ -186,13 +182,6 @@ else {
                 echo $contentHTML;
             ?>
         </article>
-        <?php if ($content_sidebar): ?>
-            <aside class="cob-mainText-sidebar">
-                <?php if (!empty($content['field_news_contacts'])): ?>
-                    <?=   render($content['field_news_contacts']); ?>
-                <?php endif; ?>
-            </aside>
-        <?php endif ?>
     </section>
     <?php
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }

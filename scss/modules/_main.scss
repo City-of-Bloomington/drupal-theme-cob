@@ -38,32 +38,17 @@
         }
         @include tabularData();
 
-        &-sidebar {
-            @include grid-4col();
-            margin-top: 4rem;
-
-            > h2 {
-                font-weight: 300;
-                font-size: (36rem/16);
-                margin: (36rem/16) 0 (24rem/16) 0;
-
-                &:first-child {
-                    margin-top: 0;
-                }
+        > .cob-ext-pressContacts {
+            > dt {
+                color: $cob-blue-dark;
+                font-size: (14rem/16);
             }
-            > .cob-ext-pressContacts {
-                margin: 1.75rem 0 0;
-
-                > dt {
-                    color: $cob-blue-dark;
-                    font-size: (14rem/16);
-                }
-                > dd {
-                    font-size: (14rem/16);
-                    margin: 0;
-                }
+            > dd {
+                font-size: (14rem/16);
+                margin: 0;
             }
         }
+
         .cob-open311Client {
             border: none;
             width: 100%;
@@ -95,6 +80,16 @@
     }
 
     @media screen and (min-width: $viewport-medium) {
+        &Text {
+            > .cob-ext-pressContacts {
+                border-top: .5rem solid $cob-blue;
+                border-bottom: (1rem/16) solid $cob-gray;
+                float: right;
+                margin: 1.5rem (-100%*2/10) 1rem 2rem;
+                padding: .5rem 0 0 0;
+                width: (100%*4/10);
+            }
+        }
     }
 
     @media screen and (min-width: $viewport-large) {
