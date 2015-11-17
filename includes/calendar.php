@@ -33,8 +33,20 @@ if ($calendar) {
             ];
         }
 
+        $cid = $e->organizer->email;
+        if ($cid) {
+            $nid = cob_calendar_node_id($cid);
+            if (empty($calendarUrls[$cid])) {
+                $calendarUrls[$cid] = l($e->summary, "node/$nid");
+            }
+            $title = $calendarUrls[$cid];
+        }
+        else {
+            $title = $e->summary;
+        }
+
         $eventData[$ymd]['events'][] = [
-            'title'       => $e->summary,
+            'title'       => $title,
             'location'    => $e->location,
             'description' => $e->description,
             'url'         => $e->htmlLink,
