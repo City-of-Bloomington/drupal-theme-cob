@@ -2,13 +2,13 @@
 /**
  * @copyright 2015 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
- * @param array ['calendarId' => ]
+ * @param array $data['calendarId' => '', 'type' => '']
  */
 $service  = cob_calendar_service();
 $calendar = $service->calendars->get($data['calendarId']);
 $events   = cob_calendar_events($data['calendarId'], new \DateTime(), null, true, 4);
-if ($calendar && count($events)) {
-    $title = $calendar->summary;
+if ($calendar) {
+    $title = $data['type'] == 'board_commission' ? 'Meetings' : $calendar->summary;
     $url   = cob_calendar_url($data['calendarId']);
     echo "
     <section class=\"cob-upcomingEvents\">

@@ -191,5 +191,8 @@
         &-contacts {
             width: (100%*5/8);
         }
+        + .cob-fsCal-container { // Add margin to top of Full Screen Calendar when it immediately follows the Page Overview.
+            margin-top: 3rem;
+        }
     }
 }
