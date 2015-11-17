@@ -8,6 +8,8 @@ $service  = cob_calendar_service();
 $calendar = $service->calendars->get($data['calendarId']);
 $events   = cob_calendar_events($data['calendarId'], new \DateTime(), null, true, 4);
 if ($calendar) {
+    module_load_include('php', 'markdown', 'markdown');
+
     $eventData = [];
 
     foreach ($events as $e) {
@@ -33,6 +35,9 @@ if ($calendar) {
             ];
         }
 
+        // There will be many events for each given calendar.
+        // We want to cache the calendar URL so we don't have to
+        // hit the database to generate the URL each time.
         $cid = $e->organizer->email;
         if ($cid) {
             $nid = cob_calendar_node_id($cid);
@@ -45,10 +50,12 @@ if ($calendar) {
             $title = $e->summary;
         }
 
+        $description = Markdown($e->description);
+
         $eventData[$ymd]['events'][] = [
             'title'       => $title,
             'location'    => $e->location,
-            'description' => $e->description,
+            'description' => $description,
             'url'         => $e->htmlLink,
             'allDay'      => $allDay,
             'start'       => $start
@@ -76,14 +83,13 @@ if ($calendar) {
                 <div     class=\"cob-event-meta\">
                     <div class=\"cob-event-location\">$e[location]</div>
                 </div>
-                <div     class=\"cob-event-description\"><p>$e[description]</p></div>
+                <div     class=\"cob-event-description\">$e[description]</div>
             </article>
             ";
         }
         echo "
         </section>
         ";
-    # Close fsCal-container
-    echo '</section>';
     }
+    echo '</section>';
 }
