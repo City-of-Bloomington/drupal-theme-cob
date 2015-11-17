@@ -165,6 +165,13 @@ else {
                 <?php endif; ?>
 
                 <?php
+                    if (!empty($content['field_google_calendar_id']['#items'])) {
+                        $include = $type === 'calendar' ? 'calendar' : 'upcomingEvents';
+                        foreach ($content['field_google_calendar_id']['#items'] as $i) {
+                            cob_include($include, ['calendarId'=>$i['value'], 'type' => $type]);
+                        }
+                    }
+
                     if ($node->type == 'news_release') {
                         $formatted_date = format_date($created, 'medium');
                         echo "
@@ -179,13 +186,6 @@ else {
         </section>
     <?php endif ?>
     <?php
-        if (!empty($content['field_google_calendar_id']['#items'])) {
-            $include = $type === 'calendar' ? 'calendar' : 'upcomingEvents';
-            foreach ($content['field_google_calendar_id']['#items'] as $i) {
-                cob_include($include, ['calendarId'=>$i['value'], 'type' => $type]);
-            }
-        }
-
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
 
         foreach ($relatedContent as $t=>$title) {
