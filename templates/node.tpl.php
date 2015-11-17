@@ -165,10 +165,9 @@ else {
                 <?php endif; ?>
 
                 <?php
-                    if (!empty($content['field_google_calendar_id']['#items'])) {
-                        $include = $type === 'calendar' ? 'calendar' : 'upcomingEvents';
+                    if (!empty($content['field_google_calendar_id']['#items']) && $type != 'calendar') {
                         foreach ($content['field_google_calendar_id']['#items'] as $i) {
-                            cob_include($include, ['calendarId'=>$i['value'], 'type' => $type]);
+                            cob_include('upcomingEvents', ['calendarId'=>$i['value'], 'type' => $type]);
                         }
                     }
 
@@ -186,6 +185,12 @@ else {
         </section>
     <?php endif ?>
     <?php
+        if (!empty($content['field_google_calendar_id']['#items']) && $type == 'calendar') {
+            foreach ($content['field_google_calendar_id']['#items'] as $i) {
+                cob_include('calendar', ['calendarId'=>$i['value'], 'type' => $type]);
+            }
+        }
+
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
 
         foreach ($relatedContent as $t=>$title) {
