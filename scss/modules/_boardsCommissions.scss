@@ -34,7 +34,10 @@
             font-size: (14rem/16);
             margin: 0;
         }
-
+    }
+    &-apply {
+        @include grid-12col();
+        clear: both;
     }
     @media screen and (min-width: $viewport-medium) {
         &-members {
@@ -42,6 +45,9 @@
                 font-size: (42rem/16);
                 font-weight: 300;
             }
+        }
+        &-apply {
+            padding-top: 2rem;
         }
     }
 
