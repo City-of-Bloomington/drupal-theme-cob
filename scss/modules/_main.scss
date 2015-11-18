@@ -36,6 +36,29 @@
             line-height: (24rem/16);
             margin: 1em 0;
         }
+        li {
+            font-size: (18rem/16);
+            line-height: (24rem/16);
+            margin: .75em 0;
+        }
+        ul {
+            list-style: none;
+            margin: 1em 0;
+            padding: 0 0 0 3em;
+            > li {
+                padding: 0;
+                &:before {
+                    border-radius: .5em;
+                    background-color: $cob-blue;
+                    content: '';
+                    display: block;
+                    float: left;
+                    height: .35em;
+                    margin: .5em 0 0 -1.5em;
+                    width: .35em;
+                }
+            }
+        }
         @include tabularData();
 
         > .cob-ext-pressContacts {
