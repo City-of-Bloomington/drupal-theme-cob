@@ -45,7 +45,6 @@ $external_term_links = [
 ];
 ?>
 <div    class="cob-portalContent">
-    <h2 class="cob-portalContent-heading"><?= $data['term']->name ?></h2>
     <?php
         $tid = $data['term']->tid;
 

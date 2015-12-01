@@ -70,10 +70,6 @@
  *
  * @ingroup themeable
  */
-$term = &$page['content']['system_main']['term_heading']['term']['#term'];
-if (!empty(  $term->parent)) {
-    $title = $term->parent->name;
-}
 
 include __DIR__.'/partials/homeHeader.inc';
 ?>
@@ -93,30 +89,24 @@ include __DIR__.'/partials/homeHeader.inc';
         echo $messages;
         include __DIR__.'/partials/siteAdminBar.inc';
 
-        echo "<h1 class=\"cob-portalHeader-title\">$title</h1>";
+        echo '<h1 class="cob-portalHeader-title">';
+        $term = &$page['content']['system_main']['term_heading']['term']['#term'];
+        $ancestors = taxonomy_get_parents_all($term->tid);
+        foreach ($ancestors as $t) {
+            echo l($t->name, 'term/'.$t->tid);
+        }
+        echo '</h1>';
     ?>
     </div>
 </header>
 <main    class="cob-portalMain" role="main">
     <div class="cob-portalMain-container">
-        <?php
-            if (isset($term->parent)) {
-                $children = taxonomy_get_children($term->parent->tid);
-                $category_is_selected = 'cob-state-isSelected';
-            }
-            else {
-                $children = taxonomy_get_children($term->tid);
-                $category_is_selected = '';
-            }
-        ?>
-        <div     class="cob-portalSidebar <?= $category_is_selected; ?>" id="taxonomy-term-<?= $term->tid ?>">
+        <div     class="cob-portalSidebar" id="taxonomy-term-<?= $term->tid ?>">
             <nav class="cob-portalSidebar-nav">
                 <?php
+                    $children = taxonomy_get_children($term->tid);
                     foreach ($children as $child) {
                         $options = ['html'=>true];
-                        if ($term->tid == $child->tid) {
-                            $options['attributes'] = ['class'=>['current']];
-                        }
 
                         echo l(
                             "<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
@@ -128,7 +118,7 @@ include __DIR__.'/partials/homeHeader.inc';
             </nav>
         </div>
         <?php
-            if ($category_is_selected) { cob_include('term_nodes', ['term' => $term]); }
+            cob_include('term_nodes', ['term' => $term]);
         ?>
     </div>
 </main>
