@@ -1,6 +1,10 @@
 .cob-hero {
     background: url('../images/home-background.jpg') 50% 100% / cover no-repeat $cob-blue;
     overflow: hidden;
+    color:#fff;
+
+    a { color:#fff; }
+
 
     &-container {
         @include container();
@@ -42,7 +46,6 @@
             background: rgba(0, 0, 0, .25);
             border-radius: .25rem;
             box-sizing: border-box;
-            color: #fff;
             display: block;
             margin: 0 0 1rem 0;
             padding: .75em .75em .75em 3em;

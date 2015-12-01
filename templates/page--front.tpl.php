@@ -86,18 +86,28 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 ?>
             </div>
             <nav class="cob-hero-links">
-                <a href="/alpha/newsroom" class="cob-ext-newspaper"><span class="cob-ext-tileName">Newsroom</span></a>
                 <a href="/alpha/contact" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
-                <a href="/alpha/parks" class="cob-ext-park"><span class="cob-ext-tileName">Parks and Recreation</span></a>
-                <a href="/alpha/arts" class="cob-ext-arts"><span class="cob-ext-tileName">Arts</span></a>
                 <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
                 <a href="/alpha/maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
-                <a href="/alpha/jobs" class="cob-ext-briefcase"><span class="cob-ext-tileName">Jobs</span></a>
-                <a href="/alpha/animal-shelter" class="cob-ext-dog"><span class="cob-ext-tileName">Animal Shelter</span></a>
                 <a href="/data" class="cob-ext-openData"><span class="cob-ext-tileName">Open Data</span></a>
                 <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
                 <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
                 <a href="/alpha/report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
+            </nav>
+
+            <nav>
+            <?php
+                $categories = taxonomy_vocabulary_machine_name_load('categories');
+                foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
+                    $link = l($t->name, 'taxonomy/term/'.$t->tid);
+                    echo "
+                    <article>
+                        <h1>$link</h1>
+                        <p>{$t->description}</p>
+                    </article>
+                    ";
+                }
+            ?>
             </nav>
         </div>
     </section>
@@ -105,36 +115,26 @@ include __DIR__.'/partials/siteAdminBar.inc';
         <div class="cob-homeAnnouncements-container">
             <div class="cob-homeNews">
                 <h2 class="cob-homeAnnouncements-heading">Latest Updates</h2>
-                <article class="cob-mainText">
-                    <time>September 13, 2015</time>
-                    <h1>BEAD and the BAC Host Free Workshop: “Trademark, Copyright and Contract Law for the Creative Community"</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>September 13, 2015</time>
-                    <h1>Article headline</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>September 13, 2015</time>
-                    <h1>Article headline</h1>
-                </article>
-                <a href="#" class="cob-homeAnnouncements-moreLink">City Newsroom</a>
+                <?php
+                    $news = cob_recent_nodes('news_release');
+                    foreach ($news as $n) {
+                        $date = format_date($n->created, 'Date Month, Year');
+                        echo "
+                        <article class=\"cob-mainText\">
+                            <time>$date</time>
+                            <h1>{$n->title}</h1>
+                        </article>
+                        ";
+                    }
+                    echo l('City Newsroom', 'newsroom');
+                ?>
             </div>
-            <div class="cob-homeEvents">
-                <h2 class="cob-homeAnnouncements-heading">Upcoming City Meetings</h2>
-                <article class="cob-mainText">
-                    <time>October 21, 2015</time>
-                    <h1>Event title</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>October 21, 2015</time>
-                    <h1>Event title</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>October 21, 2015</time>
-                    <h1>Event title</h1>
-                </article>
-                <a href="#" class="cob-homeAnnouncements-moreLink">Events Calendar</a>
-            </div>
+            <?php
+                cob_include('upcomingEvents', [
+                    'type'       => 'board_commission',
+                    'calendarId' => 'bloomington.in.gov_35a6qiaiperdn7b1r6v2ksjlig@group.calendar.google.com'
+                ]);
+            ?>
         </div>
     </section>
 </main>
