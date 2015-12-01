@@ -14,28 +14,28 @@
  * Items in this array will get merged and sorted into the list that's displayed.
  */
 $external_term_links = [
-    5 => [ // Getting Around Bloomington
+    51 => [ // Neighborhood Services and Initiatives
         [
             'url'     => 'http://rogue.bloomington.in.gov/myCity',
             'title'   => 'MyBloomington',
             'summary' => 'Provides information about City services available to addresses in the vicinity of Bloomington, IN.'
         ],
     ],
-    12 => [ // Residents -> Getting Around (Production)
+    46 => [ // Transportation and Parking
         [
             'url'     => 'http://bloomington.in.gov/inroads',
             'title'   => 'inRoads',
             'summary' => 'inRoads is used to manage and publish road, sidewalk and parking status information including closings, lane reductions, noise permits and parking reservations.'
         ],
     ],
-    22 => [ // Visitors -> History and Tourism (Production)
+    53 => [ // Arts and Culture
         [
             'url'     => 'http://www.visitbloomington.com',
             'title'   => 'Visit Bloomington',
             'summary' => 'Proud to promote the area as a tourist destination and strives to provide excellent service and up-to-date information to visitors.'
         ],
     ],
-    39 => [ // Government -> Operations -> Code
+    56 => [ // City Government
         [
             'url'     => 'http://bloomington.in.gov/code',
             'title'   => 'Municipal Code',
