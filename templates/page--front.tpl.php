@@ -85,7 +85,31 @@ include __DIR__.'/partials/siteAdminBar.inc';
                     echo render($search['content']);
                 ?>
             </div>
-            <nav class="cob-hero-links">
+        </div>
+    </section>
+    <section class="cob-homeNav">
+        <div class="cob-homeNav-container">
+            <nav class="cob-homeNav-categories">
+                <h1 class="cob-homeNav-heading">Services Directory</h1>
+                <?php
+                    $categories = taxonomy_vocabulary_machine_name_load('categories');
+                    $linkOptions = [
+                        'html' => true,
+                        'attributes' => [
+                            'class' => 'cob-homeNav-categoryLink'
+                        ]
+                    ];
+                    foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
+                        $linkContent =  "
+                            <big>$t->name</big>
+                            <span>$t->description</span>
+                        ";
+                        echo l($linkContent, 'taxonomy/term/'.$t->tid, $linkOptions);
+                    }
+                ?>
+            </nav>
+            <nav class="cob-homeNav-topServices">
+                <h1 class="cob-homeNav-heading">Popular Services</h1>
                 <a href="/alpha/contact" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
                 <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
                 <a href="/alpha/maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
@@ -93,21 +117,6 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
                 <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
                 <a href="/alpha/report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
-            </nav>
-
-            <nav>
-            <?php
-                $categories = taxonomy_vocabulary_machine_name_load('categories');
-                foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
-                    $link = l($t->name, 'taxonomy/term/'.$t->tid);
-                    echo "
-                    <article>
-                        <h1>$link</h1>
-                        <p>{$t->description}</p>
-                    </article>
-                    ";
-                }
-            ?>
             </nav>
         </div>
     </section>

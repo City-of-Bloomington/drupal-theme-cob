@@ -14,18 +14,171 @@
         }
     }
     &Nav {
-        display: inline-block;
-        > a {
-            border-bottom: .25em solid #fff;
-            display: inline-block;
-            transition: border-color .25s linear;
-
+        background: $cob-blue;
+        &-container {
+            @include container();
+        }
+        &-categories {
+        }
+        &-categoryLink {
+            display: block;
+            color: $cob-cornflower-lightest;
+            margin: .666em 0;
+            font-size: (14rem/16);
+            transition: color .25s ease-in-out;
             &:hover {
-                border-bottom-color: $cob-gray;
+                color: #fff;
+                text-decoration: none;
             }
+            > big {
+                color: #fff;
+                display: block;
+                font-family: $font-headings;
+                font-size: (18em/14);
+            }
+        }
+        &-heading {
+            color: #fff;
+            font-size: (20rem/16);
+            text-transform: uppercase;
+        }
+        &-topServices {
+            > a {
+                background: rgba(0, 0, 0, .25);
+                border-radius: .25rem;
+                box-sizing: border-box;
+                color: #fff;
+                display: block;
+                margin: 0 0 1rem 0;
+                padding: .75em .75em .75em 3em;
+                position: relative;
+                transition: background-color .25s ease-in-out;
 
-            &.cob-ext-current {
-                border-bottom-color: $cob-blue-light;
+                &:before {
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-size: contain;
+                    content: ' ';
+                    display: block;
+                    opacity: .4;
+                    position: absolute;
+                        top: .5rem;
+                        left: 1rem;
+                        bottom: .5rem;
+                    transition: opacity 1s ease-in-out;
+                    width: 1.25em;
+                }
+
+                &.cob-ext {
+                    &-areaChart:before {
+                        background-image: url('../images/home/area-chart.svg');
+                    }
+                    &-arts:before {
+                        background-image: url('../images/home/arts.svg');
+                    }
+                    &-bicycle:before {
+                        background-image: url('../images/home/bicycle.svg');
+                    }
+                    &-binoculars:before {
+                        background-image: url('../images/home/binoculars.svg');
+                    }
+                    &-bloomington:before {
+                        background-image: url('../images/home/bloomington-logo-white.svg');
+                    }
+                    &-bolt:before {
+                        background-image: url('../images/home/bolt.svg');
+                    }
+                    &-briefcase:before {
+                        background-image: url('../images/home/briefcase.svg');
+                    }
+                    &-car:before {
+                        background-image: url('../images/home/car.svg');
+                    }
+                    &-cloud:before {
+                        background-image: url('../images/home/cloud.svg');
+                    }
+                    &-comments:before {
+                        background-image: url('../images/home/comments.svg');
+                    }
+                    &-dog:before {
+                        background-image: url('../images/home/dog.svg');
+                    }
+                    &-map:before {
+                        background-image: url('../images/home/map.svg');
+                    }
+                    &-money:before {
+                        background-image: url('../images/home/money.svg');
+                    }
+                    &-newspaper:before {
+                        background-image: url('../images/home/newspaper.svg');
+                    }
+                    &-openData:before {
+                        background-image: url('../images/home/open-data.svg');
+                    }
+                    &-park:before {
+                        background-image: url('../images/home/park.svg');
+                    }
+                    &-questionCircle:before {
+                        background-image: url('../images/home/question-circle.svg');
+                    }
+                    &-spigot:before {
+                        background-image: url('../images/home/spigot.svg');
+                    }
+                }
+
+                &:hover, &:focus {
+                    background-color: rgba(0, 0, 0, .15);
+                    text-decoration: none;
+                    &:before {
+                        opacity: .66;
+                    }
+                    > .cob-ext-tileName {
+                        opacity: 1;
+                    }
+                }
+                > .cob-ext-tileName {
+                    opacity: .8;
+                    transition: opacity .25s ease-in-out;
+                }
+            }
+        }
+        @media screen and (min-width: $viewport-medium) {
+            &-container {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            &-categories {
+                box-sizing: border-box;
+                -webkit-column-count: 2;
+                -webkit-column-gap: $grid-gutter * 2;
+                -moz-column-count: 2;
+                -moz-column-gap: $grid-gutter * 2;
+                column-count: 2;
+                float: left;
+                padding: 0 $grid-gutter;
+                width: (100%*9/12);
+                > h1 {
+                    -webkit-column-span: all;
+                    column-span: all;
+                }
+            }
+            &-categoryLink {
+                -webkit-column-break-inside: avoid;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            &-topServices {
+                box-sizing: border-box;
+                float: left;
+                padding: 0 ($grid-gutter);
+                width: (100%*3/12);
+            }
+        }
+        @media screen and (min-width: $viewport-large) {
+            &-categories {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
             }
         }
     }
@@ -47,6 +200,40 @@
                 line-height: (20rem/16);
             }
         }
+        @media screen and (min-width: $viewport-medium) {
+            &Announcements {
+                background: $cob-gray-dark;
+                padding: 2rem 0;
+
+                &-heading {
+                    font-size: (20rem/16);
+                }
+                &-container {
+                    background: #fff;
+                    margin: 0 1rem;
+                }
+                &-moreLink {
+                    @include forwardLink();
+                    position: absolute;
+                        right: $grid-gutter;
+                        bottom: 0;
+                }
+            }
+        }
+        @media screen and (min-width: $viewport-large) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            &-container {
+                margin: 0 2rem;
+            }
+        }
+        @media screen and (min-width: $layoutMaxWidth) {
+            &-container {
+                margin: 0 auto;
+                max-width: ($layoutMaxWidth + ($grid-gutter*4));
+                padding: ($grid-gutter) ($grid-gutter*2);
+            }
+        }
     }
     &News {
         @include grid-6col();
@@ -60,36 +247,6 @@
         &Header {
             padding-top: 1rem;
         }
-        &Nav {
-            float: right;
-            padding: 1rem 0 0;
-
-            > a {
-                padding: 1.5em 1em .25em 1em;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-        &Announcements {
-            background: $cob-gray-dark;
-            padding: 2rem 0;
-
-            &-heading {
-                font-size: (20rem/16);
-            }
-            &-container {
-                background: #fff;
-                margin: 0 1rem;
-            }
-            &-moreLink {
-                @include forwardLink();
-                position: absolute;
-                    right: $grid-gutter;
-                    bottom: 0;
-            }
-        }
         &Header {
             &-container {
                 padding-left: $grid-gutter;
@@ -98,28 +255,6 @@
         }
         &News, &Events {
             padding-bottom: 3rem;
-        }
-    }
-    @media screen and (min-width: $viewport-medium) and (max-width: $viewport-large) {
-        &Announcements {
-        }
-    }
-    @media screen and (min-width: $viewport-large) {
-        &Announcements {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-            &-container {
-                margin: 0 2rem;
-            }
-        }
-    }
-    @media screen and (min-width: $layoutMaxWidth) {
-        &Announcements {
-            &-container {
-                margin: 0 auto;
-                max-width: ($layoutMaxWidth + ($grid-gutter*4));
-                padding: ($grid-gutter) ($grid-gutter*2);
-            }
         }
     }
 }
