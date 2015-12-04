@@ -1,5 +1,6 @@
 .cob-hero {
-    background: url('../images/home-photo1@1x.jpg') 50% 100% no-repeat $cob-gray-light;
+    background: url('../images/home-photo1@1x.jpg') no-repeat $cob-gray-light 50% 33%;
+    background-size: cover;
     overflow: hidden;
     color:#fff;
 
@@ -20,7 +21,6 @@
     }
     @media screen and (min-width: $viewport-medium) {
         &-search {
-            margin-bottom: 2em; // Small screens get a lesser value
             text-align: center;
             form {
                 margin: 0;
@@ -28,6 +28,7 @@
 
                 .form-item {
                     font-size: (20rem/16);
+                    margin: 3rem 0;
                     padding: .75em;
                     background-size: 1.5em;
 
@@ -38,6 +39,7 @@
                         margin: 0 0 .5em;
                     }
                     > input {
+                        color: $cob-gray-darkest;
                         font-size: (18rem/16);
                         padding: .666em 1.5em .666em 1em;
                         width: 50%; // 6 out of 12 columns

@@ -124,7 +124,7 @@ $grid-gutter: 2rem;
 }
 @mixin container {
     @include clearfix();
-    margin: 1rem;
+//    margin: 1rem;
 
     @media screen and (min-width: $viewport-medium) {
         box-sizing: border-box;

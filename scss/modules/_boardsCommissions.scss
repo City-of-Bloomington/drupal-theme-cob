@@ -1,7 +1,6 @@
 .cob-boardsCommissions {
     &-members {
         @include container();
-        margin: 0;
 
         > h1 {
             font-size: (24rem/16);

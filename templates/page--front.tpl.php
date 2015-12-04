@@ -91,22 +91,24 @@ include __DIR__.'/partials/siteAdminBar.inc';
         <div class="cob-homeNav-container">
             <nav class="cob-homeNav-categories">
                 <h1 class="cob-homeNav-heading">Services Directory</h1>
-                <?php
-                    $categories = taxonomy_vocabulary_machine_name_load('categories');
-                    $linkOptions = [
-                        'html' => true,
-                        'attributes' => [
-                            'class' => 'cob-homeNav-categoryLink'
-                        ]
-                    ];
-                    foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
-                        $linkContent =  "
-                            <big>$t->name</big>
-                            <span>$t->description</span>
-                        ";
-                        echo l($linkContent, 'taxonomy/term/'.$t->tid, $linkOptions);
-                    }
-                ?>
+                <div class="cob-homeNav-columns">
+                    <?php
+                        $categories = taxonomy_vocabulary_machine_name_load('categories');
+                        $linkOptions = [
+                            'html' => true,
+                            'attributes' => [
+                                'class' => 'cob-homeNav-categoryLink'
+                            ]
+                        ];
+                        foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
+                            $linkContent =  "
+                                <big>$t->name</big>
+                                <span>$t->description</span>
+                            ";
+                            echo l($linkContent, 'taxonomy/term/'.$t->tid, $linkOptions);
+                        }
+                    ?>
+                </div>
             </nav>
             <nav class="cob-homeNav-topServices">
                 <h1 class="cob-homeNav-heading">Popular Services</h1>
