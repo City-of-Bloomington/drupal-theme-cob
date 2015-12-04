@@ -69,6 +69,7 @@
     }
     @media screen and (min-width: $viewport-medium) {
         box-sizing: border-box;
+        padding: 0 0 ($grid-gutter) ($grid-gutter);
         &-list {
             clear: both;
             padding: 1rem 0;
@@ -89,6 +90,7 @@
             }
             > h1 {
                 font-size: (30rem/16);
+                font-weight: normal;
                 line-height: 1em;
                 margin: .75rem 0 0 (65rem/16 + $grid-gutter);
             }
@@ -108,7 +110,6 @@
         .cob-upcomingEvents {
             float: right;
             margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
-            padding: 0 0 ($grid-gutter) ($grid-gutter);
             width: (100%*6/10); // <- Six child columns inside a ten column parent
         }
     }
