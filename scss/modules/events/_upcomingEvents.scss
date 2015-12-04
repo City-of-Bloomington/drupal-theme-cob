@@ -69,10 +69,6 @@
     }
     @media screen and (min-width: $viewport-medium) {
         box-sizing: border-box;
-        float: right;
-        margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
-        padding: 0 0 ($grid-gutter) ($grid-gutter);
-        width: (100%*6/10); // <- Six child columns inside a ten column parent
         &-list {
             clear: both;
             padding: 1rem 0;
@@ -104,6 +100,16 @@
             > li {
                 padding: 0 $grid-gutter;
             }
+        }
+    }
+}
+@media screen and (min-width: $viewport-medium) {
+    .cob-mainText {
+        .cob-upcomingEvents {
+            float: right;
+            margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
+            padding: 0 0 ($grid-gutter) ($grid-gutter);
+            width: (100%*6/10); // <- Six child columns inside a ten column parent
         }
     }
 }
