@@ -85,18 +85,29 @@ include __DIR__.'/partials/homeHeader.inc';
 </div>
 <header  class="cob-portalHeader">
     <div class="cob-portalHeader-container">
-    <?php
-        echo $messages;
-        include __DIR__.'/partials/siteAdminBar.inc';
+        <?php
+            echo $messages;
+            include __DIR__.'/partials/siteAdminBar.inc';
+            $term = &$page['content']['system_main']['term_heading']['term']['#term'];
+            $title = $term->name;
+        ?>
+        <h1 class="cob-portalHeader-title"><?= $title ?></h1>
+        <nav class="cob-portalHeader-breadcrumbs">
+            <?php
 
-        echo '<h1 class="cob-portalHeader-title">';
-        $term = &$page['content']['system_main']['term_heading']['term']['#term'];
-        $ancestors = taxonomy_get_parents_all($term->tid);
-        foreach ($ancestors as $t) {
-            echo l($t->name, 'term/'.$t->tid);
-        }
-        echo '</h1>';
-    ?>
+                $ancestors = array_reverse(taxonomy_get_parents_all($term->tid));
+                $count = count($ancestors);
+                $i = 1;
+                foreach ($ancestors as $t) {
+                    if($i < $count) {
+                        echo l($t->name, 'term/'.$t->tid);
+                    } else {
+                        echo "<span>$t->name</span>";
+                    }
+                    $i++;
+                }
+            ?>
+        </nav>
     </div>
 </header>
 <main    class="cob-portalMain" role="main">

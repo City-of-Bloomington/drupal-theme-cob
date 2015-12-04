@@ -41,6 +41,7 @@
 
                     &:after {
                         content: ' >';
+                        pointer-events: none;
                         position: absolute;
                             right: -1.5em;
                     }

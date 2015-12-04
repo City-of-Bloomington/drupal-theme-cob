@@ -36,12 +36,28 @@
         &-container {
             @include container();
         }
-        &-title {
+        &-breadcrumbs {
             @include grid-12col();
-            font-size: (40rem/16);
-            font-weight: 300;
-            line-height: 1em;
-            margin: 1em 0 0 0;
+            margin-bottom: 1rem;
+            > a, > span {
+                font-family: $font-headings;
+                text-transform: uppercase;
+            }
+            > a {
+                position: relative;
+                margin: 0 2em 0 0;
+
+                &:after {
+                    content: '>';
+                    pointer-events: none;
+                    position: absolute;
+                        top: 0;
+                        right: -1.25em;
+                }
+            }
+        }
+        &-title {
+            display:  none;
         }
     }
     &Search {
@@ -72,7 +88,8 @@
         }
     }
     &Sidebar {
-        @include grid-5col();
+        @include grid-4col();
+        display: none;
         &-nav {
             a {
                 display: block;
@@ -116,7 +133,9 @@
             }
         }
         &Header {
-            &-title {
+            &-breadcrumbs {
+                font-size: (18rem/16);
+
                 &:after {
                     border-top: (5rem/16) solid $cob-blue;
                     border-bottom: (1rem/16) solid $cob-gray;
@@ -133,12 +152,8 @@
             }
         }
         &Sidebar {
+            display: block;
             padding-top: 1rem;
-            &.cob-state-isSelected {
-                @include grid-4col();
-                border-right: (1rem/16) solid $cob-blue;
-                margin-right: -(1rem/16) !important;
-            }
         }
     }
     @media screen and (min-width: $viewport-large) {
