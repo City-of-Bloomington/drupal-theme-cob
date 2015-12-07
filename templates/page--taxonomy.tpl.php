@@ -94,12 +94,11 @@ include __DIR__.'/partials/homeHeader.inc';
         <h1 class="cob-portalHeader-title"><?= $title ?></h1>
         <nav class="cob-portalHeader-breadcrumbs">
             <?php
-
                 $ancestors = array_reverse(taxonomy_get_parents_all($term->tid));
                 $count = count($ancestors);
                 $i = 1;
                 foreach ($ancestors as $t) {
-                    if($i < $count) {
+                    if ($i < $count) {
                         echo l($t->name, 'taxonomy/term/'.$t->tid);
                     } else {
                         echo "<span>$t->name</span>";

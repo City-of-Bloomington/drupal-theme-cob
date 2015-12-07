@@ -1,0 +1,54 @@
+&Announcements {
+    background: $cob-gray;
+    min-height: 2rem;
+
+    &-container {
+        @include container();
+    }
+    &-heading {
+        color: $cob-cornflower-dark;
+        font-weight: normal;
+        font-size: (20rem/16);
+        text-transform: uppercase;
+    }
+    .cob-mainText {
+        > h1 {
+            font-size: 1rem;
+            line-height: (20rem/16);
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &Announcements {
+            background: $cob-gray-dark;
+            padding: 2rem 0;
+
+            &-heading {
+                font-size: (20rem/16);
+            }
+            &-container {
+                background: #fff;
+                margin: 0 1rem;
+            }
+            &-moreLink {
+                @include forwardLink();
+                position: absolute;
+                    right: $grid-gutter;
+                    bottom: 0;
+            }
+        }
+    }
+    @media screen and (min-width: $viewport-large) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        &-container {
+            margin: 0 2rem;
+        }
+    }
+    @media screen and (min-width: $layoutMaxWidth) {
+        &-container {
+            margin: 0 auto;
+            max-width: ($layoutMaxWidth + ($grid-gutter*4));
+            padding: ($grid-gutter) ($grid-gutter*2);
+        }
+    }
+}
