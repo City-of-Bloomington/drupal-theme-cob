@@ -13,14 +13,6 @@
             }
         }
     }
-    &News {
-        @include grid-6col();
-        position: relative;
-    }
-    &Events {
-        @include grid-6col();
-        position: relative;
-    }
     @media screen and (min-width: $viewport-medium) {
         &Header {
             padding-top: 1rem;
@@ -30,9 +22,6 @@
                 padding-left: $grid-gutter;
                 padding-right: $grid-gutter;
             }
-        }
-        &News, &Events {
-            padding-bottom: 3rem;
         }
     }
     @import 'home/_announcements';

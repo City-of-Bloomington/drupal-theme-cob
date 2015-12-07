@@ -124,7 +124,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
     </section>
     <section class="cob-homeAnnouncements">
         <div class="cob-homeAnnouncements-container">
-            <div class="cob-homeNews">
+            <div class="cob-homeAnnouncements-news">
                 <h2 class="cob-homeAnnouncements-heading">Latest Updates</h2>
                 <?php
                     $news = cob_recent_nodes('news_release');
@@ -140,12 +140,14 @@ include __DIR__.'/partials/siteAdminBar.inc';
                     echo l('City Newsroom', 'newsroom');
                 ?>
             </div>
-            <?php
-                cob_include('upcomingEvents', [
-                    'type'       => 'board_commission',
-                    'calendarId' => 'bloomington.in.gov_35a6qiaiperdn7b1r6v2ksjlig@group.calendar.google.com'
-                ]);
-            ?>
+            <div class="cob-homeAnnouncements-events">
+                <?php
+                    cob_include('upcomingEvents', [
+                        'type'       => 'board_commission',
+                        'calendarId' => 'bloomington.in.gov_35a6qiaiperdn7b1r6v2ksjlig@group.calendar.google.com'
+                    ]);
+                ?>
+            </div>
         </div>
     </section>
 </main>
