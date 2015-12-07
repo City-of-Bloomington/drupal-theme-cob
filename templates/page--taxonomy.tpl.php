@@ -100,7 +100,7 @@ include __DIR__.'/partials/homeHeader.inc';
                 $i = 1;
                 foreach ($ancestors as $t) {
                     if($i < $count) {
-                        echo l($t->name, 'term/'.$t->tid);
+                        echo l($t->name, 'taxonomy/term/'.$t->tid);
                     } else {
                         echo "<span>$t->name</span>";
                     }
