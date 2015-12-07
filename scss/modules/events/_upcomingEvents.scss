@@ -69,7 +69,7 @@
     }
     @media screen and (min-width: $viewport-medium) {
         box-sizing: border-box;
-        padding: 0 0 ($grid-gutter) ($grid-gutter);
+        padding-bottom: $grid-gutter;
         &-list {
             clear: both;
             padding: 1rem 0;
@@ -110,6 +110,7 @@
         .cob-upcomingEvents {
             float: right;
             margin: 0 (-100%*2/10) 0 ($grid-gutter); // <- Two child grid columns in a ten column parent
+            padding-left: $grid-gutter;
             width: (100%*6/10); // <- Six child columns inside a ten column parent
         }
     }

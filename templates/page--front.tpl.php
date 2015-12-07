@@ -141,6 +141,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 ?>
             </div>
             <div class="cob-homeAnnouncements-events">
+                <h2 class="cob-homeAnnouncements-heading">Upcoming Events</h2>
                 <?php
                     cob_include('upcomingEvents', [
                         'type'       => 'board_commission',
