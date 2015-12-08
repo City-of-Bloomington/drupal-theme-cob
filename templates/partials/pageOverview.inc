@@ -121,7 +121,7 @@
                 </div>
                 <?php
                     if (!empty($content['field_call_to_action'])) { echo render($content['field_call_to_action']); }
-                    if (!empty($content['field_attachment'    ])) { echo render($content['field_attachment'    ]); }
+                    if (!empty($content['field_attachments'   ])) { echo render($content['field_attachments'   ]); }
                 ?>
             </div>
         </div>
