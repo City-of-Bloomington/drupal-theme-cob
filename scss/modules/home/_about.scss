@@ -1,0 +1,70 @@
+&About {
+    background: $cob-cornflower-dark url('../images/home/home-aboutBtown-map.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    &-container {
+        @include container();
+    }
+    &-heading {
+        @include grid-12col();
+        color: #fff;
+        font-size: (20rem/16);
+        text-align: center;
+    }
+    &-text {
+        background-color: rgba(0, 41, 76, .63); // $cob-cornflower-dark plus .63 opacity
+        box-sizing: border-box;
+        color: #fff;
+        font-size: (13rem/16);
+        margin: 0 1rem;
+        padding: 1rem;
+
+        &:before {
+            display: none;
+        }
+    }
+    @media screen and (min-width: $viewport-small) {
+        &-heading {
+            font-size: (22rem/16);
+        }
+    }
+    @media screen and (min-width: $viewport-medium) {
+        &-container {
+            position: relative;
+        }
+        &-heading {
+            font-size: (30rem/16);
+            margin: 3rem 0 0 0;
+        }
+        &-text {
+            float: left;
+            font-size: (14rem/16);
+            margin: 2rem $grid-gutter 4rem (100%*3/12);
+            padding: 2rem (100%*1/12);
+            &:before {
+                background: url('../images/home/indiana-outline.svg') no-repeat 50% 50%;
+                background-size: contain;
+                box-sizing: border-box;
+                content: '';
+                display: block;
+                float: left;
+                padding: 0 $grid-gutter;
+                position: absolute;
+                    top: 8rem;
+                    bottom: 2rem;
+                    left: 0;
+                width: (100%*3/12);
+            }
+        }
+    }
+    @media screen and (min-width: $viewport-large) {
+        &-heading {
+            font-size: (44rem/16);
+        }
+        &-text {
+            margin-left: (100%*4/12);
+            &:before {
+                width: (100%*4/12);
+            }
+        }
+    }
+}

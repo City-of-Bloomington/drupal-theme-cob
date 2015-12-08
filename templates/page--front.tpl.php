@@ -125,7 +125,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
     <section class="cob-homeAnnouncements">
         <div class="cob-homeAnnouncements-container">
             <div class="cob-homeAnnouncements-news">
-                <h2 class="cob-homeAnnouncements-heading">Latest Updates</h2>
+                <h2 class="cob-homeAnnouncements-heading">News Releases</h2>
                 <?php
                     $news = cob_recent_nodes('news_release');
                     foreach ($news as $n) {
@@ -148,6 +148,15 @@ include __DIR__.'/partials/siteAdminBar.inc';
                         'calendarId' => 'bloomington.in.gov_35a6qiaiperdn7b1r6v2ksjlig@group.calendar.google.com'
                     ]);
                 ?>
+            </div>
+        </div>
+    </section>
+    <section class="cob-homeAbout">
+        <div class="cob-homeAbout-container">
+            <h1 class="cob-homeAbout-heading">A great place to live, work, and learn.</h1>
+            <div class="cob-homeAbout-text">
+                <p>Nestled in the rolling hills of southern Indiana, Bloomington is a loved city that boasts spectacular scenery, world-class educational institutions and unique shopping and dining experiences. Bloomington is a great place to live, work and play. Its unique character and friendly and safe environment are matched by few communities in the nation.</p>
+                <p>While you're in Bloomington be sure to experience the city's character and all its sights, sounds and tastes. From shopping and museums to biking and art exhibitions, the activities available for all to enjoy are endless.</p>
             </div>
         </div>
     </section>
