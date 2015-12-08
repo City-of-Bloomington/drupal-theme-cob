@@ -58,7 +58,7 @@ $external_term_links = [
             }
         }
 
-        // Lookup RecTrac types and add them, as content nodes, to the current term listing.
+        // Lookup RecTrac types and add them to the current term listing.
         if (!empty( $data['term']->field_rectrac_category)) {
             $types = cob_rectrac_types($data['term']->field_rectrac_category['und'][0]['value']);
             foreach ($types as $t) {
@@ -81,6 +81,19 @@ $external_term_links = [
                 ";
             }
         }
+
+        // Merge in child terms for the current taxonomy term
+        $children = taxonomy_get_children($tid);
+        foreach ($children as $t) {
+            $link = l($t->name, 'taxonomy/term/'.$t->tid);
+            $items[$t->name] = "
+                <article class=\"\">
+                    <h1>$link</h1>
+                    <p>{$t->description}</p>
+                </article>
+            ";
+        }
+
         ksort($items);
         foreach ($items as $html) { echo $html; }
     ?>

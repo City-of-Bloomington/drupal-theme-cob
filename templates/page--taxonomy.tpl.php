@@ -114,13 +114,24 @@ include __DIR__.'/partials/homeHeader.inc';
         <div     class="cob-portalSidebar" id="taxonomy-term-<?= $term->tid ?>">
             <nav class="cob-portalSidebar-nav">
                 <?php
-                    $children = taxonomy_get_children($term->tid);
-                    foreach ($children as $child) {
+                    if (isset($term->parent)) {
+                        $siblings = taxonomy_get_children($term->parent->tid);
+                    }
+                    else {
+                        $categories = taxonomy_vocabulary_machine_name_load('categories');
+                        $siblings   = taxonomy_get_tree($categories->vid, 0, 1);
+                    }
+
+
+                    foreach ($siblings as $t) {
                         $options = ['html'=>true];
+                        if ($term->tid === $t->tid) {
+                            $options['attributes'] = ['class'=>['current']];
+                        }
 
                         echo l(
-                            "<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
-                            'taxonomy/term/'.$child->tid,
+                            "<span class=\"title\">{$t->name}</span><span class=\"description\">{$t->description}</span>",
+                            'taxonomy/term/'.$t->tid,
                             $options
                         );
                     }
