@@ -41,7 +41,7 @@
             padding: 2rem (100%*1/12);
             &:before {
                 background: url('../images/home/indiana-outline.svg') no-repeat 50% 50%;
-                background-size: 70% 70%;
+                background-size: 70% auto;
                 box-sizing: border-box;
                 content: '';
                 display: block;
