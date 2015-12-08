@@ -153,7 +153,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
     </section>
     <section class="cob-homeAbout">
         <div class="cob-homeAbout-container">
-            <h1 class="cob-homeAbout-heading">A great place to live, work, and learn.</h1>
+            <h1 class="cob-homeAbout-heading">A great place to live, work, and&nbsp;learn.</h1>
             <div class="cob-homeAbout-text">
                 <p>Nestled in the rolling hills of southern Indiana, Bloomington is a loved city that boasts spectacular scenery, world-class educational institutions and unique shopping and dining experiences. Bloomington is a great place to live, work and play. Its unique character and friendly and safe environment are matched by few communities in the nation.</p>
                 <p>While you're in Bloomington be sure to experience the city's character and all its sights, sounds and tastes. From shopping and museums to biking and art exhibitions, the activities available for all to enjoy are endless.</p>

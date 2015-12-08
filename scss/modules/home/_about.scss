@@ -14,7 +14,7 @@
         background-color: rgba(0, 41, 76, .63); // $cob-cornflower-dark plus .63 opacity
         box-sizing: border-box;
         color: #fff;
-        font-size: (13rem/16);
+        font-size: (14rem/16);
         margin: 0 1rem;
         padding: 1rem;
 
@@ -37,16 +37,16 @@
         }
         &-text {
             float: left;
-            font-size: (14rem/16);
             margin: 2rem $grid-gutter 4rem (100%*3/12);
             padding: 2rem (100%*1/12);
             &:before {
                 background: url('../images/home/indiana-outline.svg') no-repeat 50% 50%;
-                background-size: contain;
+                background-size: 70% 70%;
                 box-sizing: border-box;
                 content: '';
                 display: block;
                 float: left;
+                opacity: .65;
                 padding: 0 $grid-gutter;
                 position: absolute;
                     top: 8rem;
@@ -63,6 +63,7 @@
         &-text {
             margin-left: (100%*4/12);
             &:before {
+                background-size: contain;
                 width: (100%*4/12);
             }
         }
