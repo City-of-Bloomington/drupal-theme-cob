@@ -19,17 +19,29 @@
         h1 {
             font-weight: normal;
             font-size: (24rem/16);
-            line-height: 1.3em;
+            line-height: 1.2em;
             margin: 0 0 (24rem/16) 0;
         }
         h2 {
             font-weight: 300;
             font-size: (36rem/16);
-            line-height: 1.3em;
-            margin: (36rem/16) 0 (24rem/16) 0;
+            line-height: 1.2em;
+            margin: 1em 0 .666em 0;
             &:first-child {
                 margin-top: 0;
             }
+        }
+        h3 {
+            font-weight: 300;
+            font-size: (28rem/16);
+            line-height: 1.2em;
+            margin: 1em 0 .666em 0;
+        }
+        h4 {
+            font-weight: normal;
+            font-size: (20rem/16);
+            line-height: 1.2em;
+            margin: 1.5em 0 .75em 0;
         }
         p {
             font-size: (18rem/16);
