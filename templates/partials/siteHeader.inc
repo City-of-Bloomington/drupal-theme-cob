@@ -10,7 +10,6 @@
     <?php
         if (!empty($page['header_site'])) { echo render($page['header_site']); }
         $ASSETS = variable_get('cob_assets_path');
-        include $ASSETS.'/html/cob-siteHeader-menu.html';
         include $ASSETS.'/html/cob-siteHeader-logo.html';
     ?>
     </div>
