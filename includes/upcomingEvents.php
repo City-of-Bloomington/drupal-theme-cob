@@ -14,7 +14,7 @@ if ($calendar) {
     <section class=\"cob-upcomingEvents\">
         <header class=\"cob-upcomingEvents-header\">
             <h1>$title</h1>
-            <a href=\"$url\">View Google Calendar</a>
+            <a href=\"$url\" target=\"_blank\">View Google Calendar</a>
         </header>
     ";
     if (count($events)) {
@@ -35,7 +35,7 @@ if ($calendar) {
             if ($start->format('Y-m-d') === $end->format('Y-m-d')) {
                 // Event starts and ends on the same day
                 $monthDay = $start->format('F j');
-                $dayTime  = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('G:ia');
+                $dayTime  = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('g:ia');
             }
             else {
                 // Event spans more than one day
@@ -43,7 +43,7 @@ if ($calendar) {
                     ? $start->format('F j').' - '.$end->format('j')
                     : $start->format('F j').' - '.$end->format('F j'); // Event crosses month boundary
 
-                $dayTime = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('D, G:ia');
+                $dayTime = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('D, g:ia');
             }
 
             $location = $e->getLocation();
