@@ -47,6 +47,9 @@
         }
     }
     &-partners {
+        margin: 0;
+        padding: 0;
+
         > h2 {
             @include visuallyHidden();
         }
@@ -120,8 +123,6 @@
         }
         &-partners {
             > ul {
-                margin: 0;
-                padding: 0;
                 > li {
                     &:nth-child(-n+5) {
                         width: (100%*1/5);
