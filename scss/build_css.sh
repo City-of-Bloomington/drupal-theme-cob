@@ -1,2 +1,2 @@
 #!/bin/bash
-sass --style compact main.scss ../css/main.css
+node-sass --output-style compressed --source-map ./ main.scss ../css/main.css
