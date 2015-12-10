@@ -4,6 +4,7 @@
         @include container();
     }
     &-categories {
+        padding: 1rem;
     }
     &-categoryLink {
         display: block;
@@ -28,6 +29,7 @@
         text-transform: uppercase;
     }
     &-topServices {
+        padding: 1rem;
         > a {
             background: rgba(0, 0, 0, .25);
             border-radius: .25rem;
