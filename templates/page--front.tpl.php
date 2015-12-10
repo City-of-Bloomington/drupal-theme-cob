@@ -159,6 +159,55 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 <p>While you're in Bloomington be sure to experience the city's character and all its sights, sounds and tastes. From shopping and museums to biking and art exhibitions, the activities available for all to enjoy are endless.</p>
                 <?= l('About Bloomington', 'about', ['attributes' => ['class' => 'cob-homeAbout-link']] ) ?>
             </div>
+            <div class="cob-homeAbout-partners">
+                <h2>Community Partners</h2>
+                <ul>
+                    <li><a href="http://www.visitbloomington.com/" target="_blank"><img
+                        src="themes/cob/images/home/visitBloomington@1x.png"
+                        srcset="themes/cob/images/home/visitBloomington@1x.png 1x,
+                                themes/cob/images/home/visitBloomington@2x.png 2x"
+                        alt="Visit Bloomington" /></a></li>
+                    <li><a href="http://downtownbloomington.com/" target="_blank"><img
+                        src="themes/cob/images/home/downBtown@1x.png"
+                        srcset="themes/cob/images/home/downBtown@1x.png 1x,
+                                themes/cob/images/home/downBtown@2x.png 2x"
+                        alt="Downtown Bloomington Inc." /></a></li>
+                    <li><a href="http://www.indiana.edu" target="_blank"><img
+                        src="themes/cob/images/home/IU@1x.png"
+                        srcset="themes/cob/images/home/IU@1x.png 1x,
+                                themes/cob/images/home/IU@2x.png 2x"
+                        alt="Indiana University" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/http://www.chamberbloomington.org/"
+                        srcset="themes/cob/images/home/chamber@1x.png 1x,
+                                themes/cob/images/home/chamber@2x.png 2x"
+                        alt="The Greater Bloomington Chamber of Commerce" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/bedc@1x.png"
+                        srcset="themes/cob/images/home/bedc@1x.png 1x,
+                                themes/cob/images/home/bedc@2x.png 2x"
+                        alt="Bloomington Economic Development Corporation" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/localFirst@1x.png"
+                        srcset="themes/cob/images/home/localFirst@1x.png 1x,
+                                themes/cob/images/home/localFirst@2x.png 2x"
+                        alt="" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/monroeCounty@1x.png"
+                        srcset="themes/cob/images/home/monroeCounty@1x.png 1x,
+                                themes/cob/images/home/monroeCounty@2x.png 2x"
+                        alt="" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/communityFoundation@1x.png"
+                        srcset="themes/cob/images/home/communityFoundation@1x.png 1x,
+                                themes/cob/images/home/communityFoundation@2x.png 2x"
+                        alt="" /></a></li>
+                    <li><a href="" target="_blank"><img
+                        src="themes/cob/images/home/bead@1x.png"
+                        srcset="themes/cob/images/home/bead@1x.png 1x,
+                                themes/cob/images/home/bead@2x.png 2x"
+                        alt="" /></a></li>
+            </div>
         </div>
     </section>
 </main>
