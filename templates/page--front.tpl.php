@@ -177,36 +177,36 @@ include __DIR__.'/partials/siteAdminBar.inc';
                         srcset="themes/cob/images/home/IU@1x.png 1x,
                                 themes/cob/images/home/IU@2x.png 2x"
                         alt="Indiana University" /></a></li>
-                    <li><a href="" target="_blank"><img
+                    <li><a href="http://www.chamberbloomington.org/" target="_blank"><img
                         src="themes/cob/images/home/http://www.chamberbloomington.org/"
                         srcset="themes/cob/images/home/chamber@1x.png 1x,
                                 themes/cob/images/home/chamber@2x.png 2x"
                         alt="The Greater Bloomington Chamber of Commerce" /></a></li>
-                    <li><a href="" target="_blank"><img
+                    <li><a href="http://comparebloomington.us/" target="_blank"><img
                         src="themes/cob/images/home/bedc@1x.png"
                         srcset="themes/cob/images/home/bedc@1x.png 1x,
                                 themes/cob/images/home/bedc@2x.png 2x"
                         alt="Bloomington Economic Development Corporation" /></a></li>
-                    <li><a href="" target="_blank"><img
+                    <li><a href="http://localfirstbloomington.org" target="_blank"><img
                         src="themes/cob/images/home/localFirst@1x.png"
                         srcset="themes/cob/images/home/localFirst@1x.png 1x,
                                 themes/cob/images/home/localFirst@2x.png 2x"
-                        alt="" /></a></li>
-                    <li><a href="" target="_blank"><img
+                        alt="Local First Bloomington" /></a></li>
+                    <li><a href="http://www.co.monroe.in.us/" target="_blank"><img
                         src="themes/cob/images/home/monroeCounty@1x.png"
                         srcset="themes/cob/images/home/monroeCounty@1x.png 1x,
                                 themes/cob/images/home/monroeCounty@2x.png 2x"
-                        alt="" /></a></li>
-                    <li><a href="" target="_blank"><img
+                        alt="Monroe County, Indiana" /></a></li>
+                    <li><a href="http://www.cfbmc.org/" target="_blank"><img
                         src="themes/cob/images/home/communityFoundation@1x.png"
                         srcset="themes/cob/images/home/communityFoundation@1x.png 1x,
                                 themes/cob/images/home/communityFoundation@2x.png 2x"
-                        alt="" /></a></li>
-                    <li><a href="" target="_blank"><img
+                        alt="Community Foundation Monroe County" /></a></li>
+                    <li><a href="http://visitbead.com" target="_blank"><img
                         src="themes/cob/images/home/bead@1x.png"
                         srcset="themes/cob/images/home/bead@1x.png 1x,
                                 themes/cob/images/home/bead@2x.png 2x"
-                        alt="" /></a></li>
+                        alt="Bloomington Entertainment and Arts District" /></a></li>
             </div>
         </div>
     </section>
