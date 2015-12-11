@@ -6,25 +6,25 @@
  */
 function cob_preprocess_html(&$vars)
 {
-	#$p = $_SERVER['SERVER_PORT']==443 ? 'https' : 'http';
-	#drupal_add_css("$p://$_SERVER[SERVER_NAME]/Font-Awesome/css/font-awesome.css", ['type'=>'external']);
+    #$p = $_SERVER['SERVER_PORT']==443 ? 'https' : 'http';
+    #drupal_add_css("$p://$_SERVER[SERVER_NAME]/Font-Awesome/css/font-awesome.css", ['type'=>'external']);
 }
 
 function cob_preprocess_page(&$vars)
 {
-	if (arg(0) == 'node') {
-		$nid = arg(1);
+    if (arg(0) == 'node') {
+        $nid = arg(1);
 
-		if (isset(   $vars['page']['content']['system_main']['nodes'][$nid])) {
-			$node = &$vars['page']['content']['system_main']['nodes'][$nid];
-			$bundle = &$node['#bundle'];
+        if (isset(   $vars['page']['content']['system_main']['nodes'][$nid])) {
+            $node = &$vars['page']['content']['system_main']['nodes'][$nid];
+            $bundle = &$node['#bundle'];
             if (isset($node['#node']->book)) {
                 $vars['bookInfo'] = cob_book_info($node['#node']->book);
             }
-		}
+        }
 
-	}
-	elseif (arg(0) == 'taxonomy') {
+    }
+    elseif (arg(0) == 'taxonomy') {
         $t = &$vars['page']['content']['system_main']['term_heading']['term']['#term'];
         $parents = taxonomy_get_parents($t->tid);
         if (count($parents)) {
@@ -40,11 +40,11 @@ function cob_preprocess_node(&$vars)
     $vars['safe_summary'] = !empty($vars['body'][0]['safe_summary']) ? $vars['body'][0]['safe_summary'] : '';
 
     $vars['news_releases']      = cob_node_references($vars, 'news_release',     false, 'chronological', 2);
-	$vars['boards_commissions'] = cob_node_references($vars, 'board_commission', false, 'alphabetical');
+    $vars['boards_commissions'] = cob_node_references($vars, 'board_commission', false, 'alphabetical');
 
-	if (!empty($vars['field_directory_dn'][0]['value'])) { $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']); }
-	if (!empty($vars['field_directory_cn'][0]['value'])) { $vars['contactInfo'] = cob_person_info    ($vars['field_directory_cn'][0]['value']); }
-	if (!empty($vars['field_committee'][0]['value'])) {
+    if (!empty($vars['field_directory_dn'][0]['value'])) { $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']); }
+    if (!empty($vars['field_directory_cn'][0]['value'])) { $vars['contactInfo'] = cob_person_info    ($vars['field_directory_cn'][0]['value']); }
+    if (!empty($vars['field_committee'][0]['value'])) {
         $vars['committee'] = civiclegislation_committee_info($vars['field_committee'][0]['value']);
         $vars['contactInfo'] = (object)[
             'name'    => $vars['committee']->info->name,
@@ -55,21 +55,21 @@ function cob_preprocess_node(&$vars)
             'state'   => $vars['committee']->info->state,
             'zip'     => $vars['committee']->info->zip
         ];
-	}
+    }
 }
 
 /**
  * Override of theme_breadcrumb().
  */
 function cob_breadcrumb($variables) {
-	$breadcrumb = $variables['breadcrumb'];
+    $breadcrumb = $variables['breadcrumb'];
 
-	array_shift($breadcrumb); // Remove the Home link
+    array_shift($breadcrumb); // Remove the Home link
 
-	if (!empty($breadcrumb)) {
-		$output = '<div class="breadcrumb">' . implode('', $breadcrumb) . '</div>';
-		return $output;
-	}
+    if (!empty($breadcrumb)) {
+        $output = '<div class="breadcrumb">' . implode('', $breadcrumb) . '</div>';
+        return $output;
+    }
 }
 
 /**
@@ -85,7 +85,7 @@ function cob_breadcrumb($variables) {
  */
 function cob_include($name, array $data=null)
 {
-	include __DIR__."/includes/$name.php";
+    include __DIR__."/includes/$name.php";
 }
 
 
@@ -99,27 +99,25 @@ function cob_include($name, array $data=null)
  * @see https://api.drupal.org/api/drupal/modules!system!system.api.php/function/hook_form_alter/7
  */
 function cob_form_alter(&$form, &$form_state, $form_id) {
-	if ($form_id == 'search_block_form') {
+    if ($form_id == 'search_block_form') {
         // https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7
         $form['search_block_form']['#title_display'] = 'before';
-		$form['search_block_form']['#title'] = 'How can we help you today?';
-		$form['search_block_form']['#attributes']['placeholder'] = 'Search Bloomington.in.gov';
-	}
+        $form['search_block_form']['#title'] = 'How can we help you today?';
+        $form['search_block_form']['#attributes']['placeholder'] = 'Search Bloomington.in.gov';
+    }
 }
 
-function cob_footer_links($tid) {
-	$categories = taxonomy_get_children($tid);
-	echo '<ul>';
-	foreach ($categories as $category) {
-		echo '<li>';
-		echo l(
-#			"<span class=\"title\">{$child->name}</span><span class=\"description\">{$child->description}</span>",
-			$category->name,
-			'taxonomy/term/'.$category->tid
-#			$options
-		);
-		echo '</li>';
-	}
-	echo '</ul>';
-
+function cob_footer_links() {
+    $categories = taxonomy_vocabulary_machine_name_load('categories');
+    echo '<h1>Services Directory</h1>';
+    echo '<ul>';
+    foreach (taxonomy_get_tree($categories->vid, 0, 1) as $t) {
+        echo '<li>';
+        echo l(
+            $t->name,
+            'taxonomy/term/'.$t->tid
+        );
+        echo '</li>';
+    }
+    echo '</ul>';
 }

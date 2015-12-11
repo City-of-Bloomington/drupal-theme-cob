@@ -6,20 +6,21 @@
  */
 ?>
 <footer class="cob-siteFooter">
-    <div class="cob-siteFooter-sitemap">
-        <h1>Navigate this site</h1>
-        <div class="cob-siteFooter-sitemap-container">
-            <div class="cob-siteFooter-sitemap-region">
-                <p>This site is still a work in progress. You can help identify opportunities for improvement!</p>
-                <a href="https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform" class="cob-btn-cta">Send feedback</a>
-                <?php
-                    echo render($page['footer']);
-                ?>
-            </div>
+    <div class="cob-siteFooter-container">
+        <div class="cob-siteFooter-sitemap">
+            <?= cob_footer_links() ?>
+        </div>
+        <div class="cob-siteFooter-alphaNotice">
+            <h1>Public Alpha Website</h1>
+            <p>This site is still a work in progress. You can help us make it better!</p>
+            <a href="https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform" class="cob-btn-cta">Send feedback</a>
+            <?php
+                echo render($page['footer']);
+            ?>
         </div>
     </div>
     <div class="cob-siteFooter-details">
-        <div class="cob-siteFooter-details-container">
+        <div class="cob-siteFooter-container">
             <nav class="cob-siteFooter-legalNav">
                 <a href="/alpha/accessibility">Accessibility</a>
                 <a href="/alpha/privacy">Privacy</a>
