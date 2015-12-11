@@ -9,43 +9,55 @@
 
     &-container {
         @include container();
-        > label {
-            color: #fff;
-            display: block;
-            font-family: $font-headings;
-            font-size: 2rem;
-            font-weight: 300;
+        padding: 2rem 0;
+        text-align: center;
+    }
+    &-search {
+        display: inline-block;
+        position: relative;
+        .form-item-search-block-form {
+            margin: 0;
+            > label {
+                font-weight: normal;
+            }
+            > input {
+                margin: 0 3em 0 0;
+            }
+        }
+        .form-actions {
+            margin: 0;
         }
     }
     @media screen and (min-width: $viewport-small) {
     }
     @media screen and (min-width: $viewport-medium) {
         &-search {
+            font-size: (18rem/16);
+            margin: 0;
+            padding: 0;
             text-align: center;
-            form {
+            .form-item-search-block-form {
                 margin: 0;
                 padding: 0;
 
-                .form-item {
-                    font-size: (20rem/16);
-                    margin: 3rem 0;
-                    padding: .75em;
-                    background-size: 1.5em;
-
-                    > label {
-                        font-family: $font-headings;
-                        font-size: (30rem/16);
-                        font-weight: 300;
-                        margin: 0 0 .5em;
-                    }
-                    > input {
-                        color: $cob-gray-darkest;
-                        font-size: (18rem/16);
-                        padding: .666em 1.5em .666em 1em;
-                        width: 50%; // 6 out of 12 columns
-                    }
+                > label {
+                    font-family: $font-headings;
+                    font-size: (30rem/16);
+                    font-weight: 300;
+                    margin: 0 0 .5em;
                 }
-                .form-actions { }
+                > input {
+                    color: $cob-gray-darkest;
+                    margin: 0 4em 0 0;
+                    padding: .666em 1.5em .666em 1em;
+                    width: 20em;
+                }
+            }
+            .form-actions {
+                > input {
+                    height: 2.7em;
+                    width: 4em;
+                }
             }
         }
     }

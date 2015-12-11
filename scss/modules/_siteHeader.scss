@@ -12,10 +12,6 @@
         &-search {
             float: right;
             width: 17em;
-
-            > input {
-                padding: .25em;
-            }
         }
     }
     @media screen and (min-width: $viewport-large) {
