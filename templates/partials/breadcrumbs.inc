@@ -16,6 +16,7 @@ if (!empty($bookInfo->field_category_tid)) {
 
 if ($tid) {
     echo '<nav class="breadcrumbs">';
+    echo l('Home', '/');
     $crumbs = array_reverse(taxonomy_get_parents_all($tid));
     foreach ($crumbs as $term) {
         echo l($term->name, 'taxonomy/term/'.$term->tid);

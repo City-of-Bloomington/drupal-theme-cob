@@ -93,6 +93,7 @@ include __DIR__.'/partials/homeHeader.inc';
         ?>
         <h1 class="cob-portalHeader-title"><?= $title ?></h1>
         <nav class="cob-portalHeader-breadcrumbs">
+            <?= l('Home', '/'); ?>
             <?php
                 $ancestors = array_reverse(taxonomy_get_parents_all($term->tid));
                 $count = count($ancestors);
