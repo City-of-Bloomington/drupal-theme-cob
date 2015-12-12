@@ -26,11 +26,17 @@
         }
         .form-actions {
             margin: 0;
+            > input {
+                height: 1.89em;
+            }
         }
     }
     @media screen and (min-width: $viewport-small) {
     }
     @media screen and (min-width: $viewport-medium) {
+        &-container {
+            padding: 4rem 0;
+        }
         &-search {
             font-size: (18rem/16);
             margin: 0;
@@ -55,6 +61,7 @@
             }
             .form-actions {
                 > input {
+                    background-size: auto 60%;
                     height: 2.7em;
                     width: 4em;
                 }

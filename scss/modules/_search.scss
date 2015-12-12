@@ -2,7 +2,7 @@
     position: relative;
 }
 .form-item-search-block-form {
-    > input {
+    > .form-text {
         border: 1px solid $cob-gray-dark;
         border-radius: .5em 0 0 .5em;
         box-sizing: border-box;
@@ -26,6 +26,7 @@
             border: 1px solid $cob-green;
             border-radius: 0 .5em .5em 0;
             color: #fff;
+            height: (27em/16);
             overflow: hidden;
             text-indent: -100em;
             width: 3em;

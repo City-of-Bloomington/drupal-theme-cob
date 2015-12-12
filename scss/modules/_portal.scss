@@ -65,26 +65,44 @@
         &-container {
             @include container();
             @include clearfix();
+            position: relative;
             vertical-align:middle;
         }
         form {
             @include grid-12col();
             margin-top:.3em;
+            position: relative;
+        }
+        .form-item-search-block-form {
+            margin: 0;
+            min-height: 2rem;
 
-            label {
+            > label {
                 color: #fff;
+                display: block;
                 font-family: $font-headings;
-                font-weight: 300;
-                font-size: (28rem/16);
-                display:inline;
+                font-weight: 400;
+                font-size: (18rem/16);
+                padding: 0 0 2.5em 0;
+                text-align: center;
             }
-            .form-text {
+            > .form-text {
                 box-sizing: border-box;
                 padding-top: (7em/16);
                 padding-bottom: (7em/16);
+                position: absolute;
+                    right: 3em;
+                    bottom: 0;
+//                        left: 0;
+                width: 85%;
             }
-            .form-item {  }
-            .form-actions { }
+            > .form-item {  }
+            + .form-actions {
+                margin: 0;
+                input {
+                    height: 2.25em;
+                }
+            }
         }
     }
     &Sidebar {
@@ -125,6 +143,7 @@
     @media screen and (min-width: $viewport-medium){
         &Content {
             border-left: (1rem/16) solid $cob-blue;
+            margin-left: -(1rem/16);
             padding-top: 1rem;
 
             &-heading {
@@ -146,12 +165,32 @@
                 }
             }
         }
+        &Search {
+            .form-item-search-block-form {
+                > label {
+                    display: inline-block;
+                    padding: .5em 0 0 0;
+                    text-align: left;
+                }
+                > .form-text {
+                        bottom: inherit;
+                        left: 18em;
+                    width: 17.25em;
+                }
+                + .form-actions {
+                    right: inherit;
+                    left: 35em;
+                    bottom: -2px;
+                }
+            }
+        }
         &Main {
             &-container {
                 margin-top: 1rem;
             }
         }
         &Sidebar {
+            border-right: (1rem/16) solid $cob-blue;
             display: block;
             padding-top: 1rem;
         }
@@ -168,13 +207,13 @@
         }
         &Search {
             &-container {
-                label {
-                    display: inline-block;
-                    width: (5%/12*100);
-                }
-                .form-text {
-                    margin-left: 1rem;
-                    width: (7%/12*100);
+                .form-item-search-block-form {
+                    > .form-text {
+                        width: 27.25em;
+                    }
+                    + .form-actions {
+                        left: 45em;
+                    }
                 }
             }
         }
@@ -184,11 +223,8 @@
             &-nav {
                 > a {
                     > .title {
-//                        font-size: (18rem/16);
                     }
                     > .description {
-//                        font-size: (12rem/16);
-//                        line-height: 1.35em;
                     }
                 }
 
