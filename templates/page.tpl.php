@@ -73,11 +73,12 @@
 include __DIR__.'/partials/siteHeader.inc';
 ?>
 <?php
+    $pageView = views_get_page_view();
     $modifier_class = '';
     if (isset($node) && $node->type == 'news_release') {
         $modifier_class = 'mod-pressRelease';
     }
-    if (!empty($node->field_cover_image) || !empty($node->field_page_header_image)) {
+    if (!empty($node->field_cover_image) || !empty($node->field_page_header_image) || !empty($pageView) || $node->type == 'news_release') {
         echo '<style type="text/css">';
         if (!empty($node->field_cover_image)) {
             $cover = mediamanager_field_url($node->field_cover_image, 'Cover');
@@ -93,6 +94,26 @@ include __DIR__.'/partials/siteHeader.inc';
                 .cob-pageHeader-container:before { background-image:url('$a1'); }
                 @media screen and (min-resolution: 2dppx) {
                     .cob-pageHeader-container:before { background-image:url('$a2'); }
+                }
+            ";
+        }
+        if ((!empty($pageView) && $pageView->human_name == 'Newsroom') || (!empty($node) && $node->type == 'news_release')) {
+            $variant = 'room';
+            $themePath = $base_path.drupal_get_path('theme', 'cob');
+            if (!empty($node->created)) {
+                $old   = strtotime('-30 days');
+                if ($node->created < $old) {
+                    $variant = 'Archive';
+                }
+            }
+            $cover     = "$themePath/css/news$variant-banner.jpg";
+            $lowRes    = "$themePath/css/news$variant-header-image@1x.png";
+            $hiRes     = "$themePath/css/news$variant-header-image@2x.png";
+            echo "
+                .cob-pageHeader { background-image:url('$cover'); }
+                .cob-pageHeader-container:before { background-image:url('$lowRes'); }
+                @media screen and (min-resolution: 2dppx) {
+                    .cob-pageHeader-container:before { background-image:url('$hiRes'); }
                 }
             ";
         }

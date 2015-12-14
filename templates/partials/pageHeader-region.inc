@@ -6,6 +6,12 @@
  */
 if (isset($node->type) && $node->type == 'news_release') {
     $title = 'News Release';
+    if (!empty($node->created)) {
+        $old   = strtotime('-30 days');
+        if ($node->created < $old) {
+            $title = 'News Archive';
+        }
+    }
 }
 elseif (!empty($bookInfo->title)) {
     $title = $bookInfo->title;
