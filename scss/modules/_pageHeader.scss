@@ -2,6 +2,19 @@
     background: url('photo-header-showers.jpg') no-repeat 50% 50% $cob-blue;
     background-size: cover;
 
+    a {
+        color: #fff;
+        display: inline-block;
+        font-family: $font-headings;
+        text-transform: uppercase;
+
+        &.current {
+            border-bottom: .333em solid $cob-cornflower-lightest;
+            color: $cob-cornflower-lightest;
+            padding-bottom: .444em;
+        }
+    }
+
     &-container {
         @include container();
         margin-top: 0;
@@ -30,14 +43,10 @@
                 text-align: center;
 
                 > a {
-                    color: #fff;
-                    display: inline-block;
-                    font-family: $font-headings;
                     font-size: (12rem/16);
                     letter-spacing: .2em;
                     margin: 0 2em 0 0;
                     position: relative;
-                    text-transform: uppercase;
 
                     &:after {
                         content: ' >';
@@ -62,25 +71,16 @@
             text-align: center;
 
             > a {
-                color: #fff;
-                display: inline-block;
-                font-family: $font-headings;
                 font-weight: 300;
                 font-size: (1em);
                 line-height: 1.3em;
                 margin: 0 .5em 0 0;
                 padding: 1em .555em .777em;
-                text-transform: uppercase;
 
                 &:hover {
                     text-decoration: none;
                 }
 
-                &.cob-ext-current {
-                    border-bottom: .333em solid $cob-cornflower-lightest;
-                    color: $cob-cornflower-lightest;
-                    padding-bottom: .444em;
-                }
             }
         }
     }

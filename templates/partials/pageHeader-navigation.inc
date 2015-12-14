@@ -5,25 +5,29 @@
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
 if (   !empty($node->field_civiclegislation_links)
+    || !empty($node->field_cmisro_listing)
     || !empty($node->book['bid'])) {
-    $class_current = ['attributes'=>['class'=>['cob-ext-current']]];
+
+    $class_current = ['attributes' => ['class' => ['current']]];
+    $attr = (count(explode('/', current_path())) === 2) ? $class_current : [];
+
     echo "
     <div     class=\"cob-pageHeader-navigation\">
         <nav class=\"cob-pageHeader-navigation-container\">
     ";
-        if (!empty($node->field_civiclegislation_links['und'][0]['folder'])) {
-            $p    = current_path();
-            $attr = count(explode('/', $p))==2 ? $class_current : [];
-            echo l('About', "node/{$node->nid}", $attr);
+    echo l('About', "node/{$node->nid}", $attr);
 
-            foreach (field_get_items ('node', $node, 'field_civiclegislation_links') as $item) {
-                $f = field_view_value('node', $node, 'field_civiclegislation_links', $item);
+    foreach (['field_civiclegislation_links', 'field_cmisro_listing'] as $field) {
+        if (!empty($node->$field)) {
+            foreach (field_get_items ('node', $node, $field) as $item) {
+                $f = field_view_value('node', $node, $field, $item);
                 echo render($f);
             }
         }
-        else {
-            echo theme('book_navigation', ['book_link' => $node->book]);
-        }
+    }
+    if (!empty($node->book['bid'])) {
+        echo theme('book_navigation', ['book_link' => $node->book]);
+    }
     echo "
         </nav>
     </div>

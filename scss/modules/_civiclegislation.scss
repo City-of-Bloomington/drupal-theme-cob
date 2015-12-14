@@ -1,35 +1,34 @@
-.cl {
-    &-container {
-        @include container();
-        padding-top: 2em;
+.civiclegislation.container, .cmisro.container {
+    @include container();
+    padding-top: 2em;
 
-        > h3:first-child {
-            @include visuallyHidden();
-        }
-        > nav {
-            @include grid-2col();
+    > h1:first-child {
+        @include visuallyHidden();
+    }
+    > nav {
+        @include grid-2col();
 
-            > a {
-                font-size: 2.5em;
-                line-height: 1em;
-                margin: 0 0 .35em 0;
+        > a {
+            font-size: 2.5em;
+            line-height: 1em;
+            margin: 0 0 .35em 0;
 
-                &.current {
-                    font-size: 3em;
-                }
-            }
-        }
-        @media screen and (min-width: $viewport-medium){
-            > nav {
-                > a {
-                    clear: right;
-                    display: block;
-                    float: right;
-                }
+            &.current {
+                font-size: 3em;
             }
         }
     }
-    &-listing {
+    @media screen and (min-width: $viewport-medium) {
+        > nav {
+            > a {
+                clear: right;
+                display: block;
+                float: right;
+            }
+        }
+    }
+
+    .listing {
         @include grid-10col();
 
         > dl {
@@ -47,19 +46,19 @@
                     border-top: .25rem solid $cob-blue;
                     margin-top: 0;
                 }
- 
+
                 > time {
                 font-size: 1.5rem;
                 line-height: 2rem;
                 vertical-align: middle;
                 white-space: nowrap;
-                    > .cl-month {
+                    > .month {
                         color: $cob-gray-darkest;
                         margin-right: -.25em;
                         position: relative;
                         z-index: 10;
                     }
-                    > .cl-dayOfMonth {
+                    > .dayOfMonth {
                         color: $cob-gray;
                         font-family: Georgia, "Times New Roman", serif;
                         font-size: 3rem;
