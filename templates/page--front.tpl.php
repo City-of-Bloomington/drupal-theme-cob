@@ -128,16 +128,22 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 <h2 class="cob-homeAnnouncements-heading">News Releases</h2>
                 <?php
                     $news = cob_recent_nodes('news_release');
+                    $linkOptions = [
+                        'attributes' => [
+                            'class' => ['cob-homeAnnouncements-cta']
+                        ]
+                    ];
                     foreach ($news as $n) {
                         $date = format_date($n->created, 'Date Month, Year');
+                        $link = l($n->title, "node/$n->nid");
                         echo "
                         <article class=\"cob-mainText\">
                             <time>$date</time>
-                            <h1>{$n->title}</h1>
+                            <h1>$link</h1>
                         </article>
                         ";
                     }
-                    echo l('City Newsroom', 'newsroom');
+                    echo l('City Newsroom', 'newsroom', $linkOptions);
                 ?>
             </div>
             <div class="cob-homeAnnouncements-events">
@@ -154,6 +160,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
                     <time>January 1</time>
                     <h1>New Year&rsquo;s Day</h1>
                 </article>
+                <?= l('City Events Calendar', 'calendar', $linkOptions) ?>
             </div>
         </div>
     </section>

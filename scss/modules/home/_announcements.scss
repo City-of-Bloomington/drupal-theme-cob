@@ -19,6 +19,9 @@
         @include grid-6col();
         position: relative;
     }
+    &-cta {
+        @include forwardLink();
+    }
     .cob-mainText {
         > h1 {
             font-size: 1rem;
