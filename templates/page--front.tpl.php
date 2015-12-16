@@ -147,20 +147,12 @@ include __DIR__.'/partials/siteAdminBar.inc';
                 ?>
             </div>
             <div class="cob-homeAnnouncements-events">
-                <h2 class="cob-homeAnnouncements-heading">Upcoming Events</h2>
-                <article class="cob-mainText">
-                    <time>December 24</time>
-                    <h1>Christmas Eve</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>December 25</time>
-                    <h1>Christmas Day</h1>
-                </article>
-                <article class="cob-mainText">
-                    <time>January 1</time>
-                    <h1>New Year&rsquo;s Day</h1>
-                </article>
-                <?= l('City Events Calendar', 'calendar', $linkOptions) ?>
+                <?php
+                    cob_include('upcomingEvents--front', [
+                        'type' => 'something',
+                        'calendarId' => 'bloomington.in.gov_35a6qiaiperdn7b1r6v2ksjlig@group.calendar.google.com'
+                    ]);
+                ?>
             </div>
         </div>
     </section>
