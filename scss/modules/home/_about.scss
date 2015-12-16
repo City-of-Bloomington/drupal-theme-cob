@@ -1,6 +1,20 @@
 &About {
     background: $cob-cornflower-dark url('../images/home/home-aboutBtown-map.jpg') 50% 50% no-repeat;
     background-size: cover;
+    position: relative;
+
+    &-attribution {
+        background: $cob-cornflower-darkest;
+        font-size: (12rem/16);
+        position: absolute;
+            right: 1rem;
+            bottom: 0;
+        > a {
+            color: $cob-cornflower-light;
+            display: inline-block;
+            padding: .25em .5em;
+        }
+    }
     &-container {
         @include container();
     }

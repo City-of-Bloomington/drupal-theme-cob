@@ -222,6 +222,7 @@ include __DIR__.'/partials/siteAdminBar.inc';
                         alt="Bloomington Entertainment and Arts District" /></a></li>
             </div>
         </div>
+        <div class="cob-homeAbout-attribution"><a href="http://www.openstreetmap.org/copyright" target="_blank">Map tiles &copy; OpenStreetMap contributors</a></div>
     </section>
 </main>
 
