@@ -25,6 +25,9 @@ if ($calendar) {
                 $allDay = true;
                 $start = new \DateTime($e->start->date);
                 $end   = new \DateTime($e->end  ->date);
+                // End day always returns the day following the end of the event,
+                // so to make this human readable, we subtract one day from the end date.
+                $end   ->modify('-1 day');
             }
 
             if ($start->format('Y-m-d') === $end->format('Y-m-d')) {
@@ -35,8 +38,8 @@ if ($calendar) {
             else {
                 // Event spans more than one day
                 $monthDay = ($start->format('m') === $end->format('m'))
-                    ? $start->format('F j').' - '.$end->format('j')
-                    : $start->format('F j').' - '.$end->format('F j'); // Event crosses month boundary
+                    ? $start->format('F j').'&ndash;'.$end->format('j')
+                    : $start->format('F j').'&ndash;'.$end->format('F j'); // Event crosses month boundary
 
                 $dayTime = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('D, g:ia');
             }
@@ -51,6 +54,10 @@ if ($calendar) {
             echo '</article>';
         }
     }
-    $url   = cob_calendar_url($data['calendarId']);
-    echo "<a href=\"$url\" target=\"_blank\" class=\"cob-homeAnnouncements-cta\">View Google Calendar</a>";
+    $linkOpts = [
+        'attributes' => [
+            'class' => 'cob-homeAnnouncements-cta'
+        ]
+    ];
+    echo l('View City Calendar', 'calendar', $linkOpts);
 }
