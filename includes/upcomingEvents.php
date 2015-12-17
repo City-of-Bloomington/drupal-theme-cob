@@ -7,8 +7,12 @@
 $service  = cob_calendar_service();
 $calendar = $service->calendars->get($data['calendarId']);
 $events   = cob_calendar_events($data['calendarId'], new \DateTime(), null, true, 4);
+/*echo '<pre>';
+print_r($events);
+echo '</pre>';
+*/
 if ($calendar) {
-    $title = $data['type'] == 'board_commission' ? 'Meetings' : $calendar->summary;
+    $title = $data['type'] == 'board_commission' ? 'Meeting Schedule' : $calendar->summary;
     $url   = cob_calendar_url($data['calendarId']);
     echo "
     <section class=\"cob-upcomingEvents\">
@@ -34,7 +38,7 @@ if ($calendar) {
 
             if ($start->format('Y-m-d') === $end->format('Y-m-d')) {
                 // Event starts and ends on the same day
-                $monthDay = $start->format('F j');
+                $monthDay = $start->format('n/j');
                 $dayTime  = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('g:ia');
             }
             else {
@@ -45,13 +49,16 @@ if ($calendar) {
 
                 $dayTime = $allDay ? '' : $start->format('D, g:ia').'&ndash;'.$end->format('D, g:ia');
             }
-
+            if (!empty($monthDay)) {
+                $monthDay .= " $e->summary";
+            }
             $location = $e->getLocation();
-            echo '<li>';
+            echo '<li class="cob-upcomingEvents-item">';
+            echo "<a href=\"$e->htmlLink\" target=\"_new\" class=\"cob-upcomingEvents-link\">";
             foreach (['monthDay', 'dayTime', 'location'] as $f) {
                 if ($$f) { echo "<span class=\"cob-upcomingEvents-$f\">{$$f}</span>"; }
             }
-            echo '</li>';
+            echo '</a></li>';
         }
         echo '</ol>';
     }
