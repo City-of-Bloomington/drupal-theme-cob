@@ -43,11 +43,18 @@
                 text-align: center;
 
                 > a {
+                    border-bottom: (1rem/16) solid rgba(255,255,255,0);
                     font-size: (12rem/16);
                     letter-spacing: .2em;
+                    padding: 0 0 .125em 0;
                     margin: 0 2em 0 0;
                     position: relative;
+                    transition: border-bottom-color .25s ease-in-out;
 
+                    &:hover {
+                        border-bottom-color: rgba(255,255,255,1);
+                        text-decoration: none;
+                    }
                     &:after {
                         content: ' >';
                         pointer-events: none;
