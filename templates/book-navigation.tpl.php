@@ -33,7 +33,7 @@
  * @ingroup themeable
  */
 if ($tree || $has_links) {
-    $class_current = ['attributes'=>['class'=>['cob-ext-current']]];
+    $class_current = ['attributes' => ['class' => ['current']]];
 
     $m = book_get_flat_menu($book_link);
     foreach ($m as $mlid => $menu_item) {
