@@ -45,7 +45,7 @@ function cob_preprocess_node(&$vars)
     if (!empty($vars['field_directory_dn'][0]['value'])) { $vars['contactInfo'] = cob_department_info($vars['field_directory_dn'][0]['value']); }
     if (!empty($vars['field_directory_cn'][0]['value'])) { $vars['contactInfo'] = cob_person_info    ($vars['field_directory_cn'][0]['value']); }
     if (!empty($vars['field_committee'][0]['value'])) {
-        $vars['committee'] = civiclegislation_committee_info($vars['field_committee'][0]['value']);
+        $vars['committee'] = onboard_committee_info($vars['field_committee'][0]['value']);
         $vars['contactInfo'] = (object)[
             'name'    => $vars['committee']->info->name,
             'email'   => $vars['committee']->info->email,

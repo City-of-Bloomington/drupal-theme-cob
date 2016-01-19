@@ -4,7 +4,7 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  * @author Cliff Ingham <inghamn@bloomington.in.gov>
  */
-if (   !empty($node->field_civiclegislation_links)
+if (   !empty($node->field_onboard_links)
     || !empty($node->field_cmisro_listing)
     || !empty($node->book['bid'])) {
 
@@ -15,11 +15,11 @@ if (   !empty($node->field_civiclegislation_links)
 
     $class_current = ['attributes' => ['class' => ['current']]];
 
-    if (!empty($node->field_civiclegislation_links) || !empty($node->field_cmisro_listing)) {
+    if (!empty($node->field_onboard_links) || !empty($node->field_cmisro_listing)) {
         $attr = (count(explode('/', current_path())) === 2) ? $class_current : [];
         echo l('About', "node/{$node->nid}", $attr);
 
-        foreach (['field_civiclegislation_links', 'field_cmisro_listing'] as $field) {
+        foreach (['field_onboard_links', 'field_cmisro_listing'] as $field) {
             if (!empty($node->$field)) {
                 foreach (field_get_items ('node', $node, $field) as $item) {
                     $f = field_view_value('node', $node, $field, $item);
