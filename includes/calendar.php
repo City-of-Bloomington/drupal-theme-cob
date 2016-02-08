@@ -72,7 +72,7 @@ if ($calendar) {
             </h1>
         ";
         foreach ($ymd['events'] as $e) {
-            $time = !$allDay ? '<time>'.$start->format('g:ia').'</time>' : '';
+            $time = !$e['allDay'] ? '<time>'.$e['start']->format('g:ia').'</time>' : '';
             echo "
             <article class=\"cob-event\">
                 <h1  class=\"cob-event-title\">$e[title]</h1>
