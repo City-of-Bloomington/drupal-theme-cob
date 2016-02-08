@@ -9,25 +9,36 @@
 <section class="cob-boardsCommissions-members">
     <h1>Members</h1>
     <?php
-        foreach ($data['committee']->seats as $seat) {
-            $member = $seat->currentMember;
+        if (isset(   $data['committee']->seats)) {
+            foreach ($data['committee']->seats as $seat) {
+                $member = $seat->currentMember;
 
-            if ($member) {
-                // Stylesheet expects name in multiple spans,
-                // and applies bold font to last span inside
-                // the <dt> where we render $memberName - DH 2/8/2016
-                $names = explode(' ', $member->name);
-                foreach($names as $n){
-                    $memberName .= "<span>$n</span> ";
+                if ($member) {
+                    // Stylesheet expects name in multiple spans,
+                    // and applies bold font to last span inside
+                    // the <dt> where we render $memberName - DH 2/8/2016
+                    $memberName = '';
+                    foreach(explode(' ', $member->name) as $n){
+                        $memberName .= "<span>$n</span> ";
+                    }
+
+                    echo "
+                    <dl class=\"cob-boardsCommissions-member\">
+                        <dt>$memberName</dt>
+                    ";
+                    if ($seat->appointedBy) {
+                        echo "<dd>Appointed by: {$seat->appointedBy}</dd>";
+                    }
+                    if (!empty($member->termEndDate)) {
+                        echo "<dd>Term expires: {$member->termEndDate}</dd>";
+                    }
+                    else {
+                        echo "<dd>Member since: {$member->startDate}</dd>";
+                    }
+                    echo "
+                    </dl>
+                    ";
                 }
-                echo "
-                <dl class=\"cob-boardsCommissions-member\">
-                    <dt>$memberName</dt>
-                    <dd>Appointed by: {$seat->appointedBy}</dd>
-                    <dd>Term expires: {$member->termEndDate}</dd>
-                </dl>
-                ";
-                unset($memberName);
             }
         }
 
