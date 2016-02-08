@@ -13,8 +13,13 @@
             $member = $seat->currentMember;
 
             if ($member) {
-                $memberName = "<span>{$member->name}</span>";
-
+                // Stylesheet expects name in multiple spans,
+                // and applies bold font to last span inside
+                // the <dt> where we render $memberName - DH 2/8/2016
+                $names = explode(' ', $member->name);
+                foreach($names as $n){
+                    $memberName .= "<span>$n</span> ";
+                }
                 echo "
                 <dl class=\"cob-boardsCommissions-member\">
                     <dt>$memberName</dt>
@@ -22,6 +27,7 @@
                     <dd>Term expires: {$member->termEndDate}</dd>
                 </dl>
                 ";
+                unset($memberName);
             }
         }
 
