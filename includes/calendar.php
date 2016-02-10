@@ -6,7 +6,7 @@
  */
 $service  = cob_calendar_service();
 $calendar = $service->calendars->get($data['calendarId']);
-$events   = cob_calendar_events($data['calendarId'], new \DateTime(), null, true, 4);
+$events   = cob_calendar_events($data['calendarId'], new \DateTime(), null, true, 30);
 if ($calendar) {
     module_load_include('php', 'markdown', 'markdown');
 
