@@ -95,7 +95,6 @@ hide($content['field_phone_number']);
 hide($content['field_email']);
 hide($content['field_facebook_page']);
 hide($content['field_twitter_account']);
-hide($content['field_google_calendar_link']);
 hide($content['field_call_to_action']);
 hide($content['field_category']);
 hide($content['field_department']);
@@ -140,8 +139,7 @@ else {
     if (!empty($safe_summary) || !empty($contactInfo) || $toc['toc']
         || !empty($content['field_call_to_action'])   || !empty($content['field_physical_address'])
         || !empty($content['field_phone_number'])     || !empty($content['field_email'])
-        || !empty($content['field_facebook_page'])    || !empty($content['field_twitter_account'])
-        || !empty($content['field_google_calendar_link'])) {
+        || !empty($content['field_facebook_page'])    || !empty($content['field_twitter_account'])) {
 
         include __DIR__.'/partials/pageOverview.inc';
     }

@@ -6,7 +6,7 @@
  * This file is not used and is here as a starting point for customization only.
  * @see theme_field()
  *
- * Available variables:
+` * Available variables:
  * - $items: An array of field values. Use render() to output them.
  * - $label: The item label.
  * - $label_hidden: Whether the label display is set to 'hidden'.
@@ -43,8 +43,6 @@
  * @ingroup themeable
  */
 foreach ($element['#items'] as $item) {
-    foreach ($item['attributes'] as $attr => $value) {
-        $attributes = " $attr=\"$value\"";
-    }
-    echo "<a href=\"$item[display_url]\" $attributes>$item[title]</a>";
+    $url = cob_calendar_url($item['safe_value']);
+    echo "<a href=\"$url\" class=\"cob-ext-google-calendar\" target=\"_new\">Explore on Google Calendar</a>";
 }
