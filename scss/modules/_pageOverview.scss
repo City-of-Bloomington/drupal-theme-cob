@@ -59,10 +59,10 @@
             }
         }
         > .cob-ext {
-            @mixin commonCode() {
+            @mixin commonCode($background-size: 1.32em) {
                 background-repeat: no-repeat;
                 background-position: 0 .1em;
-                background-size: 1.32em;
+                background-size: $background-size;
                 padding-left: 1.5em;
             }
             &-facebook-page {
@@ -89,6 +89,10 @@
                 white-space: nowrap;
                 width: 100%;
                 @include commonCode();
+            }
+            &-google-calendar {
+                background: url('../images/fa-svg/calendar-white.svg');
+                @include commonCode(1.1em);
             }
         }
     }
