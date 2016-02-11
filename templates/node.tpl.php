@@ -144,52 +144,51 @@ else {
         include __DIR__.'/partials/pageOverview.inc';
     }
     ?>
-        <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-            <article class="cob-mainText"<?= $content_attributes ?>>
-                <?php if (!empty($node->field_content_image)): ?>
-                    <?php
-                        $content_image_url  =  mediamanager_field_url ($node->field_content_image, 'Content Image');
-                        $content_image_info = _mediamanager_media_info($node->field_content_image['und'][0]['media_id']);
-                    ?>
-                    <figure class="cob-main-content_image">
-                        <img src="<?= $content_image_url ?>" alt="<?= $content_image_info->title ?>" />
-                        <?php if (   !empty($content_image_info->description)): ?>
-                            <figcaption><?= $content_image_info->description ?></figcaption>
-                        <?php endif ?>
-                    </figure>
-                <?php endif ?>
-                <?php if (!empty($content['field_news_contacts'])): ?>
-                    <?=   render($content['field_news_contacts']); ?>
-                <?php endif; ?>
-
+    <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
+        <article class="cob-mainText"<?= $content_attributes ?>>
+            <?php if (!empty($node->field_content_image)): ?>
                 <?php
-                    if (!empty($content['field_google_calendar_id']['#items']) && $type != 'calendar') {
-                        foreach ($content['field_google_calendar_id']['#items'] as $i) {
-                            cob_include('upcomingEvents', ['calendarId'=>$i['value'], 'type' => $type]);
-                        }
-                    }
-
-                    if ($node->type == 'news_release') {
-                        $formatted_date = format_date($created, 'medium');
-                        echo "
-                        <time>$formatted_date</time>
-                        <h1>{$node->title}</h1>
-                        ";
-                    }
-
-                    echo $contentHTML;
+                    $content_image_url  =  mediamanager_field_url ($node->field_content_image, 'Content Image');
+                    $content_image_info = _mediamanager_media_info($node->field_content_image['und'][0]['media_id']);
                 ?>
-            </article>
+                <figure class="cob-main-content_image">
+                    <img src="<?= $content_image_url ?>" alt="<?= $content_image_info->title ?>" />
+                    <?php if (   !empty($content_image_info->description)): ?>
+                        <figcaption><?= $content_image_info->description ?></figcaption>
+                    <?php endif ?>
+                </figure>
+            <?php endif ?>
+            <?php if (!empty($content['field_news_contacts'])): ?>
+                <?=   render($content['field_news_contacts']); ?>
+            <?php endif; ?>
+
             <?php
-                if (!empty($content['field_google_calendar_id']['#items']) && $type == 'calendar') {
+                if (!empty(  $content['field_google_calendar_id']['#items']) && $type != 'calendar') {
                     foreach ($content['field_google_calendar_id']['#items'] as $i) {
-                        cob_include('calendar', ['calendarId'=>$i['value'], 'type' => $type]);
+                        cob_include('upcomingEvents', ['calendarId'=>$i['value'], 'type' => $type]);
                     }
                 }
-            ?>
-        </section>
-    <?php
 
+                if ($node->type == 'news_release') {
+                    $formatted_date = format_date($created, 'medium');
+                    echo "
+                    <time>$formatted_date</time>
+                    <h1>{$node->title}</h1>
+                    ";
+                }
+
+                echo $contentHTML;
+            ?>
+        </article>
+        <?php
+            if (!empty(  $content['field_google_calendar_id']['#items']) && $type == 'calendar') {
+                foreach ($content['field_google_calendar_id']['#items'] as $i) {
+                    cob_include('calendar', ['calendarId'=>$i['value'], 'type' => $type]);
+                }
+            }
+        ?>
+    </section>
+    <?php
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
 
         foreach ($relatedContent as $t=>$title) {
