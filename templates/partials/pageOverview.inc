@@ -111,7 +111,9 @@
                     <?php
                         echo render($content['field_facebook_page'  ]);
                         echo render($content['field_twitter_account']);
-                        echo render($content['field_google_calendar_id']);
+                        if ($type === 'calendar') {
+                            echo render($content['field_google_calendar_id']);
+                        }
 
                         if (!empty($contactInfo)) { cob_include('contactInfo', ['contactInfo' => $contactInfo]); }
                         else {
