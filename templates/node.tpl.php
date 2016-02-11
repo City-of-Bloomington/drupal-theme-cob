@@ -144,7 +144,6 @@ else {
         include __DIR__.'/partials/pageOverview.inc';
     }
     ?>
-    <?php if($contentHTML): ?>
         <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
             <article class="cob-mainText"<?= $content_attributes ?>>
                 <?php if (!empty($node->field_content_image)): ?>
@@ -189,7 +188,6 @@ else {
                 }
             ?>
         </section>
-    <?php endif ?>
     <?php
 
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
