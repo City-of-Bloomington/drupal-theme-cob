@@ -43,9 +43,10 @@
         }
 
         if ($data['committee']->info->vacancy) {
+            $url = '/onboard/applicants/apply?committee_id='.$data['committee']->info->id;
             echo "
             <div   class=\"cob-boardsCommissions-apply\">
-                <a class=\"cob-btn-cta\" href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1Q3H008RerQj0UKXd1ohtKm_XVZyAeqBp_lFkT6eR6Z8/viewform\">
+                <a class=\"cob-btn-cta\" href=\"$url\">
                     Apply to fill a vacancy on this board
                 </a>
             </div>
