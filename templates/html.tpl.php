@@ -49,7 +49,7 @@
     <?= $head; ?>
     <title><?= $head_title; ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <?= $styles; ?>
     <?php
         $ASSETS = variable_get('cob_assets_uri');
