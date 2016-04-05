@@ -54,7 +54,10 @@ $external_term_links = [
         if ($nodes) {
             foreach($nodes as $node) {
                 $n = node_view($node, 'teaser');
-                $items[$node->title] = render($n);
+                $items[] = [
+                    'title'   => $node->title,
+                    'summary' => render($n)
+                ];
             }
         }
 
@@ -73,12 +76,15 @@ $external_term_links = [
         // Merge in any content from $external_term_links
         if (!empty(  $external_term_links[$tid])) {
             foreach ($external_term_links[$tid] as $link) {
-                $items[$link['title']] = "
-                <article class=\"cob-mainText\">
-                    <h1><a href=\"$link[url]\" target=\"_blank\">$link[title] <span class=\"cob-indicator-externalLink\">(external link)</span></a></h1>
-                    <p>$link[summary]</p>
-                </article>
-                ";
+                $items[] = [
+                    'title'   => $link['title'],
+                    'summary' => "
+                        <article class=\"cob-mainText\">
+                            <h1><a href=\"$link[url]\" target=\"_blank\">$link[title] <span class=\"cob-indicator-externalLink\">(external link)</span></a></h1>
+                            <p>$link[summary]</p>
+                        </article>
+                    "
+                ];
             }
         }
 
@@ -86,15 +92,42 @@ $external_term_links = [
         $children = taxonomy_get_children($tid);
         foreach ($children as $t) {
             $link = l($t->name, 'taxonomy/term/'.$t->tid);
-            $items[$t->name] = "
-                <article class=\"\">
-                    <h1>$link</h1>
-                    <p>{$t->description}</p>
-                </article>
-            ";
+            $items[] = [
+                'title'   => $t->name,
+                'summary' => "
+                    <article class=\"\">
+                        <h1>$link</h1>
+                        <p>{$t->description}</p>
+                    </article>
+                "
+            ];
         }
 
-        ksort($items);
-        foreach ($items as $html) { echo $html; }
+
+        usort($items, function ($a, $b) use ($tid) {
+            $map = [
+                56 => [ // City Government
+                    'Municipal Code' => 1,
+                    'City Budget'    => 2
+                ]
+            ];
+
+            if (array_key_exists($tid, $map)) {
+                $a_in_map = array_key_exists($a['title'], $map[$tid]);
+                $b_in_map = array_key_exists($b['title'], $map[$tid]);
+
+                if ($a_in_map || $b_in_map) {
+                    if ($a_in_map && !$b_in_map) { return -1; }
+                    if ($b_in_map && !$a_in_map) { return  1; }
+
+                    if (   $map[$tid][$a['title']] === $map[$tid][$b['title']]) { return 0; }
+                    return $map[$tid][$a['title']]  <  $map[$tid][$b['title']] ? -1 : 1;
+                }
+            }
+
+            if (    $a['title'] == $b['title']) { return 0; }
+            return ($a['title'] <  $b['title']) ? -1 : 1;
+        });
+        foreach ($items as $i) { echo $i['summary']; }
     ?>
 </div>
