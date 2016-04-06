@@ -2,26 +2,27 @@
     &-section {
         @include clearfix();
         margin-top: 1rem;
-        > h2 {
+        > h1 {
             font-size: (20rem/16);
-            margin: 1em 0 .25em 0;
             @include grid-12col();
+            margin-top: 1em;
+            margin-bottom: .25em;
         }
         @media screen and (min-width: $viewport-small) {
-            > h2 {
+            > h1 {
                 font-size: (26rem/16);
             }
         }
         @media screen and (min-width: $viewport-medium) {
             margin-top: 2rem;
-            > h2 {
+            > h1 {
                 font-size: (36rem/16);
             }
         }
     }
     &-dept {
         &Info {
-            @include grid-3col();
+            @include grid-2col();
             > dl {
                 margin: 0;
                 > dt {
@@ -34,7 +35,7 @@
             }
         }
         &Staff {
-            @include grid-9col();
+            @include grid-10col();
             > table {
                 > thead {
                     @include visuallyHidden();
