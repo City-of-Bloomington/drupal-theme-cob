@@ -78,7 +78,12 @@ include __DIR__.'/partials/siteHeader.inc';
     if (isset($node) && $node->type == 'news_release') {
         $modifier_class = 'mod-pressRelease';
     }
-    if (!empty($node->field_cover_image) || !empty($node->field_page_header_image) || !empty($pageView) || $node->type == 'news_release') {
+    if (isset($node)
+        && (   !empty($node->field_cover_image)
+            || !empty($node->field_page_header_image)
+            || !empty($pageView)
+            || $node->type == 'news_release')) {
+
         echo '<style type="text/css">';
         if (!empty($node->field_cover_image)) {
             $cover = mediamanager_field_url($node->field_cover_image, 'Cover');

@@ -190,6 +190,7 @@ else {
     </section>
     <?php
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
+        if (!empty($contactInfo)) { cob_include('departmentStaff', ['contactInfo' => $contactInfo]); }
 
         foreach ($relatedContent as $t=>$title) {
             if (!empty($$t)) {

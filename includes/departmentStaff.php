@@ -11,39 +11,16 @@
     <table class="cob-boardsCommissions-members">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Office</th>
-                <th>Email Address</th>
+                <tr><td>Name and title</td>
+                    <td>Email address</td>
+                    <td>Phone Number</td>
+                </tr>
             </th>
         </thead>
         <tbody>
-            <?php
-                foreach ($data['contactInfo']->people as $person) {
-                    echo '<tr>';
-                    $names = !empty($person->displayName)
-                        ? $person->displayName
-                        : "{$person->firstname} {$person->lastname}";
-
-                    $name = '';
-                    foreach (explode(' ', $names) as $n) { $name.= "<span>$n</span> "; }
-
-                    echo "<td>$name</td>";
-
-                $phoneNumberFields = ['office', /*'fax', 'cell', 'other', 'pager'*/];
-                    foreach ($phoneNumberFields as $f) {
-                        echo '<td>';
-                        if (!empty($person->$f)) {
-                            echo "{$person->$f}";
-                        }
-                        echo '</td>';
-                    }
-                    if (!empty($person->email)) {
-                        echo "<td><a href=\"mailto:{$person->email}\" class=\"cob-ext-email\">{$person->email}</a></td>";
-                    }
-                    echo '</tr>';
-                }
-            ?>
-
+        <?php
+            echo theme('cob_directory_peopleContactInfo', ['department'=>$data['contactInfo']]);
+        ?>
         </tbody>
     </table>
 </section>
