@@ -75,6 +75,7 @@ include __DIR__.'/partials/homeHeader.inc';
 echo $messages;
 
 include __DIR__.'/partials/siteAdminBar.inc';
+include __DIR__.'/partials/alerts.inc';
 ?>
 <main        class="cob-homeMain" role="main">
     <section class="cob-hero">
