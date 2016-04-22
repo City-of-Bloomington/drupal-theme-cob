@@ -6,23 +6,27 @@
 $alerts = cob_alert_nodes();
 if ($alerts) {
     echo '
-        <section class="alertsHeader">
-            <div class="alertsHeader-container">
+        <section class="cob-alertHeader">
+            <article class="cob-alertHeader-container">
     ';
     foreach ($alerts as $alert) {
         echo '<!--';
         print_r($alert);
         echo '-->';
-        echo "<h1>$alert->title</h1>";
-        echo '<article>';
-        print $alert->body['und'][0]['safe_value'];
-        echo '</article>';
-
-//        $n = node_view($node, 'teaser');
-//        echo render($n);
-    }
+        echo "<h1 class=\"cob-alertHeader-title\">$alert->title</h1>";
+        echo '<div class="cob-alertHeader-content">';
+        if ($alert->body['und'][0]['safe_summary']) {
+            print $alert->body['und'][0]['safe_summary'];
+        } else {
+            print $alert->body['und'][0]['safe_value'];
+        };
+        echo '</div>';
+        echo '<div class="cob-btn-container">';
+        print l('Details', 'node/'.$alert->nid, ['attributes' => ['class' => 'cob-btn-cta', 'data-test' => 'foo']]);
+        echo '</div>';
+    };
     echo '
-            </div>
+            </article>
         </section>
     ';
 }
