@@ -22,7 +22,14 @@
     }
     &-dept {
         &Info {
-            @include grid-2col();
+            @include grid-3col();
+            > h2 {
+                color: $cob-cornflower-dark;
+                font-size: (18rem/16);
+                font-weight: 500;
+                margin: 1.5em 0 0 0;
+                text-transform: uppercase;
+            }
             > dl {
                 margin: 0;
                 > dt {
@@ -30,12 +37,12 @@
                 }
                 > dd {
                     display: block;
-                    margin: 0;
+                    margin: 0 0 .25em 0;
                 }
             }
         }
         &Staff {
-            @include grid-10col();
+            @include grid-9col();
             > table {
                 > thead {
                     @include visuallyHidden();
