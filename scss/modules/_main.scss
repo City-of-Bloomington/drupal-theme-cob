@@ -3,10 +3,12 @@
 
     &-container {
         @include container();
-        > .cob-mainText { // <- Selects only the article element in Main Mode, not Teaser Mode.
+        // IMPORTANT! Following selects only the article element in Main Mode, not Teaser Mode.
+        > .cob-mainText {
             @include grid-10col();
             margin-top: 4rem;
         }
+        // IMPORTANT! Following selects only the article element in Main Mode, not Teaser Mode.
         > .cob-mainText.cob-ext-hasSidebar {
             @include grid-8col();
             margin-top: 4rem;
