@@ -41,7 +41,9 @@
     > .block-search {
         box-sizing: border-box;
         padding: $top-whitespace 0 0 0;
-
+        form {
+            margin: 0;
+        }
         .form-item-search-block-form {
             box-sizing: border-box;
             margin: 0;
