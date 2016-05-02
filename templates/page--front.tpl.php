@@ -113,13 +113,13 @@ include __DIR__.'/partials/alerts.inc';
             </nav>
             <nav class="cob-homeNav-topServices">
                 <h1 class="cob-homeNav-heading">Popular Services</h1>
-                <a href="/alpha/contact" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
-                <a href="/alpha/report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
+                <a href="<?= $base_path; ?>contact" class="cob-ext-comments"><span class="cob-ext-tileName">Contacting The&nbsp;City</span></a>
+                <a href="<?= $base_path; ?>report-issues" class="cob-ext-bolt"><span class="cob-ext-tileName">Report Issues</span></a>
                 <a href="https://data.bloomington.in.gov" class="cob-ext-openData"><span class="cob-ext-tileName">Open Data</span></a>
-                <a href="/alpha/mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
-                <a href="/alpha/maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
-                <a href="/alpha/pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
-                <a href="/alpha/pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
+                <a href="<?= $base_path; ?>mybloomington" class="cob-ext-bloomington"><span class="cob-ext-tileName">My Bloomington</span></a>
+                <a href="<?= $base_path; ?>maps" class="cob-ext-map"><span class="cob-ext-tileName">City Maps</span></a>
+                <a href="<?= $base_path; ?>pay-utility-bill-online" class="cob-ext-spigot"><span class="cob-ext-tileName">Pay Your Water Bill Online</span></a>
+                <a href="<?= $base_path; ?>pay-parking-ticket" class="cob-ext-car"><span class="cob-ext-tileName">Pay a Parking Ticket</span></a>
             </nav>
         </div>
     </section>

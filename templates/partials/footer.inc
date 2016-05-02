@@ -22,9 +22,9 @@
     <div class="cob-siteFooter-details">
         <div class="cob-siteFooter-container">
             <nav class="cob-siteFooter-legalNav">
-                <a href="/alpha/accessibility">Accessibility</a>
-                <a href="/alpha/privacy">Privacy</a>
-                <a href="/alpha/webpolicy">Web Policy</a>
+                <a href="<?= $base_path; ?>accessibility">Accessibility</a>
+                <a href="<?= $base_path; ?>privacy">Privacy</a>
+                <a href="<?= $base_path; ?>webpolicy">Web Policy</a>
                 <a rel="license"
                    href="http://creativecommons.org/publicdomain/zero/1.0/">
                   <img src="//i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
