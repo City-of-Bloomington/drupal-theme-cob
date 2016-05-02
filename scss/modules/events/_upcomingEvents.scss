@@ -2,6 +2,7 @@
     margin: 0 0 2rem 0;
     &-header {
         border-top: .5em solid $cob-blue;
+        font-weight: normal;
         padding: .5rem;
 
         &:before {
@@ -14,6 +15,7 @@
             width: 1.2em;
         }
         > h1 {
+            color: $cob-blue-darkest;
             font-size: (18rem/16);
             margin: 0;
         }
