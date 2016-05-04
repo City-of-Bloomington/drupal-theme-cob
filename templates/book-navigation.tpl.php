@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to navigate books.
@@ -36,9 +35,18 @@ if ($tree || $has_links) {
     $class_current = ['attributes' => ['class' => ['current']]];
 
     $m = book_get_flat_menu($book_link);
+    if ($book_id == 39) {
+        $route = menu_get_item('contact/directory');
+        if (current_path() === 'contact/directory') { $book_title = $route['title']; }
+        $m['custom'] = [
+            'title'      => $route['title'],
+            'link_title' => $route['title'],
+            'link_path'  => 'contact/directory'
+        ];
+    }
     foreach ($m as $mlid => $menu_item) {
         #$attr = !empty($menu_item['in_active_trail']) ? $class_current : [];
-        $attr = $menu_item['title']==$book_title ? $class_current : [];
+        $attr = $menu_item['title'] === $book_title ? $class_current : [];
         echo l($menu_item['link_title'], $menu_item['link_path'], $attr);
     }
 }
