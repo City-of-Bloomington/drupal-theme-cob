@@ -144,6 +144,7 @@ else {
         include __DIR__.'/partials/pageOverview.inc';
     }
     ?>
+    <div class="main-container">
     <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
         <article class="cob-mainText"<?= $content_attributes ?>>
             <?php if (!empty($node->field_content_image)): ?>
@@ -197,5 +198,8 @@ else {
                 cob_include($t, [$t => $$t, 'title'=>$title]);
             }
         }
+?>
+    </div>
+<?php
 }
 ?>

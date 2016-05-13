@@ -12,7 +12,7 @@
  * @param array $data['boards_commissions'=>[], 'title'=>'']
  */
 ?>
-<section class="cob-boardsCommissionsWidget block" id="boards_commissions">
+<section class="cob-boardsCommissionsWidget uiBlock" id="boards_commissions">
 	<h1><?= $data['title']; ?></h1>
 	<div class="cob-boardsCommissionsWidget-listing">
     <?php

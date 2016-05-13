@@ -143,7 +143,7 @@ include __DIR__.'/partials/siteHeader.inc';
     include __DIR__.'/partials/siteAdminBar.inc';
 ?>
 
-<main class="cob-main" role="main">
+<main class="cob-main main" role="main">
 <?php echo render($page['content']); ?>
 </main>
 <?php

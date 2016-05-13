@@ -54,9 +54,11 @@
     <?php
         $ASSETS = variable_get('cob_assets_uri');
         echo '<link rel="stylesheet" href="'.$ASSETS.'/css/screen.css'.'" />';
+        echo '<link rel="stylesheet" href="//bloomington.in.gov/static/fn1-releases/0.3-dev/css/default.css" />';
+        echo '<link rel="stylesheet" href="//bloomington.in.gov/static/fn1-releases/0.3-dev/css/info.css" />';
     ?>
 </head>
-<body class="<?= $classes; ?>" <?= $attributes;?>>
+<body class="fn1 <?= $classes; ?>" <?= $attributes;?>>
     <div id="skip-link">
         <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
     </div>

@@ -6,14 +6,14 @@
  * @param array $data['contactInfo']
  */
 ?>
-<section class="cob-staffListingWidget">
+<section class="cob-staffListingWidget uiBlock">
     <h2>Staff</h2>
-    <table class="cob-boardsCommissions-members">
+    <table class="table">
         <thead>
             <tr>
-                <tr><td>Name and title</td>
-                    <td>Email address</td>
-                    <td>Phone Number</td>
+                <tr><th>Name and title</th>
+                    <th>Email address</th>
+                    <th>Phone Number</th>
                 </tr>
             </th>
         </thead>

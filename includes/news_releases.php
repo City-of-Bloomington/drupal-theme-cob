@@ -6,7 +6,7 @@
  * @param array $data['news_releases'=>[], 'title'=>'']
  */
 ?>
-<section class="cob-latestNewsWidget block" id="news_releases">
+<section class="cob-latestNewsWidget uiBlock" id="news_releases">
     <h2  class="cob-latestNewsWidget-heading"><?= $data['title']; ?></h2>
     <div class="cob-latestNewsWidget-container">
     <?php
