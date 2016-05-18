@@ -58,7 +58,7 @@
         echo '<link rel="stylesheet" href="//bloomington.in.gov/static/fn1-releases/0.3-dev/css/info.css" />';
     ?>
 </head>
-<body class="fn1 <?= $classes; ?>" <?= $attributes;?>>
+<body class="fn1 widthConstrained <?= $classes; ?>" <?= $attributes;?>>
     <div id="skip-link">
         <a href="#main-content" class="element-invisible element-focusable"><?= t('Skip to main content'); ?></a>
     </div>
