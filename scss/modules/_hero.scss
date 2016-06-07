@@ -15,6 +15,9 @@
     &-search {
         display: inline-block;
         position: relative;
+        > form {
+            margin: 0;
+        }
         .form-item-search-block-form {
             margin: 0;
             > label {
