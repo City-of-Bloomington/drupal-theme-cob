@@ -112,7 +112,7 @@ if ($view_mode == 'teaser') {
         $d = format_date($created, 'medium');
         $formatted_date = "<time>$d</time>";
     }
-    echo '<article class="cob-mainText">';
+    echo '<article class="mainText">';
     echo "$formatted_date<h1><a href=\"$node_url\">".render($title)."</a></h1>";
     echo render($content);
     echo '</article>';
@@ -144,9 +144,8 @@ else {
         include __DIR__.'/partials/pageOverview.inc';
     }
     ?>
-    <div class="main-container">
-    <section id="node-<?= $node->nid ?>" class="cob-main-container <?= $classes ?>"<?= $attributes ?>>
-        <article class="cob-mainText"<?= $content_attributes ?>>
+    <section id="node-<?= $node->nid ?>" class="main-container <?= $classes ?>"<?= $attributes ?>>
+        <article class="contentBlock"<?= $content_attributes ?>>
             <?php if (!empty($node->field_content_image)): ?>
                 <?php
                     $content_image_url  =  mediamanager_field_url ($node->field_content_image, 'Content Image');
@@ -188,7 +187,6 @@ else {
                 }
             }
         ?>
-    </section>
     <?php
         if (!empty($committee)) { cob_include('committeeMembers', ['committee' => $committee]); }
         if (!empty($contactInfo)) { cob_include('departmentStaff', ['contactInfo' => $contactInfo]); }
@@ -199,7 +197,7 @@ else {
             }
         }
 ?>
-    </div>
+    </section>
 <?php
 }
 ?>
