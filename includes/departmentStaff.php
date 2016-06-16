@@ -7,20 +7,24 @@
  */
 ?>
 <section class="cob-staffListingWidget uiBlock">
-    <h2>Staff</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <tr><th>Name and title</th>
-                    <th>Email address</th>
-                    <th>Phone Number</th>
-                </tr>
-            </th>
-        </thead>
-        <tbody>
-        <?php
-            echo theme('cob_directory_peopleContactInfo', ['department'=>$data['contactInfo']]);
-        ?>
-        </tbody>
-    </table>
+    <header class="uiBlock-header">
+        <h2 class="uiBlock-title">Staff</h2>
+    </header>
+    <div class="uiBlock-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <tr><th>Name and title</th>
+                        <th>Email address</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </th>
+            </thead>
+            <tbody>
+            <?php
+                echo theme('cob_directory_peopleContactInfo', ['department'=>$data['contactInfo']]);
+            ?>
+            </tbody>
+        </table>
+    </div>
 </section>
