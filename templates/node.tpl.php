@@ -122,6 +122,17 @@ if ($view_mode == 'teaser') {
 else {
     $contentHTML = render($content);
     $toc = _cob_create_toc($contentHTML, 2, 2);
+
+    // Declare a variable that toggles the display of the "Highlights" container
+    $highlights = false;
+
+    // The "Upcoming Events" sidebar is a "Highlights" block.
+    // If the node has a Google Calendar, and the node type isn't "calendar",
+    // Display the "Highlights" container.
+    if (!empty(  $content['field_google_calendar_id']['#items']) && $type != 'calendar') {
+        $highlights = true;
+    }
+
     if ($toc['toc']) { $contentHTML = $toc['content']; }
 
     // Declare the content types to check for entity relationships
@@ -162,13 +173,17 @@ else {
                 <?=   render($content['field_news_contacts']); ?>
             <?php endif; ?>
 
-            <?php
-                if (!empty(  $content['field_google_calendar_id']['#items']) && $type != 'calendar') {
-                    foreach ($content['field_google_calendar_id']['#items'] as $i) {
-                        cob_include('upcomingEvents', ['calendarId'=>$i['value'], 'type' => $type]);
-                    }
-                }
+            <?php if ($highlights === true): ?>
+                <aside class="highlights">
+                    <?php
+                        foreach ($content['field_google_calendar_id']['#items'] as $i) {
+                            cob_include('upcomingEvents', ['calendarId'=>$i['value'], 'type' => $type]);
+                        }
+                    ?>
+                </aside>
+            <?php endif ?>
 
+            <?php
                 if ($node->type == 'news_release') {
                     $formatted_date = format_date($created, 'medium');
                     echo "
