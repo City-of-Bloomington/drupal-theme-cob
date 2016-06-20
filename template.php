@@ -120,4 +120,12 @@ function cob_footer_links() {
         echo '</li>';
     }
     echo '</ul>';
+    ?>
+        <h1>Transparency and Open Data</h1>
+        <ul>
+            <li><a href="https://data.bloomington.in.gov" target="_blank">B-Clear: Bloomington Open Data</a></li>
+            <li><a href="http://www.in.gov/itp/" target="_blank">Indiana Transparency Portal</a></li>
+        </ul>
+    <?php
+
 }
