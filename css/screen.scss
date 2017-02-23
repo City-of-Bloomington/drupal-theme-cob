@@ -1,1 +1,117 @@
- 
+@import '../vendor/City-of-Bloomington/factory-number-one/src/themes/default/scss/modules/_vars-mixins';
+
+@import 'modules/layout';
+
+body > header {
+    background: url('images/downtown-small.png') no-repeat bottom center;
+    background-size:cover;
+    color: $color-content-background;
+    padding: 0;
+    height: 251px;
+
+    > .container { background-color: $color-header; }
+
+    h1 { color: $color-content-background; font-weight:bold; }
+}
+
+#nav1 {
+    background-color: $color-content-background;
+}
+
+#highlighted {
+    background-color: $color-accent;
+    color: $color-content-background;
+    padding: $size-gutter;
+    font-weight: bold;
+}
+
+main > section {
+    header { text-align: center; }
+    h1 { display:inline; }
+    .container { overflow:auto; padding:$size-gutter; }
+}
+
+#services-section, #government-section {
+    a {
+        display:inline-block;
+        text-align:center; vertical-align:top;
+        padding-top:6.5em;
+        width:10em;
+        margin-bottom:$size-gutter;
+
+        background-size:6em; background-repeat:no-repeat; background-position:top center;
+    }
+}
+
+#services-section {
+    background-color: $color-header;
+    h1, a { color:$color-content-background; font-weight: bold; }
+
+    a.contact        { background-image:url('../images/icons/contact us icon.svg'    ); }
+    a.report         { background-image:url('../images/icons/report issue icon.svg'  ); }
+    a.performance    { background-image:url('../images/icons/performance icon.svg'   ); }
+    a.myBloomington  { background-image:url('../images/icons/my bloomington icon.svg'); }
+    a.maps           { background-image:url('../images/icons/city maps icon.svg'     ); }
+    a.water          { background-image:url('../images/icons/water icon.svg'         ); }
+    a.parking_ticket { background-image:url('../images/icons/parking icon.svg'       ); }
+    a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
+}
+
+#news-section {
+    h1, h2 { color: $color-header; }
+
+    > div { padding: $size-gutter; }
+
+    .news article {
+        border-color: $color-header;
+        border-style: solid;
+        border-width: $size-gutter 1px 1px 1px;
+        padding:$size-gutter;
+        overflow:auto;
+
+        h2 {
+            width:48%; float:left;
+            font-size:$font-size-big; font-weight:bold; font-family:$font-family-default;
+            text-align:left;
+        }
+        > div { width:48%; float:left; }
+        time { float:right; }
+    }
+    .events article {
+        overflow:auto; position:relative;
+        height:auto;
+        min-height:5em;
+        border:1px solid $color-header;
+
+        .month, .monthDate { font-size:$font-size-big; }
+        .weekday { font-weight:bold; }
+
+        header {
+            position:absolute; left:0;
+
+            width:6em; height:100%;
+            background-color:$color-alert;
+            color:$color-content-background;
+        }
+        > div {
+            margin-left:6.5em;
+        }
+    }
+}
+
+#about-section {
+    h1 { color:$color-header; }
+}
+
+#government-section {
+    h1, h2 { color:$color-header; }
+    a { color: $color-text-default; }
+
+    a.code          { background-image:url('../images/icons/Municipal code icon.svg'); }
+    a.budget        { background-image:url('../images/icons/city budget icon.svg'   ); }
+    a.boards        { background-image:url('../images/icons/boards icon.svg'        ); }
+    a.council       { background-image:url('../images/icons/city council icon.svg'  ); }
+    a.contact       { background-image:url('../images/icons/contact icon.svg'       ); }
+    a.elected       { background-image:url('../images/icons/elected icon.svg'       ); }
+    a.public_safety { background-image:url('../images/icons/public safety icon.svg' ); }
+}
