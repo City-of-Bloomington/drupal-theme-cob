@@ -4,12 +4,8 @@ description: City of Bloomington Theme
 package: COB
 core: 8.x
 php: 5.6.0
-base theme: stable
+base theme: false
 libraries:
   - cob/fn1
-regions:
-  header_site: Site Header
-  header_page: Page Header
-  overview_page: Page Overview
-  content: Content
-  footer: Site Footer
+libraries-override:
+  core/modernizr: false
