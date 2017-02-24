@@ -3,15 +3,18 @@
 @import 'modules/layout';
 
 body > header {
-    background: url('images/downtown-small.png') no-repeat bottom center;
+    background: url('images/downtown-small.png') no-repeat center bottom;
     background-size:cover;
     color: $color-content-background;
     padding: 0;
-    height: 251px;
+    height: 18rem;
 
     > .container { background-color: $color-header; }
 
     h1 { color: $color-content-background; font-weight:bold; }
+
+    @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
+    @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
 }
 
 #nav1 {
@@ -23,11 +26,20 @@ body > header {
     color: $color-content-background;
     padding: $size-gutter;
     font-weight: bold;
+
+    .container { text-align:center; }
 }
 
 main > section {
-    header { text-align: center; }
-    h1 { display:inline; }
+    padding:$size-gutter 0;
+
+    header {
+        text-align: center;
+        background-size: 100% 2px;
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+    h1 { display:inline; padding:0 $size-gutter; }
     .container { overflow:auto; padding:$size-gutter; }
 }
 
@@ -45,7 +57,10 @@ main > section {
 
 #services-section {
     background-color: $color-header;
-    h1, a { color:$color-content-background; font-weight: bold; }
+    header {
+        background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
+    }
+    h1, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
 
     a.contact        { background-image:url('../images/icons/contact us icon.svg'    ); }
     a.report         { background-image:url('../images/icons/report issue icon.svg'  ); }
@@ -57,8 +72,14 @@ main > section {
     a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
 }
 
+#news-section, #about-section, #government-section {
+    > header {
+        background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
+        h1, h2 { background-color:$color-content-background; color:$color-header; }
+    }
+}
+
 #news-section {
-    h1, h2 { color: $color-header; }
 
     > div { padding: $size-gutter; }
 
@@ -100,12 +121,14 @@ main > section {
 }
 
 #about-section {
-    h1 { color:$color-header; }
 }
 
 #government-section {
-    h1, h2 { color:$color-header; }
-    a { color: $color-text-default; }
+    .container { text-align:center; }
+    a {
+        color: $color-text-default;
+    }
+
 
     a.code          { background-image:url('../images/icons/Municipal code icon.svg'); }
     a.budget        { background-image:url('../images/icons/city budget icon.svg'   ); }
@@ -114,4 +137,24 @@ main > section {
     a.contact       { background-image:url('../images/icons/contact icon.svg'       ); }
     a.elected       { background-image:url('../images/icons/elected icon.svg'       ); }
     a.public_safety { background-image:url('../images/icons/public safety icon.svg' ); }
+}
+
+
+body > footer {
+    background-color: $color-footer;
+    color: $color-content-background;
+    a {
+        color: $color-content-background;
+        display:block; text-align:left;
+    }
+    address { text-align:left; }
+
+    .container {
+        text-align:center;
+
+        div {
+            width:30%; display:inline-block;
+            margin-right:1em;
+        }
+    }
 }
