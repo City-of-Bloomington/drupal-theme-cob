@@ -4,10 +4,10 @@
 
 body > header {
     background: url('images/downtown-small.png') no-repeat center bottom;
-    background-size:cover;
+    background-size: cover;
     color: $color-content-background;
     padding: 0;
-    height: 18rem;
+    height: 50vh;
 
     > .container { background-color: $color-header; }
 
@@ -47,11 +47,11 @@ main > section {
     a {
         display:inline-block;
         text-align:center; vertical-align:top;
-        padding-top:6.5em;
+        padding:6.5em $size-gutter $size-gutter $size-gutter;
         width:10em;
         margin-bottom:$size-gutter;
 
-        background-size:6em; background-repeat:no-repeat; background-position:top center;
+        background-size:6em; background-repeat:no-repeat; background-position:center $size-gutter;
     }
 }
 
@@ -81,14 +81,18 @@ main > section {
 
 #news-section {
 
-    > div { padding: $size-gutter; }
+    > .container > div { padding: $size-gutter; }
 
     .news article {
         border-color: $color-header;
         border-style: solid;
         border-width: $size-gutter 1px 1px 1px;
         padding:$size-gutter;
-        overflow:auto;
+        overflow:hidden;
+        height:15vh;
+        @media all and (min-width:$viewport-medium) {
+            display:inline-block; width:45%;
+        }
 
         h2 {
             width:48%; float:left;
@@ -97,6 +101,13 @@ main > section {
         }
         > div { width:48%; float:left; }
         time { float:right; }
+    }
+    @media all and (min-width:$viewport-medium) {
+        .news article {
+            display:inline-block; width:45%;
+            &:first-child { width:93%; }
+        }
+        .events article { width:93%; }
     }
     .events article {
         overflow:auto; position:relative;
@@ -118,17 +129,30 @@ main > section {
             margin-left:6.5em;
         }
     }
+    @media all and (min-width:$viewport-large) {
+        .news   { width:55%; display:inline-block; }
+        .events { width:35%; display:inline-block; }
+
+        > .container > div { vertical-align:top; }
+    }
 }
 
 #about-section {
+    @media all and (min-width:$viewport-medium) {
+        .container {
+            background: url('../images/icons/Indiana state icon.svg') left top no-repeat;
+            background-size: auto 100%;
+            p { margin-left:50%; }
+        }
+    }
 }
 
 #government-section {
     .container { text-align:center; }
     a {
         color: $color-text-default;
+        &:hover { background-color: $color-action; }
     }
-
 
     a.code          { background-image:url('../images/icons/Municipal code icon.svg'); }
     a.budget        { background-image:url('../images/icons/city budget icon.svg'   ); }
@@ -143,18 +167,22 @@ main > section {
 body > footer {
     background-color: $color-footer;
     color: $color-content-background;
+    padding:$size-gutter;
+
     a {
         color: $color-content-background;
         display:block; text-align:left;
     }
     address { text-align:left; }
 
-    .container {
-        text-align:center;
+    @media all and (min-width:$viewport-medium) {
+        .container {
+            text-align:center;
 
-        div {
-            width:30%; display:inline-block;
-            margin-right:1em;
+            div {
+                width:30%; display:inline-block;
+                margin-right:1em;
+            }
         }
     }
 }

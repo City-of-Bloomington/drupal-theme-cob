@@ -7,3 +7,11 @@
     }
 }
 
+@media all and (min-width: $viewport-large) {
+               #nav1 .container,
+        #highlighted .container,
+       body > footer .container,
+    main > section > .container {
+        width:980px;
+    }
+}
