@@ -7,5 +7,6 @@ php: 5.6.0
 base theme: false
 libraries:
   - cob/fn1
+  - cob/cob
 libraries-override:
   core/modernizr: false

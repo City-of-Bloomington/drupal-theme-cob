@@ -8,3 +8,10 @@ fn1:
   css:
     theme:
       //bloomington.in.gov/static/fn1-releases/refactor/css/default.css: { type: external, minified: true }
+cob:
+  version: 0.x
+  css:
+    theme:
+      css/screen.css: { }
+  js:
+    js/cob.js: { }

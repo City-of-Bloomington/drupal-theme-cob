@@ -1,25 +1,21 @@
 @import '../vendor/City-of-Bloomington/factory-number-one/src/themes/default/scss/modules/_vars-mixins';
 
 @import 'modules/layout';
+@import 'modules/nav1';
 
 body > header {
-    background: url('images/downtown-small.png') no-repeat center bottom;
-    background-size: cover;
     color: $color-content-background;
     padding: 0;
-    height: 50vh;
 
     > .container { background-color: $color-header; }
 
     h1 { color: $color-content-background; font-weight:bold; }
+    a  { color: $color-content-background; }
 
     @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
     @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
 }
 
-#nav1 {
-    background-color: $color-content-background;
-}
 
 #highlighted {
     background-color: $color-accent;
@@ -28,6 +24,13 @@ body > header {
     font-weight: bold;
 
     .container { text-align:center; }
+}
+
+main:before {
+    box-sizing: content-box; content: ''; display: block;
+    height: 40vh;
+    background: url('images/downtown-small.png') no-repeat center bottom;
+    background-size: cover;
 }
 
 main > section {
@@ -48,7 +51,7 @@ main > section {
         display:inline-block;
         text-align:center; vertical-align:top;
         padding:6.5em $size-gutter $size-gutter $size-gutter;
-        width:10em;
+        width:9em;
         margin-bottom:$size-gutter;
 
         background-size:6em; background-repeat:no-repeat; background-position:center $size-gutter;
@@ -140,7 +143,7 @@ main > section {
 #about-section {
     @media all and (min-width:$viewport-medium) {
         .container {
-            background: url('../images/icons/Indiana state icon.svg') left top no-repeat;
+            background: url('../images/icons/Indiana state icon.svg') right 60% top no-repeat;
             background-size: auto 100%;
             p { margin-left:50%; }
         }

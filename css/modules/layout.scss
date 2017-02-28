@@ -3,7 +3,7 @@
         #highlighted .container,
        body > footer .container,
     main > section > .container {
-        width:46rem; margin:0 auto;
+        width:$viewport-medium; margin:0 auto;
     }
 }
 
@@ -12,6 +12,6 @@
         #highlighted .container,
        body > footer .container,
     main > section > .container {
-        width:980px;
+        width:$viewport-large - 16px;
     }
 }

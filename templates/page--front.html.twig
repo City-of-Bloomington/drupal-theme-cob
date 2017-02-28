@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@cob/partials/header.html.twig' %}
+<main>
+    {% if page.highlighted %}
+        <div id="highlighted">
+            <div class="container">
+                {{ page.highlighted }}
+            </div>
+        </div>
+    {% endif %}
+    {% if page.featured_top %}
+        <div id="featured-top">
+            <div class="container">
+                {{ page.featured_top }}
+            </div>
+        </div>
+    {% endif %}
+    <section id="services-section">
+        <header><h1>Services &amp; Guides</h1></header>
+        <div class="container">
+            <a href="#" class="contact">Contact Us</a>
+            <a href="#" class="report">Report Issue</a>
+            <a href="#" class="performance">City Performance</a>
+            <a href="#" class="myBloomington">My Bloomington</a>
+            <a href="#" class="maps">City Maps</a>
+            <a href="#" class="water">Pay Water Bill Online</a>
+            <a href="#" class="parking_ticket">Pay Parking Ticket Online</a>
+            <a href="#" class="parks">Parks and Recreation</a>
+        </div>
+    </section>
+    <section id="news-section">
+        <header><h1>News &amp; Events</h1></header>
+        <div class="container">
+            <div class="news">
+            {{ page.content }}
+            </div>
+            <div class="events">
+            </div>
+        </div>
+    </section>
+    <section id="about-section">
+        <header><h1>About Bloomington</h1></header>
+        <div class="container">
+            <p> Nestled in the rolling hills of southern Indiana, Bloomington is a loved
+                city that boasts spectacular scenery, world-class educational institutions
+                and unique shopping and dining experiences. Bloomington is a great place to
+                live, work and play. Its unique character and friendly and safe environment
+                are matched by few communities in the nation.
+            </p>
+            <p> While you're in Bloomington be sure to experience the city's character and
+                all its sights, sounds and tastes. From shopping and museums to biking and
+                art exhibitions, the activities available for all to enjoy are endless.
+            </p>
+        </div>
+    </section>
+    <section id="government-section">
+        <header><h1>City Government</h1></header>
+        <div class="container">
+            <a href="#" class="code">
+                <h2>Municipal Code</h2>
+                The Municipal Code is intended to make the laws of the city as accessible
+                as possible to city officials, city employees, and private citizens.
+            </a>
+            <a href="#" class="budget">
+                <h2>City Budget</h2>
+                Details of the City of Bloomington's estimated revenue and expenses for a given year.
+            </a>
+            <a href="#" class="boards">
+                <h2>Boards and Commissions</h2>
+                Find out more about the city's boards and commissions and ways you can get involved.
+            </a>
+            <a href="#" class="council">
+                <h2>City Council</h2>
+                The City Council is a link between the citizens of Bloomington and their government</p>
+            </a>
+            <a href="#" class="contact">
+                <h2>Contact the City</h2>
+                There are many ways to get in touch with the City, whether by phone, email, or social media.
+            </a>
+            <a href="#" class="elected">
+                <h2>Elected Officials</h2>
+                See the details of the elected officials and get to know them better.
+            </a>
+            <a href="#" class="public_safety">
+                <h2>Public Safety</h2>
+                Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
+            </a>
+        </div>
+    </section>
+</main>
+{% include '@cob/partials/footer.html.twig' %}
