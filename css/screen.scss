@@ -2,20 +2,8 @@
 
 @import 'modules/layout';
 @import 'modules/nav1';
-
-body > header {
-    color: $color-content-background;
-    padding: 0;
-
-    > .container { background-color: $color-header; }
-
-    h1 { color: $color-content-background; font-weight:bold; }
-    a  { color: $color-content-background; }
-
-    @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
-    @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
-}
-
+@import 'modules/header';
+@import 'modules/admin';
 
 #highlighted {
     background-color: $color-accent;
@@ -26,8 +14,8 @@ body > header {
     .container { text-align:center; }
 }
 
-main:before {
-    box-sizing: content-box; content: ''; display: block;
+main.front:before {
+    box-sizing:content-box; content:''; display:block;
     height: 40vh;
     background: url('images/downtown-small.png') no-repeat center bottom;
     background-size: cover;
