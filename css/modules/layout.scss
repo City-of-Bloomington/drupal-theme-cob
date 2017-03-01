@@ -1,17 +1,17 @@
 @media all and (min-width: $viewport-medium) {
-               #nav1 .container,
-        #highlighted .container,
-       body > footer .container,
-    main > section > .container {
+    #block-cob-main-menu .container,
+    #highlighted         .container,
+    body > footer        .container,
+    main > section >     .container {
         width:$viewport-medium; margin:0 auto;
     }
 }
 
 @media all and (min-width: $viewport-large) {
-               #nav1 .container,
-        #highlighted .container,
-       body > footer .container,
-    main > section > .container {
+    #block-cob-main-menu .container,
+    #highlighted         .container,
+    body > footer        .container,
+    main > section >     .container {
         width:$viewport-large - 16px;
     }
 }

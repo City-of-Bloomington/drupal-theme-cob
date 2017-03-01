@@ -19,9 +19,9 @@ function cob_preprocess_taxonomy_term(&$vars)
 }
 
 
-function cob_preprocess_page__front(&$vars)
+function cob_preprocess_page(&$vars)
 {
-    $vars['root_taxonomy_terms'] = \Drupal::service('entity_type.manager')
-                                 ->getStorage('taxonomy_term')
-                                 ->loadTree('categories', 0, 1);
+    #$vars['root_taxonomy_terms'] = \Drupal::service('entity_type.manager')
+    #                             ->getStorage('taxonomy_term')
+    #                             ->loadTree('categories', 0, 1);
 }

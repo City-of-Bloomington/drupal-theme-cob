@@ -4,7 +4,7 @@ body > header {
 
     > .container {
         background-color: $color-header;
-        div div, div form { display:inline-block; }
+        div, form { display:inline-block; }
     }
 
     h1 { color: $color-content-background; font-weight:bold; }
