@@ -1,11 +1,10 @@
 {#
 /**
  * @file
- * Bartik's theme implementation to display a single page.
+ * Default theme implementation to display a single page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
- * can be found in the html.html.twig template normally located in the
- * core/modules/system directory.
+ * can be found in the html.html.twig template in this directory.
  *
  * Available variables:
  *
@@ -22,6 +21,7 @@
  *   linking to the front page. This includes the language domain or prefix.
  *
  * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
  * - node: Fully loaded node, if there is an automatically-loaded node
  *   associated with the page and the node ID is the second argument in the
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
@@ -29,43 +29,31 @@
  *
  * Regions:
  * - page.header: Items for the header region.
- * - page.highlighted: Items for the highlighted region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
- * - page.featured_top: Items for the featured top region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.help: Dynamic help text, mostly for admin pages.
  * - page.content: The main content of the current page.
  * - page.sidebar_first: Items for the first sidebar.
  * - page.sidebar_second: Items for the second sidebar.
- * - page.featured_bottom_first: Items for the first featured bottom region.
- * - page.featured_bottom_second: Items for the second featured bottom region.
- * - page.featured_bottom_third: Items for the third featured bottom region.
- * - page.footer_first: Items for the first footer column.
- * - page.footer_second: Items for the second footer column.
- * - page.footer_third: Items for the third footer column.
- * - page.footer_fourth: Items for the fourth footer column.
- * - page.footer_fifth: Items for the fifth footer column.
+ * - page.footer: Items for the footer region.
  * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
  * @see html.html.twig
+ *
+ * @ingroup themeable
  */
 #}
-{% include '@cob/partials/header.html.twig' %}
+<input  id="hamburger" type="checkbox" />
+<label for="hamburger"></label>
+{{ page.header }}
+{{ page.primary_menu }}
+{{ page.secondary_menu }}
 <main class="front">
-    {% if page.highlighted %}
-        <div id="highlighted">
-            <div class="container">
-                {{ page.highlighted }}
-            </div>
-        </div>
-    {% endif %}
-    {% if page.featured_top %}
-        <div id="featured-top">
-            <div class="container">
-                {{ page.featured_top }}
-            </div>
-        </div>
-    {% endif %}
+    {{ page.highlighted }}
+    {{ page.breadcrumb }}
+    {{ page.help }}
     <section id="services-section">
         <header><h1>Services &amp; Guides</h1></header>
         <div class="container">
@@ -139,4 +127,4 @@
         </div>
     </section>
 </main>
-{% include '@cob/partials/footer.html.twig' %}
+{{ page.footer }}

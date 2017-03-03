@@ -45,41 +45,18 @@
  * @ingroup themeable
  */
 #}
-{% include '@cob/partials/header.html.twig' %}
+<input  id="hamburger" type="checkbox" />
+<label for="hamburger"></label>
+{{ page.header }}
+{{ page.primary_menu }}
+{{ page.secondary_menu }}
 <main>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    {% if page.highlighted %}
-        <div id="highlighted">
-            <div class="container">
-                {{ page.highlighted }}
-            </div>
-        </div>
-    {% endif %}
-    {% if page.featured_top %}
-        <div id="featured-top">
-            <div class="container">
-                {{ page.featured_top }}
-            </div>
-        </div>
-    {% endif %}
-
+    {{ page.highlighted }}
     {{ page.breadcrumb }}
     {{ page.help }}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+    {{ page.sidebar_first }}
+    {{ page.sidebar_second }}
+    {{ page.content }}
 </main>
-{% include '@cob/partials/footer.html.twig' %}
+{{ page.footer }}

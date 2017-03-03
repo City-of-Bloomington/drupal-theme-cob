@@ -9,6 +9,7 @@ function cob_preprocess_taxonomy_term(&$vars)
     #echo $vars['term']->id();
     #echo " TERM\n";
 
+    /*
     $terms = \Drupal::service('entity_type.manager')
                     ->getStorage('taxonomy_term')
                     ->loadTree('categories', $vars['term']->id(), 1);
@@ -16,6 +17,7 @@ function cob_preprocess_taxonomy_term(&$vars)
     $vars['page']['sidebar_first'][] = [
         '#markup' => '<h2>Test</h2>'
     ];
+    */
 }
 
 
