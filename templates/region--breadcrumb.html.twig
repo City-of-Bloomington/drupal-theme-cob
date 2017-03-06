@@ -14,8 +14,10 @@
  * @ingroup themeable
  */
 #}
-<div id="content"{{attributes}}>
+{% if content %}
+<div id="breadcrumb"{{ attributes }}>
     <div class="container">
         {{ content }}
     </div>
 </div>
+{% endif %}

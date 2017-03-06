@@ -6,12 +6,27 @@
 @import 'modules/admin';
 
 #highlighted {
-    background-color: $color-accent;
+    background-color: $color-error;
     color: $color-content-background;
     padding: $size-gutter;
     font-weight: bold;
 
     .container { text-align:center; }
+}
+
+#breadcrumb {
+    background-color: $color-accent; padding: $size-gutter;
+    nav {
+        font-size:$font-size-small;
+        a { color:$color-content-background; }
+    }
+}
+#block-cob-page-title {
+
+    h1 {
+        font-size: $font-size-bigger; color:$color-content-background;
+        margin-top:1em;
+    }
 }
 
 main.front:before {
@@ -170,7 +185,7 @@ body > footer {
         .container {
             text-align:center;
 
-            div {
+            nav {
                 width:30%; display:inline-block;
                 margin-right:1em;
             }

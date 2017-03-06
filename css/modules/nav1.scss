@@ -19,9 +19,9 @@ label[for="hamburger"] {
         -ms-transform:translateX($size-side-nav);
             transform:translateX($size-side-nav);
 }
-#block-cob-main-menu, body > header, body > main, body > footer { transition:all 200ms ease-in; }
+#nav1, body > header, body > main, body > footer { transition:all 200ms ease-in; }
 
-#block-cob-main-menu {
+#nav1 {
     position:fixed; top:0; left:0;
     width:$size-side-nav;
     height:100%;
@@ -39,7 +39,7 @@ label[for="hamburger"] {
 @media all and (min-width:$viewport-medium) {
     #hamburger, label[for="hamburger"] { display:none; }
 
-    #block-cob-main-menu {
+    #nav1 {
         position:static;
         width:100%; height:auto;
         margin:0;

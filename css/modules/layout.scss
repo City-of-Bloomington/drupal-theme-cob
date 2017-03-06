@@ -1,16 +1,16 @@
 @media all and (min-width: $viewport-medium) {
-    #block-cob-main-menu .container,
-    #highlighted         .container,
+    #nav1                .container,
     body > footer        .container,
+    main > div           .container,
     main > section >     .container {
         width:$viewport-medium; margin:0 auto;
     }
 }
 
 @media all and (min-width: $viewport-large) {
-    #block-cob-main-menu .container,
-    #highlighted         .container,
+    #nav1                .container,
     body > footer        .container,
+    main > div           .container,
     main > section >     .container {
         width:$viewport-large - 16px;
     }
