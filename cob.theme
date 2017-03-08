@@ -3,6 +3,9 @@
  * @copyright 2017 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  */
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
 function cob_preprocess_taxonomy_term(&$vars)
 {
     #echo "TERM ";
@@ -23,6 +26,17 @@ function cob_preprocess_taxonomy_term(&$vars)
 
 function cob_preprocess_page(&$vars)
 {
+    if (isset($vars['node']) && $vars['node']->hasField('field_cover_image')) {
+        $styles = ['cover_small', 'cover_medium', 'cover_large'];
+
+        foreach ($vars['node']->get('field_cover_image') as $item) {
+            $v = $item->getValue();
+            $f = File::load($v['target_id']);
+            foreach ($styles as $s) {
+                $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
+            }
+        }
+    }
     #$vars['root_taxonomy_terms'] = \Drupal::service('entity_type.manager')
     #                             ->getStorage('taxonomy_term')
     #                             ->loadTree('categories', 0, 1);

@@ -16,10 +16,16 @@
 
 #breadcrumb {
     background-color: $color-accent; padding: $size-gutter;
+    height: 25vmin;
+    background: url('images/downtown-small.png') no-repeat center bottom;
+    background-size: cover;
     nav {
         font-size:$font-size-small;
         a { color:$color-content-background; }
     }
+
+    @media all and (min-width: $viewport-medium) { background-image:url('images/downtown-medium.png'); }
+    @media all and (min-width: $viewport-large ) { background-image:url('images/downtown-large.png' ); }
 }
 #block-cob-page-title {
 
@@ -27,13 +33,6 @@
         font-size: $font-size-bigger; color:$color-content-background;
         margin-top:1em;
     }
-}
-
-main.front:before {
-    box-sizing:content-box; content:''; display:block;
-    height: 40vh;
-    background: url('images/downtown-small.png') no-repeat center bottom;
-    background-size: cover;
 }
 
 main > section {
