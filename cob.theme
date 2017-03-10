@@ -5,39 +5,69 @@
  */
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
-
-function cob_preprocess_taxonomy_term(&$vars)
-{
-    #echo "TERM ";
-    #echo $vars['term']->id();
-    #echo " TERM\n";
-
-    /*
-    $terms = \Drupal::service('entity_type.manager')
-                    ->getStorage('taxonomy_term')
-                    ->loadTree('categories', $vars['term']->id(), 1);
-
-    $vars['page']['sidebar_first'][] = [
-        '#markup' => '<h2>Test</h2>'
-    ];
-    */
-}
-
+use Drupal\directory\DirectoryService;
+use Drupal\onboard\OnBoardService;
 
 function cob_preprocess_page(&$vars)
 {
-    if (isset($vars['node']) && $vars['node']->hasField('field_cover_image')) {
-        $styles = ['cover_small', 'cover_medium', 'cover_large'];
+    if (isset($vars['node'])) {
+        if ($vars['node']->hasField('field_cover_image')) {
+            $styles = ['cover_small', 'cover_medium', 'cover_large'];
 
-        foreach ($vars['node']->get('field_cover_image') as $item) {
-            $v = $item->getValue();
-            $f = File::load($v['target_id']);
-            foreach ($styles as $s) {
-                $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
+            foreach ($vars['node']->get('field_cover_image') as $item) {
+                $v = $item->getValue();
+                $f = File::load($v['target_id']);
+                foreach ($styles as $s) {
+                    $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
+                }
             }
         }
+
+        $contactInfo = [];
+        if ($vars['node']->hasField('field_facebook_page')) {
+            $v = $vars['node']->get('field_facebook_page')->getValue();
+            if ($v[0]['uri']) {
+                $contactInfo['facebook'] = $v[0]['uri'];
+            }
+        }
+        if ($vars['node']->hasField('field_twitter_account')) {
+            $v = $vars['node']->get('field_twitter_account')->getValue();
+            if ($v[0]['uri']) {
+                $contactInfo['twitter'] = $v[0]['uri'];
+            }
+        }
+        if ($vars['node']->hasField( 'field_committee')) {
+            $id = $vars['node']->get('field_committee')->value;
+            if ($id) {
+                $json = OnBoardService::committee_info($id);
+                if ($json) {
+                    $contactInfo['name'   ] = $json['info']['name'   ];
+                    $contactInfo['email'  ] = $json['info']['email'  ];
+                    $contactInfo['phone'  ] = $json['info']['phone'  ];
+                    $contactInfo['address'] = $json['info']['address'];
+                    $contactInfo['city'   ] = $json['info']['city'   ];
+                    $contactInfo['state'  ] = $json['info']['state'  ];
+                    $contactInfo['zip'    ] = $json['info']['zip'    ];
+                }
+            }
+        }
+        if ($vars['node']->hasField( 'field_directory_dn')) {
+            $dn = $vars['node']->get('field_directory_dn')->value;
+            if ($dn) {
+                $json = DirectoryService::department_info($dn);
+                if ($json) {
+                    $contactInfo['name'   ] = $json->name;
+                    $contactInfo['email'  ] = $json->email;
+                    $contactInfo['phone'  ] = $json->office;
+                    $contactInfo['address'] = $json->address;
+                    $contactInfo['city'   ] = $json->city;
+                    $contactInfo['state'  ] = $json->state;
+                    $contactInfo['zip'    ] = $json->zip;
+                }
+            }
+        }
+        if ($contactInfo) {
+            $vars['contactInfo'] = $contactInfo;
+        }
     }
-    #$vars['root_taxonomy_terms'] = \Drupal::service('entity_type.manager')
-    #                             ->getStorage('taxonomy_term')
-    #                             ->loadTree('categories', 0, 1);
 }

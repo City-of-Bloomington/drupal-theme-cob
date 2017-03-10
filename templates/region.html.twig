@@ -14,8 +14,6 @@
  * @ingroup themeable
  */
 #}
-<footer{{ attributes }}>
-    <div class="container">
-        {{ content }}
-    </div>
-</footer>
+{% if content %}
+    {{ content }}
+{% endif %}

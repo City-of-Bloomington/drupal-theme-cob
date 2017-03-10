@@ -47,7 +47,11 @@
 #}
 <input  id="hamburger" type="checkbox" />
 <label for="hamburger"></label>
-{{ page.header }}
+<header>
+    <div class="container">
+        {{ page.header }}
+    </div>
+</header>
 {% include '@cob/partials/nav1.html.twig' %}
 {{ page.primary_menu }}
 {{ page.secondary_menu }}
@@ -61,11 +65,69 @@
         @media all and (min-width:990px) { #breadcrumb { background-image:url('{{ cover_image.cover_large  }}'); }}
     </style>
     {% endif %}
-    {{ page.breadcrumb }}
-    {{ page.highlighted }}
+
+    <div id="breadcrumb">
+        <div class="container">
+            {{ page.breadcrumb }}
+            {% if contactInfo %}
+            <div class="contactInfo">
+                <div>
+                {% if contactInfo.address %}
+                    <address>{{ contactInfo.address }}
+                    {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
+                    </address>
+                {% endif %}
+                </div>
+                <div>
+                {% if contactInfo.phone %}
+                    <a href="tel:{{ contactInfo.phone }}">{{ contactInfo.phone }}</a>
+                {% endif %}
+                </div>
+                <div>
+                {% if contactInfo.email %}
+                    <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
+                {% endif %}
+                {% if contactInfo.facebook %}
+                    <a href="{{ contactInfo.facebook }}" class="facebook">Connect on Facebook</a>
+                {% endif %}
+                {% if contactInfo.twitter  %}
+                    <a href="{{ contactInfo.twitter }}" class="twitter">Follow us on Twitter</a>
+                {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if page.highlighted %}
+    <div id="highlighted">
+        <div class="container">
+            {{ page.highlighted }}
+        </div>
+    </div>
+    {% endif %}
+
     {{ page.help }}
-    {{ page.sidebar_first }}
-    {{ page.sidebar_second }}
-    {{ page.content }}
+
+    {% if page.sidebar_first %}
+    <aside class="sidebar_first">
+        {{ page.sidebar_first }}
+    </aside>
+    {% endif %}
+    {% if page.sidebar_second %}
+    <aside class="sidebar_second">
+        {{ page.sidebar_second }}
+    </aside>
+    {% endif %}
+
+    <div id="content">
+        <div class="container">
+            {{ page.content }}
+        </div>
+    </div>
 </main>
-{{ page.footer }}
+<footer>
+    <div class="container">
+        {{ page.footer }}
+    </div>
+</footer>

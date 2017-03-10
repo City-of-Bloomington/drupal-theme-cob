@@ -17,24 +17,64 @@
 #breadcrumb {
     background-color: $color-accent; padding: $size-gutter;
     height: 25vmin;
-    background: url('images/downtown-small.png') no-repeat center bottom;
+    background: url('images/downtown-small.png') no-repeat center center;
     background-size: cover;
+    position:relative;
+
+    .container {
+        background-color:rgba(0,0,0,.5);
+        position:absolute; bottom:0; left:0; right:0;
+        padding:$size-gutter;
+    }
     nav {
         font-size:$font-size-small;
         a { color:$color-content-background; }
     }
+    .contactInfo {
+        overflow:auto;
+        address, a {
+            color:$color-content-background; font-style:normal;
+            display:block;
+            padding-left: 1.5rem;
+            background-position: left center;
+            background-size:1rem;
+            background-repeat:no-repeat;
+        }
+        address            { background-image:url('images/fa-svg/white/map-marker.svg'     ); }
+        a.facebook         { background-image:url('images/fa-svg/white/facebook-square.svg'); }
+        a.twitter          { background-image:url('images/fa-svg/white/twitter-square.svg' ); }
+        a[href^="tel:"   ] { background-image:url('images/fa-svg/white/phone-square.svg'   ); }
+        a[href^="mailto:"] { background-image:url('images/fa-svg/white/envelope.svg'       ); }
+    }
 
-    @media all and (min-width: $viewport-medium) { background-image:url('images/downtown-medium.png'); }
-    @media all and (min-width: $viewport-large ) { background-image:url('images/downtown-large.png' ); }
+    @media all and (min-width: $viewport-medium) {
+        background-image:url('images/downtown-medium.png');
+        .contactInfo > div {
+            width:30%; float:left;
+        }
+    }
+    @media all and (min-width: $viewport-large ) {
+        background-image:url('images/downtown-large.png' );
+        .contactInfo {
+            width:$viewport-large; margin:0 auto;
+        }
+    }
 }
 #block-cob-page-title {
-
     h1 {
         font-size: $font-size-bigger; color:$color-content-background;
         margin-top:1em;
     }
 }
 
+main.front:before {
+    box-sizing:content-box; content:''; display:block;
+    height: 25vh;
+    background: url('images/downtown-small.png') no-repeat center center;
+    background-size: cover;
+    @media all and (min-width: $viewport-medium) { background-image:url('images/downtown-medium.png'); }
+    @media all and (min-width: $viewport-large ) { background-image:url('images/downtown-large.png' ); }
+}
 main > section {
     padding:$size-gutter 0;
 
@@ -52,7 +92,7 @@ main > section {
     a {
         display:inline-block;
         text-align:center; vertical-align:top;
-        padding:6.5em $size-gutter $size-gutter $size-gutter;
+        padding:7em $size-gutter $size-gutter $size-gutter;
         width:9em;
         margin-bottom:$size-gutter;
 

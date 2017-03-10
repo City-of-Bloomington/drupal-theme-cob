@@ -47,12 +47,15 @@
 #}
 <input  id="hamburger" type="checkbox" />
 <label for="hamburger"></label>
-{{ page.header }}
+<header>
+    <div class="container">
+        {{ page.header }}
+    </div>
+</header>
 {% include '@cob/partials/nav1.html.twig' %}
 {{ page.primary_menu }}
 {{ page.secondary_menu }}
 <main class="front">
-    {{ page.breadcrumb }}
     {{ page.highlighted }}
     {{ page.help }}
     <section id="services-section">
