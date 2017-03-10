@@ -1,0 +1,190 @@
+/** Urls are relative to screen.css */
+@import 'https://fonts.googleapis.com/css?family=Lora';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
+
+#hamburger { position: fixed; clip: rect(0, 0, 0, 0); }
+
+label[for="hamburger"] { position: fixed; top: 0.5em; left: 0.5em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
+
+#hamburger:checked ~ nav { margin: 0; }
+
+#hamburger:checked ~ header, #hamburger:checked ~ main, #hamburger:checked ~ footer { -webkit-transform: translateX(17em); -moz-transform: translateX(17em); -ms-transform: translateX(17em); transform: translateX(17em); }
+
+#nav1, body > header, body > main, body > footer { transition: all 200ms ease-in; }
+
+#nav1 { position: fixed; top: 0; left: 0; width: 17em; height: 100%; margin: 0 0 0 -17em; background-color: #315da6; }
+
+#nav1 .container { padding-top: 3em; }
+
+#nav1 .container a { color: #fff; }
+
+@media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
+  #nav1 { position: static; width: 100%; height: auto; margin: 0; background-color: #fff; }
+  #nav1 .container { padding: 0; overflow: auto; text-align: center; }
+  #nav1 .container a { color: #183365; float: none; display: inline-block; padding-top: 52px; background-size: auto 40px; background-position: center 0.5em; background-repeat: no-repeat; }
+  #nav1 .container .about { background-image: url("../images/icons/about bloom icon.svg"); }
+  #nav1 .container .news { background-image: url("../images/icons/news and event icon.svg"); }
+  #nav1 .container .city { background-image: url("../images/icons/city govt icon.svg"); }
+  #nav1 .container .services { background-image: url("../images/icons/services icon.svg"); } }
+
+body > header { color: #fff; padding: 0; }
+
+body > header > .container { background-color: #183365; }
+
+body > header > .container div, body > header > .container form { display: inline-block; }
+
+body > header h1 { color: #fff; font-weight: bold; }
+
+body > header a { color: #fff; }
+
+body > header .search-block-form { float: right; }
+
+/** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
+#block-cob-local-tasks { margin: 1em 0; }
+
+#block-cob-local-tasks a { font-family: Roboto, sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+
+#block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
+
+#block-cob-local-tasks a.is-active { background-color: #c9e5f7; }
+
+#highlighted { background-color: #f7567c; color: #fff; padding: 0.5em; font-weight: bold; }
+
+#highlighted .container { text-align: center; }
+
+#breadcrumb { background-color: #315da6; padding: 0.5em; height: 25vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
+
+#breadcrumb .container { background-color: rgba(0, 0, 0, 0.5); position: absolute; bottom: 0; left: 0; right: 0; padding: 0.5em; }
+
+#breadcrumb nav { font-size: 0.8rem; }
+
+#breadcrumb nav a { color: #fff; }
+
+#breadcrumb .contactInfo { overflow: auto; }
+
+#breadcrumb .contactInfo address, #breadcrumb .contactInfo a { color: #fff; font-style: normal; display: block; padding-left: 1.5rem; background-position: left center; background-size: 1rem; background-repeat: no-repeat; }
+
+#breadcrumb .contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
+
+#breadcrumb .contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
+
+#breadcrumb .contactInfo a.twitter { background-image: url("images/fa-svg/white/twitter-square.svg"); }
+
+#breadcrumb .contactInfo a[href^="tel:"] { background-image: url("images/fa-svg/white/phone-square.svg"); }
+
+#breadcrumb .contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/white/envelope.svg"); }
+
+@media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
+  #breadcrumb .contactInfo > div { width: 30%; float: left; } }
+
+@media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); }
+  #breadcrumb .contactInfo { width: 1080px; margin: 0 auto; } }
+
+#block-cob-page-title h1 { font-size: 1.5rem; color: #fff; margin-top: 1em; }
+
+main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
+
+@media all and (min-width: 640px) { main.front:before { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { main.front:before { background-image: url("images/downtown-large.png"); } }
+
+main > section { padding: 0.5em 0; }
+
+main > section header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; }
+
+main > section h1 { display: inline; padding: 0 0.5em; }
+
+main > section .container { overflow: auto; padding: 0.5em; }
+
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding: 7em 0.5em 0.5em 0.5em; width: 9em; margin-bottom: 0.5em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+
+#services-section { background-color: #183365; }
+
+#services-section header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+
+#services-section h1, #services-section a { background-color: #183365; color: #fff; font-weight: bold; }
+
+#services-section a.contact { background-image: url("../images/icons/contact us icon.svg"); }
+
+#services-section a.report { background-image: url("../images/icons/report issue icon.svg"); }
+
+#services-section a.performance { background-image: url("../images/icons/performance icon.svg"); }
+
+#services-section a.myBloomington { background-image: url("../images/icons/my bloomington icon.svg"); }
+
+#services-section a.maps { background-image: url("../images/icons/city maps icon.svg"); }
+
+#services-section a.water { background-image: url("../images/icons/water icon.svg"); }
+
+#services-section a.parking_ticket { background-image: url("../images/icons/parking icon.svg"); }
+
+#services-section a.parks { background-image: url("../images/icons/parks icon.svg"); }
+
+#news-section > header, #about-section > header, #government-section > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+#news-section > header h1, #news-section > header h2, #about-section > header h1, #about-section > header h2, #government-section > header h1, #government-section > header h2 { background-color: #fff; color: #183365; }
+
+#news-section > .container > div { padding: 0.5em; }
+
+#news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
+
+@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
+
+#news-section .news article h2 { width: 48%; float: left; font-size: 1.3rem; font-weight: bold; font-family: Lora, serif; text-align: left; }
+
+#news-section .news article > div { width: 48%; float: left; }
+
+#news-section .news article time { float: right; }
+
+@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
+  #news-section .news article:first-child { width: 93%; }
+  #news-section .events article { width: 93%; } }
+
+#news-section .events article { overflow: auto; position: relative; height: auto; min-height: 5em; border: 1px solid #183365; }
+
+#news-section .events article .month, #news-section .events article .monthDate { font-size: 1.3rem; }
+
+#news-section .events article .weekday { font-weight: bold; }
+
+#news-section .events article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; }
+
+#news-section .events article > div { margin-left: 6.5em; }
+
+@media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
+  #news-section .events { width: 35%; display: inline-block; }
+  #news-section > .container > div { vertical-align: top; } }
+
+@media all and (min-width: 640px) { #about-section .container { background: url("../images/icons/Indiana state icon.svg") right 60% top no-repeat; background-size: auto 100%; }
+  #about-section .container p { margin-left: 50%; } }
+
+#government-section .container { text-align: center; }
+
+#government-section a { color: #212121; }
+
+#government-section a:hover { background-color: #4caf50; }
+
+#government-section a.code { background-image: url("../images/icons/Municipal code icon.svg"); }
+
+#government-section a.budget { background-image: url("../images/icons/city budget icon.svg"); }
+
+#government-section a.boards { background-image: url("../images/icons/boards icon.svg"); }
+
+#government-section a.council { background-image: url("../images/icons/city council icon.svg"); }
+
+#government-section a.contact { background-image: url("../images/icons/contact icon.svg"); }
+
+#government-section a.elected { background-image: url("../images/icons/elected icon.svg"); }
+
+#government-section a.public_safety { background-image: url("../images/icons/public safety icon.svg"); }
+
+body > footer { background-color: #795548; color: #fff; padding: 0.5em; }
+
+body > footer a { color: #fff; display: block; text-align: left; }
+
+body > footer address { text-align: left; }
+
+@media all and (min-width: 640px) { body > footer .container { text-align: center; }
+  body > footer .container nav { width: 30%; display: inline-block; margin-right: 1em; } }
+
+/*# sourceMappingURL=screen.css.map */

@@ -26,13 +26,13 @@ function cob_preprocess_page(&$vars)
         $contactInfo = [];
         if ($vars['node']->hasField('field_facebook_page')) {
             $v = $vars['node']->get('field_facebook_page')->getValue();
-            if ($v[0]['uri']) {
+            if (!empty($v[0]['uri'])) {
                 $contactInfo['facebook'] = $v[0]['uri'];
             }
         }
         if ($vars['node']->hasField('field_twitter_account')) {
             $v = $vars['node']->get('field_twitter_account')->getValue();
-            if ($v[0]['uri']) {
+            if (!empty($v[0]['uri'])) {
                 $contactInfo['twitter'] = $v[0]['uri'];
             }
         }
