@@ -69,33 +69,7 @@
     <div id="breadcrumb">
         <div class="container">
             {{ page.breadcrumb }}
-            {% if contactInfo %}
-            <div class="contactInfo">
-                <div>
-                {% if contactInfo.address %}
-                    <address>{{ contactInfo.address }}
-                    {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
-                    </address>
-                {% endif %}
-                </div>
-                <div>
-                {% if contactInfo.phone %}
-                    <a href="tel:{{ contactInfo.phone }}">{{ contactInfo.phone }}</a>
-                {% endif %}
-                </div>
-                <div>
-                {% if contactInfo.email %}
-                    <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
-                {% endif %}
-                {% if contactInfo.facebook %}
-                    <a href="{{ contactInfo.facebook }}" class="facebook">Connect on Facebook</a>
-                {% endif %}
-                {% if contactInfo.twitter  %}
-                    <a href="{{ contactInfo.twitter }}" class="twitter">Follow us on Twitter</a>
-                {% endif %}
-                </div>
-            </div>
-            {% endif %}
+            {% include '@cob/partials/contactInfo.html.twig' %}
         </div>
     </div>
 

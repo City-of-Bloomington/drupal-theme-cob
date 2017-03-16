@@ -47,17 +47,7 @@ label[for="hamburger"] {
         .container {
             padding:0; overflow:auto; text-align:center;
 
-            a {
-                color:$color-header;
-                float:none; display:inline-block; padding-top:52px;
-                background-size:auto 40px;
-                background-position:center $size-gutter;
-                background-repeat:no-repeat;
-            }
-            .about    { background-image:url('../images/icons/about bloom icon.svg'); }
-            .news     { background-image:url('../images/icons/news and event icon.svg'); }
-            .city     { background-image:url('../images/icons/city govt icon.svg'); }
-            .services { background-image:url('../images/icons/services icon.svg'); }
+            a { color:$color-header; float:none; }
         }
     }
 }

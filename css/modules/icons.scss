@@ -1,0 +1,52 @@
+@media all and (min-width:$viewport-medium) {
+    #nav1 {
+        a {
+            display:inline-block; padding-top:52px;
+            background-size:auto 40px;
+            background-position:center $size-gutter;
+            background-repeat:no-repeat;
+        }
+        .about    { background-image:url('../images/icons/about bloom icon.svg'   ); }
+        .news     { background-image:url('../images/icons/news and event icon.svg'); }
+        .city     { background-image:url('../images/icons/city govt icon.svg'     ); }
+        .services { background-image:url('../images/icons/services icon.svg'      ); }
+    }
+}
+
+#services-section, #government-section {
+    a {
+        display:inline-block;
+        text-align:center; vertical-align:top;
+        padding:7em $size-gutter $size-gutter $size-gutter;
+        width:9em;
+        margin-bottom:$size-gutter;
+
+        background-size:6em; background-repeat:no-repeat; background-position:center $size-gutter;
+    }
+}
+#services-section {
+    a.contact        { background-image:url('../images/icons/contact us icon.svg'    ); }
+    a.report         { background-image:url('../images/icons/report issue icon.svg'  ); }
+    a.performance    { background-image:url('../images/icons/performance icon.svg'   ); }
+    a.myBloomington  { background-image:url('../images/icons/my bloomington icon.svg'); }
+    a.maps           { background-image:url('../images/icons/city maps icon.svg'     ); }
+    a.water          { background-image:url('../images/icons/water icon.svg'         ); }
+    a.parking_ticket { background-image:url('../images/icons/parking icon.svg'       ); }
+    a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
+}
+
+.contactInfo {
+    address, a {
+        display:block;
+        padding-left: 1.5rem;
+        background-position: left center;
+        background-size:1rem;
+        background-repeat:no-repeat;
+    }
+    address            { background-image:url('images/fa-svg/white/map-marker.svg'     ); }
+    a.facebook         { background-image:url('images/fa-svg/white/facebook-square.svg'); }
+    a.twitter          { background-image:url('images/fa-svg/white/twitter-square.svg' ); }
+    a[href^="mailto:"] { background-image:url('images/fa-svg/white/envelope.svg'       ); }
+    a.phone            { background-image:url('images/fa-svg/white/phone-square.svg'   ); }
+    a.fax              { background-image:url('images/fa-svg/white/fax.svg'            ); }
+}

@@ -1,0 +1,43 @@
+{% if contactInfo %}
+<div class="contactInfo">
+    <dl class="address">
+    {% if contactInfo.address %}
+        <dt>Address</dt>
+        <dd><address>{{ contactInfo.address }}
+            {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
+            </address>
+        </dd>
+    {% endif %}
+    </dl>
+    <dl class="phones">
+    {% if contactInfo.phone %}
+        <dt>Phone</dt>
+        <dd><a href="tel:{{ contactInfo.phone }}" class="phone" title="Phone">
+                {{ contactInfo.phone }}
+            </a>
+        </dd>
+    {% endif %}
+    {% if contactInfo.fax %}
+        <dt>Fax</dt>
+        <dd><a href="tel:{{ contactInfo.fax }}" class="fax" title="Fax">
+                {{ contactInfo.fax }}
+            </a>
+        </dd>
+    {% endif %}
+    </dl>
+    <dl class="links">
+    {% if contactInfo.email %}
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></dd>
+    {% endif %}
+    {% if contactInfo.facebook %}
+        <dt>Facebook</dt>
+        <dd><a href="{{ contactInfo.facebook }}" class="facebook">Connect on Facebook</a></dd>
+    {% endif %}
+    {% if contactInfo.twitter  %}
+        <dt>Twitter</dt>
+        <dd><a href="{{ contactInfo.twitter }}" class="twitter">Follow us on Twitter</a></dd>
+    {% endif %}
+    </dl>
+</div>
+{% endif %}

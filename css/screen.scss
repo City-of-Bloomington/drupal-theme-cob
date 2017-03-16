@@ -4,6 +4,7 @@
 @import 'modules/nav1';
 @import 'modules/header';
 @import 'modules/admin';
+@import 'modules/icons';
 
 #highlighted {
     background-color: $color-error;
@@ -15,51 +16,53 @@
 }
 
 #breadcrumb {
-    background-color: $color-accent; padding: $size-gutter;
-    height: 25vmin;
+    background-color: $color-accent;
+    min-height: 25vmin;
     background: url('images/downtown-small.png') no-repeat center center;
     background-size: cover;
     position:relative;
 
     .container {
         background-color:rgba(0,0,0,.5);
-        position:absolute; bottom:0; left:0; right:0;
         padding:$size-gutter;
     }
-    nav {
-        font-size:$font-size-small;
-        a { color:$color-content-background; }
-    }
-    .contactInfo {
-        overflow:auto;
-        address, a {
-            color:$color-content-background; font-style:normal;
-            display:block;
-            padding-left: 1.5rem;
-            background-position: left center;
-            background-size:1rem;
-            background-repeat:no-repeat;
-        }
-        address            { background-image:url('images/fa-svg/white/map-marker.svg'     ); }
-        a.facebook         { background-image:url('images/fa-svg/white/facebook-square.svg'); }
-        a.twitter          { background-image:url('images/fa-svg/white/twitter-square.svg' ); }
-        a[href^="tel:"   ] { background-image:url('images/fa-svg/white/phone-square.svg'   ); }
-        a[href^="mailto:"] { background-image:url('images/fa-svg/white/envelope.svg'       ); }
-    }
+    nav { font-size:$font-size-small; }
+    address, a { color:$color-content-background; }
 
     @media all and (min-width: $viewport-medium) {
         background-image:url('images/downtown-medium.png');
-        .contactInfo > div {
-            width:30%; float:left;
+        .container {
+            position:absolute; bottom:0; left:0; right:0;
         }
     }
     @media all and (min-width: $viewport-large ) {
         background-image:url('images/downtown-large.png' );
-        .contactInfo {
-            width:$viewport-large; margin:0 auto;
-        }
     }
 }
+.contactInfo, .departmentStaff {
+    overflow:auto;
+    dl { border:none; padding:0; }
+    dt { @include visuallyHidden(); }
+    address, a { font-style:normal; }
+    > dl, > div { vertical-align:top; }
+
+    @media all and (min-width:$viewport-medium) {
+        > dl, > div {
+            display:inline-block;
+            &:not(:last-child) { margin-right:2em; }
+        }
+    }
+    @media all and (min-width:$viewport-large) {
+        width:$viewport-large; margin:0 auto;
+    }
+}
+@media all and (min-width:$viewport-medium) {
+    .departmentStaff {
+        h3 { margin:0; }
+        > div { width:15em; margin-bottom:1em; }
+    }
+}
+
 #block-cob-page-title {
     h1 {
         font-size: $font-size-bigger; color:$color-content-background;
@@ -88,33 +91,12 @@ main > section {
     .container { overflow:auto; padding:$size-gutter; }
 }
 
-#services-section, #government-section {
-    a {
-        display:inline-block;
-        text-align:center; vertical-align:top;
-        padding:7em $size-gutter $size-gutter $size-gutter;
-        width:9em;
-        margin-bottom:$size-gutter;
-
-        background-size:6em; background-repeat:no-repeat; background-position:center $size-gutter;
-    }
-}
-
 #services-section {
     background-color: $color-header;
     header {
         background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
     }
     h1, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
-
-    a.contact        { background-image:url('../images/icons/contact us icon.svg'    ); }
-    a.report         { background-image:url('../images/icons/report issue icon.svg'  ); }
-    a.performance    { background-image:url('../images/icons/performance icon.svg'   ); }
-    a.myBloomington  { background-image:url('../images/icons/my bloomington icon.svg'); }
-    a.maps           { background-image:url('../images/icons/city maps icon.svg'     ); }
-    a.water          { background-image:url('../images/icons/water icon.svg'         ); }
-    a.parking_ticket { background-image:url('../images/icons/parking icon.svg'       ); }
-    a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
 }
 
 #news-section, #about-section, #government-section {

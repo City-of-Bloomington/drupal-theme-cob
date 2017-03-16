@@ -59,6 +59,7 @@ function cob_preprocess_page(&$vars)
                     $contactInfo['name'   ] = $json->name;
                     $contactInfo['email'  ] = $json->email;
                     $contactInfo['phone'  ] = $json->office;
+                    $contactInfo['fax'    ] = $json->fax;
                     $contactInfo['address'] = $json->address;
                     $contactInfo['city'   ] = $json->city;
                     $contactInfo['state'  ] = $json->state;
