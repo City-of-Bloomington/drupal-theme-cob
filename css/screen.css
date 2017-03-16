@@ -105,6 +105,45 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 1080px) { main.front:before { background-image: url("images/downtown-large.png"); } }
 
+@media all and (min-width: 640px) { #about-section .container { background: url("../images/icons/Indiana state icon.svg") right 60% top no-repeat; background-size: auto 100%; }
+  #about-section .container p { margin-left: 50%; } }
+
+#government-section .container { text-align: center; }
+
+#government-section a { color: #212121; }
+
+#government-section a:hover { background-color: #4caf50; }
+
+#news-section > .container > div { padding: 0.5em; }
+
+#news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
+
+@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
+
+#news-section .news article h2 { width: 48%; float: left; font-size: 1.3rem; font-weight: bold; font-family: Lora, serif; text-align: left; }
+
+#news-section .news article > div { width: 48%; float: left; }
+
+#news-section .news article time { float: right; }
+
+@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
+  #news-section .news article:first-child { width: 93%; }
+  #news-section .events article { width: 93%; } }
+
+#news-section .events article { overflow: auto; position: relative; height: auto; min-height: 5em; border: 1px solid #183365; }
+
+#news-section .events article .month, #news-section .events article .monthDate { font-size: 1.3rem; }
+
+#news-section .events article .weekday { font-weight: bold; }
+
+#news-section .events article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; }
+
+#news-section .events article > div { margin-left: 6.5em; }
+
+@media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
+  #news-section .events { width: 35%; display: inline-block; }
+  #news-section > .container > div { vertical-align: top; } }
+
 #highlighted { background-color: #f7567c; color: #fff; padding: 0.5em; font-weight: bold; }
 
 #highlighted .container { text-align: center; }
@@ -161,45 +200,6 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 #news-section > header, #about-section > header, #government-section > header, #block-cob-committeemembers > header, #block-departmentstaff > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
 #news-section > header h2, #about-section > header h2, #government-section > header h2, #block-cob-committeemembers > header h2, #block-departmentstaff > header h2 { background-color: #fff; color: #183365; }
-
-#news-section > .container > div { padding: 0.5em; }
-
-#news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
-
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
-
-#news-section .news article h2 { width: 48%; float: left; font-size: 1.3rem; font-weight: bold; font-family: Lora, serif; text-align: left; }
-
-#news-section .news article > div { width: 48%; float: left; }
-
-#news-section .news article time { float: right; }
-
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
-  #news-section .news article:first-child { width: 93%; }
-  #news-section .events article { width: 93%; } }
-
-#news-section .events article { overflow: auto; position: relative; height: auto; min-height: 5em; border: 1px solid #183365; }
-
-#news-section .events article .month, #news-section .events article .monthDate { font-size: 1.3rem; }
-
-#news-section .events article .weekday { font-weight: bold; }
-
-#news-section .events article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; }
-
-#news-section .events article > div { margin-left: 6.5em; }
-
-@media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
-  #news-section .events { width: 35%; display: inline-block; }
-  #news-section > .container > div { vertical-align: top; } }
-
-@media all and (min-width: 640px) { #about-section .container { background: url("../images/icons/Indiana state icon.svg") right 60% top no-repeat; background-size: auto 100%; }
-  #about-section .container p { margin-left: 50%; } }
-
-#government-section .container { text-align: center; }
-
-#government-section a { color: #212121; }
-
-#government-section a:hover { background-color: #4caf50; }
 
 body > footer { background-color: #795548; color: #fff; padding: 0.5em; }
 
