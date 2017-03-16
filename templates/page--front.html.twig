@@ -56,80 +56,92 @@
 {{ page.primary_menu }}
 {{ page.secondary_menu }}
 <main class="front">
-    {{ page.highlighted }}
+    {% if page.highlighted %}
+    <div id="highlighted">
+        <div class="container">
+            {{ page.highlighted }}
+        </div>
+    </div>
+    {% endif %}
+
     {{ page.help }}
-    <section id="services-section">
-        <header><h1>Services &amp; Guides</h1></header>
+
+    <div id="content">
         <div class="container">
-            <a href="#" class="contact">Contact Us</a>
-            <a href="#" class="report">Report Issue</a>
-            <a href="#" class="performance">City Performance</a>
-            <a href="#" class="myBloomington">My Bloomington</a>
-            <a href="#" class="maps">City Maps</a>
-            <a href="#" class="water">Pay Water Bill Online</a>
-            <a href="#" class="parking_ticket">Pay Parking Ticket Online</a>
-            <a href="#" class="parks">Parks and Recreation</a>
+            <section id="services-section">
+                <header><h2>Services &amp; Guides</h2></header>
+                <div class="container">
+                    <a href="#" class="contact">Contact Us</a>
+                    <a href="#" class="report">Report Issue</a>
+                    <a href="#" class="performance">City Performance</a>
+                    <a href="#" class="myBloomington">My Bloomington</a>
+                    <a href="#" class="maps">City Maps</a>
+                    <a href="#" class="water">Pay Water Bill Online</a>
+                    <a href="#" class="parking_ticket">Pay Parking Ticket Online</a>
+                    <a href="#" class="parks">Parks and Recreation</a>
+                </div>
+            </section>
+            <section id="news-section">
+                <header><h2>News &amp; Events</h2></header>
+                <div class="container">
+                    <div class="news">
+                    {{ page.content }}
+                    </div>
+                    <div class="events">
+                    </div>
+                </div>
+            </section>
+            <section id="about-section">
+                <header><h2>About Bloomington</h2></header>
+                <div class="container">
+                    <p> Nestled in the rolling hills of southern Indiana, Bloomington is a loved
+                        city that boasts spectacular scenery, world-class educational institutions
+                        and unique shopping and dining experiences. Bloomington is a great place to
+                        live, work and play. Its unique character and friendly and safe environment
+                        are matched by few communities in the nation.
+                    </p>
+                    <p> While you're in Bloomington be sure to experience the city's character and
+                        all its sights, sounds and tastes. From shopping and museums to biking and
+                        art exhibitions, the activities available for all to enjoy are endless.
+                    </p>
+                </div>
+            </section>
+            <section id="government-section">
+                <header><h2>City Government</h2></header>
+                <div class="container">
+                    <a href="#" class="code">
+                        <h2>Municipal Code</h2>
+                        The Municipal Code is intended to make the laws of the city as accessible
+                        as possible to city officials, city employees, and private citizens.
+                    </a>
+                    <a href="#" class="budget">
+                        <h2>City Budget</h2>
+                        Details of the City of Bloomington's estimated revenue and expenses for a given year.
+                    </a>
+                    <a href="#" class="boards">
+                        <h2>Boards and Commissions</h2>
+                        Find out more about the city's boards and commissions and ways you can get involved.
+                    </a>
+                    <a href="#" class="council">
+                        <h2>City Council</h2>
+                        The City Council is a link between the citizens of Bloomington and their government</p>
+                    </a>
+                    <a href="#" class="contact">
+                        <h2>Contact the City</h2>
+                        There are many ways to get in touch with the City, whether by phone, email, or social media.
+                    </a>
+                    <a href="#" class="elected">
+                        <h2>Elected Officials</h2>
+                        See the details of the elected officials and get to know them better.
+                    </a>
+                    <a href="#" class="public_safety">
+                        <h2>Public Safety</h2>
+                        Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
+                    </a>
+                </div>
+            </section>
         </div>
-    </section>
-    <section id="news-section">
-        <header><h1>News &amp; Events</h1></header>
-        <div class="container">
-            <div class="news">
-            {{ page.content }}
-            </div>
-            <div class="events">
-            </div>
-        </div>
-    </section>
-    <section id="about-section">
-        <header><h1>About Bloomington</h1></header>
-        <div class="container">
-            <p> Nestled in the rolling hills of southern Indiana, Bloomington is a loved
-                city that boasts spectacular scenery, world-class educational institutions
-                and unique shopping and dining experiences. Bloomington is a great place to
-                live, work and play. Its unique character and friendly and safe environment
-                are matched by few communities in the nation.
-            </p>
-            <p> While you're in Bloomington be sure to experience the city's character and
-                all its sights, sounds and tastes. From shopping and museums to biking and
-                art exhibitions, the activities available for all to enjoy are endless.
-            </p>
-        </div>
-    </section>
-    <section id="government-section">
-        <header><h1>City Government</h1></header>
-        <div class="container">
-            <a href="#" class="code">
-                <h2>Municipal Code</h2>
-                The Municipal Code is intended to make the laws of the city as accessible
-                as possible to city officials, city employees, and private citizens.
-            </a>
-            <a href="#" class="budget">
-                <h2>City Budget</h2>
-                Details of the City of Bloomington's estimated revenue and expenses for a given year.
-            </a>
-            <a href="#" class="boards">
-                <h2>Boards and Commissions</h2>
-                Find out more about the city's boards and commissions and ways you can get involved.
-            </a>
-            <a href="#" class="council">
-                <h2>City Council</h2>
-                The City Council is a link between the citizens of Bloomington and their government</p>
-            </a>
-            <a href="#" class="contact">
-                <h2>Contact the City</h2>
-                There are many ways to get in touch with the City, whether by phone, email, or social media.
-            </a>
-            <a href="#" class="elected">
-                <h2>Elected Officials</h2>
-                See the details of the elected officials and get to know them better.
-            </a>
-            <a href="#" class="public_safety">
-                <h2>Public Safety</h2>
-                Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
-            </a>
-        </div>
-    </section>
+    </div>
 </main>
 <footer>
     <div class="container">

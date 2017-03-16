@@ -1,6 +1,8 @@
 /** Urls are relative to screen.css */
 @import 'https://fonts.googleapis.com/css?family=Lora';
 @import 'https://fonts.googleapis.com/css?family=Roboto';
+section { margin: 0; }
+
 @media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
 #hamburger { position: fixed; clip: rect(0, 0, 0, 0); }
@@ -28,7 +30,7 @@ body > header { color: #fff; padding: 0; }
 
 body > header > .container { background-color: #183365; }
 
-body > header > .container div, body > header > .container form { display: inline-block; }
+body > header > .container section, body > header > .container form { display: inline-block; }
 
 body > header h1 { color: #fff; font-weight: bold; }
 
@@ -69,6 +71,20 @@ body > header a { color: #fff; }
 
 #services-section a.parks { background-image: url("../images/icons/parks icon.svg"); }
 
+#government-section a.code { background-image: url("../images/icons/Municipal code icon.svg"); }
+
+#government-section a.budget { background-image: url("../images/icons/city budget icon.svg"); }
+
+#government-section a.boards { background-image: url("../images/icons/boards icon.svg"); }
+
+#government-section a.council { background-image: url("../images/icons/city council icon.svg"); }
+
+#government-section a.contact { background-image: url("../images/icons/contact icon.svg"); }
+
+#government-section a.elected { background-image: url("../images/icons/elected icon.svg"); }
+
+#government-section a.public_safety { background-image: url("../images/icons/public safety icon.svg"); }
+
 .contactInfo address, .contactInfo a { display: block; padding-left: 1.5rem; background-position: left center; background-size: 1rem; background-repeat: no-repeat; }
 
 .contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
@@ -82,6 +98,12 @@ body > header a { color: #fff; }
 .contactInfo a.phone { background-image: url("images/fa-svg/white/phone-square.svg"); }
 
 .contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
+
+main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
+
+@media all and (min-width: 640px) { main.front:before { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { main.front:before { background-image: url("images/downtown-large.png"); } }
 
 #highlighted { background-color: #f7567c; color: #fff; padding: 0.5em; font-weight: bold; }
 
@@ -100,49 +122,45 @@ body > header a { color: #fff; }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-.contactInfo, .departmentStaff { overflow: auto; }
-
-.contactInfo dl, .departmentStaff dl { border: none; padding: 0; }
-
-.contactInfo dt, .departmentStaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-
-.contactInfo address, .contactInfo a, .departmentStaff address, .departmentStaff a { font-style: normal; }
-
-.contactInfo > dl, .contactInfo > div, .departmentStaff > dl, .departmentStaff > div { vertical-align: top; }
-
-@media all and (min-width: 640px) { .contactInfo > dl, .contactInfo > div, .departmentStaff > dl, .departmentStaff > div { display: inline-block; }
-  .contactInfo > dl:not(:last-child), .contactInfo > div:not(:last-child), .departmentStaff > dl:not(:last-child), .departmentStaff > div:not(:last-child) { margin-right: 2em; } }
-
-@media all and (min-width: 1080px) { .contactInfo, .departmentStaff { width: 1080px; margin: 0 auto; } }
-
-@media all and (min-width: 640px) { .departmentStaff h3 { margin: 0; }
-  .departmentStaff > div { width: 15em; margin-bottom: 1em; } }
-
 #block-cob-page-title h1 { font-size: 1.5rem; color: #fff; margin-top: 1em; }
 
-main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
+.contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { overflow: auto; }
 
-@media all and (min-width: 640px) { main.front:before { background-image: url("images/downtown-medium.png"); } }
+.contactInfo dl, #block-departmentstaff dl, #block-cob-committeemembers > div dl { border: none; padding: 0; }
 
-@media all and (min-width: 1080px) { main.front:before { background-image: url("images/downtown-large.png"); } }
+.contactInfo address, .contactInfo a, #block-departmentstaff address, #block-departmentstaff a, #block-cob-committeemembers > div address, #block-cob-committeemembers > div a { font-style: normal; }
 
-main > section { padding: 0.5em 0; }
+.contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { vertical-align: top; }
 
-main > section header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; }
+@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { text-align: center; }
+  .contactInfo h3, #block-departmentstaff h3, #block-cob-committeemembers > div h3 { margin: 0; }
+  .contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { display: inline-block; }
+  .contactInfo > dl:not(:last-child), .contactInfo > div:not(:last-child), #block-departmentstaff > dl:not(:last-child), #block-departmentstaff > div:not(:last-child), #block-cob-committeemembers > div > dl:not(:last-child), #block-cob-committeemembers > div > div:not(:last-child) { margin-right: 2em; }
+  .contactInfo > div, #block-departmentstaff > div, #block-cob-committeemembers > div > div { width: 15em; margin-bottom: 1em; } }
 
-main > section h1 { display: inline; padding: 0 0.5em; }
+@media all and (min-width: 1080px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { width: 1080px; margin: 0 auto; } }
 
-main > section .container { overflow: auto; padding: 0.5em; }
+.contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+#block-cob-committeemembers dt { float: none; display: inline-block; }
+
+#content > .container > section { padding: 0.5em 0; }
+
+#content > .container > section header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; }
+
+#content > .container > section h2 { display: inline; padding: 0 0.5em; }
+
+#content > .container > section .container { overflow: auto; padding: 0.5em; }
 
 #services-section { background-color: #183365; }
 
-#services-section header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+#services-section > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
-#services-section h1, #services-section a { background-color: #183365; color: #fff; font-weight: bold; }
+#services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
 
-#news-section > header, #about-section > header, #government-section > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section > header, #about-section > header, #government-section > header, #block-cob-committeemembers > header, #block-departmentstaff > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section > header h1, #news-section > header h2, #about-section > header h1, #about-section > header h2, #government-section > header h1, #government-section > header h2 { background-color: #fff; color: #183365; }
+#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-cob-committeemembers > header h2, #block-departmentstaff > header h2 { background-color: #fff; color: #183365; }
 
 #news-section > .container > div { padding: 0.5em; }
 
@@ -182,20 +200,6 @@ main > section .container { overflow: auto; padding: 0.5em; }
 #government-section a { color: #212121; }
 
 #government-section a:hover { background-color: #4caf50; }
-
-#government-section a.code { background-image: url("../images/icons/Municipal code icon.svg"); }
-
-#government-section a.budget { background-image: url("../images/icons/city budget icon.svg"); }
-
-#government-section a.boards { background-image: url("../images/icons/boards icon.svg"); }
-
-#government-section a.council { background-image: url("../images/icons/city council icon.svg"); }
-
-#government-section a.contact { background-image: url("../images/icons/contact icon.svg"); }
-
-#government-section a.elected { background-image: url("../images/icons/elected icon.svg"); }
-
-#government-section a.public_safety { background-image: url("../images/icons/public safety icon.svg"); }
 
 body > footer { background-color: #795548; color: #fff; padding: 0.5em; }
 

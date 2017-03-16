@@ -34,6 +34,15 @@
     a.parking_ticket { background-image:url('../images/icons/parking icon.svg'       ); }
     a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
 }
+#government-section {
+    a.code          { background-image:url('../images/icons/Municipal code icon.svg'); }
+    a.budget        { background-image:url('../images/icons/city budget icon.svg'   ); }
+    a.boards        { background-image:url('../images/icons/boards icon.svg'        ); }
+    a.council       { background-image:url('../images/icons/city council icon.svg'  ); }
+    a.contact       { background-image:url('../images/icons/contact icon.svg'       ); }
+    a.elected       { background-image:url('../images/icons/elected icon.svg'       ); }
+    a.public_safety { background-image:url('../images/icons/public safety icon.svg' ); }
+}
 
 .contactInfo {
     address, a {
