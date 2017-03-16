@@ -5,6 +5,7 @@
 @import 'modules/header';
 @import 'modules/admin';
 @import 'modules/icons';
+@import 'modules/events';
 @import 'modules/front-page';
 
 #highlighted {
@@ -56,6 +57,7 @@
 
     @media all and (min-width:$viewport-medium) {
         text-align:center;
+        font-size:$font-size-smaller;
 
         h3 { margin:0; }
         > dl, > div {
@@ -71,18 +73,26 @@
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden(); } }
 #block-cob-committeemembers          { dt { float:none; display:inline-block; } }
 
-#content > .container > section {
-    padding:$size-gutter 0;
+#content > .container {
+    padding:$size-gutter;
 
-    header {
-        text-align: center;
-        background-size: 100% 2px;
-        background-position: left center;
-        background-repeat: no-repeat;
+    > section {
+        padding:$size-gutter 0;
+
+        header {
+            text-align: center;
+            background-size: 100% 2px;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+        h2 { display:inline; padding:0 $size-gutter; }
+        .container { overflow:auto; padding:$size-gutter; }
     }
-    h2 { display:inline; padding:0 $size-gutter; }
-    .container { overflow:auto; padding:$size-gutter; }
 }
+@media all and (min-width:$viewport-medium) {
+    #content aside { float:right; width:40% }
+}
+
 // Light foreground, dark background
 #services-section {
     background-color: $color-header;

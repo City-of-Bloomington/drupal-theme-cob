@@ -83,19 +83,19 @@
 
     {{ page.help }}
 
-    {% if page.sidebar_first %}
-    <aside class="sidebar_first">
-        {{ page.sidebar_first }}
-    </aside>
-    {% endif %}
-    {% if page.sidebar_second %}
-    <aside class="sidebar_second">
-        {{ page.sidebar_second }}
-    </aside>
-    {% endif %}
-
     <div id="content">
         <div class="container">
+            {% if page.sidebar_first %}
+            <aside class="sidebar_first">
+                {{ page.sidebar_first }}
+            </aside>
+            {% endif %}
+            {% if page.sidebar_second %}
+            <aside class="sidebar_second">
+                {{ page.sidebar_second }}
+            </aside>
+            {% endif %}
+
             {{ page.content }}
         </div>
     </div>

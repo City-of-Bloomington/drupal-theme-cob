@@ -1,6 +1,6 @@
 /** Urls are relative to screen.css */
 @import 'https://fonts.googleapis.com/css?family=Lora';
-@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
 section { margin: 0; }
 
 @media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
@@ -41,7 +41,7 @@ body > header a { color: #fff; }
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 
-#block-cob-local-tasks a { font-family: Roboto, sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+#block-cob-local-tasks a { font-family: "Roboto Condensed", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
 
 #block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
 
@@ -99,6 +99,20 @@ body > header a { color: #fff; }
 
 .contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
 
+#block-upcomingevents article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
+
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate { font-size: 1.25rem; font-weight: bold; }
+
+#block-upcomingevents article .summary { font-weight: bold; white-space: nowrap; }
+
+#block-upcomingevents article .location { white-space: nowrap; }
+
+#block-upcomingevents article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Roboto Condensed", sans-serif; text-align: center; vertical-align: middle; }
+
+#block-upcomingevents article header time { display: inline-block; }
+
+#block-upcomingevents article > div { margin-left: 6.5em; line-height: 1.5em; }
+
 main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
 
 @media all and (min-width: 640px) { main.front:before { background-image: url("images/downtown-medium.png"); } }
@@ -120,7 +134,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
 
-#news-section .news article h2 { width: 48%; float: left; font-size: 1.3rem; font-weight: bold; font-family: Lora, serif; text-align: left; }
+#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; text-align: left; }
 
 #news-section .news article > div { width: 48%; float: left; }
 
@@ -129,16 +143,6 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 @media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
   #news-section .news article:first-child { width: 93%; }
   #news-section .events article { width: 93%; } }
-
-#news-section .events article { overflow: auto; position: relative; height: auto; min-height: 5em; border: 1px solid #183365; }
-
-#news-section .events article .month, #news-section .events article .monthDate { font-size: 1.3rem; }
-
-#news-section .events article .weekday { font-weight: bold; }
-
-#news-section .events article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; }
-
-#news-section .events article > div { margin-left: 6.5em; }
 
 @media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
   #news-section .events { width: 35%; display: inline-block; }
@@ -152,7 +156,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #breadcrumb .container { background-color: rgba(0, 0, 0, 0.5); padding: 0.5em; }
 
-#breadcrumb nav { font-size: 0.8rem; }
+#breadcrumb nav { font-size: 1rem; }
 
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
@@ -161,7 +165,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-#block-cob-page-title h1 { font-size: 1.5rem; color: #fff; margin-top: 1em; }
+#block-cob-page-title h1 { font-size: 1.4rem; color: #fff; margin-top: 1em; }
 
 .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { overflow: auto; }
 
@@ -171,7 +175,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 .contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { vertical-align: top; }
 
-@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { text-align: center; }
+@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { text-align: center; font-size: 0.875rem; }
   .contactInfo h3, #block-departmentstaff h3, #block-cob-committeemembers > div h3 { margin: 0; }
   .contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { display: inline-block; }
   .contactInfo > dl:not(:last-child), .contactInfo > div:not(:last-child), #block-departmentstaff > dl:not(:last-child), #block-departmentstaff > div:not(:last-child), #block-cob-committeemembers > div > dl:not(:last-child), #block-cob-committeemembers > div > div:not(:last-child) { margin-right: 2em; }
@@ -183,6 +187,8 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #block-cob-committeemembers dt { float: none; display: inline-block; }
 
+#content > .container { padding: 0.5em; }
+
 #content > .container > section { padding: 0.5em 0; }
 
 #content > .container > section header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; }
@@ -190,6 +196,8 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 #content > .container > section h2 { display: inline; padding: 0 0.5em; }
 
 #content > .container > section .container { overflow: auto; padding: 0.5em; }
+
+@media all and (min-width: 640px) { #content aside { float: right; width: 40%; } }
 
 #services-section { background-color: #183365; }
 

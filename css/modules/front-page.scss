@@ -53,26 +53,6 @@ main.front:before {
         }
         .events article { width:93%; }
     }
-    .events article {
-        overflow:auto; position:relative;
-        height:auto;
-        min-height:5em;
-        border:1px solid $color-header;
-
-        .month, .monthDate { font-size:$font-size-big; }
-        .weekday { font-weight:bold; }
-
-        header {
-            position:absolute; left:0;
-
-            width:6em; height:100%;
-            background-color:$color-alert;
-            color:$color-content-background;
-        }
-        > div {
-            margin-left:6.5em;
-        }
-    }
     @media all and (min-width:$viewport-large) {
         .news   { width:55%; display:inline-block; }
         .events { width:35%; display:inline-block; }
