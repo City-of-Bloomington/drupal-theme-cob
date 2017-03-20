@@ -72,3 +72,26 @@ function cob_preprocess_page(&$vars)
         }
     }
 }
+
+
+function cob_preprocess_paragraph__info_card(&$vars)
+{
+    $vars['title'] = !empty($vars['elements']['field_info_title']['#items'])
+                          ? $vars['elements']['field_info_title']['#items'][0]->value
+                          : null;
+    $vars['text' ] = !empty($vars['elements']['field_info_text' ]['#items'])
+                          ? $vars['elements']['field_info_text' ]['#items'][0]->value
+                          : null;
+
+    if ((!$vars['title'] || !$vars['text'])
+        && preg_match('|entity:([a-z]+)/(\d+)|',
+                        $vars['content']['field_info_link']['#items'][0]->getString(),
+                        $matches)) {
+        $type = $matches[1];
+        $id   = $matches[2];
+
+        $node = \Drupal::entityTypeManager()->getStorage($type)->load($id);
+        if (!$vars['title']) { $vars['title'] = $node->title->value;  }
+        if (!$vars['text' ]) { $vars['text' ] = $node->body->summary; }
+    }
+}

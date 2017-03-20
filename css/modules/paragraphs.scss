@@ -1,0 +1,18 @@
+ /**
+  * Styles for paragraph types defined in our Drupal site
+  *
+  * Paragraphs are a special module we installed.
+  * @see https://www.drupal.org/project/paragraphs
+  *
+  * These are not to be confused with HTML P tags.  It is unfortunate
+  * that the module happens to call itself with that name.
+  */
+.paragraph--type--info-list {
+    text-align:center;
+}
+.paragraph--type--info-card {
+    @media all and (min-width:$viewport-medium) {
+        width:30%; display:inline-block;
+        vertical-align:top; text-align:center;
+    }
+}

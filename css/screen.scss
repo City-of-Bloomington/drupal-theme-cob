@@ -7,6 +7,7 @@
 @import 'modules/icons';
 @import 'modules/events';
 @import 'modules/front-page';
+@import 'modules/paragraphs';
 
 #highlighted {
     background-color: $color-error;
@@ -103,7 +104,8 @@
 }
 // Dark foreground, light background
 #news-section, #about-section, #government-section,
-#block-cob-committeemembers, #block-departmentstaff {
+#block-cob-committeemembers, #block-departmentstaff,
+.paragraph {
     > header {
         background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
         h2 { background-color:$color-content-background; color:$color-header; }
