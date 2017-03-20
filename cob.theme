@@ -24,52 +24,32 @@ function cob_preprocess_page(&$vars)
         }
 
         $contactInfo = [];
-        if ($vars['node']->hasField('field_facebook_page')) {
-            $v = $vars['node']->get('field_facebook_page')->getValue();
-            if (!empty($v[0]['uri'])) {
-                $contactInfo['facebook'] = $v[0]['uri'];
-            }
-        }
-        if ($vars['node']->hasField('field_twitter_account')) {
-            $v = $vars['node']->get('field_twitter_account')->getValue();
-            if (!empty($v[0]['uri'])) {
-                $contactInfo['twitter'] = $v[0]['uri'];
-            }
-        }
         if ($vars['node']->hasField( 'field_committee')) {
             $id = $vars['node']->get('field_committee')->value;
             if ($id) {
                 $json = OnBoardService::committee_info($id);
                 if ($json) {
-                    $contactInfo['name'   ] = $json['info']['name'   ];
-                    $contactInfo['email'  ] = $json['info']['email'  ];
-                    $contactInfo['phone'  ] = $json['info']['phone'  ];
-                    $contactInfo['address'] = $json['info']['address'];
-                    $contactInfo['city'   ] = $json['info']['city'   ];
-                    $contactInfo['state'  ] = $json['info']['state'  ];
-                    $contactInfo['zip'    ] = $json['info']['zip'    ];
+                    _cob_mapContactInfoFields($contactInfo, $json['info'], [
+                        'name'    => 'name',
+                        'email'   => 'email',
+                        'phone'   => 'phone',
+                        'address' => 'address',
+                        'city'    => 'city',
+                        'state'   => 'state',
+                        'zip'     => 'zip'
+                    ]);
                 }
             }
         }
-        if ($vars['node']->hasField( 'field_directory_dn')) {
-            $dn = $vars['node']->get('field_directory_dn')->value;
-            if ($dn) {
-                $json = DirectoryService::department_info($dn);
-                if ($json) {
-                    $contactInfo['name'   ] = $json->name;
-                    $contactInfo['email'  ] = $json->email;
-                    $contactInfo['phone'  ] = $json->office;
-                    $contactInfo['fax'    ] = $json->fax;
-                    $contactInfo['address'] = $json->address;
-                    $contactInfo['city'   ] = $json->city;
-                    $contactInfo['state'  ] = $json->state;
-                    $contactInfo['zip'    ] = $json->zip;
-                }
-            }
+
+        _cob_contactInfoFromNode($vars['node'], $contactInfo);
+
+        if ($vars['node']->hasField('field_location')) {
+            $l = $vars['node']->get('field_location')->entity;
+            _cob_contactInfoFromNode($l, $contactInfo);
         }
-        if ($contactInfo) {
-            $vars['contactInfo'] = $contactInfo;
-        }
+
+        if ($contactInfo) { $vars['contactInfo'] = $contactInfo; }
     }
 }
 
@@ -93,5 +73,82 @@ function cob_preprocess_paragraph__info_card(&$vars)
         $node = \Drupal::entityTypeManager()->getStorage($type)->load($id);
         if (!$vars['title']) { $vars['title'] = $node->title->value;  }
         if (!$vars['text' ]) { $vars['text' ] = $node->body->summary; }
+    }
+}
+
+function _cob_contactInfoFromNode($node, array &$info)
+{
+    if (empty($info['facebook']) && $node->hasField('field_facebook_page')) {
+        $v = $vars['node']->get('field_facebook_page')->getValue();
+        if (!empty($v[0]['uri'])) {
+            $contactInfo['facebook'] = $v[0]['uri'];
+        }
+    }
+    if (empty($info['twitter' ]) && $node->hasField('field_twitter_account')) {
+        $v = $node->get('field_twitter_account')->getValue();
+        if (!empty($v[0]['uri'])) {
+            $contactInfo['twitter'] = $v[0]['uri'];
+        }
+    }
+
+    if ($node->hasField( 'field_directory_dn')) {
+        $dn = $node->get('field_directory_dn')->value;
+        if ($dn) { _cob_contactInfoForDn($dn, $contactInfo); }
+    }
+
+    $map = [
+        'email'    => 'field_email',
+        'phone'    => 'field_phone',
+        'fax'      => 'field_fax',
+        'address'  => 'field_street_address',
+        'zip'      => 'field_zipcode'
+    ];
+    foreach ($map as $i=>$f) {
+        if (empty($info[$i]) && $node->hasField($f)) {
+            $value = $node->get($f)->value;
+            if ($value) { $info[$i] = $value; }
+        }
+    }
+}
+
+/**
+ * Populates contactInfo array with data from Directory webservice
+ *
+ * @param string $dn
+ * @param array  $contactInfo Reference to the array to populate
+ */
+function _cob_contactInfoForDn($dn, array &$info)
+{
+    $json = DirectoryService::department_info($dn);
+    if ($json) {
+        _cob_mapContactInfoFields($info, $json, [
+            'name'    => 'name',
+            'email'   => 'email',
+            'phone'   => 'office',
+            'fax'     => 'fax',
+            'address' => 'address',
+            'city'    => 'city',
+            'state'   => 'state',
+            'zip'     => 'zip'
+        ]);
+    }
+}
+
+/**
+ * Populates empty $info fields with data according to a map.
+ *
+ * Does NOT replace existing values in $info.
+ *
+ * Map array  must specify info fields as keys and data fields as values.
+ * $map[ $infoField => $dataField ]
+ *
+ * @param array $info Reference to contactInfo array to populate
+ * @param array $data Array of data to copy
+ * @param array $map  Associative array of data fields to info fields
+ */
+function _cob_mapContactInfoFields(array &$info, array $data, array $map)
+{
+    foreach ($map as $infoField => $dataField) {
+        if (empty($info[$infoField])) { $info[$infoField] = $data[$dataField]; }
     }
 }
