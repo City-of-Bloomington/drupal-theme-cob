@@ -46,7 +46,9 @@ function cob_preprocess_page(&$vars)
 
         if ($vars['node']->hasField('field_location')) {
             $l = $vars['node']->get('field_location')->entity;
-            _cob_contactInfoFromNode($l, $contactInfo);
+            if ($l) {
+                _cob_contactInfoFromNode($l, $contactInfo);
+            }
         }
 
         if ($contactInfo) { $vars['contactInfo'] = $contactInfo; }
