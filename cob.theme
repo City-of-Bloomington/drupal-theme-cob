@@ -111,6 +111,10 @@ function _cob_contactInfoFromNode($node, array &$info)
             if ($value) { $info[$i] = $value; }
         }
     }
+    if (!empty($info['zip'])) {
+        if (empty($info['city' ])) { $info['city' ] = 'Bloomington'; }
+        if (empty($info['state'])) { $info['state'] = 'IN';          }
+    }
 }
 
 /**
