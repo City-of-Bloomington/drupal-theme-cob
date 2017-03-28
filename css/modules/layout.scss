@@ -1,5 +1,18 @@
 section { margin:0; }
 
+@media all and (min-width:$viewport-medium) {
+    #intro {
+        display:-ms-flexbox;
+        display:flex;
+
+        -ms-flex-direction: row;
+            flex-direction: row;
+
+        .text_with_summary { width:55%; }
+        .calendar_calendar { width:40%; }
+    }
+}
+
 @media all and (min-width: $viewport-large) {
     #nav1                .container,
     body > footer        .container,

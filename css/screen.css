@@ -3,6 +3,10 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
 section { margin: 0; }
 
+@media all and (min-width: 640px) { #intro { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; }
+  #intro .text_with_summary { width: 55%; }
+  #intro .calendar_calendar { width: 40%; } }
+
 @media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
 #hamburger { position: fixed; clip: rect(0, 0, 0, 0); }
@@ -15,7 +19,7 @@ label[for="hamburger"] { position: fixed; top: 0.5em; left: 0.5em; width: 2em; h
 
 #nav1, body > header, body > main, body > footer { transition: all 200ms ease-in; }
 
-#nav1 { position: fixed; top: 0; left: 0; width: 17em; height: 100%; margin: 0 0 0 -17em; background-color: #315da6; }
+#nav1 { position: fixed; top: 0; left: 0; width: 17em; height: 100%; margin: 0 0 0 -17em; background-color: #a31621; }
 
 #nav1 .container { padding-top: 3em; }
 
@@ -99,19 +103,19 @@ body > header a { color: #fff; }
 
 .contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
 
-#block-upcomingevents article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
+#block-upcomingevents article, .calendar_calendar article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
 
-#block-upcomingevents article .month, #block-upcomingevents article .monthDate { font-size: 1.25rem; font-weight: bold; }
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.25rem; font-weight: bold; }
 
-#block-upcomingevents article .summary { font-weight: bold; white-space: nowrap; }
+#block-upcomingevents article .summary, .calendar_calendar article .summary { font-weight: bold; white-space: nowrap; }
 
-#block-upcomingevents article .location { white-space: nowrap; }
+#block-upcomingevents article .location, .calendar_calendar article .location { white-space: nowrap; }
 
-#block-upcomingevents article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Roboto Condensed", sans-serif; text-align: center; vertical-align: middle; }
+#block-upcomingevents article header, .calendar_calendar article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Roboto Condensed", sans-serif; text-align: center; vertical-align: middle; }
 
-#block-upcomingevents article header time { display: inline-block; }
+#block-upcomingevents article header time, .calendar_calendar article header time { display: inline-block; }
 
-#block-upcomingevents article > div { margin-left: 6.5em; line-height: 1.5em; }
+#block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
 
 main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
 
@@ -153,11 +157,11 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; } }
 
-#highlighted { background-color: #f7567c; color: #fff; padding: 0.5em; font-weight: bold; }
+#highlighted { background-color: #a31621; color: #fff; padding: 0.5em; font-weight: bold; }
 
 #highlighted .container { text-align: center; }
 
-#breadcrumb { background-color: #315da6; min-height: 25vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
+#breadcrumb { background-color: #a31621; min-height: 25vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
 
 #breadcrumb .container { background-color: rgba(0, 0, 0, 0.5); padding: 0.5em; }
 
@@ -214,7 +218,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #news-section > header h2, #about-section > header h2, #government-section > header h2, #block-cob-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
 
-body > footer { background-color: #795548; color: #fff; padding: 0.5em; }
+body > footer { background-color: #3f9dff; color: #fff; padding: 0.5em; }
 
 body > footer a { color: #fff; display: block; text-align: left; }
 

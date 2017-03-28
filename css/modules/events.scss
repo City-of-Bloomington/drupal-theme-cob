@@ -1,28 +1,31 @@
-#block-upcomingevents article {
-    overflow:hidden; position:relative;
-    height:auto;
-    height:5em;
-    border:1px solid $color-header;
+#block-upcomingevents, .calendar_calendar {
+    article {
 
-    .month, .monthDate { font-size:$font-size-big; font-weight:bold; }
-    .weekday { }
-    .summary { font-weight:bold; white-space:nowrap; }
-    .location { white-space:nowrap; }
+        overflow:hidden; position:relative;
+        height:auto;
+        height:5em;
+        border:1px solid $color-header;
 
-    header {
-        position:absolute; left:0;
+        .month, .monthDate { font-size:$font-size-big; font-weight:bold; }
+        .weekday { }
+        .summary { font-weight:bold; white-space:nowrap; }
+        .location { white-space:nowrap; }
 
-        width:6em; height:100%;
-        background-color:$color-alert;
-        color:$color-content-background;
-        font-family:$font-family-heading;
-        text-align:center;
-        vertical-align:middle;
+        header {
+            position:absolute; left:0;
 
-        time { display:inline-block; }
-    }
-    > div {
-        margin-left:6.5em;
-        line-height:1.5em;
+            width:6em; height:100%;
+            background-color:$color-alert;
+            color:$color-content-background;
+            font-family:$font-family-heading;
+            text-align:center;
+            vertical-align:middle;
+
+            time { display:inline-block; }
+        }
+        > div {
+            margin-left:6.5em;
+            line-height:1.5em;
+        }
     }
 }
