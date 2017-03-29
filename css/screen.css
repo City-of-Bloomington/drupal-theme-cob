@@ -42,6 +42,11 @@ body > header a { color: #fff; }
 
 #block-cob-cob-search-form { float: right; }
 
+/** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
+#content ul { list-style: disc    outside; margin-left: 1em; }
+
+#content ol { list-style: decimal outside; margin-left: 1em; }
+
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 

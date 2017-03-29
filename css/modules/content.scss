@@ -1,0 +1,10 @@
+/**
+ * Styles for user generated content.
+ *
+ * These are styles for markup in the main content area of pages.
+ * This should control how we display the way HTML that users type.
+ */
+#content {
+    ul { list-style:disc    outside; margin-left:1em; }
+    ol { list-style:decimal outside; margin-left:1em; }
+}
