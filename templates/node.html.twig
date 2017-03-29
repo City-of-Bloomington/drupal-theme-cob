@@ -84,6 +84,7 @@
         {% endif %}
         {{ title_suffix }}
     </header>
+    {% if view_mode == 'full' %}
     <div id="intro">
         {{ content.body }}
         {{ content.field_calendar }}
@@ -91,4 +92,7 @@
     <div{{ content_attributes }}>
         {{ content|without('body','field_calendar') }}
     </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
 </article>

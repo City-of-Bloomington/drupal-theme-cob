@@ -181,25 +181,19 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #block-cob-page-title h1 { font-size: 1.4rem; color: #fff; margin-top: 1em; }
 
-.contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { overflow: auto; }
+.contactInfo dl, #block-departmentstaff dl, #block-committeemembers > div dl { border: none; padding: 0; }
 
-.contactInfo dl, #block-departmentstaff dl, #block-cob-committeemembers > div dl { border: none; padding: 0; }
+.contactInfo address, .contactInfo a, #block-departmentstaff address, #block-departmentstaff a, #block-committeemembers > div address, #block-committeemembers > div a { font-style: normal; }
 
-.contactInfo address, .contactInfo a, #block-departmentstaff address, #block-departmentstaff a, #block-cob-committeemembers > div address, #block-cob-committeemembers > div a { font-style: normal; }
+@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { display: flex; flex-flow: row wrap; justify-content: space-around; font-size: 0.875rem; }
+  .contactInfo h3, #block-departmentstaff h3, #block-committeemembers > div h3 { margin: 0; }
+  .contactInfo > div, #block-departmentstaff > div, #block-committeemembers > div > div { width: 25%; margin: auto; text-align: center; } }
 
-.contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { vertical-align: top; }
-
-@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { text-align: center; font-size: 0.875rem; }
-  .contactInfo h3, #block-departmentstaff h3, #block-cob-committeemembers > div h3 { margin: 0; }
-  .contactInfo > dl, .contactInfo > div, #block-departmentstaff > dl, #block-departmentstaff > div, #block-cob-committeemembers > div > dl, #block-cob-committeemembers > div > div { display: inline-block; }
-  .contactInfo > dl:not(:last-child), .contactInfo > div:not(:last-child), #block-departmentstaff > dl:not(:last-child), #block-departmentstaff > div:not(:last-child), #block-cob-committeemembers > div > dl:not(:last-child), #block-cob-committeemembers > div > div:not(:last-child) { margin-right: 2em; }
-  .contactInfo > div, #block-departmentstaff > div, #block-cob-committeemembers > div > div { width: 15em; margin-bottom: 1em; } }
-
-@media all and (min-width: 1080px) { .contactInfo, #block-departmentstaff, #block-cob-committeemembers > div { width: 1080px; margin: 0 auto; } }
+@media all and (min-width: 1080px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { width: 1080px; margin: 0 auto; } }
 
 .contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
-#block-cob-committeemembers dt { float: none; display: inline-block; }
+#block-committeemembers dt { float: none; display: inline-block; }
 
 #content > .container { padding: 0.5em; }
 
@@ -219,9 +213,9 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
 
-#news-section > header, #about-section > header, #government-section > header, #block-cob-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-cob-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
+#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
 
 body > footer { background-color: #3f9dff; color: #fff; padding: 0.5em; }
 
