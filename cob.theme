@@ -38,6 +38,7 @@ function cob_preprocess_page(&$vars)
                         'state'   => 'state',
                         'zip'     => 'zip'
                     ]);
+                    $contactInfo['onboard'] = OnBoardService::getUrl()."/committees/info?committee_id=".$json['info']['id'];
                 }
             }
         }

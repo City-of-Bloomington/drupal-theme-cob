@@ -38,6 +38,10 @@
         <dt>Twitter</dt>
         <dd><a href="{{ contactInfo.twitter }}" class="twitter">Follow us on Twitter</a></dd>
     {% endif %}
+    {% if contactInfo.onboard %}
+        <dt>OnBoard</dt>
+        <dd><a href="{{ contactInfo.onboard }}" class="onboard">View in OnBoard</a></dd>
+    {% endif %}
     </dl>
 </div>
 {% endif %}
