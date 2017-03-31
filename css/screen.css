@@ -4,8 +4,7 @@
 section { margin: 0; }
 
 @media all and (min-width: 640px) { #intro { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; }
-  #intro .text_with_summary { width: 55%; }
-  #intro .calendar_calendar { width: 40%; } }
+  #intro .text_with_summary { width: 55%; } }
 
 @media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
@@ -107,6 +106,8 @@ body > header a { color: #fff; }
 .contactInfo a.phone { background-image: url("images/fa-svg/white/phone-square.svg"); }
 
 .contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
+
+.contactInfo a.onboard { background-image: url("images/icons/white/city_logo.svg"); }
 
 #block-upcomingevents article, .calendar_calendar article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
 

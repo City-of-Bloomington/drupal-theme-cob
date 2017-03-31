@@ -87,10 +87,14 @@
     {% if view_mode == 'full' %}
     <div id="intro">
         {{ content.body }}
+        <aside>
         {{ content.field_calendar }}
+        {{ content.field_aside_title }}
+        {{ content.field_aside }}
+        </aside>
     </div>
     <div{{ content_attributes }}>
-        {{ content|without('body','field_calendar') }}
+        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside') }}
     </div>
     {% else %}
     {{ content }}
