@@ -117,7 +117,7 @@ body > header a { color: #fff; }
 
 #block-upcomingevents article .location, .calendar_calendar article .location { white-space: nowrap; }
 
-#block-upcomingevents article header, .calendar_calendar article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Roboto Condensed", sans-serif; text-align: center; vertical-align: middle; }
+#block-upcomingevents article header, .calendar_calendar article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Lora", serif; text-align: center; vertical-align: middle; }
 
 #block-upcomingevents article header time, .calendar_calendar article header time { display: inline-block; }
 
@@ -144,7 +144,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
 
-#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; text-align: left; }
+#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Roboto Condensed", sans-serif; text-align: left; }
 
 #news-section .news article > div { width: 48%; float: left; }
 
@@ -163,7 +163,7 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; } }
 
-#highlighted { background-color: #a31621; color: #fff; padding: 0.5em; font-weight: bold; }
+#highlighted { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
 
 #highlighted .container { text-align: center; }
 
@@ -180,13 +180,13 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-#block-cob-page-title h1 { font-size: 1.4rem; color: #fff; margin-top: 1em; }
+#block-cob-page-title h1 { font-size: 2.8125rem; color: #fff; margin-top: 1em; }
 
 .contactInfo dl, #block-departmentstaff dl, #block-committeemembers > div dl { border: none; padding: 0; }
 
 .contactInfo address, .contactInfo a, #block-departmentstaff address, #block-departmentstaff a, #block-committeemembers > div address, #block-committeemembers > div a { font-style: normal; }
 
-@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { display: flex; flex-flow: row wrap; justify-content: space-around; font-size: 0.875rem; }
+@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { display: flex; flex-flow: row wrap; justify-content: space-around; }
   .contactInfo h3, #block-departmentstaff h3, #block-committeemembers > div h3 { margin: 0; }
   .contactInfo > div, #block-departmentstaff > div, #block-committeemembers > div > div { width: 25%; margin: auto; text-align: center; } }
 
@@ -214,9 +214,9 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
 
-#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header, aside > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
+#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2, aside > header h2 { background-color: #fff; color: #183365; }
 
 body > footer { background-color: #3f9dff; color: #fff; padding: 0.5em; }
 
