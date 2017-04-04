@@ -1,5 +1,5 @@
 @import '../vendor/City-of-Bloomington/factory-number-one/src/themes/default/scss/modules/_vars-mixins';
-
+@import 'modules/vars';
 @import 'modules/layout';
 @import 'modules/nav1';
 @import 'modules/header';
@@ -7,8 +7,11 @@
 @import 'modules/admin';
 @import 'modules/icons';
 @import 'modules/events';
+@import 'modules/dividers';
 @import 'modules/front-page';
 @import 'modules/paragraphs';
+
+dl { border:none; }
 
 #highlighted {
     background-color: $color-error;
@@ -21,21 +24,20 @@
 
 #breadcrumb {
     background-color: $color-accent;
-    min-height: 25vmin;
+    min-height: 40vmin;
     background: url('images/downtown-small.png') no-repeat center center;
     background-size: cover;
     position:relative;
 
-    .container {
-        background-color:rgba(0,0,0,.5);
-        padding:$size-gutter;
-    }
+    .blur { background-color:rgba(0,0,0,.5); }
+    .container { padding:$size-gutter; }
+
     nav { font-size:$font-size-small; }
     address, a { color:$color-content-background; }
 
     @media all and (min-width: $viewport-medium) {
         background-image:url('images/downtown-medium.png');
-        .container {
+        .blur {
             position:absolute; bottom:0; left:0; right:0;
         }
     }
@@ -51,9 +53,10 @@
 }
 
 // These blocks are laying out lists of things in a grid
-.contactInfo, #block-departmentstaff, #block-committeemembers > div {
-    dl { border:none; padding:0; }
-    address, a { font-style:normal; }
+#breadcrumb .contactInfo,
+#block-departmentstaff  > div,
+#block-committeemembers > div > div {
+    font-size:$font-size-normal;
 
     @media all and (min-width:$viewport-medium) {
         display:flex;
@@ -76,37 +79,11 @@
     > section {
         padding:$size-gutter 0;
 
-        header {
-            text-align: center;
-            background-size: 100% 2px;
-            background-position: left center;
-            background-repeat: no-repeat;
-        }
-        h2 { display:inline; padding:0 $size-gutter; }
+        h2 { font-size:$font-size-bigger; color:$color-footer; margin-bottom:2rem; }
         .container { overflow:auto; padding:$size-gutter; }
     }
 }
-@media all and (min-width:$viewport-medium) {
-    #content aside { float:right; width:40% }
-}
 
-// Light foreground, dark background
-#services-section {
-    background-color: $color-header;
-    > header {
-        background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
-        h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
-    }
-}
-// Dark foreground, light background
-#news-section, #about-section, #government-section,
-#block-committeemembers, #block-departmentstaff,
-.paragraph, aside {
-    > header {
-        background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
-        h2 { background-color:$color-content-background; color:$color-header; }
-    }
-}
 
 body > footer {
     background-color: $color-footer;

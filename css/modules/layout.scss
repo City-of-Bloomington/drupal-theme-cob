@@ -2,13 +2,12 @@ section { margin:0; }
 
 @media all and (min-width:$viewport-medium) {
     #intro {
-        display:-ms-flexbox;
         display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
 
-        -ms-flex-direction: row;
-            flex-direction: row;
-
-        .text_with_summary { width:55%; }
+        .text_with_summary { flex-basis:55%; margin-right:5%; }
+        aside { flex-basis:40%; }
     }
 }
 

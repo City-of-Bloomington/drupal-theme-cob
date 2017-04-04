@@ -11,8 +11,12 @@
     text-align:center;
 }
 .paragraph--type--info-card {
+    h1 { vertical-align:top; }
+
     @media all and (min-width:$viewport-medium) {
         width:30%; display:inline-block;
         vertical-align:top; text-align:center;
+
+        header { height:3em; font-size:$font-size-bigger; margin:0; }
     }
 }

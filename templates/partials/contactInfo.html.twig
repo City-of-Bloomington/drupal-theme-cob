@@ -1,47 +1,33 @@
 {% if contactInfo %}
 <div class="contactInfo">
-    <dl class="address">
     {% if contactInfo.address %}
-        <dt>Address</dt>
+    <dl><dt>Address</dt>
         <dd><address>{{ contactInfo.address }}
             {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
             </address>
         </dd>
-    {% endif %}
     </dl>
-    <dl class="phones">
+    {% endif %}
     {% if contactInfo.phone %}
-        <dt>Phone</dt>
+    <dl><dt>Phone</dt>
         <dd><a href="tel:{{ contactInfo.phone }}" class="phone" title="Phone">
                 {{ contactInfo.phone }}
             </a>
         </dd>
+    </dl>
     {% endif %}
     {% if contactInfo.fax %}
-        <dt>Fax</dt>
+    <dl><dt>Fax</dt>
         <dd><a href="tel:{{ contactInfo.fax }}" class="fax" title="Fax">
                 {{ contactInfo.fax }}
             </a>
         </dd>
-    {% endif %}
     </dl>
-    <dl class="links">
+    {% endif %}
     {% if contactInfo.email %}
-        <dt>Email</dt>
+    <dl><dt>Email</dt>
         <dd><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></dd>
-    {% endif %}
-    {% if contactInfo.facebook %}
-        <dt>Facebook</dt>
-        <dd><a href="{{ contactInfo.facebook }}" class="facebook">Connect on Facebook</a></dd>
-    {% endif %}
-    {% if contactInfo.twitter  %}
-        <dt>Twitter</dt>
-        <dd><a href="{{ contactInfo.twitter }}" class="twitter">Follow us on Twitter</a></dd>
-    {% endif %}
-    {% if contactInfo.onboard %}
-        <dt>OnBoard</dt>
-        <dd><a href="{{ contactInfo.onboard }}" class="onboard">View in OnBoard</a></dd>
-    {% endif %}
     </dl>
+    {% endif %}
 </div>
 {% endif %}

@@ -47,11 +47,14 @@
 .contactInfo {
     address, a {
         display:block;
-        padding-left: 1.5rem;
+        font-size:$font-size-normal; font-style:normal;
+        padding-left: 3.5rem;
         background-position: left center;
-        background-size:1rem;
+        background-size:2.5rem;
         background-repeat:no-repeat;
     }
+    a { line-height:2em; }
+
     address            { background-image:url('images/fa-svg/white/map-marker.svg'     ); }
     a.facebook         { background-image:url('images/fa-svg/white/facebook-square.svg'); }
     a.twitter          { background-image:url('images/fa-svg/white/twitter-square.svg' ); }
@@ -59,4 +62,14 @@
     a.phone            { background-image:url('images/fa-svg/white/phone-square.svg'   ); }
     a.fax              { background-image:url('images/fa-svg/white/fax.svg'            ); }
     a.onboard          { background-image:url('images/icons/white/city_logo.svg'       ); }
+}
+
+aside.contactInfo {
+    address            { background-image:url('images/fa-svg/gothic/map-marker.svg'     ); }
+    a.facebook         { background-image:url('images/fa-svg/gothic/facebook-square.svg'); }
+    a.twitter          { background-image:url('images/fa-svg/gothic/twitter-square.svg' ); }
+    a[href^="mailto:"] { background-image:url('images/fa-svg/gothic/envelope.svg'       ); }
+    a.phone            { background-image:url('images/fa-svg/gothic/phone-square.svg'   ); }
+    a.fax              { background-image:url('images/fa-svg/gothic/fax.svg'            ); }
+    a.onboard          { background-image:url('images/icons/gothic/city_logo.svg'       ); }
 }

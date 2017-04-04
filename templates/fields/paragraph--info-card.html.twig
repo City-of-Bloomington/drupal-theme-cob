@@ -48,7 +48,9 @@
 {% block paragraph %}
 <article{{ attributes.addClass(classes) }}>
     <a href="{{ content.field_info_link.0['#url'] }}">
-        <h1>{{ title }}</h1>
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
          <p>{{ text  }}</p>
     </a>
 </article>

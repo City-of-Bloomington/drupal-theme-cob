@@ -28,15 +28,17 @@
  */
 #}
 <section{{ attributes }}>
+    {% if label %}
     <header>
         {{ title_prefix }}
-        {% if label %}
         <h2{{ title_attributes }}>{{ label }}</h2>
-        {% endif %}
         {{ title_suffix }}
     </header>
+    {% endif %}
 
     {% block content %}
+    <div>
     {{ content }}
+    </div>
     {% endblock %}
 </section>

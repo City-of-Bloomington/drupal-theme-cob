@@ -31,7 +31,10 @@ label[for="hamburger"] {
     .container {
         padding-top:3em;
 
-        a { color:$color-content-background;}
+        a {
+            color:$color-content-background;
+            font-size:$font-size-big;
+        }
     }
 }
 
@@ -45,9 +48,10 @@ label[for="hamburger"] {
         margin:0;
         background-color:$color-content-background;
         .container {
-            padding:0; overflow:auto; text-align:center;
+            padding:0; overflow:auto;
+            display:flex; flex-direction:row; justify-content:space-around;
 
-            a { color:$color-header; float:none; }
+            a { color:$color-header; }
         }
     }
 }

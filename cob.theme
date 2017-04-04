@@ -5,6 +5,8 @@
  */
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\node\Entity\Node;
+
 use Drupal\directory\DirectoryService;
 use Drupal\onboard\OnBoardService;
 
@@ -23,39 +25,21 @@ function cob_preprocess_page(&$vars)
             }
         }
 
-        $contactInfo = [];
-        if ($vars['node']->hasField( 'field_committee')) {
-            $id = $vars['node']->get('field_committee')->value;
-            if ($id) {
-                $json = OnBoardService::committee_info($id);
-                if ($json) {
-                    _cob_mapContactInfoFields($contactInfo, $json['info'], [
-                        'name'    => 'name',
-                        'email'   => 'email',
-                        'phone'   => 'phone',
-                        'address' => 'address',
-                        'city'    => 'city',
-                        'state'   => 'state',
-                        'zip'     => 'zip'
-                    ]);
-                    $contactInfo['onboard'] = OnBoardService::getUrl()."/committees/info?committee_id=".$json['info']['id'];
-                }
-            }
+        $contactInfo =  _cob_contactInfoFromNode($vars['node']);
+
+        if ($contactInfo) {
+            $vars['contactInfo'] = $contactInfo;
         }
-
-        _cob_contactInfoFromNode($vars['node'], $contactInfo);
-
-        if ($vars['node']->hasField('field_location')) {
-            $l = $vars['node']->get('field_location')->entity;
-            if ($l) {
-                _cob_contactInfoFromNode($l, $contactInfo);
-            }
-        }
-
-        if ($contactInfo) { $vars['contactInfo'] = $contactInfo; }
     }
 }
 
+function cob_preprocess_node(&$vars)
+{
+    $contactInfo = _cob_contactInfoFromNode($vars['elements']['#node']);
+    if ($contactInfo) {
+        $vars['contactInfo'] = $contactInfo;
+    }
+}
 
 function cob_preprocess_paragraph__info_card(&$vars)
 {
@@ -79,24 +63,65 @@ function cob_preprocess_paragraph__info_card(&$vars)
     }
 }
 
-function _cob_contactInfoFromNode($node, array &$info)
+/**
+ * Populates contact information from various sources for a given node
+ *
+ * This function will cache the results by NodeID.  The contactInfo
+ * queries are extensive, and can be slow.  We don't want to do this
+ * more than once.
+ *
+ * @param Node $node
+ * @return array
+ */
+function _cob_contactInfoFromNode(Node $node)
 {
-    if (empty($info['facebook']) && $node->hasField('field_facebook_page')) {
-        $v = $node->get('field_facebook_page')->getValue();
-        if (!empty($v[0]['uri'])) {
-            $info['facebook'] = $v[0]['uri'];
+    static $info = [];
+    $nid = $node->nid->value;
+
+
+    // If the NID has been set, then we've already attempted a lookup.
+    // If it's there, and it is empty, then the lookup returned no results.
+    // Don't waste time doing another lengthy lookup, just to get empty
+    // results again.
+    if (isset($info[$nid])) { return $info[$nid]; }
+
+    $info[$nid] = [];
+
+    if ($node->hasField( 'field_committee')) {
+        $id = $node->get('field_committee')->value;
+        if ($id) {
+            $json = OnBoardService::committee_info($id);
+            if ($json) {
+                _cob_mapContactInfoFields($info[$nid], $json['info'], [
+                    'name'    => 'name',
+                    'email'   => 'email',
+                    'phone'   => 'phone',
+                    'address' => 'address',
+                    'city'    => 'city',
+                    'state'   => 'state',
+                    'zip'     => 'zip'
+                ]);
+                $info[$nid]['links']['onboard'] = OnBoardService::getUrl()."/committees/info?committee_id=".$json['info']['id'];
+            }
         }
     }
-    if (empty($info['twitter' ]) && $node->hasField('field_twitter_account')) {
+
+    if (empty($info[$nid]['facebook']) && $node->hasField('field_facebook_page')) {
+        $v = $node->get('field_facebook_page')->getValue();
+        if (!empty($v[0]['uri'])) {
+            $info[$nid]['links']['facebook'] = $v[0]['uri'];
+        }
+    }
+    if (empty($info[$nid]['twitter' ]) && $node->hasField('field_twitter_account')) {
         $v = $node->get('field_twitter_account')->getValue();
         if (!empty($v[0]['uri'])) {
-            $info['twitter'] = $v[0]['uri'];
+            $info[$nid]['links']['twitter'] = $v[0]['uri'];
         }
     }
 
     if ($node->hasField( 'field_directory_dn')) {
         $dn = $node->get('field_directory_dn')->value;
-        if ($dn) { _cob_contactInfoForDn($dn, $info); }
+        if ($dn) { _cob_contactInfoForDn($dn, $info[$nid]); }
     }
 
     $map = [
@@ -107,15 +132,27 @@ function _cob_contactInfoFromNode($node, array &$info)
         'zip'      => 'field_zipcode'
     ];
     foreach ($map as $i=>$f) {
-        if (empty($info[$i]) && $node->hasField($f)) {
+        if (empty($info[$nid][$i]) && $node->hasField($f)) {
             $value = $node->get($f)->value;
-            if ($value) { $info[$i] = $value; }
+            if ($value) { $info[$nid][$i] = $value; }
         }
     }
-    if (!empty($info['zip'])) {
-        if (empty($info['city' ])) { $info['city' ] = 'Bloomington'; }
-        if (empty($info['state'])) { $info['state'] = 'IN';          }
+    if (!empty($info[$nid]['zip'])) {
+        if (empty($info[$nid]['city' ])) { $info[$nid]['city' ] = 'Bloomington'; }
+        if (empty($info[$nid]['state'])) { $info[$nid]['state'] = 'IN';          }
     }
+
+    if ($node->hasField('field_location')) {
+        $l = $node->get('field_location')->entity;
+        if ($l) {
+            $li = _cob_contactInfoFromNode($l);
+            foreach ($li as $k=>$v) {
+                if (empty($info[$nid][$k])) { $info[$nid][$k] = $v; }
+            }
+        }
+    }
+
+    return $info[$nid];
 }
 
 /**

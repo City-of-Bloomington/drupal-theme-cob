@@ -1,10 +1,12 @@
 /** Urls are relative to screen.css */
 @import 'https://fonts.googleapis.com/css?family=Lora';
 @import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
+/** @see https://en.wikipedia.org/wiki/Web_colors */
 section { margin: 0; }
 
-@media all and (min-width: 640px) { #intro { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; }
-  #intro .text_with_summary { width: 55%; } }
+@media all and (min-width: 640px) { #intro { display: flex; flex-direction: row; flex-wrap: wrap; }
+  #intro .text_with_summary { flex-basis: 55%; margin-right: 5%; }
+  #intro aside { flex-basis: 40%; } }
 
 @media all and (min-width: 1080px) { #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
@@ -22,12 +24,12 @@ label[for="hamburger"] { position: fixed; top: 0.5em; left: 0.5em; width: 2em; h
 
 #nav1 .container { padding-top: 3em; }
 
-#nav1 .container a { color: #fff; }
+#nav1 .container a { color: #fff; font-size: 1.25rem; }
 
 @media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
   #nav1 { position: static; width: 100%; height: auto; margin: 0; background-color: #fff; }
-  #nav1 .container { padding: 0; overflow: auto; text-align: center; }
-  #nav1 .container a { color: #183365; float: none; } }
+  #nav1 .container { padding: 0; overflow: auto; display: flex; flex-direction: row; justify-content: space-around; }
+  #nav1 .container a { color: #183365; } }
 
 body > header { color: #fff; padding: 0; }
 
@@ -35,9 +37,9 @@ body > header > .container { background-color: #183365; }
 
 body > header > .container section, body > header > .container form { display: inline-block; }
 
-body > header h1 { color: #fff; font-weight: bold; }
+body > header > .container h1 a { color: #fff; font-weight: bold; }
 
-body > header a { color: #fff; }
+@media all and (min-width: 640px) { body > header > .container h1 a { padding: 0; } }
 
 #block-cob-cob-search-form { float: right; }
 
@@ -93,7 +95,9 @@ body > header a { color: #fff; }
 
 #government-section a.public_safety { background-image: url("../images/icons/public safety icon.svg"); }
 
-.contactInfo address, .contactInfo a { display: block; padding-left: 1.5rem; background-position: left center; background-size: 1rem; background-repeat: no-repeat; }
+.contactInfo address, .contactInfo a { display: block; font-size: 1.125rem; font-style: normal; padding-left: 3.5rem; background-position: left center; background-size: 2.5rem; background-repeat: no-repeat; }
+
+.contactInfo a { line-height: 2em; }
 
 .contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
 
@@ -109,6 +113,20 @@ body > header a { color: #fff; }
 
 .contactInfo a.onboard { background-image: url("images/icons/white/city_logo.svg"); }
 
+aside.contactInfo address { background-image: url("images/fa-svg/gothic/map-marker.svg"); }
+
+aside.contactInfo a.facebook { background-image: url("images/fa-svg/gothic/facebook-square.svg"); }
+
+aside.contactInfo a.twitter { background-image: url("images/fa-svg/gothic/twitter-square.svg"); }
+
+aside.contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/gothic/envelope.svg"); }
+
+aside.contactInfo a.phone { background-image: url("images/fa-svg/gothic/phone-square.svg"); }
+
+aside.contactInfo a.fax { background-image: url("images/fa-svg/gothic/fax.svg"); }
+
+aside.contactInfo a.onboard { background-image: url("images/icons/gothic/city_logo.svg"); }
+
 #block-upcomingevents article, .calendar_calendar article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
 
 #block-upcomingevents article .month, #block-upcomingevents article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.25rem; font-weight: bold; }
@@ -122,6 +140,20 @@ body > header a { color: #fff; }
 #block-upcomingevents article header time, .calendar_calendar article header time { display: inline-block; }
 
 #block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
+
+#content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
+
+#content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; }
+
+#services-section { background-color: #183365; }
+
+#services-section > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+
+#services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
+
+#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
 
 main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
 
@@ -161,36 +193,41 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .paragraph--type--info-list { text-align: center; }
 
-@media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; } }
+.paragraph--type--info-card h1 { vertical-align: top; }
+
+@media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; }
+  .paragraph--type--info-card header { height: 3em; font-size: 2.25rem; margin: 0; } }
+
+dl { border: none; }
 
 #highlighted { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
 
 #highlighted .container { text-align: center; }
 
-#breadcrumb { background-color: #a31621; min-height: 25vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
+#breadcrumb { background-color: #a31621; min-height: 40vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
 
-#breadcrumb .container { background-color: rgba(0, 0, 0, 0.5); padding: 0.5em; }
+#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.5); }
+
+#breadcrumb .container { padding: 0.5em; }
 
 #breadcrumb nav { font-size: 1rem; }
 
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
 @media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
-  #breadcrumb .container { position: absolute; bottom: 0; left: 0; right: 0; } }
+  #breadcrumb .blur { position: absolute; bottom: 0; left: 0; right: 0; } }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
 #block-cob-page-title h1 { font-size: 2.8125rem; color: #fff; margin-top: 1em; }
 
-.contactInfo dl, #block-departmentstaff dl, #block-committeemembers > div dl { border: none; padding: 0; }
+#breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
 
-.contactInfo address, .contactInfo a, #block-departmentstaff address, #block-departmentstaff a, #block-committeemembers > div address, #block-committeemembers > div a { font-style: normal; }
+@media all and (min-width: 640px) { #breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { display: flex; flex-flow: row wrap; justify-content: space-around; }
+  #breadcrumb .contactInfo h3, #block-departmentstaff > div h3, #block-committeemembers > div > div h3 { margin: 0; }
+  #breadcrumb .contactInfo > div, #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 25%; margin: auto; text-align: center; } }
 
-@media all and (min-width: 640px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { display: flex; flex-flow: row wrap; justify-content: space-around; }
-  .contactInfo h3, #block-departmentstaff h3, #block-committeemembers > div h3 { margin: 0; }
-  .contactInfo > div, #block-departmentstaff > div, #block-committeemembers > div > div { width: 25%; margin: auto; text-align: center; } }
-
-@media all and (min-width: 1080px) { .contactInfo, #block-departmentstaff, #block-committeemembers > div { width: 1080px; margin: 0 auto; } }
+@media all and (min-width: 1080px) { #breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { width: 1080px; margin: 0 auto; } }
 
 .contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
@@ -200,23 +237,9 @@ main.front:before { box-sizing: content-box; content: ''; display: block; height
 
 #content > .container > section { padding: 0.5em 0; }
 
-#content > .container > section header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; }
-
-#content > .container > section h2 { display: inline; padding: 0 0.5em; }
+#content > .container > section h2 { font-size: 2.25rem; color: #3f9dff; margin-bottom: 2rem; }
 
 #content > .container > section .container { overflow: auto; padding: 0.5em; }
-
-@media all and (min-width: 640px) { #content aside { float: right; width: 40%; } }
-
-#services-section { background-color: #183365; }
-
-#services-section > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
-
-#services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
-
-#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header, aside > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
-
-#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2, aside > header h2 { background-color: #fff; color: #183365; }
 
 body > footer { background-color: #3f9dff; color: #fff; padding: 0.5em; }
 

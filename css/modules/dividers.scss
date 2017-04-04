@@ -1,0 +1,29 @@
+#content section            > header,
+.paragraph--type--info-list > header{
+    text-align: center;
+    background-size: 100% 2px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin:2em 0;
+
+    h2 { display:inline; padding:0 $size-gutter; }
+}
+
+// Light foreground, dark background
+#services-section {
+    background-color: $color-header;
+    > header {
+        background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
+        h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
+    }
+}
+// Dark foreground, light background
+#news-section, #about-section, #government-section,
+#block-committeemembers, #block-departmentstaff,
+.paragraph {
+    > header {
+        background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
+        h2 { background-color:$color-content-background; color:$color-header; }
+    }
+}
+

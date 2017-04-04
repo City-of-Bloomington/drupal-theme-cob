@@ -73,6 +73,7 @@
  */
 #}
 <article{{ attributes }}>
+    {% if display_submitted or not page %}
     <header>
         {{ title_prefix }}
         {% if display_submitted %}
@@ -84,14 +85,43 @@
         {% endif %}
         {{ title_suffix }}
     </header>
+    {% endif %}
     {% if view_mode == 'full' %}
     <div id="intro">
         {{ content.body }}
+        {% if content.field_calendar %}
+        <aside>{{ content.field_calendar }}</aside>
+        {% endif %}
+
+        {% if content.field_aside %}
         <aside>
-        {{ content.field_calendar }}
         {{ content.field_aside_title }}
         {{ content.field_aside }}
         </aside>
+        {% endif %}
+
+        {% if contactInfo.links %}
+        <aside class="contactInfo">
+            <header>
+                <h2>Connect with us</h2>
+            </header>
+            {% if contactInfo.links.facebook %}
+            <dl><dt>Facebook</dt>
+                <dd><a href="{{ contactInfo.links.facebook }}" class="facebook">Connect on Facebook</a></dd>
+            </dl>
+            {% endif %}
+            {% if contactInfo.links.twitter  %}
+            <dl><dt>Twitter</dt>
+                <dd><a href="{{ contactInfo.links.twitter }}" class="twitter">Follow us on Twitter</a></dd>
+            </dl>
+            {% endif %}
+            {% if contactInfo.links.onboard %}
+            <dl><dt>OnBoard</dt>
+                <dd><a href="{{ contactInfo.links.onboard }}" class="onboard">View in OnBoard</a></dd>
+            </dl>
+            {% endif %}
+        </aside>
+        {% endif %}
     </div>
     <div{{ content_attributes }}>
         {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside') }}
