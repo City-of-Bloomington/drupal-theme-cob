@@ -1,8 +1,17 @@
+<input  id="hamburger" type="checkbox" />
+<label for="hamburger"></label>
+<header>
+    <div class="container">
+        {{ page.header }}
+    </div>
+</header>
 <nav id="nav1">
     <div class="container">
         <a class="about"    href="{{ base_path }}about">About Bloomington</a>
         <a class="city"     href="{{ base_path }}city">City Government</a>
         <a class="news"     href="{{ base_path }}news">News &amp; Events</a>
         <a class="services" href="{{ base_path }}services">Services &amp; Guides</a>
-    </a>
+    </div>
 </nav>
+{{ page.primary_menu }}
+{{ page.secondary_menu }}

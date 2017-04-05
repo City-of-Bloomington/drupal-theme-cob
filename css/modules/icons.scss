@@ -1,3 +1,13 @@
+#block-searchform .button {
+    width:0; height:1em;
+    overflow: hidden;
+    text-indent: -10em;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size:($size-gutter*2) ($size-gutter*2);
+    background-image:url('images/fa-svg/white/search.svg');
+}
+
 @media all and (min-width:$viewport-medium) {
     #nav1 {
         a {

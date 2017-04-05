@@ -45,16 +45,7 @@
  * @ingroup themeable
  */
 #}
-<input  id="hamburger" type="checkbox" />
-<label for="hamburger"></label>
-<header>
-    <div class="container">
-        {{ page.header }}
-    </div>
-</header>
-{% include '@cob/partials/nav1.html.twig' %}
-{{ page.primary_menu }}
-{{ page.secondary_menu }}
+{% include '@cob/partials/siteHeader.html.twig' %}
 <main class="front">
     {% if page.highlighted %}
     <div id="highlighted">

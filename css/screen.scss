@@ -79,7 +79,7 @@ dl { border:none; }
     > section {
         padding:$size-gutter 0;
 
-        h2 { font-size:$font-size-bigger; color:$color-footer; margin-bottom:2rem; }
+        h2 { font-size:$font-size-bigger; color:$color-heading; margin-bottom:2rem; }
         .container { overflow:auto; padding:$size-gutter; }
     }
 }
@@ -91,6 +91,7 @@ body > footer {
     padding:$size-gutter;
 
     a {
+        font-size:$font-size-big;
         color: $color-content-background;
         display:block; text-align:left;
     }

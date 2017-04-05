@@ -1,10 +1,12 @@
 body > header {
+    background-color: $color-header;
     color: $color-content-background;
     padding: 0;
 
     > .container {
-        background-color: $color-header;
-        section, form { display:inline-block; }
+        display:flex;
+        justify-content:space-between;
+
         h1 a { color: $color-content-background; font-weight:bold; }
 
         @media all and (min-width:$viewport-medium) {
@@ -12,4 +14,4 @@ body > header {
         }
     }
 }
-#block-cob-cob-search-form { float:right; }
+#block-searchform { div, form { display:inline; } }
