@@ -65,21 +65,21 @@ body > header > .container h1 a { color: #fff; font-weight: bold; }
 
 #services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding: 7em 0.5em 0.5em 0.5em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
 
-#services-section a.contact { background-image: url("images/alpha_icons/icons/contact us icon.svg"); }
+#services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
 
-#services-section a.report { background-image: url("images/alpha_icons/icons/report issue icon.svg"); }
+#services-section a.report { background-image: url("images/alpha_icons/white/exclamation-triangle-circle-o.svg"); }
 
-#services-section a.performance { background-image: url("images/alpha_icons/icons/performance icon.svg"); }
+#services-section a.performance { background-image: url("images/alpha_icons/white/documentdata-circle-o.svg"); }
 
-#services-section a.myBloomington { background-image: url("images/alpha_icons/icons/my bloomington icon.svg"); }
+#services-section a.myBloomington { background-image: url("images/alpha_icons/white/safecity-circle-o.svg"); }
 
-#services-section a.maps { background-image: url("images/alpha_icons/icons/city maps icon.svg"); }
+#services-section a.maps { background-image: url("images/alpha_icons/white/map-circle-o.svg"); }
 
-#services-section a.water { background-image: url("images/alpha_icons/icons/water icon.svg"); }
+#services-section a.water { background-image: url("images/alpha_icons/white/watertap-circle-o.svg"); }
 
-#services-section a.parking_ticket { background-image: url("images/alpha_icons/icons/parking icon.svg"); }
+#services-section a.parking_ticket { background-image: url("images/alpha_icons/white/ticket-circle-o.svg"); }
 
-#services-section a.parks { background-image: url("images/alpha_icons/icons/parks icon.svg"); }
+#services-section a.parks { background-image: url("images/alpha_icons/white/park-circle-o.svg"); }
 
 #government-section a.code { background-image: url("images/alpha_icons/biscay/circle-o.svg"); }
 
