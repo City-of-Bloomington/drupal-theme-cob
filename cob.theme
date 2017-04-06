@@ -26,10 +26,11 @@ function cob_preprocess_page(&$vars)
         }
 
         $contactInfo =  _cob_contactInfoFromNode($vars['node']);
-
         if ($contactInfo) {
             $vars['contactInfo'] = $contactInfo;
         }
+
+        $vars['available_messages'] = !empty(drupal_get_messages(null, false));
     }
 }
 

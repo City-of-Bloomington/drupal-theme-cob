@@ -29,8 +29,9 @@ dl { border:none; }
     background-size: cover;
     position:relative;
 
-    .blur { background-color:rgba(0,0,0,.5); }
+    .blur { background-color:rgba(0,0,0,.6); }
     .container { padding:$size-gutter; }
+    h1 { font-size: $font-size-huge; color:$color-content-background; margin-top:1em; }
 
     nav { font-size:$font-size-small; }
     address, a { color:$color-content-background; }
@@ -45,12 +46,7 @@ dl { border:none; }
         background-image:url('images/downtown-large.png' );
     }
 }
-#block-cob-page-title {
-    h1 {
-        font-size: $font-size-huge; color:$color-content-background;
-        margin-top:1em;
-    }
-}
+.front #breadcrumb .blur { background-color:rgba(63,157,255,.8); }
 
 // These blocks are laying out lists of things in a grid
 #breadcrumb .contactInfo,

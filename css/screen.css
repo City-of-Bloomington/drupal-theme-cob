@@ -141,25 +141,19 @@ aside.contactInfo a.onboard { background-image: url("images/icons/gothic/city_lo
 
 #block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
 
-#content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
+.front .container > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
 
-#content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; }
+.front .container > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; }
 
-#services-section { background-color: #183365; }
+#services-section { background-color: #183365; padding-top: 2em; }
 
-#services-section > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+#services-section .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
-#services-section > header h2, #services-section > header a { background-color: #183365; color: #fff; font-weight: bold; }
+#services-section .container > header h2, #services-section .container > header a { background-color: #183365; color: #fff; font-weight: bold; }
 
-#news-section > header, #about-section > header, #government-section > header, #block-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section .container > header, #about-section .container > header, #government-section .container > header, #block-committeemembers .container > header, #block-departmentstaff .container > header, .paragraph .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section > header h2, #about-section > header h2, #government-section > header h2, #block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
-
-main.front:before { box-sizing: content-box; content: ''; display: block; height: 25vh; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; }
-
-@media all and (min-width: 640px) { main.front:before { background-image: url("images/downtown-medium.png"); } }
-
-@media all and (min-width: 1080px) { main.front:before { background-image: url("images/downtown-large.png"); } }
+#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2, #block-committeemembers .container > header h2, #block-departmentstaff .container > header h2, .paragraph .container > header h2 { background-color: #fff; color: #183365; }
 
 @media all and (min-width: 640px) { #about-section .container { background: url("../images/icons/Indiana state icon.svg") right 60% top no-repeat; background-size: auto 100%; }
   #about-section .container p { margin-left: 50%; } }
@@ -206,9 +200,11 @@ dl { border: none; }
 
 #breadcrumb { background-color: #a31621; min-height: 40vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
 
-#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.5); }
+#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.6); }
 
 #breadcrumb .container { padding: 0.5em; }
+
+#breadcrumb h1 { font-size: 2.8125rem; color: #fff; margin-top: 1em; }
 
 #breadcrumb nav { font-size: 1rem; }
 
@@ -219,7 +215,7 @@ dl { border: none; }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-#block-cob-page-title h1 { font-size: 2.8125rem; color: #fff; margin-top: 1em; }
+.front #breadcrumb .blur { background-color: rgba(63, 157, 255, 0.8); }
 
 #breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
 

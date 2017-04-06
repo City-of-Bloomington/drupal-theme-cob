@@ -47,21 +47,15 @@
 #}
 {% include '@cob/partials/siteHeader.html.twig' %}
 <main class="front">
-    {% if page.highlighted %}
-    <div id="highlighted">
-        <div class="container">
-            {{ page.highlighted }}
-        </div>
-    </div>
-    {% endif %}
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    {{ page.help }}
+    {% include '@cob/partials/banner.html.twig' %}
 
     <div id="content">
-        <div class="container">
-            <section id="services-section">
+        <section id="services-section">
+            <div class="container">
                 <header><h2>Services &amp; Guides</h2></header>
-                <div class="container">
+                <nav>
                     <a href="#" class="contact">Contact Us</a>
                     <a href="#" class="report">Report Issue</a>
                     <a href="#" class="performance">City Performance</a>
@@ -70,21 +64,25 @@
                     <a href="#" class="water">Pay Water Bill Online</a>
                     <a href="#" class="parking_ticket">Pay Parking Ticket Online</a>
                     <a href="#" class="parks">Parks and Recreation</a>
-                </div>
-            </section>
-            <section id="news-section">
+                </nav>
+            </div>
+        </section>
+
+        <section id="news-section">
+            <div class="container">
                 <header><h2>News &amp; Events</h2></header>
-                <div class="container">
-                    <div class="news">
-                    {{ page.content }}
-                    </div>
-                    <div class="events">
-                    </div>
+                <div class="news">
+                {{ page.content }}
                 </div>
-            </section>
-            <section id="about-section">
+                <div class="events">
+                </div>
+            </div>
+        </section>
+
+        <section id="about-section">
+            <div class="container">
                 <header><h2>About Bloomington</h2></header>
-                <div class="container">
+                <div>
                     <p> Nestled in the rolling hills of southern Indiana, Bloomington is a loved
                         city that boasts spectacular scenery, world-class educational institutions
                         and unique shopping and dining experiences. Bloomington is a great place to
@@ -96,10 +94,13 @@
                         art exhibitions, the activities available for all to enjoy are endless.
                     </p>
                 </div>
-            </section>
-            <section id="government-section">
+            </div>
+        </section>
+
+        <section id="government-section">
+            <div class="container">
                 <header><h2>City Government</h2></header>
-                <div class="container">
+                <nav>
                     <a href="#" class="code">
                         <h2>Municipal Code</h2>
                         The Municipal Code is intended to make the laws of the city as accessible
@@ -129,9 +130,9 @@
                         <h2>Public Safety</h2>
                         Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
                     </a>
-                </div>
-            </section>
-        </div>
+                </nav>
+            </div>
+        </section>
     </div>
 </main>
 <footer>

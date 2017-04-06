@@ -1,11 +1,3 @@
-main.front:before {
-    box-sizing:content-box; content:''; display:block;
-    height: 25vh;
-    background: url('images/downtown-small.png') no-repeat center center;
-    background-size: cover;
-    @media all and (min-width: $viewport-medium) { background-image:url('images/downtown-medium.png'); }
-    @media all and (min-width: $viewport-large ) { background-image:url('images/downtown-large.png' ); }
-}
 #about-section {
     @media all and (min-width:$viewport-medium) {
         .container {

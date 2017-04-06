@@ -49,32 +49,7 @@
 <main>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    {% if cover_image %}
-    <style type="text/css">
-        #breadcrumb { background-image:url('{{ cover_image.cover_small }}'); }
-        @media all and (min-width:600px) { #breadcrumb { background-image:url('{{ cover_image.cover_medium }}'); }}
-        @media all and (min-width:990px) { #breadcrumb { background-image:url('{{ cover_image.cover_large  }}'); }}
-    </style>
-    {% endif %}
-
-    <div id="breadcrumb">
-        <div class="blur">
-            <div class="container">
-                {{ page.breadcrumb }}
-                {% include '@cob/partials/contactInfo.html.twig' %}
-            </div>
-        </div>
-    </div>
-
-    {% if page.highlighted %}
-    <div id="highlighted">
-        <div class="container">
-            {{ page.highlighted }}
-        </div>
-    </div>
-    {% endif %}
-
-    {{ page.help }}
+    {% include '@cob/partials/banner.html.twig' %}
 
     <div id="content">
         <div class="container">
