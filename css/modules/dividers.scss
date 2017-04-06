@@ -19,8 +19,8 @@ $divider-margin:2em;
 
     .container > header {
         background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
-        h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
     }
+    h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
 }
 // Dark foreground, light background
 #news-section, #about-section, #government-section,
@@ -31,4 +31,3 @@ $divider-margin:2em;
         h2 { background-color:$color-content-background; color:$color-header; }
     }
 }
-

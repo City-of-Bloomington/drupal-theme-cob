@@ -1,3 +1,14 @@
+#services-section, #government-section {
+    nav { text-align:center; }
+    a {
+        width:40vw;
+        margin-bottom:$size-gutter;
+
+        @media all and (min-width:$viewport-medium) { width: 20vw}
+        @media all and (min-width:$viewport-large) { width: 240px; }
+    }
+}
+
 #about-section {
     @media all and (min-width:$viewport-medium) {
         .container {
@@ -9,7 +20,6 @@
 }
 
 #government-section {
-    .container { text-align:center; }
     a {
         color: $color-text-default;
         &:hover { background-color: $color-action; }
