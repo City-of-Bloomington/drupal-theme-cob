@@ -58,42 +58,42 @@ body > header > .container h1 a { color: #fff; font-weight: bold; }
 #block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
 
 @media all and (min-width: 640px) { #nav1 a { display: inline-block; padding-top: 52px; background-size: auto 40px; background-position: center 0.5em; background-repeat: no-repeat; }
-  #nav1 .about { background-image: url("../images/icons/about bloom icon.svg"); }
-  #nav1 .news { background-image: url("../images/icons/news and event icon.svg"); }
-  #nav1 .city { background-image: url("../images/icons/city govt icon.svg"); }
-  #nav1 .services { background-image: url("../images/icons/services icon.svg"); } }
+  #nav1 .about { background-image: url("images/alpha_icons/icons/about bloom icon.svg"); }
+  #nav1 .news { background-image: url("images/alpha_icons/icons/news and event icon.svg"); }
+  #nav1 .city { background-image: url("images/alpha_icons/icons/city govt icon.svg"); }
+  #nav1 .services { background-image: url("images/alpha_icons/icons/services icon.svg"); } }
 
 #services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding: 7em 0.5em 0.5em 0.5em; width: 9em; margin-bottom: 0.5em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
 
-#services-section a.contact { background-image: url("../images/icons/contact us icon.svg"); }
+#services-section a.contact { background-image: url("images/alpha_icons/icons/contact us icon.svg"); }
 
-#services-section a.report { background-image: url("../images/icons/report issue icon.svg"); }
+#services-section a.report { background-image: url("images/alpha_icons/icons/report issue icon.svg"); }
 
-#services-section a.performance { background-image: url("../images/icons/performance icon.svg"); }
+#services-section a.performance { background-image: url("images/alpha_icons/icons/performance icon.svg"); }
 
-#services-section a.myBloomington { background-image: url("../images/icons/my bloomington icon.svg"); }
+#services-section a.myBloomington { background-image: url("images/alpha_icons/icons/my bloomington icon.svg"); }
 
-#services-section a.maps { background-image: url("../images/icons/city maps icon.svg"); }
+#services-section a.maps { background-image: url("images/alpha_icons/icons/city maps icon.svg"); }
 
-#services-section a.water { background-image: url("../images/icons/water icon.svg"); }
+#services-section a.water { background-image: url("images/alpha_icons/icons/water icon.svg"); }
 
-#services-section a.parking_ticket { background-image: url("../images/icons/parking icon.svg"); }
+#services-section a.parking_ticket { background-image: url("images/alpha_icons/icons/parking icon.svg"); }
 
-#services-section a.parks { background-image: url("../images/icons/parks icon.svg"); }
+#services-section a.parks { background-image: url("images/alpha_icons/icons/parks icon.svg"); }
 
-#government-section a.code { background-image: url("../images/icons/Municipal code icon.svg"); }
+#government-section a.code { background-image: url("images/alpha_icons/icons/Municipal code icon.svg"); }
 
-#government-section a.budget { background-image: url("../images/icons/city budget icon.svg"); }
+#government-section a.budget { background-image: url("images/alpha_icons/icons/city budget icon.svg"); }
 
-#government-section a.boards { background-image: url("../images/icons/boards icon.svg"); }
+#government-section a.boards { background-image: url("images/alpha_icons/icons/boards icon.svg"); }
 
-#government-section a.council { background-image: url("../images/icons/city council icon.svg"); }
+#government-section a.council { background-image: url("images/alpha_icons/icons/city council icon.svg"); }
 
-#government-section a.contact { background-image: url("../images/icons/contact icon.svg"); }
+#government-section a.contact { background-image: url("images/alpha_icons/icons/contact icon.svg"); }
 
-#government-section a.elected { background-image: url("../images/icons/elected icon.svg"); }
+#government-section a.elected { background-image: url("images/alpha_icons/icons/elected icon.svg"); }
 
-#government-section a.public_safety { background-image: url("../images/icons/public safety icon.svg"); }
+#government-section a.public_safety { background-image: url("images/alpha_icons/icons/public safety icon.svg"); }
 
 .contactInfo address, .contactInfo a { display: block; font-size: 1.125rem; font-style: normal; padding-left: 3.5rem; background-position: left center; background-size: 2.5rem; background-repeat: no-repeat; }
 

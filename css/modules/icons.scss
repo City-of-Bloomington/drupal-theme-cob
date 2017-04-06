@@ -16,10 +16,10 @@
             background-position:center $size-gutter;
             background-repeat:no-repeat;
         }
-        .about    { background-image:url('../images/icons/about bloom icon.svg'   ); }
-        .news     { background-image:url('../images/icons/news and event icon.svg'); }
-        .city     { background-image:url('../images/icons/city govt icon.svg'     ); }
-        .services { background-image:url('../images/icons/services icon.svg'      ); }
+        .about    { background-image:url('images/alpha_icons/icons/about bloom icon.svg'   ); }
+        .news     { background-image:url('images/alpha_icons/icons/news and event icon.svg'); }
+        .city     { background-image:url('images/alpha_icons/icons/city govt icon.svg'     ); }
+        .services { background-image:url('images/alpha_icons/icons/services icon.svg'      ); }
     }
 }
 
@@ -35,23 +35,23 @@
     }
 }
 #services-section {
-    a.contact        { background-image:url('../images/icons/contact us icon.svg'    ); }
-    a.report         { background-image:url('../images/icons/report issue icon.svg'  ); }
-    a.performance    { background-image:url('../images/icons/performance icon.svg'   ); }
-    a.myBloomington  { background-image:url('../images/icons/my bloomington icon.svg'); }
-    a.maps           { background-image:url('../images/icons/city maps icon.svg'     ); }
-    a.water          { background-image:url('../images/icons/water icon.svg'         ); }
-    a.parking_ticket { background-image:url('../images/icons/parking icon.svg'       ); }
-    a.parks          { background-image:url('../images/icons/parks icon.svg'         ); }
+    a.contact        { background-image:url('images/alpha_icons/icons/contact us icon.svg'    ); }
+    a.report         { background-image:url('images/alpha_icons/icons/report issue icon.svg'  ); }
+    a.performance    { background-image:url('images/alpha_icons/icons/performance icon.svg'   ); }
+    a.myBloomington  { background-image:url('images/alpha_icons/icons/my bloomington icon.svg'); }
+    a.maps           { background-image:url('images/alpha_icons/icons/city maps icon.svg'     ); }
+    a.water          { background-image:url('images/alpha_icons/icons/water icon.svg'         ); }
+    a.parking_ticket { background-image:url('images/alpha_icons/icons/parking icon.svg'       ); }
+    a.parks          { background-image:url('images/alpha_icons/icons/parks icon.svg'         ); }
 }
 #government-section {
-    a.code          { background-image:url('../images/icons/Municipal code icon.svg'); }
-    a.budget        { background-image:url('../images/icons/city budget icon.svg'   ); }
-    a.boards        { background-image:url('../images/icons/boards icon.svg'        ); }
-    a.council       { background-image:url('../images/icons/city council icon.svg'  ); }
-    a.contact       { background-image:url('../images/icons/contact icon.svg'       ); }
-    a.elected       { background-image:url('../images/icons/elected icon.svg'       ); }
-    a.public_safety { background-image:url('../images/icons/public safety icon.svg' ); }
+    a.code          { background-image:url('images/alpha_icons/icons/Municipal code icon.svg'); }
+    a.budget        { background-image:url('images/alpha_icons/icons/city budget icon.svg'   ); }
+    a.boards        { background-image:url('images/alpha_icons/icons/boards icon.svg'        ); }
+    a.council       { background-image:url('images/alpha_icons/icons/city council icon.svg'  ); }
+    a.contact       { background-image:url('images/alpha_icons/icons/contact icon.svg'       ); }
+    a.elected       { background-image:url('images/alpha_icons/icons/elected icon.svg'       ); }
+    a.public_safety { background-image:url('images/alpha_icons/icons/public safety icon.svg' ); }
 }
 
 .contactInfo {
