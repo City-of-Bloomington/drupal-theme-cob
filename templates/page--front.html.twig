@@ -71,10 +71,13 @@
         <section id="news-section">
             <div class="container">
                 <header><h2>News &amp; Events</h2></header>
-                <div class="news">
-                {{ page.content }}
-                </div>
-                <div class="events">
+                <div>
+                    <div class="news">
+                    {{ page.content }}
+                    </div>
+                    <aside class="calendar_calendar">
+                    {{ events }}
+                    </aside>
                 </div>
             </div>
         </section>

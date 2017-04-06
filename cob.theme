@@ -6,9 +6,39 @@
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
+use Drupal\core\Site\Settings;
 
+use Drupal\calendar\GoogleGateway;
 use Drupal\directory\DirectoryService;
 use Drupal\onboard\OnBoardService;
+
+function cob_preprocess_page__front(&$vars)
+{
+    $id = Settings::get('cob_front_calendar');
+    if ($id) {
+        $numdays   = 7;
+        $maxevents = 4;
+
+        $start = new \DateTime();
+        $end   = new \DateTime();
+        $end->add(new \DateInterval("P{$numdays}D"));
+
+        $events  = GoogleGateway::events($id, $start, $end);
+        $display = [];
+        $count   = 0;
+        foreach ($events as $e) {
+            if (++$count > $maxevents) { break; }
+
+            $display[] = $e;
+        }
+
+        $vars['events'] = [
+            '#theme'      => 'calendar_events',
+            '#events'     => $display,
+            '#calendarId' => $id
+        ];
+    }
+}
 
 function cob_preprocess_page(&$vars)
 {

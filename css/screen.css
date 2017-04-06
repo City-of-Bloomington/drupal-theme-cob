@@ -186,25 +186,17 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #government-section a:hover { background-color: #4caf50; }
 
-#news-section > .container > div { padding: 0.5em; }
+@media all and (min-width: 640px) { #news-section .container > div { padding: 0 0.5em; display: flex; flex-direction: row; justify-content: space-between; }
+  #news-section .container > div .news { width: 55%; }
+  #news-section .container > div aside { width: 40%; } }
 
 #news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
-
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
 
 #news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Roboto Condensed", sans-serif; text-align: left; }
 
 #news-section .news article > div { width: 48%; float: left; }
 
 #news-section .news article time { float: right; }
-
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
-  #news-section .news article:first-child { width: 93%; }
-  #news-section .events article { width: 93%; } }
-
-@media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
-  #news-section .events { width: 35%; display: inline-block; }
-  #news-section > .container > div { vertical-align: top; } }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .paragraph--type--info-list { text-align: center; }

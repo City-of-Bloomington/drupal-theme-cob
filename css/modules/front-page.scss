@@ -27,7 +27,16 @@
 }
 
 #news-section {
-    > .container > div { padding: $size-gutter; }
+    @media all and (min-width:$viewport-medium) {
+        .container > div {
+            padding:0 $size-gutter;
+            display:flex; flex-direction:row; justify-content:space-between;
+
+            .news { width:55%; }
+            aside { width:40%; }
+
+        }
+    }
 
     .news article {
         border-color: $color-header;
@@ -36,9 +45,6 @@
         padding:$size-gutter;
         overflow:hidden;
         height:15vh;
-        @media all and (min-width:$viewport-medium) {
-            display:inline-block; width:45%;
-        }
 
         h2 {
             width:48%; float:left;
@@ -48,17 +54,5 @@
         > div { width:48%; float:left; }
         time { float:right; }
     }
-    @media all and (min-width:$viewport-medium) {
-        .news article {
-            display:inline-block; width:45%;
-            &:first-child { width:93%; }
-        }
-        .events article { width:93%; }
-    }
-    @media all and (min-width:$viewport-large) {
-        .news   { width:55%; display:inline-block; }
-        .events { width:35%; display:inline-block; }
 
-        > .container > div { vertical-align:top; }
-    }
 }
