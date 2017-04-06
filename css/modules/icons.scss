@@ -16,10 +16,10 @@
             background-position:center $size-gutter;
             background-repeat:no-repeat;
         }
-        .about    { background-image:url('images/alpha_icons/icons/about bloom icon.svg'   ); }
-        .news     { background-image:url('images/alpha_icons/icons/news and event icon.svg'); }
-        .city     { background-image:url('images/alpha_icons/icons/city govt icon.svg'     ); }
-        .services { background-image:url('images/alpha_icons/icons/services icon.svg'      ); }
+        .about    { background-image:url('images/alpha_icons/biscay/searchlocation.svg'); }
+        .news     { background-image:url('images/alpha_icons/biscay/news.svg'          ); }
+        .city     { background-image:url('images/alpha_icons/biscay/factory.svg'       ); }
+        .services { background-image:url('images/alpha_icons/biscay/services.svg'      ); }
     }
 }
 
@@ -43,13 +43,13 @@
     a.parks          { background-image:url('images/alpha_icons/icons/parks icon.svg'         ); }
 }
 #government-section {
-    a.code          { background-image:url('images/alpha_icons/icons/Municipal code icon.svg'); }
-    a.budget        { background-image:url('images/alpha_icons/icons/city budget icon.svg'   ); }
-    a.boards        { background-image:url('images/alpha_icons/icons/boards icon.svg'        ); }
-    a.council       { background-image:url('images/alpha_icons/icons/city council icon.svg'  ); }
-    a.contact       { background-image:url('images/alpha_icons/icons/contact icon.svg'       ); }
-    a.elected       { background-image:url('images/alpha_icons/icons/elected icon.svg'       ); }
-    a.public_safety { background-image:url('images/alpha_icons/icons/public safety icon.svg' ); }
+    a.code          { background-image:url('images/alpha_icons/biscay/circle-o.svg'); }
+    a.budget        { background-image:url('images/alpha_icons/biscay/moneybag-circle-o.svg'   ); }
+    a.boards        { background-image:url('images/alpha_icons/biscay/businessman-circle-o.svg'); }
+    a.council       { background-image:url('images/alpha_icons/biscay/user-circle-o.svg'  ); }
+    a.contact       { background-image:url('images/alpha_icons/biscay/phonecontact-circle-o.svg'); }
+    a.elected       { background-image:url('images/alpha_icons/biscay/policeofficer-circle-o.svg'); }
+    a.public_safety { background-image:url('images/alpha_icons/biscay/policecar-circle-o.svg' ); }
 }
 
 .contactInfo {
@@ -73,11 +73,11 @@
 }
 
 aside.contactInfo {
-    address            { background-image:url('images/fa-svg/gothic/map-marker.svg'     ); }
-    a.facebook         { background-image:url('images/fa-svg/gothic/facebook-square.svg'); }
-    a.twitter          { background-image:url('images/fa-svg/gothic/twitter-square.svg' ); }
-    a[href^="mailto:"] { background-image:url('images/fa-svg/gothic/envelope.svg'       ); }
-    a.phone            { background-image:url('images/fa-svg/gothic/phone-square.svg'   ); }
-    a.fax              { background-image:url('images/fa-svg/gothic/fax.svg'            ); }
-    a.onboard          { background-image:url('images/icons/gothic/city_logo.svg'       ); }
+    address            { background-image:url('images/fa-svg/dark-slate/map-marker.svg'     ); }
+    a.facebook         { background-image:url('images/fa-svg/dark-slate/facebook-square.svg'); }
+    a.twitter          { background-image:url('images/fa-svg/dark-slate/twitter-square.svg' ); }
+    a[href^="mailto:"] { background-image:url('images/fa-svg/dark-slate/envelope.svg'       ); }
+    a.phone            { background-image:url('images/fa-svg/dark-slate/phone-square.svg'   ); }
+    a.fax              { background-image:url('images/fa-svg/dark-slate/fax.svg'            ); }
+    a.onboard          { background-image:url('images/icons/dark-slate/city_logo.svg'       ); }
 }

@@ -12,7 +12,7 @@
 #about-section {
     @media all and (min-width:$viewport-medium) {
         .container {
-            background: url('../images/icons/Indiana state icon.svg') right 60% top no-repeat;
+            background: url('images/indiana.svg') right 60% top no-repeat;
             background-size: auto 100%;
             p { margin-left:50%; }
         }
