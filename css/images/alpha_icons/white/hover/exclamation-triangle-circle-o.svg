@@ -9,7 +9,7 @@
             <g id="services" transform="translate(278.000000, 893.000000)">
                 <g id="Issue" transform="translate(232.000000, 0.000000)">
                     <g id="Group-8" transform="translate(26.000000, 0.000000)">
-                        <ellipse id="Oval-2" stroke="#FFFFFF" stroke-width="2" fill="#3E9DFF" cx="40" cy="40" rx="40" ry="40"></ellipse>
+                        <ellipse id="Oval-2" stroke="#FFFFFF" stroke-width="2" fill="#3f9dff" cx="40" cy="40" rx="40" ry="40"></ellipse>
                         <polygon id="Triangle" stroke="#FFFFFF" stroke-width="2" points="40 16 60 56 20 56"></polygon>
                         <text id="!" font-family="Futura-Medium, Futura" font-size="30" font-weight="400" fill="#FFFFFF">
                             <tspan x="35.0268555" y="52">!</tspan>

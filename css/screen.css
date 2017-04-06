@@ -81,6 +81,22 @@ body > header > .container h1 a { color: #fff; font-weight: bold; }
 
 #services-section a.parks { background-image: url("images/alpha_icons/white/park-circle-o.svg"); }
 
+#services-section a.contact:hover { background-image: url("images/alpha_icons/white/hover/messages-circle-o.svg"); }
+
+#services-section a.report:hover { background-image: url("images/alpha_icons/white/hover/exclamation-triangle-circle-o.svg"); }
+
+#services-section a.performance:hover { background-image: url("images/alpha_icons/white/hover/documentdata-circle-o.svg"); }
+
+#services-section a.myBloomington:hover { background-image: url("images/alpha_icons/white/hover/safecity-circle-o.svg"); }
+
+#services-section a.maps:hover { background-image: url("images/alpha_icons/white/hover/map-circle-o.svg"); }
+
+#services-section a.water:hover { background-image: url("images/alpha_icons/white/hover/watertap-circle-o.svg"); }
+
+#services-section a.parking_ticket:hover { background-image: url("images/alpha_icons/white/hover/ticket-circle-o.svg"); }
+
+#services-section a.parks:hover { background-image: url("images/alpha_icons/white/hover/park-circle-o.svg"); }
+
 #government-section a.code { background-image: url("images/alpha_icons/biscay/circle-o.svg"); }
 
 #government-section a.budget { background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg"); }
