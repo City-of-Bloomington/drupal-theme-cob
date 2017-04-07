@@ -94,6 +94,11 @@ function cob_preprocess_paragraph__info_card(&$vars)
     }
 }
 
+function cob_form_search_block_form_alter(&$form, &$form_state)
+{
+    $form['keys']['#attributes']['placeholder'][] = 'Type here';
+}
+
 /**
  * Populates contact information from various sources for a given node
  *

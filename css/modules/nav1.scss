@@ -1,7 +1,7 @@
 $size-side-nav: 17em;
 #hamburger { position:fixed; clip: rect(0, 0, 0, 0); }
 label[for="hamburger"] {
-    position: fixed; top:$size-gutter; left:$size-gutter;
+    position: fixed; top:$size-gutter/2; left:$size-gutter/2;
     width:2em; height:2em;
     background-image:url('images/fa-svg/white/bars.svg');
     background-size: contain;
@@ -22,18 +22,9 @@ label[for="hamburger"] {
 #nav1, body > header, body > main, body > footer { transition:all 200ms ease-in; }
 
 #nav1 {
-    position:fixed; top:0; left:0;
-    width:$size-side-nav;
-    height:100%;
-    margin:0 0 0 (-$size-side-nav);
-    background-color:$color-accent;
-
     .container {
-        padding-top:3em;
 
         a {
-            color:$color-content-background;
-            font-size:$font-size-big;
         }
     }
 }

@@ -6,12 +6,43 @@ body > header {
     > .container {
         display:flex;
         justify-content:space-between;
+        height:2em;
+        font-size:$font-size-big;
 
-        h1 a { color: $color-content-background; font-weight:bold; }
+        h1 { margin:0; }
+
+        h1 a {
+            color: $color-content-background;
+            font-size:$font-size-normal; font-weight:bold;
+            padding-left:2em;
+        }
 
         @media all and (min-width:$viewport-medium) {
-            h1 a { padding:0; }
+            h1 a { padding:0; font-size:$font-size-big; }
         }
     }
 }
-#block-searchform { div, form { display:inline; } }
+#block-searchform {
+    form {
+        display:flex;
+        flex-direction:row;
+
+    }
+    div, form { height:100%; margin:0; padding:0; }
+    #edit-actions {
+        .button {
+            width:2em; height:100%;
+            padding-top:0; padding-bottom:0;
+            border:0; border-radius:0;
+            margin:0;
+        }
+    }
+    input[type="search"] {
+        border:0; padding:0 0 0 $size-gutter;
+        width:10em; height:2em;
+        font-size:$font-size-big;
+        background-color:$color-selected-background;
+
+        position:absolute; right:3em;
+    }
+}

@@ -12,19 +12,13 @@ section { margin: 0; }
 
 #hamburger { position: fixed; clip: rect(0, 0, 0, 0); }
 
-label[for="hamburger"] { position: fixed; top: 0.5em; left: 0.5em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
+label[for="hamburger"] { position: fixed; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
 
 #hamburger:checked ~ nav { margin: 0; }
 
 #hamburger:checked ~ header, #hamburger:checked ~ main, #hamburger:checked ~ footer { -webkit-transform: translateX(17em); -moz-transform: translateX(17em); -ms-transform: translateX(17em); transform: translateX(17em); }
 
 #nav1, body > header, body > main, body > footer { transition: all 200ms ease-in; }
-
-#nav1 { position: fixed; top: 0; left: 0; width: 17em; height: 100%; margin: 0 0 0 -17em; background-color: #a31621; }
-
-#nav1 .container { padding-top: 3em; }
-
-#nav1 .container a { color: #fff; font-size: 1.25rem; }
 
 @media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
   #nav1 { position: static; width: 100%; height: auto; margin: 0; background-color: #fff; }
@@ -33,13 +27,21 @@ label[for="hamburger"] { position: fixed; top: 0.5em; left: 0.5em; width: 2em; h
 
 body > header { background-color: #183365; color: #fff; padding: 0; }
 
-body > header > .container { display: flex; justify-content: space-between; }
+body > header > .container { display: flex; justify-content: space-between; height: 2em; font-size: 1.25rem; }
 
-body > header > .container h1 a { color: #fff; font-weight: bold; }
+body > header > .container h1 { margin: 0; }
 
-@media all and (min-width: 640px) { body > header > .container h1 a { padding: 0; } }
+body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight: bold; padding-left: 2em; }
 
-#block-searchform div, #block-searchform form { display: inline; }
+@media all and (min-width: 640px) { body > header > .container h1 a { padding: 0; font-size: 1.25rem; } }
+
+#block-searchform form { display: flex; flex-direction: row; }
+
+#block-searchform div, #block-searchform form { height: 100%; margin: 0; padding: 0; }
+
+#block-searchform #edit-actions .button { width: 2em; height: 100%; padding-top: 0; padding-bottom: 0; border: 0; border-radius: 0; margin: 0; }
+
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 10em; height: 2em; font-size: 1.25rem; background-color: #4990e2; position: absolute; right: 3em; }
 
 /** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
 #content ul { list-style: disc    outside; margin-left: 1em; }
