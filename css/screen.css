@@ -179,8 +179,8 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 @media all and (min-width: 1080px) { #services-section a, #government-section a { width: 240px; } }
 
-@media all and (min-width: 640px) { #about-section .container { background: url("images/indiana.svg") right 60% top no-repeat; background-size: auto 100%; }
-  #about-section .container p { margin-left: 50%; } }
+@media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
+  #about-section .container > div p { margin-left: 50%; } }
 
 #government-section a { color: #212121; }
 
@@ -202,6 +202,10 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 .paragraph--type--info-list { text-align: center; }
 
 .paragraph--type--info-card h1 { vertical-align: top; }
+
+.paragraph--type--info-card a { display: inline-block; }
+
+.paragraph--type--info-card a:hover { background-color: #4caf50; }
 
 @media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; }
   .paragraph--type--info-card header { height: 3em; font-size: 2.25rem; margin: 0; } }

@@ -4,15 +4,15 @@
         width:40vw;
         margin-bottom:$size-gutter;
 
-        @media all and (min-width:$viewport-medium) { width: 20vw}
-        @media all and (min-width:$viewport-large) { width: 240px; }
+        @media all and (min-width:$viewport-medium) { width: 20vw;  }
+        @media all and (min-width:$viewport-large ) { width: 240px; }
     }
 }
 
 #about-section {
     @media all and (min-width:$viewport-medium) {
-        .container {
-            background: url('images/indiana.svg') right 60% top no-repeat;
+        .container > div {
+            background: url('images/indiana.svg') 25% center no-repeat;
             background-size: auto 100%;
             p { margin-left:50%; }
         }
