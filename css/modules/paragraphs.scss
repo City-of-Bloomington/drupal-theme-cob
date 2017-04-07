@@ -12,6 +12,10 @@
 }
 .paragraph--type--info-card {
     h1 { vertical-align:top; }
+    a {
+        display:inline-block;
+        &:hover { background-color:$color-action; }
+    }
 
     @media all and (min-width:$viewport-medium) {
         width:30%; display:inline-block;

@@ -71,6 +71,7 @@
         background-repeat:no-repeat;
     }
     a { line-height:2em; }
+    address a { line-height:1em; padding:0; }
 
     address            { background-image:url('images/fa-svg/white/map-marker.svg'     ); }
     a.facebook         { background-image:url('images/fa-svg/white/facebook-square.svg'); }

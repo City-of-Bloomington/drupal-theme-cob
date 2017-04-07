@@ -115,6 +115,8 @@ body > header > .container h1 a { color: #fff; font-weight: bold; }
 
 .contactInfo a { line-height: 2em; }
 
+.contactInfo address a { line-height: 1em; padding: 0; }
+
 .contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
 
 .contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
@@ -167,9 +169,13 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #services-section h2, #services-section a { background-color: #183365; color: #fff; font-weight: bold; }
 
-#news-section .container > header, #about-section .container > header, #government-section .container > header, #block-committeemembers .container > header, #block-departmentstaff .container > header, .paragraph .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section .container > header, #about-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2, #block-committeemembers .container > header h2, #block-departmentstaff .container > header h2, .paragraph .container > header h2 { background-color: #fff; color: #183365; }
+#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #183365; }
+
+#block-committeemembers > header, #block-departmentstaff > header, .paragraph > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+#block-committeemembers > header h2, #block-departmentstaff > header h2, .paragraph > header h2 { background-color: #fff; color: #183365; }
 
 #services-section nav, #government-section nav { text-align: center; }
 
@@ -179,18 +185,18 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 @media all and (min-width: 1080px) { #services-section a, #government-section a { width: 240px; } }
 
-@media all and (min-width: 640px) { #about-section .container { background: url("images/indiana.svg") right 60% top no-repeat; background-size: auto 100%; }
-  #about-section .container p { margin-left: 50%; } }
+@media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
+  #about-section .container > div p { margin-left: 50%; } }
 
 #government-section a { color: #212121; }
 
 #government-section a:hover { background-color: #4caf50; }
 
-#news-section > .container > div { padding: 0.5em; }
+@media all and (min-width: 640px) { #news-section .container > div { padding: 0 0.5em; display: flex; flex-direction: row; justify-content: space-between; }
+  #news-section .container > div .news { width: 55%; }
+  #news-section .container > div aside { width: 40%; } }
 
 #news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
-
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; } }
 
 #news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Roboto Condensed", sans-serif; text-align: left; }
 
@@ -198,18 +204,14 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #news-section .news article time { float: right; }
 
-@media all and (min-width: 640px) { #news-section .news article { display: inline-block; width: 45%; }
-  #news-section .news article:first-child { width: 93%; }
-  #news-section .events article { width: 93%; } }
-
-@media all and (min-width: 1080px) { #news-section .news { width: 55%; display: inline-block; }
-  #news-section .events { width: 35%; display: inline-block; }
-  #news-section > .container > div { vertical-align: top; } }
-
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .paragraph--type--info-list { text-align: center; }
 
 .paragraph--type--info-card h1 { vertical-align: top; }
+
+.paragraph--type--info-card a { display: inline-block; }
+
+.paragraph--type--info-card a:hover { background-color: #4caf50; }
 
 @media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; }
   .paragraph--type--info-card header { height: 3em; font-size: 2.25rem; margin: 0; } }
