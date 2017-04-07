@@ -176,6 +176,8 @@ function _cob_contactInfoFromNode(Node $node)
     if ($node->hasField('field_location')) {
         $l = $node->get('field_location')->entity;
         if ($l) {
+            $info[$nid]['location_nid'] = $l->get('nid')->value;
+
             $li = _cob_contactInfoFromNode($l);
             foreach ($li as $k=>$v) {
                 if (empty($info[$nid][$k])) { $info[$nid][$k] = $v; }

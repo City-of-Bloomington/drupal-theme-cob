@@ -115,6 +115,8 @@ body > header > .container h1 a { color: #fff; font-weight: bold; }
 
 .contactInfo a { line-height: 2em; }
 
+.contactInfo address a { line-height: 1em; padding: 0; }
+
 .contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
 
 .contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
