@@ -19,13 +19,6 @@
     }
 }
 
-#government-section {
-    a {
-        color: $color-text-default;
-        &:hover { background-color: $color-action; }
-    }
-}
-
 #news-section {
     @media all and (min-width:$viewport-medium) {
         .container > div {

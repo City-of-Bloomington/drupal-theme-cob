@@ -14,25 +14,31 @@ label[for="hamburger"] {
 #hamburger:checked ~ header,
 #hamburger:checked ~ main,
 #hamburger:checked ~ footer {
+/*
     -webkit-transform:translateX($size-side-nav);
        -moz-transform:translateX($size-side-nav);
         -ms-transform:translateX($size-side-nav);
             transform:translateX($size-side-nav);
+*/
 }
 #nav1, body > header, body > main, body > footer { transition:all 200ms ease-in; }
 
 #nav1 {
+    width:100%; height:auto;
+    margin:0;
+    background-color:$color-content-background;
     .container {
+        padding:0; overflow:auto;
+        display:flex; flex-direction:row; justify-content:space-around;
 
-        a {
-        }
+        a { color:$color-header; }
     }
 }
 
 
 @media all and (min-width:$viewport-medium) {
     #hamburger, label[for="hamburger"] { display:none; }
-
+/*
     #nav1 {
         position:static;
         width:100%; height:auto;
@@ -45,4 +51,5 @@ label[for="hamburger"] {
             a { color:$color-header; }
         }
     }
+*/
 }

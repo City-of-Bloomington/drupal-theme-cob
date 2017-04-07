@@ -29,9 +29,9 @@ dl { border:none; }
     background-size: cover;
     position:relative;
 
-    .blur { background-color:rgba(0,0,0,.6); }
+    .blur { background-color:rgba(0,0,0,.8); }
     .container { padding:$size-gutter; }
-    h1 { font-size: $font-size-huge; color:$color-content-background; margin-top:1em; }
+    h1 { font-size: $font-size-biggest; color:$color-content-background; margin-top:1em; }
 
     nav { font-size:$font-size-small; }
     address, a { color:$color-content-background; }

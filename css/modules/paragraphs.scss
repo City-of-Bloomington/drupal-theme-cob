@@ -9,18 +9,37 @@
   */
 .paragraph--type--info-list {
     text-align:center;
+
+    @media all and (min-width:$viewport-medium) {
+        > div {
+            display:flex; flex-direction:row; flex-wrap:wrap;
+            justify-content:space-around;
+        }
+    }
 }
 .paragraph--type--info-card {
-    h1 { vertical-align:top; }
+    background-color:$color-table-background;
+
+    h1 {
+        vertical-align:top; color:$color-footer;
+        font-family:$font-family-default;
+    }
     a {
-        display:inline-block;
-        &:hover { background-color:$color-action; }
+        color:$color-text-default; font-size:$font-size-bigger;
+        display:block;
+
+        &:hover {
+            background-color:$color-selected-background;
+            color:$color-content-background;
+            h1 { color:$color-content-background; }
+        }
     }
 
     @media all and (min-width:$viewport-medium) {
-        width:30%; display:inline-block;
+        width:320px;
         vertical-align:top; text-align:center;
 
         header { height:3em; font-size:$font-size-bigger; margin:0; }
+        a { padding:1em; height:6em; overflow:hidden; }
     }
 }

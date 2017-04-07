@@ -52,6 +52,7 @@
     a.parks:hover          { background-image:url('images/alpha_icons/white/hover/park-circle-o.svg'                ); }
 }
 #government-section {
+    a { color:$color-text-default; }
     a.code          { background-image:url('images/alpha_icons/biscay/circle-o.svg'              ); }
     a.budget        { background-image:url('images/alpha_icons/biscay/moneybag-circle-o.svg'     ); }
     a.boards        { background-image:url('images/alpha_icons/biscay/businessman-circle-o.svg'  ); }
@@ -59,6 +60,19 @@
     a.contact       { background-image:url('images/alpha_icons/biscay/phonecontact-circle-o.svg' ); }
     a.elected       { background-image:url('images/alpha_icons/biscay/policeofficer-circle-o.svg'); }
     a.public_safety { background-image:url('images/alpha_icons/biscay/policecar-circle-o.svg'    ); }
+
+    a:hover {
+        background-color:$color-selected-background;
+        color:$color-content-background;
+        h2 { color:$color-content-background; }
+    }
+    a.code:hover          { background-image:url('images/alpha_icons/white/circle-o.svg'              ); }
+    a.budget:hover        { background-image:url('images/alpha_icons/white/moneybag-circle-o.svg'     ); }
+    a.boards:hover        { background-image:url('images/alpha_icons/white/businessman-circle-o.svg'  ); }
+    a.council:hover       { background-image:url('images/alpha_icons/white/user-circle-o.svg'         ); }
+    a.contact:hover       { background-image:url('images/alpha_icons/white/phonecontact-circle-o.svg' ); }
+    a.elected:hover       { background-image:url('images/alpha_icons/white/policeofficer-circle-o.svg'); }
+    a.public_safety:hover { background-image:url('images/alpha_icons/white/policecar-circle-o.svg'    ); }
 }
 
 .contactInfo {

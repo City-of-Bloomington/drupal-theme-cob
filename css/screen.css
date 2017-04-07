@@ -16,14 +16,18 @@ label[for="hamburger"] { position: fixed; top: 0.25em; left: 0.25em; width: 2em;
 
 #hamburger:checked ~ nav { margin: 0; }
 
-#hamburger:checked ~ header, #hamburger:checked ~ main, #hamburger:checked ~ footer { -webkit-transform: translateX(17em); -moz-transform: translateX(17em); -ms-transform: translateX(17em); transform: translateX(17em); }
+#hamburger:checked ~ header, #hamburger:checked ~ main, #hamburger:checked ~ footer { /* -webkit-transform:translateX($size-side-nav); -moz-transform:translateX($size-side-nav); -ms-transform:translateX($size-side-nav); transform:translateX($size-side-nav); */ }
 
 #nav1, body > header, body > main, body > footer { transition: all 200ms ease-in; }
 
+#nav1 { width: 100%; height: auto; margin: 0; background-color: #fff; }
+
+#nav1 .container { padding: 0; overflow: auto; display: flex; flex-direction: row; justify-content: space-around; }
+
+#nav1 .container a { color: #183365; }
+
 @media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
-  #nav1 { position: static; width: 100%; height: auto; margin: 0; background-color: #fff; }
-  #nav1 .container { padding: 0; overflow: auto; display: flex; flex-direction: row; justify-content: space-around; }
-  #nav1 .container a { color: #183365; } }
+  /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
 
 body > header { background-color: #183365; color: #fff; padding: 0; }
 
@@ -41,7 +45,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #block-searchform #edit-actions .button { width: 2em; height: 100%; padding-top: 0; padding-bottom: 0; border: 0; border-radius: 0; margin: 0; }
 
-#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 10em; height: 2em; font-size: 1.25rem; background-color: #4990e2; position: absolute; right: 3em; }
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 10em; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
 
 /** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
 #content ul { list-style: disc    outside; margin-left: 1em; }
@@ -99,6 +103,8 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #services-section a.parks:hover { background-image: url("images/alpha_icons/white/hover/park-circle-o.svg"); }
 
+#government-section a { color: #212121; }
+
 #government-section a.code { background-image: url("images/alpha_icons/biscay/circle-o.svg"); }
 
 #government-section a.budget { background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg"); }
@@ -112,6 +118,24 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 #government-section a.elected { background-image: url("images/alpha_icons/biscay/policeofficer-circle-o.svg"); }
 
 #government-section a.public_safety { background-image: url("images/alpha_icons/biscay/policecar-circle-o.svg"); }
+
+#government-section a:hover { background-color: #4990e2; color: #fff; }
+
+#government-section a:hover h2 { color: #fff; }
+
+#government-section a.code:hover { background-image: url("images/alpha_icons/white/circle-o.svg"); }
+
+#government-section a.budget:hover { background-image: url("images/alpha_icons/white/moneybag-circle-o.svg"); }
+
+#government-section a.boards:hover { background-image: url("images/alpha_icons/white/businessman-circle-o.svg"); }
+
+#government-section a.council:hover { background-image: url("images/alpha_icons/white/user-circle-o.svg"); }
+
+#government-section a.contact:hover { background-image: url("images/alpha_icons/white/phonecontact-circle-o.svg"); }
+
+#government-section a.elected:hover { background-image: url("images/alpha_icons/white/policeofficer-circle-o.svg"); }
+
+#government-section a.public_safety:hover { background-image: url("images/alpha_icons/white/policecar-circle-o.svg"); }
 
 .contactInfo address, .contactInfo a { display: block; font-size: 1.125rem; font-style: normal; padding-left: 3.5rem; background-position: left center; background-size: 2.5rem; background-repeat: no-repeat; }
 
@@ -190,10 +214,6 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 @media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
   #about-section .container > div p { margin-left: 50%; } }
 
-#government-section a { color: #212121; }
-
-#government-section a:hover { background-color: #4caf50; }
-
 @media all and (min-width: 640px) { #news-section .container > div { padding: 0 0.5em; display: flex; flex-direction: row; justify-content: space-between; }
   #news-section .container > div .news { width: 55%; }
   #news-section .container > div aside { width: 40%; } }
@@ -209,14 +229,21 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .paragraph--type--info-list { text-align: center; }
 
-.paragraph--type--info-card h1 { vertical-align: top; }
+@media all and (min-width: 640px) { .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
 
-.paragraph--type--info-card a { display: inline-block; }
+.paragraph--type--info-card { background-color: gainsboro; }
 
-.paragraph--type--info-card a:hover { background-color: #4caf50; }
+.paragraph--type--info-card h1 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; }
 
-@media all and (min-width: 640px) { .paragraph--type--info-card { width: 30%; display: inline-block; vertical-align: top; text-align: center; }
-  .paragraph--type--info-card header { height: 3em; font-size: 2.25rem; margin: 0; } }
+.paragraph--type--info-card a { color: #212121; font-size: 2.25rem; display: block; }
+
+.paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+
+.paragraph--type--info-card a:hover h1 { color: #fff; }
+
+@media all and (min-width: 640px) { .paragraph--type--info-card { width: 320px; vertical-align: top; text-align: center; }
+  .paragraph--type--info-card header { height: 3em; font-size: 2.25rem; margin: 0; }
+  .paragraph--type--info-card a { padding: 1em; height: 6em; overflow: hidden; } }
 
 dl { border: none; }
 
@@ -226,11 +253,11 @@ dl { border: none; }
 
 #breadcrumb { background-color: #a31621; min-height: 40vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
 
-#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.6); }
+#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.8); }
 
 #breadcrumb .container { padding: 0.5em; }
 
-#breadcrumb h1 { font-size: 2.8125rem; color: #fff; margin-top: 1em; }
+#breadcrumb h1 { font-size: 3.75rem; color: #fff; margin-top: 1em; }
 
 #breadcrumb nav { font-size: 1rem; }
 

@@ -39,10 +39,8 @@ body > header {
     }
     input[type="search"] {
         border:0; padding:0 0 0 $size-gutter;
-        width:10em; height:2em;
+        width:10em; height:100%;
         font-size:$font-size-big;
         background-color:$color-selected-background;
-
-        position:absolute; right:3em;
     }
 }
