@@ -7,31 +7,36 @@
   * These are not to be confused with HTML P tags.  It is unfortunate
   * that the module happens to call itself with that name.
   */
-.paragraph--type--info-list {
+.boards-block,
+ .paragraph--type--info-list {
     text-align:center;
 
-    @media all and (min-width:$viewport-medium) {
-        > div {
-            display:flex; flex-direction:row; flex-wrap:wrap;
-            justify-content:space-around;
-        }
+}
+@media all and (min-width:$viewport-medium) {
+    .boards-block,
+    .paragraph--type--info-list > div {
+        display:flex; flex-direction:row; flex-wrap:wrap;
+        justify-content:space-around;
     }
 }
+
+
+.boards-block > div,
 .paragraph--type--info-card {
-    background-color:$color-table-background;
-
-    h1 {
-        vertical-align:top; color:$color-footer;
-        font-family:$font-family-default;
-    }
     a {
-        color:$color-text-default; font-size:$font-size-bigger;
-        display:block;
+        background-color:$color-table-background;
+        color:$color-text-default;
+        display:block; margin-bottom:1em;
 
+        h3 {
+            vertical-align:top; color:$color-footer;
+            font-family:$font-family-default; font-size:$font-size-big;
+        }
         &:hover {
             background-color:$color-selected-background;
             color:$color-content-background;
-            h1 { color:$color-content-background; }
+
+            h3 { color:$color-content-background; }
         }
     }
 
@@ -39,7 +44,10 @@
         width:320px;
         vertical-align:top; text-align:center;
 
-        header { height:3em; font-size:$font-size-bigger; margin:0; }
-        a { padding:1em; height:6em; overflow:hidden; }
+        a {
+            padding:1em; height:290px; overflow:hidden;
+            h3 { height:3em; font-size:$font-size-big; margin:0; }
+
+        }
     }
 }
