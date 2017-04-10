@@ -31,7 +31,7 @@ dl { border:none; }
 
     .blur { background-color:rgba(0,0,0,.8); }
     .container { padding:$size-gutter; }
-    h1 { font-size: $font-size-biggest; color:$color-content-background; margin-top:1em; }
+    h1 { font-size: $font-size-bigger; color:$color-content-background; margin-top:1em; }
 
     nav { font-size:$font-size-small; }
     address, a { color:$color-content-background; }
@@ -41,6 +41,7 @@ dl { border:none; }
         .blur {
             position:absolute; bottom:0; left:0; right:0;
         }
+        h1 { font-size:$font-size-biggest; }
     }
     @media all and (min-width: $viewport-large ) {
         background-image:url('images/downtown-large.png' );

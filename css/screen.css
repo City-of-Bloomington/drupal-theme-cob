@@ -10,23 +10,21 @@ section { margin: 0; }
 
 @media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
-#hamburger { position: fixed; clip: rect(0, 0, 0, 0); }
+#hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
 
-label[for="hamburger"] { position: fixed; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
+label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
 
-#hamburger:checked ~ nav { margin: 0; }
+#nav1 { margin: 0; padding: 0; border: 0; width: 1px; height: 1px; overflow: hidden; position: absolute; background-color: #fff; }
 
-#hamburger:checked ~ header, #hamburger:checked ~ main, #hamburger:checked ~ footer { /* -webkit-transform:translateX($size-side-nav); -moz-transform:translateX($size-side-nav); -ms-transform:translateX($size-side-nav); transform:translateX($size-side-nav); */ }
+#nav1 .container { padding: 0; overflow: auto; }
 
-#nav1, body > header, body > main, body > footer { transition: all 200ms ease-in; }
+#nav1 .container a { color: #183365; display: block; }
 
-#nav1 { width: 100%; height: auto; margin: 0; background-color: #fff; }
-
-#nav1 .container { padding: 0; overflow: auto; display: flex; flex-direction: row; justify-content: space-around; }
-
-#nav1 .container a { color: #183365; }
+#hamburger:checked ~ nav { position: static; width: 100%; height: auto; overflow: auto; }
 
 @media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
+  #nav1 { position: static; width: 100%; height: auto; overflow: auto; }
+  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; }
   /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
 
 body > header { background-color: #183365; color: #fff; padding: 0; }
@@ -63,11 +61,17 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
 
-@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding-top: 52px; background-size: auto 40px; background-position: center 0.5em; background-repeat: no-repeat; }
-  #nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
-  #nav1 .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
-  #nav1 .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
-  #nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); } }
+#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 0.5em center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
+
+#nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
+
+#nav1 .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
+
+#nav1 .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
+
+#nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
+
+@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
 
 #services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding: 7em 0.5em 0.5em 0.5em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
 
@@ -255,14 +259,15 @@ dl { border: none; }
 
 #breadcrumb .container { padding: 0.5em; }
 
-#breadcrumb h1 { font-size: 3.75rem; color: #fff; margin-top: 1em; }
+#breadcrumb h1 { font-size: 2.25rem; color: #fff; margin-top: 1em; }
 
 #breadcrumb nav { font-size: 1rem; }
 
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
 @media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
-  #breadcrumb .blur { position: absolute; bottom: 0; left: 0; right: 0; } }
+  #breadcrumb .blur { position: absolute; bottom: 0; left: 0; right: 0; }
+  #breadcrumb h1 { font-size: 3.75rem; } }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 

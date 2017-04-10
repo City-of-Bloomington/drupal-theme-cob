@@ -1,7 +1,7 @@
 $size-side-nav: 17em;
-#hamburger { position:fixed; clip: rect(0, 0, 0, 0); }
+#hamburger { position:absolute; clip: rect(0, 0, 0, 0); }
 label[for="hamburger"] {
-    position: fixed; top:$size-gutter/2; left:$size-gutter/2;
+    position: absolute; top:$size-gutter/2; left:$size-gutter/2;
     width:2em; height:2em;
     background-image:url('images/fa-svg/white/bars.svg');
     background-size: contain;
@@ -9,35 +9,31 @@ label[for="hamburger"] {
     cursor:pointer;
 }
 
-
-#hamburger:checked ~ nav { margin:0; }
-#hamburger:checked ~ header,
-#hamburger:checked ~ main,
-#hamburger:checked ~ footer {
-/*
-    -webkit-transform:translateX($size-side-nav);
-       -moz-transform:translateX($size-side-nav);
-        -ms-transform:translateX($size-side-nav);
-            transform:translateX($size-side-nav);
-*/
-}
-#nav1, body > header, body > main, body > footer { transition:all 200ms ease-in; }
-
 #nav1 {
-    width:100%; height:auto;
-    margin:0;
+    margin:0; padding:0; border:0;
+    width:1px; height:1px; overflow:hidden; position:absolute;
+
     background-color:$color-content-background;
     .container {
         padding:0; overflow:auto;
-        display:flex; flex-direction:row; justify-content:space-around;
 
-        a { color:$color-header; }
+        a { color:$color-header; display:block; }
     }
+}
+#hamburger:checked ~ nav {
+    position:static; width:100%; height:auto; overflow:auto;
 }
 
 
 @media all and (min-width:$viewport-medium) {
     #hamburger, label[for="hamburger"] { display:none; }
+    #nav1 {
+        position:static; width:100%; height:auto; overflow:auto;
+        .container {
+            display:flex; flex-direction:row; justify-content:space-around;
+            a {  }
+        }
+    }
 /*
     #nav1 {
         position:static;

@@ -7,19 +7,29 @@
     background-size:($size-gutter*2) ($size-gutter*2);
     background-image:url('images/fa-svg/white/search.svg');
 }
-
+#nav1 {
+    a {
+        background-size:24px;
+        background-repeat:no-repeat;
+        background-position:$size-gutter center;
+        padding:0 0 0 52px;
+        font-size:$font-size-big;
+        line-height:4rem;
+    }
+    .about    { background-image:url('images/alpha_icons/biscay/searchlocation.svg'); }
+    .news     { background-image:url('images/alpha_icons/biscay/news.svg'          ); }
+    .city     { background-image:url('images/alpha_icons/biscay/factory.svg'       ); }
+    .services { background-image:url('images/alpha_icons/biscay/services.svg'      ); }
+}
 @media all and (min-width:$viewport-medium) {
     #nav1 {
         a {
-            display:inline-block; padding-top:52px;
+            display:inline-block; padding:52px 0 0 0;
             background-size:auto 40px;
             background-position:center $size-gutter;
-            background-repeat:no-repeat;
+
+            font-size:$font-size-normal; line-height:1.25em;
         }
-        .about    { background-image:url('images/alpha_icons/biscay/searchlocation.svg'); }
-        .news     { background-image:url('images/alpha_icons/biscay/news.svg'          ); }
-        .city     { background-image:url('images/alpha_icons/biscay/factory.svg'       ); }
-        .services { background-image:url('images/alpha_icons/biscay/services.svg'      ); }
     }
 }
 
