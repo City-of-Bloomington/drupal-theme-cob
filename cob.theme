@@ -82,9 +82,10 @@ function cob_preprocess_paragraph__info_card(&$vars)
                           : null;
 
     if ((!$vars['title'] || !$vars['text'])
+        && !empty($vars['content']['field_info_link']['#items'][0])
         && preg_match('|entity:([a-z]+)/(\d+)|',
-                        $vars['content']['field_info_link']['#items'][0]->getString(),
-                        $matches)) {
+                  $vars['content']['field_info_link']['#items'][0]->getString(),
+                  $matches)) {
         $type = $matches[1];
         $id   = $matches[2];
 
