@@ -227,21 +227,21 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 #news-section .news article time { float: right; }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
-.boards-block, .paragraph--type--info-list { text-align: center; }
+.boards-block, .departments-block, .paragraph--type--info-list { text-align: center; }
 
-@media all and (min-width: 640px) { .boards-block, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
+@media all and (min-width: 640px) { .boards-block, .departments-block, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
 
-.boards-block > div a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; }
+.boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; }
 
-.boards-block > div a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
+.boards-block > div a h3, .departments-block > div a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
 
-.boards-block > div a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+.boards-block > div a:hover, .departments-block > div a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
 
-.boards-block > div a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+.boards-block > div a:hover h3, .departments-block > div a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
 
-@media all and (min-width: 640px) { .boards-block > div, .paragraph--type--info-card { width: 320px; vertical-align: top; text-align: center; }
-  .boards-block > div a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
-  .boards-block > div a h3, .paragraph--type--info-card a h3 { height: 3em; font-size: 1.25rem; margin: 0; } }
+@media all and (min-width: 640px) { .boards-block > div, .departments-block > div, .paragraph--type--info-card { width: 320px; vertical-align: top; text-align: center; }
+  .boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
+  .boards-block > div a h3, .departments-block > div a h3, .paragraph--type--info-card a h3 { height: 3em; font-size: 1.25rem; margin: 0; } }
 
 dl { border: none; }
 

@@ -8,12 +8,14 @@
   * that the module happens to call itself with that name.
   */
 .boards-block,
- .paragraph--type--info-list {
+.departments-block,
+.paragraph--type--info-list {
     text-align:center;
 
 }
 @media all and (min-width:$viewport-medium) {
     .boards-block,
+    .departments-block,
     .paragraph--type--info-list > div {
         display:flex; flex-direction:row; flex-wrap:wrap;
         justify-content:space-around;
@@ -22,6 +24,7 @@
 
 
 .boards-block > div,
+.departments-block > div,
 .paragraph--type--info-card {
     a {
         background-color:$color-table-background;
