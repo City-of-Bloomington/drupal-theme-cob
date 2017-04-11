@@ -2,6 +2,7 @@ $divider-margin:2em;
 
 .front   .container         > header,
 #content section            > header,
+#related-links              > header,
 .paragraph--type--info-list > header {
     text-align: center;
     background-size: 100% 2px;
@@ -29,8 +30,10 @@ $divider-margin:2em;
         h2 { background-color:$color-content-background; color:$color-header; }
     }
 }
-#block-committeemembers, #block-departmentstaff,
-.paragraph {
+.paragraph,
+#related-links,
+#block-departmentstaff,
+#block-committeemembers {
     > header {
         background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
         h2 { background-color:$color-content-background; color:$color-header; }

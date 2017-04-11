@@ -95,6 +95,21 @@ function cob_preprocess_paragraph__info_card(&$vars)
     }
 }
 
+function cob_preprocess_field__entity_reference(&$vars)
+{
+    foreach ($vars['items'] as $i=>$item) {
+        $vars['items'][$i]['content']['#title'] = "{$vars['element']['#title']}: {$vars['items'][$i]['content']['#title']}";
+        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+    }
+}
+
+function cob_preprocess_field__field_related_links(&$vars)
+{
+    foreach ($vars['items'] as $i=>$item) {
+        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+    }
+}
+
 function cob_form_search_block_form_alter(&$form, &$form_state)
 {
     $form['keys']['#attributes']['placeholder'][] = 'Type here';

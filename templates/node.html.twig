@@ -124,8 +124,18 @@
         {% endif %}
     </div>
     <div{{ content_attributes }}>
-        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside') }}
+        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside', 'field_location', 'field_department', 'field_related_links') }}
     </div>
+    {% set related_links %}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
+    {% if  related_links %}
+    <nav id="related-links">
+        <header>
+            <h2>Related Categories</h2>
+        </header>
+        <div>{{ related_links }}</div>
+    </nav>
+    {% endif %}
+
     {% else %}
     {{ content }}
     {% endif %}

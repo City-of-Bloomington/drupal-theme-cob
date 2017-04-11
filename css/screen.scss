@@ -9,7 +9,7 @@
 @import 'modules/events';
 @import 'modules/dividers';
 @import 'modules/front-page';
-@import 'modules/paragraphs';
+@import 'modules/info-cards';
 
 dl { border:none; }
 
@@ -69,6 +69,16 @@ dl { border:none; }
 }
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
 #block-committeemembers              { dt { float:none; display:inline-block; } }
+
+#related-links {
+    text-align:center;
+    div { display:inline; }
+    a {
+        background-color:$color-content-background;
+        border-color:$color-action;
+        color:$color-action;
+    }
+}
 
 
 body > footer {
