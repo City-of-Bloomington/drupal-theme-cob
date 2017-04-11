@@ -241,9 +241,9 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .boards-block, .departments-block, .paragraph--type--info-list { text-align: center; }
 
-@media all and (min-width: 640px) { .boards-block, .departments-block, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
+@media all and (min-width: 640px) { .boards-block, .departments-block, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; } }
 
-.boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; }
+.boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; }
 
 .boards-block > div a h3, .departments-block > div a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
 
@@ -261,9 +261,9 @@ dl { border: none; }
 
 #highlighted .container { text-align: center; }
 
-#breadcrumb { background-color: #a31621; min-height: 40vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
+#breadcrumb { background-color: #a31621; min-height: 50vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
 
-#breadcrumb .blur { background-color: rgba(0, 0, 0, 0.8); }
+#breadcrumb #banner { background-color: #3f9dff; }
 
 #breadcrumb .container { padding: 0.5em; }
 
@@ -276,20 +276,20 @@ dl { border: none; }
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
 @media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
-  #breadcrumb .blur { position: absolute; bottom: 0; left: 0; right: 0; }
+  #breadcrumb #banner { position: absolute; bottom: 0; left: 0; right: 0; }
   #breadcrumb h1 { font-size: 3.75rem; } }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-.front #breadcrumb .blur { background-color: rgba(63, 157, 255, 0.8); }
+#breadcrumb .contactInfo > dl { display: inline-block; width: 30%; }
 
-#breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
+#block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
 
-@media all and (min-width: 640px) { #breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { display: flex; flex-flow: row wrap; justify-content: space-around; }
-  #breadcrumb .contactInfo h3, #block-departmentstaff > div h3, #block-committeemembers > div > div h3 { margin: 0; }
-  #breadcrumb .contactInfo > div, #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 25%; margin: auto; text-align: center; } }
+@media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers > div > div { display: flex; flex-flow: row wrap; justify-content: space-between; }
+  #block-departmentstaff > div h3, #block-committeemembers > div > div h3 { margin: 0; }
+  #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 25%; text-align: center; } }
 
-@media all and (min-width: 1080px) { #breadcrumb .contactInfo, #block-departmentstaff > div, #block-committeemembers > div > div { width: 1080px; margin: 0 auto; } }
+@media all and (min-width: 1080px) { #block-departmentstaff > div, #block-committeemembers > div > div { width: 1080px; margin: 0 auto; } }
 
 .contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 

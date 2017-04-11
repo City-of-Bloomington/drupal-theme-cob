@@ -18,7 +18,7 @@
     .departments-block,
     .paragraph--type--info-list > div {
         display:flex; flex-direction:row; flex-wrap:wrap;
-        justify-content:space-around;
+        justify-content:space-between;
     }
 }
 
@@ -30,6 +30,8 @@
         background-color:$color-table-background;
         color:$color-text-default;
         display:block; margin-bottom:1em;
+
+        height:250px;
 
         h3 {
             vertical-align:top; color:$color-footer;

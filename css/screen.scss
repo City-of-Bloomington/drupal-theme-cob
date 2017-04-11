@@ -24,12 +24,12 @@ dl { border:none; }
 
 #breadcrumb {
     background-color: $color-accent;
-    min-height: 40vmin;
+    min-height: 50vmin;
     background: url('images/downtown-small.png') no-repeat center center;
     background-size: cover;
     position:relative;
 
-    .blur { background-color:rgba(0,0,0,.8); }
+    #banner { background-color:$color-heading; }
     .container { padding:$size-gutter; }
     h1 { font-size: $font-size-bigger; color:$color-content-background; }
 
@@ -41,7 +41,7 @@ dl { border:none; }
 
     @media all and (min-width: $viewport-medium) {
         background-image:url('images/downtown-medium.png');
-        .blur {
+        #banner {
             position:absolute; bottom:0; left:0; right:0;
         }
         h1 { font-size:$font-size-biggest; }
@@ -50,10 +50,11 @@ dl { border:none; }
         background-image:url('images/downtown-large.png' );
     }
 }
-.front #breadcrumb .blur { background-color:rgba(63,157,255,.8); }
 
 // These blocks are laying out lists of things in a grid
-#breadcrumb .contactInfo,
+#breadcrumb .contactInfo {
+    > dl { display:inline-block; width:30%; }
+}
 #block-departmentstaff  > div,
 #block-committeemembers > div > div {
     font-size:$font-size-normal;
@@ -61,10 +62,10 @@ dl { border:none; }
     @media all and (min-width:$viewport-medium) {
         display:flex;
         flex-flow:row wrap;
-        justify-content:space-around;
+        justify-content:space-between;
 
         h3 { margin:0; }
-        > div { width:25%; margin:auto; text-align:center; }
+        > div { width:25%; text-align:center; }
     }
     @media all and (min-width:$viewport-large) {
         width:$viewport-large; margin:0 auto;
