@@ -50,6 +50,16 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #content ol { list-style: decimal outside; margin-left: 1em; }
 
+#content .text_with_summary a { color: #3f9dff; text-decoration: underline; }
+
+#content .container { padding: 0.5em; }
+
+#content .container > section { padding: 0.5em 0; }
+
+#content .container > section h2 { font-size: 2.25rem; color: #3f9dff; margin-bottom: 2rem; }
+
+#content .container > section .container { overflow: auto; padding: 0.5em; }
+
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 
@@ -284,14 +294,6 @@ dl { border: none; }
 .contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
 #block-committeemembers dt { float: none; display: inline-block; }
-
-#content > .container { padding: 0.5em; }
-
-#content > .container > section { padding: 0.5em 0; }
-
-#content > .container > section h2 { font-size: 2.25rem; color: #3f9dff; margin-bottom: 2rem; }
-
-#content > .container > section .container { overflow: auto; padding: 0.5em; }
 
 body > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
 

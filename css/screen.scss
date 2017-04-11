@@ -70,17 +70,6 @@ dl { border:none; }
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
 #block-committeemembers              { dt { float:none; display:inline-block; } }
 
-#content > .container {
-    padding:$size-gutter;
-
-    > section {
-        padding:$size-gutter 0;
-
-        h2 { font-size:$font-size-bigger; color:$color-heading; margin-bottom:2rem; }
-        .container { overflow:auto; padding:$size-gutter; }
-    }
-}
-
 
 body > footer {
     background-color: $color-footer;
