@@ -31,9 +31,12 @@ dl { border:none; }
 
     .blur { background-color:rgba(0,0,0,.8); }
     .container { padding:$size-gutter; }
-    h1 { font-size: $font-size-bigger; color:$color-content-background; margin-top:1em; }
+    h1 { font-size: $font-size-bigger; color:$color-content-background; }
 
-    nav { font-size:$font-size-small; }
+    nav {
+        font-size:$font-size-small;
+        a:not(:last-child):after { content: "&gt;&gt;" }
+    }
     address, a { color:$color-content-background; }
 
     @media all and (min-width: $viewport-medium) {
