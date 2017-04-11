@@ -43,7 +43,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #block-searchform #edit-actions .button { width: 2em; height: 100%; padding-top: 0; padding-bottom: 0; border: 0; border-radius: 0; margin: 0; }
 
-#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 10em; height: 100%; font-size: 1.25rem; background-color: #ffffff; }
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 10em; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
 
 /** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
 #content ul { list-style: disc    outside; margin-left: 1em; }
