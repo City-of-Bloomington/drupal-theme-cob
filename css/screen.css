@@ -157,7 +157,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 .contactInfo address a { line-height: 1em; padding: 0; }
 
-.contactInfo address { background-image: url("images/fa-svg/white/map-marker.svg"); }
+.contactInfo address { background-image: url("images/alpha_icons/white/location-square.svg"); }
 
 .contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
 
@@ -281,7 +281,7 @@ dl { border: none; }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-#breadcrumb .contactInfo > dl { display: inline-block; width: 30%; }
+#breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; }
 
 #block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
 

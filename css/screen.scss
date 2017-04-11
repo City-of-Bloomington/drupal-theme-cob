@@ -53,7 +53,7 @@ dl { border:none; }
 
 // These blocks are laying out lists of things in a grid
 #breadcrumb .contactInfo {
-    > dl { display:inline-block; width:30%; }
+    > dl { display:inline-block; width:30%; vertical-align:middle; }
 }
 #block-departmentstaff  > div,
 #block-committeemembers > div > div {
