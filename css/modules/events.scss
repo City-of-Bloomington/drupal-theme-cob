@@ -2,14 +2,14 @@
     article {
 
         overflow:hidden; position:relative;
-        height:auto;
         height:5em;
+        min-width:6em;
         border:1px solid $color-header;
 
         .month, .monthDate { font-size:$font-size-big; font-weight:bold; }
         .weekday { }
-        .summary { font-weight:bold; white-space:nowrap; }
-        .location { white-space:nowrap; }
+        .summary { font-weight:bold;  }
+        .location {  }
 
         header {
             position:absolute; left:0;

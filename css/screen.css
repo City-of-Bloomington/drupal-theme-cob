@@ -6,7 +6,7 @@ section { margin: 0; }
 
 @media all and (min-width: 640px) { #intro { display: flex; flex-direction: row; flex-wrap: wrap; }
   #intro .text_with_summary { flex-basis: 55%; margin-right: 5%; }
-  #intro aside { flex-basis: 40%; } }
+  #intro aside { flex-basis: 40%; width: 40%; } }
 
 @media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
@@ -185,13 +185,11 @@ aside.contactInfo a.fax { background-image: url("images/fa-svg/dark-slate/fax.sv
 
 aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/city_logo.svg"); }
 
-#block-upcomingevents article, .calendar_calendar article { overflow: hidden; position: relative; height: auto; height: 5em; border: 1px solid #183365; }
+#block-upcomingevents article, .calendar_calendar article { overflow: hidden; position: relative; height: 5em; min-width: 6em; border: 1px solid #183365; }
 
 #block-upcomingevents article .month, #block-upcomingevents article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.25rem; font-weight: bold; }
 
-#block-upcomingevents article .summary, .calendar_calendar article .summary { font-weight: bold; white-space: nowrap; }
-
-#block-upcomingevents article .location, .calendar_calendar article .location { white-space: nowrap; }
+#block-upcomingevents article .summary, .calendar_calendar article .summary { font-weight: bold; }
 
 #block-upcomingevents article header, .calendar_calendar article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Lora", serif; text-align: center; vertical-align: middle; }
 
