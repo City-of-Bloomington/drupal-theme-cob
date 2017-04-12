@@ -4,13 +4,15 @@ $divider-margin:2em;
 #content section            > header,
 #related-links              > header,
 .paragraph--type--info-list > header {
-    text-align: center;
-    background-size: 100% 2px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    margin:$divider-margin 0;
+    @media all and (min-width:$viewport-medium) {
+        text-align: center;
+        background-size: 100% 2px;
+        background-position: left center;
+        background-repeat: no-repeat;
+        margin:$divider-margin 0;
 
-    h2 { display:inline; padding:0 $size-gutter; }
+        h2 { display:inline; padding:0 $size-gutter; }
+    }
 }
 
 // Light foreground, dark background

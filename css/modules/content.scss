@@ -16,8 +16,12 @@
         > section {
             padding:$size-gutter 0;
 
-            h2 { font-size:$font-size-bigger; color:$color-heading; margin-bottom:2rem; }
+            h2 { color:$color-heading; margin-bottom:2rem; }
             .container { overflow:auto; padding:$size-gutter; }
+
+            @media all and (min-width:$viewport-medium) {
+                h2 { font-size:$font-size-bigger; }
+            }
         }
     }
 }

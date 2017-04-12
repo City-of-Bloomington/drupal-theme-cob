@@ -56,9 +56,11 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #content .container > section { padding: 0.5em 0; }
 
-#content .container > section h2 { font-size: 2.25rem; color: #3f9dff; margin-bottom: 2rem; }
+#content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
 
 #content .container > section .container { overflow: auto; padding: 0.5em; }
+
+@media all and (min-width: 640px) { #content .container > section h2 { font-size: 2.25rem; } }
 
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
@@ -197,9 +199,8 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
 
-.front .container > header, #content section > header, #related-links > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
-
-.front .container > header h2, #content section > header h2, #related-links > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; }
+@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
+  .front .container > header h2, #content section > header h2, #related-links > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; } }
 
 #services-section { background-color: #183365; padding-top: 2em; }
 
@@ -261,7 +262,7 @@ dl { border: none; }
 
 #highlighted .container { text-align: center; }
 
-#breadcrumb { background-color: #a31621; min-height: 50vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; position: relative; }
+#breadcrumb { background-color: #a31621; min-height: 60vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; display: flex; flex-direction: column; justify-content: end; }
 
 #breadcrumb #banner { background-color: #3f9dff; }
 
@@ -276,12 +277,11 @@ dl { border: none; }
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
 @media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
-  #breadcrumb #banner { position: absolute; bottom: 0; left: 0; right: 0; }
   #breadcrumb h1 { font-size: 3.75rem; } }
 
 @media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
 
-#breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; }
+@media all and (min-width: 640px) { #breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; } }
 
 #block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
 

@@ -24,12 +24,15 @@ dl { border:none; }
 
 #breadcrumb {
     background-color: $color-accent;
-    min-height: 50vmin;
+    min-height: 60vmin;
     background: url('images/downtown-small.png') no-repeat center center;
     background-size: cover;
-    position:relative;
 
-    #banner { background-color:$color-heading; }
+    display:flex; flex-direction:column; justify-content:end;
+
+    #banner {
+        background-color:$color-heading;
+    }
     .container { padding:$size-gutter; }
     h1 { font-size: $font-size-bigger; color:$color-content-background; }
 
@@ -41,9 +44,6 @@ dl { border:none; }
 
     @media all and (min-width: $viewport-medium) {
         background-image:url('images/downtown-medium.png');
-        #banner {
-            position:absolute; bottom:0; left:0; right:0;
-        }
         h1 { font-size:$font-size-biggest; }
     }
     @media all and (min-width: $viewport-large ) {
@@ -53,7 +53,9 @@ dl { border:none; }
 
 // These blocks are laying out lists of things in a grid
 #breadcrumb .contactInfo {
-    > dl { display:inline-block; width:30%; vertical-align:middle; }
+    @media all and (min-width:$viewport-medium) {
+        > dl { display:inline-block; width:30%; vertical-align:middle; }
+    }
 }
 #block-departmentstaff  > div,
 #block-committeemembers > div > div {
