@@ -307,7 +307,6 @@ body > footer a { font-size: 1.25rem; color: #fff; display: block; text-align: l
 
 body > footer address { text-align: left; }
 
-@media all and (min-width: 640px) { body > footer .container { display: flex; flex-direction: row; justify-content: space-between; }
-  body > footer .container nav { width: 30%; display: inline-block; margin-right: 1em; } }
+@media all and (min-width: 640px) { body > footer .container { display: flex; flex-direction: row; justify-content: space-between; } }
 
 /*# sourceMappingURL=screen.css.map */
