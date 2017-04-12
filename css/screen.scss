@@ -101,12 +101,9 @@ body > footer {
 
     @media all and (min-width:$viewport-medium) {
         .container {
-            text-align:center;
-
-            nav {
-                width:30%; display:inline-block;
-                margin-right:1em;
-            }
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
         }
     }
 }

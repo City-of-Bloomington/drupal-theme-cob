@@ -1,0 +1,40 @@
+<footer>
+    <div class="container">
+        <div class="contactInfo">
+            <dl><dt>Address</dt>
+                <dd><address>401 N Morton St
+Bloomington IN 47404</address>
+                </dd>
+            </dl>
+            <dl><dt>Phone</dt>
+                <dd><a href="tel:812-349-3400" class="phone" title="Phone">(812)349-3400</dd>
+            </dl>
+            <dl><dt>Facebook</dt>
+                <dd><a href="https://www.facebook.com/cityofbloomington" class="facebook">Connect on Facebook</a></dd>
+            </dl>
+            <dl><dt>Twitter</dt>
+                <dd><a href="http://twitter.com/citybloomington" class="twitter">Follow us on Twitter</a></dd>
+            </dl>
+        </div>
+        <div>
+            <nav>
+                <a href="{{ base_path }}/city/jobs">Careers</a>
+                <a href="{{ base_path }}/accessibility">Accessibility</a>
+                <a href="{{ base_path }}/privacy">Privacy</a>
+                <a href="{{ base_path }}/webpolicy">Web Policy</a>
+                <a href="{{ base_path }}">Home</a>
+            </nav>
+        </div>
+        <div>
+            <nav>
+                {% if logged_in %}
+                <a href="{{ base_path }}/user">My account</a>
+                <a href="{{ base_path }}/user/logout">Logout</a>
+                {% else %}
+                <a href="{{ base_path }}/caslogin">Login</a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+</footer>
+
