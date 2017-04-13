@@ -16,6 +16,7 @@
 @media all and (min-width:$viewport-medium) {
     .boards-block,
     .departments-block,
+    .promt_programs,
     .paragraph--type--info-list > div {
         display:flex; flex-direction:row; flex-wrap:wrap;
         justify-content:space-between;
@@ -25,6 +26,7 @@
 
 .boards-block > div,
 .departments-block > div,
+.promt_programs > article,
 .paragraph--type--info-card {
     a {
         background-color:$color-table-background;
@@ -46,13 +48,12 @@
     }
 
     @media all and (min-width:$viewport-medium) {
-        width:320px;
+        flex-basis:28vw;
         vertical-align:top; text-align:center;
 
         a {
             padding:1em; height:290px; overflow:hidden;
-            h3 { height:3em; font-size:$font-size-big; margin:0; }
-
+            h3 { height:2em; font-size:$font-size-bigger; margin:0; }
         }
     }
 }

@@ -62,6 +62,42 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 @media all and (min-width: 640px) { #content .container > section h2 { font-size: 2.25rem; } }
 
+#parks-guide-page #stats, #parks-guide-page #activities { width: 100vw; margin-left: calc(-1 * ((100vw - 100%) / 2)); background-color: #183365; }
+
+#parks-guide-page #stats { font-size: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; }
+
+#parks-guide-page #stats .count { font-size: 2.25rem; }
+
+#parks-guide-page #stats a { display: flex; width: 9.375rem; height: 10rem; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
+
+#parks-guide-page #stats a:hover { background-color: #4990e2; }
+
+#parks-guide-page .paragraph--type--info-card { flex-basis: 25vw; }
+
+#parks-guide-page .paragraph--type--info-card a { height: 290px; background-color: transparent; color: #fff; }
+
+#parks-guide-page .paragraph--type--info-card a:hover { background-color: #4990e2; }
+
+#parks-guide-page .paragraph--type--info-card h3 { color: #fff; }
+
+#parks-guide-page #activities { color: #fff; }
+
+#parks-guide-page #activities h3 { color: #fff; }
+
+#parks-guide-page #activities section { display: flex; flex-direction: row; justify-content: center; }
+
+#parks-guide-page #activities section header, #parks-guide-page #activities section form { flex-basis: 30%; margin: 0 auto; }
+
+#promt-programsearchform { display: table; }
+
+#promt-programsearchform .form-item { margin-bottom: 0.5em; }
+
+#promt-programsearchform label { display: inline-block; width: 5em; }
+
+#promt-programsearchform select { width: 20em; }
+
+#promt-programsearchform #edit-actions { text-align: center; }
+
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 
@@ -199,14 +235,18 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
 
-@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
-  .front .container > header h2, #content section > header h2, #related-links > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; } }
+@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
+  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; } }
 
 #services-section { background-color: #183365; padding-top: 2em; }
 
 #services-section .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
 #services-section h2, #services-section a { background-color: #183365; color: #fff; font-weight: bold; }
+
+#parks-guide-page #activities > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+
+#parks-guide-page #activities h2 { background-color: #183365; color: #fff; font-weight: bold; }
 
 #news-section .container > header, #about-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
@@ -242,19 +282,19 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .boards-block, .departments-block, .paragraph--type--info-list { text-align: center; }
 
-@media all and (min-width: 640px) { .boards-block, .departments-block, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; } }
+@media all and (min-width: 640px) { .boards-block, .departments-block, .promt_programs, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; } }
 
-.boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; }
+.boards-block > div a, .departments-block > div a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; }
 
-.boards-block > div a h3, .departments-block > div a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
+.boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
 
-.boards-block > div a:hover, .departments-block > div a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+.boards-block > div a:hover, .departments-block > div a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
 
-.boards-block > div a:hover h3, .departments-block > div a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+.boards-block > div a:hover h3, .departments-block > div a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
 
-@media all and (min-width: 640px) { .boards-block > div, .departments-block > div, .paragraph--type--info-card { width: 320px; vertical-align: top; text-align: center; }
-  .boards-block > div a, .departments-block > div a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
-  .boards-block > div a h3, .departments-block > div a h3, .paragraph--type--info-card a h3 { height: 3em; font-size: 1.25rem; margin: 0; } }
+@media all and (min-width: 640px) { .boards-block > div, .departments-block > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 28vw; vertical-align: top; text-align: center; }
+  .boards-block > div a, .departments-block > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
+  .boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { height: 2em; font-size: 2.25rem; margin: 0; } }
 
 dl { border: none; }
 

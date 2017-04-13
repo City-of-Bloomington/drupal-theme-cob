@@ -25,3 +25,57 @@
         }
     }
 }
+
+#parks-guide-page {
+    #stats, #activities {
+        width:100vw;
+        margin-left:calc(-1 * ((100vw - 100%) / 2));
+
+        background-color:$color-header;
+    }
+
+    #stats {
+        font-size:$font-size-big;
+        display:flex; flex-wrap:wrap; justify-content:center;
+
+        .count { font-size:$font-size-bigger; }
+
+        a {
+            display:flex; width:9.375rem; height:10rem;
+            flex-direction:column; justify-content:center; align-items:center;
+
+
+            color:$color-content-background;
+            &:hover { background-color:$color-selected-background; }
+        }
+    }
+
+    .paragraph--type--info-card {
+        flex-basis:25vw;
+        a {
+            height:290px;
+            background-color:transparent; color:$color-content-background;
+            &:hover { background-color:$color-selected-background; }
+        }
+        h3 { color:$color-content-background; }
+    }
+
+    #activities {
+        color:$color-content-background;
+        h3 { color:$color-content-background; }
+
+        section {
+            display:flex; flex-direction:row; justify-content:center;
+            header, form { flex-basis:30%; margin:0 auto; }
+        }
+    }
+}
+
+#promt-programsearchform {
+    display:table;
+
+    .form-item { margin-bottom:$size-gutter; }
+    label { display:inline-block; width:5em; }
+    select { width:20em; }
+    #edit-actions { text-align:center; }
+}

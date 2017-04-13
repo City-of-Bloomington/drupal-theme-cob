@@ -1,8 +1,11 @@
 $divider-margin:2em;
+$divider-light:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
+$divider-dark: linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
 
 .front   .container         > header,
 #content section            > header,
 #related-links              > header,
+#activities                 > header,
 .paragraph--type--info-list > header {
     @media all and (min-width:$viewport-medium) {
         text-align: center;
@@ -21,14 +24,20 @@ $divider-margin:2em;
     padding-top:$divider-margin;
 
     .container > header {
-        background-image:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
+        background-image:$divider-light;
     }
     h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
 }
+#parks-guide-page #activities {
+    > header { background-image:$divider-light; }
+    h2 { background-color:$color-header; color:$color-content-background; font-weight:bold; }
+}
+
+
 // Dark foreground, light background
 #news-section, #about-section, #government-section {
     .container > header {
-        background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
+        background-image:$divider-dark;
         h2 { background-color:$color-content-background; color:$color-header; }
     }
 }
@@ -37,7 +46,7 @@ $divider-margin:2em;
 #block-departmentstaff,
 #block-committeemembers {
     > header {
-        background-image:linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
+        background-image:$divider-dark;
         h2 { background-color:$color-content-background; color:$color-header; }
     }
 }
