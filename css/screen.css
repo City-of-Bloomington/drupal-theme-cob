@@ -62,6 +62,10 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 @media all and (min-width: 640px) { #content .container > section h2 { font-size: 2.25rem; } }
 
+#content #activities section { display: flex; flex-direction: row; justify-content: center; }
+
+#content #activities section header, #content #activities section form { flex-basis: 30%; margin: 0 auto; }
+
 #parks-guide-page #stats, #parks-guide-page #activities { width: 100vw; margin-left: calc(-1 * ((100vw - 100%) / 2)); background-color: #183365; }
 
 #parks-guide-page #stats { font-size: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; }
@@ -83,10 +87,6 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 #parks-guide-page #activities { color: #fff; }
 
 #parks-guide-page #activities h3 { color: #fff; }
-
-#parks-guide-page #activities section { display: flex; flex-direction: row; justify-content: center; }
-
-#parks-guide-page #activities section header, #parks-guide-page #activities section form { flex-basis: 30%; margin: 0 auto; }
 
 #promt-programsearchform { display: table; }
 
@@ -252,9 +252,9 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #183365; }
 
-.paragraph > header, #related-links > header, #block-departmentstaff > header, #block-committeemembers > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+.paragraph > header, #related-links > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-.paragraph > header h2, #related-links > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2 { background-color: #fff; color: #183365; }
+.paragraph > header h2, #related-links > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2 { background-color: #fff; color: #183365; }
 
 #services-section nav, #government-section nav { text-align: center; }
 

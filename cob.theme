@@ -71,8 +71,8 @@ function cob_preprocess_node(&$vars)
         $vars['contactInfo'] = $contactInfo;
     }
 
-    $nid = (int)$vars['node']->get('nid')->value;
-    if ($nid === 250) {
+    $nid  = (int)$vars['node']->get('nid' )->value;
+    if ($nid === 250 || $vars['node']->hasField('field_promt_id')) {
         $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
     }
 }
@@ -118,6 +118,10 @@ function cob_preprocess_field__field_related_links(&$vars)
 function cob_form_search_block_form_alter(&$form, &$form_state)
 {
     $form['keys']['#attributes']['placeholder'][] = 'Type here';
+}
+
+function cob_preprocess_promt_program(&$vars)
+{
 }
 
 /**
