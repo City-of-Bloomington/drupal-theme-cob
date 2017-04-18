@@ -46,7 +46,8 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
 #block-categoryprograms,
 #block-locationprograms,
 #block-departmentstaff,
-#block-committeemembers {
+#block-committeemembers,
+#promt_sessions {
     > header {
         background-image:$divider-dark;
         h2 { background-color:$color-content-background; color:$color-header; }

@@ -6,7 +6,7 @@ section { margin:0; }
         flex-direction: row;
         flex-wrap:wrap;
 
-        .text_with_summary { flex-basis:55%; margin-right:5%; }
+        .text_with_summary, .promt_program { flex-basis:55%; margin-right:5%; }
         aside { flex-basis:40%; width:40%; }
     }
 }
