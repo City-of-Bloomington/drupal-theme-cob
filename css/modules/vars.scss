@@ -1,9 +1,13 @@
 //Font Sizes
 $font-size-biggest: 3.750rem;
-$font-size-bigger:  2.250rem;
+$font-size-bigger:  1.900rem;
 $font-size-big:     1.250rem;
 $font-size-normal:  1.125rem;
 $font-size-small:   1.000rem;
 $font-size-smaller: 0.875rem;
 
+$font-weight-bold:  900;
+
 $color-heading: $dodger-blue;
+
+h2 { font-size:$font-size-bigger; }

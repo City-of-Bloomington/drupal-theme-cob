@@ -1,4 +1,4 @@
-$divider-margin:2em;
+$divider-margin:3.7em;
 $divider-light:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
 $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
 
@@ -14,23 +14,25 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
         background-repeat: no-repeat;
         margin:$divider-margin 0;
 
-        h2 { display:inline; padding:0 $size-gutter; }
+        h2 {
+            display:inline; padding:0 $size-gutter;
+            font-size:$font-size-bigger; font-weight:$font-weight-bold;
+        }
     }
 }
 
 // Light foreground, dark background
 #services-section {
     background-color: $color-header;
-    padding-top:$divider-margin;
 
     .container > header {
         background-image:$divider-light;
     }
-    h2, a { background-color:$color-header; color:$color-content-background; font-weight: bold; }
+    h2, a { background-color:$color-header; color:$color-content-background; }
 }
 #parks-guide-page #activities {
     > header { background-image:$divider-light; }
-    h2 { background-color:$color-header; color:$color-content-background; font-weight:bold; }
+    h2 { background-color:$color-heading; color:$color-content-background; }
 }
 
 
@@ -38,7 +40,7 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
 #news-section, #about-section, #government-section {
     .container > header {
         background-image:$divider-dark;
-        h2 { background-color:$color-content-background; color:$color-header; }
+        h2 { background-color:$color-content-background; color:$color-heading; }
     }
 }
 .paragraph,
@@ -50,6 +52,6 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
 #promt_sessions {
     > header {
         background-image:$divider-dark;
-        h2 { background-color:$color-content-background; color:$color-header; }
+        h2 { background-color:$color-content-background; color:$color-heading; }
     }
 }

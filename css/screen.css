@@ -1,7 +1,9 @@
 /** Urls are relative to screen.css */
 @import 'https://fonts.googleapis.com/css?family=Lora';
-@import 'https://fonts.googleapis.com/css?family=Roboto Condensed';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
 /** @see https://en.wikipedia.org/wiki/Web_colors */
+h2 { font-size: 1.9rem; }
+
 section { margin: 0; }
 
 @media all and (min-width: 640px) { #intro { display: flex; flex-direction: row; flex-wrap: wrap; }
@@ -60,7 +62,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #content .container > section .container { overflow: auto; padding: 0.5em; }
 
-@media all and (min-width: 640px) { #content .container > section h2 { font-size: 2.25rem; } }
+@media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
 
 #content #activities section { display: flex; flex-direction: row; justify-content: center; }
 
@@ -70,7 +72,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 #parks-guide-page #stats { font-size: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; }
 
-#parks-guide-page #stats .count { font-size: 2.25rem; }
+#parks-guide-page #stats .count { font-size: 1.9rem; }
 
 #parks-guide-page #stats a { display: flex; width: 9.375rem; height: 10rem; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
 
@@ -101,7 +103,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 
-#block-cob-local-tasks a { font-family: "Roboto Condensed", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+#block-cob-local-tasks a { font-family: "Roboto", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
 
 #block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
 
@@ -121,7 +123,7 @@ body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight:
 
 @media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
 
-#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding: 7em 0.5em 0.5em 0.5em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
 
 #services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
 
@@ -235,45 +237,47 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
 
-@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 2em 0; }
-  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; } }
+@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
+  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
 
-#services-section { background-color: #183365; padding-top: 2em; }
+#services-section { background-color: #183365; }
 
 #services-section .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
-#services-section h2, #services-section a { background-color: #183365; color: #fff; font-weight: bold; }
+#services-section h2, #services-section a { background-color: #183365; color: #fff; }
 
 #parks-guide-page #activities > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
-#parks-guide-page #activities h2 { background-color: #183365; color: #fff; font-weight: bold; }
+#parks-guide-page #activities h2 { background-color: #3f9dff; color: #fff; }
 
 #news-section .container > header, #about-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #183365; }
+#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #3f9dff; }
 
 .paragraph > header, #related-links > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-.paragraph > header h2, #related-links > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, #promt_sessions > header h2 { background-color: #fff; color: #183365; }
+.paragraph > header h2, #related-links > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, #promt_sessions > header h2 { background-color: #fff; color: #3f9dff; }
 
-#services-section nav, #government-section nav { text-align: center; }
+.front header > h2 { text-transform: uppercase; }
 
-#services-section a, #government-section a { width: 40vw; margin-bottom: 0.5em; }
+#services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
 
-@media all and (min-width: 640px) { #services-section a, #government-section a { width: 20vw; } }
+#services-section nav h2, #government-section nav h2 { font-family: "Roboto", sans-serif; font-size: 1.25rem; color: #183365; height: 2.5em; }
 
-@media all and (min-width: 1080px) { #services-section a, #government-section a { width: 240px; } }
+#services-section a, #government-section a { flex-basis: 40%; margin-bottom: 3.7em; padding-left: 1.2em; padding-right: 1.2em; padding-bottom: 0.5em; }
+
+@media all and (min-width: 640px) { #services-section a, #government-section a { flex-basis: 20%; } }
 
 @media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
-  #about-section .container > div p { margin-left: 50%; } }
+  #about-section .container > div p { margin-left: 50%; font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; padding-left: 1.5em; padding-right: 1.5em; } }
 
 @media all and (min-width: 640px) { #news-section .container > div { padding: 0 0.5em; display: flex; flex-direction: row; justify-content: space-between; }
   #news-section .container > div .news { width: 55%; }
   #news-section .container > div aside { width: 40%; } }
 
-#news-section .news article { border-color: #183365; border-style: solid; border-width: 0.5em 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
+#news-section .news article { border-color: #183365; border-style: solid; border-width: 8px 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
 
-#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Roboto Condensed", sans-serif; text-align: left; }
+#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; text-align: left; }
 
 #news-section .news article > div { width: 48%; float: left; }
 
@@ -286,7 +290,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .boards-block > div a, .departments-block > div a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; }
 
-.boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto Condensed", sans-serif; font-size: 1.25rem; }
+.boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto", sans-serif; font-size: 1.25rem; }
 
 .boards-block > div a:hover, .departments-block > div a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
 
@@ -294,7 +298,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 @media all and (min-width: 640px) { .boards-block > div, .departments-block > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 28vw; vertical-align: top; text-align: center; }
   .boards-block > div a, .departments-block > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
-  .boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { height: 2em; font-size: 2.25rem; margin: 0; } }
+  .boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { height: 2em; font-size: 1.9rem; margin: 0; } }
 
 dl { border: none; }
 
@@ -308,7 +312,7 @@ dl { border: none; }
 
 #breadcrumb .container { padding: 0.5em; }
 
-#breadcrumb h1 { font-size: 2.25rem; color: #fff; }
+#breadcrumb h1 { font-size: 1.9rem; color: #fff; }
 
 #breadcrumb nav { font-size: 1rem; }
 

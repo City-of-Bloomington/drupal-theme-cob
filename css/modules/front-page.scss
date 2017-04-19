@@ -1,11 +1,22 @@
-#services-section, #government-section {
-    nav { text-align:center; }
-    a {
-        width:40vw;
-        margin-bottom:$size-gutter;
+.front header > h2 { text-transform:uppercase; }
 
-        @media all and (min-width:$viewport-medium) { width: 20vw;  }
-        @media all and (min-width:$viewport-large ) { width: 240px; }
+#services-section, #government-section {
+    nav {
+        text-align:center;
+        display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap;
+
+        h2 {
+            font-family:$font-family-nav; font-size:$font-size-big; color:$color-link;
+            height:2.5em;
+        }
+    }
+    a {
+        flex-basis:40%;
+
+        margin-bottom:$divider-margin;
+        padding-left:1.2em; padding-right:1.2em; padding-bottom:$size-gutter;
+
+        @media all and (min-width:$viewport-medium) { flex-basis:20%;  }
     }
 }
 
@@ -14,7 +25,12 @@
         .container > div {
             background: url('images/indiana.svg') 25% center no-repeat;
             background-size: auto 100%;
-            p { margin-left:50%; }
+            p {
+                margin-left:50%;
+                font-size:$font-size-big; line-height:1.5em; letter-spacing:.04em;
+                padding-left:1.5em; padding-right:1.5em;
+
+            }
         }
     }
 }
@@ -34,14 +50,14 @@
     .news article {
         border-color: $color-header;
         border-style: solid;
-        border-width: $size-gutter 1px 1px 1px;
+        border-width: 8px 1px 1px 1px;
         padding:$size-gutter;
         overflow:hidden;
         height:15vh;
 
         h2 {
             width:48%; float:left;
-            font-size:$font-size-big; font-weight:bold; font-family:$font-family-default;
+            font-size:$font-size-big; font-weight:bold; font-family:$font-family-heading;
             text-align:left;
         }
         > div { width:48%; float:left; }

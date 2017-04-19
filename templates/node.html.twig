@@ -78,7 +78,7 @@
         {{ title_prefix }}
         {% if display_submitted %}
             {% set isodate = node.getCreatedTime %}
-            <time datetime="{{ isodate|date('c') }}">{{ date }}</time>
+            <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
         {% endif %}
         {% if not page %}
         <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
