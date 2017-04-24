@@ -32,7 +32,7 @@ dl { border:none; }
     display:flex; flex-direction:column; justify-content:end;
 
     #banner {
-        background-color:$color-heading;
+        background-color:$color-heading; color:$color-content-background;
     }
     .container { padding:$size-gutter; }
     h1 { font-size: $font-size-bigger; color:$color-content-background; }

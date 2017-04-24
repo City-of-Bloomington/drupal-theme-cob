@@ -14,6 +14,30 @@ use Drupal\onboard\OnBoardService;
 
 function cob_preprocess_page__front(&$vars)
 {
+    $vars['page']['breadcrumb'][] = [
+        '#type' => 'markup',
+        '#markup' => "            
+        <section>
+            <h1>Welcome to our Public Alpha!</h1>
+            <p> This website is a work in progress, and is subject to change</span>.
+                We welcome public feedback as we make progress.
+            </p>
+            <div class=\"contactInfo\">
+                <dl><dd><a href=\"about-our-alpha\" class=\"button\">
+                            Learn More
+                        </a>
+                    </dd>
+                </dl>
+                <dl><dd><a href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform\" class=\"button\">
+                            Provide Feeback
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        "
+    ];
+
     $id = Settings::get('cob_front_calendar');
     if ($id) {
         $numdays   = 7;

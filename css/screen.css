@@ -308,7 +308,7 @@ dl { border: none; }
 
 #breadcrumb { background-color: #a31621; min-height: 60vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; display: flex; flex-direction: column; justify-content: end; }
 
-#breadcrumb #banner { background-color: #3f9dff; }
+#breadcrumb #banner { background-color: #3f9dff; color: #fff; }
 
 #breadcrumb .container { padding: 0.5em; }
 
