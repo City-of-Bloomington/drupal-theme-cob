@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Displays the list of Members for a Committee
+ *
+ * Available variables
+ * - committee:   JSON object from OnBoard containing committee information
+ * - nid:         The current node ID
+ * - onboard_url: The base url for OnBoard
+ *
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ */
+#}
+<div>
+{% for seat in committee.seats %}
+    {% if seat.currentMember %}
+    <div>
+        <h3>{{ seat.currentMember.name }}</h3>
+        <dl>{% if seat.appointedBy %}
+            <dt>Appointed By:</dt>
+            <dd>{{ seat.appointedBy }}</dd>
+            {% endif %}
+
+            {% if seat.currentMember.termEndDate %}
+            <dt>Term Expires:</dt>
+            <dd>{{ seat.currentMember.termEndDate }}</dd>
+            {% else %}
+            <dt>Member Since:</dt>
+            <dd>{{ seat.currentMember.termStartDate }}</dd>
+            {% endif %}
+        </dl>
+    </div>
+    {% endif %}
+{% endfor %}
+</div>
+<nav>
+    {% if committee.info.vacancy %}
+    <a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}" class="button">
+        Apply to fill a vacancy on this board
+    </a>
+    {% endif %}
+    <a href="{{ path('onboard.meetings', {'node': nid}) }}" class="button">Meeting Documents</a>
+</nav>

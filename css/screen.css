@@ -339,11 +339,11 @@ dl { border: none; }
 
 #block-committeemembers dt { float: none; display: inline-block; }
 
-#related-links { text-align: center; }
+#related-links, #block-committeemembers nav { text-align: center; }
 
-#related-links div { display: inline; }
+#related-links div, #block-committeemembers nav div { display: inline; }
 
-#related-links a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
+#related-links a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
 
 body > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
 
