@@ -238,18 +238,20 @@ function _cob_contactInfoFromNode(Node $node)
  */
 function _cob_contactInfoForDn($dn, array &$info)
 {
-    $json = DirectoryService::department_info($dn);
-    if ($json) {
-        _cob_mapContactInfoFields($info, $json, [
-            'name'    => 'name',
-            'email'   => 'email',
-            'phone'   => 'office',
-            'fax'     => 'fax',
-            'address' => 'address',
-            'city'    => 'city',
-            'state'   => 'state',
-            'zip'     => 'zip'
-        ]);
+    if (\Drupal::moduleHandler()->moduleExists('directory')) {
+        $json = DirectoryService::department_info($dn);
+        if ($json) {
+            _cob_mapContactInfoFields($info, $json, [
+                'name'    => 'name',
+                'email'   => 'email',
+                'phone'   => 'office',
+                'fax'     => 'fax',
+                'address' => 'address',
+                'city'    => 'city',
+                'state'   => 'state',
+                'zip'     => 'zip'
+            ]);
+        }
     }
 }
 
