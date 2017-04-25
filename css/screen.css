@@ -35,11 +35,13 @@ body > header > .container { display: flex; justify-content: space-between; heig
 
 body > header > .container h1 { margin: 0; }
 
-body > header > .container h1 a { color: #fff; font-size: 1.125rem; font-weight: bold; padding-left: 2em; }
+body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bold; }
+
+body > header > .container h1 a { font-weight: bold; padding-left: 2em; }
 
 @media all and (min-width: 640px) { body > header > .container h1 a { padding: 0; font-size: 1.25rem; } }
 
-#block-searchform form { display: flex; flex-direction: row; }
+#block-searchform form { display: inline-flex; flex-direction: row; }
 
 #block-searchform div, #block-searchform form { height: 100%; margin: 0; padding: 0; }
 
