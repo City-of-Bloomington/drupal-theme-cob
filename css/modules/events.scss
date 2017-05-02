@@ -1,4 +1,6 @@
-#block-upcomingevents, .calendar_calendar {
+#block-upcomingevents,
+.onboard_meetings,
+.calendar_calendar {
     article {
 
         overflow:hidden; position:relative;
@@ -10,6 +12,7 @@
         .weekday { }
         .summary { font-weight:bold;  }
         .location {  }
+        h4 { margin:0; }
 
         header {
             position:absolute; left:0;
@@ -26,6 +29,10 @@
         > div {
             margin-left:6.5em;
             line-height:1.5em;
+            display:flex; flex-direction:row; justify-content:start;
+
+            > div { margin-right:1em; }
         }
     }
 }
+.onboard_meetings article { height:auto; min-height:5em; }
