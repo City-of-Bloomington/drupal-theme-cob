@@ -48,9 +48,13 @@ function cob_preprocess_page(&$vars)
 
             foreach ($vars['node']->get('field_cover_image') as $item) {
                 $v = $item->getValue();
-                $f = File::load($v['target_id']);
-                foreach ($styles as $s) {
-                    $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
+                if (!empty($v['target_id'])) {
+                    $f = File::load($v['target_id']);
+                    if ($f) {
+                        foreach ($styles as $s) {
+                            $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
+                        }
+                    }
                 }
             }
         }
