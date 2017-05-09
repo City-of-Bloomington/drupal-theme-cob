@@ -1,6 +1,6 @@
-/buildignore
-/build.sh
-/build
+buildignore
+build
+vendor
 .git/
 .git*
 .sass-cache
