@@ -324,7 +324,7 @@ dl { border: none; }
 
 #breadcrumb nav { font-size: 1rem; }
 
-#breadcrumb nav a:not(:last-child):after { content: "&gt;&gt;"; }
+#breadcrumb nav a:not(:last-child):after { content: " >> "; }
 
 #breadcrumb address, #breadcrumb a { color: #fff; }
 

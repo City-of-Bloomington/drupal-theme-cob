@@ -99,8 +99,10 @@ function cob_preprocess_paragraph__info_card(&$vars)
         $id   = $matches[2];
 
         $node = \Drupal::entityTypeManager()->getStorage($type)->load($id);
-        if (!$vars['title']) { $vars['title'] = $node->title->value;  }
-        if (!$vars['text' ]) { $vars['text' ] = $node->body->summary; }
+        if ($node) {
+            if (!$vars['title']) { $vars['title'] = $node->title->value;  }
+            if (!$vars['text' ]) { $vars['text' ] = $node->body->summary; }
+        }
     }
 }
 

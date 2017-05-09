@@ -39,7 +39,7 @@ dl { border:none; }
 
     nav {
         font-size:$font-size-small;
-        a:not(:last-child):after { content: "&gt;&gt;" }
+        a:not(:last-child):after { content: " >> " }
     }
     address, a { color:$color-content-background; }
 
