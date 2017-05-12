@@ -12,6 +12,44 @@ use Drupal\calendar\GoogleGateway;
 use Drupal\directory\DirectoryService;
 use Drupal\onboard\OnBoardService;
 
+/**
+ * Prepare contact information for PROMT programs
+ *
+ * The promt module will be rendering promt programs.  When we are displaying
+ * a single program that has a location, we need to use the contact information
+ * from the Drupal node that has that location_id.
+ *
+ * We are storing the location_id as the field_promt_id for Drupal's
+ * content type: location.  Once we have a the node loaded, we let the normal
+ * cob_preprocess_page() handle rendering contact information for that node.
+ *
+ * @implements module_preprocess()
+ * @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/group/themeable/8.2.x
+ */
+function cob_preprocess(&$vars, $hook)
+{
+    static $location_id = null;
+
+    switch ($hook) {
+        case 'promt_program':
+            if (!empty($vars['program']['location_id'])) { $location_id = $vars['program']['location_id']; }
+        break;
+
+        case 'page':
+            if ($location_id) {
+                $query = \Drupal::entityQuery('node')
+                    ->condition('status', 1)
+                    ->condition('type', 'location')
+                    ->condition('field_promt_id', $location_id);
+                $nids  = $query->execute();
+                if ($nids) {
+                    $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load(current($nids));
+                }
+            }
+        break;
+    }
+}
+
 function cob_preprocess_page__front(&$vars)
 {
     $id = Settings::get('cob_front_calendar');
@@ -125,10 +163,6 @@ function cob_form_search_block_form_alter(&$form, &$form_state)
 {
     $form['#prefix'] = "<a href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform\">Feedback</a>";
     $form['keys']['#attributes']['placeholder'][] = 'Type here';
-}
-
-function cob_preprocess_promt_program(&$vars)
-{
 }
 
 /**

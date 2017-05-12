@@ -17,7 +17,30 @@
         </header>
         <p>{{ program.statement }}</p>
     </div>
+    <aside>
+        <header><h2>Details</h2></header>
+        <dl>{% if program.lead %}
+            <dt>Lead</dt>
+            <dd>{{ program.lead }}</dd>
+            {% endif %}
+            {% if program.instructor %}
+            <dt>instructor</dt>
+            <dd>{{ program.instructor }}</dd>
+            {% endif %}
+            <dt>Season, Year</dt>
+            <dd>{{ program.season }}, {{ program.year }}</dd>
+            {% if program.in_city_fees %}
+            <dt>In City Fees</dt>
+            <dd>{{ program.in_city_fees }}</dd>
+            {% endif %}
+            {% if program.non_city_fees %}
+            <dt>Non City Fees</dt>
+            <dd>{{ program.non_city_fees }}</dd>
+            {% endif %}
+        </dl>
+    </aside>
 </div>
+
 
 {% if program.sessions %}
 <section id="promt_sessions">
@@ -25,17 +48,31 @@
         <h2>Sessions</h2>
     </header>
     <table>
+        <thead>
+        <tr><th></th>
+            <th>Days</th>
+            <th>Start, End Date</th>
+            <th>Start, End Time</th>
+            <th>Deadline</th>
+            <th>Ages</th>
+            {% if program.sessions[0].instructor    %}<th>Instructor</th>{% endif %}
+            {% if program.sessions[0].in_city_fees  %}<th>In City Fee</th>{% endif %}
+            {% if program.sessions[0].non_city_fees %}<th>Non City Fee</th>{% endif %}
+        </thead>
+        <tbody>
         {% for s in program.sessions %}
         <tr><td>{{ s.code }}</td>
             <td>{{ s.days }}</td>
             <td>{{ s.start_date }} - {{ s.end_date }}</td>
             <td>{{ s.start_end_time }}</td>
-            <td>{{ s.in_city_fees }}</td>
-            <td>{{ s.non_city_fees }}</td>
+            <td>{{ s.registration_deadline }}</td>
             <td>{{ s.participant_age }}</td>
-            <td>{{ s.description }}</td>
+            {% if s.instructor    %}<td>{{ s.instructor    }}</td>{% endif %}
+            {% if s.in_city_fees  %}<td>{{ s.in_city_fees  }}</td>{% endif %}
+            {% if s.non_city_fees %}<td>{{ s.non_city_fees }}</td>{% endif %}
         </tr>
         {% endfor %}
+        </tbody>
     </table>
 </section>
 <a class="button" href="https://bloomington.in.gov/webtrac/cgi-bin/wspd_cgi.sh/wbsplash.html">
