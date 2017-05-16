@@ -41,4 +41,7 @@
     </a>
     {% endif %}
     <a href="{{ path('onboard.meetings', {'node': nid}) }}" class="button">Meeting Documents</a>
+    {% if committee.info.videoArchive %}
+    <a href="{{ committee.info.videoArchive }}" class="button">Meeting Videos</a>
+    {% endif %}
 </nav>
