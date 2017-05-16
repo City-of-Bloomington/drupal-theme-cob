@@ -147,8 +147,10 @@ function cob_preprocess_paragraph__info_card(&$vars)
 function cob_preprocess_field__entity_reference(&$vars)
 {
     foreach ($vars['items'] as $i=>$item) {
-        $vars['items'][$i]['content']['#title'] = "{$vars['element']['#title']}: {$vars['items'][$i]['content']['#title']}";
-        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+        if (!empty($item['content']['#type']) && $item['content']['#type'] == 'link') {
+            $vars['items'][$i]['content']['#title'] = "{$vars['element']['#title']}: {$item['content']['#title']}";
+            $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+        }
     }
 }
 

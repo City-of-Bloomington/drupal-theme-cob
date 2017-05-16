@@ -89,6 +89,10 @@
     {% if view_mode == 'full' %}
     <div id="intro">
         {{ content.body }}
+        {% if content.field_content_image %}
+        <aside>{{ content.field_content_image }}</aside>
+        {% endif %}
+
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
         {% if upcoming_events %}
         <aside>{{ upcoming_events }}</aside>
@@ -125,7 +129,7 @@
         {% endif %}
     </div>
     <div{{ content_attributes }}>
-        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside', 'field_location', 'field_department', 'field_related_links') }}
+        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_content_image') }}
     </div>
     {% if program_search_form %}
     <div id="activities">
