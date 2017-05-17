@@ -110,7 +110,15 @@
                             Learn about Boards &amp; Commission opportunities
                         </h3>
                     </header>
-                    {{ mayor }}
+                    <div>
+                        <img src="{{ mayor.content_image }}" />
+                        <section>
+                            <header>
+                                <h4>About the Mayor</h4>
+                                <p>{{ mayor.summary }}</p>
+                            </header>
+                        </section>
+                    </div>
                 </section>
                 <nav>
                     <a href="{{ base_path }}municipal-code" class="code">
