@@ -76,6 +76,8 @@ function cob_preprocess_page__front(&$vars)
             '#calendarId' => $id
         ];
     }
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load(608);
+    $vars['mayor'] = node_view($node, 'teaser');
 }
 
 function cob_preprocess_page(&$vars)
