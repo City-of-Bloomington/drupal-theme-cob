@@ -7,6 +7,7 @@
   * These are not to be confused with HTML P tags.  It is unfortunate
   * that the module happens to call itself with that name.
   */
+.asm_animals > div,
 .boards-block,
 .departments-block,
 .paragraph--type--info-list {
@@ -14,6 +15,7 @@
 
 }
 @media all and (min-width:$viewport-medium) {
+    .asm_animals > div,
     .boards-block,
     .departments-block,
     .promt_programs,
@@ -24,7 +26,8 @@
 }
 
 
-.boards-block > div,
+.asm_animals       > div,
+.boards-block      > div,
 .departments-block > div,
 .promt_programs > article,
 .paragraph--type--info-card {
@@ -45,6 +48,7 @@
 
             h3 { color:$color-content-background; }
         }
+        img { width:26vw; }
     }
 
     @media all and (min-width:$viewport-medium) {
