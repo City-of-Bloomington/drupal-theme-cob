@@ -308,7 +308,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 @media all and (min-width: 640px) { .asm_animals > div, .boards-block > div, .departments-block > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 28vw; vertical-align: top; text-align: center; }
   .asm_animals > div a, .boards-block > div a, .departments-block > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
-  .asm_animals > div a h3, .boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { height: 2em; font-size: 1.9rem; margin: 0; } }
+  .asm_animals > div a h3, .boards-block > div a h3, .departments-block > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 5px 0; } }
 
 dl { border: none; }
 
