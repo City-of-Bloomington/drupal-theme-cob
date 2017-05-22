@@ -77,17 +77,19 @@ function cob_preprocess_page__front(&$vars)
         ];
     }
     $node = \Drupal::entityTypeManager()->getStorage('node')->load(608);
-    $vars['mayor']['summary'      ] = $node->get('body')->summary;
-    $vars['mayor']['content_image'] = ImageStyle::load('content_image')->buildUrl(
-        $node->get('field_content_image')
-             ->first()
-             ->get('entity')
-             ->getTarget()
-             ->getValue()
-             ->field_image
-             ->entity
-             ->getFileUri()
-    );
+    if ($node) {
+        $vars['mayor']['summary'] = $node->get('body')->summary;
+        $img = $node->get('field_content_image')->first();
+        if ($img) {
+            $uri = $img->get('entity')
+                       ->getTarget()
+                       ->getValue()
+                       ->field_image
+                       ->entity
+                       ->getFileUri();
+            $vars['mayor']['content_image'] = ImageStyle::load('content_image')->buildUrl($uri);
+        }
+    }
 }
 
 function cob_preprocess_page(&$vars)
