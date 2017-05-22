@@ -1,6 +1,8 @@
 {% if cover_image %}
 <style type="text/css">
-    #banner { background-image:url('{{ cover_image }}'); }
+    #banner { background-image:url('{{ cover_image.cover_small }}'); }
+    @media all and (min-width:600px) { #banner { background-image:url('{{ cover_image.cover_medium }}'); } }
+    @media all and (min-width:990px) { #banner { background-image:url('{{ cover_image.cover_large  }}'); } }
 </style>
 {% endif %}
 <div id="banner"></div>
