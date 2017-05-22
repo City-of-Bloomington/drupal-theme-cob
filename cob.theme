@@ -172,6 +172,14 @@ function cob_preprocess_field__entity_reference(&$vars)
     }
 }
 
+function cob_preprocess_field__field_call_to_action(&$vars)
+{
+    foreach ($vars['items'] as $i=>$item) {
+        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'cta-button';
+    }
+}
+
 function cob_preprocess_field__field_related_links(&$vars)
 {
     foreach ($vars['items'] as $i=>$item) {
