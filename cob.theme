@@ -3,8 +3,6 @@
  * @copyright 2017 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  */
-use Drupal\file\Entity\File;
-use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
 use Drupal\core\Site\Settings;
 
@@ -90,18 +88,15 @@ function cob_preprocess_page(&$vars)
 {
     if (isset($vars['node']) && $vars['node'] instanceof \Drupal\node\Entity\Node) {
         if ($vars['node']->hasField('field_cover_image')) {
-            $styles = ['cover_small', 'cover_medium', 'cover_large'];
-
-            foreach ($vars['node']->get('field_cover_image') as $item) {
-                $v = $item->getValue();
-                if (!empty($v['target_id'])) {
-                    $f = File::load($v['target_id']);
-                    if ($f) {
-                        foreach ($styles as $s) {
-                            $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($f->getFileUri());
-                        }
-                    }
-                }
+            $img = $vars['node']->get('field_cover_image')->first();
+            if ($img) {
+                $uri = $img->get('entity')
+                           ->getTarget()
+                           ->getValue()
+                           ->field_image
+                           ->entity
+                           ->getFileUri();
+                $vars['cover_image'] = file_create_url($uri);
             }
         }
 

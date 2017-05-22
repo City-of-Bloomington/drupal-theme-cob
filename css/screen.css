@@ -316,9 +316,9 @@ dl { border: none; }
 
 #highlighted .container { text-align: center; }
 
-#breadcrumb { background-color: #a31621; min-height: 60vmin; background: url("images/downtown-small.png") no-repeat center center; background-size: cover; display: flex; flex-direction: column; justify-content: end; }
+#banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
 
-#breadcrumb #banner { background-color: #3f9dff; color: #fff; }
+#breadcrumb { display: flex; flex-direction: column; justify-content: end; background-color: #3f9dff; color: #fff; }
 
 #breadcrumb .container { padding: 0.5em; }
 
@@ -330,10 +330,7 @@ dl { border: none; }
 
 #breadcrumb address, #breadcrumb a { color: #fff; }
 
-@media all and (min-width: 640px) { #breadcrumb { background-image: url("images/downtown-medium.png"); }
-  #breadcrumb h1 { font-size: 3.75rem; } }
-
-@media all and (min-width: 1080px) { #breadcrumb { background-image: url("images/downtown-large.png"); } }
+@media all and (min-width: 640px) { #breadcrumb h1 { font-size: 3.75rem; } }
 
 @media all and (min-width: 640px) { #breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; } }
 

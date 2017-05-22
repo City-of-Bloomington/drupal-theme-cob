@@ -22,18 +22,15 @@ dl { border:none; }
 
     .container { text-align:center; }
 }
-
+#banner {
+    height:320px;
+    background: url('images/downtown-large.png') no-repeat center center;
+}
 #breadcrumb {
-    background-color: $color-accent;
-    min-height: 60vmin;
-    background: url('images/downtown-small.png') no-repeat center center;
-    background-size: cover;
-
     display:flex; flex-direction:column; justify-content:end;
 
-    #banner {
-        background-color:$color-heading; color:$color-content-background;
-    }
+    background-color:$color-heading; color:$color-content-background;
+
     .container { padding:$size-gutter; }
     h1 { font-size: $font-size-bigger; color:$color-content-background; }
 
@@ -44,20 +41,17 @@ dl { border:none; }
     address, a { color:$color-content-background; }
 
     @media all and (min-width: $viewport-medium) {
-        background-image:url('images/downtown-medium.png');
         h1 { font-size:$font-size-biggest; }
     }
-    @media all and (min-width: $viewport-large ) {
-        background-image:url('images/downtown-large.png' );
+
+    // These blocks are laying out lists of things in a grid
+    .contactInfo {
+        @media all and (min-width:$viewport-medium) {
+            > dl { display:inline-block; width:30%; vertical-align:middle; }
+        }
     }
 }
 
-// These blocks are laying out lists of things in a grid
-#breadcrumb .contactInfo {
-    @media all and (min-width:$viewport-medium) {
-        > dl { display:inline-block; width:30%; vertical-align:middle; }
-    }
-}
 #block-departmentstaff  > div,
 #block-committeemembers > div > div {
     font-size:$font-size-normal;

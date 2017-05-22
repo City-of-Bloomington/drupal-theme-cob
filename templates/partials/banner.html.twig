@@ -1,18 +1,14 @@
 {% if cover_image %}
 <style type="text/css">
-    #breadcrumb { background-image:url('{{ cover_image.cover_small }}'); }
-    @media all and (min-width:600px) { #breadcrumb { background-image:url('{{ cover_image.cover_medium }}'); }}
-    @media all and (min-width:990px) { #breadcrumb { background-image:url('{{ cover_image.cover_large  }}'); }}
+    #banner { background-image:url('{{ cover_image }}'); }
 </style>
 {% endif %}
-
+<div id="banner"></div>
 <div id="breadcrumb">
     {% if page.breadcrumb or contactInfo %}
-    <div id="banner">
-        <div class="container">
-            {{ page.breadcrumb }}
-            {% include '@cob/partials/contactInfo.html.twig' %}
-        </div>
+    <div class="container">
+        {{ page.breadcrumb }}
+        {% include '@cob/partials/contactInfo.html.twig' %}
     </div>
     {% endif %}
 </div>
