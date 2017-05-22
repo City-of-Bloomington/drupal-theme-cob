@@ -79,15 +79,9 @@ function cob_preprocess_page__front(&$vars)
     $node = \Drupal::entityTypeManager()->getStorage('node')->load(608);
     if ($node) {
         $vars['mayor']['summary'] = $node->get('body')->summary;
-        $img = $node->get('field_content_image')->first();
+        $img = $node->field_content_image->view('full');
         if ($img) {
-            $uri = $img->get('entity')
-                       ->getTarget()
-                       ->getValue()
-                       ->field_image
-                       ->entity
-                       ->getFileUri();
-            $vars['mayor']['content_image'] = ImageStyle::load('content_image')->buildUrl($uri);
+            $vars['mayor']['content_image'] = $img;
         }
     }
 }
