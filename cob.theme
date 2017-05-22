@@ -76,9 +76,11 @@ function cob_preprocess_page__front(&$vars)
             '#calendarId' => $id
         ];
     }
+
     $node = \Drupal::entityTypeManager()->getStorage('node')->load(608);
-    $vars['mayor']['summary'      ] = $node->get('body')->summary;
-    $vars['mayor']['content_image'] = ImageStyle::load('content_image')->buildUrl(
+    if (isset($node)) { 
+      $vars['mayor']['summary'      ] = $node->get('body')->summary;
+      $vars['mayor']['content_image'] = ImageStyle::load('content_image')->buildUrl(
         $node->get('field_content_image')
              ->first()
              ->get('entity')
@@ -87,7 +89,11 @@ function cob_preprocess_page__front(&$vars)
              ->field_image
              ->entity
              ->getFileUri()
-    );
+      );
+    } else {
+      \Drupal::logger('cob.theme')->notice("Mayor node(608) failed to load");
+    } 
+ 
 }
 
 function cob_preprocess_page(&$vars)
