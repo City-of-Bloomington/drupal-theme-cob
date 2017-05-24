@@ -161,7 +161,7 @@ body > header > .container h1 a { font-weight: bold; padding-left: 2em; }
 
 #government-section a { color: #212121; }
 
-#government-section a.code { background-image: url("images/alpha_icons/biscay/code-circle-o.svg"); }
+#government-section a.code { background-image: url("images/alpha_icons/biscay/circle-o.svg"); }
 
 #government-section a.budget { background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg"); }
 
@@ -226,6 +226,8 @@ aside.contactInfo a.phone { background-image: url("images/fa-svg/dark-slate/phon
 aside.contactInfo a.fax { background-image: url("images/fa-svg/dark-slate/fax.svg"); }
 
 aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/city_logo.svg"); }
+
+.cta-button { padding: 15px 25px; margin-top: 10px; }
 
 #block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { overflow: hidden; position: relative; height: 5em; min-width: 6em; border: 1px solid #183365; }
 

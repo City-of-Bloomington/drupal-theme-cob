@@ -247,25 +247,6 @@ function _cob_contactInfoFromNode(Node $node)
 
     $info[$nid] = [];
 
-    if ($node->hasField( 'field_committee')) {
-        $id = $node->get('field_committee')->value;
-        if ($id) {
-            $json = OnBoardService::committee_info($id);
-            if ($json) {
-                _cob_mapContactInfoFields($info[$nid], $json['info'], [
-                    'name'    => 'name',
-                    'email'   => 'email',
-                    'phone'   => 'phone',
-                    'address' => 'address',
-                    'city'    => 'city',
-                    'state'   => 'state',
-                    'zip'     => 'zip'
-                ]);
-                $info[$nid]['links']['onboard'] = OnBoardService::getUrl()."/committees/info?committee_id=".$json['info']['id'];
-            }
-        }
-    }
-
     if (empty($info[$nid]['facebook']) && $node->hasField('field_facebook_page')) {
         $v = $node->get('field_facebook_page')->getValue();
         if (!empty($v[0]['uri'])) {
