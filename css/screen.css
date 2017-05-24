@@ -296,21 +296,25 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .asm_animals > div, .boards-block, .departments-block, .info-list, .paragraph--type--info-list { text-align: center; }
 
-@media all and (min-width: 640px) { .asm_animals > div, .boards-block, .departments-block, .info-list, .promt_programs, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; } }
+@media all and (min-width: 640px) { .asm_animals > div, .boards-block, .departments-block, .info-list, .promt_programs, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
 
-.asm_animals > div a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; }
+.asm_animals article, .boards-block > div, .departments-block > div, .info-list > div, .promt_programs > article, .paragraph--type--info-card { height: auto; }
 
-.asm_animals > div a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto", sans-serif; font-size: 1.25rem; }
+.asm_animals article article, .boards-block > div article, .departments-block > div article, .info-list > div article, .promt_programs > article article, .paragraph--type--info-card article { height: auto; }
 
-.asm_animals > div a:hover, .boards-block > div a:hover, .departments-block > div a:hover, .info-list > div a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+.asm_animals article a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; overflow: hidden; }
 
-.asm_animals > div a:hover h3, .boards-block > div a:hover h3, .departments-block > div a:hover h3, .info-list > div a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+.asm_animals article a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto", sans-serif; font-size: 1.25rem; }
 
-.asm_animals > div a img, .boards-block > div a img, .departments-block > div a img, .info-list > div a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 26vw; }
+.asm_animals article a:hover, .boards-block > div a:hover, .departments-block > div a:hover, .info-list > div a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
 
-@media all and (min-width: 640px) { .asm_animals > div, .boards-block > div, .departments-block > div, .info-list > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 28vw; vertical-align: top; text-align: center; }
-  .asm_animals > div a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; overflow: hidden; }
-  .asm_animals > div a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 5px 0; } }
+.asm_animals article a:hover h3, .boards-block > div a:hover h3, .departments-block > div a:hover h3, .info-list > div a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+
+.asm_animals article a img, .boards-block > div a img, .departments-block > div a img, .info-list > div a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 320px; }
+
+@media all and (min-width: 640px) { .asm_animals article, .boards-block > div, .departments-block > div, .info-list > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 320px; vertical-align: top; text-align: center; }
+  .asm_animals article a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }
+  .asm_animals article a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 0.5em 0; } }
 
 dl { border: none; }
 
