@@ -93,6 +93,10 @@
         <aside>{{ content.field_content_image }}</aside>
         {% endif %}
 
+        {% if content.field_coordinates %}
+        <aside>{{ content.field_coordinates }}</aside>
+        {% endif %}
+
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
         {% if upcoming_events %}
         <aside>{{ upcoming_events }}</aside>
@@ -129,7 +133,7 @@
         {% endif %}
     </div>
     <div{{ content_attributes }}>
-        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_content_image') }}
+        {{ content|without('body','field_calendar', 'field_aside_title', 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_content_image', 'field_coordinates') }}
     </div>
     {% if program_search_form %}
     <div id="activities">
