@@ -10,6 +10,7 @@
 .asm_animals > div,
 .boards-block,
 .departments-block,
+.info-list,
 .paragraph--type--info-list {
     text-align:center;
 
@@ -18,6 +19,7 @@
     .asm_animals > div,
     .boards-block,
     .departments-block,
+    .info-list,
     .promt_programs,
     .paragraph--type--info-list > div {
         display:flex; flex-direction:row; flex-wrap:wrap;
@@ -29,6 +31,7 @@
 .asm_animals       > div,
 .boards-block      > div,
 .departments-block > div,
+.info-list         > div,
 .promt_programs > article,
 .paragraph--type--info-card {
     a {
