@@ -39,11 +39,9 @@
         <div>
             {% for type, files in meeting.files %}
             <div class="{{ type }}">
-                <h4>{{ type }}</h4>
-                    {% for file in files %}
-                    <a href="{{ file.url }}">{{ file.filename }}</a>
-                    {% endfor %}
-                </dl>
+                {% for i, file in files %}
+                <a href="{{ file.url }}">{{ type }}{{ i ? i : ''}}</a>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>

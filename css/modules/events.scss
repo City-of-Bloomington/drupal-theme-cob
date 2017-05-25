@@ -4,7 +4,7 @@
     article {
 
         overflow:hidden; position:relative;
-        height:5em;
+        height:auto; min-height:5em;
         min-width:6em;
         border:1px solid $color-header;
 
@@ -29,10 +29,6 @@
         > div {
             margin-left:6.5em;
             line-height:1.5em;
-            display:flex; flex-direction:row; justify-content:start;
-
-            > div { margin-right:1em; }
         }
     }
 }
-.onboard_meetings article { height:auto; min-height:5em; }
