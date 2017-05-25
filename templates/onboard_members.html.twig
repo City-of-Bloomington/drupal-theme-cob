@@ -14,8 +14,8 @@
 #}
 <div>
 {% for seat in committee.seats %}
-    {% if seat.currentMember %}
     <div>
+        {% if not seat.vacant %}
         <h3>{{ seat.currentMember.name }}</h3>
         <dl>{% if seat.appointedBy %}
             <dt>Appointed By:</dt>
@@ -30,8 +30,20 @@
             <dd>{{ seat.currentMember.termStartDate }}</dd>
             {% endif %}
         </dl>
+        {% else %}
+        <h3>Vacant</h3>
+        <dl>{% if seat.appointedBy %}
+            <dt>Appointed By:</dt>
+            <dd>{{ seat.appointedBy }}</dd>
+            {% endif %}
+
+            {% if seat.currentTerm %}
+            <dt>Term Expires</dt>
+            <dd>{{ seat.currentTerm.endDate }}</dd>
+            {% endif %}
+        </dl>
+        {% endif %}
     </div>
-    {% endif %}
 {% endfor %}
 </div>
 <nav>
