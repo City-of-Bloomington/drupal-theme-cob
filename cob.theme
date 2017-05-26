@@ -121,7 +121,7 @@ function cob_preprocess_node(&$vars)
     }
 
     $nid  = (int)$vars['node']->get('nid' )->value;
-    if ($nid === 250 || $vars['node']->hasField('field_promt_id')) {
+    if ($nid === 250) {
         $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
     }
 }
