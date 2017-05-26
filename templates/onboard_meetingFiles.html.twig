@@ -17,13 +17,14 @@
     <header>
         <h2>{{ year }} Meetings</h2>
         <div class="tools">
-            <a href="{{ path('onboard.meetings', {'node':node.id, 'year':year - 1}) }}">Back</a>
-            <a href="{{ path('onboard.meetings', {'node':node.id, 'year':year + 1}) }}">Next</a>
+            {% set route = 'onboard.meetings.node-' ~ node.id %}
+            <a href="{{ path(route, {'node':node.id, 'year':year - 1}) }}">Back</a>
+            <a href="{{ path(route, {'node':node.id, 'year':year + 1}) }}">Next</a>
         </div>
     </header>
     <nav>
     {% for y in years %}
-        <a href="{{ path('onboard.meetings', {'node':node.id, 'year':y}) }}">{{ y }}</a>
+        <a href="{{ path(route, {'node':node.id, 'year':y}) }}">{{ y }}</a>
     {% endfor %}
     </nav>
 
