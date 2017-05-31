@@ -2,33 +2,36 @@
 .onboard_meetings,
 .calendar_calendar {
     article {
+        display:flex; flex-direction:row; justify-content:start;
 
-        overflow:hidden; position:relative;
-        height:auto; min-height:5em;
-        min-width:6em;
+        height:136px; min-width:320px; overflow:hidden;
+
         border:1px solid $color-header;
 
-        .month, .monthDate { font-size:$font-size-big; font-weight:bold; }
+        .month, .monthDate { font-size:$font-size-bigger; font-weight:bold; }
         .weekday { }
         .summary { font-weight:bold;  }
-        .location {  }
+        .location { font-size:small; line-height:1.25em; }
         h4 { margin:0; }
 
         header {
-            position:absolute; left:0;
+            flex:0 0 118px; height:100%;
 
-            width:6em; height:100%;
             background-color:$color-alert;
             color:$color-content-background;
             font-family:$font-family-heading;
-            text-align:center;
-            vertical-align:middle;
 
-            time { display:inline-block; }
+            time {
+                height:100%; display:flex; flex-direction:column; justify-content:center;
+                div { text-align:center; line-height:1.5em; }
+            }
         }
         > div {
-            margin-left:6.5em;
-            line-height:1.5em;
+            line-height:1.5em; padding:$size-gutter;
+            display:flex; flex-direction:column; justify-content:center;
+
+            time { text-align:center; display:block; }
+            div  { text-align:center; height:3em; overflow:hidden; }
         }
     }
 }
