@@ -289,15 +289,21 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
 
+#news-section .container > div > .news .results { display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap; }
+
+#news-section .container > div > .news .results a { flex: 1 0 320px; }
+
+#news-section .container > div > .news .results a:first-child { flex: 1 1 100%; }
+
 #news-section .container > div aside { flex: 0 0 320px; }
 
 article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 160px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
 
 article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
-article.news.teaser header { flex: 1 0 48%; }
+article.news.teaser header { flex: 1 0 160px; }
 
-article.news.teaser .summary { flex: 1 0 48%; color: #212121; }
+article.news.teaser .summary { flex: 1 0 160px; color: #212121; }
 
 article.news.teaser.hasImage { padding-left: 148px; }
 

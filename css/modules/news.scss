@@ -3,7 +3,16 @@
         display:flex; flex-direction:row; justify-content:space-around; flex-wrap:wrap;
         width:100%;
 
-        > .news { flex:1 1 320px; margin:0 $size-gutter $size-gutter 0; }
+        > .news {
+            flex:1 1 320px; margin:0 $size-gutter $size-gutter 0;
+
+            .results {
+                display:flex; flex-direction:row; justify-content:space-between; flex-wrap:wrap;
+
+                a { flex:1 0 320px; }
+                a:first-child { flex:1 1 100%; }
+            }
+        }
         aside   { flex:0 0 320px; }
    }
 }
@@ -23,8 +32,8 @@ article.news.teaser {
         color: $color-link;
     }
 
-    header   { flex:1 0 48%; }
-    .summary { flex:1 0 48%; color:$color-text-default; }
+    header   { flex:1 0 160px; }
+    .summary { flex:1 0 160px; color:$color-text-default; }
 
     &.hasImage { padding-left:148px; }
     .entity_reference {
