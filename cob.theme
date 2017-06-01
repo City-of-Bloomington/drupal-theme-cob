@@ -112,14 +112,14 @@ function cob_preprocess_page(&$vars)
             $img = $vars['node']->get('field_cover_image')->first();
             if ($img) {
                 $styles = ['cover_small', 'cover_medium', 'cover_large'];
-                $uri = $img->get('entity')
-                           ->getTarget()
-                           ->getValue()
-                           ->field_image
-                           ->entity
-                           ->getFileUri();
-                foreach ($styles as $s) {
-                    $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($uri);
+                $target = $img->get('entity')->getTarget();
+                if ($target) {
+                    $ent = $target->getValue()->field_image->entity;
+                    if ($ent) {
+                        foreach ($styles as $s) {
+                            $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($ent->getFileUri());
+                        }
+                    }
                 }
             }
         }
