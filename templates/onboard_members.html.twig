@@ -16,7 +16,7 @@
 {% for seat in committee.seats %}
     <div>
         {% if not seat.vacant %}
-        <h3>{{ seat.currentMember.name }}</h3>
+        <h3>{{ seat.currentMember.firstname }} {{ seat.currentMember.lastname }}</h3>
         <dl>{% if seat.appointedBy %}
             <dt>Appointed By:</dt>
             <dd>{{ seat.appointedBy }}</dd>
