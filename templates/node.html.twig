@@ -77,9 +77,6 @@
     <header>
         {{ title_prefix }}
         {% if display_submitted %}
-            {% if node.bundle == 'news' and view_mode == 'full' %}
-            <strong>FOR IMMEDIATE RELEASE</strong>
-            {% endif %}
             {% set isodate = node.getCreatedTime %}
             <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
         {% endif %}

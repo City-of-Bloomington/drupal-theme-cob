@@ -216,6 +216,11 @@ function cob_preprocess_field__field_related_links(&$vars)
     }
 }
 
+function cob_preprocess_field__node__body__news(&$vars)
+{
+    $vars['label'] = $vars['element']['#object']->getTitle();
+}
+
 /**
  * Pretty prints military time
  *

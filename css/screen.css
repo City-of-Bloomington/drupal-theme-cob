@@ -7,7 +7,7 @@ h2 { font-size: 1.9rem; }
 section { margin: 0; }
 
 @media all and (min-width: 640px) { #intro { display: flex; flex-direction: row; flex-wrap: wrap; }
-  #intro .text_with_summary, #intro .promt_program { flex-basis: 55%; margin-right: 5%; }
+  #intro > div { flex-basis: 55%; margin-right: 5%; }
   #intro aside { flex-basis: 40%; width: 40%; } }
 
 @media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
@@ -306,6 +306,8 @@ article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0
 article.news.teaser .entity_reference img { width: 140px; height: auto; }
 
 article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
+
+article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin-bottom: 0; }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .asm_animals > div, .boards-block, .departments-block, .info-list, .paragraph--type--info-list { text-align: center; }
