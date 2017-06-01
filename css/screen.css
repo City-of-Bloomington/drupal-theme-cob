@@ -179,7 +179,7 @@ body > header > .container h1 a { font-weight: bold; padding-left: 2em; }
 
 #government-section a:hover h2 { color: #fff; }
 
-#government-section a.code { background-image: url("images/alpha_icons/biscay/code-circle-o.svg"); }
+#government-section a.code:hover { background-image: url("images/alpha_icons/white/code-circle-o.svg"); }
 
 #government-section a.budget:hover { background-image: url("images/alpha_icons/white/moneybag-circle-o.svg"); }
 
