@@ -72,79 +72,18 @@
  * @ingroup themeable
  */
 #}
-<article{{ attributes }} class="{{ node.bundle }} {{ view_mode }}">
-    {% if display_submitted or not page %}
+<a href="{{ url }}" rel="bookmark">
+<article class="news teaser{% if content.field_content_image['#items'] %} hasImage{% endif %}">
+    {{ content.field_content_image }}
     <header>
-        {{ title_prefix }}
-        {% if display_submitted %}
-            {% if node.bundle == 'news' and view_mode == 'full' %}
-            <strong>FOR IMMEDIATE RELEASE</strong>
-            {% endif %}
-            {% set isodate = node.getCreatedTime %}
-            <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
-        {% endif %}
-        {% if not page %}
-        <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
-        {% endif %}
-        {{ title_suffix }}
+        {% set isodate = node.getCreatedTime %}
+        <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
+        <h3{{ title_attributes }}>{{ label }}</h3>
     </header>
-    {% endif %}
-    {% if view_mode == 'full' %}
-    <div id="intro">
-        {{ content.field_contacts }}
-        {{ content.body }}
-        {% if content.field_content_image %}
-        <aside>{{ content.field_content_image }}</aside>
-        {% endif %}
-
-        {% if content.field_coordinates %}
-        <aside>{{ content.field_coordinates }}</aside>
-        {% endif %}
-
-        {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-        {% if upcoming_events %}
-        <aside>{{ upcoming_events }}</aside>
-        {% endif %}
-
-        {% if content.field_aside %}
-        <aside>
-        {{ content.field_aside_title }}
-        {{ content.field_aside }}
-        </aside>
-        {% endif %}
+    {% if node.body.summary %}
+    <div class="summary">
+    {{ node.body.summary }}
     </div>
-    <div{{ content_attributes }}>
-        {{ content|without(
-                'body', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links',
-                'field_content_image', 'field_coordinates')
-        }}
-    </div>
-    {% if program_search_form %}
-    <div id="activities">
-        <section>
-            <header>
-                <h3>Find Activities</h3>
-                <p> Search for specific activities and programs by filtering on
-                    type, age, or location.  Find the exact activities you are
-                    interested in.
-                </p>
-            </header>
-            {{ program_search_form }}
-        </section>
-    </div>
-    {% endif %}
-    {% set related_links %}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
-    {% if  related_links %}
-    <nav id="related-links">
-        <header>
-            <h2>Related Categories</h2>
-        </header>
-        <div>{{ related_links }}</div>
-    </nav>
-    {% endif %}
-
-    {% else %}
-    {{ content }}
     {% endif %}
 </article>
+</a>

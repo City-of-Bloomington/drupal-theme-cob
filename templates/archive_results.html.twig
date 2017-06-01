@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Displays a list of node results
+ *
+ * Available variables
+ * - results: The node render arrays
+ * - events:  Events from a Google Calendar
+ *
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ */
+#}
+<section id="news-section">
+    <div class="container">
+        <div>
+            <div class="news">
+                <header>
+                    <h2>{% if month %}{{ start|date('F') }} {% endif %}{{ year }} News</h2>
+                </header>
+                {{ form }}
+                <div class="results">
+                    {{ results }}
+                </div>
+            </div>
+            <aside class="calendar_calendar">
+                <header><h2>Events</h2></header>
+                {{ events }}
+            </aside>
+        </div>
+    </div>
+</section>

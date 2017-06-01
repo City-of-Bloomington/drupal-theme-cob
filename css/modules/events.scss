@@ -6,7 +6,7 @@
 
         height:136px; min-width:320px; overflow:hidden;
 
-        border:1px solid $color-header;
+        border:1px solid $color-divider;
 
         .month, .monthDate { font-size:$font-size-bigger; font-weight:bold; }
         .weekday { }

@@ -73,10 +73,13 @@
                 <header><h2>News &amp; Events</h2></header>
                 <div>
                     <div class="news">
-                    {{ page.content }}
+                        <div class="results">
+                            {{ news }}
+                        </div>
+                        <a href="{{ base_path }}/news" class="button">Newsroom</a>
                     </div>
                     <aside class="calendar_calendar">
-                    {{ events }}
+                        {{ events }}
                     </aside>
                 </div>
             </div>

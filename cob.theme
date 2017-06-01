@@ -49,33 +49,53 @@ function cob_preprocess(&$vars, $hook)
     }
 }
 
+/**
+ * @param  string $calendar_id  The Google Calendar ID
+ * @return array                An array of Google Calendar Events
+ */
+function _cob_frontcalendar_events($calendar_id)
+{
+    $numdays   = 7;
+    $maxevents = 4;
+
+    $start = new \DateTime();
+    $end   = new \DateTime();
+    $end->add(new \DateInterval("P{$numdays}D"));
+
+    $events  = GoogleGateway::events($calendar_id, $start, $end);
+    $display = [];
+    $count   = 0;
+    foreach ($events as $e) {
+        if (++$count > $maxevents) { break; }
+
+        $display[] = $e;
+    }
+    return $display;
+}
+
 function cob_preprocess_page__front(&$vars)
 {
     $id = Settings::get('cob_front_calendar');
     if ($id) {
-        $numdays   = 7;
-        $maxevents = 4;
-
-        $start = new \DateTime();
-        $end   = new \DateTime();
-        $end->add(new \DateInterval("P{$numdays}D"));
-
-        $events  = GoogleGateway::events($id, $start, $end);
-        $display = [];
-        $count   = 0;
-        foreach ($events as $e) {
-            if (++$count > $maxevents) { break; }
-
-            $display[] = $e;
-        }
-
         $vars['events'] = [
             '#theme'      => 'calendar_events',
-            '#events'     => $display,
+            '#events'     => _cob_frontcalendar_events($id),
             '#calendarId' => $id
         ];
     }
-    $node = \Drupal::entityTypeManager()->getStorage('node')->load(608);
+
+    $manager = \Drupal::entityTypeManager();
+    $query   = \Drupal::entityQuery('node')
+                ->condition('type',    'news')
+                ->condition('status',  1)
+                ->sort('created', 'desc')
+                ->range(0, 5);
+    $vars['news'] = $manager->getViewBuilder('node')->viewMultiple(
+                        $manager->getStorage('node')->loadMultiple($query->execute()),
+                        'teaser'
+                    );
+
+    $node = $manager->getStorage('node')->load(608);
     if ($node) {
         $vars['mayor']['summary'] = $node->get('body')->summary;
         $img = $node->field_content_image->view('full');
@@ -123,6 +143,18 @@ function cob_preprocess_node(&$vars)
     $nid  = (int)$vars['node']->get('nid' )->value;
     if ($nid === 250) {
         $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
+    }
+}
+
+function cob_preprocess_archive_results(&$vars)
+{
+    $id = Settings::get('cob_front_calendar');
+    if ($id) {
+        $vars['events'] = [
+            '#theme'      => 'calendar_events',
+            '#events'     => _cob_frontcalendar_events($id),
+            '#calendarId' => $id
+        ];
     }
 }
 

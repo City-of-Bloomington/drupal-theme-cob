@@ -229,19 +229,27 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .cta-button { padding: 15px 25px; margin-top: 10px; }
 
-#block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { overflow: hidden; position: relative; height: auto; min-height: 5em; min-width: 6em; border: 1px solid #183365; }
+#block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 136px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
 
-#block-upcomingevents article .month, #block-upcomingevents article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.25rem; font-weight: bold; }
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
 
 #block-upcomingevents article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
 
+#block-upcomingevents article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
+
 #block-upcomingevents article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
 
-#block-upcomingevents article header, .onboard_meetings article header, .calendar_calendar article header { position: absolute; left: 0; width: 6em; height: 100%; background-color: #ffc95c; color: #fff; font-family: "Lora", serif; text-align: center; vertical-align: middle; }
+#block-upcomingevents article header, .onboard_meetings article header, .calendar_calendar article header { flex: 0 0 118px; height: 100%; background-color: #ff9800; color: #fff; font-family: "Lora", serif; }
 
-#block-upcomingevents article header time, .onboard_meetings article header time, .calendar_calendar article header time { display: inline-block; }
+#block-upcomingevents article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
-#block-upcomingevents article > div, .onboard_meetings article > div, .calendar_calendar article > div { margin-left: 6.5em; line-height: 1.5em; }
+#block-upcomingevents article header time div, .onboard_meetings article header time div, .calendar_calendar article header time div { text-align: center; line-height: 1.5em; }
+
+#block-upcomingevents article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
+
+#block-upcomingevents article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
+
+#block-upcomingevents article > div div, .onboard_meetings article > div div, .calendar_calendar article > div div { text-align: center; height: 3em; overflow: hidden; }
 
 @media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
   .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
@@ -277,17 +285,27 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 @media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
   #about-section .container > div p { margin-left: 50%; font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; padding-left: 1.5em; padding-right: 1.5em; } }
 
-@media all and (min-width: 640px) { #news-section .container > div { padding: 0 0.5em; display: flex; flex-direction: row; justify-content: space-between; }
-  #news-section .container > div .news { width: 55%; }
-  #news-section .container > div aside { width: 40%; } }
+#news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
 
-#news-section .news article { border-color: #183365; border-style: solid; border-width: 8px 1px 1px 1px; padding: 0.5em; overflow: hidden; height: 15vh; }
+#news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
 
-#news-section .news article h2 { width: 48%; float: left; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; text-align: left; }
+#news-section .container > div aside { flex: 0 0 320px; }
 
-#news-section .news article > div { width: 48%; float: left; }
+article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 160px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
 
-#news-section .news article time { float: right; }
+article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+
+article.news.teaser header { flex: 1 0 48%; }
+
+article.news.teaser .summary { flex: 1 0 48%; color: #212121; }
+
+article.news.teaser.hasImage { padding-left: 148px; }
+
+article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0; left: 0; }
+
+article.news.teaser .entity_reference img { width: 140px; height: auto; }
+
+article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 .asm_animals > div, .boards-block, .departments-block, .info-list, .paragraph--type--info-list { text-align: center; }
