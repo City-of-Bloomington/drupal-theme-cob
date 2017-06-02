@@ -259,7 +259,7 @@ function cob_preprocess_field__field_hours(&$vars)
         foreach (explode("\n", $item['content']['#context']['value']) as $line) {
             $hour = explode(',', $line);
             if (count($hour) === 3) {
-                $day   = $days[$hour[0]];
+                $day   = $days[trim($hour[0])];
                 $start = _cob_ftime($hour[1]);
                 $end   = _cob_ftime($hour[2]);
 
