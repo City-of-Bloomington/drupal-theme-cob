@@ -1,14 +1,10 @@
 section { margin:0; }
 
-@media all and (min-width:$viewport-medium) {
-    #intro {
-        display:flex;
-        flex-direction: row;
-        flex-wrap:wrap;
+#intro {
+    display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;
 
-        > div { flex-basis:55%; margin-right:5%; }
-        aside { flex-basis:40%; width:40%; }
-    }
+    > div { flex:1 0 340px; margin-right:$size-gutter;    }
+    aside { flex:auto; max-width:340px; min-width:320px; }
 }
 
 @media all and (min-width: $viewport-large) {

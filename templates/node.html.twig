@@ -90,23 +90,21 @@
     <div id="intro">
         {{ content.field_contacts }}
         {{ content.body }}
-        {% if content.field_content_image %}
-        <aside>{{ content.field_content_image }}</aside>
-        {% endif %}
-
-        {% if content.field_coordinates %}
-        <aside>{{ content.field_coordinates }}</aside>
-        {% endif %}
 
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-        {% if upcoming_events %}
-        <aside>{{ upcoming_events }}</aside>
-        {% endif %}
-
-        {% if content.field_aside %}
+        {% if content.field_content_image
+           or content.field_coordinates
+           or content.field_aside
+           or upcoming_events
+        %}
         <aside>
-        {{ content.field_aside_title }}
-        {{ content.field_aside }}
+            {% if content.field_aside %}
+            {{ content.field_aside_title   }}
+            {{ content.field_aside         }}
+            {% endif %}
+            {{ content.field_content_image }}
+            {{ upcoming_events             }}
+            {{ content.field_coordinates   }}
         </aside>
         {% endif %}
     </div>

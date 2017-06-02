@@ -6,9 +6,11 @@ h2 { font-size: 1.9rem; }
 
 section { margin: 0; }
 
-@media all and (min-width: 640px) { #intro { display: flex; flex-direction: row; flex-wrap: wrap; }
-  #intro > div { flex-basis: 55%; margin-right: 5%; }
-  #intro aside { flex-basis: 40%; width: 40%; } }
+#intro { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+
+#intro > div { flex: 1 0 340px; margin-right: 0.5em; }
+
+#intro aside { flex: auto; max-width: 340px; min-width: 320px; }
 
 @media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1080px; margin: 0 auto; } }
 
@@ -372,7 +374,8 @@ dl { border: none; }
 
 @media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers > div > div { display: flex; flex-flow: row wrap; justify-content: space-between; }
   #block-departmentstaff > div h3, #block-committeemembers > div > div h3 { margin: 0; }
-  #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 25%; text-align: center; } }
+  #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 25%; text-align: center; margin-bottom: 1rem; padding: .5rem; }
+  #block-departmentstaff > div > div dl dd, #block-committeemembers > div > div > div dl dd { line-height: 2rem; } }
 
 @media all and (min-width: 1080px) { #block-departmentstaff > div, #block-committeemembers > div > div { width: 1080px; margin: 0 auto; } }
 
