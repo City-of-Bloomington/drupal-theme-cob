@@ -229,7 +229,7 @@ aside.contactInfo a.fax { background-image: url("images/fa-svg/dark-slate/fax.sv
 
 aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/city_logo.svg"); }
 
-.cta-button { padding: 15px 25px; margin-top: 10px; }
+.button { padding: 15px 25px; margin-top: 10px; }
 
 #block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 136px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
 

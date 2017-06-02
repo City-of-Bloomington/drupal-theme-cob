@@ -197,7 +197,6 @@ function cob_preprocess_field__field_call_to_action(&$vars)
 {
     foreach ($vars['items'] as $i=>$item) {
         $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
-        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'cta-button';
     }
 }
 
