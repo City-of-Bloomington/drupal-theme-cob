@@ -8,7 +8,8 @@
     ul { list-style:disc    outside; margin-left:1em; }
     ol { list-style:decimal outside; margin-left:1em; }
 
-    .text_with_summary a { color:$color-heading; text-decoration:underline; }
+    .text_with_summary a,
+    .text_long         a { color:$color-heading; text-decoration:underline; }
 
     .container {
         padding:$size-gutter;

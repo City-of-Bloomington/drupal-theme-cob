@@ -56,7 +56,7 @@ body > header > .container h1 a { font-weight: bold; padding-left: 2em; }
 
 #content ol { list-style: decimal outside; margin-left: 1em; }
 
-#content .text_with_summary a { color: #3f9dff; text-decoration: underline; }
+#content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 
 #content .container { padding: 0.5em; }
 
