@@ -32,3 +32,16 @@
         }
     }
 }
+
+#mayor-section {
+    .container > div {
+        display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-evenly;
+        > div, > p {
+            flex:1 0 320px;
+        }
+
+        .entity_reference > div {
+            text-align:center;
+        }
+    }
+}

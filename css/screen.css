@@ -264,9 +264,9 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #parks-guide-page #activities h2 { background-color: #3f9dff; color: #fff; }
 
-#news-section .container > header, #about-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+#news-section .container > header, #about-section .container > header, #mayor-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section .container > header h2, #about-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #3f9dff; }
+#news-section .container > header h2, #about-section .container > header h2, #mayor-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #3f9dff; }
 
 .paragraph > header, #related-links > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
@@ -284,6 +284,12 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 @media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
   #about-section .container > div p { margin-left: 50%; font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; padding-left: 1.5em; padding-right: 1.5em; } }
+
+#mayor-section .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
+
+#mayor-section .container > div > div, #mayor-section .container > div > p { flex: 1 0 320px; }
+
+#mayor-section .container > div .entity_reference > div { text-align: center; }
 
 #news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
 

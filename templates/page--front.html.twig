@@ -104,6 +104,16 @@
             </div>
         </section>
 
+        <section id="mayor-section">
+            <div class="container">
+                <header><h2>Mayor John Hamilton</h2></header>
+                <div>
+                    {{ mayor.content_image }}
+                    <p>{{ mayor.summary }}</p>
+                </div>
+            </div>
+        </section>
+
         <section id="government-section">
             <div class="container">
                 <header><h2>City Government</h2></header>
@@ -113,15 +123,6 @@
                             Learn about Boards &amp; Commission opportunities
                         </h3>
                     </header>
-                    <div>
-                        {{ mayor.content_image }}
-                        <section>
-                            <header>
-                                <h4>About the Mayor</h4>
-                                <p>{{ mayor.summary }}</p>
-                            </header>
-                        </section>
-                    </div>
                 </section>
                 <nav>
                     <a href="{{ base_path }}municipal-code" class="code">

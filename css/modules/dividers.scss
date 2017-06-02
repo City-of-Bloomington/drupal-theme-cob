@@ -37,7 +37,7 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
 
 
 // Dark foreground, light background
-#news-section, #about-section, #government-section {
+#news-section, #about-section, #mayor-section, #government-section {
     .container > header {
         background-image:$divider-dark;
         h2 { background-color:$color-content-background; color:$color-heading; }
