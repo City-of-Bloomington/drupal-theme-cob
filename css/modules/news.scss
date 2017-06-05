@@ -12,7 +12,7 @@
                     height:660px;
                     display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr 1fr;
                 }
-                a:first-child, a:last-child {
+                a:first-child {
                     grid-column-start:1; grid-column-end:3;
                 }
             }
