@@ -1,4 +1,11 @@
-.front header > h2 { text-transform:uppercase; }
+.front {
+    header > h2 { text-transform:uppercase; }
+
+    aside.calendar_calendar {
+        height:734px;
+        display:flex; flex-direction:column; justify-content:space-between;
+    }
+}
 
 #services-section, #government-section {
     nav {

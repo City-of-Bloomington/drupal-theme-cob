@@ -12,6 +12,9 @@
                 a { flex:1 0 320px; }
                 a:first-child { flex:1 1 100%; }
             }
+            > div:last-child {
+                text-align:center;
+            }
         }
         aside   { flex:0 0 320px; }
    }
@@ -20,7 +23,7 @@
 article.news.teaser {
     display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;
 
-    height:160px; overflow:hidden;
+    height:$size-newstoevents-base; overflow:hidden;
     margin-right:$size-gutter; padding:50px 0 0 $size-gutter;
 
     border-color: $color-header $color-divider $color-divider;

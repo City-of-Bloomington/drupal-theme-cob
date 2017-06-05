@@ -4,7 +4,7 @@
     article {
         display:flex; flex-direction:row; justify-content:start;
 
-        height:136px; min-width:320px; overflow:hidden;
+        height:$size-newstoevents-base; min-width:320px; overflow:hidden;
 
         border:1px solid $color-divider;
 
@@ -33,5 +33,8 @@
             time { text-align:center; display:block; }
             div  { text-align:center; height:3em; overflow:hidden; }
         }
+    }
+    > div {
+        text-align:center;
     }
 }

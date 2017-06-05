@@ -8,7 +8,7 @@ section { margin: 0; }
 
 #intro { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
 
-#intro > div { flex: 1 0 340px; margin-right: 0.5em; }
+#intro > div { flex: 1 0 340px; margin-right: 8px; }
 
 #intro aside { flex: auto; max-width: 340px; min-width: 320px; }
 
@@ -16,7 +16,7 @@ section { margin: 0; }
 
 #hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
 
-label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
+label[for="hamburger"] { position: absolute; top: 4px; left: 4px; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
 
 #nav1 { margin: 0; padding: 0; border: 0; width: 1px; height: 1px; overflow: hidden; position: absolute; background-color: #fff; }
 
@@ -44,7 +44,7 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 @media all and (min-width: 640px) { body > header > .container { display: flex; flex-direction: row; justify-content: space-between; }
   body > header > .container h1 a { font-size: 1.25rem; } }
 
-#feedback { position: absolute; top: 0.5em; right: 0.5em; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
+#feedback { position: absolute; top: 8px; right: 8px; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
 
 @media all and (min-width: 640px) { #feedback { right: 50%; } }
 
@@ -64,7 +64,7 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #block-searchform #edit-actions .button { width: 34px; height: 100%; padding: 0; border: 0; border-radius: 0; margin: 0; }
 
-#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 100%; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 8px; width: 100%; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
 
 @media all and (min-width: 640px) { #block-searchform { flex: 0 0 320px; } }
 
@@ -75,13 +75,13 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 
-#content .container { padding: 0.5em; }
+#content .container { padding: 8px; }
 
-#content .container > section { padding: 0.5em 0; }
+#content .container > section { padding: 8px 0; }
 
 #content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
 
-#content .container > section .container { overflow: auto; padding: 0.5em; }
+#content .container > section .container { overflow: auto; padding: 8px; }
 
 @media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
 
@@ -113,7 +113,7 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #promt-programsearchform { display: table; }
 
-#promt-programsearchform .form-item { margin-bottom: 0.5em; }
+#promt-programsearchform .form-item { margin-bottom: 8px; }
 
 #promt-programsearchform label { display: inline-block; width: 5em; }
 
@@ -124,15 +124,15 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 /** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
 #block-cob-local-tasks { margin: 1em 0; }
 
-#block-cob-local-tasks a { font-family: "Roboto", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+#block-cob-local-tasks a { font-family: "Roboto", sans-serif; background-color: #183365; color: #fff; padding: 8px; border-radius: 8px; }
 
 #block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
 
 #block-cob-local-tasks a.is-active { background-color: #c9e5f7; }
 
-#block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
+#block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 16px 16px; background-image: url("images/fa-svg/white/search.svg"); }
 
-#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 0.5em center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
+#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 8px center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
 
 #nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
 
@@ -142,9 +142,9 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
 
-@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
+@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 8px; font-size: 1.125rem; line-height: 1.25em; } }
 
-#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 8px; }
 
 #services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
 
@@ -248,7 +248,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .button { padding: 15px 25px; margin-top: 10px; }
 
-#block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 136px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
+#block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 152px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
 
 #block-upcomingevents article .month, #block-upcomingevents article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
 
@@ -264,14 +264,16 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article header time div, .onboard_meetings article header time div, .calendar_calendar article header time div { text-align: center; line-height: 1.5em; }
 
-#block-upcomingevents article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
+#block-upcomingevents article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 8px; display: flex; flex-direction: column; justify-content: center; }
 
 #block-upcomingevents article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
 
 #block-upcomingevents article > div div, .onboard_meetings article > div div, .calendar_calendar article > div div { text-align: center; height: 3em; overflow: hidden; }
 
+#block-upcomingevents > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
+
 @media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
-  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
+  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 8px; font-size: 1.9rem; font-weight: 900; } }
 
 #services-section { background-color: #183365; }
 
@@ -293,6 +295,8 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .front header > h2 { text-transform: uppercase; }
 
+.front aside.calendar_calendar { height: 734px; display: flex; flex-direction: column; justify-content: space-between; }
+
 #services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
 
 #services-section nav h2, #government-section nav h2 { font-family: "Roboto", sans-serif; font-size: 1.25rem; color: #183365; height: 2.5em; }
@@ -312,7 +316,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
 
-#news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
+#news-section .container > div > .news { flex: 1 1 320px; margin: 0 8px 8px 0; }
 
 #news-section .container > div > .news .results { display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap; }
 
@@ -320,9 +324,11 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #news-section .container > div > .news .results a:first-child { flex: 1 1 100%; }
 
+#news-section .container > div > .news > div:last-child { text-align: center; }
+
 #news-section .container > div aside { flex: 0 0 320px; }
 
-article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 160px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
+article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 152px; overflow: hidden; margin-right: 8px; padding: 50px 0 0 8px; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
 
 article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
@@ -336,7 +342,7 @@ article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0
 
 article.news.teaser .entity_reference img { width: 140px; height: auto; }
 
-article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
+article.news.teaser time { position: absolute; top: 20px; right: 8px; font-family: "Lora", serif; font-weight: bold; color: #183365; }
 
 article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin-bottom: 0; }
 
@@ -360,12 +366,12 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
 .asm_animals article a img, .boards-block > div a img, .departments-block > div a img, .info-list > div a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 320px; }
 
 @media all and (min-width: 640px) { .asm_animals article, .boards-block > div, .departments-block > div, .info-list > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 320px; vertical-align: top; text-align: center; }
-  .asm_animals article a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }
-  .asm_animals article a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 0.5em 0; } }
+  .asm_animals article a, .boards-block > div a, .departments-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 16px; height: 290px; }
+  .asm_animals article a h3, .boards-block > div a h3, .departments-block > div a h3, .info-list > div a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 8px 0; } }
 
 dl { border: none; }
 
-#highlighted { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
+#highlighted { background-color: #ed9a9c; color: #fff; padding: 8px; font-weight: bold; }
 
 #highlighted .container { text-align: center; }
 
@@ -373,7 +379,7 @@ dl { border: none; }
 
 #breadcrumb { display: flex; flex-direction: column; justify-content: end; background-color: #3f9dff; color: #fff; }
 
-#breadcrumb .container { padding: 0.5em; }
+#breadcrumb .container { padding: 8px; }
 
 #breadcrumb h1 { font-size: 1.9rem; color: #fff; }
 
@@ -406,7 +412,7 @@ dl { border: none; }
 
 #related-links a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
 
-body > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
+body > footer { background-color: #4a4a4a; color: #fff; padding: 8px; }
 
 body > footer a { font-size: 1.25rem; color: #fff; display: block; text-align: left; }
 
