@@ -271,7 +271,6 @@ function cob_preprocess_field__field_hours(&$vars)
 
 function cob_form_search_block_form_alter(&$form, &$form_state)
 {
-    $form['#prefix'] = "<a href=\"https://docs.google.com/a/bloomington.in.gov/forms/d/1ydyb7gHV4x7SUnguHcQILDDWHKTkZ7K-u6bewn6GNp0/viewform\">Feedback</a>";
     $form['keys']['#attributes']['placeholder'][] = 'Type here';
 }
 

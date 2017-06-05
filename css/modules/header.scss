@@ -4,45 +4,64 @@ body > header {
     padding: 0;
 
     > .container {
-        display:flex;
-        justify-content:space-between;
-        height:2em;
+        min-height:2em;
+
         font-size:$font-size-big;
 
-        h1 { margin:0; }
+        h1 {
+            margin:0;
+            a { margin:0; padding:0; font-size:$font-size-normal; font-weight:bold; }
+        }
         a {
             color: $color-content-background;
             font-size:$font-size-normal; font-weight:bold;
         }
-        h1 a {
-            font-weight:bold;
-            padding-left:2em;
-        }
 
         @media all and (min-width:$viewport-medium) {
-            h1 a { padding:0; font-size:$font-size-big; }
+            h1 a { font-size:$font-size-big; }
+
+            display:flex; flex-direction:row; justify-content:space-between;
         }
+    }
+}
+#block-cob-branding {
+    padding-left:2em;
+
+    @media all and (min-width:$viewport-medium) {
+        padding:0;
+        flex:1 0 320px;
     }
 }
 #block-searchform {
     form {
-        display:inline-flex;
-        flex-direction:row;
+        height:2em; margin:0;
+        display:flex; flex-direction:row; justify-content:stretch;
 
+        div { height:100%; }
+        input { display:block; height:100%; }
     }
-    div, form { height:100%; margin:0; padding:0; }
+    .form-item {
+        flex:1 0 286px;
+    }
+
     #edit-actions {
+        flex:0 0 34px;
+
         .button {
-            width:2em; height:100%;
-            padding-top:0; padding-bottom:0;
+            width:34px; height:100%;
+            padding:0;
             border:0; border-radius:0;
             margin:0;
         }
     }
     input[type="search"] {
         border:0; padding:0 0 0 $size-gutter;
-        width:10em; height:100%;
+        width:100%; height:100%;
         font-size:$font-size-big;
         background-color:$color-selected-background;
+    }
+
+    @media all and (min-width:$viewport-medium) {
+        flex:0 0 320px;
     }
 }

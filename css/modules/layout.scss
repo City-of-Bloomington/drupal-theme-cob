@@ -13,6 +13,6 @@ section { margin:0; }
     body > footer        .container,
     main > div           .container,
     main > section >     .container {
-        width:$viewport-large; margin:0 auto;
+        width:$viewport-large - 20px; margin:0 auto;
     }
 }
