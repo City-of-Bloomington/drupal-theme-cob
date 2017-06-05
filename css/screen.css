@@ -44,6 +44,10 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 @media all and (min-width: 640px) { body > header > .container { display: flex; flex-direction: row; justify-content: space-between; }
   body > header > .container h1 a { font-size: 1.25rem; } }
 
+#feedback { position: absolute; top: 0.5em; right: 0.5em; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
+
+@media all and (min-width: 640px) { #feedback { right: 50%; } }
+
 #block-cob-branding { padding-left: 2em; }
 
 @media all and (min-width: 640px) { #block-cob-branding { padding: 0; flex: 1 0 320px; } }

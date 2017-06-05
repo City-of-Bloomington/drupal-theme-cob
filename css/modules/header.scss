@@ -24,6 +24,15 @@ body > header {
         }
     }
 }
+#feedback {
+    position:absolute; top:$size-gutter; right:$size-gutter;
+    color:white;
+    font-family:$font-family-nav; font-size:$font-size-normal; font-weight:bold;
+
+    @media all and (min-width:$viewport-medium) {
+        right:50%;
+    }
+}
 #block-cob-branding {
     padding-left:2em;
 
