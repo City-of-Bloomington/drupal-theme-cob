@@ -1,9 +1,12 @@
 .front {
     header > h2 { text-transform:uppercase; }
 
-    aside.calendar_calendar {
-        height:734px;
+    aside.calendar_calendar .events {
+        height:660px;
         display:flex; flex-direction:column; justify-content:space-between;
+        article {
+            margin:0;
+        }
     }
 }
 

@@ -6,11 +6,15 @@
         > .news {
             flex:1 1 320px; margin:0 $size-gutter $size-gutter 0;
 
-            .results {
-                display:flex; flex-direction:row; justify-content:space-between; flex-wrap:wrap;
 
-                a { flex:1 0 320px; }
-                a:first-child { flex:1 1 100%; }
+            @media all and (min-width:$viewport-medium) {
+                .results {
+                    height:660px;
+                    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr 1fr;
+                }
+                a:first-child, a:last-child {
+                    grid-column-start:1; grid-column-end:3;
+                }
             }
             > div:last-child {
                 text-align:center;
@@ -23,7 +27,7 @@
 article.news.teaser {
     display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;
 
-    height:$size-newstoevents-base; overflow:hidden;
+    height:151px; overflow:hidden;
     margin-right:$size-gutter; padding:50px 0 0 $size-gutter;
 
     border-color: $color-header $color-divider $color-divider;
