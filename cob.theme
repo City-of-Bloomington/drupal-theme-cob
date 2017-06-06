@@ -12,15 +12,23 @@ use Drupal\directory\DirectoryService;
 use Drupal\onboard\OnBoardService;
 
 /**
- * Prepare contact information for PROMT programs
+ * Prepare contact information for various modules
  *
+ * This hook will get called multiple times for a single page render.
+ * We rely on the fact that module hooks get called before the general page
+ * hook. During the module hook call, we set a location_id.  Then, during the
+ * page hook call, we load the chosen node.  Once we have a the node loaded, we
+ * let the normal cob_preprocess_page() handle rendering contact information
+ * for that node.
+ *
+ * PROMT
  * The promt module will be rendering promt programs.  When we are displaying
  * a single program that has a location, we need to use the contact information
- * from the Drupal node that has that location_id.
+ * from the Drupal node that has that location_id. We are storing the
+ * location_id as the field_promt_id for Drupal's content type: location.
  *
- * We are storing the location_id as the field_promt_id for Drupal's
- * content type: location.  Once we have a the node loaded, we let the normal
- * cob_preprocess_page() handle rendering contact information for that node.
+ * Animal Shelter
+ * All animal shelter routes are for the same location: 204
  *
  * @implements module_preprocess()
  * @see https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/group/themeable/8.2.x
@@ -28,21 +36,36 @@ use Drupal\onboard\OnBoardService;
 function cob_preprocess(&$vars, $hook)
 {
     static $location_id = null;
+    static $route       = null;
 
     switch ($hook) {
         case 'promt_program':
+            $route = 'promt_program';
             if (!empty($vars['program']['location_id'])) { $location_id = $vars['program']['location_id']; }
+        break;
+
+        case 'asm_animals':
+            $route = 'asm_animals';
+            $location_id = 204;
         break;
 
         case 'page':
             if ($location_id) {
-                $query = \Drupal::entityQuery('node')
-                    ->condition('status', 1)
-                    ->condition('type', 'location')
-                    ->condition('field_promt_id', $location_id);
-                $nids  = $query->execute();
-                if ($nids) {
-                    $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load(current($nids));
+                switch ($route) {
+                    case 'promt_program':
+                        $query = \Drupal::entityQuery('node')
+                            ->condition('status', 1)
+                            ->condition('type', 'location')
+                            ->condition('field_promt_id', $location_id);
+                        $nids  = $query->execute();
+                        if ($nids) {
+                            $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load(current($nids));
+                        }
+                    break;
+
+                    case 'asm_animals':
+                        $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load($location_id);
+                    break;
                 }
             }
         break;
