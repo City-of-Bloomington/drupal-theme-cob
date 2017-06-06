@@ -20,16 +20,15 @@
     </div>
     <aside>
         <header><h2>Details</h2></header>
-        <dl>{% if program.lead %}
-            <dt>Lead</dt>
-            <dd>{{ program.lead }}</dd>
+        <dl>
+            {% if program.start_date %}
+            <dt>Start Date</dt>
+            <dd>{{ program.start_date|date('F j, Y') }}</dd>
             {% endif %}
             {% if program.instructor %}
             <dt>instructor</dt>
             <dd>{{ program.instructor }}</dd>
             {% endif %}
-            <dt>Season, Year</dt>
-            <dd>{{ program.season }}, {{ program.year }}</dd>
             {% if program.in_city_fees %}
             <dt>In City Fees</dt>
             <dd>{{ program.in_city_fees }}</dd>
