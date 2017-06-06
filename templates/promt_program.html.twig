@@ -4,7 +4,8 @@
  * Displays a single Parks and Rec Programs
  *
  * Available variables
- * - program: The program JSON data from Promt
+ * - program:  The program JSON data from Promt
+ * - location: The location node object matching the program
  *
  * @copyright 2017 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
@@ -36,6 +37,13 @@
             {% if program.non_city_fees %}
             <dt>Non City Fees</dt>
             <dd>{{ program.non_city_fees }}</dd>
+            {% endif %}
+            {% if location %}
+            <dt>Location</dt>
+            <dd><a href="{{ path('entity.node.canonical', {'node':location.nid.value}) }}">
+                    {{ location.title.value }}
+                </a>
+            </dd>
             {% endif %}
         </dl>
     </aside>

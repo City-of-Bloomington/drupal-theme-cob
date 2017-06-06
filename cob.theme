@@ -16,8 +16,8 @@ use Drupal\onboard\OnBoardService;
  *
  * This hook will get called multiple times for a single page render.
  * We rely on the fact that module hooks get called before the general page
- * hook. During the module hook call, we set a location_id.  Then, during the
- * page hook call, we load the chosen node.  Once we have a the node loaded, we
+ * hook. During the module hook call, we load a location node.  Then, during the
+ * page hook call, we set inject that node into $vars.  Once injected, we
  * let the normal cob_preprocess_page() handle rendering contact information
  * for that node.
  *
@@ -35,38 +35,35 @@ use Drupal\onboard\OnBoardService;
  */
 function cob_preprocess(&$vars, $hook)
 {
-    static $location_id = null;
-    static $route       = null;
+    static $location = null;
+    static $route    = null;
 
     switch ($hook) {
         case 'promt_program':
             $route = 'promt_program';
-            if (!empty($vars['program']['location_id'])) { $location_id = $vars['program']['location_id']; }
+            if (!empty($vars['program']['location_id'])) {
+                $location_id = $vars['program']['location_id'];
+
+                $query = \Drupal::entityQuery('node')
+                    ->condition('status', 1)
+                    ->condition('type', 'location')
+                    ->condition('field_promt_id', $location_id);
+                $nids  = $query->execute();
+                if ($nids) {
+                    $location = \Drupal::entityTypeManager()->getStorage('node')->load(current($nids));
+                    $vars['location'] = $location;
+                }
+            }
         break;
 
         case 'asm_animals':
             $route = 'asm_animals';
-            $location_id = 204;
+            $location = \Drupal::entityTypeManager()->getStorage('node')->load(204);
         break;
 
         case 'page':
-            if ($location_id) {
-                switch ($route) {
-                    case 'promt_program':
-                        $query = \Drupal::entityQuery('node')
-                            ->condition('status', 1)
-                            ->condition('type', 'location')
-                            ->condition('field_promt_id', $location_id);
-                        $nids  = $query->execute();
-                        if ($nids) {
-                            $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load(current($nids));
-                        }
-                    break;
-
-                    case 'asm_animals':
-                        $vars['node'] = \Drupal::entityTypeManager()->getStorage('node')->load($location_id);
-                    break;
-                }
+            if ($location && empty($vars['node'])) {
+                $vars['node'] = $location;
             }
         break;
     }
