@@ -95,6 +95,7 @@
         {% if content.field_content_image
            or content.field_coordinates
            or content.field_aside
+           or content.field_hours
            or upcoming_events
         %}
         <aside>
@@ -105,6 +106,7 @@
             {{ content.field_content_image }}
             {{ upcoming_events             }}
             {{ content.field_coordinates   }}
+            {{ content.field_hours         }}
         </aside>
         {% endif %}
     </div>
@@ -112,7 +114,7 @@
         {{ content|without(
                 'body', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links',
-                'field_content_image', 'field_coordinates')
+                'field_content_image', 'field_coordinates', 'field_hours')
         }}
     </div>
     {% if program_search_form %}

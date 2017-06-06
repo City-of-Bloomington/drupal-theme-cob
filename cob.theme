@@ -265,26 +265,31 @@ function _cob_ftime($time)
 function cob_preprocess_field__field_hours(&$vars)
 {
     $days  = [
-        'sunday'    => 'Sun',
-        'monday'    => 'Mon',
-        'tuesday'   => 'Tue',
-        'wednesday' => 'Wed',
-        'thursday'  => 'Thu',
-        'friday'    => 'Fri',
-        'saturday'  => 'Sat'
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
     ];
     $hours = [];
+    $temp  = [];
     foreach ($vars['items'] as $i=>$item) {
         foreach (explode("\n", $item['content']['#context']['value']) as $line) {
             $hour = explode(',', $line);
             if (count($hour) === 3) {
-                $day   = $days[trim($hour[0])];
+                $day   = ucfirst(trim($hour[0]));
                 $start = _cob_ftime($hour[1]);
                 $end   = _cob_ftime($hour[2]);
 
-                $hours[] = "$day $start-$end";
+                $temp[$day] = "$start-$end";
             }
         }
+        foreach ($days as $d) {
+            $hours[$d] = isset($temp[$d]) ? $temp[$d] : 'Closed';
+        }
+
         $vars['items'][$i]['hours'] = $hours;
     }
 }

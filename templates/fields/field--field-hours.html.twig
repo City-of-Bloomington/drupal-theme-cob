@@ -46,10 +46,11 @@
     {% endif %}
     {% for item in items %}
     <div{{ item.attributes }}>
-        <ul>{% for hour in item.hours %}
-            <li>{{ hour }}</li>
+        <table>
+            {% for day,hour in item.hours %}
+            <tr><th>{{ day }}</th><td>{{ hour }}</td></tr>
             {% endfor %}
-        </ul>
+        </table>
     </div>
     {% endfor %}
 </aside>
