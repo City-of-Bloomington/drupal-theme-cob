@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Displays the list of Adoptable Animals from Shelter Manager
+ *
+ * Available variables
+ * - animals: The animals JSON data from Shelter Manager
+ * - asm_url: Base URL for Shelter Manager
+ * - proxy:   Whether to proxy images, or not
+ *
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
+ *
+ * This file is part of the ASM drupal module.
+ *
+ * The ASM module is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * The ASM module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with the ASM module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
+ */
+#}
+<div id="intro">
+    {{ form }}
+    <aside>
+        <header><h2>Adoption Forms</h2></header>
+        <ul><li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEc3RDJ3bS04WklkZ09IUjZXMmRaNFE6MQ">
+                    Apply to Adopt a Cat
+                </a>
+            </li>
+            <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEtOM1k0X0s0dW5yNGgwcmktNkJNeFE6MQ">
+                    Apply to Adopt a Dog
+                </a>
+            </li>
+            <li><a href="{{ path('entity.node.canonical', {'node': 320}) }}">
+                    Adoption Policies and Fees
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+<section id="asm_animals">
+    <div>
+    {% for a in animals %}
+    <article class="{{ a.SPECIESNAME }}">
+        <a href="{{ path('asm.animal', {'animal_id': a.ID}) }}">
+            <header><h3>{{ a.ANIMALNAME }}</h3></header>
+            {% if a.WEBSITEIMAGECOUNT %}
+                {% if proxy %}
+                    <img src="{{ path('asm.image', {'animal_id': a.ID}) }}" />
+                {% else %}
+                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" />
+                {% endif %}
+            {% endif %}
+        </a>
+    </article>
+    {% endfor %}
+    </div>
+</section>

@@ -5,6 +5,8 @@ section { margin:0; }
 
     > div { flex:1 0 340px; margin-right:$size-gutter;    }
     aside { flex:auto; max-width:340px; min-width:320px; }
+
+    margin-bottom:1em;
 }
 
 @media all and (min-width: $viewport-large) {
