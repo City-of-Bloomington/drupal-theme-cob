@@ -228,7 +228,7 @@ function cob_preprocess_field__field_related_links(&$vars)
         $path = \Drupal::service('path.alias_manager')->getPathByAlias($titleTest);
         if(preg_match('/node\/(\d+)/', $path, $matches)) {
           $node = \Drupal\node\Entity\Node::load($matches[1]);
-          $titleTest = $vars['items'][$i]['content']['#title'] = $node->title->value;
+          $vars['items'][$i]['content']['#title'] = $node->title->value;
         }
       }
       $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
