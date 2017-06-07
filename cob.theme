@@ -167,7 +167,7 @@ function cob_preprocess_node(&$vars)
             $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
         break;
 
-        case 28:  // Maps Landing Page
+        case 790: // Maps Landing Page
             $vars['maps'] = [
                 '#theme' => 'interactivemap_maps',
                 '#maps'  => MapGateway::maps()
