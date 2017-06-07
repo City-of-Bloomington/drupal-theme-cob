@@ -11,7 +11,8 @@ $card-width:      320px;
 $card-height-min: 250px;
 $card-height-max: 290px;
 
-#asm_animals > div,
+#asm_animals         > div,
+#interactivemap_maps > div,
 .boards-block,
 .departments-block,
 .info-list,
@@ -20,7 +21,8 @@ $card-height-max: 290px;
 
 }
 @media all and (min-width:$viewport-medium) {
-    #asm_animals > div,
+    #asm_animals         > div,
+    #interactivemap_maps > div,
     .boards-block,
     .departments-block,
     .info-list,
@@ -32,7 +34,8 @@ $card-height-max: 290px;
 }
 
 
-#asm_animals       article,
+#asm_animals         article,
+#interactivemap_maps article,
 .boards-block      > div,
 .departments-block > div,
 .info-list         > div,

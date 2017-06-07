@@ -9,6 +9,7 @@ use Drupal\core\Site\Settings;
 
 use Drupal\calendar\GoogleGateway;
 use Drupal\directory\DirectoryService;
+use Drupal\interactivemap\MapGateway;
 use Drupal\onboard\OnBoardService;
 
 /**
@@ -161,8 +162,17 @@ function cob_preprocess_node(&$vars)
     }
 
     $nid  = (int)$vars['node']->get('nid' )->value;
-    if ($nid === 250) {
-        $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
+    switch ($nid) {
+        case 250: // Parks Landing Page
+            $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
+        break;
+
+        case 28:  // Maps Landing Page
+            $vars['maps'] = [
+                '#theme' => 'interactivemap_maps',
+                '#maps'  => MapGateway::maps()
+            ];
+        break;
     }
 }
 
