@@ -91,6 +91,7 @@
         <div>
             {{ content.field_contacts }}
             {{ content.body }}
+            {{ content.field_call_to_action }}
         </div>
 
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
@@ -114,7 +115,7 @@
     </div>
     <div{{ content_attributes }}>
         {{ content|without(
-                'body', 'field_contacts', 'field_calendar', 'field_aside_title',
+                'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links',
                 'field_content_image', 'field_coordinates', 'field_hours')
         }}
