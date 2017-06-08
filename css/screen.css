@@ -392,15 +392,15 @@ dl { border: none; }
 
 @media all and (min-width: 640px) { #breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; } }
 
-#block-departmentstaff > div, #block-committeemembers > div > div { font-size: 1.125rem; }
+#block-departmentstaff > div, #block-committeemembers > div > div { font-size: 0.875rem; }
 
 #block-departmentstaff > div > div, #block-committeemembers > div > div > div { text-align: center; margin-bottom: 1rem; padding: .5rem; }
 
-#block-departmentstaff > div > div dl dd, #block-committeemembers > div > div > div dl dd { line-height: 2rem; }
+#block-departmentstaff > div > div dl dd, #block-committeemembers > div > div > div dl dd { line-height: 1.5em; }
 
 @media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers > div > div { display: flex; flex-flow: row wrap; justify-content: space-between; }
   #block-departmentstaff > div h3, #block-committeemembers > div > div h3 { margin: 0; }
-  #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 20%; } }
+  #block-departmentstaff > div > div, #block-committeemembers > div > div > div { width: 208px; } }
 
 @media all and (min-width: 1080px) { #block-departmentstaff > div, #block-committeemembers > div > div { width: 1080px; margin: 0 auto; } }
 
