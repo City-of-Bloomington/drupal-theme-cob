@@ -6,6 +6,7 @@
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
 use Drupal\core\Site\Settings;
+use Drupal\core\Url;
 
 use Drupal\calendar\GoogleGateway;
 use Drupal\directory\DirectoryService;
@@ -223,25 +224,34 @@ function cob_preprocess_field__entity_reference(&$vars)
     }
 }
 
-function cob_preprocess_field__field_call_to_action(&$vars)
+/**
+ * Add titles to internal links
+ *
+ * User should not type titles into links, if they're to internal pages.
+ * Rather, the title should be pulled dynamically from the page they're
+ * linking to.  Title on pages change over time, and we hate going back
+ * and trying to update all the links with the new title.
+ */
+function cob_preprocess_field__link(&$vars)
 {
+    foreach ($vars['element']['#items'] as $i=>$item) {
+        $title = $item->get('title')->getString();
+        if (!$title) {
+            $uri = $item->get('uri')->getString();
+            if (substr($uri, 0, 6) == 'entity') {
+                $params = Url::fromUri($uri)->getRouteParameters();
+                $type   = key($params);
+                $entity = \Drupal::entityTypeManager()->getStorage($type)->load($params[$type]);
+                if ($entity) {
+                    $vars['items'][$i]['content']['#title'] = $entity->title->value;
+                }
+            }
+        }
+    }
+
+    // All link fields are going to be styled as some type of button
     foreach ($vars['items'] as $i=>$item) {
         $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
-    }
-}
-
-function cob_preprocess_field__field_related_links(&$vars)
-{
-    foreach ($vars['items'] as $i=>$item) {
-      $titleTest = $vars['items'][$i]['content']['#title'];
-      if (substr($titleTest, 0, 1) === '/') {
-        $path = \Drupal::service('path.alias_manager')->getPathByAlias($titleTest);
-        if(preg_match('/node\/(\d+)/', $path, $matches)) {
-          $node = \Drupal\node\Entity\Node::load($matches[1]);
-          $vars['items'][$i]['content']['#title'] = $node->title->value;
-        }
-      }
-      $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
     }
 }
 
