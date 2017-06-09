@@ -279,6 +279,11 @@ function cob_preprocess_field__node__body__news(&$vars)
     $vars['label'] = $vars['element']['#object']->getTitle();
 }
 
+function cob_preprocess_image(&$vars)
+{
+    unset($vars['attributes']['width'], $vars['attributes']['height']);
+}
+
 /**
  * Pretty prints military time
  *
