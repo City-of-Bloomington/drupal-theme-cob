@@ -74,7 +74,11 @@ dl { border:none; }
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
 #block-committeemembers              { dt { float:none; display:inline-block; } }
 
+#related-links > .container > div {
+    display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;
+}
 #related-links .entity_reference > div,
+#related-links .link             > div,
 #block-committeemembers nav {
     text-align:center;
     div { display:inline; }
