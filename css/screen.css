@@ -285,7 +285,7 @@ section.divided.dark h3, section.divided.dark a { color: #fff; }
 
 section.divided .container > header, section.divided .calendar_calendar > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-section.divided .container > header h2, section.divided .calendar_calendar > header h2 { background-color: #fff; color: #3f9dff; }
+section.divided .container > header h2, section.divided .container > header a, section.divided .calendar_calendar > header h2, section.divided .calendar_calendar > header a { background-color: #fff; color: #3f9dff; }
 
 .paragraph > header, #asm_animals > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
@@ -305,14 +305,15 @@ section.divided .container > header h2, section.divided .calendar_calendar > hea
 
 @media all and (min-width: 640px) { #services-section a, #government-section a { flex: 0 0 25%; } }
 
-@media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
-  #about-section .container > div p { margin-left: 50%; font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; padding-left: 1.5em; padding-right: 1.5em; } }
-
 section.promo .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
 
 section.promo .container > div > div, section.promo .container > div > p { flex: 1 0 320px; }
 
 section.promo .container > div .entity_reference > div { text-align: center; }
+
+section.promo p { font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; }
+
+section.promo .promo_title { text-align: center; }
 
 #news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
 

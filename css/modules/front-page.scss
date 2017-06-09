@@ -28,21 +28,6 @@
     }
 }
 
-#about-section {
-    @media all and (min-width:$viewport-medium) {
-        .container > div {
-            background: url('images/indiana.svg') 25% center no-repeat;
-            background-size: auto 100%;
-            p {
-                margin-left:50%;
-                font-size:$font-size-big; line-height:1.5em; letter-spacing:.04em;
-                padding-left:1.5em; padding-right:1.5em;
-
-            }
-        }
-    }
-}
-
 section.promo {
     .container > div {
         display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-evenly;
@@ -54,4 +39,6 @@ section.promo {
             text-align:center;
         }
     }
+    p { font-size:$font-size-big; line-height:1.5em; letter-spacing:.04em; }
+    .promo_title { text-align:center; }
 }

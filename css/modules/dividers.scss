@@ -38,7 +38,7 @@ section.divided {
     .container > header,
     .calendar_calendar > header {
         background-image:$divider-dark;
-        h2 { background-color:$color-content-background; color:$color-heading; }
+        h2, a { background-color:$color-content-background; color:$color-heading; }
     }
 }
 

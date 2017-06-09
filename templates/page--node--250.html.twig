@@ -70,33 +70,8 @@
                 {{ events }}
             </div>
         </section>
-
-        <section id="tlrc" class="divided promo">
-            <div class="container">
-                <header><h2>{{ tlrc.getTitle() }}</h2></header>
-                <div>
-                    {{ tlrc.content_image }}
-                    <div>
-                        <p>{{ tlrc.body.summary }}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="rentals" class="divided promo">
-            <div class="container">
-                <header><h2>{{ rentals.getTitle() }}</h2></header>
-                <div>
-                    {{ rentals.content_image }}
-                    <div>
-                        <p>{{ rentals.body.summary }}</p>
-                        <div class="link">
-                            <a href="{{ base_path }}parks/rentals" class="button">Reserve</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {{ tlrc }}
+        {{ rentals }}
 
         <section id="activities" class="divided dark">
             <div class="container">

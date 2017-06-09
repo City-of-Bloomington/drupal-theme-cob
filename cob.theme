@@ -107,24 +107,17 @@ function cob_preprocess_page__front(&$vars)
     }
 
     $manager = \Drupal::entityTypeManager();
+    $builder = $manager->getViewBuilder('node');
+    $storage = $manager->getStorage('node');
+
     $query   = \Drupal::entityQuery('node')
                 ->condition('type',    'news')
                 ->condition('status',  1)
                 ->sort('created', 'desc')
                 ->range(0, 5);
-    $vars['news'] = $manager->getViewBuilder('node')->viewMultiple(
-                        $manager->getStorage('node')->loadMultiple($query->execute()),
-                        'teaser'
-                    );
-
-    $node = $manager->getStorage('node')->load(608);
-    if ($node) {
-        $vars['mayor']['summary'] = $node->get('body')->summary;
-        $img = $node->field_content_image->view('full');
-        if ($img) {
-            $vars['mayor']['content_image'] = $img;
-        }
-    }
+    $vars['news' ] = $builder->viewMultiple($storage->loadMultiple($query->execute()), 'teaser');
+    $vars['about'] = $builder->view($storage->load(223), 'promo');
+    $vars['mayor'] = $builder->view($storage->load(608), 'promo');
 }
 
 function cob_preprocess_page(&$vars)
@@ -156,13 +149,15 @@ function cob_preprocess_page(&$vars)
         if ((int)$vars['node']->get('nid')->value === 250) {
             $manager = \Drupal::entityTypeManager();
             $storage = $manager->getStorage('node');
+            $builder = $manager->getViewBuilder('node');
+
             $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
             $vars['events' ] = $vars['node']->field_calendar  ->view('full');
             $vars['related'] = $vars['node']->field_department->view('full');
-            $vars['tlrc'   ] = $storage->load(502);
-            $vars['rentals'] = $storage->load(368);
-            $vars['categories'] = $manager->getViewBuilder('node')->viewMultiple(
-                                      $manager->getStorage('node')->loadMultiple([438,252,253,254]),
+            $vars['tlrc'   ] = $builder->view($storage->load(502), 'promo');
+            $vars['rentals'] = $builder->view($storage->load(368), 'promo');
+            $vars['categories'] = $builder->viewMultiple(
+                                      $storage->loadMultiple([438,252,253,254]),
                                       'info_card');
         }
     }
@@ -230,6 +225,21 @@ function cob_preprocess_field__entity_reference(&$vars)
             $vars['items'][$i]['content']['#title'] = "{$vars['element']['#title']}: {$item['content']['#title']}";
             $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
         }
+    }
+}
+
+/**
+ * Link promo titles to their nodes
+ */
+function cob_preprocess_field__field_promo_title(&$vars)
+{
+    $url = Url::fromRoute('entity.node.canonical', ['node'=>$vars['element']['#object']->nid->value])->toString();
+
+    foreach ($vars['items'] as $i=>$item) {
+        $vars['items'][$i]['content'] = [
+            '#markup' => "<a href=\"$url\" class=\"button\">{$item['content']['#context']['value']}</a>"
+        ];
+
     }
 }
 
