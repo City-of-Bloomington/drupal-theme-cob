@@ -14,7 +14,7 @@ section { margin:0; }
     #nav1                .container,
     body > footer        .container,
     main > div           .container,
-    main > section >     .container {
+    #content > section > .container {
         width:$viewport-large - 20px; margin:0 auto;
     }
 }

@@ -2,11 +2,10 @@ $divider-margin:3.7em;
 $divider-light:linear-gradient(90deg, $color-header, $color-content-background, $color-header);
 $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, $color-content-background);
 
-.front   .container         > header,
-#content section            > header,
-#related-links              > header,
-#activities                 > header,
-.paragraph--type--info-list > header {
+section.divided > .container  > header,
+section.divided .calendar_calendar > header,
+#content section              > header,
+.paragraph--type--info-list   > header {
     @media all and (min-width:$viewport-medium) {
         text-align: center;
         background-size: 100% 2px;
@@ -22,30 +21,29 @@ $divider-dark: linear-gradient(90deg, $color-content-background, $color-header, 
 }
 
 // Light foreground, dark background
-#services-section {
+section.divided.dark {
+    color: $color-content-background;
     background-color: $color-header;
 
     .container > header {
         background-image:$divider-light;
+        h2 { background-color:$color-header; color:$color-content-background; }
     }
-    h2, a { background-color:$color-header; color:$color-content-background; }
-}
-#parks-guide-page #activities {
-    > header { background-image:$divider-light; }
-    h2 { background-color:$color-heading; color:$color-content-background; }
+    h3, a { color:$color-content-background; }
 }
 
 
 // Dark foreground, light background
-#news-section, #about-section, #mayor-section, #government-section {
-    .container > header {
+section.divided {
+    .container > header,
+    .calendar_calendar > header {
         background-image:$divider-dark;
         h2 { background-color:$color-content-background; color:$color-heading; }
     }
 }
+
 .paragraph,
 #asm_animals,
-#related-links,
 #block-categoryprograms,
 #block-locationprograms,
 #block-departmentstaff,

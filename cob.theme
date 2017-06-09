@@ -152,6 +152,19 @@ function cob_preprocess_page(&$vars)
         }
 
         $vars['available_messages'] = !empty(drupal_get_messages(null, false));
+
+        if ((int)$vars['node']->get('nid')->value === 250) {
+            $manager = \Drupal::entityTypeManager();
+            $storage = $manager->getStorage('node');
+            $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
+            $vars['events' ] = $vars['node']->field_calendar  ->view('full');
+            $vars['related'] = $vars['node']->field_department->view('full');
+            $vars['tlrc'   ] = $storage->load(502);
+            $vars['rentals'] = $storage->load(368);
+            $vars['categories'] = $manager->getViewBuilder('node')->viewMultiple(
+                                      $manager->getStorage('node')->loadMultiple([438,252,253,254]),
+                                      'info_card');
+        }
     }
 }
 
@@ -164,10 +177,6 @@ function cob_preprocess_node(&$vars)
 
     $nid  = (int)$vars['node']->get('nid' )->value;
     switch ($nid) {
-        case 250: // Parks Landing Page
-            $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
-        break;
-
         case 790: // Maps Landing Page
             $vars['maps'] = [
                 '#theme' => 'interactivemap_maps',

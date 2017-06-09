@@ -136,11 +136,13 @@
     {% endif %}
     {% set related_links %}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
     {% if  related_links %}
-    <nav id="related-links">
-        <header>
-            <h2>Related Categories</h2>
-        </header>
-        <div>{{ related_links }}</div>
+    <section id="related-links" class="divided">
+        <div class="container">
+            <header>
+                <h2>Related Categories</h2>
+            </header>
+            <div>{{ related_links }}</div>
+        </div>
     </nav>
     {% endif %}
 

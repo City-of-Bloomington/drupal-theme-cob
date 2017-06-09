@@ -34,43 +34,47 @@
     }
 }
 
-#parks-guide-page {
-    #stats, #activities {
-        width:100vw;
-        margin-left:calc(-1 * ((100vw - 100%) / 2));
-
-        background-color:$color-header;
-    }
-
+.parks-page {
     #stats {
+        color:$color-content-background; background:$color-header;
+
         font-size:$font-size-big;
-        display:flex; flex-wrap:wrap; justify-content:center;
+
+        .container {
+            display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;
+        }
 
         .count { font-size:$font-size-bigger; }
 
         a {
-            display:flex; width:9.375rem; height:10rem;
-            flex-direction:column; justify-content:center; align-items:center;
-
+            flex:0 0 auto; width:150px; height:160px;
+            display:flex; flex-direction:column; justify-content:center; align-items:center;
 
             color:$color-content-background;
             &:hover { background-color:$color-selected-background; }
         }
     }
 
-    .paragraph--type--info-card {
-        flex-basis:25vw;
-        a {
-            height:290px;
-            background-color:transparent; color:$color-content-background;
-            &:hover { background-color:$color-selected-background; }
+    .events {
+        @media all and (min-width:$viewport-medium) {
+            display:grid; grid-template-columns:1fr 1fr; grid-gap:$size-gutter
         }
-        h3 { color:$color-content-background; }
     }
 
-    #activities {
-        color:$color-content-background;
-        h3 { color:$color-content-background; }
+    #activities h3 {
+        font-size:$font-size-bigger;
+        text-align:center;
+    }
+    #categories {
+        display:flex; flex-direction:row; justify-content:space-between;
+
+        article {
+            flex:0 0 260px;
+            a {
+                display:block; height:290px;
+                &:hover { background-color:$color-selected-background; }
+            }
+        }
     }
 }
 

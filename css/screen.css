@@ -12,7 +12,7 @@ section { margin: 0; }
 
 #intro aside { flex: auto; max-width: 340px; min-width: 320px; }
 
-@media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, main > section > .container { width: 1060px; margin: 0 auto; } }
+@media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
 
 #hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
 
@@ -89,27 +89,27 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #content #activities section header, #content #activities section form { flex-basis: 30%; margin: 0 auto; }
 
-#parks-guide-page #stats, #parks-guide-page #activities { width: 100vw; margin-left: calc(-1 * ((100vw - 100%) / 2)); background-color: #183365; }
+.parks-page #stats { color: #fff; background: #183365; font-size: 1.25rem; }
 
-#parks-guide-page #stats { font-size: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; }
+.parks-page #stats .container { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
 
-#parks-guide-page #stats .count { font-size: 1.9rem; }
+.parks-page #stats .count { font-size: 1.9rem; }
 
-#parks-guide-page #stats a { display: flex; width: 9.375rem; height: 10rem; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
+.parks-page #stats a { flex: 0 0 auto; width: 150px; height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
 
-#parks-guide-page #stats a:hover { background-color: #4990e2; }
+.parks-page #stats a:hover { background-color: #4990e2; }
 
-#parks-guide-page .paragraph--type--info-card { flex-basis: 25vw; }
+@media all and (min-width: 640px) { .parks-page .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 8px; } }
 
-#parks-guide-page .paragraph--type--info-card a { height: 290px; background-color: transparent; color: #fff; }
+.parks-page #activities h3 { font-size: 1.9rem; text-align: center; }
 
-#parks-guide-page .paragraph--type--info-card a:hover { background-color: #4990e2; }
+.parks-page #categories { display: flex; flex-direction: row; justify-content: space-between; }
 
-#parks-guide-page .paragraph--type--info-card h3 { color: #fff; }
+.parks-page #categories article { flex: 0 0 260px; }
 
-#parks-guide-page #activities { color: #fff; }
+.parks-page #categories article a { display: block; height: 290px; }
 
-#parks-guide-page #activities h3 { color: #fff; }
+.parks-page #categories article a:hover { background-color: #4990e2; }
 
 #promt-programsearchform { display: table; }
 
@@ -272,26 +272,24 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
 
-@media all and (min-width: 640px) { .front .container > header, #content section > header, #related-links > header, #activities > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
-  .front .container > header h2, #content section > header h2, #related-links > header h2, #activities > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 8px; font-size: 1.9rem; font-weight: 900; } }
+@media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
+  section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 8px; font-size: 1.9rem; font-weight: 900; } }
 
-#services-section { background-color: #183365; }
+section.divided.dark { color: #fff; background-color: #183365; }
 
-#services-section .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+section.divided.dark .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
 
-#services-section h2, #services-section a { background-color: #183365; color: #fff; }
+section.divided.dark .container > header h2 { background-color: #183365; color: #fff; }
 
-#parks-guide-page #activities > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+section.divided.dark h3, section.divided.dark a { color: #fff; }
 
-#parks-guide-page #activities h2 { background-color: #3f9dff; color: #fff; }
+section.divided .container > header, section.divided .calendar_calendar > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-#news-section .container > header, #about-section .container > header, #mayor-section .container > header, #government-section .container > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+section.divided .container > header h2, section.divided .calendar_calendar > header h2 { background-color: #fff; color: #3f9dff; }
 
-#news-section .container > header h2, #about-section .container > header h2, #mayor-section .container > header h2, #government-section .container > header h2 { background-color: #fff; color: #3f9dff; }
+.paragraph > header, #asm_animals > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
 
-.paragraph > header, #asm_animals > header, #related-links > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
-
-.paragraph > header h2, #asm_animals > header h2, #related-links > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, #promt_sessions > header h2 { background-color: #fff; color: #3f9dff; }
+.paragraph > header h2, #asm_animals > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, #promt_sessions > header h2 { background-color: #fff; color: #3f9dff; }
 
 .front header > h2 { text-transform: uppercase; }
 
@@ -310,11 +308,11 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 @media all and (min-width: 640px) { #about-section .container > div { background: url("images/indiana.svg") 25% center no-repeat; background-size: auto 100%; }
   #about-section .container > div p { margin-left: 50%; font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; padding-left: 1.5em; padding-right: 1.5em; } }
 
-#mayor-section .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
+section.promo .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
 
-#mayor-section .container > div > div, #mayor-section .container > div > p { flex: 1 0 320px; }
+section.promo .container > div > div, section.promo .container > div > p { flex: 1 0 320px; }
 
-#mayor-section .container > div .entity_reference > div { text-align: center; }
+section.promo .container > div .entity_reference > div { text-align: center; }
 
 #news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
 
@@ -408,11 +406,11 @@ dl { border: none; }
 
 #block-committeemembers dt { float: none; display: inline-block; }
 
-#related-links, #block-committeemembers nav { text-align: center; }
+#related-links .entity_reference > div, #block-committeemembers nav { text-align: center; }
 
-#related-links div, #block-committeemembers nav div { display: inline; }
+#related-links .entity_reference > div div, #block-committeemembers nav div { display: inline; }
 
-#related-links a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
+#related-links .entity_reference > div a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
 
 body > footer { background-color: #4a4a4a; color: #fff; padding: 8px; }
 

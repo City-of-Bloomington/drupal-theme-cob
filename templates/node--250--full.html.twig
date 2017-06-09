@@ -74,72 +74,26 @@
 #}
 <article id="parks-guide-page"{{ attributes }}>
     <div id="intro">
-        {{ content.body }}
+        <div>
+            {{ content.body }}
+            {{ content.field_call_to_action }}
+        </div>
 
-        {% if content.field_aside %}
+        {% if content.field_content_image
+           or content.field_coordinates
+           or content.field_aside
+           or content.field_hours
+        %}
         <aside>
-        {{ content.field_aside_title }}
-        {{ content.field_aside }}
-        </aside>
-        {% endif %}
-
-        {% if contactInfo.links %}
-        <aside class="contactInfo">
-            <header>
-                <h2>Connect with us</h2>
-            </header>
-            {% if contactInfo.links.facebook %}
-            <dl><dt>Facebook</dt>
-                <dd><a href="{{ contactInfo.links.facebook }}" class="facebook">Connect on Facebook</a></dd>
-            </dl>
+            {% if content.field_aside %}
+            {{ content.field_aside_title   }}
+            {{ content.field_aside         }}
             {% endif %}
-            {% if contactInfo.links.twitter  %}
-            <dl><dt>Twitter</dt>
-                <dd><a href="{{ contactInfo.links.twitter }}" class="twitter">Follow us on Twitter</a></dd>
-            </dl>
-            {% endif %}
-            {% if contactInfo.links.onboard %}
-            <dl><dt>OnBoard</dt>
-                <dd><a href="{{ contactInfo.links.onboard }}" class="onboard">View in OnBoard</a></dd>
-            </dl>
-            {% endif %}
+            {{ content.field_content_image }}
+            {{ upcoming_events             }}
+            {{ content.field_coordinates   }}
+            {{ content.field_hours         }}
         </aside>
         {% endif %}
     </div>
-    <div id="stats">
-        <a href="{{base_path}}parks/trails"     ><div class="count">11</div><div>trails</div></a>
-        <a href="{{base_path}}parks/parks"      ><div class="count">32</div><div>parks</div></a>
-        <a href="{{base_path}}parks/pools"      ><div class="count">05</div><div>pools</div></a>
-        <a href="{{base_path}}parks/basketball" ><div class="count">18</div><div>basketball courts</div></a>
-        <a href="{{base_path}}parks/golf"       ><div class="count">01</div><div>golf course</div></a>
-        <a href="{{base_path}}parks/playgrounds"><div class="count">24</div><div>playgrounds</div></a>
-    </div>
-    {% if content.field_calendar %}
-    <aside>{{ content.field_calendar }}</aside>
-    {% endif %}
-    <div id="activities">
-        <header>
-            <h2>Activities &amp; Programs</h2>
-        </header>
-        {{ content.field_info_links }}
-        <section>
-            <header>
-                <h3>Find Activities</h3>
-                <p> Search for specific activities and programs by filtering on
-                    type, age, or location.  Find the exact activities you are
-                    interested in.
-                </p>
-            </header>
-            {{ program_search_form }}
-        </section>
-    </div>
-    {% set related_links %}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
-    {% if  related_links %}
-    <nav id="related-links">
-        <header>
-            <h2>Related Categories</h2>
-        </header>
-        <div>{{ related_links }}</div>
-    </nav>
-    {% endif %}
 </article>
