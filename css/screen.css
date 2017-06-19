@@ -105,7 +105,7 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 .parks-page #categories { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
 
-.parks-page #categories article { flex: 0 0 260px; margin: 8px; }
+.parks-page #categories article { flex: 0 0 240px; margin: 8px; }
 
 .parks-page #categories article a { display: block; height: 290px; }
 
