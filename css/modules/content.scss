@@ -66,10 +66,10 @@
         text-align:center;
     }
     #categories {
-        display:flex; flex-direction:row; justify-content:space-between;
+        display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap;
 
         article {
-            flex:0 0 260px;
+            flex:0 0 260px; margin:$size-gutter;
             a {
                 display:block; height:290px;
                 &:hover { background-color:$color-selected-background; }
