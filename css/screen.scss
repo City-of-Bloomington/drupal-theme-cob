@@ -74,21 +74,17 @@ dl { border:none; }
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
 #block-committeemembers              { dt { float:none; display:inline-block; } }
 
-#related-links > .container > div {
-    display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;
-}
-#related-links .entity_reference > div,
-#related-links .link             > div,
+#related-links > .container > div,
 #block-committeemembers nav {
     text-align:center;
-    div { display:inline; }
+
+    div { display:inline-block; }
     a {
         background-color:$color-content-background;
         border-color:$color-action;
         color:$color-action;
     }
 }
-
 
 body > footer {
     background-color: $color-footer;
