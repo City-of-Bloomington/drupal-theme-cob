@@ -41,7 +41,7 @@
             {% for type, files in meeting.files %}
             <div class="{{ type }}">
                 {% for i, file in files %}
-                <a href="{{ file.url }}">{{ type }}{{ i ? i : ''}}</a>
+                <a href="{{ file.url }}">{{ file.title ?: type }}</a>
                 {% endfor %}
             </div>
             {% endfor %}

@@ -54,10 +54,12 @@ dl { border:none; }
 }
 
 #block-departmentstaff  > div,
-#block-committeemembers > div > div {
+#block-committeemembers .seats {
     font-size:$font-size-smaller;
-    > div { text-align:center; margin-bottom: 1rem; padding: .5rem; }
-    > div dl dd { line-height: 1.5em; }
+    .member {
+        text-align:center; margin-bottom: 1rem; padding: .5rem;
+        dd { line-height: 1.5em; }
+    }
 
     @media all and (min-width:$viewport-medium) {
         display:flex;
@@ -65,7 +67,7 @@ dl { border:none; }
         justify-content:space-between;
 
         h3 { margin:0; }
-        > div { width: 208px; }
+        .member { width: 208px; }
     }
     @media all and (min-width:$viewport-large) {
         width:$viewport-large; margin:0 auto;
@@ -74,21 +76,17 @@ dl { border:none; }
 .contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
 #block-committeemembers              { dt { float:none; display:inline-block; } }
 
-#related-links > .container > div {
-    display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;
-}
-#related-links .entity_reference > div,
-#related-links .link             > div,
+#related-links > .container > div,
 #block-committeemembers nav {
     text-align:center;
-    div { display:inline; }
+
+    div { display:inline-block; }
     a {
         background-color:$color-content-background;
         border-color:$color-action;
         color:$color-action;
     }
 }
-
 
 body > footer {
     background-color: $color-footer;

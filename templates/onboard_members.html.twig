@@ -12,10 +12,11 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  */
 #}
-<div>
+<div class="seats">
 {% for seat in committee.seats %}
-    <div>
-        {% if not seat.vacant %}
+    {% if not seat.vacant %}
+    {% if seat.currentMember.website %}<a href="{{ seat.currentMember.website }}">{% endif %}
+    <div class="member">
         <h3>{{ seat.currentMember.firstname }} {{ seat.currentMember.lastname }}</h3>
         <dl>{% if seat.appointedBy %}
             <dt>Appointed By:</dt>
@@ -30,7 +31,10 @@
             <dd>{{ seat.currentMember.termStartDate }}</dd>
             {% endif %}
         </dl>
-        {% else %}
+    </div>
+    {% if seat.currentMember.website %}</a>{% endif %}
+    {% else %}
+    <div class="member">
         <h3>Vacant</h3>
         <dl>{% if seat.appointedBy %}
             <dt>Appointed By:</dt>
@@ -42,8 +46,8 @@
             <dd>{{ seat.currentTerm.endDate }}</dd>
             {% endif %}
         </dl>
-        {% endif %}
     </div>
+    {% endif %}
 {% endfor %}
 </div>
 <nav>
