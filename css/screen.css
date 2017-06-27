@@ -95,9 +95,11 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 .parks-page #stats .count { font-size: 1.9rem; }
 
-.parks-page #stats a { flex: 0 0 auto; width: 150px; height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; }
+.parks-page #stats a { flex: 0 0 auto; width: 150px; height: 120px; padding-top: 40px; display: flex; flex-direction: column; justify-content: start; align-items: center; color: #fff; }
 
 .parks-page #stats a:hover { background-color: #4990e2; }
+
+.parks-page #stats a div { text-align: center; }
 
 @media all and (min-width: 640px) { .parks-page .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 8px; } }
 

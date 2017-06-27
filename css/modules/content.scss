@@ -47,11 +47,13 @@
         .count { font-size:$font-size-bigger; }
 
         a {
-            flex:0 0 auto; width:150px; height:160px;
-            display:flex; flex-direction:column; justify-content:center; align-items:center;
+            flex:0 0 auto; width:150px; height:120px; padding-top:40px;
+            display:flex; flex-direction:column; justify-content:start; align-items:center;
 
             color:$color-content-background;
             &:hover { background-color:$color-selected-background; }
+
+            div { text-align:center; }
         }
     }
 
