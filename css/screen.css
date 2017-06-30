@@ -12,6 +12,8 @@ section { margin: 0; }
 
 #intro aside { flex: auto; max-width: 340px; min-width: 320px; }
 
+#intro aside img { max-width: 340px; height: auto; }
+
 @media all and (min-width: 1080px) { body > header > .container, #nav1 .container, body > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
 
 #hamburger { position: absolute; clip: rect(0, 0, 0, 0); }

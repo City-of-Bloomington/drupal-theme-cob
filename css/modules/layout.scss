@@ -3,8 +3,10 @@ section { margin:0; }
 #intro {
     display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;
 
-    > div { flex:1 0 340px; margin-right:$size-gutter;    }
-    aside { flex:auto; max-width:340px; min-width:320px; }
+    > div { flex:1 0 $size-sidebar-maxwidth; margin-right:$size-gutter;    }
+    aside { flex:auto; max-width:$size-sidebar-maxwidth; min-width:$size-sidebar-maxwidth - 20px;
+        img { max-width:$size-sidebar-maxwidth; height:auto; }
+    }
 
     margin-bottom:1em;
 }
