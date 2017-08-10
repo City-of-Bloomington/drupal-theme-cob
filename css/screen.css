@@ -252,29 +252,29 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .button { padding: 15px 25px; margin-top: 10px; }
 
-#block-upcomingevents article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 154px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
+#block-upcomingevents article, #block-committeemeetings article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 154px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
 
-#block-upcomingevents article .month, #block-upcomingevents article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate, #block-committeemeetings article .month, #block-committeemeetings article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
 
-#block-upcomingevents article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
+#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
 
-#block-upcomingevents article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
+#block-upcomingevents article .location, #block-committeemeetings article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
 
-#block-upcomingevents article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
+#block-upcomingevents article h4, #block-committeemeetings article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
 
-#block-upcomingevents article header, .onboard_meetings article header, .calendar_calendar article header { flex: 0 0 118px; height: 100%; background-color: #ff9800; color: #fff; font-family: "Lora", serif; }
+#block-upcomingevents article header, #block-committeemeetings article header, .onboard_meetings article header, .calendar_calendar article header { flex: 0 0 118px; height: 100%; background-color: #ff9800; color: #fff; font-family: "Lora", serif; }
 
-#block-upcomingevents article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+#block-upcomingevents article header time, #block-committeemeetings article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
-#block-upcomingevents article header time div, .onboard_meetings article header time div, .calendar_calendar article header time div { text-align: center; line-height: 1.5em; }
+#block-upcomingevents article header time div, #block-committeemeetings article header time div, .onboard_meetings article header time div, .calendar_calendar article header time div { text-align: center; line-height: 1.5em; }
 
-#block-upcomingevents article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 8px; display: flex; flex-direction: column; justify-content: center; }
+#block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 8px; display: flex; flex-direction: column; justify-content: center; }
 
-#block-upcomingevents article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
+#block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
 
-#block-upcomingevents article > div div, .onboard_meetings article > div div, .calendar_calendar article > div div { text-align: center; height: 3em; overflow: hidden; }
+#block-upcomingevents article > div div, #block-committeemeetings article > div div, .onboard_meetings article > div div, .calendar_calendar article > div div { text-align: center; height: 3em; overflow: hidden; }
 
-#block-upcomingevents > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
+#block-upcomingevents > div, #block-committeemeetings > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
 
 @media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 3.7em 0; }
   section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 8px; font-size: 1.9rem; font-weight: 900; } }

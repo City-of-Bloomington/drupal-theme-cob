@@ -56,8 +56,4 @@
         Apply to fill a vacancy on this board
     </a>
     {% endif %}
-    <a href="{{ path('onboard.meetings.node-'~nid, {'node': nid}) }}" class="button">Meeting Documents</a>
-    {% if committee.info.videoArchive %}
-    <a href="{{ committee.info.videoArchive }}" class="button">Meeting Videos</a>
-    {% endif %}
 </nav>

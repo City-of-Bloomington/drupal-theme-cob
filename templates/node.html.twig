@@ -100,6 +100,7 @@
            or content.field_aside
            or content.field_hours
            or upcoming_events
+           or regions.sidebar_second
         %}
         <aside>
             {% if content.field_aside %}
@@ -110,6 +111,7 @@
             {{ upcoming_events             }}
             {{ content.field_coordinates   }}
             {{ content.field_hours         }}
+            {{ regions.sidebar_second      }}
         </aside>
         {% endif %}
     </div>

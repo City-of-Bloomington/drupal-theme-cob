@@ -180,6 +180,16 @@ function cob_preprocess_node(&$vars)
             ];
         break;
     }
+
+    if ($vars['view_mode'] == 'full') {
+        $manager = \Drupal::entityTypeManager();
+        $storage = $manager->getStorage('block');
+        $builder = $manager->getViewBuilder('block');
+
+        $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>'sidebar_second']);
+        uasort($blocks, 'Drupal\block\Entity\Block::sort');
+        $vars['regions']['sidebar_second'] = $builder->viewMultiple($blocks);
+    }
 }
 
 function cob_preprocess_archive_results(&$vars)
