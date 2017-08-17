@@ -147,6 +147,7 @@ function cob_preprocess_page(&$vars)
 
         $vars['available_messages'] = !empty(drupal_get_messages(null, false));
 
+        // Custom content for the Parks and Rec landing page
         if ((int)$vars['node']->get('nid')->value === 250) {
             $manager = \Drupal::entityTypeManager();
             $storage = $manager->getStorage('node');
@@ -160,6 +161,13 @@ function cob_preprocess_page(&$vars)
             $vars['categories'] = $builder->viewMultiple(
                                       $storage->loadMultiple([438,252,253,254]),
                                       'info_card');
+        }
+        // Don't display committee members on pages rendered by the onboard module
+        $m = \Drupal::routeMatch()->getRouteName();
+        if (substr($m, 0, 7) == 'onboard') {
+            if (isset($vars['page']['content']['committeemembers'])) {
+                unset($vars['page']['content']['committeemembers']);
+            }
         }
     }
 }
