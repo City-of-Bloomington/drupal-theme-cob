@@ -13,6 +13,7 @@ $card-height-max: 290px;
 
 #asm_animals         > div,
 #interactivemap_maps > div,
+#legislationTypes    > div,
 .boards-block,
 .departments-block,
 .parks-categories-block,
@@ -24,6 +25,7 @@ $card-height-max: 290px;
 @media all and (min-width:$viewport-medium) {
     #asm_animals         > div,
     #interactivemap_maps > div,
+    #legislationTypes    > div,
     .boards-block,
     .departments-block,
     .parks-categories-block,
@@ -38,6 +40,7 @@ $card-height-max: 290px;
 
 #asm_animals         article,
 #interactivemap_maps article,
+#legislationTypes    article,
 .boards-block      > div,
 .departments-block > div,
 .parks-categories-block > div,
