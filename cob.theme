@@ -107,6 +107,8 @@ function cob_preprocess_page__front(&$vars)
         ];
     }
 
+    $vars['available_messages'] = !empty(drupal_get_messages(null, false));
+
     $manager = \Drupal::entityTypeManager();
     $builder = $manager->getViewBuilder('node');
     $storage = $manager->getStorage('node');
