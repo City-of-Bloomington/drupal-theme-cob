@@ -25,8 +25,12 @@
             <dt>Start Date</dt>
             <dd>{{ program.start_date|date('F j, Y') }}</dd>
             {% endif %}
+            {% if program.start_time %}
+            <dt>Start Time</dt>
+            <dd>{{ program.start_time }}</dd>
+            {% endif %}
             {% if program.instructor %}
-            <dt>instructor</dt>
+            <dt>Instructor</dt>
             <dd>{{ program.instructor }}</dd>
             {% endif %}
             {% if program.in_city_fees %}
@@ -36,6 +40,10 @@
             {% if program.non_city_fees %}
             <dt>Non City Fees</dt>
             <dd>{{ program.non_city_fees }}</dd>
+            {% endif %}
+            {% if program.participant_age %}
+            <dt>Ages</dt>
+            <dd>{{ program.participant_age }}</dd>
             {% endif %}
             {% if location %}
             <dt>Location</dt>
