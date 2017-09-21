@@ -45,9 +45,12 @@
             </dd>
             {% endif %}
         </dl>
-        <a class="button" href="https://webtrac.bloomington.in.gov/wbwsc/webtrac.wsc/SPLASH.html">
+        {% if program.rectrac_id %}
+        <a class="button"
+            href="https://webtrac.bloomington.in.gov/wbwsc/webtrac.wsc/search.html?sessionID=%3C?VSI-SessionID?%3E&amp;module=AR&amp;Primarycode={{ program.rectrac_id }}">
             Enroll Now
         </a>
+        {% endif %}
     </aside>
 </div>
 
