@@ -397,6 +397,8 @@ dl { border: none; }
 
 #block-departmentstaff > div, #block-committeemembers .seats { font-size: 0.875rem; }
 
+#block-departmentstaff > div h3 div, #block-committeemembers .seats h3 div { font-size: 1.125rem; }
+
 #block-departmentstaff > div .member, #block-committeemembers .seats .member { text-align: center; margin-bottom: 1rem; padding: .5rem; }
 
 #block-departmentstaff > div .member dd, #block-committeemembers .seats .member dd { line-height: 1.5em; }
