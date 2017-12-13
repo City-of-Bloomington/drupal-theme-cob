@@ -297,6 +297,10 @@ section.divided .container > header h2, section.divided .container > header a, s
 
 .front header > h2 { text-transform: uppercase; }
 
+.front #banner { display: flex; justify-content: center; align-items: center; }
+
+.front #badge { display: block; width: 275px; height: 275px; background: url("images/200yearsCircle.png") no-repeat; }
+
 .front aside.calendar_calendar .events { height: 660px; display: flex; flex-direction: column; justify-content: space-between; }
 
 .front aside.calendar_calendar .events article { margin: 0; }

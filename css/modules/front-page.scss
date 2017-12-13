@@ -1,6 +1,16 @@
 .front {
     header > h2 { text-transform:uppercase; }
 
+    #banner {
+        display:flex;
+        justify-content:center; align-items:center;
+    }
+    #badge {
+        display:block;
+        width:275px; height:275px;
+        background: url('images/200yearsCircle.png') no-repeat;
+    }
+
     aside.calendar_calendar .events {
         height:660px;
         display:flex; flex-direction:column; justify-content:space-between;
