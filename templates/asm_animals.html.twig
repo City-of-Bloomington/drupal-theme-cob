@@ -28,7 +28,12 @@
  */
 #}
 <div id="intro">
-    {{ form }}
+    <div>
+        <a class="button" href="{{ path('asm.animals') }}" >All</a>
+        <a class="button" href="{{ path('asm.animals', {'species': 'Cat'  }) }}">Cats</a>
+        <a class="button" href="{{ path('asm.animals', {'species': 'Dog'  }) }}">Dogs</a>
+        <a class="button" href="{{ path('asm.animals', {'species': 'Other'}) }}">Other</a>
+    </div>
     <aside>
         <header><h2>Adoption Forms</h2></header>
         <ul><li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEc3RDJ3bS04WklkZ09IUjZXMmRaNFE6MQ">
