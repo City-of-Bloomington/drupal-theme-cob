@@ -369,7 +369,7 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
 
 #asm_animals article a:hover h3, #interactivemap_maps article a:hover h3, #legislationTypes article a:hover h3, #reports article a:hover h3, .boards-block > div a:hover h3, .departments-block > div a:hover h3, .parks-categories-block > div a:hover h3, .info-list > div a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
 
-#asm_animals article a img, #interactivemap_maps article a img, #legislationTypes article a img, #reports article a img, .boards-block > div a img, .departments-block > div a img, .parks-categories-block > div a img, .info-list > div a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 320px; }
+#asm_animals article a img, #interactivemap_maps article a img, #legislationTypes article a img, #reports article a img, .boards-block > div a img, .departments-block > div a img, .parks-categories-block > div a img, .info-list > div a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 284px; }
 
 @media all and (min-width: 640px) { #asm_animals article, #interactivemap_maps article, #legislationTypes article, #reports article, .boards-block > div, .departments-block > div, .parks-categories-block > div, .info-list > div, .promt_programs > article, .paragraph--type--info-card { flex-basis: 320px; vertical-align: top; text-align: center; }
   #asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .boards-block > div a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }

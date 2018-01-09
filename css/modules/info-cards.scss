@@ -70,7 +70,7 @@ $card-height-max: 290px;
 
             h3 { color:$color-content-background; }
         }
-        img { width:$card-width; }
+        img { width:$card-width - 36px; }
     }
 
     @media all and (min-width:$viewport-medium) {
