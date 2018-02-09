@@ -8,7 +8,7 @@
  * - asm_url: Base URL for Shelter Manager
  * - proxy:   Whether to proxy images, or not
  *
- * @copyright 2017 City of Bloomington, Indiana
+ * @copyright 2017-2018 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
  *
  * This file is part of the ASM drupal module.
@@ -29,10 +29,10 @@
 #}
 <div id="intro">
     <div>
-        <a class="button" href="{{ path('asm.animals') }}" >All</a>
-        <a class="button" href="{{ path('asm.animals', {'species': 'Cat'  }) }}">Cats</a>
-        <a class="button" href="{{ path('asm.animals', {'species': 'Dog'  }) }}">Dogs</a>
-        <a class="button" href="{{ path('asm.animals', {'species': 'Other'}) }}">Other</a>
+        <a class="button" href="{{ path('asm.adoptable_animals') }}" >All</a>
+        <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Cat'  }) }}">Cats</a>
+        <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Dog'  }) }}">Dogs</a>
+        <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Other'}) }}">Other</a>
     </div>
     <aside>
         <header><h2>Adoption Forms</h2></header>
@@ -55,7 +55,7 @@
     <div>
     {% for a in animals %}
     <article class="{{ a.SPECIESNAME }}">
-        <a href="{{ path('asm.animal', {'animal_id': a.ID}) }}">
+        <a href="{{ path('asm.adoptable_animal', {'animal_id': a.ID}) }}">
             <header><h3>{{ a.ANIMALNAME }}</h3></header>
             {% if a.WEBSITEIMAGECOUNT %}
                 {% if proxy %}

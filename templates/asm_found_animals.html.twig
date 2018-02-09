@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Displays the list of Found Animals from Shelter Manager
+ *
+ * Available variables
+ * - animals: The animals JSON data from Shelter Manager
+ * - asm_url: Base URL for Shelter Manager
+ * - proxy:   Whether to proxy images, or not
+ *
+ * @copyright 2018 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
+ *
+ * This file is part of the ASM drupal module.
+ *
+ * The ASM module is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * The ASM module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with the ASM module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
+ */
+#}
+<div id="intro">
+    <div>
+        <a class="button" href="{{ path('asm.found_animals') }}">All</a>
+        <a class="button" href="{{ path('asm.found_animals', {'species': 'Cat'  }) }}">Cats</a>
+        <a class="button" href="{{ path('asm.found_animals', {'species': 'Dog'  }) }}">Dogs</a>
+        <a class="button" href="{{ path('asm.found_animals', {'species': 'Other'}) }}">Other</a>
+    </div>
+</div>
+<section id="asm_animals">
+    <header>
+        <h2>Found Animals</h2>
+    </header>
+    <div>
+    {% for a in animals %}
+    <article class="{{ a.SPECIESNAME }}">
+        <a href="{{ path('asm.found_animal', {'lfid': a.LFID}) }}">
+            <header><h3>{{ a.AREAFOUND }}</h3></header>
+            {% if a.WEBSITEMEDIAID %}
+                {% if proxy %}
+                    <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" />
+                {% else %}
+                    <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ a.WEBSITEMEDIAID }}.jpg" />
+                {% endif %}
+            {% endif %}
+        </a>
+    </article>
+    {% endfor %}
+    </div>
+</section>
