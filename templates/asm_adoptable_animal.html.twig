@@ -32,15 +32,16 @@
         <div>
             {% if animal.ANIMALCOMMENTS %}<p>{{ animal.ANIMALCOMMENTS }}</p>{% endif %}
             <p>{{ animal.ANIMALNAME }} is:</p>
-            <ul><li>{{ animal.SPECIESNAME }}</li>
-                <li>{{ animal.BREEDNAME   }}</li>
-                <li>{{ animal.SEXNAME     }}</li>
-                <li>{{ animal.ANIMALAGE   }}</li>
-                <li>{{ animal.SIZENAME    }}</li>
-                {% if  animal.DECLAWED %}<li>Declawed</li>{% endif %}
-                {% if  animal.HASSPECIALNEEDS %}<li>Special Needs</li>{% endif %}
-                <li>{{ animal.SHELTERCODE }}</li>
-            </ul>
+            <table>
+                <tr><th>Species</th><td>{{ animal.SPECIESNAME }}</td></tr>
+                <tr><th>Breed  </th><td>{{ animal.BREEDNAME   }}</td></tr>
+                <tr><th>Sex    </th><td>{{ animal.SEXNAME     }}</td></tr>
+                <tr><th>Age    </th><td>{{ animal.ANIMALAGE   }}</td></tr>
+                <tr><th>Size   </th><td>{{ animal.SIZENAME    }}</td></tr>
+                {% if  animal.DECLAWED %}<tr><th>Declawed</th><td>Declawed</td></tr>{% endif %}
+                {% if  animal.HASSPECIALNEEDS %}<tr><th>Special Needs</th><td>Special Needs</td></tr>{% endif %}
+                <tr><th>Code   </th><td>{{ animal.SHELTERCODE }}</td></tr>
+            </table>
             <div class="link">
                 {% if animal.SPECIESNAME == 'Cat' %}
                 <a class="button" href="https://docs.google.com/spreadsheet/viewform?formkey=dEc3RDJ3bS04WklkZ09IUjZXMmRaNFE6MQ">
@@ -70,4 +71,5 @@
             </div>
         </aside>
         {% endif %}
+    </div>
 </section>

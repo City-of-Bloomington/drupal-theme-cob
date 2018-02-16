@@ -43,7 +43,7 @@
     {% for a in animals %}
     <article class="{{ a.SPECIESNAME }}">
         <a href="{{ path('asm.found_animal', {'lfid': a.LFID}) }}">
-            <header><h3>{{ a.AREAFOUND }}</h3></header>
+            <header><h3>{{ a.SPECIESNAME }}:{{ a.BREEDNAME }}</h3></header>
             {% if a.WEBSITEMEDIAID %}
                 {% if proxy %}
                     <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" />
@@ -51,6 +51,7 @@
                     <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ a.WEBSITEMEDIAID }}.jpg" />
                 {% endif %}
             {% endif %}
+            <p>{{ a.AREAFOUND }}</p>
         </a>
     </article>
     {% endfor %}

@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fca3638a9cc853e2d003e15117975176",
+    "content-hash": "e8f31b430b16df0e9f870db17082b1f4",
     "packages": [
         {
             "name": "City-of-Bloomington/factory-number-one",
-            "version": "dev-refactor",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Bloomington/factory-number-one.git",
-                "reference": "c7166857589f34211d24ebba928ba10b67fbf284"
+                "reference": "a6bac774ef9b96b0e5a86871acedf5c491a61540"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Bloomington/factory-number-one/zipball/c7166857589f34211d24ebba928ba10b67fbf284",
-                "reference": "c7166857589f34211d24ebba928ba10b67fbf284",
+                "url": "https://api.github.com/repos/City-of-Bloomington/factory-number-one/zipball/a6bac774ef9b96b0e5a86871acedf5c491a61540",
+                "reference": "a6bac774ef9b96b0e5a86871acedf5c491a61540",
                 "shasum": ""
             },
             "type": "library",
             "support": {
-                "source": "https://github.com/City-of-Bloomington/factory-number-one/tree/refactor",
+                "source": "https://github.com/City-of-Bloomington/factory-number-one/tree/master",
                 "issues": "https://github.com/City-of-Bloomington/factory-number-one/issues"
             },
-            "time": "2017-07-26T20:34:45+00:00"
+            "time": "2018-01-19T20:22:13+00:00"
         }
     ],
     "packages-dev": [],
@@ -37,7 +37,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": ">=7.0"
     },
     "platform-dev": []
 }
