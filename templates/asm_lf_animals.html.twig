@@ -7,6 +7,8 @@
  * - animals: The animals JSON data from Shelter Manager
  * - asm_url: Base URL for Shelter Manager
  * - proxy:   Whether to proxy images, or not
+ * - title:   The title to display
+ * - mode:    Current mode (lost or found)
  *
  * @copyright 2018 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
@@ -27,22 +29,24 @@
  * along with the ASM module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
  */
 #}
+{% set lf_list   = "asm.#{mode}_animals" %}
+{% set lf_single = "asm.#{mode}_animal"  %}
 <div id="intro">
     <div>
-        <a class="button" href="{{ path('asm.found_animals') }}">All</a>
-        <a class="button" href="{{ path('asm.found_animals', {'species': 'Cat'  }) }}">Cats</a>
-        <a class="button" href="{{ path('asm.found_animals', {'species': 'Dog'  }) }}">Dogs</a>
-        <a class="button" href="{{ path('asm.found_animals', {'species': 'Other'}) }}">Other</a>
+        <a class="button" href="{{ path(lf_list) }}">All</a>
+        <a class="button" href="{{ path(lf_list, {'species': 'Cat'  }) }}">Cats</a>
+        <a class="button" href="{{ path(lf_list, {'species': 'Dog'  }) }}">Dogs</a>
+        <a class="button" href="{{ path(lf_list, {'species': 'Other'}) }}">Other</a>
     </div>
 </div>
 <section id="asm_animals">
     <header>
-        <h2>Found Animals</h2>
+        <h2>{{ title }}</h2>
     </header>
     <div>
     {% for a in animals %}
     <article class="{{ a.SPECIESNAME }}">
-        <a href="{{ path('asm.found_animal', {'lfid': a.LFID}) }}">
+        <a href="{{ path(lf_single, {'lfid': a.LFID}) }}">
             <header><h3>{{ a.SPECIESNAME }}:{{ a.BREEDNAME }}</h3></header>
             {% if a.WEBSITEMEDIAID %}
                 {% if proxy %}

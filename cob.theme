@@ -60,8 +60,8 @@ function cob_preprocess(&$vars, $hook)
 
         case 'asm_adoptable_animal':
         case 'asm_adoptable_animals':
-        case 'asm_found_animal':
-        case 'asm_found_animals':
+        case 'asm_lf_animal':
+        case 'asm_lf_animals':
             $route = $hook;
             $location = \Drupal::entityTypeManager()->getStorage('node')->load(204);
         break;
