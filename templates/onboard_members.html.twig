@@ -42,7 +42,11 @@
     {% if seat.currentMember.website %}</a>{% endif %}
     {% else %}
     <div class="member">
-        <h3>Vacant</h3>
+        <h3>Vacant
+            {% if seat.currentMember.firstname %}
+            ({{ seat.currentMember.firstname }} {{ seat.currentMember.lastname }})
+            {% endif %}
+        </h3>
         <dl>{% if seat.appointedBy %}
             <dt>Appointed By:</dt>
             <dd>{{ seat.appointedBy }}</dd>
