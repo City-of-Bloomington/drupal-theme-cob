@@ -1,14 +1,16 @@
 section { margin:0; }
 
 #intro {
-    display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;
-
-    > div { flex:1 0 $size-sidebar-maxwidth; margin-right:$size-gutter;    }
-    aside { flex:auto; max-width:$size-sidebar-maxwidth; min-width:$size-sidebar-maxwidth - 20px;
+    @media all and (min-width: $viewport-medium) {
+        display: grid; grid-template-columns: 1fr $size-sidebar-maxwidth; grid-column-gap: $size-gutter;
+        > div   { grid-column: 1; }
+        > aside { grid-column: 2; }
+    }
+    aside {
+        ul  { list-style-type: none; }
         img { max-width:$size-sidebar-maxwidth; height:auto; }
     }
-
-    margin-bottom:1em;
+    margin-bottom: 1em;
 }
 
 @media all and (min-width: $viewport-large) {

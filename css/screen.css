@@ -6,11 +6,13 @@ h2 { font-size: 1.9rem; }
 
 section { margin: 0; }
 
-#intro { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; margin-bottom: 1em; }
+#intro { margin-bottom: 1em; }
 
-#intro > div { flex: 1 0 340px; margin-right: 0.5em; }
+@media all and (min-width: 640px) { #intro { display: grid; grid-template-columns: 1fr 340px; grid-column-gap: 0.5em; }
+  #intro > div { grid-column: 1; }
+  #intro > aside { grid-column: 2; } }
 
-#intro aside { flex: auto; max-width: 340px; min-width: 320px; }
+#intro aside ul { list-style-type: none; }
 
 #intro aside img { max-width: 340px; height: auto; }
 
