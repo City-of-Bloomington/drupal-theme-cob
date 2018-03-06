@@ -29,6 +29,7 @@
 #}
 <section class="asm_animal">
     <div id="intro">
+    {% if animal is not empty %}
         <div>
             {% if animal.ANIMALCOMMENTS %}<p>{{ animal.ANIMALCOMMENTS }}</p>{% endif %}
             <p>{{ animal.ANIMALNAME }} is:</p>
@@ -71,5 +72,21 @@
             </div>
         </aside>
         {% endif %}
+    {% else %}
+        <div>
+            <p>
+                This animal is no longer available.
+                Please choose an option to see other animals that available for adoption.
+            </p>
+        </div>
+    {% endif %}
+        <aside>
+            <header><h2>Adoptable Animals</h2></header>
+            <ul><li><a href="{{ path('asm.adoptable_animals') }}" >All</a></li>
+                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Cat'  }) }}">Cats</a></li>
+                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Dog'  }) }}">Dogs</a></li>
+                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Other'}) }}">Other</a></li>
+            </ul>
+        </aside>
     </div>
 </section>
