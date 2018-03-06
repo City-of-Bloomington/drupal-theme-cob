@@ -82,11 +82,10 @@
     {% endif %}
         <aside>
             <header><h2>Adoptable Animals</h2></header>
-            <ul><li><a href="{{ path('asm.adoptable_animals') }}" >All</a></li>
-                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Cat'  }) }}">Cats</a></li>
-                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Dog'  }) }}">Dogs</a></li>
-                <li><a href="{{ path('asm.adoptable_animals', {'species': 'Other'}) }}">Other</a></li>
-            </ul>
+            <a class="button" href="{{ path('asm.adoptable_animals') }}" >All</a>
+            <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Cat'  }) }}">Cats</a>
+            <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Dog'  }) }}">Dogs</a>
+            <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Other'}) }}">Other</a>
         </aside>
     </div>
 </section>
