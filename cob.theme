@@ -64,6 +64,7 @@ function cob_preprocess(&$vars, $hook)
         case 'asm_lf_animals':
             $route = $hook;
             $location = \Drupal::entityTypeManager()->getStorage('node')->load(204);
+            $vars['base_path'] = base_path();
         break;
 
         case 'page':

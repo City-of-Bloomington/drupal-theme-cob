@@ -63,6 +63,8 @@
                 {% else %}
                     <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" />
                 {% endif %}
+            {% else %}
+                <img src="{{ directory }}/css/images/shelter.png" />
             {% endif %}
         </a>
     </article>
