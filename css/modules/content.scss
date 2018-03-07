@@ -7,6 +7,14 @@
 #content {
     ul { list-style:disc    outside; margin-left:1em; }
     ol { list-style:decimal outside; margin-left:1em; }
+    &.search-results {
+        h3 { font-weight:bold; }
+        ol { list-style-type: none;
+            li { margin-bottom: $size-gutter * 2;
+                > a { display:block; color: $color-action; }
+            }
+        }
+    }
 
     .text_with_summary a,
     .text_long         a { color:$color-heading; text-decoration:underline; }

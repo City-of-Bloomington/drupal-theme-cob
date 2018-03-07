@@ -4,6 +4,10 @@
 /** @see https://en.wikipedia.org/wiki/Web_colors */
 h2 { font-size: 1.9rem; }
 
+h3 { margin: 0.5em 0 0 0; }
+
+p { margin: 0 0 0.5em 0; }
+
 section { margin: 0; }
 
 #intro { margin-bottom: 1em; }
@@ -76,6 +80,14 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 #content ul { list-style: disc    outside; margin-left: 1em; }
 
 #content ol { list-style: decimal outside; margin-left: 1em; }
+
+#content.search-results h3 { font-weight: bold; }
+
+#content.search-results ol { list-style-type: none; }
+
+#content.search-results ol li { margin-bottom: 1em; }
+
+#content.search-results ol li > a { display: block; color: #4caf50; }
 
 #content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 
@@ -434,6 +446,14 @@ dl { border: none; }
 #related-links > .container > div div, #block-committeemembers nav div { display: inline-block; }
 
 #related-links > .container > div a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
+
+.pager ul { list-style-type: none; }
+
+.pager li { display: inline-block; padding: 0 0.5em; }
+
+.pager li.is-active { background-color: #183365; }
+
+.pager li.is-active a { color: #fff; }
 
 body > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
 

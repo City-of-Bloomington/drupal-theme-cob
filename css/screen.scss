@@ -1,5 +1,6 @@
 @import '../vendor/City-of-Bloomington/factory-number-one/src/themes/default/scss/modules/_vars-mixins';
 @import 'modules/vars';
+@import 'modules/html-elements';
 @import 'modules/layout';
 @import 'modules/nav1';
 @import 'modules/header';
@@ -90,6 +91,18 @@ dl { border:none; }
         background-color:$color-content-background;
         border-color:$color-action;
         color:$color-action;
+    }
+}
+
+.pager {
+    ul { list-style-type: none; }
+    li {
+        display: inline-block; padding: 0 $size-gutter;
+
+        &.is-active {
+            background-color: $color-link;
+            a { color: $color-content-background; }
+        }
     }
 }
 
