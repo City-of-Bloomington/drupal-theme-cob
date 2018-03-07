@@ -119,7 +119,7 @@
         {{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links',
-                'field_content_image', 'field_coordinates', 'field_hours')
+                'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
     </div>
     {% if program_search_form %}
@@ -136,7 +136,7 @@
         </section>
     </div>
     {% endif %}
-    {% set related_links %}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
+    {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
     {% if  related_links %}
     <section id="related-links" class="divided">
         <div class="container">
