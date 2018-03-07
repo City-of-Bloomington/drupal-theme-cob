@@ -16,12 +16,15 @@
 dl { border:none; }
 
 #alerts {
-    background-color: $color-error;
     color: $color-content-background;
-    padding: $size-gutter;
-    font-weight: bold;
+    h2, a { color: $color-content-background; }
 
     .container { text-align:center; }
+    article { margin:0; padding: $size-gutter; }
+
+    .info    { background-color: $color-action; }
+    .warning { background-color: $color-alert;  }
+    .severe  { background-color: $color-error;  }
 }
 #banner {
     height:320px;

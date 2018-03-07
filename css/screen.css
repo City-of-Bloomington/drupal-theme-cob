@@ -379,9 +379,19 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
 
 dl { border: none; }
 
-#alerts { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
+#alerts { color: #fff; }
+
+#alerts h2, #alerts a { color: #fff; }
 
 #alerts .container { text-align: center; }
+
+#alerts article { margin: 0; padding: 0.5em; }
+
+#alerts .info { background-color: #4caf50; }
+
+#alerts .warning { background-color: #ff9800; }
+
+#alerts .severe { background-color: #ed9a9c; }
 
 #banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
 
