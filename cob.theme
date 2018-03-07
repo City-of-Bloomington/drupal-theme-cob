@@ -117,7 +117,17 @@ function cob_preprocess_page__front(&$vars)
     $storage = $manager->getStorage('node');
 
     $query   = \Drupal::entityQuery('node')
-                ->condition('type',    'news')
+                ->condition('type', 'alert')
+                ->condition('status',  1)
+                ->sort('created', 'desc')
+                ->range(0, 5);
+    $alerts = $query->execute();
+    if ($alerts) {
+        $vars['alerts'] = $builder->viewMultiple($storage->loadMultiple($alerts), 'teaser');
+    }
+
+    $query   = \Drupal::entityQuery('node')
+                ->condition('type', 'news')
                 ->condition('status',  1)
                 ->sort('created', 'desc')
                 ->range(0, 5);

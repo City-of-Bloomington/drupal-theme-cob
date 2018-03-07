@@ -53,11 +53,15 @@
         <a id="badge" href="{{ base_path }}bicentennial">
         </a>
     </div>
-    <div id="highlighted">
+    {% if alerts %}
+    <div id="alerts">
         <div class="container">
-            {{ page.highlighted }}
+            {{ alerts }}
         </div>
     </div>
+    {% endif %}
+    {{ page.highlighted }}
+    {{ page.help }}
 
     <div id="content">
         <section id="services-section" class="divided dark">

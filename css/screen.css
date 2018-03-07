@@ -379,9 +379,9 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
 
 dl { border: none; }
 
-#highlighted { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
+#alerts { background-color: #ed9a9c; color: #fff; padding: 0.5em; font-weight: bold; }
 
-#highlighted .container { text-align: center; }
+#alerts .container { text-align: center; }
 
 #banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
 
