@@ -194,18 +194,27 @@ function cob_preprocess_node(&$vars)
         $vars['contactInfo'] = $contactInfo;
     }
 
-    $nid  = (int)$vars['node']->get('nid' )->value;
-    switch ($nid) {
-        case 790: // Maps Landing Page
-            $vars['maps'] = [
-                '#theme' => 'interactivemap_maps',
-                '#maps'  => MapGateway::maps()
-            ];
-        break;
-    }
-
     if ($vars['view_mode'] == 'full') {
+        $nid     = (int)$vars['node']->get('nid' )->value;
         $manager = \Drupal::entityTypeManager();
+        switch ($nid) {
+            case 790: // Maps Landing Page
+                $vars['maps'] = [
+                    '#theme' => 'interactivemap_maps',
+                    '#maps'  => MapGateway::maps()
+                ];
+            break;
+
+            case 573:
+                $query   = \Drupal::entityQuery('node')
+                            ->condition('type', 'project_page')
+                            ->condition('field_active',  true)
+                            ->sort('created', 'desc');
+                $storage = $manager->getStorage('node');
+                $builder = $manager->getViewBuilder('node');
+                $vars['projects'] = $builder->viewMultiple($storage->loadMultiple($query->execute()), 'info_card');
+            break;
+        }
         $storage = $manager->getStorage('block');
         $builder = $manager->getViewBuilder('block');
 
