@@ -92,6 +92,7 @@
             {{ content.field_contacts }}
             {{ content.body }}
             {{ content.field_call_to_action }}
+            {{ content.field_video_embed }}
         </div>
 
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
@@ -118,7 +119,7 @@
     <div{{ content_attributes }}>
         {{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links',
+                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video_embed',
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
     </div>
