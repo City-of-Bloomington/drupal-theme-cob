@@ -7,6 +7,8 @@
 #content {
     ul { list-style:disc    outside; margin-left:1em; }
     ol { list-style:decimal outside; margin-left:1em; }
+    nav a { display:block; }
+
     &.search-results {
         h3 { font-weight:bold; }
         ol { list-style-type: none;

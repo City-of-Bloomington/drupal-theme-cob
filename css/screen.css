@@ -81,6 +81,8 @@ body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bo
 
 #content ol { list-style: decimal outside; margin-left: 1em; }
 
+#content nav a { display: block; }
+
 #content.search-results h3 { font-weight: bold; }
 
 #content.search-results ol { list-style-type: none; }
