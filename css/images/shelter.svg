@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="shelter.svg"
+   inkscape:export-filename="/c/bloomington-code/drupal-theme-cob/css/images/shelter.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="350.40352"
+     inkscape:cy="258.77808"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="755"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       orientation="1,0"
+       position="256,256"
+       id="guide7267"
+       inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid7269" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="256,256"
+       id="guide7271"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="0.70710678,-0.70710678"
+       position="256,256"
+       id="guide8162"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="-0.70710678,-0.70710678"
+       position="256,256"
+       id="guide8166"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="32,0"
+       id="guide4603"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="480,0"
+       id="guide4605"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,480"
+       id="guide5200"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,32"
+       id="guide5202"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="128,0"
+       id="guide5278"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="384,0"
+       id="guide5280"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,384"
+       id="guide5282"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,128"
+       id="guide5284"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="256,384"
+       orientation="-0.70710678,0.70710678"
+       id="guide828"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="128,384"
+       orientation="-0.70710678,0.70710678"
+       id="guide830"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="128,511.13719"
+       orientation="-0.70710678,0.70710678"
+       id="guide832"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="384,256"
+       orientation="-0.70710678,0.70710678"
+       id="guide834"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="384,128"
+       orientation="-0.70710678,0.70710678"
+       id="guide836"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="512.14734,128"
+       orientation="-0.70710678,0.70710678"
+       id="guide838"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="1,0"
+       id="guide840"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="0,512"
+       orientation="0,1"
+       id="guide842"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="512,480"
+       orientation="1,0"
+       id="guide844"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="256,0"
+       orientation="0,1"
+       id="guide846"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="128,0"
+       orientation="0.70710678,0.70710678"
+       id="guide867"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="128,128"
+       orientation="0.70710678,0.70710678"
+       id="guide869"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="256,128"
+       orientation="0.70710678,0.70710678"
+       id="guide871"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="384,256"
+       orientation="0.70710678,0.70710678"
+       id="guide873"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="384,384"
+       orientation="0.70710678,0.70710678"
+       id="guide875"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="512,384"
+       orientation="0.70710678,0.70710678"
+       id="guide877"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="attribution"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <text
+       style="font-weight:bold;font-size:18.66666603px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#000000;stroke-width:4.46663809"
+       x="-1.288"
+       y="561.77942"
+       font-size="5px"
+       font-weight="bold"
+       id="text903">Dog created by Daniel Schroeder</text>
+    <text
+       style="font-weight:bold;font-size:18.66666603px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#000000;stroke-width:4.46663809"
+       x="0"
+       y="584.11267"
+       font-size="5px"
+       font-weight="bold"
+       id="text905">from the Noun Project</text>
+    <text
+       style="font-weight:bold;font-size:24.59888077px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#000000;stroke-width:4.91977596"
+       x="-0.7093333"
+       y="621.91931"
+       font-size="5px"
+       font-weight="bold"
+       id="text981">
+      <tspan
+         style="font-size:18.66666603px"
+         id="tspan1001">Cat created by Marco Hernandez</tspan>
+    </text>
+    <text
+       style="font-weight:bold;font-size:24.59888077px;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;fill:#000000;stroke-width:4.91977596"
+       x="0"
+       y="640.51819"
+       font-size="5px"
+       font-weight="bold"
+       id="text983">
+      <tspan
+         style="font-size:18.66666603px"
+         id="tspan1003">from the Noun Project</tspan>
+    </text>
+    <text
+       transform="translate(0,-540.36218)"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:30px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1.0101525"
+       y="1216.0068"
+       id="text1030"><tspan
+         sodipodi:role="line"
+         id="tspan1028"
+         x="1.0101525"
+         y="1216.0068"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.66666603px;line-height:1.25000002%;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial-Unicode, Arial, Sans-serif Bold'">Inspired by design from Iowa City:</tspan><tspan
+         sodipodi:role="line"
+         x="1.0101525"
+         y="1253.5068"
+         id="tspan1032"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.66666603px;line-height:1.25000002%;font-family:'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial-Unicode, Arial, Sans-serif Bold'">http://icanimalcenter.org/templates/animal-center-home/images/animal-placeholder.gif</tspan></text>
+  </g>
+  <g
+     inkscape:label="dog"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-540.36218)">
+    <path
+       inkscape:connector-curvature="0"
+       d="m 464.368,646.10888 c -4.46664,-0.89333 -18.31322,-4.9133 -19.65321,-5.35996 -1.33999,-0.89333 -4.01998,-1.78666 -4.9133,-6.69996 -0.89333,-4.9133 -0.44667,-9.82661 -7.59329,-14.73991 -7.59328,-5.35996 -10.71993,-4.9133 -12.95325,-6.69995 -6.25329,-2.23332 -15.18657,-3.12665 -24.11985,-1.34 -9.37994,1.78666 -12.05992,6.2533 -16.97322,8.93328 -4.9133,2.67998 -12.05992,12.95325 -16.0799,16.97323 -4.01997,4.01997 -20.09987,24.56651 -27.24649,28.13982 -6.69996,3.57331 -20.9932,9.8266 -27.69316,10.27326 -6.69996,0.89333 -13.39991,1.34 -18.75988,4.91331 -5.35996,3.12664 -9.37994,5.80663 -24.11984,7.14662 -14.73991,1.33999 -50.47302,-0.44667 -57.17297,-1.33999 -6.2533,-0.89333 -20.9932,-3.57331 -30.37314,-1.78666 -9.82661,2.23332 -13.84658,4.01997 -17.41989,2.67998 -3.57331,-1.33999 -12.95325,-2.67998 -19.20655,-2.23332 -6.25329,0.44667 -19.20654,5.80663 -24.56651,6.69996 -5.35996,0.89333 -17.419891,-0.89333 -24.566511,-4.46664 -6.25329,-3.12664 -26.353162,-11.16659 -31.713128,-12.50658 -5.359966,-0.89333 -10.273268,-1.78666 -12.953251,0 -2.233319,1.33999 -4.019974,8.03995 2.23332,14.29324 6.253293,5.80663 21.439863,20.09987 26.799829,23.67318 5.359966,3.57331 16.97322,10.27327 27.246491,10.27327 10.71993,0.44666 18.75988,-1.78666 21.88653,-2.67998 3.12665,-0.89333 6.25329,-2.23332 5.80663,-1.34 -0.44666,0.89333 -5.35997,21.88653 -8.93328,29.47982 -3.57331,7.14662 -10.71993,33.49978 -13.39991,44.21972 -2.67998,10.71993 -6.69996,26.79982 -12.059921,30.8198 -5.35997,4.01997 -10.719936,5.80663 -14.739911,17.41989 -4.466638,11.16659 -7.146621,40.64641 -8.933276,44.66638 -2.233319,4.01997 -2.679983,11.1666 -0.446664,13.39991 2.233319,2.23332 4.913302,3.57331 7.146621,3.57331 2.679983,0.44667 4.019975,0.89333 6.253294,0.89333 2.233316,0 4.913306,0.44667 7.593286,-0.89333 2.23332,-1.33999 4.46664,-3.57331 3.57331,-5.35996 -0.89333,-2.23332 -6.69996,-4.46664 -7.14662,-10.27327 -0.89333,-5.80663 3.12664,-23.67318 4.46664,-26.35316 1.33999,-2.67999 6.25329,-12.50659 9.826601,-16.0799 3.57331,-3.57331 6.25329,-9.37994 8.93328,-10.71993 2.67998,-1.33999 24.56651,-20.09988 24.56651,-20.09988 0,0 -16.97323,30.81981 -15.63324,40.19975 1.33999,9.37994 5.35997,20.54653 6.2533,23.22652 1.33999,3.12664 2.23332,10.27326 8.48661,11.16659 6.25329,0.89333 15.63323,0.89333 18.75988,0 3.12665,-0.89333 5.35997,-7.59328 2.67998,-9.8266 -2.67998,-2.67998 -9.37994,-3.12665 -12.05992,-3.12665 -2.67998,-0.44666 -4.01997,-0.89333 -4.9133,-9.8266 -0.89333,-8.48661 -2.23332,-16.52656 -0.44667,-19.65321 1.78666,-3.12665 8.03995,-13.39991 11.1666,-15.18657 3.12665,-1.78666 19.65321,-13.39991 28.58648,-23.22652 8.93328,-9.8266 15.18657,-17.86655 16.0799,-18.75988 0.89333,-0.89333 5.80663,-10.27327 11.1666,-9.37994 5.35996,1.33999 23.22652,6.25329 23.22652,6.25329 2.67998,0.44667 14.7399,3.12665 22.33319,8.93328 7.59328,6.25329 20.54653,9.37994 33.05312,10.71993 12.95325,1.33999 21.88653,1.78666 21.88653,1.78666 0,0 8.03994,7.14662 8.93327,15.63323 0.89333,8.48661 2.67999,16.0799 2.67999,20.54654 0,3.57331 0.89332,12.50658 1.33999,14.7399 0.44666,2.23332 0.89332,18.31322 1.33999,20.54654 0.44666,1.78665 0.89333,10.71993 1.78665,13.39991 0.44667,2.67999 4.46664,12.50659 5.80663,14.29325 1.33999,1.78665 7.59329,3.57331 12.05993,4.01997 4.01997,0.44666 8.03995,-0.44666 9.8266,-1.33999 1.33999,-0.89333 2.23332,-4.46664 2.23332,-5.80663 -0.44666,-1.33999 -2.23332,-2.67998 -2.23332,-2.67998 0,0 5.80663,1.78665 10.71993,1.78665 4.46664,0 8.93328,-0.89333 9.82661,-1.78665 1.33999,-1.34 4.46663,-5.80663 0,-9.82661 -4.01998,-3.57331 -8.03995,-4.01997 -11.61326,-3.57331 -3.57331,0.44666 -9.37994,-7.14662 -9.37994,-12.50659 0,-4.9133 1.33999,-19.6532 1.78665,-22.77985 0.44667,-3.12665 3.12665,-23.22652 6.69996,-35.73311 3.57331,-12.50658 0.89333,-12.50658 8.03995,-20.09987 6.69996,-7.59328 24.11984,-29.92647 25.01317,-42.87972 0.89333,-12.50659 -0.44666,-23.22652 4.9133,-33.49979 5.35997,-10.27327 12.95325,-29.03315 13.84658,-30.37314 0.89333,-1.33999 3.12665,-12.95325 4.46664,-12.95325 1.33999,0 23.22652,4.01997 29.47981,2.67998 6.2533,-1.33999 11.1666,-5.35996 13.39992,-5.80663 3.12664,-0.44666 5.80663,-4.9133 6.69995,-9.8266 1.34,-5.35997 1.34,-5.80663 1.78666,-10.71993 0.89333,-1.78666 1.78666,-5.80663 -2.67998,-6.2533 z"
+       id="path901"
+       style="stroke-width:4.46663809;fill:#434343;fill-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="cat">
+    <path
+       inkscape:connector-curvature="0"
+       d="m 211.52869,443.82716 16.29055,-16.02813 c 19.45985,-16.02812 17.09802,-38.89949 17.34025,-41.26131 0.26242,-2.34165 0.26242,-11.80915 -0.52484,-14.95824 -0.78728,-3.14911 0.26242,-6.58083 0.26242,-6.58083 -5.79354,-23.65865 -24.44592,-17.09801 -24.44592,-17.09801 -7.61034,0.78727 -7.89295,-6.56064 -7.89295,-6.56064 -5.24851,-2.62425 -3.93637,-8.13517 -3.93637,-8.13517 l 9.22525,-9.72993 c 3.67396,-9.70973 14.17097,-12.09175 14.17097,-12.09175 -1.55438,-9.70973 3.4317,-15.7657 3.4317,-15.7657 0.78728,2.88668 11.80915,14.51414 12.6166,14.71601 12.87903,3.14909 8.68023,5.26869 16.81541,11.04204 8.13517,5.77336 25.49562,12.87902 33.10596,8.68022 7.61033,-4.21899 70.93556,-9.72991 98.24797,-9.72991 8.0948,0 14.4132,1.67548 19.29835,4.01712 4.48141,-3.43172 10.25477,-10.84019 14.51413,-20.91327 6.27802,-14.83712 7.16622,-29.73481 2.34165,-39.84827 -2.58389,-5.45037 -5.53112,-8.53891 -8.78117,-9.18488 -4.82459,-0.94877 -10.7998,3.25003 -12.51566,4.8044 -3.22984,2.96742 -8.2563,2.76555 -11.24391,-0.4643 -2.98761,-3.22984 -2.80592,-8.27649 0.42392,-11.26409 1.27175,-1.17083 12.73772,-11.34485 26.32327,-8.74078 8.51872,1.63511 15.32159,7.69107 20.20675,18.00641 6.84324,14.37282 6.09634,33.65099 -2.05903,52.90897 -3.67396,8.68021 -9.52806,18.45051 -16.69429,25.03132 1.87735,2.62425 2.62425,4.56216 2.62425,4.56216 2.36183,5.51094 8.92247,17.86511 6.56064,29.16959 -2.36183,11.30446 4.72365,16.55297 6.03577,17.8651 1.33232,1.3323 14.99861,9.46749 14.99861,9.46749 l 11.30448,39.94919 c 1.83697,7.63052 -8.4178,12.09176 -8.4178,12.09176 -3.67394,-0.50467 -3.93637,-12.59641 -3.93637,-12.59641 l -8.94265,-21.05458 -33.6308,-12.33399 c 0,0 0,14.19115 0.52484,16.8154 0.52486,2.62425 1.83699,7.08548 1.83699,7.08548 -1.31213,9.18488 -23.92108,30.4817 -23.92108,30.4817 h -17.07782 v -5.51093 c 1.31212,-6.05596 9.99234,-3.1491 9.99234,-3.1491 l 12.6166,-19.17723 c -13.40388,-10.5172 -18.91481,-28.11988 -18.91481,-28.11988 -6.2982,5.24851 -36.51747,-4.48141 -36.51747,-4.48141 l -18.14772,1.83697 5.24851,42.29084 c 1.57454,10.25477 -0.78728,13.92873 -0.78728,13.92873 h -8.13519 c -5.79353,0 -9.72992,0.78728 -9.72992,-5.26869 0,-6.03579 8.13519,-4.98608 8.13519,-4.98608 l -19.94432,-39.40416 c -18.935,-11.5669 -31.00655,5.2485 -31.00655,5.2485 l -1.0699,6.05597 c -7.3479,10.75944 -47.82195,38.35446 -47.82195,38.35446 h -19.9645 v -6.05597 c 3.43172,-6.2982 11.5669,-3.91619 11.5669,-3.91619 z"
+       id="path979"
+       style="fill:#3f9dff;fill-opacity:1;stroke-width:20.18655777" />
+  </g>
+</svg>
