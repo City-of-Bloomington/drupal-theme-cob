@@ -16,6 +16,7 @@ section { margin:0; }
 @media all and (min-width: $viewport-large) {
     body > header >      .container,
     #nav1                .container,
+    #alerts              .container,
     body > footer        .container,
     main > div           .container,
     #content > section > .container {

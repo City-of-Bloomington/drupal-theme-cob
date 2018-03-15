@@ -78,6 +78,7 @@
 <a href="{{ url }}">
 {% endif %}
 <article{{ attributes }} class="{{ node.bundle }} {{ view_mode }} {{ content.field_level.0 }}">
+<div class="container">
     <header>
         {{ title_prefix }}
         {% if display_submitted %}
@@ -88,5 +89,6 @@
         {{ title_suffix }}
     </header>
     <p>{{ content.field_alert_text.0 }}</p>
+</div>
 </article>
 </a>
