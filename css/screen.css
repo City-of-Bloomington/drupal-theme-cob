@@ -282,13 +282,13 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article header time, #block-committeemeetings article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
-#block-upcomingevents article header time div, #block-committeemeetings article header time div, .onboard_meetings article header time div, .calendar_calendar article header time div { text-align: center; line-height: 1.5em; }
+#block-upcomingevents article header time span, #block-committeemeetings article header time span, .onboard_meetings article header time span, .calendar_calendar article header time span { display: block; text-align: center; line-height: 1.5em; }
 
 #block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
 
 #block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
 
-#block-upcomingevents article > div div, #block-committeemeetings article > div div, .onboard_meetings article > div div, .calendar_calendar article > div div { text-align: center; height: 3em; overflow: hidden; }
+#block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { text-align: center; display: block; height: 3em; overflow: hidden; }
 
 #block-upcomingevents > div, #block-committeemeetings > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
 

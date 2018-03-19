@@ -24,7 +24,7 @@
 
             time {
                 height:100%; display:flex; flex-direction:column; justify-content:center;
-                div { text-align:center; line-height:1.5em; }
+                span { display:block; text-align:center; line-height:1.5em; }
             }
         }
         > div {
@@ -32,7 +32,7 @@
             display:flex; flex-direction:column; justify-content:center;
 
             time { text-align:center; display:block; }
-            div  { text-align:center; height:3em; overflow:hidden; }
+            span { text-align:center; display:block; height:3em; overflow:hidden; }
         }
     }
     > div {
