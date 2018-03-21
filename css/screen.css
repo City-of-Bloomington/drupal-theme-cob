@@ -39,18 +39,25 @@ label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2
   #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; }
   /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
 
-body > header { background-color: #183365; color: #fff; padding: 0; }
+body > header { background-color: #183365; color: #fff; padding: 0; height: 42px; overflow: hidden; }
 
 body > header > .container { min-height: 2em; font-size: 1.25rem; }
 
-body > header > .container h1 { margin: 0 0.5em; }
+body > header > .container h1, body > header > .container h2 { display: block; margin: 4px 0 0 0.5em; padding: 0; font-family: "Roboto", sans-serif; color: #fff; border: none; }
 
-body > header > .container h1 a { margin: 0; padding: 0; font-size: 1.125rem; font-weight: bold; }
+body > header > .container h1 a, body > header > .container h2 a { margin: 0; padding: 0; font-weight: bold; }
 
-body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bold; }
+body > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bold; line-height: 1rem; }
 
-@media all and (min-width: 640px) { body > header > .container { display: flex; flex-direction: row; justify-content: space-between; }
-  body > header > .container h1 a { font-size: 1.25rem; } }
+body > header > .container h1 { font-size: 1rem; line-height: 1rem; }
+
+body > header > .container h1 a { font-size: 1rem; line-height: 1rem; }
+
+body > header > .container h2 { font-style: italic; font-size: 0.875rem; line-height: 0.875rem; }
+
+body > header > .container h2 a { font-size: 0.875rem; line-height: 0.875rem; }
+
+@media all and (min-width: 640px) { body > header > .container { display: flex; flex-direction: row; justify-content: space-between; } }
 
 #feedback { position: absolute; top: 0.5em; right: 0.5em; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
 
