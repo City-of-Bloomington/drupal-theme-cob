@@ -65,6 +65,7 @@ dl { border:none; }
     .member {
         text-align:center; margin-bottom: 1rem; padding: .5rem;
         dd { line-height: 1.5em; }
+        dt { margin:0; }
     }
 
     @media all and (min-width:$viewport-medium) {

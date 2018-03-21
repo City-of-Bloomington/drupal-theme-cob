@@ -440,6 +440,8 @@ dl { border: none; }
 
 #block-departmentstaff > div .member dd, #block-committeemembers .seats .member dd { line-height: 1.5em; }
 
+#block-departmentstaff > div .member dt, #block-committeemembers .seats .member dt { margin: 0; }
+
 @media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers .seats { display: flex; flex-flow: row wrap; justify-content: space-between; }
   #block-departmentstaff > div h3, #block-committeemembers .seats h3 { margin: 0; }
   #block-departmentstaff > div .member, #block-committeemembers .seats .member { width: 208px; } }
