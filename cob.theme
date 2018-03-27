@@ -178,6 +178,7 @@ function cob_preprocess_node(&$vars)
     }
 
     if ($vars['view_mode'] == 'full') {
+        $manager = \Drupal::entityTypeManager();
         $nid     = (int)$vars['node']->get('nid' )->value;
         switch ($nid) {
             case 790: // Maps Landing Page
@@ -198,22 +199,36 @@ function cob_preprocess_node(&$vars)
 
             // Boards
             case 217:
+                $committees = [];
+                foreach (OnBoardService::committee_list() as $c) {
+                    $committees[$c['id']] = $c;
+                }
+
+
+                $storage = $manager->getStorage('node');
+                $builder = $manager->getViewBuilder('node');
                 $query = \Drupal::entityQuery('node')
                        ->condition('type', 'board_commission')
                        ->condition('field_active',  true)
                        ->sort('title');
-                $vars['boards_active'] = _cob_renderNodesByQuery($query, 'info_card');
+                $nodes   = $storage->loadMultiple($query->execute());
+                foreach ($nodes as $i=>$n) {
+                    $cid = (int)$n->field_committee->getString();
+                    if ($cid && array_key_exists($cid, $committees)) {
+                        $nodes[$i]->vacancies = $committees[$cid]['vacancies'];
+                    }
+                }
+                $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
 
                 $query = \Drupal::entityQuery('node')
                        ->condition('type', 'board_commission')
-                       ->condition('field_active',  true)
+                       ->condition('field_active',  false)
                        ->sort('title');
                 $vars['boards_inactive'] = _cob_renderNodesByQuery($query, 'info_card');
 
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
-        $manager = \Drupal::entityTypeManager();
         $storage = $manager->getStorage('block');
         $builder = $manager->getViewBuilder('block');
 

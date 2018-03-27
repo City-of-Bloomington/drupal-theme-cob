@@ -398,6 +398,8 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
   #asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .info-list > .info-card a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }
   #asm_animals article a h3, #interactivemap_maps article a h3, #legislationTypes article a h3, #reports article a h3, .departments-block > div a h3, .parks-categories-block > div a h3, .info-list > div a h3, .info-list > .info-card a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 0.5em 0; } }
 
+.boards-list .info-card header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: end; }
+
 dl { border: none; }
 
 #alerts { background-color: #4a4a4a; color: #fff; }

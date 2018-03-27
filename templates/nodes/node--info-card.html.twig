@@ -75,15 +75,10 @@
 <article{{ attributes }} class="info-card">
     <a href="{{ url }}" rel="bookmark">
         <header>
-            {{ title_prefix }}
-            {% if display_submitted %}
-                {% set isodate = node.getCreatedTime %}
-                <time datetime="{{ isodate|date('c') }}">{{ date }}</time>
-            {% endif %}
-            {% if not page %}
             <h3{{ title_attributes }}>{{ label }}</h3>
+            {% if node.vacancies %}
+            <span>Vacancy</span>
             {% endif %}
-            {{ title_suffix }}
         </header>
         <p>{{ node.body.summary }}</p>
     </a>
