@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017 City of Bloomington, Indiana
+ * @copyright 2017-2018 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -76,54 +76,43 @@ function cob_preprocess(&$vars, $hook)
 }
 
 /**
- * @param  string $calendar_id  The Google Calendar ID
- * @return array                An array of Google Calendar Events
+ * @param  int   $numdays   The number of days into the future to gather events
+ * @param  int   $maxevents Maximum number of events to return
+ * @return array            The themed render array for the events
  */
-function _cob_frontcalendar_events($calendar_id)
+function _cob_events($calendarId, int $numdays, int $maxevents): array
 {
-    $numdays   = 7;
-    $maxevents = 4;
-
     $start = new \DateTime();
     $end   = new \DateTime();
     $end->add(new \DateInterval("P{$numdays}D"));
 
-    $events  = GoogleGateway::events($calendar_id, $start, $end);
-    $display = [];
-    $count   = 0;
-    foreach ($events as $e) {
-        if (++$count > $maxevents) { break; }
-
-        $display[] = $e;
-    }
-    return $display;
+    return [
+        '#theme'      => 'calendar_events',
+        '#calendarId' => $calendarId,
+        '#events'     => GoogleGateway::limitEvents(
+                            GoogleGateway::events($calendarId, $start, $end, $maxevents),
+                            $maxevents
+                         )
+    ];
 }
 
 function cob_preprocess_page__front(&$vars)
 {
     $id = Settings::get('cob_front_calendar');
     if ($id) {
-        $vars['events'] = [
-            '#theme'      => 'calendar_events',
-            '#events'     => _cob_frontcalendar_events($id),
-            '#calendarId' => $id
-        ];
+        $vars['events'] = _cob_events($id, 7, 4);
     }
 
     $vars['available_messages'] = !empty(drupal_get_messages(null, false));
-
-    $manager = \Drupal::entityTypeManager();
-    $builder = $manager->getViewBuilder('node');
-    $storage = $manager->getStorage('node');
 
     $query   = \Drupal::entityQuery('node')
                 ->condition('type', 'alert')
                 ->condition('status',  1)
                 ->sort('created', 'desc')
                 ->range(0, 5);
-    $alerts = $query->execute();
+    $alerts = _cob_renderNodesByQuery($query, 'teaser');
     if ($alerts) {
-        $vars['alerts'] = $builder->viewMultiple($storage->loadMultiple($alerts), 'teaser');
+        $vars['alerts'] = $alerts;
     }
 
     $query   = \Drupal::entityQuery('node')
@@ -131,9 +120,9 @@ function cob_preprocess_page__front(&$vars)
                 ->condition('status',  1)
                 ->sort('created', 'desc')
                 ->range(0, 5);
-    $vars['news' ] = $builder->viewMultiple($storage->loadMultiple($query->execute()), 'teaser');
-    $vars['about'] = $builder->view($storage->load(223), 'promo');
-    $vars['mayor'] = $builder->view($storage->load(608), 'promo');
+    $vars['news' ] = _cob_renderNodesByQuery($query, 'teaser');
+    $vars['about'] = _cob_renderNodeById(223, 'promo');
+    $vars['mayor'] = _cob_renderNodeById(608, 'promo');
 }
 
 function cob_preprocess_page(&$vars)
@@ -164,18 +153,12 @@ function cob_preprocess_page(&$vars)
 
         // Custom content for the Parks and Rec landing page
         if ((int)$vars['node']->get('nid')->value === 250) {
-            $manager = \Drupal::entityTypeManager();
-            $storage = $manager->getStorage('node');
-            $builder = $manager->getViewBuilder('node');
-
             $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
-            $vars['events' ] = $vars['node']->field_calendar  ->view('full');
-            $vars['related'] = $vars['node']->field_department->view('full');
-            $vars['tlrc'   ] = $builder->view($storage->load(502), 'promo');
-            $vars['rentals'] = $builder->view($storage->load(368), 'promo');
-            $vars['categories'] = $builder->viewMultiple(
-                                      $storage->loadMultiple([438,252,253,254]),
-                                      'info_card');
+            $vars['events'    ] = $vars['node']->field_calendar  ->view('full');
+            $vars['related'   ] = $vars['node']->field_department->view('full');
+            $vars['tlrc'      ] = _cob_renderNodeById(502, 'promo');
+            $vars['rentals'   ] = _cob_renderNodeById(368, 'promo');
+            $vars['categories'] = _cob_renderNodeById([438,252,253,254], 'info_card');
         }
         // Don't display committee members on pages rendered by the onboard module
         $m = \Drupal::routeMatch()->getRouteName();
@@ -196,7 +179,6 @@ function cob_preprocess_node(&$vars)
 
     if ($vars['view_mode'] == 'full') {
         $nid     = (int)$vars['node']->get('nid' )->value;
-        $manager = \Drupal::entityTypeManager();
         switch ($nid) {
             case 790: // Maps Landing Page
                 $vars['maps'] = [
@@ -205,16 +187,33 @@ function cob_preprocess_node(&$vars)
                 ];
             break;
 
+            // Engineering Projects
             case 573:
-                $query   = \Drupal::entityQuery('node')
-                            ->condition('type', 'project_page')
-                            ->condition('field_active',  true)
-                            ->sort('created', 'desc');
-                $storage = $manager->getStorage('node');
-                $builder = $manager->getViewBuilder('node');
-                $vars['projects'] = $builder->viewMultiple($storage->loadMultiple($query->execute()), 'info_card');
+                $query = \Drupal::entityQuery('node')
+                       ->condition('type', 'project_page')
+                       ->condition('field_active',  true)
+                       ->sort('created', 'desc');
+                $vars['projects'] = _cob_renderNodesByQuery($query, 'info_card');
+            break;
+
+            // Boards
+            case 217:
+                $query = \Drupal::entityQuery('node')
+                       ->condition('type', 'board_commission')
+                       ->condition('field_active',  true)
+                       ->sort('title');
+                $vars['boards_active'] = _cob_renderNodesByQuery($query, 'info_card');
+
+                $query = \Drupal::entityQuery('node')
+                       ->condition('type', 'board_commission')
+                       ->condition('field_active',  true)
+                       ->sort('title');
+                $vars['boards_inactive'] = _cob_renderNodesByQuery($query, 'info_card');
+
+                $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
+        $manager = \Drupal::entityTypeManager();
         $storage = $manager->getStorage('block');
         $builder = $manager->getViewBuilder('block');
 
@@ -228,11 +227,7 @@ function cob_preprocess_archive_results(&$vars)
 {
     $id = Settings::get('cob_front_calendar');
     if ($id) {
-        $vars['events'] = [
-            '#theme'      => 'calendar_events',
-            '#events'     => _cob_frontcalendar_events($id),
-            '#calendarId' => $id
-        ];
+        $vars['events'] = _cob_events($id, 7, 4);
     }
 }
 
@@ -515,4 +510,45 @@ function _cob_mapContactInfoFields(array &$info, array $data, array $map)
     foreach ($map as $infoField => $dataField) {
         if (empty($info[$infoField])) { $info[$infoField] = $data[$dataField]; }
     }
+}
+
+
+/**
+ * @param QueryInterface $query
+ * @param string         $viewMode
+ * @return array                   The themed render array
+ */
+function _cob_renderNodesByQuery(\Drupal\Core\Entity\Query\QueryInterface $query, string $viewMode): array
+{
+    static $manager;
+    static $builder;
+    static $storage;
+
+    if (!$manager) {
+        $manager = \Drupal::entityTypeManager();
+        $builder = $manager->getViewBuilder('node');
+        $storage = $manager->getStorage('node');
+    }
+    return $builder->viewMultiple($storage->loadMultiple($query->execute()), $viewMode);
+}
+
+/**
+ * @param  int|array $nid      A node ID or array of node IDs
+ * @param  string    $viewMode
+ * @return array               The themed render array
+ */
+function _cob_renderNodeById($nid, string $viewMode): array
+{
+    static $manager;
+    static $builder;
+    static $storage;
+
+    if (!$manager) {
+        $manager = \Drupal::entityTypeManager();
+        $builder = $manager->getViewBuilder('node');
+        $storage = $manager->getStorage('node');
+    }
+    return is_array($nid)
+        ? $builder->view($storage->loadMultiple($nid), $viewMode)
+        : $builder->view($storage->load        ($nid), $viewMode);
 }
