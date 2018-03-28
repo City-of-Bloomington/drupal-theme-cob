@@ -123,20 +123,6 @@
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
     </div>
-    {% if program_search_form %}
-    <div id="activities">
-        <section>
-            <header>
-                <h3>Find Activities</h3>
-                <p> Search for specific activities and programs by filtering on
-                    type, age, or location.  Find the exact activities you are
-                    interested in.
-                </p>
-            </header>
-            {{ program_search_form }}
-        </section>
-    </div>
-    {% endif %}
     {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
     {% if  related_links %}
     <section id="related-links" class="divided">

@@ -564,6 +564,6 @@ function _cob_renderNodeById($nid, string $viewMode): array
         $storage = $manager->getStorage('node');
     }
     return is_array($nid)
-        ? $builder->view($storage->loadMultiple($nid), $viewMode)
-        : $builder->view($storage->load        ($nid), $viewMode);
+        ? $builder->viewMultiple($storage->loadMultiple($nid), $viewMode)
+        : $builder->view        ($storage->load        ($nid), $viewMode);
 }
