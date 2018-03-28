@@ -39,7 +39,7 @@ label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2
   #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; }
   /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
 
-body > header { background-color: #183365; color: #fff; padding: 0; height: 42px; overflow: hidden; }
+body > header { background-color: #183365; color: #fff; padding: 0; }
 
 body > header > .container { min-height: 2em; font-size: 1.25rem; }
 
@@ -63,7 +63,7 @@ body > header > .container h2 a { font-size: 0.875rem; line-height: 0.875rem; }
 
 @media all and (min-width: 640px) { #feedback { right: 50%; } }
 
-#block-cob-branding { padding-left: 2em; }
+#block-cob-branding { padding-left: 2em; height: 40px; overflow: hidden; }
 
 @media all and (min-width: 640px) { #block-cob-branding { padding: 0; flex: 1 0 320px; } }
 

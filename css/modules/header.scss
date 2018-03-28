@@ -2,7 +2,6 @@ body > header {
     background-color: $color-header;
     color: $color-content-background;
     padding: 0;
-    height:42px; overflow:hidden;
 
     > .container {
         min-height:2em;
@@ -54,6 +53,7 @@ body > header {
 }
 #block-cob-branding {
     padding-left:2em;
+    height:40px; overflow:hidden;
 
     @media all and (min-width:$viewport-medium) {
         padding:0;
