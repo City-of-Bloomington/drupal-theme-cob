@@ -82,7 +82,7 @@ $card-height-max: 290px;
     }
 }
 
-.boards-list .info-card header {
-    display:flex; flex-direction:row; flex-wrap:nowrap;
-    justify-content:space-between; align-items:end;
+.boards-list header {
+    font-family:$font-family-heading; font-size:$font-size-big;
+    h3 { display:inline; }
 }
