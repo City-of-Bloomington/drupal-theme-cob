@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Displays links to the other Drupal content for a board
+ *
+ * Available variables
+ * - committee:   JSON object from OnBoard containing committee information
+ * - nid:         The current node ID
+ * - onboard_url: The base url for OnBoard
+ *
+ * @copyright 2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+#}
+<nav>
+    {% set year  = 'now'|date('Y') %}
+    <a class="button"
+       href="{{ path('onboard.meetingList.node-'~nid, {'node':nid, 'year':year}) }}">
+       Meetings &amp; Documents
+    </a>
+    {% if committee.info.calendarId %}
+    <a class="button"
+       href="https://calendar.google.com/calendar/embed?src={{ committee.info.calendarId }}&amp;ctz=America/New_York">
+       Calendar
+    </a>
+    {% endif %}
+    {% if committee.info.videoArchive %}
+    <a class="button"
+       href="{{ committee.info.videoArchive }}">
+       Videos
+    </a>
+    {% endif %}
+    {% if committee.info.legislative %}
+    <a class="button"
+       href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
+       Legislation
+    </a>
+    {% endif %}
+    {% if committee.info.vacancy %}
+    <a class="button"
+       href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
+       Vacancy:Apply
+    </a>
+    {% endif %}
+</nav>

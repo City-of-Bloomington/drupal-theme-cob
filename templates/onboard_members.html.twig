@@ -61,10 +61,3 @@
     {% endif %}
 {% endfor %}
 </div>
-<nav>
-    {% if committee.info.vacancy %}
-    <a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}" class="button">
-        Apply to fill a vacancy on this board
-    </a>
-    {% endif %}
-</nav>

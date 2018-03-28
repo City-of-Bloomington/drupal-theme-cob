@@ -32,12 +32,12 @@
 {% set lf_list   = "asm.#{mode}_animals" %}
 {% set lf_single = "asm.#{mode}_animal"  %}
 <div id="intro">
-    <div>
+    <nav>
         <a class="button" href="{{ path(lf_list) }}">All</a>
         <a class="button" href="{{ path(lf_list, {'species': 'Cat'  }) }}">Cats</a>
         <a class="button" href="{{ path(lf_list, {'species': 'Dog'  }) }}">Dogs</a>
         <a class="button" href="{{ path(lf_list, {'species': 'Other'}) }}">Other</a>
-    </div>
+    </nav>
 </div>
 <section id="asm_animals">
     <header>
