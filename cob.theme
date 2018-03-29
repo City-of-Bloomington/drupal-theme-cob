@@ -178,7 +178,6 @@ function cob_preprocess_node(&$vars)
     }
 
     if ($vars['view_mode'] == 'full') {
-        $manager = \Drupal::entityTypeManager();
         $nid     = (int)$vars['node']->get('nid' )->value;
         switch ($nid) {
             case 790: // Maps Landing Page
@@ -204,7 +203,7 @@ function cob_preprocess_node(&$vars)
                     $committees[$c['id']] = $c;
                 }
 
-
+                $manager = \Drupal::entityTypeManager();
                 $storage = $manager->getStorage('node');
                 $builder = $manager->getViewBuilder('node');
                 $query = \Drupal::entityQuery('node')
@@ -229,12 +228,9 @@ function cob_preprocess_node(&$vars)
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
-        $storage = $manager->getStorage('block');
-        $builder = $manager->getViewBuilder('block');
 
-        $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>'sidebar_second']);
-        uasort($blocks, 'Drupal\block\Entity\Block::sort');
-        $vars['regions']['sidebar_second'] = $builder->viewMultiple($blocks);
+        $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
+        $vars['regions']['sidebar_second'] = _cob_renderRegion('sidebar_second');
     }
 }
 
@@ -566,4 +562,26 @@ function _cob_renderNodeById($nid, string $viewMode): array
     return is_array($nid)
         ? $builder->viewMultiple($storage->loadMultiple($nid), $viewMode)
         : $builder->view        ($storage->load        ($nid), $viewMode);
+}
+
+
+/**
+ * @param  string $region
+ * @return array           An array of the themed blocks in the region
+ */
+function _cob_renderRegion(string $region): array
+{
+    static $manager;
+    static $builder;
+    static $storage;
+
+    if (!$manager) {
+        $manager = \Drupal::entityTypeManager();
+        $builder = $manager->getViewBuilder('block');
+        $storage = $manager->getStorage('block');
+    }
+
+    $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>$region]);
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+    return $builder->viewMultiple($blocks);
 }
