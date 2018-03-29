@@ -107,7 +107,7 @@ dl { border:none; }
     }
 }
 
-body > footer {
+.dialog-off-canvas-main-canvas > footer {
     background-color: $color-footer;
     color: $color-content-background;
     padding:$size-gutter;

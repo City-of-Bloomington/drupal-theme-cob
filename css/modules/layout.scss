@@ -14,10 +14,10 @@ section { margin:0; }
 }
 
 @media all and (min-width: $viewport-large) {
-    body > header >      .container,
+    .dialog-off-canvas-main-canvas > header > .container,
     #nav1                .container,
     #alerts              .container,
-    body > footer        .container,
+    .dialog-off-canvas-main-canvas > footer        .container,
     main > div           .container,
     #content > section > .container {
         width:$viewport-large - 20px; margin:0 auto;
