@@ -35,20 +35,9 @@
         <a class="button" href="{{ path('asm.adoptable_animals', {'species': 'Other'}) }}">Other</a>
     </nav>
     <aside>
-        <header><h2>Adoption Forms</h2></header>
-        <ul><li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEc3RDJ3bS04WklkZ09IUjZXMmRaNFE6MQ">
-                    Apply to Adopt a Cat
-                </a>
-            </li>
-            <li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEtOM1k0X0s0dW5yNGgwcmktNkJNeFE6MQ">
-                    Apply to Adopt a Dog
-                </a>
-            </li>
-            <li><a href="{{ path('entity.node.canonical', {'node': 320}) }}">
-                    Adoption Policies and Fees
-                </a>
-            </li>
-        </ul>
+        <header><h2>Adoption</h2></header>
+        <p>Call the Animal Shelter at <a href="tel:812-349-3492">812-349-3492</a> if you are interested in applying for a specific pet.</p>
+        <p><a href="{{ path('entity.node.canonical', {'node': 320}) }}">Adoption Policies and Fees</a></p>
     </aside>
 </div>
 <section id="asm_animals">

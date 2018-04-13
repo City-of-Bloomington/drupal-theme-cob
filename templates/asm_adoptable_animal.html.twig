@@ -43,21 +43,8 @@
                 {% if  animal.HASSPECIALNEEDS %}<tr><th>Special Needs</th><td>Special Needs</td></tr>{% endif %}
                 <tr><th>Code   </th><td>{{ animal.SHELTERCODE }}</td></tr>
             </table>
-            <div class="link">
-                {% if animal.SPECIESNAME == 'Cat' %}
-                <a class="button" href="https://docs.google.com/spreadsheet/viewform?formkey=dEc3RDJ3bS04WklkZ09IUjZXMmRaNFE6MQ">
-                    Apply to Adopt {{ animal.ANIMALNAME }}
-                </a>
-                {% elseif animal.SPECIESNAME == 'Dog' %}
-                <a class="button" href="https://docs.google.com/spreadsheet/viewform?formkey=dEtOM1k0X0s0dW5yNGgwcmktNkJNeFE6MQ">
-                    Apply to Adopt {{ animal.ANIMALNAME }}
-                </a>
-                {% else %}
-                <a class="button" href="{{ path('entity.node.canonical', {'node': 320}) }}">
-                    Adoption Policies and Fees
-                </a>
-                {% endif %}
-            </div>
+            <p>Call the Animal Shelter at <a href="tel:812-349-3492">812-349-3492</a> if you are interested in applying for a specific pet.</p>
+            <p><a href="{{ path('entity.node.canonical', {'node': 320}) }}">Adoption Policies and Fees</a></p>
         </div>
         {% if animal.WEBSITEIMAGECOUNT %}
         <aside>
