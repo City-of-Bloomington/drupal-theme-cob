@@ -8,7 +8,7 @@
  * - nid:         The current node ID
  * - onboard_url: The base url for OnBoard
  *
- * @copyright 2017 City of Bloomington, Indiana
+ * @copyright 2018 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
  */
 #}
@@ -27,7 +27,7 @@
             <dd>{{ seat.name }}</dd>
             {% elseif seat.appointedBy %}
             <dt>Appointed By:</dt>
-            <dd>{{ seat.appointedBy }}</dd>
+            <dd>{{ seat.appointedBy }}{% if seat.voting %} (Voting){% endif %}</dd>
             {% endif %}
 
             {% if seat.currentMember.termEndDate %}
