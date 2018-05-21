@@ -27,7 +27,7 @@
             <dd>{{ seat.name }}</dd>
             {% elseif seat.appointedBy %}
             <dt>Appointed By:</dt>
-            <dd>{{ seat.appointedBy }}{% if seat.voting %} (Voting){% endif %}</dd>
+            <dd>{{ seat.appointedBy }}{% if not seat.voting %} (non-voting){% endif %}</dd>
             {% endif %}
 
             {% if seat.currentMember.termEndDate %}
