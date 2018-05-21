@@ -57,6 +57,12 @@
             <dd>{{ seat.currentTerm.endDate }}</dd>
             {% endif %}
         </dl>
+        {% if seat.takesApplications %}
+            <a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}"
+                class="button">
+                Vacancy:Apply
+            </a>
+        {% endif %}
     </div>
     {% endif %}
 {% endfor %}

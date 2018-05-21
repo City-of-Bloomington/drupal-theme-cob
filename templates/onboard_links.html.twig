@@ -36,9 +36,17 @@
     </a>
     {% endif %}
     {% if committee.info.vacancy %}
-    <a class="button"
-       href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
-       Vacancy: Apply!
-    </a>
+        {% set applyable = false %}
+        {% for seat in committee.seats %}
+            {% if seat.vacant and seat.takesApplications %}
+                {% set applyable = true %}
+            {% endif %}
+        {% endfor %}
+        {% if applyable %}
+            <a class="button"
+            href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
+            Vacancy: Apply!
+            </a>
+        {% endif %}
     {% endif %}
 </nav>
