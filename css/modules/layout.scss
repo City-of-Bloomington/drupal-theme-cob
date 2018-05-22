@@ -1,12 +1,16 @@
 section { margin:0; }
 
 #intro {
-    @media all and (min-width: $viewport-medium) {
-        display: grid; grid-template-columns: 1fr $size-sidebar-maxwidth; grid-column-gap: $size-gutter;
-        > div   { grid-column: 1; }
-        > aside { grid-column: 2; }
+    display: flex;
+
+    @media all and (max-width: $viewport-medium) {
+        flex-wrap: wrap;
     }
+
     aside {
+        width: $size-sidebar-maxwidth;
+        min-width: $size-sidebar-maxwidth;
+
         ul  { list-style-type: none; }
         img { max-width:$size-sidebar-maxwidth; height:auto; }
     }
