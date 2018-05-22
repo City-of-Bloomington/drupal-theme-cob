@@ -97,23 +97,33 @@
         </div>
 
         {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-        {% if content.field_content_image
-           or content.field_coordinates
-           or content.field_aside
-           or content.field_hours
+        {% set content_image %}{{ content.field_content_image }}{% endset %}
+        {% set coordinates %}{{ content.field_coordinates }}{% endset %}
+        {% set aside %}{{ content.field_aside }}{% endset %}
+        {% set hours %}{{ content.field_hours }}{% endset %}
+        {% set sidebar_second %}{{ regions.sidebar_second }}{% endset %}
+        {% if content_image
+           or coordinates
+           or aside
+           or hours
            or upcoming_events
-           or regions.sidebar_second
+           or sidebar_second
         %}
+            {% if content_image %}content_image{% endif %}
+            {% if coordinates %}coordinates{% endif %}
+            {% if aside %}aside{% endif %}
+            {% if hours %}hours{% endif %}
+            {% if sidebar_second %}sidebar_second{% endif %}
         <aside>
-            {% if content.field_aside %}
-            {{ content.field_aside_title   }}
-            {{ content.field_aside         }}
+            {% if aside %}
+            {{ content.field_aside_title }}
+            {{ content.field_aside       }}
             {% endif %}
-            {{ content.field_content_image }}
-            {{ upcoming_events             }}
-            {{ content.field_coordinates   }}
-            {{ content.field_hours         }}
-            {{ regions.sidebar_second      }}
+            {{ content_image   }}
+            {{ upcoming_events }}
+            {{ coordinates     }}
+            {{ hours           }}
+            {{ sidebar_second  }}
         </aside>
         {% endif %}
     </div>
