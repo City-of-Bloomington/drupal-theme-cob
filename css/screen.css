@@ -990,7 +990,6 @@ article.news.full #intro header h2 {
 .promt_programs,
 .paragraph--type--info-list > div {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -1006,6 +1005,9 @@ article.news.full #intro header h2 {
 .promt_programs > article,
 .paragraph--type--info-card {
   height: auto;
+  background-color: gainsboro;
+  color: #212121;
+  margin-bottom: 2em;
 }
 #asm_animals article article,
 #interactivemap_maps article article,
@@ -1032,9 +1034,6 @@ article.news.full #intro header h2 {
   background-color: gainsboro;
   color: #212121;
   display: block;
-  margin-bottom: 1em;
-  height: 250px;
-  overflow: hidden;
 }
 #asm_animals article a h3,
 #interactivemap_maps article a h3,
@@ -1061,6 +1060,7 @@ article.news.full #intro header h2 {
 .info-list > .info-card a:hover,
 .promt_programs > article a:hover,
 .paragraph--type--info-card a:hover {
+  display: block;
   background-color: #4990e2;
   color: #fff;
 }
@@ -1088,6 +1088,20 @@ article.news.full #intro header h2 {
 .paragraph--type--info-card a img {
   width: 284px;
 }
+@media all and (max-width: 640px) {
+  #asm_animals article a,
+#interactivemap_maps article a,
+#legislationTypes article a,
+#reports article a,
+.departments-block > div a,
+.parks-categories-block > div a,
+.info-list > div a,
+.info-list > .info-card a,
+.promt_programs > article a,
+.paragraph--type--info-card a {
+    padding: 0.5em;
+  }
+}
 @media all and (min-width: 640px) {
   #asm_animals article,
 #interactivemap_maps article,
@@ -1113,8 +1127,10 @@ article.news.full #intro header h2 {
 .info-list > .info-card a,
 .promt_programs > article a,
 .paragraph--type--info-card a {
+    display: block;
+    box-sizing: border-box;
     padding: 1em;
-    height: 290px;
+    height: 100%;
   }
   #asm_animals article a h3,
 #interactivemap_maps article a h3,
