@@ -27,12 +27,8 @@ section {
   display: flex;
   margin-bottom: 1em;
 }
-@media all and (max-width: 640px) {
-  #intro {
-    flex-wrap: wrap;
-  }
-}
 #intro aside {
+  margin-left: 1em;
   width: 340px;
   min-width: 340px;
 }
@@ -42,6 +38,15 @@ section {
 #intro aside img {
   max-width: 340px;
   height: auto;
+}
+@media all and (max-width: 640px) {
+  #intro {
+    flex-wrap: wrap;
+  }
+  #intro aside {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 @media all and (min-width: 1080px) {

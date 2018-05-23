@@ -3,17 +3,27 @@ section { margin:0; }
 #intro {
     display: flex;
 
-    @media all and (max-width: $viewport-medium) {
-        flex-wrap: wrap;
-    }
-
     aside {
+        margin-left: 1em;
         width: $size-sidebar-maxwidth;
         min-width: $size-sidebar-maxwidth;
 
         ul  { list-style-type: none; }
-        img { max-width:$size-sidebar-maxwidth; height:auto; }
+        img {
+            max-width: $size-sidebar-maxwidth;
+            height: auto;
+        }
     }
+
+    @media all and (max-width: $viewport-medium) {
+        flex-wrap: wrap;
+
+        aside {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
     margin-bottom: 1em;
 }
 
