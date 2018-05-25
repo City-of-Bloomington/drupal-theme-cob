@@ -33,27 +33,88 @@ dl { border:none; }
     background: url('images/downtown-large.png') no-repeat center center;
 }
 #breadcrumb {
-    display:flex; flex-direction:column; justify-content:end;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: end;
+    position: relative;
+    // background-color: purple;
+    color: $color-heading;
 
-    background-color:$color-heading; color:$color-content-background;
+    &:before {
+        position: absolute;
+        content: '';
+        top: 18px;
+        right: 0;
+        left: 0;
+        height: 75px;
+        width: 100%;
+        background: $color-heading;
+    }
 
-    .container { padding:$size-gutter; }
-    h1 { font-size: $font-size-bigger; color:$color-content-background; }
+    .container {
+        position: relative;
+        padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+        background: white;
+        margin: -30px auto 0 auto;
+        min-height: 83px;
+
+        @media all and (max-width: $viewport-medium) {
+            padding: $size-gutter $size-gutter 0 $size-gutter;
+        }
+    }
+
+    h1 {
+        font-size: $font-size-bigger-alt;
+        line-height: $font-size-small * 4;
+        color: $color-heading;
+        margin: 0;
+    }
 
     nav {
-        font-size:$font-size-small;
-        a:not(:last-child):after { content: " >> " }
-    }
-    address, a { color:$color-content-background; }
+        font-size: $font-size-small;
 
-    @media all and (min-width: $viewport-medium) {
-        h1 { font-size:$font-size-biggest; }
+        a:not(:last-child):after {
+            content: " >> ";
+        }
     }
 
-    // These blocks are laying out lists of things in a grid
+    address,
+    a { color: $biscay; }
+
+    .social-sharing {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: $size-gutter * 2;
+        right: $size-gutter * 2;
+        width: $size-gutter * 10;
+
+        .item {
+            width: $size-gutter * 2;
+            height: $size-gutter * 2;
+            border: 1px solid $silver-chalice;
+            border-radius: 50%;
+        }
+
+        @media all and (max-width: $viewport-medium) {
+            background: white;
+            top: -30px;
+            padding: 10px;
+        }
+    }
+
     .contactInfo {
-        @media all and (min-width:$viewport-medium) {
-            > dl { display:inline-block; width:30%; vertical-align:middle; }
+        // display: none;
+        border-top: 1px solid lighten($silver-chalice, 10%);
+        border-bottom: 1px solid lighten($silver-chalice, 10%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 10px 0;
+
+        @media all and (max-width: $viewport-medium) {
+            display: block;
         }
     }
 }

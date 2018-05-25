@@ -5,7 +5,7 @@
         <dd><address>
             {%- if contactInfo.location_nid %}<a href="{{ path('entity.node.canonical', {'node':contactInfo.location_nid}) }}">{% endif -%}
             {{ contactInfo.address }}
-            {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
+            {{ contactInfo.city }}, {{ contactInfo.state }} {{ contactInfo.zip }}
             {%- if contactInfo.location_nid %}</a>{% endif -%}
             </address>
         </dd>
