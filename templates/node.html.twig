@@ -101,13 +101,12 @@
         {% set coordinates %}{{ content.field_coordinates }}{% endset %}
         {% set aside %}{{ content.field_aside }}{% endset %}
         {% set hours %}{{ content.field_hours }}{% endset %}
-        {% set sidebar_second %}{{ regions.sidebar_second }}{% endset %}
         {% if content_image
            or coordinates
            or aside
            or hours
            or upcoming_events
-           or sidebar_second
+           or meetings
         %}
         <aside>
             {% if aside %}
@@ -118,7 +117,12 @@
             {{ upcoming_events }}
             {{ coordinates     }}
             {{ hours           }}
-            {{ sidebar_second  }}
+            {% if meetings %}
+            <section id="block-committeemeetings">
+                <header><h2>Meetings</h2></header>
+                <div>{{ meetings }}</div>
+            </section>
+            {% endif %}
         </aside>
         {% endif %}
     </div>
