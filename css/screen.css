@@ -416,7 +416,11 @@ dl { border: none; }
 
 #alerts .severe { background-color: #ed9a9c; }
 
-.front #banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
+.front #banner { height: 320px; background: url("images/downtown-small.png") no-repeat center center; }
+
+@media all and (min-width: 640px) { .front #banner { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
 
 #breadcrumb { display: flex; flex-direction: column; justify-content: end; background-color: #3f9dff; color: #fff; }
 
