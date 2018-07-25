@@ -28,7 +28,7 @@ dl { border:none; }
     .warning { background-color: $color-alert;  }
     .severe  { background-color: $color-error;  }
 }
-#banner {
+.front #banner {
     height:320px;
     background: url('images/downtown-large.png') no-repeat center center;
 }
