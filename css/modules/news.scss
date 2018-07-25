@@ -9,7 +9,8 @@
 
             @media all and (min-width:$viewport-medium) {
                 .results {
-                    height:660px;
+                    height:670px;
+                    overflow-y:hidden;
                     display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr 1fr;
                 }
                 a:first-child {
