@@ -90,10 +90,36 @@ dl { border:none; }
         width: $size-gutter * 10;
 
         .item {
+            position: relative;
             width: $size-gutter * 2;
             height: $size-gutter * 2;
             border: 1px solid $silver-chalice;
             border-radius: 50%;
+
+            a {
+                // background: green;
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+
+                &:hover {
+                    svg {
+                        fill: #3f9dff;
+                    }
+                }
+            }
+
+            svg {
+                display: block;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                fill: #4a4a4a;
+            }
         }
 
         @media all and (max-width: $viewport-medium) {
