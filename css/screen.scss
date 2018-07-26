@@ -16,6 +16,13 @@
 
 dl { border:none; }
 
+b,
+strong {
+    // via issue
+    // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
+    -webkit-font-smoothing: antialiased;
+}
+
 #alerts {
     background-color: $color-footer;
     color: $color-content-background;
