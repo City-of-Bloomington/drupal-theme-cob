@@ -348,12 +348,12 @@ section.promo .promo_title { text-align: center; }
 
 #news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
 
-@media all and (min-width: 640px) { #news-section .container > div > .news .results { height: 670px; overflow-y: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
-  #news-section .container > div > .news a:first-child { grid-column-start: 1; grid-column-end: 3; } }
-
 #news-section .container > div > .news > div:last-child { text-align: center; }
 
 #news-section .container > div aside { flex: 0 0 320px; }
+
+@media all and (min-width: 640px) { .front #news-section .results { height: 670px; overflow-y: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+  .front #news-section a:first-child { grid-column-start: 1; grid-column-end: 3; } }
 
 article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 151px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
 
