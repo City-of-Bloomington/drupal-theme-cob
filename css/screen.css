@@ -36,9 +36,8 @@ label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2
 #hamburger:checked ~ nav { position: static; width: 100%; height: auto; overflow: auto; }
 
 @media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
-  #nav1 { position: static; width: 100%; height: auto; overflow: auto; }
-  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; }
-  /* #nav1 { position:static; width:100%; height:auto; margin:0; background-color:$color-content-background; .container { padding:0; overflow:auto; display:flex; flex-direction:row; justify-content:space-around; a { color:$color-header; } } } */ }
+  #nav1 { position: static; width: 100%; height: 84px; overflow: auto; }
+  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; } }
 
 .dialog-off-canvas-main-canvas > header { background-color: #183365; color: #fff; padding: 0; }
 
@@ -400,12 +399,12 @@ section.promo .promo_title { text-align: center; }
 
 #news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
 
-@media all and (min-width: 640px) { #news-section .container > div > .news .results { height: 660px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
-  #news-section .container > div > .news a:first-child { grid-column-start: 1; grid-column-end: 3; } }
-
 #news-section .container > div > .news > div:last-child { text-align: center; }
 
 #news-section .container > div aside { flex: 0 0 320px; }
+
+@media all and (min-width: 640px) { .front #news-section .results { height: 670px; overflow-y: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+  .front #news-section a:first-child { grid-column-start: 1; grid-column-end: 3; } }
 
 article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 151px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
 
@@ -468,7 +467,11 @@ dl { border: none; }
 
 #alerts .severe { background-color: #ed9a9c; }
 
-#banner { height: 320px; background: url("images/downtown-large.png") no-repeat center center; }
+.front #banner { height: 320px; background: url("images/downtown-small.png") no-repeat center center; }
+
+@media all and (min-width: 640px) { .front #banner { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
 
 #breadcrumb { position: relative; color: #3f9dff; }
 
