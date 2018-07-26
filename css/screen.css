@@ -473,11 +473,15 @@ dl { border: none; }
 
 @media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
 
-#breadcrumb { position: relative; color: #3f9dff; }
+#breadcrumb { position: relative; overflow: hidden; color: #3f9dff; }
 
 #breadcrumb:before { position: absolute; content: ''; top: 18px; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
 
-#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: -30px auto 0 auto; min-height: 83px; }
+#breadcrumb.has-banner { overflow: visible; }
+
+#breadcrumb.has-banner .container { margin: -30px auto 0 auto; }
+
+#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 30px auto 0 auto; min-height: 83px; }
 
 @media all and (max-width: 640px) { #breadcrumb .container { padding: 0.5em 0.5em 0 0.5em; } }
 
@@ -489,17 +493,19 @@ dl { border: none; }
 
 #breadcrumb address, #breadcrumb a { color: #183365; }
 
-#breadcrumb .social-sharing { position: absolute; display: flex; justify-content: space-between; top: 1em; right: 1em; width: 5em; }
+#breadcrumb .social-sharing { display: flex; justify-content: space-between; width: 9em; margin: 0 0 15px 0; }
 
-#breadcrumb .social-sharing .item { position: relative; width: 1em; height: 1em; border: 1px solid #9e9e9e; border-radius: 50%; }
+#breadcrumb .social-sharing span { align-self: center; font-size: 0.875rem; color: #607d8b; }
 
-#breadcrumb .social-sharing .item a { display: block; width: 100%; height: 100%; border-radius: 50%; }
+#breadcrumb .social-sharing .item { position: relative; width: 1.5em; height: 1.5em; border: 1px solid #3f9dff; border-radius: 50%; }
+
+#breadcrumb .social-sharing .item a { background: #3f9dff; display: block; width: 100%; height: 100%; border-radius: 50%; }
+
+#breadcrumb .social-sharing .item a:hover { background: white; }
 
 #breadcrumb .social-sharing .item a:hover svg { fill: #3f9dff; }
 
-#breadcrumb .social-sharing .item svg { display: block; position: absolute; width: 12px; height: 12px; top: 50%; left: 50%; transform: translate(-50%, -50%); fill: #4a4a4a; }
-
-@media all and (max-width: 640px) { #breadcrumb .social-sharing { background: white; top: -30px; padding: 10px; } }
+#breadcrumb .social-sharing .item svg { display: block; position: absolute; width: 15px; height: 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); fill: #ffffff; }
 
 #breadcrumb .contactInfo { border-top: 1px solid #b8b8b8; border-bottom: 1px solid #b8b8b8; display: flex; margin: 10px 0; padding: 10px 0; }
 
