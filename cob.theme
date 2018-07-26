@@ -370,13 +370,11 @@ function _cob_ftime($time)
 {
     $time = trim($time);
 
-    $a = 'am';
     $h = (int)substr($time, 0, 2);
     $m = (int)substr($time, -2);
-    if ($h > 12) {
-        $h = $h-12;
-        $a = 'pm';
-    }
+
+    $a = $h >= 12 ? 'pm'  : 'am';
+    $h = $h >  12 ? $h-12 : $h;
     // Leave off the minutes, if it's the top of the hour
     $m = $m ? ":$m" : '';
 
