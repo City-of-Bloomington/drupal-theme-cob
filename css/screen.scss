@@ -28,9 +28,11 @@ dl { border:none; }
     .warning { background-color: $color-alert;  }
     .severe  { background-color: $color-error;  }
 }
-#banner {
+.front #banner {
     height:320px;
-    background: url('images/downtown-large.png') no-repeat center center;
+    background: url('images/downtown-small.png') no-repeat center center;
+    @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
+    @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
 }
 #breadcrumb {
     display:flex; flex-direction:column; justify-content:end;

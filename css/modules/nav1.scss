@@ -28,24 +28,10 @@ label[for="hamburger"] {
 @media all and (min-width:$viewport-medium) {
     #hamburger, label[for="hamburger"] { display:none; }
     #nav1 {
-        position:static; width:100%; height:auto; overflow:auto;
+        position:static; width:100%; height:84px; overflow:auto;
         .container {
             display:flex; flex-direction:row; justify-content:space-around;
             a {  }
         }
     }
-/*
-    #nav1 {
-        position:static;
-        width:100%; height:auto;
-        margin:0;
-        background-color:$color-content-background;
-        .container {
-            padding:0; overflow:auto;
-            display:flex; flex-direction:row; justify-content:space-around;
-
-            a { color:$color-header; }
-        }
-    }
-*/
 }

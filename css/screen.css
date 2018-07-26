@@ -1,1324 +1,483 @@
-/**
- * Urls are relative to screen.css
- */
+/** Urls are relative to screen.css */
 @import 'https://fonts.googleapis.com/css?family=Lora';
 @import 'https://fonts.googleapis.com/css?family=Roboto';
-/**
- * @see https://en.wikipedia.org/wiki/Web_colors
- *
- */
-h2 {
-  font-size: 1.9rem;
-}
+/** @see https://en.wikipedia.org/wiki/Web_colors */
+h2 { font-size: 1.9rem; }
 
-h3 {
-  margin: 0.5em 0 0 0;
-}
+h3 { margin: 0.5em 0 0 0; }
 
-p {
-  margin: 0 0 0.5em 0;
-}
+p { margin: 0 0 0.5em 0; }
 
-section {
-  margin: 0;
-}
+section { margin: 0; }
 
-#intro {
-  display: flex;
-  margin-bottom: 1em;
-}
-#intro aside {
-  margin-left: 1em;
-  width: 340px;
-  min-width: 340px;
-}
-#intro aside ul {
-  list-style-type: none;
-}
-#intro aside img {
-  max-width: 340px;
-  height: auto;
-}
-@media all and (max-width: 640px) {
-  #intro {
-    flex-wrap: wrap;
-  }
-  #intro aside {
-    width: 100%;
-    margin-left: 0;
-  }
-}
+#intro { display: flex; margin-bottom: 1em; }
 
-@media all and (min-width: 1080px) {
-  .dialog-off-canvas-main-canvas > header > .container,
-#nav1 .container,
-#alerts .container,
-.dialog-off-canvas-main-canvas > footer .container,
-main > div .container,
-#content > section > .container {
-    width: 1060px;
-    margin: 0 auto;
-  }
-}
-#hamburger {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
+#intro aside { margin-left: 1em; width: 340px; min-width: 340px; }
 
-label[for=hamburger] {
-  position: absolute;
-  top: 0.25em;
-  left: 0.25em;
-  width: 2em;
-  height: 2em;
-  background-image: url("images/fa-svg/white/bars.svg");
-  background-size: contain;
-  z-index: 1;
-  cursor: pointer;
-}
+#intro aside ul { list-style-type: none; }
 
-#nav1 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  background-color: #fff;
-}
-#nav1 .container {
-  padding: 0;
-  overflow: auto;
-}
-#nav1 .container a {
-  color: #183365;
-  display: block;
-}
+#intro aside img { max-width: 340px; height: auto; }
 
-#hamburger:checked ~ nav {
-  position: static;
-  width: 100%;
-  height: auto;
-  overflow: auto;
-}
+@media all and (max-width: 640px) { #intro { flex-wrap: wrap; }
+  #intro aside { width: 100%; margin-left: 0; } }
 
-@media all and (min-width: 640px) {
-  #hamburger, label[for=hamburger] {
-    display: none;
-  }
+@media all and (min-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container, #nav1 .container, #alerts .container, .dialog-off-canvas-main-canvas > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
 
-  #nav1 {
-    position: static;
-    width: 100%;
-    height: auto;
-    overflow: auto;
-  }
-  #nav1 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  /*
-      #nav1 {
-          position:static;
-          width:100%; height:auto;
-          margin:0;
-          background-color:$color-content-background;
-          .container {
-              padding:0; overflow:auto;
-              display:flex; flex-direction:row; justify-content:space-around;
+#hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
 
-              a { color:$color-header; }
-          }
-      }
-  */
-}
-.dialog-off-canvas-main-canvas > header {
-  background-color: #183365;
-  color: #fff;
-  padding: 0;
-}
-.dialog-off-canvas-main-canvas > header > .container {
-  min-height: 2em;
-  font-size: 1.25rem;
-}
-.dialog-off-canvas-main-canvas > header > .container h1, .dialog-off-canvas-main-canvas > header > .container h2 {
-  display: block;
-  margin: 4px 0 0 0.5em;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  border: none;
-}
-.dialog-off-canvas-main-canvas > header > .container h1 a, .dialog-off-canvas-main-canvas > header > .container h2 a {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-.dialog-off-canvas-main-canvas > header > .container a {
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: bold;
-  line-height: 1rem;
-}
-.dialog-off-canvas-main-canvas > header > .container h1 {
-  font-size: 1rem;
-  line-height: 1rem;
-}
-.dialog-off-canvas-main-canvas > header > .container h1 a {
-  font-size: 1rem;
-  line-height: 1rem;
-}
-.dialog-off-canvas-main-canvas > header > .container h2 {
-  font-style: italic;
-  font-size: 0.875rem;
-  line-height: 0.875rem;
-}
-.dialog-off-canvas-main-canvas > header > .container h2 a {
-  font-size: 0.875rem;
-  line-height: 0.875rem;
-}
-@media all and (min-width: 640px) {
-  .dialog-off-canvas-main-canvas > header > .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
+label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2em; height: 2em; background-image: url("images/fa-svg/white/bars.svg"); background-size: contain; z-index: 1; cursor: pointer; }
 
-#feedback {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.125rem;
-  font-weight: bold;
-}
-@media all and (min-width: 640px) {
-  #feedback {
-    right: 50%;
-  }
-}
+#nav1 { margin: 0; padding: 0; border: 0; width: 1px; height: 1px; overflow: hidden; position: absolute; background-color: #fff; }
 
-#block-cob-branding {
-  padding-left: 2em;
-  height: 40px;
-  overflow: hidden;
-}
-@media all and (min-width: 640px) {
-  #block-cob-branding {
-    padding: 0;
-    flex: 1 0 320px;
-  }
-}
+#nav1 .container { padding: 0; overflow: auto; }
 
-#block-searchform form {
-  height: 2em;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-}
-#block-searchform form div {
-  height: 100%;
-}
-#block-searchform form input {
-  display: block;
-  height: 100%;
-}
-#block-searchform .form-item {
-  flex: 1 0 286px;
-}
-#block-searchform #edit-actions {
-  flex: 0 0 34px;
-}
-#block-searchform #edit-actions .button {
-  width: 34px;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  margin: 0;
-}
-#block-searchform input[type=search] {
-  border: 0;
-  padding: 0 0 0 0.5em;
-  width: 100%;
-  height: 100%;
-  font-size: 1.25rem;
-  background-color: #4990e2;
-}
-@media all and (min-width: 640px) {
-  #block-searchform {
-    flex: 0 0 320px;
-  }
-}
+#nav1 .container a { color: #183365; display: block; }
 
-/**
- * Styles for user generated content.
- *
- * These are styles for markup in the main content area of pages.
- * This should control how we display the way HTML that users type.
- */
-#content ul {
-  list-style: disc outside;
-  margin-left: 1em;
-}
-#content ol {
-  list-style: decimal outside;
-  margin-left: 1em;
-}
-#content.search-results h3 {
-  font-weight: bold;
-}
-#content.search-results ol {
-  list-style-type: none;
-}
-#content.search-results ol li {
-  margin-bottom: 1em;
-}
-#content.search-results ol li > a {
-  display: block;
-  color: #4caf50;
-}
-#content .text_with_summary a,
-#content .text_long a {
-  color: #3f9dff;
-  text-decoration: underline;
-}
-#content .container {
-  padding: 0.5em;
-}
-#content .container > section {
-  padding: 0.5em 0;
-}
-#content .container > section h2 {
-  color: #3f9dff;
-  margin-bottom: 2rem;
-}
-#content .container > section .container {
-  overflow: auto;
-  padding: 0.5em;
-}
-@media all and (min-width: 640px) {
-  #content .container > section h2 {
-    font-size: 1.9rem;
-  }
-}
-#content #activities section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#content #activities section header, #content #activities section form {
-  flex-basis: 30%;
-  margin: 0 auto;
-}
+#hamburger:checked ~ nav { position: static; width: 100%; height: auto; overflow: auto; }
 
-.parks-page #stats {
-  color: #fff;
-  background: #183365;
-  font-size: 1.25rem;
-}
-.parks-page #stats .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.parks-page #stats .count {
-  font-size: 1.9rem;
-}
-.parks-page #stats a {
-  flex: 0 0 auto;
-  width: 150px;
-  height: 120px;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  color: #fff;
-}
-.parks-page #stats a:hover {
-  background-color: #4990e2;
-}
-.parks-page #stats a div {
-  text-align: center;
-}
-@media all and (min-width: 640px) {
-  .parks-page .events {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5em;
-  }
-}
-.parks-page #activities h3 {
-  font-size: 1.9rem;
-  text-align: center;
-}
-.parks-page #categories {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.parks-page #categories article {
-  flex: 0 0 240px;
-  margin: 0.5em;
-}
-.parks-page #categories article a {
-  display: block;
-  height: 290px;
-}
-.parks-page #categories article a:hover {
-  background-color: #4990e2;
-}
+@media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
+  #nav1 { position: static; width: 100%; height: 84px; overflow: auto; }
+  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; } }
 
-#promt-programsearchform {
-  display: table;
-}
-#promt-programsearchform .form-item {
-  margin-bottom: 0.5em;
-}
-#promt-programsearchform label {
-  display: inline-block;
-  width: 5em;
-}
-#promt-programsearchform select {
-  width: 20em;
-}
-#promt-programsearchform #edit-actions {
-  text-align: center;
-}
+.dialog-off-canvas-main-canvas > header { background-color: #183365; color: #fff; padding: 0; }
 
-/**
- * Styles for markup that only shows up for users that are logged in
- *
- * This is stuff like the View/Edit/Delete buttons on content pages
- */
-#block-cob-local-tasks {
-  margin: 1em 0;
-}
-#block-cob-local-tasks a {
-  font-family: "Roboto", sans-serif;
-  background-color: #183365;
-  color: #fff;
-  padding: 0.5em;
-  border-radius: 0.5em;
-}
-#block-cob-local-tasks a:active, #block-cob-local-tasks a:hover {
-  color: #c9e5f7;
-}
-#block-cob-local-tasks a.is-active {
-  background-color: #c9e5f7;
-}
+.dialog-off-canvas-main-canvas > header > .container { min-height: 2em; font-size: 1.25rem; }
 
-#block-searchform .button {
-  width: 0;
-  height: 1em;
-  overflow: hidden;
-  text-indent: -10em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 1em 1em;
-  background-image: url("images/fa-svg/white/search.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h1, .dialog-off-canvas-main-canvas > header > .container h2 { display: block; margin: 4px 0 0 0.5em; padding: 0; font-family: "Roboto", sans-serif; color: #fff; border: none; }
 
-#nav1 a {
-  background-size: 24px;
-  background-repeat: no-repeat;
-  background-position: 0.5em center;
-  padding: 0 0 0 52px;
-  font-size: 1.25rem;
-  line-height: 4rem;
-}
-#nav1 .about {
-  background-image: url("images/alpha_icons/biscay/searchlocation.svg");
-}
-#nav1 .news {
-  background-image: url("images/alpha_icons/biscay/news.svg");
-}
-#nav1 .city {
-  background-image: url("images/alpha_icons/biscay/factory.svg");
-}
-#nav1 .services {
-  background-image: url("images/alpha_icons/biscay/services.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h1 a, .dialog-off-canvas-main-canvas > header > .container h2 a { margin: 0; padding: 0; font-weight: bold; }
 
-@media all and (min-width: 640px) {
-  #nav1 a {
-    display: inline-block;
-    padding: 52px 0 0 0;
-    background-size: auto 40px;
-    background-position: center 0.5em;
-    font-size: 1.125rem;
-    line-height: 1.25em;
-  }
-}
-#services-section a, #government-section a {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  padding-top: 7em;
-  background-size: 6em;
-  background-repeat: no-repeat;
-  background-position: center 0.5em;
-}
+.dialog-off-canvas-main-canvas > header > .container a { color: #fff; font-size: 1.125rem; font-weight: bold; line-height: 1rem; }
 
-#services-section a.contact {
-  background-image: url("images/alpha_icons/white/messages-circle-o.svg");
-}
-#services-section a.report {
-  background-image: url("images/alpha_icons/white/exclamation-triangle-circle-o.svg");
-}
-#services-section a.performance {
-  background-image: url("images/alpha_icons/white/documentdata-circle-o.svg");
-}
-#services-section a.myBloomington {
-  background-image: url("images/alpha_icons/white/safecity-circle-o.svg");
-}
-#services-section a.maps {
-  background-image: url("images/alpha_icons/white/map-circle-o.svg");
-}
-#services-section a.water {
-  background-image: url("images/alpha_icons/white/watertap-circle-o.svg");
-}
-#services-section a.parking_ticket {
-  background-image: url("images/alpha_icons/white/ticket-circle-o.svg");
-}
-#services-section a.parks {
-  background-image: url("images/alpha_icons/white/park-circle-o.svg");
-}
-#services-section a.contact:hover {
-  background-image: url("images/alpha_icons/white/hover/messages-circle-o.svg");
-}
-#services-section a.report:hover {
-  background-image: url("images/alpha_icons/white/hover/exclamation-triangle-circle-o.svg");
-}
-#services-section a.performance:hover {
-  background-image: url("images/alpha_icons/white/hover/documentdata-circle-o.svg");
-}
-#services-section a.myBloomington:hover {
-  background-image: url("images/alpha_icons/white/hover/safecity-circle-o.svg");
-}
-#services-section a.maps:hover {
-  background-image: url("images/alpha_icons/white/hover/map-circle-o.svg");
-}
-#services-section a.water:hover {
-  background-image: url("images/alpha_icons/white/hover/watertap-circle-o.svg");
-}
-#services-section a.parking_ticket:hover {
-  background-image: url("images/alpha_icons/white/hover/ticket-circle-o.svg");
-}
-#services-section a.parks:hover {
-  background-image: url("images/alpha_icons/white/hover/park-circle-o.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h1 { font-size: 1rem; line-height: 1rem; }
 
-#government-section a {
-  color: #212121;
-}
-#government-section a.code {
-  background-image: url("images/alpha_icons/biscay/code-circle-o.svg");
-}
-#government-section a.budget {
-  background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg");
-}
-#government-section a.boards {
-  background-image: url("images/alpha_icons/biscay/businessman-circle-o.svg");
-}
-#government-section a.council {
-  background-image: url("images/alpha_icons/biscay/user-circle-o.svg");
-}
-#government-section a.contact {
-  background-image: url("images/alpha_icons/biscay/phonecontact-circle-o.svg");
-}
-#government-section a.elected {
-  background-image: url("images/alpha_icons/biscay/policeofficer-circle-o.svg");
-}
-#government-section a.public_safety {
-  background-image: url("images/alpha_icons/biscay/policecar-circle-o.svg");
-}
-#government-section a:hover {
-  background-color: #4990e2;
-  color: #fff;
-}
-#government-section a:hover h2 {
-  color: #fff;
-}
-#government-section a.code:hover {
-  background-image: url("images/alpha_icons/white/code-circle-o.svg");
-}
-#government-section a.budget:hover {
-  background-image: url("images/alpha_icons/white/moneybag-circle-o.svg");
-}
-#government-section a.boards:hover {
-  background-image: url("images/alpha_icons/white/businessman-circle-o.svg");
-}
-#government-section a.council:hover {
-  background-image: url("images/alpha_icons/white/user-circle-o.svg");
-}
-#government-section a.contact:hover {
-  background-image: url("images/alpha_icons/white/phonecontact-circle-o.svg");
-}
-#government-section a.elected:hover {
-  background-image: url("images/alpha_icons/white/policeofficer-circle-o.svg");
-}
-#government-section a.public_safety:hover {
-  background-image: url("images/alpha_icons/white/policecar-circle-o.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h1 a { font-size: 1rem; line-height: 1rem; }
 
-.contactInfo address, .contactInfo a {
-  display: block;
-  font-size: 1.125rem;
-  font-style: normal;
-  padding-left: 3.5rem;
-  background-position: left center;
-  background-size: 2.5rem;
-  background-repeat: no-repeat;
-}
-.contactInfo a {
-  line-height: 2em;
-}
-.contactInfo address a {
-  line-height: 1em;
-  padding: 0;
-}
-.contactInfo address {
-  background-image: url("images/alpha_icons/white/location-square.svg");
-}
-.contactInfo a.facebook {
-  background-image: url("images/fa-svg/white/facebook-square.svg");
-}
-.contactInfo a.twitter {
-  background-image: url("images/fa-svg/white/twitter-square.svg");
-}
-.contactInfo a[href^="mailto:"] {
-  background-image: url("images/fa-svg/white/envelope.svg");
-}
-.contactInfo a.phone {
-  background-image: url("images/fa-svg/white/phone-square.svg");
-}
-.contactInfo a.fax {
-  background-image: url("images/fa-svg/white/fax.svg");
-}
-.contactInfo a.onboard {
-  background-image: url("images/icons/white/city_logo.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h2 { font-style: italic; font-size: 0.875rem; line-height: 0.875rem; }
 
-aside.contactInfo address {
-  background-image: url("images/fa-svg/dark-slate/map-marker.svg");
-}
-aside.contactInfo a.facebook {
-  background-image: url("images/fa-svg/dark-slate/facebook-square.svg");
-}
-aside.contactInfo a.twitter {
-  background-image: url("images/fa-svg/dark-slate/twitter-square.svg");
-}
-aside.contactInfo a[href^="mailto:"] {
-  background-image: url("images/fa-svg/dark-slate/envelope.svg");
-}
-aside.contactInfo a.phone {
-  background-image: url("images/fa-svg/dark-slate/phone-square.svg");
-}
-aside.contactInfo a.fax {
-  background-image: url("images/fa-svg/dark-slate/fax.svg");
-}
-aside.contactInfo a.onboard {
-  background-image: url("images/icons/dark-slate/city_logo.svg");
-}
+.dialog-off-canvas-main-canvas > header > .container h2 a { font-size: 0.875rem; line-height: 0.875rem; }
 
-.button {
-  padding: 15px 25px;
-  margin-top: 10px;
-}
+@media all and (min-width: 640px) { .dialog-off-canvas-main-canvas > header > .container { display: flex; flex-direction: row; justify-content: space-between; } }
 
-#block-upcomingevents article,
-#block-committeemeetings article,
-.onboard_meetings article,
-.calendar_calendar article {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  height: 154px;
-  min-width: 320px;
-  overflow: hidden;
-  border: 1px solid silver;
-}
-#block-upcomingevents article .month, #block-upcomingevents article .monthDate,
-#block-committeemeetings article .month,
-#block-committeemeetings article .monthDate,
-.onboard_meetings article .month,
-.onboard_meetings article .monthDate,
-.calendar_calendar article .month,
-.calendar_calendar article .monthDate {
-  font-size: 1.9rem;
-  font-weight: bold;
-}
-#block-upcomingevents article .summary,
-#block-committeemeetings article .summary,
-.onboard_meetings article .summary,
-.calendar_calendar article .summary {
-  font-weight: bold;
-}
-#block-upcomingevents article .location,
-#block-committeemeetings article .location,
-.onboard_meetings article .location,
-.calendar_calendar article .location {
-  font-size: small;
-  line-height: 1.25em;
-}
-#block-upcomingevents article h4,
-#block-committeemeetings article h4,
-.onboard_meetings article h4,
-.calendar_calendar article h4 {
-  margin: 0;
-}
-#block-upcomingevents article header,
-#block-committeemeetings article header,
-.onboard_meetings article header,
-.calendar_calendar article header {
-  flex: 0 0 118px;
-  height: 100%;
-  background-color: #ff9800;
-  color: #fff;
-  font-family: "Lora", serif;
-}
-#block-upcomingevents article header time,
-#block-committeemeetings article header time,
-.onboard_meetings article header time,
-.calendar_calendar article header time {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#block-upcomingevents article header time span,
-#block-committeemeetings article header time span,
-.onboard_meetings article header time span,
-.calendar_calendar article header time span {
-  display: block;
-  text-align: center;
-  line-height: 1.5em;
-}
-#block-upcomingevents article > div,
-#block-committeemeetings article > div,
-.onboard_meetings article > div,
-.calendar_calendar article > div {
-  line-height: 1.5em;
-  padding: 0.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#block-upcomingevents article > div time,
-#block-committeemeetings article > div time,
-.onboard_meetings article > div time,
-.calendar_calendar article > div time {
-  text-align: center;
-  display: block;
-}
-#block-upcomingevents article > div span,
-#block-committeemeetings article > div span,
-.onboard_meetings article > div span,
-.calendar_calendar article > div span {
-  text-align: center;
-  display: block;
-  height: 3em;
-  overflow: hidden;
-}
-#block-upcomingevents > div,
-#block-committeemeetings > div,
-.onboard_meetings > div,
-.calendar_calendar > div {
-  text-align: center;
-}
+#feedback { position: absolute; top: 0.5em; right: 0.5em; color: white; font-family: "Roboto", sans-serif; font-size: 1.125rem; font-weight: bold; }
 
-@media all and (min-width: 640px) {
-  section.divided > .container > header,
-section.divided .calendar_calendar > header,
-#content section > header,
-.paragraph--type--info-list > header {
-    text-align: center;
-    background-size: 100% 2px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    margin: 1em 0;
-  }
-  section.divided > .container > header h2,
-section.divided .calendar_calendar > header h2,
-#content section > header h2,
-.paragraph--type--info-list > header h2 {
-    display: inline;
-    padding: 0 0.5em;
-    font-size: 1.9rem;
-    font-weight: 900;
-  }
-}
+@media all and (min-width: 640px) { #feedback { right: 50%; } }
 
-section.divided.dark {
-  color: #fff;
-  background-color: #183365;
-}
-section.divided.dark .container > header {
-  background-image: linear-gradient(90deg, #183365, #fff, #183365);
-}
-section.divided.dark .container > header h2 {
-  background-color: #183365;
-  color: #fff;
-}
-section.divided.dark h3, section.divided.dark a {
-  color: #fff;
-}
+#block-cob-branding { padding-left: 2em; height: 40px; overflow: hidden; }
 
-section.divided .container > header,
-section.divided .calendar_calendar > header {
-  background-image: linear-gradient(90deg, #fff, #183365, #fff);
-}
-section.divided .container > header h2, section.divided .container > header a,
-section.divided .calendar_calendar > header h2,
-section.divided .calendar_calendar > header a {
-  background-color: #fff;
-  color: #3f9dff;
-}
+@media all and (min-width: 640px) { #block-cob-branding { padding: 0; flex: 1 0 320px; } }
 
-.paragraph > header,
-#asm_animals > header,
-#block-categoryprograms > header,
-#block-locationprograms > header,
-#block-departmentstaff > header,
-#block-committeemembers > header,
-section.views-element-container > header,
-#promt_sessions > header {
-  background-image: linear-gradient(90deg, #fff, #183365, #fff);
-}
-.paragraph > header h2,
-#asm_animals > header h2,
-#block-categoryprograms > header h2,
-#block-locationprograms > header h2,
-#block-departmentstaff > header h2,
-#block-committeemembers > header h2,
-section.views-element-container > header h2,
-#promt_sessions > header h2 {
-  background-color: #fff;
-  color: #3f9dff;
-}
+#block-searchform form { height: 2em; margin: 0; display: flex; flex-direction: row; justify-content: stretch; }
 
-.front header > h2 {
-  text-transform: uppercase;
-}
-.front #banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.front #badge {
-  display: block;
-  width: 275px;
-  height: 275px;
-  background: url("images/200yearsCircle.png") no-repeat;
-}
-.front aside.calendar_calendar .events {
-  height: 660px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.front aside.calendar_calendar .events article {
-  margin: 0;
-}
+#block-searchform form div { height: 100%; }
 
-#services-section nav, #government-section nav {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-#services-section nav h2, #government-section nav h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.25rem;
-  color: #183365;
-  height: 2.5em;
-}
-#services-section a, #government-section a {
-  flex: 0 0 140px;
-  margin-bottom: 1em;
-}
-@media all and (min-width: 640px) {
-  #services-section a, #government-section a {
-    flex: 0 0 25%;
-  }
-}
+#block-searchform form input { display: block; height: 100%; }
 
-section.promo .container > div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-section.promo .container > div > div, section.promo .container > div > p {
-  flex: 1 0 320px;
-}
-section.promo .container > div .entity_reference > div {
-  text-align: center;
-}
-section.promo p {
-  font-size: 1.25rem;
-  line-height: 1.5em;
-  letter-spacing: 0.04em;
-}
-section.promo .promo_title {
-  text-align: center;
-}
+#block-searchform .form-item { flex: 1 0 286px; }
 
-#news-section .container > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-}
-#news-section .container > div > .news {
-  flex: 1 1 320px;
-  margin: 0 0.5em 0.5em 0;
-}
-@media all and (min-width: 640px) {
-  #news-section .container > div > .news .results {
-    height: 660px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-  #news-section .container > div > .news a:first-child {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-}
-#news-section .container > div > .news > div:last-child {
-  text-align: center;
-}
-#news-section .container > div aside {
-  flex: 0 0 320px;
-}
+#block-searchform #edit-actions { flex: 0 0 34px; }
 
-article.news.teaser {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  height: 151px;
-  overflow: hidden;
-  margin-right: 0.5em;
-  padding: 50px 0 0 0.5em;
-  border-color: #183365 silver silver;
-  border-style: solid;
-  border-width: 8px 1px 1px 1px;
-  position: relative;
-}
-article.news.teaser h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  font-family: "Lora", serif;
-  color: #183365;
-}
-article.news.teaser header {
-  flex: 1 0 160px;
-}
-article.news.teaser .summary {
-  flex: 1 0 160px;
-  color: #212121;
-}
-article.news.teaser.hasImage {
-  padding-left: 148px;
-}
-article.news.teaser .entity_reference {
-  width: 140px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-article.news.teaser .entity_reference img {
-  width: 140px;
-  height: auto;
-}
-article.news.teaser time {
-  position: absolute;
-  top: 20px;
-  right: 0.5em;
-  font-family: "Lora", serif;
-  font-weight: bold;
-  color: #183365;
-}
+#block-searchform #edit-actions .button { width: 34px; height: 100%; padding: 0; border: 0; border-radius: 0; margin: 0; }
 
-article.news.full #intro header h2 {
-  font-size: 1.125rem;
-  color: #212121;
-  margin-bottom: 0;
-}
+#block-searchform input[type="search"] { border: 0; padding: 0 0 0 0.5em; width: 100%; height: 100%; font-size: 1.25rem; background-color: #4990e2; }
 
-/**
- * Styles for paragraph types defined in our Drupal site
- *
- * Paragraphs are a special module we installed.
- * @see https://www.drupal.org/project/paragraphs
- *
- * These are not to be confused with HTML P tags.  It is unfortunate
- * that the module happens to call itself with that name.
- */
-#asm_animals > div,
-#interactivemap_maps > div,
-#legislationTypes > div,
-#reports > div,
-.departments-block,
-.parks-categories-block,
-.info-list,
-.paragraph--type--info-list {
-  text-align: center;
-}
+@media all and (min-width: 640px) { #block-searchform { flex: 0 0 320px; } }
 
-@media all and (min-width: 640px) {
-  #asm_animals > div,
-#interactivemap_maps > div,
-#legislationTypes > div,
-#reports > div,
-.departments-block,
-.parks-categories-block,
-.info-list,
-.promt_programs,
-.paragraph--type--info-list > div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-#asm_animals article,
-#interactivemap_maps article,
-#legislationTypes article,
-#reports article,
-.departments-block > div,
-.parks-categories-block > div,
-.info-list > div,
-.info-list > .info-card,
-.promt_programs > article,
-.paragraph--type--info-card {
-  height: auto;
-}
-#asm_animals article article,
-#interactivemap_maps article article,
-#legislationTypes article article,
-#reports article article,
-.departments-block > div article,
-.parks-categories-block > div article,
-.info-list > div article,
-.info-list > .info-card article,
-.promt_programs > article article,
-.paragraph--type--info-card article {
-  height: auto;
-}
-#asm_animals article a,
-#interactivemap_maps article a,
-#legislationTypes article a,
-#reports article a,
-.departments-block > div a,
-.parks-categories-block > div a,
-.info-list > div a,
-.info-list > .info-card a,
-.promt_programs > article a,
-.paragraph--type--info-card a {
-  background-color: gainsboro;
-  color: #212121;
-  display: block;
-  margin-bottom: 1em;
-  height: 250px;
-  overflow: hidden;
-}
-#asm_animals article a h3,
-#interactivemap_maps article a h3,
-#legislationTypes article a h3,
-#reports article a h3,
-.departments-block > div a h3,
-.parks-categories-block > div a h3,
-.info-list > div a h3,
-.info-list > .info-card a h3,
-.promt_programs > article a h3,
-.paragraph--type--info-card a h3 {
-  vertical-align: top;
-  color: #4a4a4a;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.25rem;
-}
-#asm_animals article a:hover,
-#interactivemap_maps article a:hover,
-#legislationTypes article a:hover,
-#reports article a:hover,
-.departments-block > div a:hover,
-.parks-categories-block > div a:hover,
-.info-list > div a:hover,
-.info-list > .info-card a:hover,
-.promt_programs > article a:hover,
-.paragraph--type--info-card a:hover {
-  background-color: #4990e2;
-  color: #fff;
-}
-#asm_animals article a:hover h3,
-#interactivemap_maps article a:hover h3,
-#legislationTypes article a:hover h3,
-#reports article a:hover h3,
-.departments-block > div a:hover h3,
-.parks-categories-block > div a:hover h3,
-.info-list > div a:hover h3,
-.info-list > .info-card a:hover h3,
-.promt_programs > article a:hover h3,
-.paragraph--type--info-card a:hover h3 {
-  color: #fff;
-}
-#asm_animals article a img,
-#interactivemap_maps article a img,
-#legislationTypes article a img,
-#reports article a img,
-.departments-block > div a img,
-.parks-categories-block > div a img,
-.info-list > div a img,
-.info-list > .info-card a img,
-.promt_programs > article a img,
-.paragraph--type--info-card a img {
-  width: 284px;
-}
-@media all and (min-width: 640px) {
-  #asm_animals article,
-#interactivemap_maps article,
-#legislationTypes article,
-#reports article,
-.departments-block > div,
-.parks-categories-block > div,
-.info-list > div,
-.info-list > .info-card,
-.promt_programs > article,
-.paragraph--type--info-card {
-    flex-basis: 320px;
-    vertical-align: top;
-    text-align: center;
-  }
-  #asm_animals article a,
-#interactivemap_maps article a,
-#legislationTypes article a,
-#reports article a,
-.departments-block > div a,
-.parks-categories-block > div a,
-.info-list > div a,
-.info-list > .info-card a,
-.promt_programs > article a,
-.paragraph--type--info-card a {
-    padding: 1em;
-    height: 290px;
-  }
-  #asm_animals article a h3,
-#interactivemap_maps article a h3,
-#legislationTypes article a h3,
-#reports article a h3,
-.departments-block > div a h3,
-.parks-categories-block > div a h3,
-.info-list > div a h3,
-.info-list > .info-card a h3,
-.promt_programs > article a h3,
-.paragraph--type--info-card a h3 {
-    font-size: 1.9rem;
-    margin: 0 0 0.5em 0;
-  }
-}
+/** Styles for user generated content. These are styles for markup in the main content area of pages. This should control how we display the way HTML that users type. */
+#content ul { list-style: disc    outside; margin-left: 1em; }
 
-.boards-list header {
-  font-family: "Lora", serif;
-  font-size: 1.25rem;
-}
-.boards-list header h3 {
-  display: inline;
-}
+#content ol { list-style: decimal outside; margin-left: 1em; }
 
-dl {
-  border: none;
-}
+#content.search-results h3 { font-weight: bold; }
 
-#alerts {
-  background-color: #4a4a4a;
-  color: #fff;
-}
-#alerts h2, #alerts a {
-  color: #fff;
-}
-#alerts .container {
-  text-align: center;
-}
-#alerts article {
-  margin: 0;
-  padding: 0.5em;
-}
-#alerts .info {
-  background-color: #4caf50;
-}
-#alerts .warning {
-  background-color: #ff9800;
-}
-#alerts .severe {
-  background-color: #ed9a9c;
-}
+#content.search-results ol { list-style-type: none; }
 
-#banner {
-  height: 320px;
-  background: url("images/downtown-large.png") no-repeat center center;
-}
+#content.search-results ol li { margin-bottom: 1em; }
 
-#breadcrumb {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  background-color: #3f9dff;
-  color: #fff;
-}
-#breadcrumb .container {
-  padding: 0.5em;
-}
-#breadcrumb h1 {
-  font-size: 1.9rem;
-  color: #fff;
-}
-#breadcrumb nav {
-  font-size: 1rem;
-}
-#breadcrumb nav a:not(:last-child):after {
-  content: " >> ";
-}
-#breadcrumb address, #breadcrumb a {
-  color: #fff;
-}
-@media all and (min-width: 640px) {
-  #breadcrumb h1 {
-    font-size: 3.75rem;
-  }
-}
-@media all and (min-width: 640px) {
-  #breadcrumb .contactInfo > dl {
-    display: inline-block;
-    width: 30%;
-    vertical-align: middle;
-  }
-}
+#content.search-results ol li > a { display: block; color: #4caf50; }
 
-#block-departmentstaff > div,
-#block-committeemembers .seats {
-  font-size: 0.875rem;
-}
-#block-departmentstaff > div h3 div,
-#block-committeemembers .seats h3 div {
-  font-size: 1.125rem;
-}
-#block-departmentstaff > div .member,
-#block-committeemembers .seats .member {
-  text-align: center;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-#block-departmentstaff > div .member dd,
-#block-committeemembers .seats .member dd {
-  line-height: 1.5em;
-}
-#block-departmentstaff > div .member dt,
-#block-committeemembers .seats .member dt {
-  margin: 0;
-}
-@media all and (min-width: 640px) {
-  #block-departmentstaff > div,
-#block-committeemembers .seats {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-  #block-departmentstaff > div h3,
-#block-committeemembers .seats h3 {
-    margin: 0;
-  }
-  #block-departmentstaff > div .member,
-#block-committeemembers .seats .member {
-    width: 208px;
-  }
-}
-@media all and (min-width: 1080px) {
-  #block-departmentstaff > div,
-#block-committeemembers .seats {
-    width: 1080px;
-    margin: 0 auto;
-  }
-}
+#content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 
-.contactInfo dt, #block-departmentstaff dt {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
+#content .container { padding: 0.5em; }
 
-#block-committeemembers dt {
-  float: none;
-  display: inline-block;
-}
+#content .container > section { padding: 0.5em 0; }
 
-#related-links > .container > div,
-#block-committeemembers nav {
-  text-align: center;
-}
-#related-links > .container > div div,
-#block-committeemembers nav div {
-  display: inline-block;
-}
-#related-links > .container > div a,
-#block-committeemembers nav a {
-  background-color: #fff;
-  border-color: #4caf50;
-  color: #4caf50;
-}
+#content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
 
-.pager ul {
-  list-style-type: none;
-}
-.pager li {
-  display: inline-block;
-  padding: 0 0.5em;
-}
-.pager li.is-active {
-  background-color: #183365;
-}
-.pager li.is-active a {
-  color: #fff;
-}
+#content .container > section .container { overflow: auto; padding: 0.5em; }
 
-.dialog-off-canvas-main-canvas > footer {
-  background-color: #4a4a4a;
-  color: #fff;
-  padding: 0.5em;
-}
-.dialog-off-canvas-main-canvas > footer a {
-  font-size: 1.25rem;
-  color: #fff;
-  display: block;
-  text-align: left;
-}
-.dialog-off-canvas-main-canvas > footer address {
-  text-align: left;
-}
-@media all and (min-width: 640px) {
-  .dialog-off-canvas-main-canvas > footer .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
+@media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
+
+#content #activities section { display: flex; flex-direction: row; justify-content: center; }
+
+#content #activities section header, #content #activities section form { flex-basis: 30%; margin: 0 auto; }
+
+.parks-page #stats { color: #fff; background: #183365; font-size: 1.25rem; }
+
+.parks-page #stats .container { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+
+.parks-page #stats .count { font-size: 1.9rem; }
+
+.parks-page #stats a { flex: 0 0 auto; width: 150px; height: 120px; padding-top: 40px; display: flex; flex-direction: column; justify-content: start; align-items: center; color: #fff; }
+
+.parks-page #stats a:hover { background-color: #4990e2; }
+
+.parks-page #stats a div { text-align: center; }
+
+@media all and (min-width: 640px) { .parks-page .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
+
+.parks-page #activities h3 { font-size: 1.9rem; text-align: center; }
+
+.parks-page #categories { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+
+.parks-page #categories article { flex: 0 0 240px; margin: 0.5em; }
+
+.parks-page #categories article a { display: block; height: 290px; }
+
+.parks-page #categories article a:hover { background-color: #4990e2; }
+
+#promt-programsearchform { display: table; }
+
+#promt-programsearchform .form-item { margin-bottom: 0.5em; }
+
+#promt-programsearchform label { display: inline-block; width: 5em; }
+
+#promt-programsearchform select { width: 20em; }
+
+#promt-programsearchform #edit-actions { text-align: center; }
+
+/** Styles for markup that only shows up for users that are logged in This is stuff like the View/Edit/Delete buttons on content pages */
+#block-cob-local-tasks { margin: 1em 0; }
+
+#block-cob-local-tasks a { font-family: "Roboto", sans-serif; background-color: #183365; color: #fff; padding: 0.5em; border-radius: 0.5em; }
+
+#block-cob-local-tasks a:active, #block-cob-local-tasks a:hover { color: #c9e5f7; }
+
+#block-cob-local-tasks a.is-active { background-color: #c9e5f7; }
+
+#block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
+
+#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 0.5em center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
+
+#nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
+
+#nav1 .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
+
+#nav1 .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
+
+#nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
+
+@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
+
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+
+#services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
+
+#services-section a.report { background-image: url("images/alpha_icons/white/exclamation-triangle-circle-o.svg"); }
+
+#services-section a.performance { background-image: url("images/alpha_icons/white/documentdata-circle-o.svg"); }
+
+#services-section a.myBloomington { background-image: url("images/alpha_icons/white/safecity-circle-o.svg"); }
+
+#services-section a.maps { background-image: url("images/alpha_icons/white/map-circle-o.svg"); }
+
+#services-section a.water { background-image: url("images/alpha_icons/white/watertap-circle-o.svg"); }
+
+#services-section a.parking_ticket { background-image: url("images/alpha_icons/white/ticket-circle-o.svg"); }
+
+#services-section a.parks { background-image: url("images/alpha_icons/white/park-circle-o.svg"); }
+
+#services-section a.contact:hover { background-image: url("images/alpha_icons/white/hover/messages-circle-o.svg"); }
+
+#services-section a.report:hover { background-image: url("images/alpha_icons/white/hover/exclamation-triangle-circle-o.svg"); }
+
+#services-section a.performance:hover { background-image: url("images/alpha_icons/white/hover/documentdata-circle-o.svg"); }
+
+#services-section a.myBloomington:hover { background-image: url("images/alpha_icons/white/hover/safecity-circle-o.svg"); }
+
+#services-section a.maps:hover { background-image: url("images/alpha_icons/white/hover/map-circle-o.svg"); }
+
+#services-section a.water:hover { background-image: url("images/alpha_icons/white/hover/watertap-circle-o.svg"); }
+
+#services-section a.parking_ticket:hover { background-image: url("images/alpha_icons/white/hover/ticket-circle-o.svg"); }
+
+#services-section a.parks:hover { background-image: url("images/alpha_icons/white/hover/park-circle-o.svg"); }
+
+#government-section a { color: #212121; }
+
+#government-section a.code { background-image: url("images/alpha_icons/biscay/code-circle-o.svg"); }
+
+#government-section a.budget { background-image: url("images/alpha_icons/biscay/moneybag-circle-o.svg"); }
+
+#government-section a.boards { background-image: url("images/alpha_icons/biscay/businessman-circle-o.svg"); }
+
+#government-section a.council { background-image: url("images/alpha_icons/biscay/user-circle-o.svg"); }
+
+#government-section a.contact { background-image: url("images/alpha_icons/biscay/phonecontact-circle-o.svg"); }
+
+#government-section a.elected { background-image: url("images/alpha_icons/biscay/policeofficer-circle-o.svg"); }
+
+#government-section a.public_safety { background-image: url("images/alpha_icons/biscay/policecar-circle-o.svg"); }
+
+#government-section a:hover { background-color: #4990e2; color: #fff; }
+
+#government-section a:hover h2 { color: #fff; }
+
+#government-section a.code:hover { background-image: url("images/alpha_icons/white/code-circle-o.svg"); }
+
+#government-section a.budget:hover { background-image: url("images/alpha_icons/white/moneybag-circle-o.svg"); }
+
+#government-section a.boards:hover { background-image: url("images/alpha_icons/white/businessman-circle-o.svg"); }
+
+#government-section a.council:hover { background-image: url("images/alpha_icons/white/user-circle-o.svg"); }
+
+#government-section a.contact:hover { background-image: url("images/alpha_icons/white/phonecontact-circle-o.svg"); }
+
+#government-section a.elected:hover { background-image: url("images/alpha_icons/white/policeofficer-circle-o.svg"); }
+
+#government-section a.public_safety:hover { background-image: url("images/alpha_icons/white/policecar-circle-o.svg"); }
+
+.contactInfo address, .contactInfo a { display: block; font-size: 1.125rem; font-style: normal; padding-left: 3.5rem; background-position: left center; background-size: 2.5rem; background-repeat: no-repeat; }
+
+.contactInfo a { line-height: 2em; }
+
+.contactInfo address a { line-height: 1em; padding: 0; }
+
+.contactInfo address { background-image: url("images/alpha_icons/white/location-square.svg"); }
+
+.contactInfo a.facebook { background-image: url("images/fa-svg/white/facebook-square.svg"); }
+
+.contactInfo a.twitter { background-image: url("images/fa-svg/white/twitter-square.svg"); }
+
+.contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/white/envelope.svg"); }
+
+.contactInfo a.phone { background-image: url("images/fa-svg/white/phone-square.svg"); }
+
+.contactInfo a.fax { background-image: url("images/fa-svg/white/fax.svg"); }
+
+.contactInfo a.onboard { background-image: url("images/icons/white/city_logo.svg"); }
+
+aside.contactInfo address { background-image: url("images/fa-svg/dark-slate/map-marker.svg"); }
+
+aside.contactInfo a.facebook { background-image: url("images/fa-svg/dark-slate/facebook-square.svg"); }
+
+aside.contactInfo a.twitter { background-image: url("images/fa-svg/dark-slate/twitter-square.svg"); }
+
+aside.contactInfo a[href^="mailto:"] { background-image: url("images/fa-svg/dark-slate/envelope.svg"); }
+
+aside.contactInfo a.phone { background-image: url("images/fa-svg/dark-slate/phone-square.svg"); }
+
+aside.contactInfo a.fax { background-image: url("images/fa-svg/dark-slate/fax.svg"); }
+
+aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/city_logo.svg"); }
+
+.button { padding: 15px 25px; margin-top: 10px; }
+
+#block-upcomingevents article, #block-committeemeetings article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 154px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
+
+#block-upcomingevents article .month, #block-upcomingevents article .monthDate, #block-committeemeetings article .month, #block-committeemeetings article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
+
+#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
+
+#block-upcomingevents article .location, #block-committeemeetings article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
+
+#block-upcomingevents article h4, #block-committeemeetings article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
+
+#block-upcomingevents article header, #block-committeemeetings article header, .onboard_meetings article header, .calendar_calendar article header { flex: 0 0 118px; height: 100%; background-color: #ff9800; color: #fff; font-family: "Lora", serif; }
+
+#block-upcomingevents article header time, #block-committeemeetings article header time, .onboard_meetings article header time, .calendar_calendar article header time { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+
+#block-upcomingevents article header time span, #block-committeemeetings article header time span, .onboard_meetings article header time span, .calendar_calendar article header time span { display: block; text-align: center; line-height: 1.5em; }
+
+#block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
+
+#block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
+
+#block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { text-align: center; display: block; height: 3em; overflow: hidden; }
+
+#block-upcomingevents > div, #block-committeemeetings > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
+
+@media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 1em 0; }
+  section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
+
+section.divided.dark { color: #fff; background-color: #183365; }
+
+section.divided.dark .container > header { background-image: linear-gradient(90deg, #183365, #fff, #183365); }
+
+section.divided.dark .container > header h2 { background-color: #183365; color: #fff; }
+
+section.divided.dark h3, section.divided.dark a { color: #fff; }
+
+section.divided .container > header, section.divided .calendar_calendar > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+section.divided .container > header h2, section.divided .container > header a, section.divided .calendar_calendar > header h2, section.divided .calendar_calendar > header a { background-color: #fff; color: #3f9dff; }
+
+.paragraph > header, #asm_animals > header, #block-categoryprograms > header, #block-locationprograms > header, #block-departmentstaff > header, #block-committeemembers > header, section.views-element-container > header, #promt_sessions > header { background-image: linear-gradient(90deg, #fff, #183365, #fff); }
+
+.paragraph > header h2, #asm_animals > header h2, #block-categoryprograms > header h2, #block-locationprograms > header h2, #block-departmentstaff > header h2, #block-committeemembers > header h2, section.views-element-container > header h2, #promt_sessions > header h2 { background-color: #fff; color: #3f9dff; }
+
+.front header > h2 { text-transform: uppercase; }
+
+.front #banner { display: flex; justify-content: center; align-items: center; }
+
+.front #badge { display: block; width: 275px; height: 275px; background: url("images/200yearsCircle.png") no-repeat; }
+
+.front aside.calendar_calendar .events { height: 660px; display: flex; flex-direction: column; justify-content: space-between; }
+
+.front aside.calendar_calendar .events article { margin: 0; }
+
+#services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+
+#services-section nav h2, #government-section nav h2 { font-family: "Roboto", sans-serif; font-size: 1.25rem; color: #183365; height: 2.5em; }
+
+#services-section a, #government-section a { flex: 0 0 140px; margin-bottom: 1em; }
+
+@media all and (min-width: 640px) { #services-section a, #government-section a { flex: 0 0 25%; } }
+
+section.promo .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
+
+section.promo .container > div > div, section.promo .container > div > p { flex: 1 0 320px; }
+
+section.promo .container > div .entity_reference > div { text-align: center; }
+
+section.promo p { font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em; }
+
+section.promo .promo_title { text-align: center; }
+
+#news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
+
+#news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
+
+#news-section .container > div > .news > div:last-child { text-align: center; }
+
+#news-section .container > div aside { flex: 0 0 320px; }
+
+@media all and (min-width: 640px) { .front #news-section .results { height: 670px; overflow-y: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+  .front #news-section a:first-child { grid-column-start: 1; grid-column-end: 3; } }
+
+article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 151px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
+
+article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+
+article.news.teaser header { flex: 1 0 160px; }
+
+article.news.teaser .summary { flex: 1 0 160px; color: #212121; }
+
+article.news.teaser.hasImage { padding-left: 148px; }
+
+article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0; left: 0; }
+
+article.news.teaser .entity_reference img { width: 140px; height: auto; }
+
+article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
+
+article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin-bottom: 0; }
+
+/** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
+#asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .paragraph--type--info-list { text-align: center; }
+
+@media all and (min-width: 640px) { #asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .promt_programs, .paragraph--type--info-list > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; } }
+
+#asm_animals article, #interactivemap_maps article, #legislationTypes article, #reports article, .departments-block > div, .parks-categories-block > div, .info-list > div, .info-list > .info-card, .promt_programs > article, .paragraph--type--info-card { height: auto; }
+
+#asm_animals article article, #interactivemap_maps article article, #legislationTypes article article, #reports article article, .departments-block > div article, .parks-categories-block > div article, .info-list > div article, .info-list > .info-card article, .promt_programs > article article, .paragraph--type--info-card article { height: auto; }
+
+#asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .info-list > .info-card a, .promt_programs > article a, .paragraph--type--info-card a { background-color: gainsboro; color: #212121; display: block; margin-bottom: 1em; height: 250px; overflow: hidden; }
+
+#asm_animals article a h3, #interactivemap_maps article a h3, #legislationTypes article a h3, #reports article a h3, .departments-block > div a h3, .parks-categories-block > div a h3, .info-list > div a h3, .info-list > .info-card a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { vertical-align: top; color: #4a4a4a; font-family: "Roboto", sans-serif; font-size: 1.25rem; }
+
+#asm_animals article a:hover, #interactivemap_maps article a:hover, #legislationTypes article a:hover, #reports article a:hover, .departments-block > div a:hover, .parks-categories-block > div a:hover, .info-list > div a:hover, .info-list > .info-card a:hover, .promt_programs > article a:hover, .paragraph--type--info-card a:hover { background-color: #4990e2; color: #fff; }
+
+#asm_animals article a:hover h3, #interactivemap_maps article a:hover h3, #legislationTypes article a:hover h3, #reports article a:hover h3, .departments-block > div a:hover h3, .parks-categories-block > div a:hover h3, .info-list > div a:hover h3, .info-list > .info-card a:hover h3, .promt_programs > article a:hover h3, .paragraph--type--info-card a:hover h3 { color: #fff; }
+
+#asm_animals article a img, #interactivemap_maps article a img, #legislationTypes article a img, #reports article a img, .departments-block > div a img, .parks-categories-block > div a img, .info-list > div a img, .info-list > .info-card a img, .promt_programs > article a img, .paragraph--type--info-card a img { width: 284px; }
+
+@media all and (min-width: 640px) { #asm_animals article, #interactivemap_maps article, #legislationTypes article, #reports article, .departments-block > div, .parks-categories-block > div, .info-list > div, .info-list > .info-card, .promt_programs > article, .paragraph--type--info-card { flex-basis: 320px; vertical-align: top; text-align: center; }
+  #asm_animals article a, #interactivemap_maps article a, #legislationTypes article a, #reports article a, .departments-block > div a, .parks-categories-block > div a, .info-list > div a, .info-list > .info-card a, .promt_programs > article a, .paragraph--type--info-card a { padding: 1em; height: 290px; }
+  #asm_animals article a h3, #interactivemap_maps article a h3, #legislationTypes article a h3, #reports article a h3, .departments-block > div a h3, .parks-categories-block > div a h3, .info-list > div a h3, .info-list > .info-card a h3, .promt_programs > article a h3, .paragraph--type--info-card a h3 { font-size: 1.9rem; margin: 0 0 0.5em 0; } }
+
+.boards-list header { font-family: "Lora", serif; font-size: 1.25rem; }
+
+.boards-list header h3 { display: inline; }
+
+dl { border: none; }
+
+#alerts { background-color: #4a4a4a; color: #fff; }
+
+#alerts h2, #alerts a { color: #fff; }
+
+#alerts .container { text-align: center; }
+
+#alerts article { margin: 0; padding: 0.5em; }
+
+#alerts .info { background-color: #4caf50; }
+
+#alerts .warning { background-color: #ff9800; }
+
+#alerts .severe { background-color: #ed9a9c; }
+
+.front #banner { height: 320px; background: url("images/downtown-small.png") no-repeat center center; }
+
+@media all and (min-width: 640px) { .front #banner { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
+
+#breadcrumb { display: flex; flex-direction: column; justify-content: end; background-color: #3f9dff; color: #fff; }
+
+#breadcrumb .container { padding: 0.5em; }
+
+#breadcrumb h1 { font-size: 1.9rem; color: #fff; }
+
+#breadcrumb nav { font-size: 1rem; }
+
+#breadcrumb nav a:not(:last-child):after { content: " >> "; }
+
+#breadcrumb address, #breadcrumb a { color: #fff; }
+
+@media all and (min-width: 640px) { #breadcrumb h1 { font-size: 3.75rem; } }
+
+@media all and (min-width: 640px) { #breadcrumb .contactInfo > dl { display: inline-block; width: 30%; vertical-align: middle; } }
+
+#block-departmentstaff > div, #block-committeemembers .seats { font-size: 0.875rem; }
+
+#block-departmentstaff > div h3 div, #block-committeemembers .seats h3 div { font-size: 1.125rem; }
+
+#block-departmentstaff > div .member, #block-committeemembers .seats .member { text-align: center; margin-bottom: 1rem; padding: .5rem; }
+
+#block-departmentstaff > div .member dd, #block-committeemembers .seats .member dd { line-height: 1.5em; }
+
+#block-departmentstaff > div .member dt, #block-committeemembers .seats .member dt { margin: 0; }
+
+@media all and (min-width: 640px) { #block-departmentstaff > div, #block-committeemembers .seats { display: flex; flex-flow: row wrap; justify-content: space-between; }
+  #block-departmentstaff > div h3, #block-committeemembers .seats h3 { margin: 0; }
+  #block-departmentstaff > div .member, #block-committeemembers .seats .member { width: 208px; } }
+
+@media all and (min-width: 1080px) { #block-departmentstaff > div, #block-committeemembers .seats { width: 1080px; margin: 0 auto; } }
+
+.contactInfo dt, #block-departmentstaff dt { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+#block-committeemembers dt { float: none; display: inline-block; }
+
+#related-links > .container > div, #block-committeemembers nav { text-align: center; }
+
+#related-links > .container > div div, #block-committeemembers nav div { display: inline-block; }
+
+#related-links > .container > div a, #block-committeemembers nav a { background-color: #fff; border-color: #4caf50; color: #4caf50; }
+
+.pager ul { list-style-type: none; }
+
+.pager li { display: inline-block; padding: 0 0.5em; }
+
+.pager li.is-active { background-color: #183365; }
+
+.pager li.is-active a { color: #fff; }
+
+.dialog-off-canvas-main-canvas > footer { background-color: #4a4a4a; color: #fff; padding: 0.5em; }
+
+.dialog-off-canvas-main-canvas > footer a { font-size: 1.25rem; color: #fff; display: block; text-align: left; }
+
+.dialog-off-canvas-main-canvas > footer address { text-align: left; }
+
+@media all and (min-width: 640px) { .dialog-off-canvas-main-canvas > footer .container { display: flex; flex-direction: row; justify-content: space-between; } }
 
 /*# sourceMappingURL=screen.css.map */
