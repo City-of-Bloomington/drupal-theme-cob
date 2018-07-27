@@ -455,7 +455,7 @@ article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin
 
 dl { border: none; }
 
-b, strong { -webkit-font-smoothing: antialiased; }
+b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #alerts { background-color: #4a4a4a; color: #fff; }
 
