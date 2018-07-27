@@ -324,13 +324,11 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 .button { padding: 15px 25px; margin-top: 10px; }
 
-#block-upcomingevents article, #block-committeemeetings article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 154px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
+#block-upcomingevents article, #block-committeemeetings article, .onboard_meetings article, .calendar_calendar article { display: flex; flex-direction: row; justify-content: start; height: 158px; min-width: 320px; overflow: hidden; border: 1px solid silver; }
 
 #block-upcomingevents article .month, #block-upcomingevents article .monthDate, #block-committeemeetings article .month, #block-committeemeetings article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
 
-#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { font-weight: bold; }
-
-#block-upcomingevents article .location, #block-committeemeetings article .location, .onboard_meetings article .location, .calendar_calendar article .location { font-size: small; line-height: 1.25em; }
+#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { position: relative; margin: 0 0 10px 0; font-size: 1.25rem; line-height: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
 #block-upcomingevents article h4, #block-committeemeetings article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
 
@@ -340,13 +338,13 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article header time span, #block-committeemeetings article header time span, .onboard_meetings article header time span, .calendar_calendar article header time span { display: block; text-align: center; line-height: 1.5em; }
 
-#block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; display: flex; flex-direction: column; justify-content: center; }
+#block-upcomingevents article > div, #block-committeemeetings article > div, .onboard_meetings article > div, .calendar_calendar article > div { line-height: 1.5em; padding: 0.5em; }
 
-#block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { text-align: center; display: block; }
+#block-upcomingevents article > div time, #block-committeemeetings article > div time, .onboard_meetings article > div time, .calendar_calendar article > div time { display: block; margin: 0 0 10px 0; color: #4a4a4a; font-size: 1rem; }
 
-#block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { text-align: center; display: block; height: 3em; overflow: hidden; }
+#block-upcomingevents article > div .location, #block-committeemeetings article > div .location, .onboard_meetings article > div .location, .calendar_calendar article > div .location { font-size: 0.875rem; line-height: 0.875rem; }
 
-#block-upcomingevents > div, #block-committeemeetings > div, .onboard_meetings > div, .calendar_calendar > div { text-align: center; }
+#block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { display: block; height: 3em; overflow: hidden; }
 
 @media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 1em 0; }
   section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
@@ -395,32 +393,54 @@ section.promo p { font-size: 1.25rem; line-height: 1.5em; letter-spacing: .04em;
 
 section.promo .promo_title { text-align: center; }
 
-#news-section .container > div { display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; width: 100%; }
+#news-section .container > div * { box-sizing: border-box; }
 
-#news-section .container > div > .news { flex: 1 1 320px; margin: 0 0.5em 0.5em 0; }
+#news-section .container > div > .news { width: 730px; float: left; }
 
-#news-section .container > div > .news > div:last-child { text-align: center; }
+#news-section .container > div aside { width: 320px; float: right; }
 
-#news-section .container > div aside { flex: 0 0 320px; }
+#news-section article { margin: 0 0 .5em 0; }
 
-@media all and (min-width: 640px) { .front #news-section .results { height: 670px; overflow-y: hidden; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
-  .front #news-section a:first-child { grid-column-start: 1; grid-column-end: 3; } }
+@media all and (min-width: 640px) { .front #news-section .results { height: 100%; display: flex; flex-wrap: wrap; align-content: stretch; }
+  .front #news-section .results a:first-of-type { width: 100%; }
+  .front #news-section .results a:first-of-type .hasImage .summary { display: block; }
+  .front #news-section .results a:not(:first-child) { width: 50%; }
+  .front #news-section .results a:not(:first-child):nth-child(even) { padding-right: .25em; }
+  .front #news-section .results a:not(:first-child):nth-child(odd) { padding-left: .25em; } }
 
-article.news.teaser { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; height: 151px; overflow: hidden; margin-right: 0.5em; padding: 50px 0 0 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; position: relative; }
+article.news.teaser { position: relative; height: 214px; overflow: hidden; margin: 0; padding: 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; }
 
-article.news.teaser h3 { font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+article.news.teaser h3 { position: relative; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
-article.news.teaser header { flex: 1 0 160px; }
+article.news.teaser h3 { overflow: hidden; position: relative; line-height: 25px; max-height: 50px; }
 
-article.news.teaser .summary { flex: 1 0 160px; color: #212121; }
+article.news.teaser h3:before { z-index: 1; content: '...'; position: absolute; right: 0; bottom: 0; }
+
+article.news.teaser h3:after { content: ''; position: absolute; right: 0; width: 1em; height: 1em; margin-top: 0.2em; background: white; z-index: 1; }
+
+article.news.teaser header { margin: 0 0 .5em 0; }
+
+article.news.teaser .summary { color: #212121; overflow: hidden; position: relative; line-height: 22px; max-height: 89px; }
+
+article.news.teaser .summary:before { z-index: 1; content: '...'; position: absolute; right: 0; bottom: 0; }
+
+article.news.teaser .summary:after { content: ''; position: absolute; right: 0; width: 1em; height: 1em; margin-top: 0.2em; background: white; z-index: 1; }
 
 article.news.teaser.hasImage { padding-left: 148px; }
+
+article.news.teaser.hasImage header h3 { overflow: hidden; position: relative; line-height: 22px; max-height: 120px; }
+
+article.news.teaser.hasImage header h3:before { z-index: 1; content: '...'; position: absolute; right: 0; bottom: 0; }
+
+article.news.teaser.hasImage header h3:after { content: ''; position: absolute; right: 0; width: 1em; height: 1em; margin-top: 0.2em; background: white; z-index: 1; }
+
+article.news.teaser.hasImage .summary { display: none; }
 
 article.news.teaser .entity_reference { width: 140px; position: absolute; top: 0; left: 0; }
 
 article.news.teaser .entity_reference img { width: 140px; height: auto; }
 
-article.news.teaser time { position: absolute; top: 20px; right: 0.5em; font-family: "Lora", serif; font-weight: bold; color: #183365; }
+article.news.teaser time { font-family: "Lora", serif; font-weight: bold; color: #4a4a4a; }
 
 article.news.full #intro header h2 { font-size: 1.125rem; color: #212121; margin-bottom: 0; }
 
