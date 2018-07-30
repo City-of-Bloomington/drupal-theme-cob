@@ -516,9 +516,11 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #breadcrumb address, #breadcrumb a { color: #183365; }
 
-#breadcrumb .social-sharing { display: flex; justify-content: space-between; width: 9em; margin: 0 0 15px 0; }
+#breadcrumb .social-sharing { display: flex; justify-content: space-between; width: 190px; margin: 0 0 15px 0; }
 
 #breadcrumb .social-sharing span { align-self: center; font-size: 0.875rem; color: #607d8b; }
+
+#breadcrumb .social-sharing .twitter-share-button { margin: 1px 0 0 0; }
 
 #breadcrumb .social-sharing .item { position: relative; width: 1.5em; height: 1.5em; border: 1px solid #3f9dff; border-radius: 50%; }
 

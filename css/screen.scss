@@ -99,13 +99,17 @@ strong {
     .social-sharing {
         display: flex;
         justify-content: space-between;
-        width: $size-gutter * 18;
+        width: 190px;
         margin: 0 0 15px 0;
 
         span {
             align-self: center;
             font-size: $font-size-smaller;
             color: $gothic;
+        }
+
+        .twitter-share-button {
+            margin: 1px 0 0 0;
         }
 
         .item {

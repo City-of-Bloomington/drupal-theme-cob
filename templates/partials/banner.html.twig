@@ -14,8 +14,19 @@
     <div class="container">
         {{ page.breadcrumb }}
         <div class="social-sharing">
+
             <span alt="Share this page" title="Share this page">Share:</span>
-            <div class="item facebook">
+            <div class="fb-share-button"
+                 data-href="{{base_path}}"
+                 data-layout="button">
+            </div>
+
+            <a class="twitter-share-button"
+               href="https://twitter.com/intent/tweet"
+               data-size="small">Tweet
+            </a>
+
+            <!-- <div class="item facebook">
                 <a href="#" alt="Share on Facebook" title="Share on Facebook">
                     <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" fill=""/></svg>
                 </a>
@@ -29,7 +40,7 @@
                 <a href="#" alt="Share this Link" title="Share this Link">
                     <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" ><path fill="" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"/></svg>
                 </a>
-            </div>
+            </div> -->
         </div>
         {% include '@cob/partials/contactInfo.html.twig' %}
     </div>
