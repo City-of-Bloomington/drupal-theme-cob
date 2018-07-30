@@ -328,7 +328,7 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article .month, #block-upcomingevents article .monthDate, #block-committeemeetings article .month, #block-committeemeetings article .monthDate, .onboard_meetings article .month, .onboard_meetings article .monthDate, .calendar_calendar article .month, .calendar_calendar article .monthDate { font-size: 1.9rem; font-weight: bold; }
 
-#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { position: relative; margin: 0 0 10px 0; font-size: 1.25rem; line-height: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+#block-upcomingevents article .summary, #block-committeemeetings article .summary, .onboard_meetings article .summary, .calendar_calendar article .summary { position: relative; margin: 0 0 10px 0; line-height: 1.25rem; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
 #block-upcomingevents article h4, #block-committeemeetings article h4, .onboard_meetings article h4, .calendar_calendar article h4 { margin: 0; }
 
@@ -345,6 +345,13 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 #block-upcomingevents article > div .location, #block-committeemeetings article > div .location, .onboard_meetings article > div .location, .calendar_calendar article > div .location { font-size: 0.875rem; line-height: 0.875rem; }
 
 #block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { display: block; height: 3em; overflow: hidden; }
+
+#news-section aside { width: 320px; float: right; }
+
+@media (min-width: 640px) and (max-width: 1080px) { #news-section aside { margin-top: 20px; width: 100%; float: none; }
+  #news-section aside .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
+
+@media (max-width: 640px) { #news-section aside { margin-top: 20px; width: 100%; float: none; } }
 
 @media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 1em 0; }
   section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
@@ -391,20 +398,15 @@ section.promo .promo_title { text-align: center; }
 
 .front #news-section .hasImage .summary { display: none; }
 
-#news-section { background: black; }
-
 #news-section * { box-sizing: border-box; }
 
-#news-section .news { background: yellow; width: 710px; float: left; }
+#news-section .news { width: 710px; float: left; }
 
 #news-section .news .results { height: 100%; display: flex; flex-wrap: wrap; align-content: stretch; }
 
-#news-section aside { width: 320px; float: right; }
-
 #news-section article { margin: 0 0 .5em 0; }
 
-@media (min-width: 1080px) { :not(.front) #news-section .news { background: pink; }
-  .front #news-section .results a:first-of-type { width: 100%; }
+@media (min-width: 1080px) { .front #news-section .results a:first-of-type { width: 100%; }
   .front #news-section .results a:first-of-type .hasImage .summary { display: block; }
   .front #news-section .results a:not(:first-child) { display: flex; width: 50%; }
   .front #news-section .results a:not(:first-child):nth-child(even) { padding-right: .25em; }
@@ -412,8 +414,7 @@ section.promo .promo_title { text-align: center; }
 
 @media (min-width: 640px) and (max-width: 1080px) { :not(.front) #news-section .news { width: 100%; }
   :not(.front) #news-section .news .results a { width: 100%; }
-  .front #news-section .news { width: 100%; background: orange; }
-  .front #news-section .news .results a { background: blue; }
+  .front #news-section .news { width: 100%; float: none; }
   .front #news-section .news .results a:first-of-type { width: 100%; }
   .front #news-section .news .results a:first-of-type .hasImage .summary { display: block; }
   .front #news-section .news .results a:not(:first-child) { display: flex; width: 50%; }
@@ -423,24 +424,24 @@ section.promo .promo_title { text-align: center; }
 @media (max-width: 640px) { :not(.front) #news-section .news { width: 100%; }
   :not(.front) #news-section .news .results a { width: 100%; }
   :not(.front) #news-section .news .results a .hasImage .summary { display: none; }
-  .front #news-section .news { width: 100%; background: green; }
-  .front #news-section .news .results a { background: blue; width: 100%; } }
+  .front #news-section .news { width: 100%; float: none; }
+  .front #news-section .news .results a { width: 100%; } }
 
-article.news.teaser { background: red; position: relative; height: 214px; overflow: hidden; margin: 0; padding: 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; }
+article.news.teaser { position: relative; height: 214px; overflow: hidden; margin: 0; padding: 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; }
 
 article.news.teaser header { margin: 0 0 .5em 0; }
 
 article.news.teaser header time { font-family: "Lora", serif; font-weight: bold; color: #4a4a4a; }
 
-article.news.teaser header h3 { background: purple; position: relative; max-height: 50px; line-height: 1.25rem; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
+article.news.teaser header h3 { position: relative; line-height: 1.25rem; font-size: 1.25rem; font-weight: bold; font-family: "Lora", serif; color: #183365; }
 
-article.news.teaser .summary { color: #212121; position: relative; line-height: 22px; max-height: 89px; }
+article.news.teaser .summary { color: #212121; position: relative; line-height: 1.25rem; }
 
 article.news.teaser.hasImage { padding-left: 148px; }
 
 article.news.teaser.hasImage img { width: 140px; position: absolute; top: 0; left: 0; height: auto; }
 
-article.news.teaser.hasImage header h3 { position: relative; line-height: 22px; max-height: 120px; }
+article.news.teaser.hasImage header h3 { position: relative; line-height: 1.9rem; max-height: 120px; }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 #asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .paragraph--type--info-list { text-align: center; }

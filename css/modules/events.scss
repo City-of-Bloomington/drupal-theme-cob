@@ -21,8 +21,8 @@
         .summary {
             position: relative;
             margin: 0 0 10px 0;
-            font-size: $font-size-big;
             line-height: $font-size-big;
+            font-size: $font-size-big;
             font-weight: bold;
             font-family: "Lora", serif;
             color: $biscay;
@@ -72,6 +72,35 @@
                 height: 3em;
                 overflow: hidden;
             }
+        }
+    }
+}
+
+#news-section {
+    aside   {
+        width: 320px;
+        float: right;
+    }
+
+    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+        aside {
+            margin-top: 20px;
+            width: 100%;
+            float: none;
+
+            .events {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 0.5em;
+            }
+        }
+    }
+
+    @media (max-width: $viewport-medium) {
+        aside {
+            margin-top: 20px;
+            width: 100%;
+            float: none;
         }
     }
 }
