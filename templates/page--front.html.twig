@@ -96,6 +96,26 @@
             </div>
         </section>
 
+        <script type="text/javascript">
+            var summaryText = document.querySelector('.news h3 span').innerHTML;
+            text_truncate = function(str, length, ending) {
+                if (length == null) {
+                    length = 100;
+                }
+                if (ending == null) {
+                    ending = '...';
+                }
+                if (str.length > length) {
+                    return str.substring(0, length - ending.length) + ending;
+                } else {
+                    return str;
+                }
+            };
+            summaryText = text_truncate(summaryText, 75, '...');
+            console.log(text_truncate(summaryText, 75, '...'));
+        </script>
+
+
         {{ about }}
         {{ mayor }}
 
