@@ -13,34 +13,47 @@
     {% if page.breadcrumb or contactInfo %}
     <div class="container">
         {{ page.breadcrumb }}
+
         <div class="social-sharing">
-
             <span alt="Share this page" title="Share this page">Share:</span>
-            <div class="fb-share-button"
-                 data-href="{{base_path}}"
-                 data-layout="button">
+
+            <div class="item facebook fb-share-button"
+                 data-href=""
+                 data-layout="button"
+                 alt="Share on Facebook"
+                 title="Share on Facebook">
             </div>
 
-            <a class="twitter-share-button"
-               href="https://twitter.com/intent/tweet"
-               data-size="small">Tweet
-            </a>
-
-            <!-- <div class="item facebook">
-                <a href="#" alt="Share on Facebook" title="Share on Facebook">
-                    <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" fill=""/></svg>
-                </a>
-            </div>
             <div class="item twitter">
-                <a href="#" alt="Share on Twitter" title="Share on Twitter">
-                    <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" fill=""/></svg>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet"
+                   data-size="small"
+                   alt="Share on Twitter"
+                   title="Share on Twitter">Tweet
                 </a>
             </div>
-            <div class="item link">
-                <a href="#" alt="Share this Link" title="Share this Link">
-                    <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" ><path fill="" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"/></svg>
+
+            <div class="item email">
+                <a href="mailto:?subject=Share%20-%20City%20of%20Bloomington,%20Indiana"
+                   target="_top"
+                   alt="Email this Page"
+                   title="Email this Page">
+                    <svg id="email-icon" width="388.6666565px" height="288.75px" viewBox="0 0 388.6666565 288.75" enable-background="new 0 0 388.6666565 288.75" xml:space="preserve">
+                        <path fill="" d="M193.7410431,198.5722656L388.2083435,43.1419067V22.125c0-12.1502686-9.8497314-22-22-22h-344c-12.1502695,0-22,9.8497314-22,22v21.050415L193.7410431,198.5722656z"/>
+                        <path fill="" d="M203.0843048,229.5087891c-2.7382812,2.1894531-6.0517578,3.2832031-9.3647461,3.2832031c-3.3242188,0-6.6484375-1.1015625-9.3916016-3.3037109L0.2083333,81.6499023V266.125c0,12.1502686,9.8497314,22,22,22h344c12.1502686,0,22-9.8497314,22-22V81.546936L203.0843048,229.5087891z"/>
+                    </svg>Email
                 </a>
-            </div> -->
+            </div>
+
+            <div class="item print">
+                <a href="javascript:window.print();"
+                   alt="Print this Page"
+                   title="Print this Page">
+                    <svg id="print-icon" width="366px" height="351px" viewBox="0 0 366 351" enable-background="new 0 0 366 351" xml:space="preserve">
+                        <path fill="" d="M364,136h-64V80.9365234L234.7392578,0H61v136H0.125v173H61v40h239v-40h64V136z M85,24h138.2607422L276,89.4072266V223H85V24z M35.875,192c-8.5604248,0-15.5-6.9395752-15.5-15.5s6.9395752-15.5,15.5-15.5s15.5,6.9395752,15.5,15.5S44.4354248,192,35.875,192z M276,325H85v-31h191V325z"/>
+                    </svg>Print
+                </a>
+            </div>
         </div>
         {% include '@cob/partials/contactInfo.html.twig' %}
     </div>
