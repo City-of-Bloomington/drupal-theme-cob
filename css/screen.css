@@ -441,7 +441,7 @@ article.news.teaser.hasImage { padding-left: 148px; }
 
 article.news.teaser.hasImage img { width: 140px; position: absolute; top: 0; left: 0; height: auto; }
 
-article.news.teaser.hasImage header h3 { position: relative; line-height: 1.9rem; max-height: 120px; }
+article.news.teaser.hasImage header h3 { position: relative; max-height: 120px; }
 
 /** Styles for paragraph types defined in our Drupal site Paragraphs are a special module we installed. @see https://www.drupal.org/project/paragraphs These are not to be confused with HTML P tags.  It is unfortunate that the module happens to call itself with that name. */
 #asm_animals > div, #interactivemap_maps > div, #legislationTypes > div, #reports > div, .departments-block, .parks-categories-block, .info-list, .paragraph--type--info-list { text-align: center; }
