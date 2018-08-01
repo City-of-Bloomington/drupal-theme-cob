@@ -45,7 +45,8 @@ $card-width: 320px;
 .info-list         > div,
 .info-list         > .info-card,
 .promt_programs > article,
-.paragraph--type--info-card {
+.paragraph--type--info-card,
+.info-card {
     height: auto;
     background-color: $color-table-background;
     color: $color-text-default;
@@ -54,7 +55,7 @@ $card-width: 320px;
     vertical-align: top;
     text-align: center;
 
-    article { height: auto; }
+    article { height: 100%; }
 
     a {
         background-color: $color-table-background;
