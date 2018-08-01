@@ -45,8 +45,7 @@ $card-width: 320px;
 .info-list         > div,
 .info-list         > .info-card,
 .promt_programs > article,
-.paragraph--type--info-card,
-.info-card {
+.paragraph--type--info-card {
     height: auto;
     background-color: $color-table-background;
     color: $color-text-default;
@@ -54,6 +53,10 @@ $card-width: 320px;
     flex-basis: $card-width;
     vertical-align: top;
     text-align: center;
+
+    @media all and (max-width: $viewport-medium) {
+        margin-bottom: $size-gutter;
+    }
 
     article { height: 100%; }
 
@@ -97,6 +100,13 @@ $card-width: 320px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @media all and (max-width: $viewport-medium) {
+                transform: none;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
 
             header {
                 // background: blue;
