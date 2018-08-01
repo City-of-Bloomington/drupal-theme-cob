@@ -56,6 +56,70 @@ $card-width: 320px;
 
     article { height: auto; }
 
+    a {
+        background-color: $color-table-background;
+        color: $color-text-default;
+        display: block;
+        box-sizing: border-box;
+        padding: $size-gutter * 2;
+        height: 100%;
+
+        &:hover {
+            background-color: $color-selected-background;
+            color: $color-content-background;
+
+            .content {
+                header {
+                    h3 {
+                        color: $color-content-background;
+                    }
+                }
+
+                p {
+                    color: $color-content-background;
+                }
+            }
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+        }
+
+        @media all and (max-width: $viewport-medium) {
+            padding: $size-gutter;
+        }
+
+        .content {
+            // background: red;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            header {
+                // background: blue;
+
+                h3 {
+                    vertical-align: top;
+                    color: $color-text-default;
+                    font-family: $font-family-default;
+                    font-size: $font-size-big;
+                    line-height: $font-size-big;
+                    margin: 0 0 $size-gutter 0;
+                }
+            }
+
+            p {
+                color: $dark-slate;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
     &.video-card {
         text-align: left;
 
@@ -87,6 +151,12 @@ $card-width: 320px;
                 line-height: $font-size-smaller;
                 margin: 0 0 $size-gutter 0;
             }
+
+            .content {
+                transform: none;
+                top: 0;
+                left: 0;
+            }
         }
 
         &:hover {
@@ -97,50 +167,6 @@ $card-width: 320px;
                     }
                 }
             }
-        }
-    }
-
-    a {
-        background-color: $color-table-background;
-        color: $color-text-default;
-        display: block;
-        box-sizing: border-box;
-        padding: $size-gutter * 2;
-        height: 100%;
-
-        h3 {
-            vertical-align: top;
-            color: $color-text-default;
-            font-family: $font-family-default;
-            font-size: $font-size-big;
-            line-height: $font-size-big;
-            margin: 0 0 $size-gutter 0;
-        }
-
-        &:hover {
-            display: block;
-            background-color: $color-selected-background;
-            color: $color-content-background;
-
-            h3, p { color: $color-content-background; }
-
-        }
-
-        img {
-            position: relative;
-            width: 100%;
-        }
-
-        p {
-            color: $dark-slate;
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-
-        @media all and (max-width: $viewport-medium) {
-            padding: $size-gutter;
         }
     }
 }

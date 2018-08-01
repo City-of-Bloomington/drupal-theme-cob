@@ -56,13 +56,15 @@
     <date>July 30, 2018</date>
     <!-- /. ENDIF -->
 
-    <header>
-      <h3>{{ title }}</h3>
-    </header>
+    <div class="content">
+      <header>
+        <h3>{{ title }}</h3>
+      </header>
 
-    {%- if text -%}
-      <p>{{ text }}</p>
-    {%- endif -%}
+      {%- if text -%}
+        <p>{{ text }}</p>
+      {%- endif -%}
+    </div>
   </a>
 </article>
 {% endblock paragraph %}
