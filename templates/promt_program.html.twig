@@ -7,8 +7,8 @@
  * - program:  The program JSON data from Promt
  * - location: The location node object matching the program
  *
- * @copyright 2017 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2017-2018 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
 <div id="intro">
@@ -21,30 +21,14 @@
     <aside>
         <header><h2>Details</h2></header>
         <dl>
-            {% if program.start_date %}
-            <dt>Start Date</dt>
-            <dd>{{ program.start_date|date('F j, Y') }}</dd>
-            {% endif %}
-            {% if program.start_time %}
-            <dt>Start Time</dt>
-            <dd>{{ program.start_time }}</dd>
-            {% endif %}
-            {% if program.instructor %}
-            <dt>Instructor</dt>
-            <dd>{{ program.instructor }}</dd>
-            {% endif %}
-            {% if program.in_city_fees %}
-            <dt>In City Fees</dt>
-            <dd>{{ program.in_city_fees }}</dd>
-            {% endif %}
-            {% if program.non_city_fees %}
-            <dt>Non City Fees</dt>
-            <dd>{{ program.non_city_fees }}</dd>
-            {% endif %}
-            {% if program.participant_age %}
-            <dt>Ages</dt>
-            <dd>{{ program.participant_age }}</dd>
-            {% endif %}
+            {% if program.start_date      %}<dt>Start Date</dt>     <dd>{{ program.start_date|date('F j, Y') }}</dd>{% endif %}
+            {% if program.start_time      %}<dt>Start Time</dt>     <dd>{{ program.start_time      }}</dd>{% endif %}
+            {% if program.instructor      %}<dt>Instructor</dt>     <dd>{{ program.instructor      }}</dd>{% endif %}
+            {% if program.member_fees     %}<dt>Member Fees</dt>    <dd>{{ program.member_fees     }}</dd>{% endif %}
+            {% if program.non_member_fees %}<dt>Non Member Fees</dt><dd>{{ program.non_member_fees }}</dd>{% endif %}
+            {% if program.in_city_fees    %}<dt>In City Fees</dt>   <dd>{{ program.in_city_fees    }}</dd>{% endif %}
+            {% if program.non_city_fees   %}<dt>Non City Fees</dt>  <dd>{{ program.non_city_fees   }}</dd>{% endif %}
+            {% if program.participant_age %}<dt>Ages</dt>           <dd>{{ program.participant_age }}</dd>{% endif %}
             {% if location %}
             <dt>Location</dt>
             <dd><a href="{{ path('entity.node.canonical', {'node':location.nid.value}) }}">
