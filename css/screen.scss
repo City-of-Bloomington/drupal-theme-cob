@@ -119,14 +119,6 @@ strong {
             border-radius: 4px;
 
             &.email {
-                background: $pomegranate;
-
-                &:hover {
-                    background: darken($pomegranate, 10%);
-                }
-            }
-
-            &.print {
                 background: $dark-slate;
 
                 &:hover {

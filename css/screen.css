@@ -548,13 +548,9 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #breadcrumb .social-sharing .item { position: relative; height: 21px; color: white; margin: 0 0 0 10px; border-radius: 4px; }
 
-#breadcrumb .social-sharing .item.email { background: #f34213; }
+#breadcrumb .social-sharing .item.email { background: #4a4a4a; }
 
-#breadcrumb .social-sharing .item.email:hover { background: #c9320a; }
-
-#breadcrumb .social-sharing .item.print { background: #4a4a4a; }
-
-#breadcrumb .social-sharing .item.print:hover { background: #313131; }
+#breadcrumb .social-sharing .item.email:hover { background: #313131; }
 
 #breadcrumb .social-sharing .item a { display: block; color: white; font-size: 11px; line-height: 24px; height: 19px; position: relative; padding: 0 5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
