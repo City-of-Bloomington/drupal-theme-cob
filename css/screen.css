@@ -532,10 +532,6 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #breadcrumb:before { position: absolute; content: ''; top: 18px; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
 
-#breadcrumb.has-banner { overflow: visible; }
-
-#breadcrumb.has-banner .container { margin: -30px auto 0 auto; }
-
 #breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 30px auto 0 auto; min-height: 83px; }
 
 @media all and (max-width: 640px) { #breadcrumb .container { padding: 0.5em 0.5em 0 0.5em; } }

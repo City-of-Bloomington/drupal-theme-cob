@@ -58,14 +58,6 @@ strong {
         background: $color-heading;
     }
 
-    &.has-banner {
-        overflow: visible;
-
-        .container {
-            margin: -30px auto 0 auto;
-        }
-    }
-
     .container {
         position: relative;
         padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);

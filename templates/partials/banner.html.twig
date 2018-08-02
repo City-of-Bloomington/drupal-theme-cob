@@ -6,10 +6,12 @@
     }
     @media all and (min-width:600px) { #banner { background-image:url('{{ cover_image.cover_medium }}'); } }
     @media all and (min-width:990px) { #banner { background-image:url('{{ cover_image.cover_large  }}'); } }
+    #breadcrumb { overflow: visible; }
+    #breadcrumb .container { margin: -30px auto 0 auto; }
 </style>
 {% endif %}
 <div id="banner"></div>
-<div id="breadcrumb" class="{{ cover_image != '' ? 'has-banner' }}">
+<div id="breadcrumb">
     {% if page.breadcrumb or contactInfo %}
     <div class="container">
         {{ page.breadcrumb }}
