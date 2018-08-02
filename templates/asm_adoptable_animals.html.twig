@@ -48,18 +48,16 @@
     {% for a in animals %}
     <article class="{{ a.SPECIESNAME }}">
         <a href="{{ path('asm.adoptable_animal', {'animal_id': a.ID}) }}">
-            <div class="content">
-                <header><h3>{{ a.ANIMALNAME }}</h3></header>
-                {% if a.WEBSITEIMAGECOUNT %}
-                    {% if proxy %}
-                        <img src="{{ path('asm.image', {'animal_id': a.ID}) }}" />
-                    {% else %}
-                        <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" />
-                    {% endif %}
+            <header><h3>{{ a.ANIMALNAME }}</h3></header>
+            {% if a.WEBSITEIMAGECOUNT %}
+                {% if proxy %}
+                    <img src="{{ path('asm.image', {'animal_id': a.ID}) }}" />
                 {% else %}
-                    <img src="{{ base_path }}{{ directory }}/css/images/shelter.svg" />
+                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" />
                 {% endif %}
-            </div>
+            {% else %}
+                <img src="{{ base_path }}{{ directory }}/css/images/shelter.svg" />
+            {% endif %}
         </a>
     </article>
     {% endfor %}

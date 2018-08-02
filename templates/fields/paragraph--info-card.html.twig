@@ -40,7 +40,6 @@
 #}
 {%
   set classes = [
-    'video-card',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -49,23 +48,11 @@
 {% block paragraph %}
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ content.field_info_link.0['#url'] }}">
+    <header>
+      <h3>{{ title }}</h3>
+    </header>
 
-    <!-- IF: render if is video-card page type & has video images -->
-    <div class="video-placeholder">
-      <img src="{{ base_path }}{{ directory }}/css/images/video-card-placeholder.jpg" />
-    </div>
-    <date>July 30, 2018</date>
-    <!-- /. ENDIF -->
-
-    <div class="content">
-      <header>
-        <h3>{{ title }}</h3>
-      </header>
-
-      {%- if text -%}
-        <p>{{ text }}</p>
-      {%- endif -%}
-    </div>
+    <p>{{ text }}</p>
   </a>
 </article>
 {% endblock paragraph %}

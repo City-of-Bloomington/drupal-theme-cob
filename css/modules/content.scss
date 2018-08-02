@@ -97,3 +97,19 @@
     select { width:20em; }
     #edit-actions { text-align:center; }
 }
+
+.speeches_remarks {
+    #intro {
+        margin-bottom: 2em;
+
+        div {
+            // background: blue;
+            width: 100%;
+        }
+    }
+
+    .text_long {
+        // background: red;
+        column-count: 2;
+    }
+}

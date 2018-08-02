@@ -29,10 +29,60 @@ $card-width: 320px;
     .parks-categories-block,
     .info-list,
     .promt_programs,
+    .speeches-block,
     .paragraph--type--info-list > div {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+}
+
+// info cards shown for Speeches & Remarks
+// file: /templates/nodes/node--info-card.html.twig
+.speeches-block article {
+    background: red;
+    margin: 0 !important;
+
+    a {
+        text-align: left;
+
+        &:hover {
+            .entity_reference > .entity_reference > div {
+                &:before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23fc0d1c' opacity='1' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A");
+                }
+            }
+        }
+
+        .entity_reference > .entity_reference > div {
+            position: relative;
+
+            &:before {
+                z-index: 1;
+                position: absolute;
+                content: '';
+                display: block;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23FFFFFF' opacity='0.65' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 75px;
+                height: 75px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            img {
+                margin: 0 0 ($size-gutter * 1.25) 0;
+            }
+        }
+
+        date {
+            display: block;
+            font-size: $font-size-normal;
+            line-height: $font-size-normal;
+            margin: 0 0 ($size-gutter * 1.25) 0;
+        }
     }
 }
 
@@ -45,6 +95,7 @@ $card-width: 320px;
 .info-list         > div,
 .info-list         > .info-card,
 .promt_programs > article,
+.speeches-block > div,
 .paragraph--type--info-card {
     height: auto;
     background-color: $color-table-background;
@@ -72,17 +123,19 @@ $card-width: 320px;
             background-color: $color-selected-background;
             color: $color-content-background;
 
-            .content {
-                header {
-                    h3 {
-                        color: $color-content-background;
-                    }
-                }
-
-                p {
+            header {
+                h3 {
                     color: $color-content-background;
                 }
             }
+
+            p {
+                color: $color-content-background;
+            }
+        }
+
+        @media all and (max-width: $viewport-medium) {
+            padding: $size-gutter;
         }
 
         img {
@@ -90,93 +143,22 @@ $card-width: 320px;
             width: 100%;
         }
 
-        @media all and (max-width: $viewport-medium) {
-            padding: $size-gutter;
-        }
-
-        .content {
-            // background: red;
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            @media all and (max-width: $viewport-medium) {
-                transform: none;
-                top: 0;
-                left: 0;
-                transform: none;
-            }
-
-            header {
-                // background: blue;
-
-                h3 {
-                    vertical-align: top;
-                    color: $color-text-default;
-                    font-family: $font-family-default;
-                    font-size: $font-size-big;
-                    line-height: $font-size-big;
-                    margin: 0 0 $size-gutter 0;
-                }
-            }
-
-            p {
-                color: $dark-slate;
-
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-
-    &.video-card {
-        text-align: left;
-
-        a {
-            .video-placeholder {
-                position: relative;
-                margin: 0 0 $size-gutter 0;
-
-                &:before {
-                    z-index: 1;
-                    position: absolute;
-                    content: '';
-                    display: block;
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23FFFFFF' opacity='0.65' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    width: 75px;
-                    height: 75px;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-            }
-
-            date {
-                display: block;
-                // background: green;
-                font-size: $font-size-smaller;
-                line-height: $font-size-smaller;
+        header {
+            h3 {
+                vertical-align: top;
+                color: darken($dark-slate, 5%);
+                font-family: $font-family-default;
+                font-size: $font-size-medium;
+                line-height: $font-size-bigger;
                 margin: 0 0 $size-gutter 0;
             }
-
-            .content {
-                transform: none;
-                top: 0;
-                left: 0;
-            }
         }
 
-        &:hover {
-            a {
-                .video-placeholder {
-                    &:before {
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23fc0d1c' opacity='1' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A");
-                    }
-                }
+        p {
+            color: $dark-slate;
+
+            &:last-of-type {
+                margin-bottom: 0;
             }
         }
     }

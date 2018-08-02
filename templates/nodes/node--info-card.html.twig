@@ -74,14 +74,21 @@
 #}
 <article{{ attributes }} class="info-card">
   <a href="{{ url }}" rel="bookmark">
-    <div class="content">
-      <header>
-        <h3{{ title_attributes }}>{{ label }}</h3>
-        {% if node.vacancies %}
-          span>(Vacancy)</span>
-        {% endif %}
-      </header>
-      <p>{{ node.body.summary }}</p>
+    <div class="entity_reference">
+      {{ content.field_content_image }}
     </div>
+
+    <date>{{ content.field_date }}</date>
+
+    <header>
+      <h3{{ title_attributes }}>{{ label }}</h3>
+      {% if node.vacancies %}
+        <span>(Vacancy)</span>
+      {% endif %}
+    </header>
+
+    {% if node.body.summary %}
+      <p>{{ node.body.summary }}</p>
+    {% endif %}
   </a>
 </article>
