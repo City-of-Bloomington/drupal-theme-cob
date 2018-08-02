@@ -128,6 +128,8 @@ function cob_preprocess_page__front(&$vars)
 function cob_preprocess_page(&$vars)
 {
     if (isset($vars['node']) && $vars['node'] instanceof \Drupal\node\Entity\Node) {
+        $vars['page']['title'] = $vars['node']->title->value;
+
         if ($vars['node']->hasField('field_cover_image')) {
             $img = $vars['node']->get('field_cover_image')->first();
             if ($img) {
