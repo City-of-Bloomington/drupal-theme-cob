@@ -6,6 +6,8 @@
     }
     @media all and (min-width:600px) { #banner { background-image:url('{{ cover_image.cover_medium }}'); } }
     @media all and (min-width:990px) { #banner { background-image:url('{{ cover_image.cover_large  }}'); } }
+    #breadcrumb { overflow: visible; }
+    #breadcrumb .container { margin: -30px auto 0 auto; }
 </style>
 {% endif %}
 <div id="banner"></div>
@@ -13,6 +15,37 @@
     {% if page.breadcrumb or contactInfo %}
     <div class="container">
         {{ page.breadcrumb }}
+        <div class="social-sharing">
+            <span alt="Share this page" title="Share this page">Share:</span>
+
+            <div class="item facebook fb-share-button"
+                 data-href=""
+                 data-layout="button"
+                 alt="Share on Facebook"
+                 title="Share on Facebook">
+            </div>
+
+            <div class="item twitter">
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet"
+                   data-size="small"
+                   alt="Share on Twitter"
+                   title="Share on Twitter">Tweet
+                </a>
+            </div>
+
+            <div class="item email">
+                <a href="mailto:?subject={{ page.title|url_encode }}&amp;body={{ url("<current>") }}"
+                   target="_top"
+                   alt="Email this Page"
+                   title="Email this Page">
+                    <svg id="email-icon" width="388.6666565px" height="288.75px" viewBox="0 0 388.6666565 288.75" enable-background="new 0 0 388.6666565 288.75" xml:space="preserve">
+                        <path fill="" d="M193.7410431,198.5722656L388.2083435,43.1419067V22.125c0-12.1502686-9.8497314-22-22-22h-344c-12.1502695,0-22,9.8497314-22,22v21.050415L193.7410431,198.5722656z"/>
+                        <path fill="" d="M203.0843048,229.5087891c-2.7382812,2.1894531-6.0517578,3.2832031-9.3647461,3.2832031c-3.3242188,0-6.6484375-1.1015625-9.3916016-3.3037109L0.2083333,81.6499023V266.125c0,12.1502686,9.8497314,22,22,22h344c12.1502686,0,22-9.8497314,22-22V81.546936L203.0843048,229.5087891z"/>
+                    </svg>Email
+                </a>
+            </div>
+        </div>
         {% include '@cob/partials/contactInfo.html.twig' %}
     </div>
     {% endif %}

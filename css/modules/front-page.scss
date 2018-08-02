@@ -10,14 +10,6 @@
         width:275px; height:275px;
         background: url('images/200yearsCircle.png') no-repeat;
     }
-
-    aside.calendar_calendar .events {
-        height:660px;
-        display:flex; flex-direction:column; justify-content:space-between;
-        article {
-            margin:0;
-        }
-    }
 }
 
 #services-section, #government-section {

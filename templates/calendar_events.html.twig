@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Displays upcoming events from a Google Calendar
+ *
+ * Available variables
+ * - events: \Google_Service_Calendar_EventList
+ * - calendarId: Google Calendar ID
+ *
+ * @see https://developers.google.com/google-apps/calendar/v3/reference/events
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
+ *
+ * This file is part of the Google Calendar drupal module.
+ *
+ * The calendar module is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * The calendar module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with the calendar module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
+ */
+#}
+<div class="events">
+{% for event in events %}
+{% set url = event.description|preg_get('|https?://[-a-z0-9\+\./\?\;=_]+|') %}
+{%  if url %}<a href="{{ url }}">{% endif %}
+<article>
+    <header>
+        {% if event.start.dateTime %}
+        <time datetime="{{ event.start.dateTime }}">
+            <span class="month"    >{{ event.start.dateTime | date('M')}}</span>
+            <span class="monthDate">{{ event.start.dateTime | date('j')}}</span>
+            <span class="weekday"  >{{ event.start.dateTime | date('l')}}</span>
+        </time>
+        {% else %}
+        <time datetime="{{ event.start.date }}">
+            <span class="month"    >{{ event.start.date     | date('M')}}</span>
+            <span class="monthDate">{{ event.start.date     | date('j')}}</span>
+            <span class="weekday"  >{{ event.start.date     | date('l')}}</span>
+        </time>
+        {% endif %}
+    </header>
+    <div>
+        <div class="summary" >{{ event.summary  }}</div>
+        {% if event.start.dateTime %}
+        <time datetime="{{ event.start.dateTime }}">
+            {{  event.start.dateTime | date('g:ia') }}
+            {% if event.end.dateTime %}
+            to {{ event.end.dateTime | date('g:ia') }}
+            {% endif %}
+        </time>
+        {% endif %}
+        <div class="location">{{ event.location }}</div>
+    </div>
+</article>
+{% if url %}</a>{% endif %}
+{% endfor %}
+</div>
+<div>
+<a href="https://calendar.google.com/calendar/embed?src={{ calendarId }}&ctz=America/New_York" class="button">Visit Calendar</a>
+</div>

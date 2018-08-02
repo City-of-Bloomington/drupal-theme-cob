@@ -2,40 +2,105 @@
 #block-committeemeetings,
 .onboard_meetings,
 .calendar_calendar {
+
     article {
-        display:flex; flex-direction:row; justify-content:start;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        height: 158px;
+        min-width: 320px;
+        overflow: hidden;
+        border: 1px solid $color-divider;
 
-        height:154px; min-width:320px; overflow:hidden;
+        .month, .monthDate {
+            font-size: $font-size-bigger;
+            font-weight: bold;
+        }
 
-        border:1px solid $color-divider;
-
-        .month, .monthDate { font-size:$font-size-bigger; font-weight:bold; }
         .weekday { }
-        .summary { font-weight:bold;  }
-        .location { font-size:small; line-height:1.25em; }
+        .summary {
+            position: relative;
+            margin: 0 0 10px 0;
+            line-height: $font-size-big;
+            font-size: $font-size-big;
+            font-weight: bold;
+            font-family: "Lora", serif;
+            color: $biscay;
+        }
+
         h4 { margin:0; }
 
         header {
-            flex:0 0 118px; height:100%;
-
-            background-color:$color-alert;
-            color:$color-content-background;
-            font-family:$font-family-heading;
+            flex:0 0 118px;
+            height:100%;
+            background-color: $color-alert;
+            color: $color-content-background;
+            font-family: $font-family-heading;
 
             time {
-                height:100%; display:flex; flex-direction:column; justify-content:center;
-                span { display:block; text-align:center; line-height:1.5em; }
+                height:100%;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+
+                span {
+                    display:block;
+                    text-align:center;
+                    line-height:1.5em;
+                }
             }
         }
-        > div {
-            line-height:1.5em; padding:$size-gutter;
-            display:flex; flex-direction:column; justify-content:center;
 
-            time { text-align:center; display:block; }
-            span { text-align:center; display:block; height:3em; overflow:hidden; }
+        > div {
+            line-height: 1.5em;
+            padding: $size-gutter;
+
+            time {
+                display: block;
+                margin: 0 0 10px 0;
+                color: $dark-slate;
+                font-size:  $font-size-small;
+            }
+
+            .location {
+                font-size: $font-size-smaller;
+                line-height: $font-size-smaller;
+            }
+
+            span {
+                display: block;
+                height: 3em;
+                overflow: hidden;
+            }
         }
     }
-    > div {
-        text-align:center;
+}
+
+#news-section {
+    aside   {
+        width: 320px;
+        float: right;
+    }
+
+    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+        aside {
+            margin-top: 20px;
+            width: 100%;
+            float: none;
+
+            .events {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 0.5em;
+            }
+        }
+    }
+
+    @media (max-width: $viewport-medium) {
+        aside {
+            margin-top: 20px;
+            width: 100%;
+            float: none;
+        }
     }
 }

@@ -16,6 +16,14 @@
 
 dl { border:none; }
 
+b,
+strong {
+    // via issue
+    // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
+    -webkit-font-smoothing: antialiased;
+    color: black;
+}
+
 #alerts {
     background-color: $color-footer;
     color: $color-content-background;
@@ -35,27 +43,127 @@ dl { border:none; }
     @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
 }
 #breadcrumb {
-    display:flex; flex-direction:column; justify-content:end;
+    position: relative;
+    overflow: hidden;
+    color: $color-heading;
 
-    background-color:$color-heading; color:$color-content-background;
+    &:before {
+        position: absolute;
+        content: '';
+        top: 18px;
+        right: 0;
+        left: 0;
+        height: 75px;
+        width: 100%;
+        background: $color-heading;
+    }
 
-    .container { padding:$size-gutter; }
-    h1 { font-size: $font-size-bigger; color:$color-content-background; }
+    .container {
+        position: relative;
+        padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+        background: white;
+        margin: 30px auto 0 auto;
+        min-height: 83px;
+
+        @media all and (max-width: $viewport-medium) {
+            padding: $size-gutter $size-gutter 0 $size-gutter;
+        }
+    }
+
+    h1 {
+        font-size: $font-size-bigger-alt;
+        line-height: $font-size-small * 4;
+        color: $color-heading;
+        margin: 0;
+    }
 
     nav {
-        font-size:$font-size-small;
-        a:not(:last-child):after { content: " >> " }
-    }
-    address, a { color:$color-content-background; }
+        font-size: $font-size-small;
 
-    @media all and (min-width: $viewport-medium) {
-        h1 { font-size:$font-size-biggest; }
+        a:not(:last-child):after {
+            content: " >> ";
+        }
     }
 
-    // These blocks are laying out lists of things in a grid
+    address,
+    a { color: $biscay; }
+
+    .social-sharing {
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 0 0 15px 0;
+
+        span {
+            align-self: center;
+            font-size: $font-size-smaller;
+            color: $gothic;
+        }
+
+        .twitter-share-button {
+            margin: 1px 0 0 0;
+        }
+
+        .item {
+            position: relative;
+            height: 21px;
+            color: white;
+            margin: 0 0 0 10px;
+            border-radius: 4px;
+
+            &.email {
+                background: $dark-slate;
+
+                &:hover {
+                    background: darken($dark-slate, 10%);
+                }
+            }
+
+            a {
+                display: block;
+                color: white;
+                font-size: 11px;
+                line-height: 21px;
+                height: 19px;
+                position: relative;
+                padding: 0 5px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            svg {
+                margin: 0 2px 0 0;
+
+                &#email-icon {
+                    width: 14px;
+                    height: 9px;
+
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+
+                &#print-icon {
+                    width: 14px;
+                    height: 9px;
+
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
     .contactInfo {
-        @media all and (min-width:$viewport-medium) {
-            > dl { display:inline-block; width:30%; vertical-align:middle; }
+        border-top: 1px solid lighten($silver-chalice, 10%);
+        border-bottom: 1px solid lighten($silver-chalice, 10%);
+        display: flex;
+        margin: 10px 0;
+        padding: 10px 0;
+
+        @media all and (max-width: $viewport-medium) {
+            display: block;
         }
     }
 }

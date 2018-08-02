@@ -2,11 +2,16 @@ section { margin:0; }
 
 #intro {
     display: flex;
+    margin-bottom: 1em;
+
+    div {
+        width: 100%;
+    }
 
     aside {
         margin-left: 1em;
         width: $size-sidebar-maxwidth;
-        min-width: $size-sidebar-maxwidth;
+        // min-width: $size-sidebar-maxwidth;
 
         ul  { list-style-type: none; }
         img {
@@ -23,8 +28,6 @@ section { margin:0; }
             margin-left: 0;
         }
     }
-
-    margin-bottom: 1em;
 }
 
 @media all and (min-width: $viewport-large) {
