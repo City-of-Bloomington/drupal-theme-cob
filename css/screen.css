@@ -12,7 +12,9 @@ section { margin: 0; }
 
 #intro { display: flex; margin-bottom: 1em; }
 
-#intro aside { margin-left: 1em; width: 340px; min-width: 340px; }
+#intro div { width: 100%; }
+
+#intro aside { margin-left: 1em; width: 340px; }
 
 #intro aside ul { list-style-type: none; }
 
@@ -406,6 +408,8 @@ section.promo .promo_title { text-align: center; }
 
 #news-section * { box-sizing: border-box; }
 
+#news-section .container > div { overflow: auto; }
+
 #news-section .news { width: 710px; float: left; }
 
 #news-section .news .results { height: 100%; display: flex; flex-wrap: wrap; align-content: stretch; }
@@ -458,13 +462,17 @@ article.news.teaser.hasImage header h3 { position: relative; max-height: 120px; 
 
 .speeches-block article a { text-align: left; }
 
-.speeches-block article a:hover .entity_reference > .entity_reference > div:before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23fc0d1c' opacity='1' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A"); }
+.speeches-block article a header h3 { margin: 0.5em 0 0 0 !important; }
 
-.speeches-block article a .entity_reference > .entity_reference > div { position: relative; }
+.speeches-block article a p { margin: 0.5em 0 0 0; }
 
-.speeches-block article a .entity_reference > .entity_reference > div:before { z-index: 1; position: absolute; content: ''; display: block; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23FFFFFF' opacity='0.65' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A"); background-repeat: no-repeat; background-size: contain; width: 75px; height: 75px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.speeches-block article a:hover .entity_reference > .entity_reference > div:before, .speeches-block article a:hover .video_embed_field > div:before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23fc0d1c' opacity='1' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A"); }
 
-.speeches-block article a .entity_reference > .entity_reference > div img { margin: 0 0 0.625em 0; }
+.speeches-block article a .entity_reference > .entity_reference > div, .speeches-block article a .video_embed_field > div { position: relative; }
+
+.speeches-block article a .entity_reference > .entity_reference > div:before, .speeches-block article a .video_embed_field > div:before { z-index: 1; position: absolute; content: ''; display: block; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='youtube-icon' width='120.125px' height='83.9686432px' viewBox='0 0 120.125 83.9686432' enable-background='new 0 0 120.125 83.9686432'%3E%3Cpath fill='%23FFFFFF' opacity='0.65' d='M116.5342789,13.4817839c-1.3571014-5.1099176-5.3555832-9.1343288-10.4324417-10.5000706 C96.8996582,0.5,60,0.5,60,0.5s-36.8994446,0-46.1018333,2.4817133C8.8213072,4.3476706,4.822824,8.3718662,3.4657245,13.4817839 C1,22.7438068,1,42.0681572,1,42.0681572s0,19.3243446,2.4657245,28.5863686 c1.3570995,5.1099167,5.3555827,8.9666672,10.4324436,10.3324051C23.1005573,83.4686432,60,83.4686432,60,83.4686432 s36.899437,0,46.1018295-2.4817123c5.0768585-1.3657379,9.0753479-5.2224808,10.4324493-10.3324051 C119,61.3925018,119,42.0681572,119,42.0681572S119,22.7438068,116.5342789,13.4817839z M47.931736,59.6132164V24.5230961 l30.8407936,17.545496L47.9317398,59.6132164H47.931736z'/%3E%3C/svg%3E%0A"); background-repeat: no-repeat; background-size: contain; width: 75px; height: 75px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.speeches-block article a .entity_reference > .entity_reference > div img, .speeches-block article a .video_embed_field > div img { display: block; max-width: 284; max-height: 160px; margin: 0 0 0.625em 0; }
 
 .speeches-block article a date { display: block; font-size: 1.125rem; line-height: 1.125rem; margin: 0 0 0.625em 0; }
 

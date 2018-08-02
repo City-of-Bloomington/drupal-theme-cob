@@ -4,10 +4,14 @@ section { margin:0; }
     display: flex;
     margin-bottom: 1em;
 
+    div {
+        width: 100%;
+    }
+
     aside {
         margin-left: 1em;
         width: $size-sidebar-maxwidth;
-        min-width: $size-sidebar-maxwidth;
+        // min-width: $size-sidebar-maxwidth;
 
         ul  { list-style-type: none; }
         img {

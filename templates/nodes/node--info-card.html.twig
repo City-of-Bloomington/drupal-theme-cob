@@ -74,11 +74,23 @@
 #}
 <article{{ attributes }} class="info-card">
   <a href="{{ url }}" rel="bookmark">
-    <div class="entity_reference">
-      {{ content.field_content_image }}
-    </div>
 
-    <date>{{ content.field_date }}</date>
+    {% set video_thumbnail %}{{ content.field_video_thumbnail }}{% endset %}
+    {% set video_embed %}{{ content.field_video_embed }}{% endset %}
+    {% if video_thumbnail or video_embed %}
+      <div class="entity_reference">
+        {% if video_thumbnail != '' %}
+          {{ video_thumbnail }}
+        {% else %}
+          {{ video_embed }}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% set field_date %}{{ content.field_date }}{% endset %}
+    {% if field_date %}
+      <date>{{ field_date }}</date>
+    {% endif %}
 
     <header>
       <h3{{ title_attributes }}>{{ label }}</h3>

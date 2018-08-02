@@ -11,6 +11,10 @@
         box-sizing: border-box;
     }
 
+    .container > div {
+        overflow: auto;
+    }
+
     .news {
         width: 710px;
         float: left;
