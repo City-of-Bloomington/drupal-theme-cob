@@ -59,10 +59,12 @@
             <th>Start, End Date</th>
             <th>Start, End Time</th>
             <th>Deadline</th>
-            <th>Ages</th>
-            {% if program.sessions[0].instructor    %}<th>Instructor</th>{% endif %}
-            {% if program.sessions[0].in_city_fees  %}<th>In City Fee</th>{% endif %}
-            {% if program.sessions[0].non_city_fees %}<th>Non City Fee</th>{% endif %}
+            {% if program.sessions[0].participant_age %}<th>Ages</th>          {% endif %}
+            {% if program.sessions[0].instructor      %}<th>Instructor</th>    {% endif %}
+            {% if program.sessions[0].in_city_fees    %}<th>In City Fee</th>   {% endif %}
+            {% if program.sessions[0].non_city_fees   %}<th>Non City Fee</th>  {% endif %}
+            {% if program.sessions[0].member_fees     %}<th>Member Fee</th>    {% endif %}
+            {% if program.sessions[0].non_member_fees %}<th>Non Member Fee</th>{% endif %}
         </thead>
         <tbody>
         {% for s in program.sessions %}
@@ -71,10 +73,12 @@
             <td>{{ s.start_date }} - {{ s.end_date }}</td>
             <td>{{ s.start_end_time }}</td>
             <td>{{ s.registration_deadline }}</td>
-            <td>{{ s.participant_age }}</td>
-            {% if s.instructor    %}<td>{{ s.instructor    }}</td>{% endif %}
-            {% if s.in_city_fees  %}<td>{{ s.in_city_fees  }}</td>{% endif %}
-            {% if s.non_city_fees %}<td>{{ s.non_city_fees }}</td>{% endif %}
+            {% if s.participant_age %}<td>{{ s.participant_age }}</td>{% endif %}
+            {% if s.instructor      %}<td>{{ s.instructor      }}</td>{% endif %}
+            {% if s.in_city_fees    %}<td>{{ s.in_city_fees    }}</td>{% endif %}
+            {% if s.non_city_fees   %}<td>{{ s.non_city_fees   }}</td>{% endif %}
+            {% if s.member_fees     %}<td>{{ s.member_fees     }}</td>{% endif %}
+            {% if s.non_member_fees %}<td>{{ s.non_member_fees }}</td>{% endif %}
         </tr>
         {% endfor %}
         </tbody>
