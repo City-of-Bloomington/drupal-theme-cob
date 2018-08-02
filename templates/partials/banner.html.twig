@@ -33,7 +33,7 @@
             </div>
 
             <div class="item email">
-                <a href="mailto:?subject=Share%20-%20City%20of%20Bloomington,%20Indiana"
+                <a href="mailto:?subject={{ page.title|url_encode }}&amp;body={{ url("<current>") }}"
                    target="_top"
                    alt="Email this Page"
                    title="Email this Page">
