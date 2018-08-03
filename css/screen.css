@@ -548,25 +548,23 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #breadcrumb .social-sharing span { align-self: center; font-size: 0.875rem; color: #607d8b; }
 
-#breadcrumb .social-sharing .twitter-share-button { margin: 1px 0 0 0; }
+#breadcrumb .social-sharing .item { position: relative; display: flex; align-items: center; background: gainsboro; border: 1px solid #c3c3c3; border-radius: 50%; width: 25px; height: 25px; padding: 0; font-size: 12px; line-height: 12px; margin: 0 0 0 10px; }
 
-#breadcrumb .social-sharing .item { position: relative; height: 21px; color: white; margin: 0 0 0 10px; border-radius: 4px; }
+#breadcrumb .social-sharing .item svg { position: relative; display: block; margin: 0 auto; width: 15px; height: 15px; }
 
-#breadcrumb .social-sharing .item.email { background: #4a4a4a; }
+#breadcrumb .social-sharing .item svg path { fill: #4a4a4a; }
 
-#breadcrumb .social-sharing .item.email:hover { background: #313131; }
+#breadcrumb .social-sharing .item:hover.facebook, #breadcrumb .social-sharing .item:focus.facebook { background: #4468b0; }
 
-#breadcrumb .social-sharing .item a { display: block; color: white; font-size: 11px; line-height: 21px; height: 19px; position: relative; padding: 0 5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+#breadcrumb .social-sharing .item:hover.facebook svg path, #breadcrumb .social-sharing .item:focus.facebook svg path { fill: white; }
 
-#breadcrumb .social-sharing .item svg { margin: 0 2px 0 0; }
+#breadcrumb .social-sharing .item:hover.twitter, #breadcrumb .social-sharing .item:focus.twitter { background: #2796dd; }
 
-#breadcrumb .social-sharing .item svg#email-icon { width: 14px; height: 9px; }
+#breadcrumb .social-sharing .item:hover.twitter svg path, #breadcrumb .social-sharing .item:focus.twitter svg path { fill: white; }
 
-#breadcrumb .social-sharing .item svg#email-icon path { fill: #ffffff; }
+#breadcrumb .social-sharing .item:hover.email, #breadcrumb .social-sharing .item:focus.email { background: #4a4a4a; }
 
-#breadcrumb .social-sharing .item svg#print-icon { width: 14px; height: 9px; }
-
-#breadcrumb .social-sharing .item svg#print-icon path { fill: #ffffff; }
+#breadcrumb .social-sharing .item:hover.email svg path, #breadcrumb .social-sharing .item:focus.email svg path { fill: white; }
 
 #breadcrumb .contactInfo { border-top: 1px solid #b8b8b8; border-bottom: 1px solid #b8b8b8; display: flex; margin: 10px 0; padding: 10px 0; }
 

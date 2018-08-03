@@ -99,60 +99,148 @@ strong {
             color: $gothic;
         }
 
-        .twitter-share-button {
-            margin: 1px 0 0 0;
-        }
-
         .item {
             position: relative;
-            height: 21px;
-            color: white;
+            display: flex;
+            align-items: center;
+            background: gainsboro;
+            border: 1px solid darken(gainsboro, 10%);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            font-size: 12px;
+            line-height: 12px;
             margin: 0 0 0 10px;
-            border-radius: 4px;
 
-            &.email {
-                background: $dark-slate;
+            svg {
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                width: 15px;
+                height: 15px;
 
-                &:hover {
-                    background: darken($dark-slate, 10%);
+                path {
+                    fill: $dark-slate;
                 }
             }
 
-            a {
-                display: block;
-                color: white;
-                font-size: 11px;
-                line-height: 21px;
-                height: 19px;
-                position: relative;
-                padding: 0 5px;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+            &:hover,
+            &:focus {
+                &.facebook {
+                    background: #4468b0;
 
-            svg {
-                margin: 0 2px 0 0;
-
-                &#email-icon {
-                    width: 14px;
-                    height: 9px;
-
-                    path {
-                        fill: #ffffff;
+                    svg {
+                        path {
+                            fill: white;
+                        }
                     }
                 }
 
-                &#print-icon {
-                    width: 14px;
-                    height: 9px;
+                &.twitter {
+                    background: #2796dd;
 
-                    path {
-                        fill: #ffffff;
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+                }
+
+                &.email {
+                    background: $dark-slate;
+
+                    svg {
+                        path {
+                            fill: white;
+                        }
                     }
                 }
             }
         }
+
+        // .item {
+        //     position: relative;
+        //     height: 21px;
+        //     color: white;
+        //     margin: 0 0 0 10px;
+        //     border-radius: 4px;
+        //     border: none;
+        //     display: block;
+        //     font-size: 11px;
+        //     line-height: 21px;
+        //     height: 19px;
+        //     position: relative;
+        //     padding: 0 5px;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+
+        //     &.facebook {
+        //         background: #4468b0;
+
+        //         &:hover {
+        //             background: darken(#4468b0, 10%);
+        //         }
+        //     }
+
+        //     &.twitter {
+        //         background: #2796dd;
+
+        //         &:hover {
+        //             background: darken(#2796dd, 10%);
+        //         }
+        //     }
+
+        //     &.email {
+        //         background: $dark-slate;
+
+        //         &:hover {
+        //             background: darken($dark-slate, 10%);
+        //         }
+        //     }
+
+        //     a,
+        //     button {
+        //         border: none;
+        //         color: white;
+        //     }
+
+        //     svg {
+        //         margin: 0 2px 0 0;
+
+        //         &.facebook-icon {
+        //             position: relative;
+        //             top: 2px;
+        //             width: 15px;
+        //             height: 15px;
+
+        //             path {
+        //                 fill: #ffffff;
+        //             }
+        //         }
+
+        //         &.twitter-icon {
+        //             position: relative;
+        //             top: 2px;
+        //             width: 15px;
+        //             height: 15px;
+
+        //             path {
+        //                 fill: #ffffff;
+        //             }
+        //         }
+
+        //         &.email-icon {
+        //             width: 14px;
+        //             height: 9px;
+
+        //             path {
+        //                 fill: #ffffff;
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     .contactInfo {

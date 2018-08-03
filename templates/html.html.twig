@@ -46,7 +46,7 @@
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
 
-    <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div> -->
     <script>
       // Google Analytics
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -57,32 +57,32 @@
       ga('create', 'UA-9224894-1', 'auto');
       ga('send', 'pageview');
 
-      // Load Facebook SDK for JavaScript
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      // // Load Facebook SDK for JavaScript
+      // (function(d, s, id) {
+      //   var js, fjs = d.getElementsByTagName(s)[0];
+      //   if (d.getElementById(id)) return;
+      //   js = d.createElement(s); js.id = id;
+      //   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      //   fjs.parentNode.insertBefore(js, fjs);
+      // }(document, 'script', 'facebook-jssdk'));
 
-      // Load Twitter SDK for JavaScript
-      window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
+      // // Load Twitter SDK for JavaScript
+      // window.twttr = (function(d, s, id) {
+      //   var js, fjs = d.getElementsByTagName(s)[0],
+      //   t = window.twttr || {};
+      //   if (d.getElementById(id)) return t;
+      //   js = d.createElement(s);
+      //   js.id = id;
+      //   js.src = "https://platform.twitter.com/widgets.js";
+      //   fjs.parentNode.insertBefore(js, fjs);
 
-        t._e = [];
-        t.ready = function(f) {
-        t._e.push(f);
-        };
+      //   t._e = [];
+      //   t.ready = function(f) {
+      //   t._e.push(f);
+      //   };
 
-        return t;
-      }(document, "script", "twitter-wjs"));
+      //   return t;
+      // }(document, "script", "twitter-wjs"));
     </script>
 </body>
 </html>
