@@ -64,7 +64,6 @@
     var urlBase     = this.getAttribute("data-href");
     var urlParams   = this.getAttribute("data-params");
     window.open(urlBase + urlParams, "popup", "width=600,height=450");
-    console.log(urlBase + urlParams);
   }
 
   // Twitter Setter & Listener
