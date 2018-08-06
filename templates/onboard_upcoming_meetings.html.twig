@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Displays upcoming meetings from an OnBoard committee
+ *
+ * Available variables
+ * - meetings:   Hash of meetings, indexed by date
+ * - nid:        The current node ID
+ * - committee:  JSON object from OnBoard containing committee information
+ *
+ * @see https://developers.google.com/google-apps/calendar/v3/reference/events
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+#}
+<div class="events">
+    {% for date, event in meetings %}
+    <article>
+        <header>
+            <time datetime="{{ event.start }}">
+                <span class="month"    >{{ event.start | date('M')}}</span>
+                <span class="monthDate">{{ event.start | date('j')}}</span>
+                <span class="weekday"  >{{ event.start | date('l')}}</span>
+            </time>
+        </header>
+        <div>
+            <div class="summary" >{{ event.summary  }}</div>
+            <time datetime="{{ event.start }}">
+                {{  event.start | date('g:ia') }}
+                to {{ event.end | date('g:ia') }}
+            </time>
+            <div class="location">{{ event.location }}</div>
+        </div>
+    </article>
+    {% endfor %}
+</div>
