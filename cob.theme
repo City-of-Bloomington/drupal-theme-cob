@@ -248,19 +248,20 @@ function cob_preprocess_node(&$vars)
                 break;
                 default:
                     $committee_id = $vars['node']->get('field_committee')->value;
-                    $committee    = OnBoardService::committee_info($committee_id);
-                    $meetings     = OnBoardService::meetings($committee_id,  null, $start, $end, 4);
-                    $vars['meetings'] = [
-                        '#theme'     => 'onboard_upcoming_meetings',
-                        '#meetings'  => $meetings,
-                        '#committee' => $committee,
-                        '#nid'       => $nid
-                    ];
+                    if ($committee_id) {
+                        $committee    = OnBoardService::committee_info($committee_id);
+                        $meetings     = OnBoardService::meetings($committee_id,  null, $start, $end, 4);
+                        $vars['meetings'] = [
+                            '#theme'     => 'onboard_upcoming_meetings',
+                            '#meetings'  => $meetings,
+                            '#committee' => $committee,
+                            '#nid'       => $nid
+                        ];
+                    }
             }
         }
 
         $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
-        #$vars['regions']['sidebar_second'] = _cob_renderRegion('sidebar_second');
     }
 }
 
