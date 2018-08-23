@@ -49,7 +49,19 @@
 <main>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    {% include '@cob/partials/banner.html.twig' %}
+    <style type="text/css">
+        #banner {
+            height:320px; background-repeat:no-repeat; background-position: center center;
+            background-image:url("{{ file_url(directory ~ '/css/images/news-small.jpg') }}");
+        }
+        @media all and (min-width:600px) { #banner { background-image:url("{{ file_url(directory ~ '/css/images/news-medium.jpg') }}"); } }
+        @media all and (min-width:990px) { #banner { background-image:url("{{ file_url(directory ~ '/css/images/news-large.jpg' ) }}"); } }
+        #breadcrumb { overflow: visible; }
+        #breadcrumb .container { margin: -30px auto 0 auto; }
+    </style>
+    <div id="banner"></div>
+
+
     {% include '@cob/partials/breadcrumb.html.twig' %}
     {{ page.highlighted }}
     {{ page.help }}
@@ -67,3 +79,4 @@
     </div>
 </main>
 {% include '@cob/partials/footer.html.twig' %}
+

@@ -50,6 +50,9 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     {% include '@cob/partials/banner.html.twig' %}
+    {% include '@cob/partials/breadcrumb.html.twig' %}
+    {{ page.highlighted }}
+    {{ page.help }}
 
     <div id="content" class="parks-page">
         <div class="container">

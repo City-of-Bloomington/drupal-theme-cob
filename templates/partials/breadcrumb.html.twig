@@ -1,0 +1,47 @@
+<div id="breadcrumb">
+    {% if page.breadcrumb or contactInfo %}
+    <div class="container">
+        {{ page.breadcrumb }}
+        <div class="social-sharing">
+            <span alt="Share this page" title="Share this page">Share:</span>
+
+            <button class="item facebook"
+                   rel="nofollow"
+                   target="popup"
+                   data-href="https://www.facebook.com/sharer.php"
+                   data-params="?u={{ url("<current>") }}"
+                   alt="Share on Facebook"
+                   title="Share on Facebook">
+                   <svg class="facebook-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="103px" height="200px" viewBox="0 0 103 200" style="enable-background:new 0 0 103 200;" xml:space="preserve">
+                        <path fill="" d="M29.9,200v-89.5H0V75h29.9V47c0-30.4,18.6-47,45.7-47c13,0,24.2,1,27.4,1.4v31.8H84.2c-14.7,0-17.6,7-17.6,17.3V75h33.3
+                        l-4.6,35.5H66.6V200"/>
+                    </svg>
+            </button>
+
+            <button class="item twitter"
+                   rel="nofollow"
+                   target="popup"
+                   data-href="https://twitter.com/intent/tweet"
+                   data-params="?text={{ page.title|url_encode }}&url={{ url("<current>") }}"
+                   alt="Share on Twitter"
+                   title="Share on Twitter">
+                    <svg id="twitter-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="162px" viewBox="0 0 200 162" style="enable-background:new 0 0 200 162;" xml:space="preserve">
+                        <path fill="" d="M179.4,40.4c0.1,1.8,0.1,3.5,0.1,5.3c0,54-41.2,116.3-116.6,116.3c-23.2,0-44.8-6.7-62.9-18.4c3.3,0.4,6.5,0.5,9.9,0.5
+                        c19.2,0,36.8-6.5,50.9-17.5c-18-0.4-33.1-12.2-38.3-28.4c2.5,0.4,5.1,0.6,7.7,0.6c3.7,0,7.4-0.5,10.8-1.4C22.2,93.8,8.1,77.3,8.1,57.5V57c5.5,3,11.8,4.9,18.5,5.2c-11-7.3-18.3-19.9-18.3-34c0-7.6,2-14.6,5.6-20.6c20.2,24.8,50.5,41,84.5,42.8c-0.6-3-1-6.2-1-9.4c0-22.5,18.3-40.9,41-40.9c11.8,0,22.5,4.9,29.9,12.9c9.3-1.8,18.1-5.2,26-9.9c-3,9.5-9.5,17.5-18,22.5c8.2-0.9,16.2-3.2,23.6-6.3C194.4,27.3,187.4,34.6,179.4,40.4L179.4,40.4z"/>
+                    </svg>
+            </button>
+
+            <a class="item email" href="mailto:?subject={{ page.title|url_encode }}&amp;body={{ url("<current>") }}"
+               target="_top"
+               alt="Email this Page"
+               title="Email this Page">
+                <svg class="email-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="148px" viewBox="0 0 200 148" style="enable-background:new 0 0 200 148;" xml:space="preserve">
+                    <path fill="" d="M188.7,0H11.3C5.1,0,0,5.1,0,11.3v10.8L99.8,102L200,22.1V11.3C200,5.1,194.9,0,188.7,0z"/>
+                    <path fill="" d="M99.7,119.6c-1.7,0-3.4-0.6-4.8-1.7L0,41.9v94.8c0,6.2,5.1,11.3,11.3,11.3h177.3c6.3,0,11.3-5.1,11.3-11.3V41.8l-95.4,76C103.2,119,101.5,119.6,99.7,119.6z"/>
+                </svg>
+            </a>
+        </div>
+        {% include '@cob/partials/contactInfo.html.twig' %}
+    </div>
+    {% endif %}
+</div>
