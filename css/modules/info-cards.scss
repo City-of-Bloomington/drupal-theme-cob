@@ -1,35 +1,22 @@
  /**
-  * Styles for paragraph types defined in our Drupal site
+  * Info Card styles
+  *
+  * We should be using the same CSS styles everywhere on the site
   *
   * Paragraphs are a special module we installed.
   * @see https://www.drupal.org/project/paragraphs
-  *
   * These are not to be confused with HTML P tags.  It is unfortunate
   * that the module happens to call itself with that name.
   */
 $card-width: 320px;
 
-#asm_animals         > div,
-#interactivemap_maps > div,
-#legislationTypes    > div,
-#reports             > div,
-.departments-block,
-.parks-categories-block,
-.info-list,
-.paragraph--type--info-list {
-    text-align: center;
-}
-
 @media all and (min-width: $viewport-medium) {
     #asm_animals         > div,
-    #interactivemap_maps > div,
     #legislationTypes    > div,
     #reports             > div,
-    .departments-block,
-    .parks-categories-block,
     .info-list,
     .promt_programs,
-    .speeches-block,
+    .info-card-view > .rows,
     .paragraph--type--info-list > div {
         display: flex;
         flex-wrap: wrap;
@@ -37,26 +24,43 @@ $card-width: 320px;
     }
 }
 
-// info cards shown for Speeches & Remarks
-// file: /templates/nodes/node--info-card.html.twig
-.speeches-block article {
-    background: red;
-    margin: 0 !important;
+#asm_animals         article,
+#legislationTypes    article,
+#reports             article,
+.info-list         > .info-card,
+.promt_programs > article,
+.info-card-view > .rows > div,
+.paragraph--type--info-card {
+    height: auto;
+    background-color: $color-table-background;
+    color: $color-text-default;
+    margin-bottom: $size-gutter * 4;
+    flex-basis: $card-width;
+    vertical-align: top;
+    text-align: center;
+
+    @media all and (max-width: $viewport-medium) {
+        margin-bottom: $size-gutter;
+    }
+
+    article {
+        margin: 0;
+        height: 100%;
+    }
 
     a {
-        text-align: left;
-
-        header {
-            h3 {
-                margin: $size-gutter 0 0 0 !important;
-            }
-        }
-
-        p {
-            margin: $size-gutter 0 0 0;
-        }
+        background-color: $color-table-background;
+        color: $color-text-default;
+        display: block;
+        box-sizing: border-box;
+        padding: $size-gutter * 2;
+        height: 100%;
 
         &:hover {
+            background-color: $color-selected-background;
+            color: $color-content-background;
+            header h3, p { color: $color-content-background; }
+
             .entity_reference > .entity_reference > div,
             .video_embed_field > div {
                 &:before {
@@ -64,7 +68,6 @@ $card-width: 320px;
                 }
             }
         }
-
         .entity_reference > .entity_reference > div,
         .video_embed_field > div {
             position: relative;
@@ -93,63 +96,6 @@ $card-width: 320px;
             }
         }
 
-        date {
-            display: block;
-            font-size: $font-size-normal;
-            line-height: $font-size-normal;
-            margin: 0 0 ($size-gutter * 1.25) 0;
-        }
-    }
-}
-
-#asm_animals         article,
-#interactivemap_maps article,
-#legislationTypes    article,
-#reports             article,
-.departments-block > div,
-.parks-categories-block > div,
-.info-list         > div,
-.info-list         > .info-card,
-.promt_programs > article,
-.speeches-block > div,
-.paragraph--type--info-card {
-    height: auto;
-    background-color: $color-table-background;
-    color: $color-text-default;
-    margin-bottom: $size-gutter * 4;
-    flex-basis: $card-width;
-    vertical-align: top;
-    text-align: center;
-
-    @media all and (max-width: $viewport-medium) {
-        margin-bottom: $size-gutter;
-    }
-
-    article { height: 100%; }
-
-    a {
-        background-color: $color-table-background;
-        color: $color-text-default;
-        display: block;
-        box-sizing: border-box;
-        padding: $size-gutter * 2;
-        height: 100%;
-
-        &:hover {
-            background-color: $color-selected-background;
-            color: $color-content-background;
-
-            header {
-                h3 {
-                    color: $color-content-background;
-                }
-            }
-
-            p {
-                color: $color-content-background;
-            }
-        }
-
         @media all and (max-width: $viewport-medium) {
             padding: $size-gutter;
         }
@@ -157,6 +103,13 @@ $card-width: 320px;
         img {
             position: relative;
             width: 100%;
+        }
+
+        date {
+            display: block;
+            font-size: $font-size-normal;
+            line-height: $font-size-normal;
+            margin: 0 0 ($size-gutter * 1.25) 0;
         }
 
         header {
