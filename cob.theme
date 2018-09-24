@@ -5,6 +5,7 @@
  */
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\core\Site\Settings;
 use Drupal\core\Url;
 
@@ -130,21 +131,8 @@ function cob_preprocess_page(&$vars)
     if (isset($vars['node']) && $vars['node'] instanceof \Drupal\node\Entity\Node) {
         $vars['page']['title'] = $vars['node']->title->value;
 
-        if ($vars['node']->hasField('field_cover_image')) {
-            $img = $vars['node']->get('field_cover_image')->first();
-            if ($img) {
-                $styles = ['cover_small', 'cover_medium', 'cover_large'];
-                $target = $img->get('entity')->getTarget();
-                if ($target) {
-                    $ent = $target->getValue()->field_image->entity;
-                    if ($ent) {
-                        foreach ($styles as $s) {
-                            $vars['cover_image'][$s] = ImageStyle::load($s)->buildUrl($ent->getFileUri());
-                        }
-                    }
-                }
-            }
-        }
+        $urls = _cob_coverImageForEntity($vars['node']);
+        if ($urls) { $vars['cover_image'] = $urls; }
 
         $contactInfo =  _cob_contactInfoFromNode($vars['node']);
         if ($contactInfo) {
@@ -170,6 +158,49 @@ function cob_preprocess_page(&$vars)
             }
         }
     }
+    else {
+        $route = \Drupal::routeMatch()->getRouteName();
+        if ($route == 'entity.taxonomy_term.canonical') {
+            $tid  = \Drupal::routeMatch()->getRawParameter(  'taxonomy_term');
+            $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+
+            $urls = _cob_coverImageForEntity($term);
+            if ($urls) { $vars['cover_image'] = $urls; }
+        }
+    }
+}
+
+/**
+ * Returns URL's to all the styles for a cover image.
+ *
+ * The indexes for the return array will be the names of the image styles.
+ * $urls[
+ *   'cover_small' =>'https://host/sites/default/files/styles/small/image.png',
+ *   'cover_medium'=>'https://host/sites/default/files/styles/medium/image.png',
+ *   'cover_large' =>'https://host/sites/default/files/styles/large/image.png'
+ * ]
+ *
+ * @return array  An array of url strings
+ */
+function _cob_coverImageForEntity(FieldableEntityInterface $entity): array
+{
+    $urls = [];
+    if ($entity->hasField('field_cover_image')) {
+        $img = $entity->get('field_cover_image')->first();
+        if ($img) {
+            $styles = ['cover_small', 'cover_medium', 'cover_large'];
+            $target = $img->get('entity')->getTarget();
+            if ($target) {
+                $ent = $target->getValue()->field_image->entity;
+                if ($ent) {
+                    foreach ($styles as $s) {
+                        $urls[$s] = ImageStyle::load($s)->buildUrl($ent->getFileUri());
+                    }
+                }
+            }
+        }
+    }
+    return $urls;
 }
 
 function cob_preprocess_node(&$vars)
