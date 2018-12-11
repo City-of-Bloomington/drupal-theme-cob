@@ -35,6 +35,14 @@
                     {{ location.title.value }}
                 </a>
             </dd>
+            {% elseif program.location %}
+            <dt>Location</dt>
+            <dd>{% if program.location_url %}
+                <a href="{{ program.location_url }}">{{ program.location }}</a>
+                {% else %}
+                {{ program.location }}
+                {% endif %}
+            </dd>
             {% endif %}
         </dl>
         {% if program.rectrac_id %}
