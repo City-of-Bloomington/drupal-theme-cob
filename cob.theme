@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017-2018 City of Bloomington, Indiana
+ * @copyright 2017-2019 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -87,14 +87,18 @@ function _cob_events($calendarId, int $numdays, int $maxevents): array
     $end   = new \DateTime();
     $end->add(new \DateInterval("P{$numdays}D"));
 
-    return [
-        '#theme'      => 'calendar_events',
-        '#calendarId' => $calendarId,
-        '#events'     => GoogleGateway::limitEvents(
-                            GoogleGateway::events($calendarId, $start, $end, $maxevents),
-                            $maxevents
-                         )
-    ];
+    $events = null;
+    try { $events = GoogleGateway::events($calendarId, $start, $end, $maxevents); }
+    catch (\Exception $e) { }
+
+    if ($events) {
+        return [
+            '#theme'      => 'calendar_events',
+            '#calendarId' => $calendarId,
+            '#events'     => GoogleGateway::limitEvents($events, $maxevents)
+        ];
+    }
+    return [];
 }
 
 function cob_preprocess_page__front(&$vars)
