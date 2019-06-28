@@ -128,18 +128,6 @@ function cob_preprocess_page__front(&$vars)
     $vars['news' ] = _cob_renderNodesByQuery($query, 'teaser');
     $vars['about'] = _cob_renderNodeById(223, 'promo');
     $vars['mayor'] = _cob_renderNodeById(608, 'promo');
-
-    // Pothole dataset query
-    $url      = 'https://data.bloomington.in.gov/api/3/action/datastore_search_sql?sql='
-              . urlencode('select sum("Potholes Repaired") from "fbc3cf1c-f50b-4ddc-ab2f-b46fe66055ea"');
-    $client   = \Drupal::httpClient(['timeout' => 5]);
-    $response = $client->get($url);
-    if ($response) {
-        $data = json_decode($response->getBody(), true);
-        if ($data &&          !empty($data['result']['records'][0]['sum'])) {
-            $vars['pothole_count'] = $data['result']['records'][0]['sum'];
-        }
-    }
 }
 
 function cob_preprocess_page(&$vars)

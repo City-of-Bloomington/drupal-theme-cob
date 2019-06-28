@@ -50,17 +50,9 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div id="banner"></div>
-    {% if alerts or pothole_count %}
+    {% if alerts %}
     <div id="alerts">
         {{ alerts }}
-        {% if pothole_count %}
-        <article class="info alert">
-            <div class="container">
-                <header><h2>Potholes Repaired</h2></header>
-                <p>{{ pothole_count | number_format }} filled so far this year</p>
-            </div>
-        </article>
-        {% endif %}
     </div>
     {% endif %}
     {{ page.highlighted }}
