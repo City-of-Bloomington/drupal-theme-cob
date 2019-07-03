@@ -14,22 +14,28 @@
  */
 #}
 <section class="meetings">
+    {% set routeList    = 'onboard.meetingList.node-'   ~ node.id %}
+    {% set routeYears   = 'onboard.meetingYears.node-'  ~ node.id %}
+    {% set emptyHolder  = '- - -' %}
+
     <header>
         <div class="field-group">
-            <label>View Year</label>
+            <label>View Year:</label>
             <select type="select"
                     onchange="javascript:location.href = this.value;">
-                {% set route = 'onboard.meetingList.node-' ~ node.id %}
+
                 {% for y, count in years %}
-                    <option value="{{ path(route, {'node':node.id, 'year':y}) }}" {% if y == year %} selected {% endif %}>
+                    {% set optionValue =  path(routeList, {'node': node.id,
+                                                           'year': y}) %}
+                    <option value="{{ optionValue }}"
+                            {% if y == year %}selected{% endif %}>
                         {{ y }}
                     </option>
                 {% endfor %}
             </select>
         </div>
 
-        {% set route = 'onboard.meetingYears.node-' ~ node.id %}
-        <a href="{{ path(route, {'node':node.id}) }}"
+        <a href="{{ path(routeYears, {'node':node.id}) }}"
            title="View Archive">View Archive</a>
     </header>
 
@@ -48,18 +54,23 @@
                     <th scope="row">{{ date|date("F j") }}</th>
                     <td>{{ meeting.summary }}</td>
                     <td>
-                        {% for type, files in meeting.files %}
-                            {% for count, file in files %}
-                                <a href="{{ file.url }}"
-                                   title="Download '{{ file.title }}' PDF">
-                                    {{ file.type }}
+                        {% if meeting.files %}
+                            {% for type, files in meeting.files %}
+                                {% for count, file in files %}
+                                    <a href="{{ file.url }}"
+                                       class="download"
+                                       title="Download '{{ file.title }}' PDF">
+                                        {{ file.type }}
 
-                                    {% if loop.index > 1%}
-                                        <small>&nbsp;({{ loop.index }})</small>
-                                    {% endif %}
-                                </a>
+                                        {% if loop.index > 1%}
+                                            <small>&nbsp;({{ loop.index }})</small>
+                                        {% endif %}
+                                    </a>
+                                {% endfor %}
                             {% endfor %}
-                        {% endfor %}
+                        {% else %}
+                            {{ emptyHolder }}
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
