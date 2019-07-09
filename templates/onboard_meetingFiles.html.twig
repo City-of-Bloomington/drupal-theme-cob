@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Displays the list of Meetings and Meetings Documents
+ *
+ * Available variables
+ * - meetings: The meetings JSON data from OnBoard
+ * - year:     The year for the meetings being listed
+ * - years:    The available years of meetingFiles we have for the committee
+ * - node:     The node object for the board page in Drupal
+ *
+ * @copyright 2017 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ */
+#}
+<section class="meetings">
+    {% set routeList    = 'onboard.meetingList.node-'   ~ node.id %}
+    {% set routeYears   = 'onboard.meetingYears.node-'  ~ node.id %}
+    {% set emptyHolder  = '- - -' %}
+
+    <header>
+        <div class="field-group">
+            <label>View Year:</label>
+            <select type="select"
+                    onchange="javascript:location.href = this.value;">
+
+                {% for y, count in years %}
+                    {% set optionValue =  path(routeList, {'node': node.id,
+                                                           'year': y}) %}
+                    <option value="{{ optionValue }}"
+                            {% if y == year %}selected{% endif %}>
+                        {{ y }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <a href="{{ path(routeYears, {'node':node.id}) }}"
+           title="View Archive">View Archive</a>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Date - {{ year }}</th>
+                <th scope="col">Summary Title</th>
+                <th scope="col">Downloads</th>
+            </tr>
+        </thead>
+
+         <tbody>
+            {% for date, meeting in meetings %}
+                <tr>
+                    <th scope="row">{{ date|date("F j") }}</th>
+                    <td>{{ meeting.summary }}</td>
+                    <td>
+                        {% if meeting.files %}
+                            {% for type, files in meeting.files %}
+                                {% for count, file in files %}
+                                    <a href="{{ file.url }}"
+                                       class="download"
+                                       title="Download '{{ file.title }}' PDF">
+                                        {{ file.type }}
+
+                                        {% if loop.index > 1%}
+                                            <small>&nbsp;({{ loop.index }})</small>
+                                        {% endif %}
+                                    </a>
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            {{ emptyHolder }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>

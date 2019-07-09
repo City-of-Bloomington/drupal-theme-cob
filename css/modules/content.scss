@@ -21,7 +21,7 @@
     .text_long         a { color:$color-heading; text-decoration:underline; }
 
     .container {
-        padding:$size-gutter;
+        padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
         > section {
             padding:$size-gutter 0;
