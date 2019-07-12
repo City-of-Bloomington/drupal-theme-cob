@@ -20,12 +20,6 @@
     .text_with_summary a,
     .text_long         a { color:$color-heading; text-decoration:underline; }
 
-    #news-section {
-        .container {
-            padding: 0;
-        }
-    }
-
     .container {
         padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
@@ -33,7 +27,7 @@
             padding:$size-gutter 0;
 
             h2 { color:$color-heading; margin-bottom:2rem; }
-            .container { overflow:auto; padding:$size-gutter; }
+            .container { overflow:auto; }
 
             @media all and (min-width:$viewport-medium) {
                 h2 { font-size:$font-size-bigger; }

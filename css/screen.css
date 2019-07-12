@@ -100,15 +100,13 @@ label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2
 
 #content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 
-#content #news-section .container { padding: 0; }
-
 #content .container { padding: 1em 1em 0 1em; }
 
 #content .container > section { padding: 0.5em 0; }
 
 #content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
 
-#content .container > section .container { overflow: auto; padding: 0.5em; }
+#content .container > section .container { overflow: auto; }
 
 @media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
 
@@ -408,6 +406,8 @@ section.promo .promo_title { text-align: center; }
 #news-section form > div:last-of-type { margin: 0; }
 
 #news-section form .button { padding: 0.5em 1em; margin: 0; }
+
+#news-section .container { padding: 0; }
 
 #news-section .container > div { overflow: auto; display: flex; flex-wrap: wrap; }
 
