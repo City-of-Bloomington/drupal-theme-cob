@@ -30,14 +30,9 @@
             padding: $size-gutter ($size-gutter * 2);
             margin: 0;
         }
-
-        @media (max-width: $viewport-medium) {
-            align-items: flex-end;
-        }
     }
 
     .container {
-        padding: 0;
 
         > div {
             overflow: auto;
@@ -88,12 +83,19 @@
     }
 
     @media (max-width: $viewport-medium) {
+        form {
+            align-items: flex-end;
+        }
+
         .container {
             padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+
+            > div {
+                flex-direction: column-reverse;
+            }
         }
 
         aside {
-            margin-top: 20px;
             width: 100%;
         }
     }
