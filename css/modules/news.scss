@@ -11,6 +11,31 @@
         box-sizing: border-box;
     }
 
+    form {
+        display: flex;
+        align-items: center;
+        margin: 0 0 .75em 0;
+        padding: 0 0 $size-gutter 0;
+        border-bottom: 1px solid $color-divider;
+
+        > div {
+            margin: 0 ($size-gutter * 2) 0 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+
+        .button {
+            padding: $size-gutter ($size-gutter * 2);
+            margin: 0;
+        }
+
+        @media (max-width: $viewport-medium) {
+            align-items: flex-end;
+        }
+    }
+
     .container {
         padding: 0;
 

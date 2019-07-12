@@ -399,6 +399,16 @@ section.promo .promo_title { text-align: center; }
 
 #news-section * { box-sizing: border-box; }
 
+#news-section form { display: flex; align-items: center; margin: 0 0 .75em 0; padding: 0 0 0.5em 0; border-bottom: 1px solid silver; }
+
+#news-section form > div { margin: 0 1em 0 0; }
+
+#news-section form > div:last-of-type { margin: 0; }
+
+#news-section form .button { padding: 0.5em 1em; margin: 0; }
+
+@media (max-width: 640px) { #news-section form { align-items: flex-end; } }
+
 #news-section .container { padding: 0; }
 
 #news-section .container > div { overflow: auto; display: flex; flex-wrap: wrap; }
