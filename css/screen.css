@@ -422,6 +422,7 @@ section.promo .promo_title { text-align: center; }
 #news-section .news .results a:nth-last-child(-n+2) { margin: 0; }
 
 @media (min-width: 640px) and (max-width: 1080px) { #news-section .container { padding: 1em 1em 0 1em; }
+  #news-section .container > div { flex-direction: column-reverse; }
   #news-section aside { margin-top: 20px; width: 100%; }
   #news-section aside .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
 

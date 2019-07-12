@@ -68,6 +68,10 @@
     @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
         .container {
             padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+
+            > div {
+                flex-direction: column-reverse;
+            }
         }
 
         aside {
