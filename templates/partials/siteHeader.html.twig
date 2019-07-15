@@ -1,17 +1,33 @@
-<input  id="hamburger" type="checkbox" />
+<input id="hamburger" type="checkbox" />
 <label for="hamburger"></label>
-<a id="feedback" href="/ureport/miscellaneous/53">Feedback</a>
+
 <header>
-    <div class="container">
-        {{ page.header }}
-    </div>
+  <div class="container">
+    <a href="/ureport/miscellaneous/53"
+       id="feedback"
+       title="Report Feedback">Feedback</a>
+
+    {{ page.header }}
+  </div>
 </header>
+
 <nav id="nav1">
     <div class="container">
-        <a class="about"    href="{{ base_path }}about">Information &amp; Guides</a>
-        <a class="city"     href="{{ base_path }}city">City Government</a>
-        <a class="news"     href="{{ base_path }}news">News &amp; Events</a>
-        <a class="services" href="{{ base_path }}services">Top Services</a>
+        <a class="about"
+           title="Information &amp; Guides"
+           href="{{ base_path }}about">Information &amp; Guides</a>
+
+        <a class="city"
+           title="City Government"
+           href="{{ base_path }}city">City Government</a>
+
+        <a class="news"
+           title="News &amp; Events"
+           href="{{ base_path }}news">News &amp; Events</a>
+
+        <a class="services"
+           title="Top Services"
+           href="{{ base_path }}services">Top Services</a>
     </div>
 </nav>
 {{ page.primary_menu }}
