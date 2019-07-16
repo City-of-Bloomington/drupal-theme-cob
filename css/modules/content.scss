@@ -27,7 +27,7 @@
             padding:$size-gutter 0;
 
             h2 { color:$color-heading; margin-bottom:2rem; }
-            .container { overflow:auto; padding:$size-gutter; }
+            .container { overflow:auto; }
 
             @media all and (min-width:$viewport-medium) {
                 h2 { font-size:$font-size-bigger; }
