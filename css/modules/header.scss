@@ -5,14 +5,8 @@
         flex-wrap: wrap;
         background-color: $color-header;
         color: $color-content-background;
-        padding: 0;
+        padding: $size-gutter;
         height: 40px;
-
-        * {
-            &:focus {
-                outline-color: white;
-            }
-        }
 
         #feedback {
             position: absolute;
@@ -21,11 +15,41 @@
             transform: translateX(-50%);
         }
 
+        nav {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            margin: $size-gutter 0 0 -50vw;
+            padding: $size-gutter 0;
+            background-color: $color-content-background;
+
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+
+                a {
+                    color: $color-header;
+
+                    span {
+                        &:nth-of-type(2) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
         > .container {
             position: relative;
             display: flex;
             flex-wrap: wrap;
             font-size: $font-size-small;
+
+            * {
+                &:focus {
+                    outline-color: white;
+                }
+            }
 
             section {
                 display: flex;
@@ -64,9 +88,8 @@
         }
 
         @media (max-width: $viewport-medium) {
-            // background-color: green;
-            padding: $size-gutter;
-            height: 80px;
+            padding: $size-gutter $size-gutter 0 $size-gutter;
+            height: 100%;
 
             #feedback {
                 font-size: $font-size-smaller;
@@ -76,8 +99,34 @@
                 right: 0;
             }
 
+            nav {
+                .container {
+                    a {
+                        flex: 1 0 25%;
+                        font-size: $font-size-smaller;
+                        border-right: 1px solid $color-divider;
+                        padding: ($size-gutter*4) 0 0 0;
+
+                        span {
+                            &:nth-of-type(1) {
+                                display: none;
+                            }
+
+                            &:nth-of-type(2) {
+                                display: block;
+                            }
+                        }
+
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+
             > .container {
                 width: 100%;
+                padding: 0;
 
                 section {
                     &:nth-of-type(1),
@@ -103,8 +152,6 @@
         }
 
         @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-            padding: 0 $size-gutter;
-
             > .container {
                 width: 100%;
             }
@@ -127,7 +174,7 @@
             box-sizing: border-box;
             -webkit-appearance: none; // fixes border-radius on iOS
             border: 0;
-            padding: 0 0 0 $size-gutter;
+            padding: ($size-gutter/2) 0 ($size-gutter/2) $size-gutter;
             width: 100%;
             height: 100%;
             border-radius: 0;

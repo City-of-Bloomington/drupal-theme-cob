@@ -23,25 +23,23 @@ section { margin: 0; }
 @media all and (max-width: 640px) { #intro { flex-wrap: wrap; }
   #intro aside { width: 100%; margin-left: 0; } }
 
-@media all and (min-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container, #nav1 .container, #alerts .container, .dialog-off-canvas-main-canvas > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
+@media all and (min-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container, header > nav > .container, #alerts .container, .dialog-off-canvas-main-canvas > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
 
-#nav1 { position: static; width: 100%; margin: 0; padding: 0.5em 0; border: 0; background-color: #fff; }
-
-#nav1 .container { display: flex; flex-direction: row; justify-content: space-around; padding: 0; }
-
-#nav1 .container a { color: #183365; }
-
-@media (max-width: 640px) { #nav1 .container { padding: 0 0.5em; }
-  #nav1 .container a { font-size: 12px; border-right: 1px solid silver; padding: 35px 10px 0 10px; }
-  #nav1 .container a:last-child { border-right: none; } }
-
-.dialog-off-canvas-main-canvas > header { position: relative; display: flex; flex-wrap: wrap; background-color: #183365; color: #fff; padding: 0; height: 40px; }
-
-.dialog-off-canvas-main-canvas > header *:focus { outline-color: white; }
+.dialog-off-canvas-main-canvas > header { position: relative; display: flex; flex-wrap: wrap; background-color: #183365; color: #fff; padding: 0.5em; height: 40px; }
 
 .dialog-off-canvas-main-canvas > header #feedback { position: absolute; top: .75em; left: 50%; transform: translateX(-50%); }
 
+.dialog-off-canvas-main-canvas > header nav { width: 100vw; position: relative; left: 50%; margin: 0.5em 0 0 -50vw; padding: 0.5em 0; background-color: #fff; }
+
+.dialog-off-canvas-main-canvas > header nav .container { display: flex; justify-content: space-evenly; }
+
+.dialog-off-canvas-main-canvas > header nav .container a { color: #183365; }
+
+.dialog-off-canvas-main-canvas > header nav .container a span:nth-of-type(2) { display: none; }
+
 .dialog-off-canvas-main-canvas > header > .container { position: relative; display: flex; flex-wrap: wrap; font-size: 1rem; }
+
+.dialog-off-canvas-main-canvas > header > .container *:focus { outline-color: white; }
 
 .dialog-off-canvas-main-canvas > header > .container section { display: flex; }
 
@@ -55,22 +53,25 @@ section { margin: 0; }
 
 .dialog-off-canvas-main-canvas > header > .container h1 small { font-style: italic; display: block; }
 
-@media (max-width: 640px) { .dialog-off-canvas-main-canvas > header { padding: 0.5em; height: 80px; }
+@media (max-width: 640px) { .dialog-off-canvas-main-canvas > header { padding: 0.5em 0.5em 0 0.5em; height: 100%; }
   .dialog-off-canvas-main-canvas > header #feedback { font-size: 0.875rem; transform: none; left: auto; top: .95em; right: 0; }
-  .dialog-off-canvas-main-canvas > header > .container { width: 100%; }
+  .dialog-off-canvas-main-canvas > header nav .container a { flex: 1 0 25%; font-size: 0.875rem; border-right: 1px solid silver; padding: 2em 0 0 0; }
+  .dialog-off-canvas-main-canvas > header nav .container a span:nth-of-type(1) { display: none; }
+  .dialog-off-canvas-main-canvas > header nav .container a span:nth-of-type(2) { display: block; }
+  .dialog-off-canvas-main-canvas > header nav .container a:last-child { border-right: none; }
+  .dialog-off-canvas-main-canvas > header > .container { width: 100%; padding: 0; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1), .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) { flex: 1 0 100%; width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) > div, .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) > div { width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) { margin: 0 0 0.5em 0; }
   .dialog-off-canvas-main-canvas > header > .container h1 { font-size: 0.875rem; width: 100%; } }
 
-@media (min-width: 640px) and (max-width: 1080px) { .dialog-off-canvas-main-canvas > header { padding: 0 0.5em; }
-  .dialog-off-canvas-main-canvas > header > .container { width: 100%; } }
+@media (min-width: 640px) and (max-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container { width: 100%; } }
 
 #block-searchform form { display: flex; margin: 0; width: 320px; height: 100%; }
 
 #block-searchform form .form-item { width: 100%; }
 
-#block-searchform form input[type="search"] { box-sizing: border-box; -webkit-appearance: none; border: 0; padding: 0 0 0 0.5em; width: 100%; height: 100%; border-radius: 0; color: white; border-top: 5px solid transparent; border-bottom: 5px solid transparent; background-color: #2276d6; }
+#block-searchform form input[type="search"] { box-sizing: border-box; -webkit-appearance: none; border: 0; padding: 0.25em 0 0.25em 0.5em; width: 100%; height: 100%; border-radius: 0; color: white; border-top: 5px solid transparent; border-bottom: 5px solid transparent; background-color: #2276d6; }
 
 #block-searchform form input[type="search"]::placeholder { color: rgba(255, 255, 255, 0.6); }
 
@@ -162,17 +163,17 @@ section { margin: 0; }
 
 #block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
 
-#nav1 a { text-align: center; background-size: 24px 24px; background-repeat: no-repeat; background-position: top center; padding: 0 0 0 52px; font-size: 1rem; line-height: 1rem; }
+header > nav a { text-align: center; background-size: 24px 24px; background-repeat: no-repeat; background-position: top center; padding: 0 0 0 52px; font-size: 1rem; line-height: 1rem; }
 
-#nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
+header > nav .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
 
-#nav1 .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
+header > nav .news { background-image: url("images/alpha_icons/biscay/news.svg"); }
 
-#nav1 .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
+header > nav .city { background-image: url("images/alpha_icons/biscay/factory.svg"); }
 
-#nav1 .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
+header > nav .services { background-image: url("images/alpha_icons/biscay/services.svg"); }
 
-@media all and (min-width: 640px) { #nav1 a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
+@media all and (min-width: 640px) { header > nav a { display: inline-block; padding: 52px 0 0 0; background-size: auto 40px; background-position: center 0.5em; font-size: 1.125rem; line-height: 1.25em; } }
 
 #services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
 

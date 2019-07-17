@@ -7,7 +7,7 @@
     background-size:($size-gutter*2) ($size-gutter*2);
     background-image:url('images/fa-svg/white/search.svg');
 }
-#nav1 {
+header > nav {
     a {
         text-align: center;
         background-size: 24px 24px;
@@ -23,7 +23,7 @@
     .services { background-image:url('images/alpha_icons/biscay/services.svg'      ); }
 }
 @media all and (min-width:$viewport-medium) {
-    #nav1 {
+    header > nav {
         a {
             display:inline-block; padding:52px 0 0 0;
             background-size:auto 40px;
