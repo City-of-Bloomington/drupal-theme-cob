@@ -4,29 +4,41 @@
  * Displays a list of node results
  *
  * Available variables
- * - results: The node render arrays
- * - events:  Events from a Google Calendar
+ * - year    int      The current year being displayed
+ * - month   int      The current month being displayed (optional)
+ * - start   DateTime The start date for node results
+ * - form    array    The drupal form used for searching and browsing
+ * - type    string   The type of nodes being returned
+ * - results array    The node render arrays
+ * - events  array    Events from a Google Calendar
  *
- * @copyright 2017 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2017-2019 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
-<section id="news-section">
+<section id="{{ type }}-section">
     <div class="container">
         <div>
-            <div class="news">
+            <div class="{{ type }}">
                 <header>
-                    <h2>{% if month %}{{ start|date('F') }} {% endif %}{{ year }} News</h2>
+                    <h2>{% if month %}{{ start|date('F') }} {% endif %}{{ year }}
+                        {% if     type == 'news'    %}News Releases
+                        {% elseif type == 'success' %}Success Stories
+                        {% else %}{{ type }}
+                        {% endif %}
+                    </h2>
                 </header>
                 {{ form }}
                 <div class="results">
                     {{ results }}
                 </div>
             </div>
+            {% if events %}
             <aside class="calendar_calendar">
                 <header><h2>Events</h2></header>
                 {{ events }}
             </aside>
+            {% endif %}
         </div>
     </div>
 </section>
