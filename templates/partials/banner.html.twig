@@ -1,13 +1,26 @@
 {% if cover_image %}
-<style type="text/css">
+  <style type="text/css">
     #banner {
-        height:320px; background-repeat:no-repeat; background-position: center center;
-        background-image:url('{{ cover_image.cover_small }}');
+      background-image: url('{{ cover_image.cover_small }}');
     }
-    @media all and (min-width:600px) { #banner { background-image:url('{{ cover_image.cover_medium }}'); } }
-    @media all and (min-width:990px) { #banner { background-image:url('{{ cover_image.cover_large  }}'); } }
+
+    /* $viewport-medium */
+    @media all and (min-width: 600px) {
+      #banner {
+        background-image:url('{{ cover_image.cover_medium }}');
+      }
+    }
+
+    /* $viewport-large */
+    @media all and (min-width: 990px) {
+      #banner {
+        background-image:url('{{ cover_image.cover_large  }}');
+      }
+    }
+
     #breadcrumb { overflow: visible; }
-    #breadcrumb .container { margin: -30px auto 0 auto; }
-</style>
+    #breadcrumb:before { top: 20px; }
+    #breadcrumb .container { margin: -20px auto 0 auto; }
+  </style>
+  <div id="banner"></div>
 {% endif %}
-<div id="banner"></div>

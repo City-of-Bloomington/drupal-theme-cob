@@ -375,7 +375,11 @@ section.divided .container > header h2, section.divided .container > header a, s
 
 .front header > h2 { text-transform: uppercase; }
 
-.front #banner { display: flex; justify-content: center; align-items: center; }
+.front #banner { background-image: url("images/downtown-small.png"); }
+
+@media all and (min-width: 640px) { .front #banner { background-image: url("images/downtown-medium.png"); } }
+
+@media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
 
 #services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
 
@@ -561,17 +565,17 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #alerts .severe { background-color: #ed9a9c; }
 
-.front #banner { height: 320px; background: url("images/downtown-small.png") no-repeat center center; }
+#banner { height: 320px; background-repeat: no-repeat; background-position: center center; }
 
-@media all and (min-width: 640px) { .front #banner { background-image: url("images/downtown-medium.png"); } }
+@media (max-width: 640px) { #banner { height: 160px; } }
 
-@media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
+@media (min-width: 640px) and (max-width: 1080px) { #banner { height: 256px; } }
 
 #breadcrumb { position: relative; overflow: hidden; color: #3f9dff; }
 
-#breadcrumb:before { position: absolute; content: ''; top: 18px; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
+#breadcrumb:before { position: absolute; content: ''; top: 0; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
 
-#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 30px auto 0 auto; min-height: 83px; }
+#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 20px auto 0 auto; min-height: 83px; }
 
 #breadcrumb h1 { font-size: 2.5rem; line-height: 4rem; color: #3f9dff; margin: 0; }
 
