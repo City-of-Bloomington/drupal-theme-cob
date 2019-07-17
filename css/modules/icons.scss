@@ -1,26 +1,43 @@
-#block-searchform .button {
-    width:0; height:1em;
-    overflow: hidden;
-    text-indent: -10em;
-    background-repeat:no-repeat;
-    background-position: center center;
-    background-size:($size-gutter*2) ($size-gutter*2);
-    background-image:url('images/fa-svg/white/search.svg');
-}
-header > nav {
-    a {
-        text-align: center;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: top center;
-        padding: 0 0 0 52px;
-        font-size: $font-size-small;
-        line-height: 1rem;
+header {
+    form {
+        input[type="submit"] {
+            width:0; height:1em;
+            overflow: hidden;
+            text-indent: -10em;
+            background-repeat:no-repeat;
+            background-position: center center;
+            background-size:($size-gutter*2) ($size-gutter*2);
+            background-image:url('images/fa-svg/white/search.svg');
+        }
     }
-    .about    { background-image:url('images/alpha_icons/biscay/searchlocation.svg'); }
-    .news     { background-image:url('images/alpha_icons/biscay/news.svg'          ); }
-    .city     { background-image:url('images/alpha_icons/biscay/factory.svg'       ); }
-    .services { background-image:url('images/alpha_icons/biscay/services.svg'      ); }
+
+    > nav {
+        a {
+            text-align: center;
+            background-size: 24px 24px;
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding: 0 0 0 52px;
+            font-size: $font-size-small;
+            line-height: 1rem;
+        }
+
+        .about    {
+            background-image: url('images/alpha_icons/biscay/searchlocation.svg');
+        }
+
+        .news     {
+            background-image: url('images/alpha_icons/biscay/news.svg'          );
+        }
+
+        .city     {
+            background-image: url('images/alpha_icons/biscay/factory.svg'       );
+        }
+
+        .services {
+            background-image: url('images/alpha_icons/biscay/services.svg'      );
+        }
+    }
 }
 @media all and (min-width:$viewport-medium) {
     header > nav {
