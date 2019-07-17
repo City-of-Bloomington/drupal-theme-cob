@@ -104,7 +104,7 @@ section { margin: 0; }
 
 #content .container > section h2 { color: #3f9dff; margin-bottom: 2rem; }
 
-#content .container > section .container { overflow: auto; padding: 0.5em; }
+#content .container > section .container { overflow: auto; }
 
 @media all and (min-width: 640px) { #content .container > section h2 { font-size: 1.9rem; } }
 
@@ -352,13 +352,6 @@ aside.contactInfo a.onboard { background-image: url("images/icons/dark-slate/cit
 
 #block-upcomingevents article > div span, #block-committeemeetings article > div span, .onboard_meetings article > div span, .calendar_calendar article > div span { display: block; height: 3em; overflow: hidden; }
 
-#news-section aside { width: 320px; float: right; }
-
-@media (min-width: 640px) and (max-width: 1080px) { #news-section aside { margin-top: 20px; width: 100%; float: none; }
-  #news-section aside .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
-
-@media (max-width: 640px) { #news-section aside { margin-top: 20px; width: 100%; float: none; } }
-
 @media all and (min-width: 640px) { section.divided > .container > header, section.divided .calendar_calendar > header, #content section > header, .paragraph--type--info-list > header { text-align: center; background-size: 100% 2px; background-position: left center; background-repeat: no-repeat; margin: 1em 0; }
   section.divided > .container > header h2, section.divided .calendar_calendar > header h2, #content section > header h2, .paragraph--type--info-list > header h2 { display: inline; padding: 0 0.5em; font-size: 1.9rem; font-weight: 900; } }
 
@@ -404,13 +397,37 @@ section.promo .promo_title { text-align: center; }
 
 #news-section * { box-sizing: border-box; }
 
-#news-section .container > div { overflow: auto; }
+#news-section form { display: flex; align-items: center; margin: 0 0 0.75em 0; padding: 0 0 0.5em 0; border-bottom: 1px solid silver; }
 
-#news-section .news { width: 710px; float: left; }
+#news-section form > div { margin: 0 1em 0 0; }
 
-#news-section .news .results { height: 100%; display: flex; flex-wrap: wrap; align-content: stretch; }
+#news-section form > div:last-of-type { margin: 0; }
 
-#news-section article { margin: 0 0 .5em 0; }
+#news-section form .button { padding: 0.5em 1em; margin: 0; }
+
+#news-section .container { padding: 0; }
+
+#news-section .container > div { overflow: auto; display: flex; flex-wrap: wrap; }
+
+#news-section aside { width: 320px; margin-left: auto; }
+
+#news-section .news { width: 710px; }
+
+#news-section .news .results { margin: 0 0 1em 0; display: flex; flex-wrap: wrap; align-content: stretch; }
+
+#news-section .news .results a { margin: 0 0 1em 0; }
+
+#news-section .news .results a:nth-last-child(-n+2) { margin: 0; }
+
+@media (min-width: 640px) and (max-width: 1080px) { #news-section .container { padding: 1em 1em 0 1em; }
+  #news-section .container > div { flex-direction: column-reverse; }
+  #news-section aside { margin-top: 20px; width: 100%; }
+  #news-section aside .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
+
+@media (max-width: 640px) { #news-section form { align-items: flex-end; }
+  #news-section .container { padding: 1em 1em 0 1em; }
+  #news-section .container > div { flex-direction: column-reverse; }
+  #news-section aside { width: 100%; } }
 
 @media (min-width: 1080px) { .front #news-section .results a:first-of-type { width: 100%; }
   .front #news-section .results a:first-of-type .hasImage .summary { display: block; }
@@ -433,7 +450,9 @@ section.promo .promo_title { text-align: center; }
   .front #news-section .news { width: 100%; float: none; }
   .front #news-section .news .results a { width: 100%; } }
 
-article.news.teaser { position: relative; height: 214px; overflow: hidden; margin: 0; padding: 0.5em; border-color: #183365 silver silver; border-style: solid; border-width: 8px 1px 1px 1px; }
+article.news.teaser { position: relative; height: 214px; overflow: hidden; margin: 0; padding: 1em 0.5em 0.5em 0.5em; border-color: silver; border-style: solid; border-width: 0 1px 1px 1px; }
+
+article.news.teaser:before { z-index: 1; content: ''; position: absolute; top: 0; left: -1px; width: calc(100% + 2px); height: 8px; background-color: #183365; }
 
 article.news.teaser header { margin: 0 0 .5em 0; }
 
@@ -445,7 +464,7 @@ article.news.teaser .summary { color: #212121; position: relative; line-height: 
 
 article.news.teaser.hasImage { padding-left: 148px; }
 
-article.news.teaser.hasImage img { width: 140px; position: absolute; top: 0; left: 0; height: auto; }
+article.news.teaser.hasImage img { width: 140px; position: absolute; top: 8px; left: 0; height: auto; }
 
 article.news.teaser.hasImage header h3 { position: relative; max-height: 120px; }
 
