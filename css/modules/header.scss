@@ -57,6 +57,24 @@
                 &:nth-of-type(1) {
                     flex: 1;
                     align-items: center;
+
+                    a {
+                        h1, h2 {
+                            margin: 0;
+                            font-family: $font-family-nav;
+                            color: $color-content-background;
+                        }
+
+                        h1 {
+                            font-size: $font-size-small;
+                        }
+
+                        h2 {
+                            font-size: $font-size-smaller;
+                            font-style: italic;
+                            display: block;
+                        }
+                    }
                 }
 
                 &:nth-of-type(2) {
@@ -68,23 +86,9 @@
             a {
                 color: $color-content-background;
                 font-weight: bold;
-                line-height: 1rem;
-            }
-
-            h1 {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 0;
-                margin: 0;
-                font-family: $font-family-nav;
-                font-size:   $font-size-small;
                 line-height: $font-size-small;
-
-                small {
-                    font-style: italic;
-                    display: block;
-                }
             }
+
 
             form {
                 display: flex;
@@ -142,7 +146,7 @@
                 font-size: $font-size-smaller;
                 transform: none;
                 left: auto;
-                top: .95em;
+                top: .65em;
                 right: 0;
             }
 
@@ -188,12 +192,13 @@
 
                     &:nth-of-type(1) {
                         margin: 0 0 $size-gutter 0;
-                    }
-                }
 
-                h1 {
-                    font-size: $font-size-smaller;
-                    width: 100%;
+                        a {
+                            h1 {
+                              font-size: $font-size-smaller;
+                            }
+                        }
+                    }
                 }
             }
         }

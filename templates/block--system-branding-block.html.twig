@@ -14,12 +14,10 @@
  */
 #}
 {% block content %}
-  <h1>
-    <a href="{{ path('<front>') }}"
-       title="{{ 'City of Bloomington, Indiana - Home'|t }}"
-       rel="home">
-      {{ site_name }}
-      <small>{{ site_slogan }}</small>
-    </a>
-  </h1>
+  <a href="{{ path('<front>') }}"
+     title="{{ 'City of Bloomington, Indiana - Home'|t }}"
+     rel="home">
+    <h1>{{ site_name }}</h1>
+    <h2>{{ site_slogan }}</h2>
+  </a>
 {% endblock %}

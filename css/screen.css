@@ -45,13 +45,15 @@ section { margin: 0; }
 
 .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) { flex: 1; align-items: center; }
 
+.dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) a h1, .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) a h2 { margin: 0; font-family: "Roboto", sans-serif; color: #fff; }
+
+.dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) a h1 { font-size: 1rem; }
+
+.dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) a h2 { font-size: 0.875rem; font-style: italic; display: block; }
+
 .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) { width: 320px; margin-left: auto; }
 
 .dialog-off-canvas-main-canvas > header > .container a { color: #fff; font-weight: bold; line-height: 1rem; }
-
-.dialog-off-canvas-main-canvas > header > .container h1 { display: flex; flex-wrap: wrap; padding: 0; margin: 0; font-family: "Roboto", sans-serif; font-size: 1rem; line-height: 1rem; }
-
-.dialog-off-canvas-main-canvas > header > .container h1 small { font-style: italic; display: block; }
 
 .dialog-off-canvas-main-canvas > header > .container form { display: flex; margin: 0; width: 320px; height: 100%; }
 
@@ -68,7 +70,7 @@ section { margin: 0; }
 @media (max-width: 640px) { .dialog-off-canvas-main-canvas > header > .container form { width: 100%; } }
 
 @media (max-width: 640px) { .dialog-off-canvas-main-canvas > header { padding: 0.5em 0.5em 0 0.5em; }
-  .dialog-off-canvas-main-canvas > header #feedback { font-size: 0.875rem; transform: none; left: auto; top: .95em; right: 0; }
+  .dialog-off-canvas-main-canvas > header #feedback { font-size: 0.875rem; transform: none; left: auto; top: .65em; right: 0; }
   .dialog-off-canvas-main-canvas > header nav .container a { flex: 1 0 25%; font-size: 0.875rem; border-right: 1px solid silver; padding: 2em 0 0 0; }
   .dialog-off-canvas-main-canvas > header nav .container a span:nth-of-type(1) { display: none; }
   .dialog-off-canvas-main-canvas > header nav .container a span:nth-of-type(2) { display: block; }
@@ -77,7 +79,7 @@ section { margin: 0; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1), .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) { flex: 1 0 100%; width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) > div, .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) > div { width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) { margin: 0 0 0.5em 0; }
-  .dialog-off-canvas-main-canvas > header > .container h1 { font-size: 0.875rem; width: 100%; } }
+  .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) a h1 { font-size: 0.875rem; } }
 
 @media (min-width: 640px) and (max-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container { width: 100%; } }
 
@@ -160,6 +162,8 @@ section { margin: 0; }
 #block-cob-local-tasks a.is-active { background-color: #c9e5f7; }
 
 header form input[type="submit"] { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
+
+header > .container section:nth-of-type(1) a { padding: 0 0 0 42px; background-repeat: no-repeat; background-size: 32px 32px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='574.4793' height='574.47799' viewBox='0 0 574.4793 574.47799' id='cob-logo'%3E%3Ctitle%3ECity of Bloomington, Indiana%3C/title%3E%3Cg%3E%3Cpolygon points='122.552 84.058 87.221 49.124 87.221 87.337 49.098 87.337 81.828 124.777 49.098 157.502 157.491 157.502 157.491 49.124 122.552 84.058' fill='%23ffffff'/%3E%3Cpolygon points='84.047 451.901 49.113 487.233 87.326 487.233 87.326 525.356 124.766 492.626 157.491 525.356 157.491 416.962 49.113 416.962 84.047 451.901' fill='%23ffffff'/%3E%3Cpolygon points='490.396 122.564 525.33 87.232 487.116 87.232 487.116 49.109 449.677 81.839 416.951 49.109 416.951 157.502 525.33 157.502 490.396 122.564' fill='%23ffffff'/%3E%3Cpolygon points='451.89 490.407 487.222 525.341 487.222 487.128 525.345 487.128 492.615 449.688 525.345 416.962 416.951 416.962 416.951 525.341 451.89 490.407' fill='%23ffffff'/%3E%3Cpolygon points='217.936 233.099 163.8 178.885 55.418 178.885 108.59 233.736 0 233.736 55.409 287.251 0 343.132 108.59 343.132 55.409 395.573 163.818 395.58 217.933 341.361 163.812 287.224 217.936 233.099' fill='%23ffffff'/%3E%3Cpolygon points='356.543 341.366 410.679 395.58 519.061 395.58 465.889 340.728 574.479 340.728 519.07 287.214 574.479 231.333 465.889 231.333 519.07 178.892 410.661 178.885 356.546 233.104 410.667 287.241 356.543 341.366' fill='%23ffffff'/%3E%3Cpolygon points='341.355 217.936 395.569 163.8 395.569 55.418 340.717 108.59 340.717 0 287.203 55.409 231.322 0 231.322 108.59 178.881 55.409 178.874 163.818 233.093 217.933 287.23 163.812 341.355 217.936' fill='%23ffffff'/%3E%3Cpolygon points='233.088 356.542 178.874 410.678 178.874 519.06 233.725 465.888 233.725 574.478 287.24 519.069 343.121 574.478 343.121 465.888 395.562 519.069 395.569 410.66 341.35 356.545 287.213 410.666 233.088 356.542' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E%0A"); }
 
 header > nav a { text-align: center; background-size: 24px 24px; background-repeat: no-repeat; background-position: top center; padding: 0 0 0 52px; font-size: 1rem; line-height: 1rem; }
 
