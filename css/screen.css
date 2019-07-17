@@ -25,27 +25,15 @@ section { margin: 0; }
 
 @media all and (min-width: 1080px) { .dialog-off-canvas-main-canvas > header > .container, #nav1 .container, #alerts .container, .dialog-off-canvas-main-canvas > footer .container, main > div .container, #content > section > .container { width: 1060px; margin: 0 auto; } }
 
-#hamburger { position: absolute; clip: rect(0, 0, 0, 0); }
+#nav1 { position: static; width: 100%; margin: 0; padding: 0.5em 0; border: 0; background-color: #fff; }
 
-label[for="hamburger"] { z-index: 1; cursor: pointer; position: absolute; top: 0.5em; left: 0.5em; width: 2em; height: 2em; background-repeat: no-repeat; background-size: 100% 100%; background-image: url("data:image/svg+xml,%3Csvg width='1792' height='1792' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z' fill='%23ffffff'/%3E%3C/svg%3E"); }
+#nav1 .container { display: flex; flex-direction: row; justify-content: space-around; padding: 0; }
 
-#nav1 { margin: 0; padding: 0; border: 0; width: 1px; height: 1px; overflow: hidden; position: absolute; background-color: #fff; }
+#nav1 .container a { color: #183365; }
 
-#nav1 .container { padding: 0; overflow: auto; }
-
-@media (max-width: 640px) { #nav1 .container { border: 1px solid silver; border-top: none; }
-  #nav1 .container a { border-bottom: 1px solid silver; }
-  #nav1 .container a:last-of-type { border-bottom: none; } }
-
-#nav1 .container a { color: #183365; display: block; }
-
-#hamburger:checked + label[for="hamburger"] { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'%3E%3Cpath fill='%23ffffff' d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' class=''%3E%3C/path%3E%3C/svg%3E"); }
-
-#hamburger:checked ~ nav { overflow: auto; height: auto; width: calc(100% - 1em); left: 0.5em; right: 0.5em; }
-
-@media all and (min-width: 640px) { #hamburger, label[for="hamburger"] { display: none; }
-  #nav1 { position: static; width: 100%; height: 84px; overflow: auto; }
-  #nav1 .container { display: flex; flex-direction: row; justify-content: space-around; } }
+@media (max-width: 640px) { #nav1 .container { padding: 0 0.5em; }
+  #nav1 .container a { font-size: 12px; border-right: 1px solid silver; padding: 35px 10px 0 10px; }
+  #nav1 .container a:last-child { border-right: none; } }
 
 .dialog-off-canvas-main-canvas > header { position: relative; display: flex; flex-wrap: wrap; background-color: #183365; color: #fff; padding: 0; height: 40px; }
 
@@ -73,7 +61,7 @@ label[for="hamburger"] { z-index: 1; cursor: pointer; position: absolute; top: 0
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1), .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) { flex: 1 0 100%; width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) > div, .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(2) > div { width: 100%; }
   .dialog-off-canvas-main-canvas > header > .container section:nth-of-type(1) { margin: 0 0 0.5em 0; }
-  .dialog-off-canvas-main-canvas > header > .container h1 { font-size: 0.875rem; width: 100%; margin: 0 0 0 50px; } }
+  .dialog-off-canvas-main-canvas > header > .container h1 { font-size: 0.875rem; width: 100%; } }
 
 @media (min-width: 640px) and (max-width: 1080px) { .dialog-off-canvas-main-canvas > header { padding: 0 0.5em; }
   .dialog-off-canvas-main-canvas > header > .container { width: 100%; } }
@@ -174,7 +162,7 @@ label[for="hamburger"] { z-index: 1; cursor: pointer; position: absolute; top: 0
 
 #block-searchform .button { width: 0; height: 1em; overflow: hidden; text-indent: -10em; background-repeat: no-repeat; background-position: center center; background-size: 1em 1em; background-image: url("images/fa-svg/white/search.svg"); }
 
-#nav1 a { background-size: 24px; background-repeat: no-repeat; background-position: 0.5em center; padding: 0 0 0 52px; font-size: 1.25rem; line-height: 4rem; }
+#nav1 a { text-align: center; background-size: 24px 24px; background-repeat: no-repeat; background-position: top center; padding: 0 0 0 52px; font-size: 1rem; line-height: 1rem; }
 
 #nav1 .about { background-image: url("images/alpha_icons/biscay/searchlocation.svg"); }
 

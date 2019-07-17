@@ -9,12 +9,13 @@
 }
 #nav1 {
     a {
-        background-size:24px;
-        background-repeat:no-repeat;
-        background-position:$size-gutter center;
-        padding:0 0 0 52px;
-        font-size:$font-size-big;
-        line-height:4rem;
+        text-align: center;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        padding: 0 0 0 52px;
+        font-size: $font-size-small;
+        line-height: 1rem;
     }
     .about    { background-image:url('images/alpha_icons/biscay/searchlocation.svg'); }
     .news     { background-image:url('images/alpha_icons/biscay/news.svg'          ); }
