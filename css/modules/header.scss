@@ -5,8 +5,8 @@
         flex-wrap: wrap;
         background-color: $color-header;
         color: $color-content-background;
-        padding: $size-gutter;
-        height: 40px;
+        padding: $size-gutter $size-gutter 0 $size-gutter;
+        height: 100%;
 
         #feedback {
             position: absolute;
@@ -89,7 +89,6 @@
 
         @media (max-width: $viewport-medium) {
             padding: $size-gutter $size-gutter 0 $size-gutter;
-            height: 100%;
 
             #feedback {
                 font-size: $font-size-smaller;
