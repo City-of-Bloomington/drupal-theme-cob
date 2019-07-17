@@ -573,9 +573,9 @@ b, strong { -webkit-font-smoothing: antialiased; color: black; }
 
 #breadcrumb { position: relative; overflow: hidden; color: #3f9dff; }
 
-#breadcrumb:before { position: absolute; content: ''; top: 18px; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
+#breadcrumb:before { position: absolute; content: ''; top: 0; right: 0; left: 0; height: 75px; width: 100%; background: #3f9dff; }
 
-#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 30px auto 0 auto; min-height: 83px; }
+#breadcrumb .container { position: relative; padding: 1em 1em 0 1em; background: white; margin: 20px auto 0 auto; min-height: 83px; }
 
 #breadcrumb h1 { font-size: 2.5rem; line-height: 4rem; color: #3f9dff; margin: 0; }
 
