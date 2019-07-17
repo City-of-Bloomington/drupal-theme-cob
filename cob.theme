@@ -300,11 +300,19 @@ function cob_preprocess_node(&$vars)
     }
 }
 
+/**
+ * Load events calendar when rendering the news archive
+ *
+ * @param $vars array  Theme variables set by the Archive Controller
+ * @see drupal-module-archive/src/Controller/ArchiveController
+ */
 function cob_preprocess_archive_results(&$vars)
 {
-    $id = Settings::get('cob_front_calendar');
-    if ($id) {
-        $vars['events'] = _cob_events($id, 7, 4);
+    if ($vars['type'] == 'news') {
+        $id = Settings::get('cob_front_calendar');
+        if ($id) {
+            $vars['events'] = _cob_events($id, 7, 4);
+        }
     }
 }
 
