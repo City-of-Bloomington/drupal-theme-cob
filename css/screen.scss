@@ -37,11 +37,18 @@ strong {
     .severe  { background-color: $color-error;  }
 }
 
-.front #banner {
-    height:320px;
-    background: url('images/downtown-small.png') no-repeat center center;
-    @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
-    @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
+#banner {
+    height: $banner-height;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media (max-width: $viewport-medium) {
+        height: ($banner-height/2);
+    }
+
+    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+        height: ($banner-height/1.25);
+    }
 }
 
 #breadcrumb {
