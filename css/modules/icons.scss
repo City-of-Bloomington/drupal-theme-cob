@@ -67,13 +67,23 @@
 
 #services-section, #government-section {
     a {
-        display:inline-block;
-        text-align:center; vertical-align:top;
-        padding-top:7em;
-
-        background-size:6em; background-repeat:no-repeat; background-position:center $size-gutter;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        background-size: 6em;
+        background-repeat: no-repeat;
+        background-position: center ($size-gutter*2);
     }
 }
+
+#services-section a {
+    padding: 8em 0 0 0;
+}
+
+#government-section a {
+    padding: 7em ($size-gutter * 2) ($size-gutter * 2) ($size-gutter * 2);
+}
+
 #services-section {
     a.contact        { background-image:url('images/alpha_icons/white/messages-circle-o.svg'            ); }
     a.report         { background-image:url('images/alpha_icons/white/exclamation-triangle-circle-o.svg'); }

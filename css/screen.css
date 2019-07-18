@@ -131,13 +131,13 @@ section { margin: 0; }
 
 @media all and (min-width: 640px) { .parks-page .events { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0.5em; } }
 
-.parks-page #activities h3 { font-size: 1.9rem; text-align: center; }
+.parks-page #categories { display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; }
 
-.parks-page #categories { display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+.parks-page #categories article { flex: 0 0 20%; margin: 0.5em; }
 
-.parks-page #categories article { flex: 0 0 240px; margin: 0.5em; }
+.parks-page #categories article header h3 { text-align: center; font-size: 1.9rem; margin: 0 0 0.5em 0; }
 
-.parks-page #categories article a { display: block; height: 290px; }
+.parks-page #categories article a { display: block; padding: 1em; }
 
 .parks-page #categories article a:hover { background-color: #4990e2; }
 
@@ -182,7 +182,11 @@ section { margin: 0; }
 
 @media (max-width: 640px) { .dialog-off-canvas-main-canvas > header #nav1 a { padding: 0 0 0 52px; background-size: 24px 24px; } }
 
-#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; padding-top: 7em; background-size: 6em; background-repeat: no-repeat; background-position: center 0.5em; }
+#services-section a, #government-section a { display: inline-block; text-align: center; vertical-align: top; background-size: 6em; background-repeat: no-repeat; background-position: center 1em; }
+
+#services-section a { padding: 8em 0 0 0; }
+
+#government-section a { padding: 7em 1em 1em 1em; }
 
 #services-section a.contact { background-image: url("images/alpha_icons/white/messages-circle-o.svg"); }
 
@@ -386,13 +390,19 @@ section.divided .container > header h2, section.divided .container > header a, s
 
 @media all and (min-width: 1080px) { .front #banner { background-image: url("images/downtown-large.png"); } }
 
-#services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+#services-section nav, #government-section nav { text-align: center; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; }
 
 #services-section nav h2, #government-section nav h2 { font-family: "Roboto", sans-serif; font-size: 1.25rem; color: #183365; height: 2.5em; }
 
-#services-section a, #government-section a { flex: 0 0 140px; margin-bottom: 1em; }
+#services-section a, #government-section a { margin-bottom: 1em; }
 
-@media all and (min-width: 640px) { #services-section a, #government-section a { flex: 0 0 25%; } }
+@media all and (min-width: 640px) { #services-section a { flex: 0 0 25%; } }
+
+@media all and (max-width: 640px) { #services-section a { flex: 0 0 50%; } }
+
+@media all and (min-width: 640px) { #government-section a { flex: 0 0 20%; } }
+
+@media all and (max-width: 640px) { #government-section a { flex: 0 0 40%; } }
 
 section.promo .container > div { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; }
 

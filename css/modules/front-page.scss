@@ -16,19 +16,36 @@
 
 #services-section, #government-section {
     nav {
-        text-align:center;
-        display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap;
+        text-align: center;
+        display: flex;
+        flex-direction :row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
         h2 {
-            font-family:$font-family-nav; font-size:$font-size-big; color:$color-link;
+            font-family: $font-family-nav;
+            font-size: $font-size-big;
+            color:$color-link;
             height:2.5em;
         }
     }
-    a {
-        flex:0 0 140px;
-        margin-bottom:$divider-margin;
 
-        @media all and (min-width:$viewport-medium) { flex:0 0 25%;  }
+    a {
+        margin-bottom:$divider-margin;
+    }
+}
+
+#services-section {
+    a {
+        @media all and (min-width: $viewport-medium) { flex: 0 0 25%;  }
+        @media all and (max-width: $viewport-medium) { flex: 0 0 50%;  }
+    }
+}
+
+#government-section {
+    a {
+        @media all and (min-width: $viewport-medium) { flex: 0 0 20%;  }
+        @media all and (max-width: $viewport-medium) { flex: 0 0 40%;  }
     }
 }
 
