@@ -72,17 +72,27 @@
         }
     }
 
-    #activities h3 {
-        font-size:$font-size-bigger;
-        text-align:center;
-    }
     #categories {
-        display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
         article {
-            flex:0 0 240px; margin:$size-gutter;
+            flex:0 0 20%;
+            margin: $size-gutter;
+
+            header {
+                h3 {
+                    text-align:center;
+                    font-size:$font-size-bigger;
+                    margin: 0 0 $size-gutter 0;
+                }
+            }
+
             a {
-                display:block; height:290px;
+                display: block;
+                padding: ($size-gutter*2);
                 &:hover { background-color:$color-selected-background; }
             }
         }
