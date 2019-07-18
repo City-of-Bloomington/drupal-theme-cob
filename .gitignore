@@ -5,3 +5,4 @@ nbproject
 .buildpath
 .project
 .DS_Store
+*.css*
