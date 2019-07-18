@@ -47,8 +47,6 @@
                     {{ event.start.dateTime | date('j')}}
                 </span>
 
-
-
                 <span class="time">
                     {% if event.start.dateTime %}
                         {{  event.start.dateTime | date('g:ia') }}
@@ -57,21 +55,19 @@
                         {% endif %}
                     {% endif %}
                 </span>
-
-
             </time>
         {% else %}
             <time datetime="{{ event.start.date }}">
+                <span class="weekday">
+                    {{ event.start.date | date('l')}}
+                </span>
+
                 <span class="month">
-                    {{ event.start.date     | date('M')}}
+                    {{ event.start.date | date('M')}}
                 </span>
 
                 <span class="monthDate">
-                    {{ event.start.date     | date('j')}}
-                </span>
-
-                <span class="weekday">
-                    {{ event.start.date     | date('l')}}
+                    {{ event.start.date | date('j')}}
                 </span>
 
                 <span class="time">
@@ -82,8 +78,6 @@
                         {% endif %}
                     {% endif %}
                 </span>
-
-
             </time>
         {% endif %}
     </header>
