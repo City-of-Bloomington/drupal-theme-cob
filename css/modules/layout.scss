@@ -31,8 +31,7 @@ section { margin:0; }
 }
 
 @media all and (min-width: $viewport-large) {
-    header#main > .container,
-    header#main > nav >       .container,
+    .dialog-off-canvas-main-canvas > header > .container,
     #alerts              .container,
     .dialog-off-canvas-main-canvas > footer        .container,
     main > div           .container,
