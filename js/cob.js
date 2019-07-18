@@ -45,20 +45,19 @@
   /* Truncate News Titles
 	 * locations at: / & /news
 	 */
-  var newsTitleTextElm  = document.querySelectorAll('.news header h3 span'), i;
-  for (i = 0; i < newsTitleTextElm.length; ++i) {
-    var newTitleTexts = newsTitleTextElm[i].innerHTML;
-    newsTitleTextElm[i].innerHTML = truncateViaEllipses(newTitleTexts, 50);
-  };
+  let newsTitleTextElm  = document.querySelectorAll('.news header h3 span');
+  newsTitleTextElm.forEach(function(title, i) {
+    if(i == 0) title.innerHTML = truncateViaEllipses(title.innerHTML, 200);
+    title.innerHTML = truncateViaEllipses(title.innerHTML, 100);
+  });
 
   /* Truncate News Summaries
 	 * locations at: / & /news
 	 */
-  var newsSummaryTextElm  = document.querySelectorAll('.news .summary'), i;
-  for (i = 0; i < newsSummaryTextElm.length; ++i) {
-    var newsSummaryTexts = newsSummaryTextElm[i].innerHTML;
-    newsSummaryTextElm[i].innerHTML = truncateViaEllipses(newsSummaryTexts, 120);
-  };
+  let newsSummaryTextElm  = document.querySelectorAll('.news .summary');
+  newsSummaryTextElm.forEach(function(summary) {
+    summary.innerHTML = truncateViaEllipses(summary.innerHTML, 300);
+  });
 
   function socialSharer(e){
     var urlBase     = this.getAttribute("data-href");
