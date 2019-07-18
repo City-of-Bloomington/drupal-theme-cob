@@ -90,13 +90,13 @@ label[for="hamburger"] { position: absolute; top: 0.25em; left: 0.25em; width: 2
 
 #content ol { list-style: decimal outside; margin-left: 1em; }
 
-#content.search-results h3 { font-weight: bold; }
+#content.search-results h3 { font-weight: 900; margin: 0 0 0.5em 0; }
 
-#content.search-results ol { list-style-type: none; }
+#content.search-results ol { list-style-type: none; margin: 0; }
 
-#content.search-results ol li { margin-bottom: 1em; }
+#content.search-results ol li { margin-bottom: 2em; word-break: break-word; }
 
-#content.search-results ol li > a { display: block; color: #4caf50; }
+#content.search-results ol li > a { margin: 0 0 0.5em 0; display: block; color: #4caf50; }
 
 #content .text_with_summary a, #content .text_long a { color: #3f9dff; text-decoration: underline; }
 

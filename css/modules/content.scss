@@ -9,10 +9,23 @@
     ol { list-style:decimal outside; margin-left:1em; }
 
     &.search-results {
-        h3 { font-weight:bold; }
-        ol { list-style-type: none;
-            li { margin-bottom: $size-gutter * 2;
-                > a { display:block; color: $color-action; }
+        h3 {
+            font-weight: $font-weight-bold;
+            margin: 0 0 $size-gutter 0;
+        }
+        ol {
+            list-style-type: none;
+            margin: 0;
+
+            li {
+                margin-bottom: $size-gutter * 4;
+                word-break: break-word;
+
+                > a {
+                    margin: 0 0 $size-gutter 0;
+                    display: block;
+                    color: $color-action;
+                }
             }
         }
     }
