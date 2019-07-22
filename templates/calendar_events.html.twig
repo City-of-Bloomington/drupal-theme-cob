@@ -48,11 +48,9 @@
                 </span>
 
                 <span class="time">
-                    {% if event.start.dateTime %}
-                        {{  event.start.dateTime | date('g:ia') }}
-                        {% if event.end.dateTime %}
-                            - {{ event.end.dateTime | date('g:ia') }}
-                        {% endif %}
+                    {{  event.start.dateTime | date('g:ia') }}
+                    {% if event.end.dateTime %}
+                        - {{ event.end.dateTime | date('g:ia') }}
                     {% endif %}
                 </span>
             </time>
@@ -68,15 +66,6 @@
 
                 <span class="monthDate">
                     {{ event.start.date | date('j')}}
-                </span>
-
-                <span class="time">
-                    {% if event.start.dateTime %}
-                        {{  event.start.dateTime | date('g:ia') }}
-                        {% if event.end.dateTime %}
-                            - {{ event.end.dateTime | date('g:ia') }}
-                        {% endif %}
-                    {% endif %}
                 </span>
             </time>
         {% endif %}
