@@ -34,29 +34,45 @@
 <article>
     <header>
         {% if event.start.dateTime %}
-        <time datetime="{{ event.start.dateTime }}">
-            <span class="month"    >{{ event.start.dateTime | date('M')}}</span>
-            <span class="monthDate">{{ event.start.dateTime | date('j')}}</span>
-            <span class="weekday"  >{{ event.start.dateTime | date('l')}}</span>
-        </time>
+            <time datetime="{{ event.start.dateTime }}">
+                <span class="weekday">
+                    {{ event.start.dateTime | date('l')}}
+                </span>
+
+                <span class="time">
+                    {{  event.start.dateTime | date('g:ia') }}
+                    {% if event.end.dateTime %}
+                        - {{ event.end.dateTime | date('g:ia') }}
+                    {% endif %}
+                </span>
+
+                <span class="month">
+                    {{ event.start.dateTime | date('M')}}
+                </span>
+
+                <span class="monthDate">
+                    {{ event.start.dateTime | date('j')}}
+                </span>
+            </time>
         {% else %}
-        <time datetime="{{ event.start.date }}">
-            <span class="month"    >{{ event.start.date     | date('M')}}</span>
-            <span class="monthDate">{{ event.start.date     | date('j')}}</span>
-            <span class="weekday"  >{{ event.start.date     | date('l')}}</span>
-        </time>
+            <time datetime="{{ event.start.date }}">
+                <span class="weekday">
+                    {{ event.start.date | date('l')}}
+                </span>
+
+                <span class="month">
+                    {{ event.start.date | date('M')}}
+                </span>
+
+                <span class="monthDate">
+                    {{ event.start.date | date('j')}}
+                </span>
+            </time>
         {% endif %}
     </header>
+
     <div>
         <div class="summary" >{{ event.summary  }}</div>
-        {% if event.start.dateTime %}
-        <time datetime="{{ event.start.dateTime }}">
-            {{  event.start.dateTime | date('g:ia') }}
-            {% if event.end.dateTime %}
-            to {{ event.end.dateTime | date('g:ia') }}
-            {% endif %}
-        </time>
-        {% endif %}
         <div class="location">{{ event.location }}</div>
     </div>
 </article>
