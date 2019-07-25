@@ -39,19 +39,19 @@
                     {{ event.start.dateTime | date('l')}}
                 </span>
 
+                <span class="time">
+                    {{  event.start.dateTime | date('g:ia') }}
+                    {% if event.end.dateTime %}
+                        - {{ event.end.dateTime | date('g:ia') }}
+                    {% endif %}
+                </span>
+
                 <span class="month">
                     {{ event.start.dateTime | date('M')}}
                 </span>
 
                 <span class="monthDate">
                     {{ event.start.dateTime | date('j')}}
-                </span>
-
-                <span class="time">
-                    {{  event.start.dateTime | date('g:ia') }}
-                    {% if event.end.dateTime %}
-                        - {{ event.end.dateTime | date('g:ia') }}
-                    {% endif %}
                 </span>
             </time>
         {% else %}
