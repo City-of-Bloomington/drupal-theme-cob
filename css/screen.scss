@@ -2,7 +2,6 @@
 @import 'modules/vars';
 @import 'modules/html-elements';
 @import 'modules/layout';
-@import 'modules/nav1';
 @import 'modules/header';
 @import 'modules/content';
 @import 'modules/admin';
@@ -38,11 +37,18 @@ strong {
     .severe  { background-color: $color-error;  }
 }
 
-.front #banner {
-    height:320px;
-    background: url('images/downtown-small.png') no-repeat center center;
-    @media all and (min-width:$viewport-medium) { background-image: url('images/downtown-medium.png'); }
-    @media all and (min-width:$viewport-large ) { background-image: url('images/downtown-large.png' ); }
+#banner {
+    height: $banner-height;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @media (max-width: $viewport-medium) {
+        height: ($banner-height/2);
+    }
+
+    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+        height: ($banner-height/1.25);
+    }
 }
 
 #breadcrumb {
@@ -53,7 +59,7 @@ strong {
     &:before {
         position: absolute;
         content: '';
-        top: 18px;
+        top: 0;
         right: 0;
         left: 0;
         height: 75px;
@@ -65,7 +71,7 @@ strong {
         position: relative;
         padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
         background: white;
-        margin: 30px auto 0 auto;
+        margin: ($space-s * 4) auto 0 auto;
         min-height: 83px;
     }
 

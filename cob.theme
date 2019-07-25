@@ -453,7 +453,7 @@ function cob_preprocess_field__field_hours(&$vars)
 
 function cob_form_search_block_form_alter(&$form, &$form_state)
 {
-    $form['keys']['#attributes']['placeholder'][] = 'Type here';
+    $form['keys']['#attributes']['placeholder'][] = 'Search...';
 }
 
 /**
