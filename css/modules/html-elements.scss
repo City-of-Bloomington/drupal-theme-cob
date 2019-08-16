@@ -2,4 +2,4 @@ h3 { margin: $size-gutter 0 0 0; }
 p  { margin: 0 0 $size-gutter 0; }
 
 figure { display: table; }
-figcaption { display: table-caption; caption-side: bottom; }
+figcaption { display: table-caption; caption-side: bottom; font-size: $font-size-small; }
