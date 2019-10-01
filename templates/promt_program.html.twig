@@ -64,8 +64,8 @@
         <thead>
         <tr><th></th>
             <th>Days</th>
-            <th>Start, End Date</th>
-            <th>Start, End Time</th>
+            {% if program.sessions[0].start_date      %}<th>Start, End Date</th>{% endif %}
+            {% if program.sessions[0].start_end_time  %}<th>Start, End Time</th>{% endif %}
             <th>Deadline</th>
             {% if program.sessions[0].participant_age %}<th>Ages</th>          {% endif %}
             {% if program.sessions[0].instructor      %}<th>Instructor</th>    {% endif %}
@@ -73,13 +73,14 @@
             {% if program.sessions[0].non_city_fees   %}<th>Non City Fee</th>  {% endif %}
             {% if program.sessions[0].member_fees     %}<th>Member Fee</th>    {% endif %}
             {% if program.sessions[0].non_member_fees %}<th>Non Member Fee</th>{% endif %}
+            {% if program.sessions[0].description     %}<th>Description</th>   {% endif %}
         </thead>
         <tbody>
         {% for s in program.sessions %}
         <tr><td>{{ s.code }}</td>
             <td>{{ s.days }}</td>
-            <td>{{ s.start_date }} - {{ s.end_date }}</td>
-            <td>{{ s.start_end_time }}</td>
+            {% if s.start_date      %}<td>{{ s.start_date }} - {{ s.end_date }}</td>{% endif %}
+            {% if s.start_end_time  %}<td>{{ s.start_end_time  }}</td>{% endif %}
             <td>{{ s.registration_deadline }}</td>
             {% if s.participant_age %}<td>{{ s.participant_age }}</td>{% endif %}
             {% if s.instructor      %}<td>{{ s.instructor      }}</td>{% endif %}
@@ -87,6 +88,7 @@
             {% if s.non_city_fees   %}<td>{{ s.non_city_fees   }}</td>{% endif %}
             {% if s.member_fees     %}<td>{{ s.member_fees     }}</td>{% endif %}
             {% if s.non_member_fees %}<td>{{ s.non_member_fees }}</td>{% endif %}
+            {% if s.description     %}<td>{{ s.description     }}</td>{% endif %}
         </tr>
         {% endfor %}
         </tbody>
