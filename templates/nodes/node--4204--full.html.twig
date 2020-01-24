@@ -126,46 +126,12 @@
         {% endif %}
     </div>
     <div>
-        <h2>Student Resources</h2>
-        <form method="get" target="_blank" id="bertha-pilot-form">
-            <select name="term" id="search-select">
-                <option>Select Keyword</option>
-            </select>
-            <input type="text" class="zip-input-box" pattern="\d{5}" id="postal" name="postal" maxlength="5" placeholder="Zip code" required="true">
+        <h2>Connect to Resources</h2>
+        <form method="get" target="_blank" id="bertha-pilot-form" action="https://helpingbloomingtonmonroe.auntbertha.com/search/text">
+            <input name="term"    placeholder="Keyword"  required="true" />
+            <input name="postal"  placeholder="Zip code" requried="true" pattern="\d{5}" maxlength="5" style="width:5em" />
             <button type="submit" class="search-btn">Search</button>
         </form>
-        <script type="text/javascript">
-            (function () {
-                const select = document.getElementById('search-select'),
-                    berthaCategories = {
-                                            'Food Pantries': 'food/food-pantry',
-                                            'Addiction and Recovery': 'health/addiction-&-recovery'
-                                        };
-                let options = '';
-
-                for (k in berthaCategories) {
-                    options += '<option>' + k + '</option>';
-                }
-                select.innerHTML += options;
-
-                document.getElementById('bertha-pilot-form').addEventListener('submit', function (e) {
-                    let form     = e.target,
-                        postal   = document.getElementById('postal').value,
-                        category = select.options[select.selectedIndex].value,
-                        output   = '';
-
-                    e.preventDefault();
-                    if (!postal) { return alert('Please enter a zip code'); }
-                    if (!(category in berthaCategories)) { return alert('Please select a keyword'); }
-
-                    output = berthaCategories[category];
-                    select.removeAttribute('name');
-
-                    form.setAttribute('action', 'https://helpingbloomingtonmonroe.auntbertha.com/' + output);
-                    form.submit();
-                });
-            })();
-        </script>
     </div>
 
     <div{{ content_attributes }}>
