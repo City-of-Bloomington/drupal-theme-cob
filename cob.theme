@@ -128,6 +128,9 @@ function cob_preprocess_page__front(&$vars)
     $vars['news' ] = _cob_renderNodesByQuery($query, 'teaser');
     $vars['about'] = _cob_renderNodeById(223, 'promo');
     $vars['mayor'] = _cob_renderNodeById(608, 'promo');
+
+    // Pothole dataset query
+    $vars['pothole_count'] = __cob_latestPotholeCount();
 }
 
 function cob_preprocess_page(&$vars)
@@ -656,4 +659,44 @@ function _cob_renderRegion(string $region): array
     $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>$region]);
     uasort($blocks, 'Drupal\block\Entity\Block::sort');
     return $builder->viewMultiple($blocks);
+}
+
+/**
+ * Downloads and processes a Google spreadheet for pothole counts
+ */
+function __cob_latestPotholeCount(): int
+{
+    $csv  = '/tmp/potholes.csv';
+    $url  = 'https://docs.google.com/spreadsheets/d/14qN0YTLU4klEhr9H58Eu2zzTMi2bCnjGC4fJ59e-phs/export?format=csv&gid=1274323447';
+    $year = '2020';
+
+    if (is_file($csv)) {
+        $yesterday    = new \DateTime('yesterday');
+        $lastModified = new \DateTime();
+        $lastModified->setTimestamp(filemtime($csv));
+
+        if ($lastModified < $yesterday) { unlink($csv); }
+    }
+
+    if (!is_file($csv)) {
+        $client   = \Drupal::httpClient(['timeout' => 5]);
+        $response = $client->get($url);
+        if ($response) { file_put_contents($csv, $response->getBody()); }
+        else           { return 0; }
+    }
+
+    $data = fopen($csv, 'r');
+    $count = 0;
+    $i     = 0;
+    while ($row = fgetcsv($data)) {
+        if ($i == 0) { $i++; continue; }
+
+        if (!empty($row[0]) && !empty($row[1])) {
+            $date = new \DateTime($row[0]);
+            if ($date->format('Y') == $year) {
+                $count += (int)$row[1];
+            }
+        }
+    }
+    return $count;
 }
