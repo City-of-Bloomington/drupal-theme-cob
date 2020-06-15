@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Displays the list of Stray Animals held in Shelter Manager
+ *
+ * Available variables
+ * - animals: The animals JSON data from Shelter Manager
+ * - asm_url: Base URL for Shelter Manager
+ * - proxy:   Whether to proxy images, or not
+ *
+ * @copyright 2020 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
+ *
+ * This file is part of the ASM drupal module.
+ *
+ * The ASM module is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * The ASM module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with the ASM module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
+ */
+#}
+<section id="asm_animals">
+    <header>
+        <h2>Strays</h2>
+    </header>
+    <div>
+    {% for a in animals %}
+    {% if 'DO NOT RELEASE- Investigation' not in a.ADDITIONALFLAGS %}
+    <article class="{{ a.SPECIESNAME }}">
+        <header>
+        <h2>{{ a.SHELTERCODE }}</h2>
+        <h3>{{ a.AGEGROUP }} {{ a.BASECOLOURNAME }} {{ a.BREEDNAME }}</h3></header>
+        {% if a.WEBSITEMEDIAID %}
+            {% if proxy %}
+                <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" />
+            {% else %}
+                <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ a.WEBSITEMEDIAID }}.jpg" />
+            {% endif %}
+        {% endif %}
+        <p>{{ a.DISPLAYLOCATIONNAME }}</p>
+    </article>
+    {% endif %}
+    {% endfor %}
+    </div>
+</section>
