@@ -130,7 +130,7 @@ function cob_preprocess_page__front(&$vars)
     $vars['mayor'] = _cob_renderNodeById(608, 'promo');
 
     // Pothole dataset query
-    $vars['pothole_count'] = __cob_latestPotholeCount();
+    #$vars['pothole_count'] = __cob_latestPotholeCount();
 }
 
 function cob_preprocess_page(&$vars)
