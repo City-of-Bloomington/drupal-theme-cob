@@ -32,12 +32,20 @@
         <h2>Strays</h2>
     </header>
     <div>
+    <p>If you believe that one of these animals is your missing pet, or you know the owner, please
+       contact us via phone, <a href="tel:+18123493492">812-349-3492</a>, or email,
+       <a href="mailto:animal@bloomington.in.gov">animal@bloomington.in.gov</a>, for assistance.
+    </p>
     {% for a in animals %}
     {% if 'DO NOT RELEASE- Investigation' not in a.ADDITIONALFLAGS %}
     <article class="{{ a.SPECIESNAME }}">
         <header>
         <h2>{{ a.SHELTERCODE }}</h2>
-        <h3>{{ a.AGEGROUP }} {{ a.BASECOLOURNAME }} {{ a.BREEDNAME }}</h3></header>
+        <table>
+            <tr><th>Color</th><td>{{ a.BASECOLOURNAME }}</td></tr>
+            <tr><th>Age</th><td>{{ a.AGEGROUP }}</td></tr>
+            <tr><th>Breed</th><td>{{ a.BREEDNAME }}</td></tr>
+        </table>
         {% if a.WEBSITEMEDIAID %}
             {% if proxy %}
                 <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" />

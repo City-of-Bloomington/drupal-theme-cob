@@ -61,6 +61,7 @@ function cob_preprocess(&$vars, $hook)
 
         case 'asm_adoptable_animal':
         case 'asm_adoptable_animals':
+        case 'asm_held_animals':
         case 'asm_lf_animal':
         case 'asm_lf_animals':
             $route = $hook;
