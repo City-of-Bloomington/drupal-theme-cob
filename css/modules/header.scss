@@ -7,12 +7,6 @@
     padding: $size-gutter $size-gutter 0 $size-gutter;
     height: 100%;
 
-    #feedback {
-        position: absolute;
-        top: .75em;
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
     #nav1 {
         width: 100vw;
@@ -49,6 +43,13 @@
         display: flex;
         flex-wrap: wrap;
         font-size: $font-size-small;
+
+        > a {
+            position: absolute;
+            top: .75em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
         * {
             &:focus {
