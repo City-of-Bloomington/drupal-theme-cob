@@ -39,9 +39,37 @@
                 <tr><th>Sex    </th><td>{{ animal.SEXNAME     }}</td></tr>
                 <tr><th>Age    </th><td>{{ animal.ANIMALAGE   }}</td></tr>
                 <tr><th>Size   </th><td>{{ animal.SIZENAME    }}</td></tr>
-                {% if  animal.DECLAWED %}<tr><th>Declawed</th><td>Declawed</td></tr>{% endif %}
-                {% if  animal.HASSPECIALNEEDS %}<tr><th>Special Needs</th><td>Special Needs</td></tr>{% endif %}
-                <tr><th>Code   </th><td>{{ animal.SHELTERCODE }}</td></tr>
+                {% if animal.DECLAWED %}<tr><th>Declawed</th><td>Declawed</td></tr>{% endif %}
+                {% if animal.HASSPECIALNEEDS %}<tr><th>Special Needs</th><td>Special Needs</td></tr>{% endif %}
+                <tr><th>Good with cats</th>
+                    <td>{% if     animal.ISGOODWITHCATS == 0 %}Yes
+                        {% elseif animal.ISGOODWITHCATS == 1 %}No
+                        {% else %}Unknown
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr><th>Good with dogs</th>
+                    <td>{% if     animal.ISGOODWITHDOGS == 0 %}Yes
+                        {% elseif animal.ISGOODWITHDOGS == 1 %}No
+                        {% else %}Unknown
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr><th>Good with children</th>
+                    <td>{% if     animal.ISGOODWITHCHILDREN == 0 %}Yes
+                        {% elseif animal.ISGOODWITHCHILDREN == 1 %}No
+                        {% else %}Unknown
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr><th>Housetrained</th>
+                    <td>{% if     animal.ISHOUSETRAINED == 0 %}Yes
+                        {% elseif animal.ISHOUSETRAINED == 1 %}No
+                        {% else %}Unknown
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr><th>Code</th><td>{{ animal.SHELTERCODE }}</td></tr>
             </table>
             <div class="link">
                 <a class="button" href="{{ path('entity.node.canonical', {'node': 320}) }}">
