@@ -1,305 +1,357 @@
-@import 'modules/color-palette';
-@import 'modules/vars';
-@import 'modules/html-elements';
-@import 'modules/layout';
-@import 'modules/header';
-@import 'modules/content';
-@import 'modules/admin';
-@import 'modules/icons';
-@import 'modules/buttons';
-@import 'modules/events';
-@import 'modules/dividers';
-@import 'modules/front-page';
-@import 'modules/news';
-@import 'modules/info-cards';
-@import 'modules/onboard';
+@import "modules/color-palette";
+@import "modules/vars";
+@import "modules/html-elements";
+@import "modules/layout";
+@import "modules/header";
+@import "modules/content";
+@import "modules/admin";
+@import "modules/icons";
+@import "modules/buttons";
+@import "modules/events";
+@import "modules/dividers";
+@import "modules/front-page";
+@import "modules/news";
+@import "modules/info-cards";
+@import "modules/onboard";
 
-dl { border:none; }
+dl {
+  border: none;
+}
 
 b,
 strong {
-    // via issue
-    // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
-    -webkit-font-smoothing: antialiased;
-    color: black;
+  // via issue
+  // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
+  -webkit-font-smoothing: antialiased;
+  color: black;
 }
 
 #alerts {
-    background-color: $color-footer;
+  background-color: $color-footer;
+  color: $color-content-background;
+  h2,
+  a {
     color: $color-content-background;
-    h2, a { color: $color-content-background; }
+  }
 
-    .container { text-align:center; }
-    article { margin:0; padding: $size-gutter; }
+  .container {
+    text-align: center;
+  }
+  article {
+    margin: 0;
+    padding: $size-gutter;
+  }
 
-    .info    { background-color: $color-action; }
-    .warning { background-color: $color-alert;  }
-    .severe  { background-color: $color-error;  }
+  .info {
+    background-color: $color-action;
+  }
+  .warning {
+    background-color: $color-alert;
+  }
+  .severe {
+    background-color: $color-error;
+  }
 }
 
 #banner {
-    height: $banner-height;
-    background-repeat: no-repeat;
-    background-position: center center;
+  height: $banner-height;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    @media (max-width: $viewport-medium) {
-        height: ($banner-height/2);
-    }
+  @media (max-width: $viewport-medium) {
+    height: ($banner-height/2);
+  }
 
-    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-        height: ($banner-height/1.25);
-    }
+  @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+    height: ($banner-height/1.25);
+  }
 }
 
 #breadcrumb {
+  position: relative;
+  overflow: hidden;
+  color: $color-heading;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background: $color-heading;
+  }
+
+  .container {
     position: relative;
-    overflow: hidden;
+    padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+    background: white;
+    margin: ($space-s * 4) auto 0 auto;
+    min-height: 83px;
+  }
+
+  h1 {
+    font-size: $font-size-bigger-alt;
+    line-height: $font-size-small * 4;
     color: $color-heading;
+    margin: 0;
+  }
 
-    &:before {
-        position: absolute;
-        content: '';
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 75px;
-        width: 100%;
-        background: $color-heading;
+  nav {
+    font-size: $font-size-small;
+
+    a:not(:last-child):after {
+      content: " >> ";
+    }
+  }
+
+  address,
+  a {
+    color: $biscay;
+  }
+
+  .social-sharing {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+
+    span {
+      align-self: center;
+      font-size: $font-size-smaller;
+      color: $gothic;
     }
 
-    .container {
+    .item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: gainsboro;
+      border: 1px solid darken(gainsboro, 10%);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      font-size: 12px;
+      line-height: 12px;
+      margin: 0 0 0 10px;
+
+      svg {
         position: relative;
-        padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
-        background: white;
-        margin: ($space-s * 4) auto 0 auto;
-        min-height: 83px;
-    }
+        display: block;
+        margin: 0 auto;
+        width: 15px;
+        height: 15px;
 
-    h1 {
-        font-size: $font-size-bigger-alt;
-        line-height: $font-size-small * 4;
-        color: $color-heading;
-        margin: 0;
-    }
-
-    nav {
-        font-size: $font-size-small;
-
-        a:not(:last-child):after {
-            content: " >> ";
+        path {
+          fill: $dark-slate;
         }
-    }
+      }
 
-    address,
-    a { color: $biscay; }
+      &:hover,
+      &:focus {
+        &.facebook {
+          background: #4468b0;
 
-    .social-sharing {
-        display: inline-flex;
-        justify-content: space-between;
-        margin: 0 0 15px 0;
-
-        span {
-            align-self: center;
-            font-size: $font-size-smaller;
-            color: $gothic;
-        }
-
-        .item {
-            position: relative;
-            display: flex;
-            align-items: center;
-            background: gainsboro;
-            border: 1px solid darken(gainsboro, 10%);
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            padding: 0;
-            font-size: 12px;
-            line-height: 12px;
-            margin: 0 0 0 10px;
-
-            svg {
-                position: relative;
-                display: block;
-                margin: 0 auto;
-                width: 15px;
-                height: 15px;
-
-                path {
-                    fill: $dark-slate;
-                }
+          svg {
+            path {
+              fill: white;
             }
+          }
+        }
 
-            &:hover,
-            &:focus {
-                &.facebook {
-                    background: #4468b0;
+        &.twitter {
+          background: #2796dd;
 
-                    svg {
-                        path {
-                            fill: white;
-                        }
-                    }
-                }
-
-                &.twitter {
-                    background: #2796dd;
-
-                    svg {
-                        path {
-                            fill: white;
-                        }
-                    }
-                }
-
-                &.email {
-                    background: $dark-slate;
-
-                    svg {
-                        path {
-                            fill: white;
-                        }
-                    }
-                }
+          svg {
+            path {
+              fill: white;
             }
+          }
         }
-    }
 
-    .contactInfo {
-        border-top: 1px solid lighten($silver-chalice, 10%);
-        border-bottom: 1px solid lighten($silver-chalice, 10%);
-        display: flex;
-        margin: 10px 0;
-        padding: 10px 0;
+        &.email {
+          background: $dark-slate;
 
-        @media all and (max-width: $viewport-medium) {
-            display: block;
+          svg {
+            path {
+              fill: white;
+            }
+          }
         }
+      }
     }
+  }
+
+  .contactInfo {
+    border-top: 1px solid lighten($silver-chalice, 10%);
+    border-bottom: 1px solid lighten($silver-chalice, 10%);
+    display: flex;
+    margin: 10px 0;
+    padding: 10px 0;
+
+    @media all and (max-width: $viewport-medium) {
+      display: block;
+    }
+  }
 }
 
-#block-departmentstaff  > div,
+#block-departmentstaff > div,
 #block-committeemembers .seats {
-    font-size:$font-size-smaller;
-    h3 div { font-size:$font-size-normal; }
+  font-size: $font-size-smaller;
+  h3 div {
+    font-size: $font-size-normal;
+  }
+  .member {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    dd {
+      line-height: 1.5em;
+    }
+    dt {
+      margin: 0;
+    }
+  }
+
+  @media all and (min-width: $viewport-medium) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    h3 {
+      margin: 0;
+    }
     .member {
-        text-align:center; margin-bottom: 1rem; padding: .5rem;
-        dd { line-height: 1.5em; }
-        dt { margin:0; }
+      width: 208px;
     }
-
-    @media all and (min-width:$viewport-medium) {
-        display:flex;
-        flex-flow:row wrap;
-        justify-content:space-between;
-
-        h3 { margin:0; }
-        .member { width: 208px; }
-    }
-    @media all and (min-width:$viewport-large) {
-        width:$viewport-large; margin:0 auto;
-    }
+  }
+  @media all and (min-width: $viewport-large) {
+    width: $viewport-large;
+    margin: 0 auto;
+  }
 }
 
-.contactInfo, #block-departmentstaff { dt { @include visuallyHidden();        } }
+.contactInfo,
+#block-departmentstaff {
+  dt {
+    @include visuallyHidden();
+  }
+}
 
-#block-committeemembers              { dt { float:none; display:inline-block; } }
+#block-committeemembers {
+  dt {
+    float: none;
+    display: inline-block;
+  }
+}
 
 #related-links > .container > div,
 #block-committeemembers nav {
-    text-align:center;
+  text-align: center;
 
-    div { display:inline-block; }
-    a {
-        background-color:$color-content-background;
-        border-color:$color-action;
-        color:$color-action;
-    }
+  div {
+    display: inline-block;
+  }
+  a {
+    background-color: $color-content-background;
+    border-color: $color-action;
+    color: $color-action;
+  }
 }
 
 .pager {
-    ul { list-style-type: none; }
-    li {
-        display: inline-block; padding: 0 $size-gutter;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+    padding: 0 $size-gutter;
 
-        &.is-active {
-            background-color: $color-link;
-            a { color: $color-content-background; }
-        }
+    &.is-active {
+      background-color: $color-link;
+      a {
+        color: $color-content-background;
+      }
     }
+  }
 }
 
 .dialog-off-canvas-main-canvas > footer {
-    background-color: $color-footer;
+  background-color: $color-footer;
+  color: $color-content-background;
+  padding: $size-gutter;
+
+  a {
+    font-size: $font-size-big;
     color: $color-content-background;
-    padding:$size-gutter;
+    display: block;
+    text-align: left;
+  }
+  address {
+    text-align: left;
+  }
 
-    a {
-        font-size:$font-size-big;
-        color: $color-content-background;
-        display:block; text-align:left;
+  @media all and (min-width: $viewport-medium) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
-    address { text-align:left; }
-
-    @media all and (min-width:$viewport-medium) {
-        .container {
-            display:flex;
-            flex-direction:row;
-            justify-content:space-between;
-        }
-    }
+  }
 }
 
 // Table styles specific for onboard module,
 // but general enough they could apply to other areas.
 table {
-    tbody {
-        tr {
-            &:nth-child(even) {
-                th {
-                    background-color: silver;
-                }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        th {
+          background-color: silver;
+        }
+      }
+
+      td {
+        a {
+          &:hover,
+          &:focus {
+            color: $color-heading;
+          }
+
+          &.download {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0 0 $space-s 0;
+            padding: 0 0 0 ($space-s * 4); // 20px
+
+            &:last-of-type {
+              margin: 0;
             }
 
-            td {
-                a {
-                  &:hover,
-                  &:focus {
-                    color: $color-heading;
-                  }
+            &:hover,
+            &:focus {
+              &:before {
+                background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file-download' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' class='svg-inline--fa fa-file-download fa-w-12 fa-3x'%3E%3Cpath fill='%233f9dff' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z' class=''%3E%3C/path%3E%3C/svg%3E");
+              }
+            }
 
-                  &.download {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    margin: 0 0 $space-s 0;
-                    padding: 0 0 0 ($space-s * 4); // 20px
-
-                    &:last-of-type {
-                      margin: 0;
-                    }
-
-                    &:hover,
-                    &:focus {
-                      &:before {
-                        background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file-download' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' class='svg-inline--fa fa-file-download fa-w-12 fa-3x'%3E%3Cpath fill='%233f9dff' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z' class=''%3E%3C/path%3E%3C/svg%3E");
-                      }
-                    }
-
-                    &:before {
-                      position: absolute;
-                      content: '';
-                      display: block;
-                      width: (($space-s * 2) + 3); // 13px
-                      height: (($space-s * 4) - 3); // 17px
-                      left: 0;
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file-download' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' class='svg-inline--fa fa-file-download fa-w-12 fa-3x'%3E%3Cpath fill='currentColor' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z' class=''%3E%3C/path%3E%3C/svg%3E");
-                    }
-                }
+            &:before {
+              position: absolute;
+              content: "";
+              display: block;
+              width: (($space-s * 2) + 3); // 13px
+              height: (($space-s * 4) - 3); // 17px
+              left: 0;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file-download' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' class='svg-inline--fa fa-file-download fa-w-12 fa-3x'%3E%3Cpath fill='currentColor' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z' class=''%3E%3C/path%3E%3C/svg%3E");
             }
           }
         }
+      }
     }
+  }
 }
