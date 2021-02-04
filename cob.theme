@@ -262,6 +262,7 @@ function cob_preprocess_node(&$vars)
                     $cid = (int)$n->field_committee->getString();
                     if ($cid && array_key_exists($cid, $committees)) {
                         $nodes[$i]->vacancies = $committees[$cid]['vacancies'];
+                        $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
                     }
                 }
                 $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
@@ -281,7 +282,6 @@ function cob_preprocess_node(&$vars)
                     unset($nodes[$ci]);
                     $nodes = array_merge([$council], $nodes);
                 }
-
                 $vars['boards_council'] = $builder->viewMultiple($nodes, 'info_card');
 
                 // All Inactivate boards
