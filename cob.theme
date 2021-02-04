@@ -247,10 +247,12 @@ function cob_preprocess_node(&$vars)
                 $manager = \Drupal::entityTypeManager();
                 $storage = $manager->getStorage('node');
                 $builder = $manager->getViewBuilder('node');
-                $query = \Drupal::entityQuery('node')
-                       ->condition('type', 'board_commission')
-                       ->condition('field_active',  true)
-                       ->sort('title');
+                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission' )
+                                                       ->condition('field_active', true )
+                                                       ->sort('title');
+                $query->condition($query->orConditionGroup()
+                                        ->condition('field_subcommittee', false)
+                                        ->condition('field_subcommittee', null, 'is null'));
                 $nodes   = $storage->loadMultiple($query->execute());
                 foreach ($nodes as $i=>$n) {
                     $cid = (int)$n->field_committee->getString();
@@ -260,12 +262,19 @@ function cob_preprocess_node(&$vars)
                 }
                 $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
 
-                $query = \Drupal::entityQuery('node')
-                       ->condition('type', 'board_commission')
-                       ->condition('field_active',  false)
-                       ->sort('title');
-                $vars['boards_inactive'] = _cob_renderNodesByQuery($query, 'info_card');
-
+                $vars['boards_subcommittee'] = _cob_renderNodesByQuery(
+                    \Drupal::entityQuery('node')->condition('type', 'board_commission')
+                                                ->condition('field_active',       true)
+                                                ->condition('field_subcommittee', true)
+                                                ->sort('title'),
+                    'info_card'
+                );
+                $vars['boards_inactive'] = _cob_renderNodesByQuery(
+                    \Drupal::entityQuery('node')->condition('type', 'board_commission')
+                                                ->condition('field_active',  false)
+                                                ->sort('title'),
+                    'info_card'
+                );
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
