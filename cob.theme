@@ -258,13 +258,8 @@ function cob_preprocess_node(&$vars)
                                                        ->condition('field_department', DEPARTMENT_COUNCIL, '<>')
                                                        ->sort('title');
                 $nodes   = $storage->loadMultiple($query->execute());
-                foreach ($nodes as $i=>$n) {
-                    $cid = (int)$n->field_committee->getString();
-                    if ($cid && array_key_exists($cid, $committees)) {
-                        $nodes[$i]->vacancies = $committees[$cid]['vacancies'];
-                        $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
-                    }
-                }
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
+
                 $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
 
                 // City Council boards that are active
@@ -282,6 +277,7 @@ function cob_preprocess_node(&$vars)
                     unset($nodes[$ci]);
                     $nodes = array_merge([$council], $nodes);
                 }
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
                 $vars['boards_council'] = $builder->viewMultiple($nodes, 'info_card');
 
                 // All Inactivate boards
@@ -326,6 +322,17 @@ function cob_preprocess_node(&$vars)
         }
 
         $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
+    }
+}
+
+function __cob_add_onboard_flags_to_nodes(array &$nodes, array $committees)
+{
+    foreach ($nodes as $i=>$n) {
+        $cid = (int)$n->field_committee->getString();
+        if ($cid && array_key_exists($cid, $committees)) {
+            $nodes[$i]->vacancies         = $committees[$cid]['vacancies'];
+            $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
+        }
     }
 }
 
