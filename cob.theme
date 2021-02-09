@@ -281,12 +281,18 @@ function cob_preprocess_node(&$vars)
                 $vars['boards_council'] = $builder->viewMultiple($nodes, 'info_card');
 
                 // All Inactivate boards
-                $vars['boards_inactive'] = _cob_renderNodesByQuery(
-                    \Drupal::entityQuery('node')->condition('type', 'board_commission')
-                                                ->condition('field_active',  false)
-                                                ->sort('title'),
-                    'info_card'
-                );
+                $committees = [];
+                foreach (OnBoardService::committee_list(['current' => 0]) as $c) {
+                    $committees[$c['id']] = $c;
+                }
+                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission')
+                                                       ->condition('field_active',  false)
+                                                       ->sort('title');
+                $nodes   = $storage->loadMultiple($query->execute());
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
+                $vars['boards_inactive'] = $builder->viewMultiple($nodes, 'info_card');
+
+                // Load the Google Calendar
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
@@ -330,6 +336,7 @@ function __cob_add_onboard_flags_to_nodes(array &$nodes, array $committees)
     foreach ($nodes as $i=>$n) {
         $cid = (int)$n->field_committee->getString();
         if ($cid && array_key_exists($cid, $committees)) {
+            $nodes[$i]->vacancies         = $committees[$cid]['seats'];
             $nodes[$i]->vacancies         = $committees[$cid]['vacancies'];
             $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
         }
