@@ -336,7 +336,7 @@ function __cob_add_onboard_flags_to_nodes(array &$nodes, array $committees)
     foreach ($nodes as $i=>$n) {
         $cid = (int)$n->field_committee->getString();
         if ($cid && array_key_exists($cid, $committees)) {
-            $nodes[$i]->vacancies         = $committees[$cid]['seats'];
+            $nodes[$i]->committeeType     = $committees[$cid]['type'];
             $nodes[$i]->vacancies         = $committees[$cid]['vacancies'];
             $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
         }

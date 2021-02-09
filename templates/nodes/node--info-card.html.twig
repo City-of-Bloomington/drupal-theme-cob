@@ -92,7 +92,7 @@
     <header>
       <h3{{ title_attributes }}>{{ label }}</h3>
       {% if node.vacancies %}<span>(Vacancy)</span>{% endif %}
-      {% if not node.takesApplications %}<span>(No Public Appointments)</span>{% endif %}
+      {% if node.committeeType=="seated" and not node.takesApplications %}<span>(No Public Appointments)</span>{% endif %}
     </header>
 
     {% if node.body.summary %}
