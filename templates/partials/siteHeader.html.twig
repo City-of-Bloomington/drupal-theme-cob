@@ -2,6 +2,21 @@
   <div class="container">
     {{ page.header }}
 
+    <section id="block-searchform" role="search">
+        <form id="search-block-form" method="get" action="{{ base_path }}search">
+            <fieldset>
+                <label for="search_api_fulltext" class="visually-hidden">Search</label>
+                <input  id="search_api_fulltext"
+                      name="search_api_fulltext"
+                       type="search" class="form-search"
+                       title="Enter the terms you wish to search for."
+                       placeholder="Search..."
+                       size="15" maxlength="128" />
+                <input type="submit" class="button" value="Search" />
+            </fieldset>
+        </form>
+    </section>
+
     <a href="{{ base_path }}welcome">Welcome Students</a>
   </div>
 
