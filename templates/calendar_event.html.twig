@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Displays information from a single Google Calendar Event
+ *
+ * Available variables
+ * - event: Google_Service_Calendar_Event
+ * - calendarId: Google Calendar ID
+ *
+ * @see https://developers.google.com/google-apps/calendar/v3/reference/events
+ *
+ * @copyright 2017-2021 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/old-licenses/gpl-2.0 GNU/GPL2, see LICENSE
+ */
+#}
+<article>
+    <header>
+        <h2>{{ event.summary }}</h2>
+        {% if event.start.dateTime %}
+        <time datetime="{{ event.start.dateTime }}">
+            <span class="month"    >{{ event.start.dateTime | date('M')}}</span>
+            <span class="monthDate">{{ event.start.dateTime | date('j')}}</span>
+            <span class="weekday"  >{{ event.start.dateTime | date('l')}}</span>
+        </time>
+        {% else %}
+        <time datetime="{{ event.start.date }}">
+            <span class="month"    >{{ event.start.date     | date('M')}}</span>
+            <span class="monthDate">{{ event.start.date     | date('j')}}</span>
+            <span class="weekday"  >{{ event.start.date     | date('l')}}</span>
+        </time>
+        {% endif %}
+        <div>
+            {% if event.start.dateTime %}
+            <time datetime="{{ event.start.dateTime }}">
+                {{  event.start.dateTime | date('g:ia') }}
+                {% if event.end.dateTime %}
+                to {{ event.end.dateTime | date('g:ia') }}
+                {% endif %}
+            </time>
+            {% endif %}
+        </div>
+        <h3>{% set url  = event.location|preg_get('|https?://[-a-zA-Z0-9\+\./\?\;=_]+|') %}
+            {% set zoom = 'zoom' in event.location %}
+            {%  if url %}
+                {% if 'zoom' in event.location %}
+                <a href="{{ url }}" class="button">Join Zoom Meeting</a>
+                {% else %}
+                <a href="{{ url }}">{{ event.location }}</a>
+                {% endif %}
+            {% else %}{{ event.location }}
+            {% endif %}
+        </h3>
+    </header>
+    <pre>{{ event.description }}</pre>
+</article>
