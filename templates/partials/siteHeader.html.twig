@@ -3,11 +3,11 @@
     {{ page.header }}
 
     <section id="block-searchform" role="search">
-        <form id="search-block-form" method="get" action="{{ base_path }}search">
+        <form id="search-block-form" method="get" action="/search">
             <fieldset>
-                <label for="search_api_fulltext" class="visually-hidden">Search</label>
-                <input  id="search_api_fulltext"
-                      name="search_api_fulltext"
+                <label for="query" class="visually-hidden">Search</label>
+                <input  id="query"
+                      name="query"
                        type="search" class="form-search"
                        title="Enter the terms you wish to search for."
                        placeholder="Search..."
