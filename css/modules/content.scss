@@ -9,23 +9,17 @@
     ol { list-style:decimal outside; margin-left:1em; }
 
     &.search-results {
-        h3 {
+        .views-field-title {
+            font-size:   $font-size-big;
             font-weight: $font-weight-bold;
+            font-family: $font-family-heading;
             margin: 0 0 $size-gutter 0;
         }
-        ol {
-            list-style-type: none;
-            margin: 0;
-
-            li {
-                margin-bottom: $size-gutter * 4;
-                word-break: break-word;
-
-                > a {
-                    margin: 0 0 $size-gutter 0;
-                    display: block;
-                    color: $color-action;
-                }
+        .views-row {
+            margin-bottom: $size-gutter * 4;
+            a {
+                display: block;
+                color: $color-action;
             }
         }
     }
