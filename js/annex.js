@@ -4,29 +4,28 @@ jQuery(document).ready(function ($) {
         query:  document.getElementById('query'),
         form:   document.getElementById('annexationSearchForm'),
         table:  document.getElementById('annexationResults'),
-        resource_url: 'https://data.bloomington.in.gov/api/3/action/datastore_search?resource_id=37d3f8b5-0844-412a-ac2f-953dd2ed5aec&distinct=true',
+        resource_url: 'https://bloomington.data.socrata.com/resource/x8s7-g7v5.json',
         fields: [
-            'Annex Area', 'Waiver', 'Parcel', 'Owner', 'Owner Address', 'Property Address'
+            'annex_area', 'waiver', 'parcel', 'owner', 'owner_address', 'property_address'
         ],
         autocompleteQuery: function (request, response, fieldname) {
             const url = ANNEX.resource_url
-                    + '&q={"'    + fieldname + '":"' + request.term + '"}'
-                    + '&fields=' + fieldname
-                    + '&sort='   + fieldname;
+                      + encodeURI("?$where=" + fieldname + " like '%" + ANNEX.query.value + "%'");
             $.ajax(url).done(function (result) { ANNEX.autoCompleteResult(result, response, fieldname); })
-                    .fail(function (result) { response([]); });
+                       .fail(function (result) { response([]); });
         },
         autoCompleteResult: function (result, response, fieldname) {
             let items = [];
 
-            if (result.success) {
-                result.result.records.forEach(function (row) { items.push(row[fieldname]); });
+            if (result.length > 0) {
+                result.forEach(function (row) { items.push(row[fieldname]); });
             }
             response(items);
         },
         searchQuery: function (e) {
             const fieldname = ANNEX.select.options[ANNEX.select.selectedIndex].value,
-                    url       = ANNEX.resource_url + '&q={"' + fieldname + '":"' + ANNEX.query.value + '"}&sort=' + fieldname;
+                  url       = ANNEX.resource_url
+                            + encodeURI("?$where=" + fieldname + " like '%" + ANNEX.query.value + "%'");
 
             e.preventDefault();
 
@@ -35,21 +34,19 @@ jQuery(document).ready(function ($) {
         searchResult: function (result) {
             let table = '<p>No results found</p>';
 
-            if (result.success) {
-                if (result.result.records.length > 0) {
-                    table = '<thead><tr>';
-                    ANNEX.fields.forEach(function (f) { table += '<th>' + f + '</th>'; });
-                    table += '</tr></thead><tbody>';
-                    result.result.records.forEach(function (row) {
-                        var tr = '<tr>';
-                        ANNEX.fields.forEach(function (f) {
-                            tr += '<td>' + row[f] + '</td>';
-                        });
-                        tr += '</tr>';
-                        table  += tr;
+            if (result.length > 0) {
+                table = '<thead><tr>';
+                ANNEX.fields.forEach(function (f) { table += '<th>' + f + '</th>'; });
+                table += '</tr></thead><tbody>';
+                result.forEach(function (row) {
+                    let tr = '<tr>';
+                    ANNEX.fields.forEach(function (f) {
+                        tr += '<td>' + row[f] + '</td>';
                     });
-                    table += '</tbody>';
-                }
+                    tr += '</tr>';
+                    table  += tr;
+                });
+                table += '</tbody>';
             }
             ANNEX.table.innerHTML = table;
         }
