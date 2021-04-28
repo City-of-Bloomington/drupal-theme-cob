@@ -36,12 +36,17 @@ jQuery(document).ready(function ($) {
 
             if (result.length > 0) {
                 table = '<thead><tr>';
-                ANNEX.fields.forEach(function (f) { table += '<th>' + f + '</th>'; });
+                ANNEX.fields.forEach(function (f) {
+                    f = f.replace('_', ' ');
+                    table += '<th>' + f + '</th>';
+
+                });
                 table += '</tr></thead><tbody>';
                 result.forEach(function (row) {
                     let tr = '<tr>';
                     ANNEX.fields.forEach(function (f) {
-                        tr += '<td>' + row[f] + '</td>';
+                        let v = row[f] ? row[f] : '';
+                        tr += '<td>' + v + '</td>';
                     });
                     tr += '</tr>';
                     table  += tr;
