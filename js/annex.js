@@ -6,7 +6,8 @@ jQuery(document).ready(function ($) {
         table:  document.getElementById('annexationResults'),
         resource_url: 'https://bloomington.data.socrata.com/resource/x8s7-g7v5.json',
         fields: [
-            'annex_area', 'waiver', 'parcel', 'owner', 'owner_address', 'property_address'
+            'annex_area', 'waiver', 'parcel', 'owner', 'owner_address', 'property_address',
+            'gross_tax_change', 'net_tax_change'
         ],
         autocompleteQuery: function (request, response, fieldname) {
             const url = ANNEX.resource_url
@@ -37,7 +38,7 @@ jQuery(document).ready(function ($) {
             if (result.length > 0) {
                 table = '<thead><tr>';
                 ANNEX.fields.forEach(function (f) {
-                    f = f.replace('_', ' ');
+                    f = f.replaceAll('_', ' ');
                     table += '<th>' + f + '</th>';
 
                 });
