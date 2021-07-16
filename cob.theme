@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017-2019 City of Bloomington, Indiana
+ * @copyright 2017-2021 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -109,8 +109,6 @@ function cob_preprocess_page__front(&$vars)
         $vars['events'] = _cob_events($id, 7, 4);
     }
 
-    $vars['available_messages'] = !empty(drupal_get_messages(null, false));
-
     $query   = \Drupal::entityQuery('node')
                 ->condition('type', 'alert')
                 ->condition('status',  1)
@@ -146,8 +144,6 @@ function cob_preprocess_page(&$vars)
         if ($contactInfo) {
             $vars['contactInfo'] = $contactInfo;
         }
-
-        $vars['available_messages'] = !empty(drupal_get_messages(null, false));
 
         // Custom content for the Parks and Rec landing page
         if ((int)$vars['node']->get('nid')->value === 250) {

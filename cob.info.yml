@@ -1,12 +1,14 @@
-name: COB
-type: theme
-description: City of Bloomington Theme
-package: COB
-core: 8.x
-php: 5.6.0
+---
+name: 'COB'
+type: 'theme'
+description: 'City of Bloomington Theme'
+package: 'COB'
+core_version_requirement: '^8 || ^9'
+php: '7.4.0'
 base theme: false
 libraries:
-  - cob/fn1
-  - cob/cob
+  - 'cob/fn1'
+  - 'cob/cob'
 libraries-override:
   core/modernizr: false
+...
