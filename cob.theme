@@ -195,7 +195,7 @@ function _cob_coverImageForEntity(FieldableEntityInterface $entity): array
             $styles = ['cover_small', 'cover_medium', 'cover_large'];
             $target = $img->get('entity')->getTarget();
             if ($target) {
-                $ent = $target->getValue()->field_image->entity;
+                $ent = $target->getValue()->field_media_image->entity;
                 if ($ent) {
                     foreach ($styles as $s) {
                         $urls[$s] = ImageStyle::load($s)->buildUrl($ent->getFileUri());
