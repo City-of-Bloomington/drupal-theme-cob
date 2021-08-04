@@ -75,14 +75,8 @@
 <article{{ attributes }} class="info-card">
   <a href="{{ url }}" rel="bookmark">
 
-    {% set video_embed %}{{ content.field_video_embed }}{% endset %}
-    {% if video_embed %}
-      <div class="entity_reference">
-        {% if video_embed %}
-          {{ video_embed }}
-        {% endif %}
-      </div>
-    {% endif %}
+    {% set video %}{{ content.field_video }}{% endset %}
+    {%  if video %}<div class="entity_reference">{{ video }}</div>{% endif %}
 
     {% set field_date %}{{ content.field_date }}{% endset %}
     {% if field_date %}
