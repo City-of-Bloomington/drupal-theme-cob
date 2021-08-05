@@ -14,6 +14,7 @@
 #}
 <div class="events">
     {% for date, event in meetings %}
+    <a href="{{ event.htmlLink }}">
     <article>
         <header>
             <time datetime="{{ event.start }}">
@@ -31,5 +32,6 @@
             <div class="location">{{ event.location }}</div>
         </div>
     </article>
+    </a>
     {% endfor %}
 </div>

@@ -72,6 +72,9 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('core/jquery') }}
+{{ attach_library('core/jquery.ui.autocomplete') }}
+{{ attach_library('cob/annex') }}
 <article{{ attributes }} class="{{ node.bundle }} {{ view_mode }}">
     {% if display_submitted or not page %}
     <header>
@@ -92,7 +95,6 @@
             {{ regions.secondary_menu }}
             {{ content.field_contacts }}
             {{ content.body }}
-            {{ content.field_video }}
             {{ content.field_call_to_action }}
         </div>
 
@@ -126,12 +128,46 @@
         </aside>
         {% endif %}
     </div>
+    <div>
+        <header>
+            <h2>Property and Tax Impact Lookup</h2>
+            <p> To search whether a property address is slated for possible annexation,
+                you can use the property lookup tool below. Property listings are also
+                available as a
+                <a href="https://bloomington.data.socrata.com/dataset/Annexation-Properties/x8s7-g7v5">dataset</a>.
+            </p>
+        </header>
+        <form method="get" id="annexationSearchForm">
+            <div>
+                <div><label>Search by:
+                        <select name="fieldname" id="fieldname">
+                            <option value="property_address" selected="true">Property Address</option>
+                            <option value="owner_address">Owner Address</option>
+                            <option value="owner">Owner Name</option>
+                            <option value="parcel">Parcel #</option>
+                            <option value="waiver">Waiver #</option>
+                        </select>
+                    </label>
+                </div>
+                <div><input name="query" id="query" /></div>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <style type="text/css">
+            #annexationResults th { text-transform: capitalize; }
+        </style>
+        <table id="annexationResults">
+        </table>
+    </div>
+
     <div{{ content_attributes }}>
+
         {{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
+                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video_embed',
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
+        {{ content.field_video_embed }}
     </div>
     {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
     {% if  related_links %}
