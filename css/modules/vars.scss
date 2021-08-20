@@ -1,21 +1,42 @@
-@import 'vars-fn1';
-
+@import "vars-fn1";
 //Font Sizes
-$font-size-biggest:     3.750rem;
-$font-size-bigger-alt:  2.500rem;
-$font-size-bigger:      1.900rem;
-$font-size-medium:      1.50rem;
-$font-size-big:         1.250rem;
-$font-size-normal:      1.125rem;
-$font-size-small:       1.000rem;
-$font-size-smaller:     0.875rem;
-$font-weight-bold:      900;
-$color-heading:         $dodger-blue;
+$font-size-biggest: 3.75rem;
+$font-size-bigger-alt: 2.5rem;
+$font-size-bigger: 1.9rem;
+$font-size-medium: 1.5rem;
+$font-size-big: 1.25rem;
+$font-size-normal: 1.125rem;
+$font-size-small: 1rem;
+$font-size-smaller: 0.875rem;
+$font-weight-bold: 900;
+$color-heading: $dodger-blue;
 $size-sidebar-maxwidth: 340px;
-$space-s:               5px;
-$space-l:               ($space-s * 3);
-$banner-height:         320px;
-
+$space-s: 5px;
+$space-l: ($space-s * 3);
+$banner-height: 320px;
 h2 {
   font-size: $font-size-bigger;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap");
+$fontIBM: "IBM Plex Sans", sans-serif;
+$color-grey: rgb(219, 219, 219);
+$color-grey-light: rgb(230, 230, 230);
+$color-fern: #4caf50;
+$color-blue: rgb(30, 90, 174);
+$border-default: 1px solid $color-grey-light;
+$text-color: darken($color-grey, 55%);
+$weight-bold: 700;
+$weight-semi-bold: 600;
+$weight-normal: 400;
+$weight-light: 300;
+@mixin visuallyHidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

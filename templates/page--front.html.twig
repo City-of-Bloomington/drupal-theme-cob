@@ -48,23 +48,47 @@
 {% include '@cob/partials/siteHeader.html.twig' %}
 <main class="front">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    
+    <section id="block-searchform" role="search">
+        <div class="container">
+        <h2>Welcome Neighbors,</h2>
+            <form id="search-block-form" method="get" action="/search">
+                <fieldset>
+                    <label for="query" class="visually-hidden">Search</label>
+                    <input 
+                        id="query"
+                        name="query"
+                        type="search"
+                        class="form-search"
+                        title="Enter the terms you wish to search for."
+                        placeholder="Search the City of Bloomington"
+                        size="15"
+                        maxlength="128" />
+                    <input type="submit" class="button" value="Search" />
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    {# <div id="banner"></div>#}
 
-    <div id="banner"></div>
     {% if alerts or pothole_count %}
     <div id="alerts">
         {{ alerts }}
-        {% if pothole_count %}
+
+        {# {% if pothole_count %}
         <article class="info alert">
             <div class="container">
                 <header><h2>Potholes Repaired</h2></header>
                 <p>{{ pothole_count | number_format }} filled so far this year</p>
             </div>
         </article>
-        {% endif %}
+        {% endif %} #}
     </div>
     {% endif %}
+
     {{ page.highlighted }}
     {{ page.help }}
+    {{ page.content }}
 
     <div id="content">
         <section id="services-section" class="divided dark">

@@ -5,8 +5,13 @@
       text-indent: -10em;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: ($size-gutter * 2) ($size-gutter * 2);
+      background-size: 1.25em;
       background-image: url("images/fa-svg/white/search.svg");
+
+      &:hover,
+      &:focus {
+        background-color: darken($color: $color-fern, $amount: 5);
+      }
     }
   }
 }
@@ -30,10 +35,19 @@
       display: inline-block;
       text-align: center;
       background-repeat: no-repeat;
-      background-position: top center;
-      padding: 52px 0 0 0;
+      background-position: center;
+      background-position-y: 10px;
+      background-size: 45px 45px;
+      padding: 60px 20px 10px 20px;
       font-size: $font-size-normal;
       line-height: 1.25em;
+      border-radius: 3px;
+
+      &:hover,
+      &:focus {
+        background-color: darken($color: $color-blue, $amount: 5);
+        // color: $color-blue;
+      }
     }
 
     .about {
