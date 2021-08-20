@@ -14,6 +14,10 @@ use Drupal\directory\DirectoryService;
 use Drupal\interactivemap\MapGateway;
 use Drupal\onboard\OnBoardService;
 
+// Some node_ids for pages in the site
+const DEPARTMENT_COUNCIL = 2796;
+const BOARD_COUNCIL      =   47;
+
 /**
  * Prepare contact information for various modules
  *
@@ -109,6 +113,8 @@ function cob_preprocess_page__front(&$vars)
         $vars['events'] = _cob_events($id, 7, 4);
     }
 
+    $vars['available_messages'] = !empty(\Drupal::messenger()->all());
+
     $query   = \Drupal::entityQuery('node')
                 ->condition('type', 'alert')
                 ->condition('status',  1)
@@ -144,6 +150,8 @@ function cob_preprocess_page(&$vars)
         if ($contactInfo) {
             $vars['contactInfo'] = $contactInfo;
         }
+
+        $vars['available_messages'] = !empty(\Drupal::messenger()->all());
 
         // Custom content for the Parks and Rec landing page
         if ((int)$vars['node']->get('nid')->value === 250) {
@@ -243,25 +251,48 @@ function cob_preprocess_node(&$vars)
                 $manager = \Drupal::entityTypeManager();
                 $storage = $manager->getStorage('node');
                 $builder = $manager->getViewBuilder('node');
-                $query = \Drupal::entityQuery('node')
-                       ->condition('type', 'board_commission')
-                       ->condition('field_active',  true)
-                       ->sort('title');
+
+                // Active Boards that are not part of the City Council
+                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission' )
+                                                       ->condition('field_active', true )
+                                                       ->condition('field_department', DEPARTMENT_COUNCIL, '<>')
+                                                       ->sort('title');
                 $nodes   = $storage->loadMultiple($query->execute());
-                foreach ($nodes as $i=>$n) {
-                    $cid = (int)$n->field_committee->getString();
-                    if ($cid && array_key_exists($cid, $committees)) {
-                        $nodes[$i]->vacancies = $committees[$cid]['vacancies'];
-                    }
-                }
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
+
                 $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
 
-                $query = \Drupal::entityQuery('node')
-                       ->condition('type', 'board_commission')
-                       ->condition('field_active',  false)
-                       ->sort('title');
-                $vars['boards_inactive'] = _cob_renderNodesByQuery($query, 'info_card');
+                // City Council boards that are active
+                $query = \Drupal::entityQuery('node')->condition('type', 'board_commission')
+                                                     ->condition('field_active',       true)
+                                                     ->condition('field_department', DEPARTMENT_COUNCIL)
+                                                     ->sort('title');
+                // move the city council to the first item in the list
+                $nodes   = $storage->loadMultiple($query->execute());
+                $ci      = null;
+                $council = null;
+                foreach ($nodes as $i=>$n) { if ($n->id() == BOARD_COUNCIL) { $ci = $i; } }
+                if ($ci) {
+                    $council = $nodes[$ci];
+                    unset($nodes[$ci]);
+                    $nodes = array_merge([$council], $nodes);
+                }
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
+                $vars['boards_council'] = $builder->viewMultiple($nodes, 'info_card');
 
+                // All Inactivate boards
+                $committees = [];
+                foreach (OnBoardService::committee_list(['current' => 0]) as $c) {
+                    $committees[$c['id']] = $c;
+                }
+                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission')
+                                                       ->condition('field_active',  false)
+                                                       ->sort('title');
+                $nodes   = $storage->loadMultiple($query->execute());
+                __cob_add_onboard_flags_to_nodes($nodes, $committees);
+                $vars['boards_inactive'] = $builder->viewMultiple($nodes, 'info_card');
+
+                // Load the Google Calendar
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
@@ -272,7 +303,7 @@ function cob_preprocess_node(&$vars)
             $end->add(new \DateInterval("P60D"));
 
             switch ($nid) {
-                case 47:
+                case BOARD_COUNCIL:
                     $calendar_id = 'bloomington.in.gov_7rki30ccsun4vk4stoq2n4nreg@group.calendar.google.com';
                     $events      = GoogleGateway::events($calendar_id, $start, $end, true, 4);
                     $vars['meetings'] = [
@@ -297,6 +328,18 @@ function cob_preprocess_node(&$vars)
         }
 
         $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
+    }
+}
+
+function __cob_add_onboard_flags_to_nodes(array &$nodes, array $committees)
+{
+    foreach ($nodes as $i=>$n) {
+        $cid = (int)$n->field_committee->getString();
+        if ($cid && array_key_exists($cid, $committees)) {
+            $nodes[$i]->committeeType     = $committees[$cid]['type'];
+            $nodes[$i]->vacancies         = $committees[$cid]['vacancies'];
+            $nodes[$i]->takesApplications = $committees[$cid]['takesApplications'];
+        }
     }
 }
 
