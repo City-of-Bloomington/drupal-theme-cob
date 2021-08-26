@@ -73,7 +73,7 @@
  */
 #}
 
-<section class="{{ node.bundle }} divided promo{% if content.field_content_image['#items'] %} hasImage{% endif %}">
+<section class="{{ node.bundle }} promo{% if content.field_content_image['#items'] %} hasImage{% endif %}">
     <div class="container">
         <header>
             <h2{{ title_attributes }}>
@@ -81,7 +81,7 @@
             </h2>
         </header>
         <div>
-            {{ content.field_cover_image }}
+            {{ content.field_content_image }}
             <div>
                 {% if node.body.summary %}
                 <p class="summary">

@@ -72,23 +72,13 @@
  * @ingroup themeable
  */
 #}
-{% if content.field_url %}
-<a href="{{ content.field_url.0 }}">
-{% else %}
-<a href="{{ url }}">
-{% endif %}
-<article{{ attributes }} class="{{ node.bundle }} {{ view_mode }} {{ content.field_level.0 }}">
-<div class="container">
-    <header>
-        {{ title_prefix }}
-        {% if display_submitted %}
-            {% set isodate = node.getCreatedTime %}
-            <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
-        {% endif %}
+<a
+    href="{{ content.field_url ? content.field_url.0 : url }}"
+    class="{{ node.bundle }} {{ content.field_level.0 }}">
+
+    <div class="container">
         <h2{{ title_attributes }}>{{ label }}</h2>
-        {{ title_suffix }}
-    </header>
-    <p>{{ content.field_alert_text.0 }}</p>
-</div>
-</article>
+        <p>{{ content.field_alert_text.0 }}</p>
+        <p>Click to learn more</p>
+    </div>
 </a>

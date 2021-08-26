@@ -45,7 +45,59 @@
  * @ingroup themeable
  */
 #}
-{% include '@cob/partials/siteHeader.html.twig' %}
+{% if alerts %}
+    <div id="alerts">{{ alerts }}</div>
+{% endif %}
+
+<header id="homepage">
+  <div class="menu-container">
+    <a href="{{ base_path }}" title="City of Bloomington" class="logo">
+      <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
+    </a>
+    <a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
+    <div class="nav-items">
+      <nav id="navigation" role="navigation" aria-labelledby="navigation">
+        <ul>
+          <li><a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <nav id="header-icon-nav">
+    <div class="container">
+      <a class="about"
+         title="Information &amp; Guides"
+         href="{{ base_path }}about">
+        <span>Information &amp; Guides</span>
+        <span>Information</span>
+      </a>
+
+      <a class="city"
+         title="City Government"
+         href="{{ base_path }}city">
+        <span>City Government</span>
+        <span>Government</span>
+      </a>
+
+      <a class="news"
+         title="News &amp; Events"
+         href="{{ base_path }}news">
+        <span>News &amp; Events</span>
+        <span>News</span>
+      </a>
+
+      <a class="services"
+         title="Top Services"
+         href="{{ base_path }}services">
+        <span>Top Services</span>
+        <span>Services</span>
+      </a>
+    </div>
+  </nav>
+</header>
+{{ page.primary_menu }} 
+
 <main class="front">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     
@@ -71,27 +123,20 @@
     </section>
     {# <div id="banner"></div>#}
 
-    {% if alerts or pothole_count %}
-    <div id="alerts">
-        {{ alerts }}
-
-        {# {% if pothole_count %}
-        <article class="info alert">
-            <div class="container">
-                <header><h2>Potholes Repaired</h2></header>
-                <p>{{ pothole_count | number_format }} filled so far this year</p>
-            </div>
-        </article>
-        {% endif %} #}
-    </div>
-    {% endif %}
+    
 
     {{ page.highlighted }}
     {{ page.help }}
-    {{ page.content }}
+
+    <div class="promoted-area">
+        <div class="container"> 
+            <h2>Promoted Headlines</h2>
+            {{ page.content }}
+        </div>
+    </div>
 
     <div id="content">
-        <section id="services-section" class="divided dark">
+        <section id="services-section">
             <div class="container">
                 <header><h2>Services &amp; Guides</h2></header>
                 <nav>
@@ -106,29 +151,30 @@
                 </nav>
             </div>
         </section>
-        <section id="news-section" class="divided">
+        
+        <section id="news-section-new" class="home">
             <div class="container">
-                <header><h2>News &amp; Events</h2></header>
+                <header><h2>News</h2></header>
                 <div>
                     <div class="news">
                         <div class="results">
                             {{ news }}
                         </div>
-                        <div>
-                            <a href="{{ base_path }}news" class="button">Newsroom</a>
-                        </div>
+                        <a
+                            href="{{ base_path }}news"
+                            class="btn more">Click to read more News</a>
                     </div>
-                    <aside class="calendar_calendar">
+                    {# <aside class="calendar_calendar">
                         {{ events }}
-                    </aside>
+                    </aside> #}
                 </div>
             </div>
         </section>
 
-        {{ about }}
-        {{ mayor }}
+        <section id="about-section">{{ about }}</section>
+        <section id="mayor-section">{{ mayor }}</section>
 
-        <section id="government-section" class="divided">
+        <section id="government-section">
             <div class="container">
                 <header><h2>City Government</h2></header>
                 <nav>

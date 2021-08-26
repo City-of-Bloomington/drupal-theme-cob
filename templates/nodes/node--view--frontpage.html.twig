@@ -73,7 +73,13 @@
  */
 #}
 <a href="{{ url }}">
-  {{ content.field_content_image }}
   <h2>{{ label }}</h2>
-  <p>{{ node.body.summary }}</p>
+
+  {% if node.body.summary %}
+    <p>{{ node.body.summary }}</p>
+  {% else %}  
+    <p>Summary missing...</p>
+  {% endif %}
+
+  <p>Click to learn more</p>
 </a>

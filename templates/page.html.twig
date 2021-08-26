@@ -45,6 +45,9 @@
  * @ingroup themeable
  */
 #}
+{% if alerts %}
+<div id="alerts">{{ alerts }}</div>
+{% endif %}
 {% include '@cob/partials/siteHeader.html.twig' %}
 <main>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}

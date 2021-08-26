@@ -18,10 +18,9 @@ h2 {
   font-size: $font-size-bigger;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap");
-$fontIBM: "IBM Plex Sans", sans-serif;
 $color-grey: rgb(219, 219, 219);
 $color-grey-light: rgb(230, 230, 230);
+$color-grey-lighter: rgb(242, 242, 242);
 $color-fern: #4caf50;
 $color-blue: rgb(30, 90, 174);
 $border-default: 1px solid $color-grey-light;

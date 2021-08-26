@@ -403,7 +403,7 @@ function cob_preprocess_field__field_promo_title(&$vars)
 
     foreach ($vars['items'] as $i=>$item) {
         $vars['items'][$i]['content'] = [
-            '#markup' => "<a href=\"$url\" class=\"button\">{$item['content']['#context']['value']}</a>"
+            '#markup' => "<a href=\"$url\" class=\"btn more\">{$item['content']['#context']['value']}</a>"
         ];
 
     }

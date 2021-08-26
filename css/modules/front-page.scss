@@ -1,65 +1,351 @@
-.front {
-    header > h2 { text-transform:uppercase; }
+// .front {
+//     header > h2 { text-transform:uppercase; }
 
-    #banner {
-        background-image: url('images/downtown-small.png');
+//     #banner {
+//         background-image: url('images/downtown-small.png');
 
-        @media all and (min-width: $viewport-medium) {
-            background-image: url('images/downtown-medium.png');
-        }
+//         @media all and (min-width: $viewport-medium) {
+//             background-image: url('images/downtown-medium.png');
+//         }
 
-        @media all and (min-width: $viewport-large ) {
-            background-image: url('images/downtown-large.png' );
-        }
+//         @media all and (min-width: $viewport-large ) {
+//             background-image: url('images/downtown-large.png' );
+//         }
+//     }
+// }
+
+#block-searchform {
+  padding: 60px 0;
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  h2 {
+    font-size: $font-size-bigger-alt;
+    font-family: $fontIBM;
+    margin: 0 0 15px 0;
+
+    @media (max-width: 767px) {
+      font-size: $font-size-medium;
+      margin: 0 0 5px 0;
     }
+  }
 }
 
-#services-section, #government-section {
-    nav {
-        text-align: center;
-        display: flex;
-        flex-direction :row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+//note: news section is in it's own file
+#services-section,
+#government-section,
+.promoted-area,
+#services-section,
+#about-section,
+#mayor-section {
+  padding: 60px 0;
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  h2 {
+    font-size: $font-size-bigger;
+    font-family: $fontIBM;
+    margin: 0 0 30px 0;
+
+    @media (max-width: 767px) {
+      font-size: $font-size-medium;
+      margin: 0 0 5px 0;
+    }
+  }
+}
+
+#block-searchform {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid $color-grey-light;
+
+  h2 {
+    color: $text-color;
+  }
+
+  form {
+    margin: 0;
+
+    fieldset {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: $border-default;
+      background-color: $color-grey-light;
+      border-radius: 3px;
+      padding: 20px;
+      margin: 0 auto;
+
+      &:hover,
+      &:focus {
+        background-color: darken($color: $color-grey-light, $amount: 1);
+      }
+
+      @media (max-width: 767px) {
+        padding: 15px;
+      }
+    }
+
+    input {
+      &[type="search"] {
+        font-family: $fontIBM;
+        font-size: $font-size-medium;
+        color: $text-color;
+        width: 100%;
+        height: 50px;
+        border: none;
+        padding: 10px 20px;
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-bottomleft: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+        &::placeholder {
+          color: lighten($text-color, 5%);
+        }
+      }
+
+      &[type="submit"] {
+        height: 50px;
+        margin: 0;
+        border: none;
+        -webkit-border-top-left-radius: 0;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius-topleft: 0;
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-top-right-radius: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        -moz-border-radius-topright: 3px;
+        -moz-border-radius-bottomright: 3px;
+      }
+
+      @media (max-width: 767px) {
+        &[type="search"] {
+          padding: 5px 10px;
+          font-size: $font-size-small;
+        }
+        &[type="search"],
+        &[type="submit"] {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+#services-section,
+#government-section {
+  nav {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    h2 {
+      font-family: $font-family-nav;
+      font-size: $font-size-big;
+      color: $color-link;
+      height: 2.5em;
+    }
+  }
+
+  a {
+    margin-bottom: 30px;
+  }
+}
+
+.promoted-area {
+  padding: 60px 0;
+
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  span,
+  ul,
+  li,
+  a,
+  p {
+    font-family: $fontIBM;
+  }
+
+  h2 {
+    color: $text-color;
+  }
+
+  #block-cob-cob-system-main {
+    h1,
+    h2,
+    h3,
+    span,
+    ul,
+    li,
+    a,
+    p {
+      font-family: $fontIBM;
+      color: $text-color;
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+      @media (max-width: 767px) {
+        font-size: $font-size-big;
+      }
+    }
+
+    p {
+      line-height: 1.5em;
+
+      @media (max-width: 767px) {
+        font-size: $font-size-small;
+      }
+
+      &:last-of-type {
+        font-size: $font-size-small;
+        margin: 15px 0 0 0;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      font-size: $font-size-big;
+    }
+
+    .rows {
+      display: grid;
+      grid-gap: 30px;
+      justify-content: center;
+      grid-template-columns: 2fr 2fr;
+
+      @media (max-width: 767px) {
+        grid-gap: 0;
+      }
+
+      .promoted-front {
+        // grid-template-columns: repeat(auto-fit, 50%);
+
+        @media (max-width: 767px) {
+          grid-column: span 2;
+          margin: 0 0 15px 0;
+        }
+
+        &:nth-child(3):nth-last-child(1) {
+          grid-column: span 2;
+        }
+
+        &:nth-child(2):nth-last-child(3) {
+          grid-column: 2;
+        }
 
         h2 {
-            font-family: $font-family-nav;
-            font-size: $font-size-big;
-            color:$color-link;
-            height:2.5em;
+          font-size: $font-size-medium;
         }
-    }
 
-    a {
-        margin-bottom:$divider-margin;
+        p {
+          line-height: 1.5em;
+        }
+
+        a {
+          border-radius: 3px;
+          background-color: #f4c449;
+          border: 2px solid #f4c449;
+          padding: 20px;
+          display: block;
+
+          &:hover,
+          &:focus {
+            background-color: white;
+          }
+        }
+      }
     }
+  }
 }
 
 #services-section {
-    a {
-        @media all and (min-width: $viewport-medium) { flex: 0 0 25%;  }
-        @media all and (max-width: $viewport-medium) { flex: 0 0 50%;  }
+  background-color: $color-blue;
+
+  h2 {
+    color: white;
+  }
+
+  a {
+    color: white;
+    @media all and (min-width: $viewport-medium) {
+      flex: 0 0 25%;
     }
+    @media all and (max-width: $viewport-medium) {
+      flex: 0 0 50%;
+    }
+  }
 }
 
 #government-section {
-    a {
-        @media all and (min-width: $viewport-medium) { flex: 0 0 20%;  }
-        @media all and (max-width: $viewport-medium) { flex: 0 0 40%;  }
+  h2 {
+    color: $text-color;
+  }
+
+  a {
+    @media all and (min-width: $viewport-medium) {
+      flex: 0 0 20%;
     }
+    @media all and (max-width: $viewport-medium) {
+      flex: 0 0 40%;
+    }
+  }
+}
+
+#about-section {
+  background-color: #f8f8f8;
+  border-top: 1px solid $color-grey-light;
+  border-bottom: 1px solid $color-grey-light;
+
+  h2 {
+    color: $text-color;
+  }
+}
+
+#mayor-section {
+  background-color: white;
+
+  h2 {
+    color: $text-color;
+  }
 }
 
 section.promo {
-    .container > div {
-        display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-evenly;
-        > div, > p {
-            flex:1 0 320px;
-        }
+  .container > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
-        .entity_reference > div {
-            text-align:center;
-        }
+    > div,
+    > p {
+      flex: 1 0 320px;
     }
-    p { font-size:$font-size-big; line-height:1.5em; letter-spacing:.04em; }
-    .promo_title { text-align:center; }
+
+    .entity_reference > div {
+      text-align: center;
+    }
+  }
+  p {
+    color: $text-color;
+    line-height: 1.5em;
+  }
+  .promo_title {
+    margin: 30px 0 0 0;
+  }
 }
