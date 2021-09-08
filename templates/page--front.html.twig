@@ -45,171 +45,164 @@
  * @ingroup themeable
  */
 #}
+
+{{ page.highlighted }}
+
+
 {% if alerts %}
-    <div id="alerts">{{ alerts }}</div>
+	<div id="alerts">{{ alerts }}</div>
 {% endif %}
 
 <header id="homepage">
-  <div class="menu-container">
-    <a href="{{ base_path }}" title="City of Bloomington" class="logo">
-      <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
-    </a>
-    <a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
-    <div class="nav-items">
-      <nav id="navigation" role="navigation" aria-labelledby="navigation">
-        <ul>
-          <li><a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+	<div class="menu-container">
+		<a href="{{ base_path }}" title="City of Bloomington" class="logo">
+			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
+		</a>
+		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
+		{# <div class="nav-items">
+																					<nav id="navigation" role="navigation" aria-labelledby="navigation">
+																						<ul>
+																							<li><ahref="{{base_path}}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
+																						</ul>
+																					</nav>
+																				</div> #}
+	</div>
 
-  <nav id="header-icon-nav">
-    <div class="container">
-      <a class="about"
-         title="Information &amp; Guides"
-         href="{{ base_path }}about">
-        <span>Information &amp; Guides</span>
-        <span>Information</span>
-      </a>
+	<nav id="header-icon-nav">
+		<div class="container">
+			<a class="about" title="Information &amp; Guides" href="{{ base_path }}about">
+				<span>Information &amp; Guides</span>
+				<span>Information</span>
+			</a>
 
-      <a class="city"
-         title="City Government"
-         href="{{ base_path }}city">
-        <span>City Government</span>
-        <span>Government</span>
-      </a>
+			<a class="city" title="City Government" href="{{ base_path }}city">
+				<span>City Government</span>
+				<span>Government</span>
+			</a>
 
-      <a class="news"
-         title="News &amp; Events"
-         href="{{ base_path }}news">
-        <span>News &amp; Events</span>
-        <span>News</span>
-      </a>
+			<a class="news" title="News &amp; Events" href="{{ base_path }}news">
+				<span>News &amp; Events</span>
+				<span>News</span>
+			</a>
 
-      <a class="services"
-         title="Top Services"
-         href="{{ base_path }}services">
-        <span>Top Services</span>
-        <span>Services</span>
-      </a>
-    </div>
-  </nav>
+			<a class="services" title="Top Services" href="{{ base_path }}services">
+				<span>Top Services</span>
+				<span>Services</span>
+			</a>
+		</div>
+	</nav>
 </header>
-{{ page.primary_menu }} 
+{{ page.primary_menu }}
 
 <main class="front">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-    
-    <section id="block-searchform" role="search">
-        <div class="container">
-        <h2>Welcome Neighbors,</h2>
-            <form id="search-block-form" method="get" action="/search">
-                <fieldset>
-                    <label for="query" class="visually-hidden">Search</label>
-                    <input 
-                        id="query"
-                        name="query"
-                        type="search"
-                        class="form-search"
-                        title="Enter the terms you wish to search for."
-                        placeholder="Search the City of Bloomington"
-                        size="15"
-                        maxlength="128" />
-                    <input type="submit" class="button" value="Search" />
-                </fieldset>
-            </form>
-        </div>
-    </section>
-    {# <div id="banner"></div>#}
+	<a id="main-content" tabindex="-1"></a>
+	{# link is in html.html.twig #}
 
-    
+	<section id="block-searchform" role="search">
+		<div class="container">
+			<form id="search-block-form" method="get" action="/search">
+				<fieldset>
+					<label for="query" class="visually-hidden">Search</label>
+					<input id="query" name="query" type="search" class="form-search" title="Enter the terms you wish to search for." placeholder="Search the City of Bloomington" size="15" maxlength="128"/>
+					<input type="submit" class="button" value="Search"/>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+	{# <div id="banner"></div>#}
 
-    {{ page.highlighted }}
-    {{ page.help }}
 
-    <div class="promoted-area">
-        <div class="container"> 
-            <h2>Promoted Headlines</h2>
-            {{ page.content }}
-        </div>
-    </div>
+	{{ page.help }}
 
-    <div id="content">
-        <section id="services-section">
-            <div class="container">
-                <header><h2>Services &amp; Guides</h2></header>
-                <nav>
-                    <a href="{{ base_path }}contact" class="contact">Contact Us</a>
-                    <a href="{{ base_path }}ureport" class="report">Report Issue</a>
-                    <a href="https://data.bloomington.in.gov" class="performance">B-Clear: Open Data</a>
-                    <a href="{{ base_path }}mybloomington" class="myBloomington">My Bloomington</a>
-                    <a href="{{ base_path }}maps" class="maps">City Maps</a>
-                    <a href="{{ base_path }}utilities" class="water">Sign Up For Service/Pay Water Bill</a>
-                    <a href="{{ base_path }}transportation/parking" class="parking_ticket">Parking Services</a>
-                    <a href="{{ base_path }}parks" class="parks">Parks and Recreation</a>
-                </nav>
-            </div>
-        </section>
-        
-        <section id="news-section-new" class="home">
-            <div class="container">
-                <header><h2>News</h2></header>
-                <div>
-                    <div class="news">
-                        <div class="results">
-                            {{ news }}
-                        </div>
-                        <a
-                            href="{{ base_path }}news"
-                            class="btn more">Click to read more News</a>
-                    </div>
-                    {# <aside class="calendar_calendar">
-                        {{ events }}
-                    </aside> #}
-                </div>
-            </div>
-        </section>
+	<div class="promoted-area">
+		<div class="container">
+			<h2>Promoted Headlines</h2>
+			{{ page.content }}
+		</div>
+	</div>
 
-        <section id="about-section">{{ about }}</section>
-        <section id="mayor-section">{{ mayor }}</section>
+	<div id="content">
+		<section id="services-section">
+			<div class="container">
+				<header>
+					<h2>Services &amp; Guides</h2>
+				</header>
+				<nav>
+					<a href="{{ base_path }}contact" class="contact">Contact Us</a>
+					<a href="{{ base_path }}ureport" class="report">Report Issue</a>
+					<a href="https://data.bloomington.in.gov" class="performance">B-Clear: Open Data</a>
+					<a href="{{ base_path }}mybloomington" class="myBloomington">My Bloomington</a>
+					<a href="{{ base_path }}maps" class="maps">City Maps</a>
+					<a href="{{ base_path }}utilities" class="water">Sign Up For Service/Pay Water Bill</a>
+					<a href="{{ base_path }}transportation/parking" class="parking_ticket">Parking Services</a>
+					<a href="{{ base_path }}parks" class="parks">Parks and Recreation</a>
+				</nav>
+			</div>
+		</section>
 
-        <section id="government-section">
-            <div class="container">
-                <header><h2>City Government</h2></header>
-                <nav>
-                    <a href="{{ base_path }}municipal-code" class="code">
-                        <h2>Municipal Code</h2>
-                        The Municipal Code is intended to make the laws of the city as accessible
-                        as possible to city officials, city employees, and private citizens.
-                    </a>
-                    <a href="{{ base_path }}city/budget" class="budget">
-                        <h2>City Budget</h2>
-                        Details of the City of Bloomington's estimated revenue and expenses for a given year.
-                    </a>
-                    <a href="{{ base_path }}boards" class="boards">
-                        <h2>Boards and Commissions</h2>
-                        Find out more about the city's boards and commissions and ways you can get involved.
-                    </a>
-                    <a href="{{ base_path }}council" class="council">
-                        <h2>City Council</h2>
-                        The City Council is a link between the citizens of Bloomington and their government
-                    </a>
-                    <a href="{{ base_path }}contact" class="contact">
-                        <h2>Contact the City</h2>
-                        There are many ways to get in touch with the City, whether by phone, email, or social media.
-                    </a>
-                    <a href="{{ base_path }}offices" class="elected">
-                        <h2>Elected Officials</h2>
-                        See the details of the elected officials and get to know them better.
-                    </a>
-                    <a href="{{ base_path }}public-safety" class="public_safety">
-                        <h2>Public Safety</h2>
-                        Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
-                    </a>
-                </nav>
-            </div>
-        </section>
-    </div>
+		<section class="news-section-new home">
+			<div class="container">
+				<header>
+					<h2>News</h2>
+				</header>
+				<div>
+					<div class="news">
+						<div class="results">
+							{{ news }}
+						</div>
+						<a href="{{ base_path }}news" class="btn more">Click to read more News</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="events-section" class="home">
+			<div class="container">
+				<header>
+					<h2>Events</h2>
+				</header>
+				<div>
+					{{ events }}
+				</div>
+			</div>
+		</section>
+
+		<section id="government-section">
+			<div class="container">
+				<header>
+					<h2>City Government</h2>
+				</header>
+				<nav>
+					<a href="{{ base_path }}municipal-code" class="code">
+						<h2>Municipal Code</h2>
+						The Municipal Code is intended to make the laws of the city as accessible as possible to city officials, city employees, and private citizens.
+					</a>
+					<a href="{{ base_path }}city/budget" class="budget">
+						<h2>City Budget</h2>
+						Details of the City of Bloomington's estimated revenue and expenses for a given year.
+					</a>
+					<a href="{{ base_path }}boards" class="boards">
+						<h2>Boards and Commissions</h2>
+						Find out more about the city's boards and commissions and ways you can get involved.
+					</a>
+					<a href="{{ base_path }}council" class="council">
+						<h2>City Council</h2>
+						The City Council is a link between the citizens of Bloomington and their government
+					</a>
+					<a href="{{ base_path }}offices" class="elected">
+						<h2>Elected Officials</h2>
+						See the details of the elected officials and get to know them better.
+					</a>
+					<a href="{{ base_path }}public-safety" class="public_safety">
+						<h2>Public Safety</h2>
+						Safety of the citizens is most important. Police, Fire, Crime Prevention, Safety Resources
+					</a>
+				</nav>
+			</div>
+		</section>
+
+		<section id="about-section">{{ about }}</section>
+		<section id="mayor-section">{{ mayor }}</section>
+	</div>
 </main>
 {% include '@cob/partials/footer.html.twig' %}

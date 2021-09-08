@@ -13,25 +13,64 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
 #}
 <div class="events">
-    {% for date, event in meetings %}
-    <a href="{{ event.htmlLink }}">
-    <article>
-        <header>
-            <time datetime="{{ event.start }}">
-                <span class="month"    >{{ event.start | date('M')}}</span>
-                <span class="monthDate">{{ event.start | date('j')}}</span>
-                <span class="weekday"  >{{ event.start | date('l')}}</span>
-            </time>
-        </header>
-        <div>
-            <div class="summary" >{{ event.summary  }}</div>
-            <time datetime="{{ event.start }}">
-                {{  event.start | date('g:ia') }}
-                to {{ event.end | date('g:ia') }}
-            </time>
-            <div class="location">{{ event.location }}</div>
-        </div>
-    </article>
-    </a>
-    {% endfor %}
+	{% for date, event in meetings %}
+		<a href="{{ event.htmlLink }}">
+			<article>
+				<header>
+					<h2>{{ event.summary  }}</h2>
+				</header>
+
+				<div>
+					{% if event.start.dateTime %}
+						<time datetime="{{ event.start.dateTime }}">
+							<span class="weekday">
+								{{ event.start.dateTime | date('l')}}
+							</span>
+
+							<span class="monthDate">
+								{{ event.start.dateTime | date('M')}}
+								{{ event.start.dateTime | date('j')}}
+							</span>
+
+							<span class="time">
+								{{  event.start.dateTime | date('g:ia') }}
+								{% if event.end.dateTime %}
+									-
+									{{ event.end.dateTime | date('g:ia') }}
+								{% endif %}
+							</span>
+						</time>
+					{% else %}
+						<time datetime="{{ event.start.date }}">
+							<span class="weekday">
+								{{ event.start.date | date('l')}}
+							</span>
+
+							<span class="monthDate">
+								{{ event.start.date | date('M')}}
+								{{ event.start.date | date('j')}}
+							</span>
+						</time>
+					{% endif %}
+
+
+					<div class="location">
+						{% if 'zoom' in event.location %}
+							<p>via Zoom</p>
+						{% elseif null == event.location %}
+							<p>Location TBA</p>
+						{% else %}
+							<p>at City Hall</p>
+							<p>
+								<small>{{ event.location }}</small>
+							</p>
+						{% endif %}
+					</div>
+
+					<p>Click to view this Event</p>
+				</div>
+			</article>
+		</a>
+
+	{% endfor %}
 </div>

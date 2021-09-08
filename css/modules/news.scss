@@ -3,194 +3,194 @@
 // }
 
 // News and Success are content types in Drupal
-#news-section,
-#success-section {
-  * {
-    box-sizing: border-box;
-  }
+// #news-section,
+// #success-section {
+//   * {
+//     box-sizing: border-box;
+//   }
 
-  form {
-    display: flex;
-    align-items: center;
-    margin: 0 0 ($size-gutter * 1.5) 0;
-    padding: 0 0 $size-gutter 0;
-    border-bottom: 1px solid $color-divider;
+// form {
+//   display: flex;
+//   align-items: center;
+//   margin: 0 0 ($size-gutter * 1.5) 0;
+//   padding: 0 0 $size-gutter 0;
+//   border-bottom: 1px solid $color-divider;
 
-    > div {
-      margin: 0 ($size-gutter * 2) 0 0;
+//   > div {
+//     margin: 0 ($size-gutter * 2) 0 0;
 
-      &:last-of-type {
-        margin: 0;
-      }
-    }
+//     &:last-of-type {
+//       margin: 0;
+//     }
+//   }
 
-    .button {
-      padding: $size-gutter ($size-gutter * 2);
-      margin: 0;
-    }
-  }
+//   .button {
+//     padding: $size-gutter ($size-gutter * 2);
+//     margin: 0;
+//   }
+// }
 
-  .container {
-    padding: 0;
+//   .container {
+//     padding: 0;
 
-    > div {
-      overflow: auto;
-      display: flex;
-      flex-wrap: wrap;
-    }
-  }
+//     > div {
+//       overflow: auto;
+//       display: flex;
+//       flex-wrap: wrap;
+//     }
+//   }
 
-  aside {
-    width: 320px;
-    margin-left: auto;
-  }
+//   aside {
+//     width: 320px;
+//     margin-left: auto;
+//   }
 
-  // News and Success are content types in Drupal
-  .news,
-  .success {
-    width: 710px;
+//   // News and Success are content types in Drupal
+//   .news,
+//   .success {
+//     width: 710px;
 
-    .results {
-      margin: 0 0 ($size-gutter * 2) 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-content: stretch;
+//     .results {
+//       margin: 0 0 ($size-gutter * 2) 0;
+//       display: flex;
+//       flex-wrap: wrap;
+//       align-content: stretch;
 
-      a {
-        margin: 0 0 ($size-gutter * 2) 0;
+//       a {
+//         margin: 0 0 ($size-gutter * 2) 0;
 
-        &:nth-last-child(-n + 2) {
-          margin: 0;
-        }
-      }
-    }
-  }
+//         &:nth-last-child(-n + 2) {
+//           margin: 0;
+//         }
+//       }
+//     }
+//   }
 
-  @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-    .container {
-      padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+//   @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+//     .container {
+//       padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
-      > div {
-        flex-direction: column-reverse;
-      }
-    }
+//       > div {
+//         flex-direction: column-reverse;
+//       }
+//     }
 
-    aside {
-      margin-top: 20px;
-      width: 100%;
+//     aside {
+//       margin-top: 20px;
+//       width: 100%;
 
-      .events {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 0.5em;
-      }
-    }
-  }
+//       .events {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         grid-gap: 0.5em;
+//       }
+//     }
+//   }
 
-  @media (max-width: $viewport-medium) {
-    form {
-      align-items: flex-end;
-    }
+//   @media (max-width: $viewport-medium) {
+//     form {
+//       align-items: flex-end;
+//     }
 
-    .container {
-      padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+//     .container {
+//       padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
-      > div {
-        flex-direction: column-reverse;
-      }
-    }
+//       > div {
+//         flex-direction: column-reverse;
+//       }
+//     }
 
-    aside {
-      width: 100%;
-    }
-  }
-}
+//     aside {
+//       width: 100%;
+//     }
+//   }
+// }
 
-@media (min-width: $viewport-large) {
-  .front #news-section .results a {
-    &:first-of-type {
-      width: 100%;
+// @media (min-width: $viewport-large) {
+//   .front #news-section .results a {
+//     &:first-of-type {
+//       width: 100%;
 
-      .hasImage .summary {
-        display: block;
-      }
-    }
+//       .hasImage .summary {
+//         display: block;
+//       }
+//     }
 
-    &:not(:first-child) {
-      display: flex;
-      width: 50%;
+//     &:not(:first-child) {
+//       display: flex;
+//       width: 50%;
 
-      &:nth-child(even) {
-        padding-right: 0.25em;
-      }
-      &:nth-child(odd) {
-        padding-left: 0.25em;
-      }
-    }
-  }
-}
+//       &:nth-child(even) {
+//         padding-right: 0.25em;
+//       }
+//       &:nth-child(odd) {
+//         padding-left: 0.25em;
+//       }
+//     }
+//   }
+// }
 
-@media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-  :not(.front) #news-section .news,
-  :not(.front) #success-section .success {
-    width: 100%;
+// @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+//   :not(.front) #news-section .news,
+//   :not(.front) #success-section .success {
+//     width: 100%;
 
-    .results a {
-      width: 100%;
-    }
-  }
+//     .results a {
+//       width: 100%;
+//     }
+//   }
 
-  .front #news-section {
-    .news {
-      width: 100%;
-      float: none;
+//   .front #news-section {
+//     .news {
+//       width: 100%;
+//       float: none;
 
-      .results a {
-        &:first-of-type {
-          width: 100%;
-          .hasImage .summary {
-            display: block;
-          }
-        }
+//       .results a {
+//         &:first-of-type {
+//           width: 100%;
+//           .hasImage .summary {
+//             display: block;
+//           }
+//         }
 
-        &:not(:first-child) {
-          display: flex;
-          width: 50%;
+//         &:not(:first-child) {
+//           display: flex;
+//           width: 50%;
 
-          &:nth-child(even) {
-            padding-right: 0.25em;
-          }
-          &:nth-child(odd) {
-            padding-left: 0.25em;
-          }
-        }
-      }
-    }
-  }
-}
+//           &:nth-child(even) {
+//             padding-right: 0.25em;
+//           }
+//           &:nth-child(odd) {
+//             padding-left: 0.25em;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-@media (max-width: $viewport-medium) {
-  :not(.front) #news-section .news,
-  :not(.front) #success-section .success {
-    width: 100%;
+// @media (max-width: $viewport-medium) {
+//   :not(.front) #news-section .news,
+//   :not(.front) #success-section .success {
+//     width: 100%;
 
-    .results a {
-      width: 100%;
-      .hasImage .summary {
-        display: none;
-      }
-    }
-  }
+//     .results a {
+//       width: 100%;
+//       .hasImage .summary {
+//         display: none;
+//       }
+//     }
+//   }
 
-  .front #news-section .news {
-    width: 100%;
-    float: none;
+//   .front #news-section .news {
+//     width: 100%;
+//     float: none;
 
-    .results a {
-      width: 100%;
-    }
-  }
-}
+//     .results a {
+//       width: 100%;
+//     }
+//   }
+// }
 
 // article.news.teaser,
 // article.success.teaser {
@@ -259,7 +259,7 @@
 //   }
 // }
 
-#news-section-new {
+.news-section-new {
   &.home {
     padding: 60px 0;
 
@@ -276,6 +276,41 @@
     @media (max-width: 767px) {
       font-size: $font-size-medium;
       margin: 0 0 5px 0;
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px 0;
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid $color-divider;
+
+    > div {
+      margin: 0 ($size-gutter * 2) 0 0;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+
+    .button {
+      font-family: $fontIBM;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 3px;
+      background-color: $color-fern;
+      border: none;
+      color: white;
+      width: fit-content;
+      font-size: $font-size-small;
+      margin: 0;
+
+      &:hover,
+      &:focus {
+        background-color: darken($color-fern, 5);
+      }
     }
   }
 
@@ -297,6 +332,22 @@
     article {
       display: flex;
       margin: 0;
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+
+        .entity_reference {
+          margin: 0 0 15px 0;
+        }
+
+        p {
+          font-size: $font-size-small;
+        }
+
+        h3 {
+          line-height: $font-size-medium;
+        }
+      }
 
       .entity_reference {
         margin: 0 15px 0 0;

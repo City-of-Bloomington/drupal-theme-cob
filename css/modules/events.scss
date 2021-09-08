@@ -1,81 +1,205 @@
+// #block-upcomingevents,
+// #block-committeemeetings,
+// .onboard_meetings,
+// .calendar_calendar {
+
+//     article {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: start;
+//         height: 158px;
+//         min-width: 320px;
+//         overflow: hidden;
+//         border: 1px solid $color-divider;
+
+//         .month, .monthDate {
+//             font-size: $font-size-bigger;
+//             font-weight: bold;
+//         }
+
+//         .time {
+//             margin: ($size-gutter * .5);
+//             font-size: $font-size-smaller;
+//         }
+
+//         .weekday { }
+//         .summary {
+//             position: relative;
+//             margin: 0 0 10px 0;
+//             line-height: $font-size-big;
+//             font-size: $font-size-big;
+//             font-weight: bold;
+//             font-family: "Lora", serif;
+//             color: $biscay;
+//         }
+
+//         h4 { margin:0; }
+
+//         header {
+//             flex:0 0 140px;
+//             height:100%;
+//             background-color: $color-alert;
+//             color: $color-content-background;
+//             font-family: $font-family-heading;
+
+//             time {
+//                 height:100%;
+//                 display:flex;
+//                 flex-direction:column;
+//                 justify-content:center;
+
+//                 span {
+//                     display:block;
+//                     text-align:center;
+//                 }
+//             }
+//         }
+
+//         > div {
+//             line-height: 1.5em;
+//             padding: $size-gutter;
+
+//             time {
+//                 display: block;
+//                 margin: 0 0 10px 0;
+//                 color: $dark-slate;
+//                 font-size:  $font-size-small;
+//             }
+
+//             .location {
+//                 font-size: $font-size-smaller;
+//                 line-height: $font-size-smaller;
+//             }
+
+//             span {
+//                 display: block;
+//                 height: 3em;
+//                 overflow: hidden;
+//             }
+//         }
+//     }
+// }
+
 #block-upcomingevents,
 #block-committeemeetings,
 .onboard_meetings,
 .calendar_calendar {
+  //   background-color: #f8f8f8;
+  //   border-top: 1px solid $color-grey-light;
+
+  header h2 {
+    color: $text-color;
+  }
+
+  .events {
+    // display: grid;
+    // grid-gap: 30px;
+    // justify-content: center;
+    // grid-template-columns: 1fr;
+    margin: 0 0 30px 0;
+
+    // @media (max-width: 767px) {
+    //   grid-gap: 0;
+    // }
 
     article {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        height: 158px;
-        min-width: 320px;
-        overflow: hidden;
-        border: 1px solid $color-divider;
-
-        .month, .monthDate {
-            font-size: $font-size-bigger;
-            font-weight: bold;
-        }
-
-        .time {
-            margin: ($size-gutter * .5);
-            font-size: $font-size-smaller;
-        }
-
-        .weekday { }
-        .summary {
-            position: relative;
-            margin: 0 0 10px 0;
-            line-height: $font-size-big;
-            font-size: $font-size-big;
-            font-weight: bold;
-            font-family: "Lora", serif;
-            color: $biscay;
-        }
-
-        h4 { margin:0; }
-
-        header {
-            flex:0 0 140px;
-            height:100%;
-            background-color: $color-alert;
-            color: $color-content-background;
-            font-family: $font-family-heading;
-
-            time {
-                height:100%;
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-
-                span {
-                    display:block;
-                    text-align:center;
-                }
-            }
-        }
-
-        > div {
-            line-height: 1.5em;
-            padding: $size-gutter;
-
-            time {
-                display: block;
-                margin: 0 0 10px 0;
-                color: $dark-slate;
-                font-size:  $font-size-small;
-            }
-
-            .location {
-                font-size: $font-size-smaller;
-                line-height: $font-size-smaller;
-            }
-
-            span {
-                display: block;
-                height: 3em;
-                overflow: hidden;
-            }
-        }
+      margin: 0;
     }
+
+    a {
+      display: block;
+      background: #635380;
+      border: 2px solid #635380;
+      padding: 15px;
+      margin: 0 0 30px 0;
+      border-radius: 3px;
+
+      &:nth-child(3):nth-last-child(1) {
+        grid-column: span 2;
+      }
+
+      &:nth-child(2):nth-last-child(3) {
+        grid-column: 2;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border: 2px solid darken(#635380, 5);
+
+        time {
+          background-color: darken(#635380, 5);
+
+          span {
+            color: white;
+          }
+        }
+
+        h2,
+        p {
+          color: $text-color !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        grid-column: span 2;
+        margin: 0 0 15px 0;
+
+        &:nth-child(2):nth-last-child(3) {
+          grid-column: span 2;
+        }
+      }
+    }
+
+    time {
+      display: flex;
+      flex-wrap: wrap;
+      //   justify-content: space-between;
+      background-color: #f8f8f8;
+      border: 1px solid #f8f8f8;
+      padding: 10px 15px;
+      margin: 0 0 15px 0;
+      border-radius: 3px;
+
+      span {
+        position: relative;
+        // display: block;
+        color: $text-color;
+        font-size: $font-size-small;
+
+        &.weekday,
+        &.time,
+        &.monthDate {
+        }
+
+        &.monthDate {
+          margin: 0 0 0 5px;
+
+          &:before {
+            content: "-";
+          }
+        }
+      }
+    }
+
+    h2 {
+      color: white !important;
+      font-size: $font-size-big !important;
+      margin: 0 0 10px 0 !important;
+
+      @media (max-width: 767px) {
+        font-size: $font-size-big !important;
+      }
+    }
+
+    p {
+      color: white;
+      font-size: $font-size-small;
+      margin: 0;
+    }
+
+    .location {
+      margin: 0 0 15px 0;
+    }
+  }
 }

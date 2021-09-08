@@ -1,65 +1,53 @@
+{% if alerts %}
+	<div id="alerts">{{ alerts }}</div>
+{% endif %}
+
 <header>
-  <div class="menu-container">
-    <a href="{{ base_path }}" title="City of Bloomington" class="logo">
-      <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
-    </a>
-    <a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
-    
-    <div class="nav-items non-home">
-      <form id="header-search" method="get" action="/search">
-        <fieldset>
-          <label for="query" class="visually-hidden">Search</label>
-          <input 
-              id="query"
-              name="query"
-              type="search"
-              class="form-search"
-              title="Enter the terms you wish to search for."
-              placeholder="Search the City of Bloomington"
-              size="15"
-              maxlength="128" />
-          <input type="submit" class="button" value="Search" />
-        </fieldset>
-      </form>
+	<div class="menu-container">
+		<a href="{{ base_path }}" title="City of Bloomington" class="logo">
+			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
+		</a>
+		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
 
-      <nav id="navigation" role="navigation" aria-labelledby="navigation">
-        <ul>
-          <li><a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+		<div class="nav-items non-home">
+			<form id="header-search" method="get" action="/search">
+				<fieldset>
+					<label for="query" class="visually-hidden">Search</label>
+					<input id="query" name="query" type="search" class="form-search" title="Enter the terms you wish to search for." placeholder="Search the City of Bloomington" size="15" maxlength="128"/>
+					<input type="submit" class="button" value="Search"/>
+				</fieldset>
+			</form>
 
-  <nav id="header-icon-nav">
-    <div class="container">
-      <a class="about"
-         title="Information &amp; Guides"
-         href="{{ base_path }}about">
-        <span>Information &amp; Guides</span>
-        <span>Information</span>
-      </a>
+			{# <nav id="navigation" role="navigation" aria-labelledby="navigation">
+							<ul>
+								<li><ahref="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
+							</ul>
+						</nav> #}
+		</div>
+	</div>
 
-      <a class="city"
-         title="City Government"
-         href="{{ base_path }}city">
-        <span>City Government</span>
-        <span>Government</span>
-      </a>
+	<nav id="header-icon-nav">
+		<div class="container">
+			<a class="about" title="Information &amp; Guides" href="{{ base_path }}about">
+				<span>Information &amp; Guides</span>
+				<span>Information</span>
+			</a>
 
-      <a class="news"
-         title="News &amp; Events"
-         href="{{ base_path }}news">
-        <span>News &amp; Events</span>
-        <span>News</span>
-      </a>
+			<a class="city" title="City Government" href="{{ base_path }}city">
+				<span>City Government</span>
+				<span>Government</span>
+			</a>
 
-      <a class="services"
-         title="Top Services"
-         href="{{ base_path }}services">
-        <span>Top Services</span>
-        <span>Services</span>
-      </a>
-    </div>
-  </nav>
+			<a class="news" title="News &amp; Events" href="{{ base_path }}news">
+				<span>News &amp; Events</span>
+				<span>News</span>
+			</a>
+
+			<a class="services" title="Top Services" href="{{ base_path }}services">
+				<span>Top Services</span>
+				<span>Services</span>
+			</a>
+		</div>
+	</nav>
 </header>
-{{ page.primary_menu }} 
+{{ page.primary_menu }}

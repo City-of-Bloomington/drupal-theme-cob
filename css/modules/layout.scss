@@ -12,14 +12,14 @@ section {
 
   aside {
     margin-left: 1em;
-    width: $size-sidebar-maxwidth;
+    width: 420px;
     // min-width: $size-sidebar-maxwidth;
 
     ul {
       list-style-type: none;
     }
     img {
-      max-width: $size-sidebar-maxwidth;
+      max-width: 420px;
       height: auto;
     }
   }
@@ -36,7 +36,7 @@ section {
 
 .container {
   margin: 0 auto;
-  width: calc(100% - 30px);
+  width: calc(100% - 60px);
   max-width: 1080px;
 
   @media (max-width: 767px) {

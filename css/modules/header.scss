@@ -175,7 +175,7 @@
 
     .container {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       width: 100%;
     }
 
@@ -194,7 +194,7 @@
 
       &:hover,
       &:focus {
-        background-color: darken($color: $color-blue, $amount: 5);
+        background-color: darken($color-blue, 5);
         // color: $color-blue;
       }
 
