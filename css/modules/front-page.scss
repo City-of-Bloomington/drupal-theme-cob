@@ -43,11 +43,11 @@
 #block-searchform {
   // background-color: #f8f8f8;
   border-bottom: 1px solid $color-grey-light;
-  background-image: url("images/cover-placeholder.jpg");
+  background-image: url("images/cover.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 100px 0;
+  padding: 200px 0;
   position: relative;
 
   &:before {
@@ -127,6 +127,7 @@
         height: 50px;
         margin: 0;
         border: none;
+        background-color: $color-mayor-sushi;
         -webkit-border-top-left-radius: 0;
         -webkit-border-bottom-left-radius: 0;
         -moz-border-radius-topleft: 0;
@@ -135,6 +136,11 @@
         -webkit-border-bottom-right-radius: 3px;
         -moz-border-radius-topright: 3px;
         -moz-border-radius-bottomright: 3px;
+
+        &:hover,
+        &:focus {
+          background-color: darken($color-mayor-sushi, 5);
+        }
       }
 
       @media (max-width: 767px) {
@@ -181,7 +187,9 @@
     a,
     p {
       font-family: $fontIBM;
-      color: $text-color;
+      // color: $text-color;
+      color: $color-mayor-biscay;
+      text-align: center;
     }
 
     h2 {
@@ -213,29 +221,49 @@
     }
 
     .rows {
+      // display: grid;
+      // grid-gap: 30px;
+      // justify-content: center;
+      // grid-template-columns: 3fr 3fr 3fr;
+
       display: grid;
+      grid-template-columns: repeat(6, 1fr);
       grid-gap: 30px;
-      justify-content: center;
-      grid-template-columns: 2fr 2fr;
 
       @media (max-width: 767px) {
+        grid-template-columns: 1fr;
         grid-gap: 0;
       }
 
       .promoted-front {
+        grid-column: span 2;
         // grid-template-columns: repeat(auto-fit, 50%);
 
         @media (max-width: 767px) {
-          grid-column: span 2;
+          grid-column: 1;
           margin: 0 0 15px 0;
         }
 
-        &:nth-child(3):nth-last-child(1) {
-          grid-column: span 2;
+        // &:nth-child(3):nth-last-child(1) {
+        //   grid-column: span 2;
+        // }
+
+        // &:nth-child(2):nth-last-child(3) {
+        //   grid-column: 2;
+        // }
+
+        &:last-child:nth-child(3n - 1) {
+          grid-column-end: -2;
         }
 
-        &:nth-child(2):nth-last-child(3) {
-          grid-column: 2;
+        &:nth-last-child(2):nth-child(3n + 1) {
+          grid-column-end: 4;
+        }
+
+        /* Dealing with single orphan */
+
+        &:last-child:nth-child(3n - 2) {
+          grid-column-end: 5;
         }
 
         h2 {
@@ -248,8 +276,10 @@
 
         a {
           border-radius: 3px;
-          background-color: #f4c449;
-          border: 2px solid #f4c449;
+          // background-color: #f4c449;
+          // border: 2px solid #f4c449;
+          background-color: $color-mayor-curious-blue;
+          border: 2px solid $color-mayor-curious-blue;
           padding: 20px;
           display: block;
 
@@ -264,7 +294,8 @@
 }
 
 #services-section {
-  background-color: $color-blue;
+  // background-color: $color-blue;
+  background-color: $color-mayor-biscay;
 
   h2 {
     color: white;
@@ -297,7 +328,8 @@
 }
 
 #government-section {
-  background-color: $color-blue;
+  // background-color: $color-blue;
+  background-color: $color-mayor-biscay;
   border-top: 1px solid $color-grey-light;
   border-bottom: 1px solid $color-grey-light;
 
@@ -437,8 +469,11 @@
 
     a {
       display: block;
-      background: #635380;
-      border: 2px solid #635380;
+
+      // background: #635380;
+      // border: 2px solid #635380;
+      background: $color-mayor-eminence;
+      border: 2px solid $color-mayor-eminence;
       padding: 15px;
       border-radius: 3px;
 
@@ -453,10 +488,12 @@
       &:hover,
       &:focus {
         background-color: transparent;
-        border: 2px solid darken(#635380, 5);
+        // border: 2px solid darken(#635380, 5);
+        border: 2px solid darken($color-mayor-eminence, 5);
 
         time {
-          background-color: darken(#635380, 5);
+          // background-color: darken(#635380, 5);
+          background-color: darken($color-mayor-eminence, 5);
 
           span {
             color: white;

@@ -1,12 +1,12 @@
 <footer
 	id="main">
 	{# <div class="helpful-rating">
-															        <div class="container">
-															            <p><strong>Was this page helpful?</strong></p>
-															            <button>Yes</button>
-															            <button>No</button>
-															        </div>
-															    </div> #}
+																																	        <div class="container">
+																																	            <p><strong>Was this page helpful?</strong></p>
+																																	            <button>Yes</button>
+																																	            <button>No</button>
+																																	        </div>
+																																	    </div> #}
 
 	<div class="container">
 		<div class="left">
@@ -23,22 +23,41 @@
 			<div class="links">
 				<ul>
 					<li>
-						<a href="https://bloomington.in.gov/departments/hr/jobs">Jobs with the City</a>
+						<a href="https://bloomington.in.gov/departments/hr/jobs" title="City Jobs">City Jobs</a>
 					</li>
 
 					<li>
-						<a href="https://bloomington.in.gov/ureport/miscellaneous/53">Report a problem</a>
+						<a href="https://bloomington.in.gov/contact" title="Contact the City">Contact the City</a>
 					</li>
 
 					<li>
-						<a href="https://apps.bloomington.in.gov/kb">City Intranet</a>
+						<a href="https://bloomington.in.gov/ureport" title="Report an Issue">Report an Issue</a>
 					</li>
+
+					<li>
+						<a href="https://bloomington.in.gov/contact/social-media" title="Connect on Social Media">Connect on Social Media</a>
+					</li>
+
+					<li>
+						<a href="https://bloomington.in.gov/maps" title="City Maps">City Maps</a>
+					</li>
+
+					<li>
+						<a href="https://data.bloomington.in.gov/" title="Transparency">Transparency</a>
+
+					</li>
+
 				</ul>
 
 				<ul>
 					<li>
-						<a href="https://bloomington.in.gov/web/privacy">Privacy Policy</a>
+						<a href="https://bloomington.in.gov/web/privacy" title="Privacy Policy">Privacy Policy</a>
 					</li>
+
+					<li>
+						<a href="https://apps.bloomington.in.gov/kb" title="City Intranet">City Intranet</a>
+					</li>
+
 
 					<li>
 						{% if logged_in %}
@@ -46,6 +65,15 @@
 						{% else %}
 							<a href="{{ base_path }}caslogin">Login</a>
 						{% endif %}
+					</li>
+
+					<li>
+						<address>
+							<span>City Hall</span>
+							<span>401 North Morton Street</span>
+							<span>Bloomington, Indiana 47404</span>
+							<span>812-349-3400</span>
+						</address>
 					</li>
 				</ul>
 			</div>

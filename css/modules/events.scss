@@ -108,8 +108,11 @@
 
     a {
       display: block;
-      background: #635380;
-      border: 2px solid #635380;
+      // background: #635380;
+      // border: 2px solid #635380;
+      background: $color-mayor-eminence;
+      border: 2px solid $color-mayor-eminence;
+
       padding: 15px;
       margin: 0 0 30px 0;
       border-radius: 3px;
@@ -125,10 +128,12 @@
       &:hover,
       &:focus {
         background-color: transparent;
-        border: 2px solid darken(#635380, 5);
+        // border: 2px solid darken(#635380, 5);
+        border: 2px solid darken($color-mayor-eminence, 5);
 
         time {
-          background-color: darken(#635380, 5);
+          // background-color: darken(#635380, 5);
+          background-color: darken($color-mayor-eminence, 5);
 
           span {
             color: white;

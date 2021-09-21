@@ -10,14 +10,16 @@
   border-radius: 3px;
 
   &.more {
-    background-color: $color-fern;
+    // background-color: $color-fern;
+    background-color: $color-mayor-sushi;
     color: white;
     width: fit-content;
     font-size: $font-size-small;
 
     &:hover,
     &:focus {
-      background-color: darken($color-fern, 5);
+      // background-color: darken($color-fern, 5);
+      background-color: darken($color-mayor-sushi, 5);
     }
   }
 }
