@@ -12,14 +12,14 @@ section {
 
   aside {
     margin-left: 1em;
-    width: 420px;
+    width: $size-sidebar-maxwidth;
     // min-width: $size-sidebar-maxwidth;
 
     ul {
       list-style-type: none;
     }
     img {
-      max-width: 420px;
+      max-width: 100%;
       height: auto;
     }
   }
@@ -30,6 +30,15 @@ section {
     aside {
       width: 100%;
       margin-left: 0;
+    }
+  }
+
+  .text_with_summary,
+  .text_long,
+  figure {
+    img {
+      max-width: 100%;
+      height: auto;
     }
   }
 }

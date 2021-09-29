@@ -266,6 +266,10 @@
     @media (max-width: 767px) {
       padding: 30px 0;
     }
+
+    .container {
+      padding: 0 !important;
+    }
   }
 
   h2 {
@@ -318,7 +322,7 @@
     a:not(.btn) {
       display: block;
       padding: 15px;
-      border: 1px solid $color-grey-lighter;
+      // border: 1px solid $color-grey-lighter;
       background-color: $color-grey-lighter;
       border-radius: 3px;
       margin: 0 0 30px 0;
@@ -326,28 +330,14 @@
       &:hover,
       &:focus {
         background-color: darken($color: $color-grey-light, $amount: 1);
+        -webkit-box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.1);
       }
     }
 
     article {
       display: flex;
       margin: 0;
-
-      @media (max-width: 767px) {
-        flex-wrap: wrap;
-
-        .entity_reference {
-          margin: 0 0 15px 0;
-        }
-
-        p {
-          font-size: $font-size-small;
-        }
-
-        h3 {
-          line-height: $font-size-medium;
-        }
-      }
 
       .entity_reference {
         margin: 0 15px 0 0;
@@ -368,6 +358,22 @@
 
       p {
         color: $text-color;
+      }
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+
+        .entity_reference {
+          margin: 0 0 15px 0;
+        }
+
+        p {
+          font-size: $font-size-small;
+        }
+
+        h3 {
+          font-size: $font-size-big;
+        }
       }
     }
   }

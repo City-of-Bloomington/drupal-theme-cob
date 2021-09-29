@@ -95,27 +95,78 @@
     // display: grid;
     // grid-gap: 30px;
     // justify-content: center;
-    // grid-template-columns: 1fr;
+    // grid-template-columns: 2fr 2fr;
     margin: 0 0 30px 0;
 
-    // @media (max-width: 767px) {
-    //   grid-gap: 0;
-    // }
+    @media (max-width: 767px) {
+      padding: 15px 0 0 15px;
+    }
 
     article {
       margin: 0;
+
+      header {
+        margin: 0 0 15px 45px;
+
+        h2 {
+          color: $text-color;
+          font-size: $font-size-big;
+          margin: 0;
+        }
+
+        p {
+          font-size: 1.125rem;
+          margin: 0;
+        }
+      }
     }
 
     a {
       display: block;
+
+      position: relative;
+      margin: 15px 0 30px 15px;
+
       // background: #635380;
       // border: 2px solid #635380;
-      background: $color-mayor-eminence;
-      border: 2px solid $color-mayor-eminence;
+      // background: $color-mayor-eminence;
+      // border: 2px solid $color-mayor-eminence;
+
+      background: white;
+      border: 2px solid darken($color: #f8f8f8, $amount: 5);
 
       padding: 15px;
-      margin: 0 0 30px 0;
       border-radius: 3px;
+      -webkit-box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.05);
+
+      .date {
+        position: absolute;
+        background: $color-mayor-eminence;
+        border: 2px solid $color-mayor-eminence;
+        color: white;
+        text-align: center;
+        top: -15px;
+        left: -15px;
+        padding: 5px 15px;
+        border-radius: 3px;
+        width: auto;
+
+        span {
+          display: block;
+          width: 100%;
+
+          &:nth-child(1) {
+            line-height: 1;
+          }
+
+          &:nth-child(2) {
+            font-size: $font-size-bigger;
+            line-height: $font-size-bigger;
+            font-weight: 600;
+          }
+        }
+      }
 
       &:nth-child(3):nth-last-child(1) {
         grid-column: span 2;
@@ -127,23 +178,25 @@
 
       &:hover,
       &:focus {
-        background-color: transparent;
+        // background-color: transparent;
         // border: 2px solid darken(#635380, 5);
-        border: 2px solid darken($color-mayor-eminence, 5);
+        border: 2px solid $color-mayor-eminence;
+        -webkit-box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.25);
 
-        time {
-          // background-color: darken(#635380, 5);
-          background-color: darken($color-mayor-eminence, 5);
+        // time {
+        //   // background-color: darken(#635380, 5);
+        //   background-color: darken($color-mayor-eminence, 5);
 
-          span {
-            color: white;
-          }
-        }
+        //   span {
+        //     color: white;
+        //   }
+        // }
 
-        h2,
-        p {
-          color: $text-color !important;
-        }
+        // h2,
+        // p {
+        //   color: $text-color;
+        // }
       }
 
       @media (max-width: 767px) {
@@ -155,56 +208,122 @@
         }
       }
     }
-
-    time {
-      display: flex;
-      flex-wrap: wrap;
-      //   justify-content: space-between;
-      background-color: #f8f8f8;
-      border: 1px solid #f8f8f8;
-      padding: 10px 15px;
-      margin: 0 0 15px 0;
-      border-radius: 3px;
-
-      span {
-        position: relative;
-        // display: block;
-        color: $text-color;
-        font-size: $font-size-small;
-
-        &.weekday,
-        &.time,
-        &.monthDate {
-        }
-
-        &.monthDate {
-          margin: 0 0 0 5px;
-
-          &:before {
-            content: "-";
-          }
-        }
-      }
-    }
-
-    h2 {
-      color: white !important;
-      font-size: $font-size-big !important;
-      margin: 0 0 10px 0 !important;
-
-      @media (max-width: 767px) {
-        font-size: $font-size-big !important;
-      }
-    }
-
-    p {
-      color: white;
-      font-size: $font-size-small;
-      margin: 0;
-    }
-
-    .location {
-      margin: 0 0 15px 0;
-    }
   }
+
+  // .events {
+  //   // display: grid;
+  //   // grid-gap: 30px;
+  //   // justify-content: center;
+  //   // grid-template-columns: 1fr;
+  //   margin: 0 0 30px 0;
+
+  //   // @media (max-width: 767px) {
+  //   //   grid-gap: 0;
+  //   // }
+
+  //   article {
+  //     margin: 0;
+  //   }
+
+  //   a {
+  //     display: block;
+  //     // background: #635380;
+  //     // border: 2px solid #635380;
+  //     background: $color-mayor-eminence;
+  //     border: 2px solid $color-mayor-eminence;
+
+  //     padding: 15px;
+  //     margin: 0 0 30px 0;
+  //     border-radius: 3px;
+
+  //     &:nth-child(3):nth-last-child(1) {
+  //       grid-column: span 2;
+  //     }
+
+  //     &:nth-child(2):nth-last-child(3) {
+  //       grid-column: 2;
+  //     }
+
+  //     &:hover,
+  //     &:focus {
+  //       background-color: transparent;
+  //       // border: 2px solid darken(#635380, 5);
+  //       border: 2px solid darken($color-mayor-eminence, 5);
+
+  //       time {
+  //         // background-color: darken(#635380, 5);
+  //         background-color: darken($color-mayor-eminence, 5);
+
+  //         span {
+  //           color: white;
+  //         }
+  //       }
+
+  //       h2,
+  //       p {
+  //         color: $text-color !important;
+  //       }
+  //     }
+
+  //     @media (max-width: 767px) {
+  //       grid-column: span 2;
+  //       margin: 0 0 15px 0;
+
+  //       &:nth-child(2):nth-last-child(3) {
+  //         grid-column: span 2;
+  //       }
+  //     }
+  //   }
+
+  //   time {
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     //   justify-content: space-between;
+  //     background-color: #f8f8f8;
+  //     border: 1px solid #f8f8f8;
+  //     padding: 10px 15px;
+  //     margin: 0 0 15px 0;
+  //     border-radius: 3px;
+
+  //     span {
+  //       position: relative;
+  //       // display: block;
+  //       color: $text-color;
+  //       font-size: $font-size-small;
+
+  //       &.weekday,
+  //       &.time,
+  //       &.monthDate {
+  //       }
+
+  //       &.monthDate {
+  //         margin: 0 0 0 5px;
+
+  //         &:before {
+  //           content: "-";
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   h2 {
+  //     color: white !important;
+  //     font-size: $font-size-big !important;
+  //     margin: 0 0 10px 0 !important;
+
+  //     @media (max-width: 767px) {
+  //       font-size: $font-size-big !important;
+  //     }
+  //   }
+
+  //   p {
+  //     color: white;
+  //     font-size: $font-size-small;
+  //     margin: 0;
+  //   }
+
+  //   .location {
+  //     margin: 0 0 15px 0;
+  //   }
+  // }
 }
