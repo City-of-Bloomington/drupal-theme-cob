@@ -225,13 +225,6 @@ function cob_preprocess_node(&$vars)
     if ($vars['view_mode'] == 'full') {
         $nid     = (int)$vars['node']->get('nid' )->value;
         switch ($nid) {
-            case 790: // Maps Landing Page
-                $vars['maps'] = [
-                    '#theme' => 'interactivemap_maps',
-                    '#maps'  => MapGateway::maps()
-                ];
-            break;
-
             // Engineering Projects
             case 573:
                 $query = \Drupal::entityQuery('node')
