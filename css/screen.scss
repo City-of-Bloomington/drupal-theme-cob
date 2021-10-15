@@ -413,7 +413,8 @@ strong {
   }
 }
 
-.dialog-off-canvas-main-canvas > footer#main {
+.dialog-off-canvas-main-canvas > footer#main,
+footer#main {
   // background-color: $color-footer;
   // color: $color-content-background;
   // padding: $size-gutter;

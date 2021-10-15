@@ -106,11 +106,11 @@
       margin: 0;
 
       header {
-        margin: 0 0 15px 45px;
+        margin: 0 0 15px 55px;
 
         h2 {
-          color: $text-color;
-          font-size: $font-size-big;
+          color: $text-color !important;
+          font-size: $font-size-big !important;
           margin: 0;
         }
 
@@ -150,7 +150,7 @@
         left: -15px;
         padding: 5px 15px;
         border-radius: 3px;
-        width: auto;
+        width: auto !important; // bc layout #intro div
 
         span {
           display: block;

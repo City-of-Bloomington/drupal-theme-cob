@@ -13,6 +13,7 @@ section {
   aside {
     margin-left: 1em;
     width: $size-sidebar-maxwidth;
+    word-wrap: break-word;
     // min-width: $size-sidebar-maxwidth;
 
     ul {
