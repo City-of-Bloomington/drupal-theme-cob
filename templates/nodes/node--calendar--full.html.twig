@@ -76,14 +76,11 @@
 	{% if view_mode == 'full' %}
 		<div{{content_attributes}}>
 
-			{# AGB: This button needs to show at the top of only the full calendar view pages. 'content.field_google_calendar_id' not seeming to work #}
-
-			{# <a href="https://calendar.google.com/calendar/embed?src={{ content.field_google_calendar_id }}&ctz=America/New_York" class="btn more visit-cal top">Visit Calendar</a> #}
-
-		{{ content|without(
+			{{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
-	</div>
-{% endif %}</article>
+		</div>
+	{% endif %}
+</article>
