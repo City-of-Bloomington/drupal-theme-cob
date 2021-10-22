@@ -13,57 +13,72 @@
  */
 #}
 <div class="seats">
-{% for seat in committee.seats %}
-    {% if not seat.vacant %}
-    {% if seat.currentMember.website %}<a href="{{ seat.currentMember.website }}">{% endif %}
-    <div class="member">
-        <h3>{{ seat.currentMember.firstname }} {{ seat.currentMember.lastname }}
-            {% if  seat.currentMember.offices %}
-            <div>{{ seat.currentMember.offices }}</div>
-            {% endif %}
-        </h3>
-        <dl>{% if committee.info.name == "City Council" %}
-            <dt>Elected By:</dt>
-            <dd>{{ seat.name }}</dd>
-            {% elseif seat.appointedBy %}
-            <dt>Appointed By:</dt>
-            <dd>{{ seat.appointedBy }}{% if not seat.voting %} (non-voting){% endif %}</dd>
-            {% endif %}
+	{% for seat in committee.seats %}
+		{% if not seat.vacant %}
+			{% if seat.currentMember.website %}
+				<a class="member" href="{{ seat.currentMember.website }}">
+				{% else %}
+					<div class="member">
+					{% endif %}
+					<h3>{{ seat.currentMember.firstname }}
+						{{ seat.currentMember.lastname }}
+						{% if  seat.currentMember.offices %}
+							<div>{{ seat.currentMember.offices }}</div>
+						{% endif %}
+					</h3>
+					<dl>
+						{% if committee.info.name == "City Council" %}
+							<dt>Elected By:</dt>
+							<dd>{{ seat.name }}</dd>
+						{% elseif seat.appointedBy %}
+							<dt>Appointed By:</dt>
+							<dd>{{ seat.appointedBy }}
+								{% if not seat.voting %}
+									(non-voting)
+								{% endif %}
+							</dd>
+						{% endif %}
 
-            {% if seat.currentMember.termEndDate %}
-            <dt>Term Expires:</dt>
-            <dd>{{ seat.currentMember.termEndDate }}</dd>
-            {% else %}
-            <dt>Member Since:</dt>
-            <dd>{{ seat.currentMember.termStartDate }}</dd>
-            {% endif %}
-        </dl>
-    </div>
-    {% if seat.currentMember.website %}</a>{% endif %}
-    {% else %}
-    <div class="member">
-        <h3>Vacant
-            {% if seat.currentMember.firstname %}
-            ({{ seat.currentMember.firstname }} {{ seat.currentMember.lastname }})
-            {% endif %}
-        </h3>
-        <dl>{% if seat.appointedBy %}
-            <dt>Appointed By:</dt>
-            <dd>{{ seat.appointedBy }}</dd>
-            {% endif %}
+						{% if seat.currentMember.termEndDate %}
+							<dt>Term Expires:</dt>
+							<dd>{{ seat.currentMember.termEndDate }}</dd>
+						{% else %}
+							<dt>Member Since:</dt>
+							<dd>{{ seat.currentMember.termStartDate }}</dd>
+						{% endif %}
+					</dl>
+					{% if seat.currentMember.website %}
+					</a>
+			{% else %}
+				</div>
 
-            {% if seat.currentTerm %}
-            <dt>Term Expires</dt>
-            <dd>{{ seat.currentTerm.endDate }}</dd>
-            {% endif %}
-        </dl>
-        {% if seat.takesApplications %}
-            <a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}"
-                class="button">
-                Vacancy:Apply
-            </a>
-        {% endif %}
-    </div>
-    {% endif %}
-{% endfor %}
+			{% endif %}
+
+		{% else %}
+			<div class="member">
+				<h3>Vacant
+					{% if seat.currentMember.firstname %}
+						({{ seat.currentMember.firstname }}
+						{{ seat.currentMember.lastname }})
+					{% endif %}
+				</h3>
+				<dl>
+					{% if seat.appointedBy %}
+						<dt>Appointed By:</dt>
+						<dd>{{ seat.appointedBy }}</dd>
+					{% endif %}
+
+					{% if seat.currentTerm %}
+						<dt>Term Expires</dt>
+						<dd>{{ seat.currentTerm.endDate }}</dd>
+					{% endif %}
+				</dl>
+				{% if seat.takesApplications %}
+					<a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}" class="button">
+						Vacancy:Apply
+					</a>
+				{% endif %}
+			</div>
+		{% endif %}
+	{% endfor %}
 </div>

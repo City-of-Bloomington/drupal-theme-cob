@@ -72,80 +72,94 @@
  * @ingroup themeable
  */
 #}
-<article{{ attributes }} class="{{ node.bundle }} {{ view_mode }}">
-    {% if display_submitted or not page %}
-    <header>
-        {{ title_prefix }}
-        {% if display_submitted %}
-            {% set isodate = node.getCreatedTime %}
-            <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
-        {% endif %}
-        {% if not page %}
-        <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
-        {% endif %}
-        {{ title_suffix }}
-    </header>
-    {% endif %}
-    {% if view_mode == 'full' %}
-    <div id="intro">
-        <div>
-            {{ regions.secondary_menu }}
-            {{ content.field_contacts }}
-            {{ content.body }}
-            {{ content.field_video }}
-            {{ content.field_call_to_action }}
-        </div>
+<article{{attributes}} class="{{ node.bundle }} {{ view_mode }}">
+	<div class="last-update">
+		<p>
+			Page last updated on
+			{{ node.changed.value|date('F j, Y') }}
+			at
+			{{ node.changed.value|date('g:i a') }}
+		</p>
+	</div>
 
-        {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-        {% set content_image %}{{ content.field_content_image }}{% endset %}
-        {% set coordinates %}{{ content.field_coordinates }}{% endset %}
-        {% set aside %}{{ content.field_aside }}{% endset %}
-        {% set hours %}{{ content.field_hours }}{% endset %}
-        {% if content_image
+
+	{% if display_submitted or not page %}
+		<header>
+			{{ title_prefix }}
+			{% if display_submitted %}
+				{% set isodate = node.getCreatedTime %}
+				<time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
+			{% endif %}
+			{% if not page %}
+				<h2{{title_attributes}}>
+					<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+				</h2>
+			{% endif %}
+			{{ title_suffix }}
+		</header>
+	{% endif %}
+	{% if view_mode == 'full' %}
+		<div id="intro">
+			<div>
+				{{ regions.secondary_menu }}
+				{{ content.field_contacts }}
+				{{ content.body }}
+				{{ content.field_video }}
+				{{ content.field_call_to_action }}
+			</div>
+
+			{% set upcoming_events %}{{ content.field_calendar }}{% endset %}
+			{% set content_image %}{{ content.field_content_image }}{% endset %}
+			{% set coordinates %}{{ content.field_coordinates }}{% endset %}
+			{% set aside %}{{ content.field_aside }}{% endset %}
+			{% set hours %}{{ content.field_hours }}{% endset %}
+			{% if content_image
            or coordinates
            or aside
            or hours
            or upcoming_events
            or meetings
         %}
-        <aside>
-            {% if aside %}
-            {{ content.field_aside_title }}
-            {{ content.field_aside       }}
-            {% endif %}
-            {{ content_image   }}
-            {{ upcoming_events }}
-            {{ coordinates     }}
-            {{ hours           }}
-            {% if meetings %}
-            <section id="block-committeemeetings">
-                <header><h2>Meetings</h2></header>
-                <div>{{ meetings }}</div>
-            </section>
-            {% endif %}
-        </aside>
-        {% endif %}
-    </div>
-    <div{{ content_attributes }}>
-        {{ content|without(
+				<aside>
+					{% if aside %}
+						{{ content.field_aside_title }}
+						{{ content.field_aside       }}
+					{% endif %}
+					{{ content_image   }}
+					{{ upcoming_events }}
+					{{ coordinates     }}
+					{{ hours           }}
+					{% if meetings %}
+						<section id="block-committeemeetings">
+							<header>
+								<h2>Meetings</h2>
+							</header>
+							<div>{{ meetings }}</div>
+						</section>
+					{% endif %}
+				</aside>
+			{% endif %}
+		</div>
+		<div{{content_attributes}}>
+			{{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
-    </div>
-    {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
-    {% if  related_links %}
-    <section id="related-links" class="divided">
-        <div class="container">
-            <header>
-                <h2>Related Categories</h2>
-            </header>
-            <div>{{ related_links }}</div>
-        </div>
-    </nav>
-    {% endif %}
+		</div>
+		{% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
+		{% if  related_links %}
+			<section id="related-links" class="divided">
+				<div class="container">
+					<header>
+						<h2>Related Categories</h2>
+					</header>
+					<div>{{ related_links }}</div>
+				</div>
+			</nav>
+		{% endif %}
 
-    {% else %}
-    {{ content }}
-    {% endif %}
+	{% else %}
+		{{ content }}
+	{% endif %}
 </article>

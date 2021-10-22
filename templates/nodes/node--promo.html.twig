@@ -73,25 +73,27 @@
  */
 #}
 
-<section class="{{ node.bundle }} divided promo{% if content.field_content_image['#items'] %} hasImage{% endif %}">
-    <div class="container">
-        <header>
-            <h2{{ title_attributes }}>
-                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-        </header>
-        <div>
-            {{ content.field_content_image }}
-            <div>
-                {% if node.body.summary %}
-                <p class="summary">
-                {{ node.body.summary }}
-                </p>
-                {% else %}
-                {{ content.body }}
-                {% endif %}
-                {{ content.field_promo_title }}
-            </div>
-        </div>
-    </div>
+<section class="{{ node.bundle }} promo{% if content.field_content_image['#items'] %} hasImage{% endif %}">
+	<div class="container">
+
+		<div>
+			{{ content.field_content_image }}
+			<div>
+				<header>
+					<h2{{title_attributes}}>
+						<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+					</h2>
+				</header>
+
+				{% if node.body.summary %}
+					<p class="summary">
+						{{ node.body.summary }}
+					</p>
+				{% else %}
+					{{ content.body }}
+				{% endif %}
+				{{ content.field_promo_title }}
+			</div>
+		</div>
+	</div>
 </section>

@@ -1,41 +1,84 @@
-section { margin:0; }
+section {
+  margin: 0;
+}
 
 #intro {
-    display: flex;
-    margin-bottom: 1em;
+  display: flex;
+  margin-bottom: 1em;
 
-    div {
-        width: 100%;
+  div {
+    width: 100%;
+  }
+
+  aside {
+    margin-left: 1em;
+    width: $size-sidebar-maxwidth;
+    word-wrap: break-word;
+    // min-width: $size-sidebar-maxwidth;
+
+    ul {
+      list-style-type: none;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media all and (max-width: $viewport-medium) {
+    flex-wrap: wrap;
 
     aside {
-        margin-left: 1em;
-        width: $size-sidebar-maxwidth;
-        // min-width: $size-sidebar-maxwidth;
-
-        ul  { list-style-type: none; }
-        img {
-            max-width: $size-sidebar-maxwidth;
-            height: auto;
-        }
+      width: 100%;
+      margin-left: 0;
     }
+  }
 
-    @media all and (max-width: $viewport-medium) {
-        flex-wrap: wrap;
-
-        aside {
-            width: 100%;
-            margin-left: 0;
-        }
+  .text_with_summary,
+  .text_long,
+  figure {
+    img {
+      max-width: 100%;
+      height: auto;
     }
+  }
 }
 
-@media all and (min-width: $viewport-large) {
-    .dialog-off-canvas-main-canvas > header > .container,
-    #alerts              .container,
-    .dialog-off-canvas-main-canvas > footer        .container,
-    main > div           .container,
-    #content > section > .container {
-        width:$viewport-large - 20px; margin:0 auto;
-    }
+.container {
+  margin: 0 auto;
+  width: calc(100% - 60px);
+  max-width: 1080px;
+
+  @media (max-width: 767px) {
+    width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
 }
+
+// @media all and (min-width: $viewport-large) {
+//   .dialog-off-canvas-main-canvas > header > .container,
+//   #block-searchform .container,
+//   #alerts .container,
+//   .promoted-area .container,
+//   #block-cob-cob-system-main,
+//   .dialog-off-canvas-main-canvas > footer .container,
+//   main > div .container,
+//   #content > section > .container {
+//     width: $viewport-large - 20px;
+//     margin: 0 auto;
+//   }
+// }
+
+// @media all and (min-width: $viewport-large) {
+//   .dialog-off-canvas-main-canvas > header > .container,
+//   #block-searchform .container,
+//   #alerts .container,
+//   .promoted-area .container,
+//   #block-cob-cob-system-main,
+//   .dialog-off-canvas-main-canvas > footer .container,
+//   main > div .container,
+//   #content > section > .container {
+//     width: $viewport-large - 20px;
+//     margin: 0 auto;
+//   }
+// }

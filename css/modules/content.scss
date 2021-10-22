@@ -5,132 +5,188 @@
  * This should control how we display the way HTML that users type.
  */
 #content {
-    ul { list-style:disc    outside; margin-left:1em; }
-    ol { list-style:decimal outside; margin-left:1em; }
+  .last-update {
+    margin: 0 0 30px 0;
 
-    &.search-results {
-        h3 {
-            font-weight: $font-weight-bold;
-            margin: 0 0 $size-gutter 0;
-        }
-        ol {
-            list-style-type: none;
-            margin: 0;
-
-            li {
-                margin-bottom: $size-gutter * 4;
-                word-break: break-word;
-
-                > a {
-                    margin: 0 0 $size-gutter 0;
-                    display: block;
-                    color: $color-action;
-                }
-            }
-        }
+    p {
+      font-style: italic;
+      font-size: 16px;
+      color: lighten($text-color, 5%);
     }
+  }
 
-    .text_with_summary a,
-    .text_long         a { color:$color-heading; text-decoration:underline; }
+  ul {
+    list-style: disc outside;
+    margin-left: 1em;
+  }
 
-    .container {
-        padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+  ol {
+    list-style: decimal outside;
+    margin-left: 1em;
+  }
 
-        > section {
-            padding:$size-gutter 0;
-
-            h2 { color:$color-heading; margin-bottom:2rem; }
-            .container { overflow:auto; }
-
-            @media all and (min-width:$viewport-medium) {
-                h2 { font-size:$font-size-bigger; }
-            }
-        }
+  &.search-results {
+    .views-field-title {
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      font-family: $font-family-heading;
+      margin: 0 0 $size-gutter 0;
     }
-
-    #activities {
-        section {
-            display:flex; flex-direction:row; justify-content:center;
-            header, form { flex-basis:30%; margin:0 auto; }
-        }
+    .views-row {
+      margin-bottom: $size-gutter * 4;
+      a {
+        display: block;
+        color: $color-action;
+      }
     }
+  }
+
+  .text_with_summary a,
+  .text_long a {
+    color: $color-heading;
+    text-decoration: underline;
+  }
+
+  .container {
+    padding: 0 ($size-gutter * 2);
+
+    > section {
+      padding: $size-gutter 0;
+
+      h2 {
+        color: $color-heading;
+        margin-bottom: 2rem;
+      }
+      .container {
+        overflow: auto;
+      }
+
+      @media all and (min-width: $viewport-medium) {
+        h2 {
+          font-size: $font-size-bigger;
+        }
+      }
+    }
+  }
+
+  #activities {
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      header,
+      form {
+        flex-basis: 30%;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 .parks-page {
-    #stats {
-        color:$color-content-background; background:$color-header;
+  #stats {
+    color: $color-content-background;
+    background: $color-header;
 
-        font-size:$font-size-big;
+    font-size: $font-size-big;
 
-        .container {
-            display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center;
-        }
-
-        .count { font-size:$font-size-bigger; }
-
-        a {
-            flex:0 0 auto; width:150px; height:120px; padding-top:40px;
-            display:flex; flex-direction:column; justify-content:start; align-items:center;
-
-            color:$color-content-background;
-            &:hover { background-color:$color-selected-background; }
-
-            div { text-align:center; }
-        }
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .events {
-        @media all and (min-width:$viewport-medium) {
-            display:grid; grid-template-columns:1fr 1fr; grid-gap:$size-gutter
-        }
+    .count {
+      font-size: $font-size-bigger;
     }
 
-    #categories {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+    a {
+      flex: 0 0 auto;
+      width: 150px;
+      height: 120px;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
 
-        article {
-            flex:0 0 20%;
-            margin: $size-gutter;
+      color: $color-content-background;
+      &:hover {
+        background-color: $color-selected-background;
+      }
 
-            header {
-                h3 {
-                    text-align:center;
-                    font-size:$font-size-bigger;
-                    margin: 0 0 $size-gutter 0;
-                }
-            }
-
-            a {
-                display: block;
-                padding: ($size-gutter*2);
-                &:hover { background-color:$color-selected-background; }
-            }
-        }
+      div {
+        text-align: center;
+      }
     }
+  }
+
+  .events {
+    @media all and (min-width: $viewport-medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: $size-gutter;
+    }
+  }
+
+  #categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    article {
+      flex: 0 0 20%;
+      margin: $size-gutter;
+
+      header {
+        h3 {
+          text-align: center;
+          font-size: $font-size-bigger;
+          margin: 0 0 $size-gutter 0;
+        }
+      }
+
+      a {
+        display: block;
+        padding: ($size-gutter * 2);
+        &:hover {
+          background-color: $color-selected-background;
+        }
+      }
+    }
+  }
 }
 
 #promt-programsearchform {
-    display:table;
+  display: table;
 
-    .form-item { margin-bottom:$size-gutter; }
-    label { display:inline-block; width:5em; }
-    select { width:20em; }
-    #edit-actions { text-align:center; }
+  .form-item {
+    margin-bottom: $size-gutter;
+  }
+  label {
+    display: inline-block;
+    width: 5em;
+  }
+  select {
+    width: 20em;
+  }
+  #edit-actions {
+    text-align: center;
+  }
 }
 
 .speeches_remarks {
-    #intro {
-        margin-bottom: 2em;
+  #intro {
+    margin-bottom: 2em;
 
-        div {
-            width: 100%;
-        }
+    div {
+      width: 100%;
     }
+  }
 
-    .text_long {
-        column-count: 2;
-    }
+  .text_long {
+    column-count: 2;
+  }
 }

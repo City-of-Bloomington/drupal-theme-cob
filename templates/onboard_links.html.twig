@@ -11,42 +11,37 @@
  * @copyright 2018 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
 #}
-<nav>
-    {% set year  = 'now'|date('Y') %}
-    <a class="button"
-       href="{{ path('onboard.meetingList.node-'~nid, {'node':nid, 'year':year}) }}">
-       Meetings &amp; Documents
-    </a>
-    {% if committee.info.calendarId %}
-    <a class="button"
-       href="https://calendar.google.com/calendar/embed?src={{ committee.info.calendarId }}&amp;ctz=America/New_York">
-       Calendar
-    </a>
-    {% endif %}
-    {% if committee.info.videoArchive %}
-    <a class="button"
-       href="{{ committee.info.videoArchive }}">
-       Videos
-    </a>
-    {% endif %}
-    {% if committee.info.legislative %}
-    <a class="button"
-       href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
-       Legislation
-    </a>
-    {% endif %}
-    {% if committee.info.vacancy %}
-        {% set applyable = false %}
-        {% for seat in committee.seats %}
-            {% if seat.vacant and seat.takesApplications %}
-                {% set applyable = true %}
-            {% endif %}
-        {% endfor %}
-        {% if applyable %}
-            <a class="button"
-            href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
-            Vacancy: Apply!
-            </a>
-        {% endif %}
-    {% endif %}
+<nav class="button-group">
+	{% set year  = 'now'|date('Y') %}
+	<a class="button" href="{{ path('onboard.meetingList.node-'~nid, {'node':nid, 'year':year}) }}">
+		Meetings &amp; Documents
+	</a>
+	{% if committee.info.calendarId %}
+		<a class="button" href="https://calendar.google.com/calendar/embed?src={{ committee.info.calendarId }}&amp;ctz=America/New_York">
+			Calendar
+		</a>
+	{% endif %}
+	{% if committee.info.videoArchive %}
+		<a class="button" href="{{ committee.info.videoArchive }}">
+			Videos
+		</a>
+	{% endif %}
+	{% if committee.info.legislative %}
+		<a class="button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
+			Legislation
+		</a>
+	{% endif %}
+	{% if committee.info.vacancy %}
+		{% set applyable = false %}
+		{% for seat in committee.seats %}
+			{% if seat.vacant and seat.takesApplications %}
+				{% set applyable = true %}
+			{% endif %}
+		{% endfor %}
+		{% if applyable %}
+			<a class="button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
+				Vacancy: Apply!
+			</a>
+		{% endif %}
+	{% endif %}
 </nav>
