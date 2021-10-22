@@ -15,62 +15,56 @@
 <div class="events">
 	{% for date, event in meetings %}
 		<a href="{{ event.htmlLink }}">
+			<div class="date">
+				<span>{{ event.start.dateTime | date('M')}}</span>
+				<span>{{ event.start.dateTime | date('j')}}</span>
+			</div>
+
 			<article>
 				<header>
 					<h2>{{ event.summary  }}</h2>
 				</header>
 
-				<div>
-					{% if event.start.dateTime %}
-						<time datetime="{{ event.start.dateTime }}">
-							<span class="weekday">
-								{{ event.start.dateTime | date('l')}}
-							</span>
+				<div class="location">
+					<p>
+						{% if event.start.dateTime %}
+							<time datetime="{{ event.start.dateTime }}">
+								<span class="weekday">
+									{{ event.start.dateTime | date('l')}}
+								</span>
 
-							<span class="monthDate">
-								{{ event.start.dateTime | date('M')}}
-								{{ event.start.dateTime | date('j')}}
-							</span>
-
-							<span class="time">
-								{{  event.start.dateTime | date('g:ia') }}
-								{% if event.end.dateTime %}
+								<span class="time">
 									-
-									{{ event.end.dateTime | date('g:ia') }}
-								{% endif %}
-							</span>
-						</time>
-					{% else %}
-						<time datetime="{{ event.start.date }}">
-							<span class="weekday">
-								{{ event.start.date | date('l')}}
-							</span>
-
-							<span class="monthDate">
-								{{ event.start.date | date('M')}}
-								{{ event.start.date | date('j')}}
-							</span>
-						</time>
-					{% endif %}
-
-
-					<div class="location">
-						{% if 'zoom' in event.location %}
-							<p>via Zoom</p>
-						{% elseif null == event.location %}
-							<p>Location TBA</p>
+									{{  event.start.dateTime | date('g:ia') }}
+									{% if event.end.dateTime %}
+										-
+										{{ event.end.dateTime | date('g:ia') }}
+									{% endif %}
+								</span>
+							</time>
 						{% else %}
-							<p>at City Hall</p>
-							<p>
-								<small>{{ event.location }}</small>
-							</p>
+							<time datetime="{{ event.start.date }}">
+								<span class="weekday">
+									{{ event.start.date | date('l')}}
+								</span>
+							</time>
 						{% endif %}
-					</div>
+
+					</p>
+					{% if 'zoom' in event.location %}
+						<p>via Zoom</p>
+					{% elseif null == event.location %}
+						<p>Location TBA</p>
+					{% else %}
+						<p>at City Hall</p>
+						<p>
+							<small>{{ event.location }}</small>
+						</p>
+					{% endif %}
 
 					<p>Click to view this Event</p>
 				</div>
 			</article>
 		</a>
-
 	{% endfor %}
 </div>
