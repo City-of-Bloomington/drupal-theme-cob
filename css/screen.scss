@@ -669,8 +669,8 @@ table {
             position: relative;
             display: flex;
             align-items: center;
-            margin: 0 0 $space-s 0;
-            padding: 0 0 0 ($space-s * 4); // 20px
+            margin: 0 0 ($space-xxs + 1) 0; // 5px
+            padding: 0 0 0 ($space-s + 4); // 20px
 
             &:last-of-type {
               margin: 0;
@@ -687,8 +687,8 @@ table {
               position: absolute;
               content: "";
               display: block;
-              width: (($space-s * 2) + 3); // 13px
-              height: (($space-s * 4) - 3); // 17px
+              width: $space-s - 3; // 13px
+              height: $space-s + 1; // 17px
               left: 0;
               background-size: cover;
               background-repeat: no-repeat;
