@@ -59,13 +59,14 @@
 			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
 		</a>
 		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor John Hamilton</a>
-		{# <div class="nav-items">
-														                <nav id="navigation" role="navigation" aria-labelledby="navigation">
-														                    <ul>
-														                        <li><ahref="{{base_path}}ureport/miscellaneous/53" title="Feedback">Feedback</a></li>
-														                    </ul>
-														                </nav>
-														            </div> #}
+		
+		<nav id="navigation" role="navigation" aria-labelledby="navigation">
+			<ul>
+				<li>
+					<a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback" target="_blank">Feedback</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
 
 	<nav id="header-icon-nav">
@@ -134,15 +135,37 @@
 					<h2>Top Services</h2>
 				</header>
 				<nav>
-					<a href="{{ base_path }}contact" class="contact-us" title="Contact Us">Contact Us</a>
-					<a href="{{ base_path }}ureport" class="report" title="Report Issue">Report Issue</a>
-					<a href="https://api.recollect.net/r/area/bloomingtonin" class="trash-recycle" title="Trash/Recycle">Trash/Recycle</a>
-					<a href="{{ base_path }}mybloomington" class="myBloomington" title="My Bloomington">My Bloomington</a>
-					<a href="{{ base_path }}animal-shelter" class="adopt-pet" title="Adopt a Pet">Adopt a Pet</a>
-					<a href="{{ base_path }}utilities/pay-bill" class="water" title="Pay Water Bill">Pay Water Bill</a>
-					<a href="{{ base_path }}transportation" class="around-bloomington" title="Getting Around Bloomington">Getting Around</a>
-					<a href="{{ base_path }}parks" class="parks" title="Parks and Recreation">Parks and Recreation</a>
+					<a href="{{ base_path }}contact"
+						 class="contact-us"
+						 title="Contact Us">Contact Us</a>
 
+					<a href="https://bloomington.in.gov/ureport"
+						 class="report"
+						 title="Report Issue">Report Issue</a>
+
+					<a href="https://api.recollect.net/r/area/bloomingtonin"
+						 class="trash-recycle"
+						 title="Trash/Recycle">Trash/Recycle</a>
+
+					<a href="https://bloomington.in.gov/mybloomington"
+						 class="myBloomington"
+						 title="My Bloomington">My Bloomington</a>
+
+					<a href="{{ base_path }}animal-shelter"
+						 class="adopt-pet"
+						 title="Adopt a Pet">Adopt a Pet</a>
+
+					<a href="{{ base_path }}utilities/pay-bill"
+						 class="water"
+						 title="Pay Water Bill">Pay Water Bill</a>
+
+					<a href="{{ base_path }}transportation"
+						 class="around-bloomington"
+						 title="Getting Around Bloomington">Getting Around</a>
+
+					<a href="{{ base_path }}parks"
+						 class="parks"
+						 title="Parks and Recreation">Parks and Recreation</a>
 				</nav>
 			</div>
 		</section>
