@@ -169,6 +169,20 @@ function cob_preprocess_page(&$vars)
                 unset($vars['page']['content']['committeemembers']);
             }
         }
+        // Boards and Commissions contact info should override any other contact info
+        if ($vars['node']->getType() == 'board_commission') {
+            $committee_id = $vars['node']->get('field_committee')->value;
+            if ($committee_id) {
+                $committee = OnBoardService::committee_info($committee_id);
+                if ($committee['info']['phone'  ]) { $vars['contactInfo']['phone'  ] = $committee['info']['phone'  ]; }
+                if ($committee['info']['email'  ]) { $vars['contactInfo']['email'  ] = $committee['info']['email'  ]; }
+                if ($committee['info']['address']) { $vars['contactInfo']['address'] = $committee['info']['address']; }
+                if ($committee['info']['city'   ]) { $vars['contactInfo']['city'   ] = $committee['info']['city'   ]; }
+                if ($committee['info']['state'  ]) { $vars['contactInfo']['state'  ] = $committee['info']['state'  ]; }
+                if ($committee['info']['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['info']['zip'    ]; }
+            }
+        }
+        
     }
     else {
         $route = \Drupal::routeMatch()->getRouteName();
@@ -217,11 +231,6 @@ function _cob_coverImageForEntity(FieldableEntityInterface $entity): array
 
 function cob_preprocess_node(&$vars)
 {
-    $contactInfo = _cob_contactInfoFromNode($vars['node']);
-    if ($contactInfo) {
-        $vars['contactInfo'] = $contactInfo;
-    }
-
     if ($vars['view_mode'] == 'full') {
         $nid     = (int)$vars['node']->get('nid' )->value;
         switch ($nid) {
