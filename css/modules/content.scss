@@ -4,13 +4,12 @@
  * These are styles for markup in the main content area of pages.
  * This should control how we display the way HTML that users type.
  */
+#intro nav a {
+    display: block; color: $color-link;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-heading;
+}
 #content {
-    nav a {
-        display: block; color: $color-link;
-        font-weight: $font-weight-bold;
-        font-family: $font-family-heading;
-    }
-
   .last-update {
     margin: 0 0 30px 0;
 
