@@ -115,15 +115,7 @@ function cob_preprocess_page__front(&$vars)
 
     $vars['available_messages'] = !empty(\Drupal::messenger()->all());
 
-    $query   = \Drupal::entityQuery('node')
-                ->condition('type', 'alert')
-                ->condition('status',  1)
-                ->sort('created', 'desc')
-                ->range(0, 5);
-    $alerts = _cob_renderNodesByQuery($query, 'teaser');
-    if ($alerts) {
-        $vars['alerts'] = $alerts;
-    }
+    
 
     $query   = \Drupal::entityQuery('node')
                 ->condition('type', 'news')
@@ -194,6 +186,17 @@ function cob_preprocess_page(&$vars)
             if ($urls) { $vars['cover_image'] = $urls; }
         }
     }
+
+    $query   = \Drupal::entityQuery('node')
+            ->condition('type', 'alert')
+            ->condition('status',  1)
+            ->sort('created', 'desc')
+            ->range(0, 5);
+    $alerts = _cob_renderNodesByQuery($query, 'teaser');
+    if ($alerts) {
+        $vars['alerts'] = $alerts;
+    }
+    
 }
 
 /**
@@ -405,7 +408,7 @@ function cob_preprocess_field__field_promo_title(&$vars)
 
     foreach ($vars['items'] as $i=>$item) {
         $vars['items'][$i]['content'] = [
-            '#markup' => "<a href=\"$url\" class=\"button\">{$item['content']['#context']['value']}</a>"
+            '#markup' => "<a href=\"$url\" class=\"btn more\">{$item['content']['#context']['value']}</a>"
         ];
 
     }

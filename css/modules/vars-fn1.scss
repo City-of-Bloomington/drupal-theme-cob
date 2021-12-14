@@ -1,104 +1,106 @@
 /**
  * Urls are relative to screen.css
  */
-$url-logo:              "";
+$url-logo: "";
 $url-header-background: "";
 
 //Typefaces
-@import 'https://fonts.googleapis.com/css?family=Lora';
-@import 'https://fonts.googleapis.com/css?family=Roboto';
-$serif: "Lora", serif;
-$sans:  "Roboto", sans-serif;
+@import "https://fonts.googleapis.com/css?family=Lora";
+@import "https://fonts.googleapis.com/css?family=Roboto";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap");
+$fontIBM: "IBM Plex Sans", sans-serif;
 
-$font-family-default: $sans;
-$font-family-heading: $serif;
-$font-family-nav:     $sans;
+$serif: "Lora", serif;
+$sans: "Roboto", sans-serif;
+
+$font-family-default: $fontIBM;
+$font-family-heading: $fontIBM;
+$font-family-nav: $sans;
 $font-weight-heading: 700;
 
 //Font Sizes
-$font-size-huge:    2.8125rem;
+$font-size-huge: 2.8125rem;
 $font-size-biggest: 1.6667rem;
-$font-size-bigger:  1.4000rem;
-$font-size-big:     1.2500rem;
-$font-size-normal:  1.1250rem;
-$font-size-small:   1.0000rem;
-$font-size-smaller: 0.8750rem;
+$font-size-bigger: 1.4rem;
+$font-size-big: 1.25rem;
+$font-size-normal: 1.125rem;
+$font-size-small: 1rem;
+$font-size-smaller: 0.875rem;
 
 // Families
 
 // Foreground colors
-$color-text-default:               $mine-shaft;
-$color-text-secondary:             $silver-chalice;
-$color-link:                       $biscay;
-$color-heading:                    $mine-shaft;
-$color-divider:                    $silver;
+$color-text-default: $mine-shaft;
+$color-text-secondary: $silver-chalice;
+$color-link: $biscay;
+$color-heading: $mine-shaft;
+$color-divider: $silver;
 
 // Background colors
-$color-content-background:         $white;
-$color-selected-background:        $havelock-blue;
+$color-content-background: $white;
+$color-selected-background: $havelock-blue;
 
-$color-nav1:                       $biscay;
-$color-header:                     $biscay;
-$color-header-border:              $azure;
-$color-footer:                     $dark-slate;
-$color-error:                      $sunglo;
-$color-alert:                      $california;
-$color-action:                     $fern;
-$color-action-hover:               $deyork;
-$color-accent:                     $red;
+$color-nav1: $biscay;
+$color-header: $biscay;
+$color-header-border: $azure;
+$color-footer: $dark-slate;
+$color-error: $sunglo;
+$color-alert: $california;
+$color-action: $fern;
+$color-action-hover: $deyork;
+$color-accent: $red;
 
 // Special widget colors
-$color-background-field:           $sail;
+$color-background-field: $sail;
 $color-background-field-highlight: $gin-fizz;
-$color-border-input:               $silver-chalice;
-$color-border-input-highlight:     $mine-shaft;
-$color-border-table:               $wafer;
+$color-border-input: $silver-chalice;
+$color-border-input-highlight: $mine-shaft;
+$color-border-table: $wafer;
 
-$color-table-background:           $gainsboro;
-$color-table-background-alt:       $silver;
-$color-table-header-background:    $biscay;
+$color-table-background: $gainsboro;
+$color-table-background-alt: $silver;
+$color-table-header-background: $biscay;
 
 $color-shadow: rgba(0, 0, 0, 0.5);
 
+$viewport-small: (350px);
+$viewport-medium: (640px);
+$viewport-large: (1080px);
 
-$viewport-small:   (350px);
-$viewport-medium:  (640px);
-$viewport-large:  (1080px);
-
-$size-gutter: .5em;
+$size-gutter: 0.5em;
 
 // Breakpoint mixins
 @mixin smallViewport {
-    @media all and (min-width: #{$viewport-small}) {
-        @content;
-    }
+  @media all and (min-width: #{$viewport-small}) {
+    @content;
+  }
 }
 @mixin mediumViewport {
-    @media all and (min-width: $viewport-medium) {
-        @content;
-    }
+  @media all and (min-width: $viewport-medium) {
+    @content;
+  }
 }
 @mixin largeViewport {
-    @media all and (min-width: $viewport-large) {
-        @content;
-    }
+  @media all and (min-width: $viewport-large) {
+    @content;
+  }
 }
 
 @mixin visuallyHidden() {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 @mixin clearfix {
-    &:after {
-        clear: both;
-        content: '';
-        display: table;
-    }
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 }

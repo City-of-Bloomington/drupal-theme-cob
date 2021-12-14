@@ -13,7 +13,7 @@ section {
   aside {
     margin-left: 1em;
     width: $size-sidebar-maxwidth;
-    // min-width: $size-sidebar-maxwidth;
+    word-wrap: break-word;
 
     ul {
       list-style-type: none;
@@ -22,33 +22,42 @@ section {
       max-width: 100%;
       height: auto;
     }
-  }
 
-  @media all and (max-width: $viewport-medium) {
-    flex-wrap: wrap;
+    @media all and (max-width: $viewport-medium) {
+      flex-wrap: wrap;
 
-    aside {
-      width: 100%;
-      margin-left: 0;
+      aside {
+        width: 100%;
+        margin-left: 0;
+      }
     }
   }
 
   .text_with_summary,
   .text_long,
   figure {
+    padding: 0;
+    display: block;
+    margin: 0 0 30px 0;
+
     img {
       max-width: 100%;
+      height: inherit;
+    }
+
+    figcaption {
+      display: block;
     }
   }
 }
 
-@media all and (min-width: $viewport-large) {
-  .dialog-off-canvas-main-canvas > header > .container,
-  #alerts .container,
-  .dialog-off-canvas-main-canvas > footer .container,
-  main > div .container,
-  #content > section > .container {
-    width: $viewport-large - 20px;
-    margin: 0 auto;
+.container {
+  margin: 0 auto;
+  width: calc(100% - 60px);
+  max-width: 1080px;
+
+  @media (max-width: 767px) {
+    width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
   }
 }

@@ -16,29 +16,25 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
-<section id="{{ type }}-section">
-    <div class="container">
-        <div>
-            <div class="{{ type }}">
-                <header>
-                    <h2>{% if month %}{{ start|date('F') }} {% endif %}{{ year }}
-                        {% if     type == 'news'    %}News Releases
-                        {% elseif type == 'success' %}Success Stories
-                        {% else %}{{ type }}
-                        {% endif %}
-                    </h2>
-                </header>
-                {{ form }}
-                <div class="results">
-                    {{ results }}
-                </div>
-            </div>
-            {% if events %}
-            <aside class="calendar_calendar">
-                <header><h2>Events</h2></header>
-                {{ events }}
-            </aside>
-            {% endif %}
-        </div>
-    </div>
+<section class="{{ type }}-section-new">
+	<div class="{{ type }}">
+		<header>
+			<h2>
+				{% if month %}
+					{{ start|date('F') }}
+				{% endif %}
+				{{ year }}
+				{% if     type == 'news'    %}News Releases
+					{% elseif type == 'success' %}Success Stories
+				{% else %}
+					{{ type }}
+				{% endif %}
+			</h2>
+		</header>
+		{{ form }}
+			<div class="results">
+				{{ results }}
+			</div>
+		</div>
+	</div>
 </section>

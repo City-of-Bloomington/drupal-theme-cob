@@ -79,9 +79,31 @@
             {{ content.body }}
             {{ content.field_call_to_action }}
             {{ content.field_video_embed }}
-            <div class="boards-list">
-                {{ boards_active }}
-            </div>
+            <nav>
+                <a href="#active">City Boards and Commissions</a>
+                <a href="#council">City Council and Council Standing Committees</a>
+                <a href="#inactive">Inactive Boards</a>
+            </nav>
+            <section>
+                <header><h2><a id="active">City Boards and Commissions</a></h2></header>
+                <div class="boards-list">
+                    {{ boards_active }}
+                </div>
+            </section>
+
+            <section>
+                <header><h2><a id="council">City Council and Council Standing Committees</a></h2></header>
+                <div class="boards-list">
+                    {{ boards_council }}
+                </div>
+            </section>
+
+            <section>
+                <header><h2><a id="inactive">Inactive Boards</a></h2></header>
+                <div class="boards-list">
+                    {{ boards_inactive }}
+                </div>
+            </section>
         </div>
 
         <aside>
@@ -106,16 +128,4 @@
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
     </div>
-    <section>
-        <header><h2>City Council and Council Standing Committees</h2></header>
-        <div class="boards-list">
-            {{ boards_council }}
-        </div>
-    </section>
-    <section>
-        <header><h2>Inactive Boards</h2></header>
-        <div class="boards-list">
-            {{ boards_inactive }}
-        </div>
-    </section>
 </article>
