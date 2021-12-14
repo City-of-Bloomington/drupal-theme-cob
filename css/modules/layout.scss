@@ -14,7 +14,6 @@ section {
     margin-left: 1em;
     width: $size-sidebar-maxwidth;
     word-wrap: break-word;
-    // min-width: $size-sidebar-maxwidth;
 
     ul {
       list-style-type: none;
@@ -23,14 +22,14 @@ section {
       max-width: 100%;
       height: auto;
     }
-  }
 
-  @media all and (max-width: $viewport-medium) {
-    flex-wrap: wrap;
+    @media all and (max-width: $viewport-medium) {
+      flex-wrap: wrap;
 
-    aside {
-      width: 100%;
-      margin-left: 0;
+      aside {
+        width: 100%;
+        margin-left: 0;
+      }
     }
   }
 
@@ -43,6 +42,7 @@ section {
 
     img {
       max-width: 100%;
+      height: inherit;
     }
 
     figcaption {
@@ -61,31 +61,3 @@ section {
     max-width: calc(100% - 30px);
   }
 }
-
-// @media all and (min-width: $viewport-large) {
-//   .dialog-off-canvas-main-canvas > header > .container,
-//   #block-searchform .container,
-//   #alerts .container,
-//   .promoted-area .container,
-//   #block-cob-cob-system-main,
-//   .dialog-off-canvas-main-canvas > footer .container,
-//   main > div .container,
-//   #content > section > .container {
-//     width: $viewport-large - 20px;
-//     margin: 0 auto;
-//   }
-// }
-
-// @media all and (min-width: $viewport-large) {
-//   .dialog-off-canvas-main-canvas > header > .container,
-//   #block-searchform .container,
-//   #alerts .container,
-//   .promoted-area .container,
-//   #block-cob-cob-system-main,
-//   .dialog-off-canvas-main-canvas > footer .container,
-//   main > div .container,
-//   #content > section > .container {
-//     width: $viewport-large - 20px;
-//     margin: 0 auto;
-//   }
-// }
