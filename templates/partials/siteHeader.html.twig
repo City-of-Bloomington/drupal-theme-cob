@@ -1,64 +1,6 @@
 {% if alerts %}
 	<div id="alerts">{{ alerts }}</div>
 {% endif %}
-<style>
-#alertsAlpha { margin: 0; padding: 0; }
-
-#alertsAlpha .container { margin: 0 auto; width: calc(100% - 60px); max-width: 1080px; }
-
-#alertsAlpha a, #alertsAlpha div.alert { display: flex; align-items: center; border-bottom: 1px solid white; }
-
-#alertsAlpha a svg, #alertsAlpha div.alert svg { display: block; width: 30px; height: 30px; color: white; margin: 0 10px 0 0; }
-
-{# #alertsAlpha a:last-child, #alertsAlpha div.alert:last-child { border-bottom: none; } #}
-
-#alertsAlpha a h2, #alertsAlpha a span, #alertsAlpha a p, #alertsAlpha div.alert h2, #alertsAlpha div.alert span, #alertsAlpha div.alert p { font-family: "IBM Plex Sans", sans-serif; }
-
-#alertsAlpha a h2, #alertsAlpha div.alert h2 { font-size: 1.5rem; }
-
-#alertsAlpha a p, #alertsAlpha div.alert p { margin: 0 0 0 10px; }
-
-#alertsAlpha a p:last-of-type, #alertsAlpha div.alert p:last-of-type { margin: 0 0 0 auto; }
-
-@media (max-width: 767px) { #alertsAlpha a h2, #alertsAlpha a p, #alertsAlpha div.alert h2, #alertsAlpha div.alert p { font-size: 0.875rem; } #alertsAlpha a svg, #alertsAlpha div.alert svg { width: 20px; height: 20px; } #alertsAlpha a p:last-of-type, #alertsAlpha div.alert p:last-of-type { display: none; } }
-
-#alertsAlpha a .container, #alertsAlpha div.alert .container { display: flex; align-items: center; }
-
-#alertsAlpha a.info, #alertsAlpha div.alert.info { background-color: #8dc63f; }
-
-#alertsAlpha a.info svg path, #alertsAlpha div.alert.info svg path { fill: #4f4f4f; }
-
-#alertsAlpha a.info h2, #alertsAlpha a.info span, #alertsAlpha a.info a, #alertsAlpha a.info p, #alertsAlpha div.alert.info h2, #alertsAlpha div.alert.info span, #alertsAlpha div.alert.info a, #alertsAlpha div.alert.info p { color: #4f4f4f; }
-
-#alertsAlpha a.info:hover, #alertsAlpha a.info:focus, #alertsAlpha div.alert.info:hover, #alertsAlpha div.alert.info:focus { background-color: #80b636; }
-
-#alertsAlpha a.warning, #alertsAlpha div.alert.warning { background-color: #fbd801; }
-
-#alertsAlpha a.warning svg path, #alertsAlpha div.alert.warning svg path { fill: #4f4f4f; }
-
-#alertsAlpha a.warning h2, #alertsAlpha a.warning span, #alertsAlpha a.warning a, #alertsAlpha a.warning p, #alertsAlpha div.alert.warning h2, #alertsAlpha div.alert.warning span, #alertsAlpha div.alert.warning a, #alertsAlpha div.alert.warning p { color: #4f4f4f; }
-
-#alertsAlpha a.warning:hover, #alertsAlpha a.warning:focus, #alertsAlpha div.alert.warning:hover, #alertsAlpha div.alert.warning:focus { background-color: #e2c201; }
-
-#alertsAlpha a.severe, #alertsAlpha div.alert.severe { background-color: #eb3b24; }
-
-#alertsAlpha a.severe h2, #alertsAlpha a.severe span, #alertsAlpha a.severe a, #alertsAlpha a.severe p, #alertsAlpha div.alert.severe h2, #alertsAlpha div.alert.severe span, #alertsAlpha div.alert.severe a, #alertsAlpha div.alert.severe p { color: white; }
-
-#alertsAlpha a.severe:hover, #alertsAlpha a.severe:focus, #alertsAlpha div.alert.severe:hover, #alertsAlpha div.alert.severe:focus { background-color: #e12c15; }
-</style>
-
-<div id="alertsAlpha">
-  <a
-    href="{{ base_path }}news/2021/12/03/5041" class="alert info">
-      <div class="container">
-		    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" class="svg-inline--fa fa-exclamation-circle fa-w-16 fa-3x">
-			    <path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" class=""></path>
-		    </svg>
-		    <h2>Alpha Site</h2>
-		    <p>Public Invited to Review Updates to City Website and Provide Feedback</p>
-	    </div>
-  </a>
-</div>
 
 <header>
 	<div class="menu-container">
