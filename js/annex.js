@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     var ANNEX = {
         select: document.getElementById('fieldname'),
-        query:  document.getElementById('query'),
+        query:  document.getElementById('annexation_query'),
         form:   document.getElementById('annexationSearchForm'),
         table:  document.getElementById('annexationResults'),
         resource_url: 'https://bloomington.data.socrata.com/resource/x8s7-g7v5.json',
