@@ -16,8 +16,13 @@
 	{% for date, event in meetings %}
 		<a href="{{ event.htmlLink }}">
 			<div class="date">
+                {% if event.start.dateTime %}
 				<span>{{ event.start.dateTime | date('M')}}</span>
 				<span>{{ event.start.dateTime | date('j')}}</span>
+                {% else %}
+				<span>{{ event.start | date('M')}}</span>
+				<span>{{ event.start | date('j')}}</span>
+                {% endif %}
 			</div>
 
 			<article>
