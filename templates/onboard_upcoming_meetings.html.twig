@@ -48,9 +48,9 @@
 								</span>
 							</time>
 						{% else %}
-							<time datetime="{{ event.start.date }}">
+							<time datetime="{{ event.start }}">
 								<span class="weekday">
-									{{ event.start.date | date('l')}}
+									{{ event.start | date('l')}}
 								</span>
 							</time>
 						{% endif %}
