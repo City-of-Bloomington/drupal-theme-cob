@@ -16,13 +16,8 @@
 	{% for date, event in meetings %}
 		<a href="{{ event.htmlLink }}">
 			<div class="date">
-                {% if event.start.dateTime %}
-				<span>{{ event.start.dateTime | date('M')}}</span>
-				<span>{{ event.start.dateTime | date('j')}}</span>
-                {% else %}
 				<span>{{ event.start | date('M')}}</span>
 				<span>{{ event.start | date('j')}}</span>
-                {% endif %}
 			</div>
 
 			<article>
@@ -32,29 +27,11 @@
 
 				<div class="location">
 					<p>
-						{% if event.start.dateTime %}
-							<time datetime="{{ event.start.dateTime }}">
-								<span class="weekday">
-									{{ event.start.dateTime | date('l')}}
-								</span>
-
-								<span class="time">
-									-
-									{{  event.start.dateTime | date('g:ia') }}
-									{% if event.end.dateTime %}
-										-
-										{{ event.end.dateTime | date('g:ia') }}
-									{% endif %}
-								</span>
-							</time>
-						{% else %}
-							<time datetime="{{ event.start }}">
-								<span class="weekday">
-									{{ event.start | date('l')}}
-								</span>
-							</time>
-						{% endif %}
-
+                        <time datetime="{{ event.start }}">
+                            <span class="weekday">
+                                {{ event.start | date('l')}}
+                            </span>
+                        </time>
 					</p>
 					{% if 'zoom' in event.location %}
 						<p>via Zoom</p>
