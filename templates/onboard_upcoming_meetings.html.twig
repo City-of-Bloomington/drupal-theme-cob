@@ -31,6 +31,10 @@
                             <span class="weekday">
                                 {{ event.start | date('l')}}
                             </span>
+                            <span class="time">
+                                {{ event.start | date('g:ia') }} -
+                                {{ event.end   | date('g:ia') }}
+                            </span>
                         </time>
 					</p>
 					{% if 'zoom' in event.location %}
