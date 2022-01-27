@@ -55,6 +55,49 @@
     {{ page.help }}
 
     <div id="content" class="parks-page">
+        <section id="activities" class="divided dark">
+            <div class="container">
+                <header>
+                    <h2>Activities &amp; Programs</h2>
+                </header>
+                <div id="categories">
+                    <article class="info-card">
+                        <a href="{{ base_path }}recreation/sports">
+                            <header><h3>Sports</h3></header>
+                        </a>
+                    </article>
+                    <article class="info-card">
+                        <a href="{{ base_path }}recreation/fitness">
+                            <header><h3>Fitness</h3></header>
+                        </a>
+                    </article>
+                    <article class="info-card">
+                        <a href="{{ base_path }}recreation/recreation">
+                            <header><h3>Recreation</h3></header>
+                        </a>
+                    </article>
+                    <article class="info-card">
+                        <a href="{{ base_path }}recreation/camps">
+                            <header><h3>Camps</h3></header>
+                        </a>
+                    </article>
+                </div>
+                <div>
+                    <header>
+                        <h3>Find Activities</h3>
+                        <p> Search for specific activities and programs by filtering on
+                            type, age, or location.  Find the exact activities you are
+                            interested in.
+                        </p>
+                    </header>
+                    {{ program_search_form }}
+                </div>
+            </div>
+        </section>
+        {{ rentals  }}
+        {{ cascades }}
+        {{ switchyard }}
+        {{ tlrc }}
         <div class="container">
             {{ page.content }}
         </div>
@@ -71,27 +114,6 @@
         <section id="events" class="divided">
             <div class="container">
                 {{ events }}
-            </div>
-        </section>
-        {{ tlrc }}
-        {{ rentals }}
-
-        <section id="activities" class="divided dark">
-            <div class="container">
-                <header>
-                    <h2>Activities &amp; Programs</h2>
-                </header>
-                <div id="categories">{{ categories }}</div>
-                <div>
-                    <header>
-                        <h3>Find Activities</h3>
-                        <p> Search for specific activities and programs by filtering on
-                            type, age, or location.  Find the exact activities you are
-                            interested in.
-                        </p>
-                    </header>
-                    {{ program_search_form }}
-                </div>
             </div>
         </section>
         <section id="related-links" class="divided">

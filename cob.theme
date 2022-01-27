@@ -115,7 +115,7 @@ function cob_preprocess_page__front(&$vars)
 
     $vars['available_messages'] = !empty(\Drupal::messenger()->all());
 
-    
+
 
     $query   = \Drupal::entityQuery('node')
                 ->condition('type', 'news')
@@ -152,7 +152,9 @@ function cob_preprocess_page(&$vars)
             $vars['related'   ] = $vars['node']->field_department->view('full');
             $vars['tlrc'      ] = _cob_renderNodeById(502, 'promo');
             $vars['rentals'   ] = _cob_renderNodeById(368, 'promo');
-            $vars['categories'] = _cob_renderNodeById([438,252,253,254], 'info_card');
+            $vars['cascades'  ] = _cob_renderNodeById(553, 'promo');
+            $vars['switchyard'] = _cob_renderNodeById(534, 'promo');
+            # $vars['categories'] = _cob_renderNodeById([438,252,253,254], 'info_card');
         }
         // Don't display committee members on pages rendered by the onboard module
         $m = \Drupal::routeMatch()->getRouteName();
@@ -174,7 +176,7 @@ function cob_preprocess_page(&$vars)
                 if ($committee['info']['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['info']['zip'    ]; }
             }
         }
-        
+
     }
     else {
         $route = \Drupal::routeMatch()->getRouteName();
@@ -196,7 +198,7 @@ function cob_preprocess_page(&$vars)
     if ($alerts) {
         $vars['alerts'] = $alerts;
     }
-    
+
 }
 
 /**
