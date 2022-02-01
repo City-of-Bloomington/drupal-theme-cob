@@ -9,8 +9,8 @@
  * - years:    The available years of meetingFiles we have for the committee
  * - node:     The node object for the board page in Drupal
  *
- * @copyright 2017 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2017-2022 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
 <section class="meetings">
@@ -41,18 +41,23 @@
 
     <table>
         <thead>
-            <tr>
-                <th scope="col">Date - {{ year }}</th>
-                <th scope="col">Summary Title</th>
+            <tr><th scope="col"></th>
                 <th scope="col">Downloads</th>
             </tr>
         </thead>
 
          <tbody>
-            {% for date, meeting in meetings %}
+            {% for date, day in meetings %}
+            {% for event_id, meeting in day %}
                 <tr>
-                    <th scope="row">{{ date|date("F j") }}</th>
-                    <td>{{ meeting.summary }}</td>
+                    <th scope="row">
+                        <div>
+                        {% if meeting.start %}{{ meeting.start|date("F j g:i a") }}
+                        {% else %}{{ date|date("F j") }}
+                        {% endif %}
+                        </div>
+                        <div>{{ meeting.summary }}</div>
+                    </th>
                     <td>
                         {% if meeting.files %}
                             {% for type, files in meeting.files %}
@@ -73,6 +78,7 @@
                         {% endif %}
                     </td>
                 </tr>
+            {% endfor %}
             {% endfor %}
         </tbody>
     </table>
