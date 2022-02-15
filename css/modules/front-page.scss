@@ -409,13 +409,12 @@
 }
 
 section.promo {
-  @media (min-width: 767px) { flex-wrap: wrap; }
+    @media (min-width: 767px) { flex-wrap: wrap; }
 
     .container {
         > div {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
 
             .entity_reference {
                 margin: 0 30px 0 0;
@@ -428,13 +427,13 @@ section.promo {
         }
     }
 
-  p { color: $text-color; line-height: 1.5em; }
+    p { color: $text-color; line-height: 1.5em; }
 
-  .promo_title { margin: 30px 0 0 0; }
+    .promo_title { margin: 30px 0 0 0; }
 
-  &.person {
-    .entity_reference {
-      img { border-radius: 3px; }
+    &.person {
+        .entity_reference {
+            img { border-radius: 3px; }
+        }
     }
-  }
 }
