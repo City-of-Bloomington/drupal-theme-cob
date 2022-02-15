@@ -153,8 +153,6 @@ function cob_preprocess_page(&$vars)
             $vars['tlrc'      ] = _cob_renderNodeById(502, 'promo');
             $vars['rentals'   ] = _cob_renderNodeById(368, 'promo');
             $vars['cascades'  ] = _cob_renderNodeById(553, 'promo');
-            $vars['switchyard'] = _cob_renderNodeById(534, 'promo');
-            # $vars['categories'] = _cob_renderNodeById([438,252,253,254], 'info_card');
         }
         // Don't display committee members on pages rendered by the onboard module
         $m = \Drupal::routeMatch()->getRouteName();
