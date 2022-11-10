@@ -50,6 +50,16 @@ form#search-block-form {
 //   }
 // }
 
+a.pdf {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: url('images/application-pdf.png');
+}
+
 #services-section,
 #government-section {
   a {
