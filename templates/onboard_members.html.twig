@@ -46,13 +46,17 @@
 							<dt>Member Since:</dt>
 							<dd>{{ seat.currentMember.termStartDate }}</dd>
 						{% endif %}
-
-						{% if seat.currentAlternate %}
+						{% if committee.info.alternates %}
 							<dt>Alternate:</dt>
+							{% if seat.currentAlternate %}
 							<dd>{{ seat.currentAlternate.firstname }}
 								{{ seat.currentAlternate.lastname  }}
 							</dd>
+							{% else %}
+							<dd>Vacant</dd>
+							{% endif %}
 						{% endif %}
+
 					</dl>
 					{% if seat.currentMember.website %}
 					</a>
