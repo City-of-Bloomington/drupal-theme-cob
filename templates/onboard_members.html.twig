@@ -44,7 +44,7 @@
 							<dd>{{ seat.currentMember.termEndDate }}</dd>
 						{% else %}
 							<dt>Member Since:</dt>
-							<dd>{{ seat.currentMember.termStartDate }}</dd>
+							<dd>{{ seat.currentMember.termStartDate ?? seat.currentMember.startDate }}</dd>
 						{% endif %}
 						{% if committee.info.alternates %}
 							<dt>Alternate:</dt>
