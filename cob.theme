@@ -246,6 +246,15 @@ function cob_preprocess_node(&$vars)
                 $vars['projects'] = _cob_renderNodesByQuery($query, 'info_card');
             break;
 
+            // Utilities Projects
+            case 5519:
+                $query = \Drupal::entityQuery('node')
+                       ->condition('type', 'utilities_project_page')
+                       ->condition('field_active',  true)
+                       ->sort('created', 'desc');
+                $vars['utilities_projects'] = _cob_renderNodesByQuery($query, 'info_card');
+            break;
+
             // Boards
             case 217:
                 $committees = [];
