@@ -8,8 +8,8 @@
  * - nid:         The current node ID
  * - onboard_url: The base url for OnBoard
  *
- * @copyright 2018 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2018-2023 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
 #}
 <nav class="button-group">
 	{% set year  = 'now'|date('Y') %}
@@ -29,6 +29,11 @@
 	{% if committee.info.legislative %}
 		<a class="button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
 			Legislation
+		</a>
+	{% endif %}
+	{% if committee.info.reports %}
+		<a class="button" href="{{ path('onboard.reports.node-'~nid, {'node': nid}) }}">
+			Reports
 		</a>
 	{% endif %}
 	{% if committee.info.vacancy %}
