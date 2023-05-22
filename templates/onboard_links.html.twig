@@ -13,7 +13,7 @@
 #}
 <nav class="button-group">
 	{% set year  = 'now'|date('Y') %}
-	<a class="button" href="{{ path('onboard.meetingList.node-'~nid, {'node':nid, 'year':year}) }}">
+	<a class="button" href="{{ path('onboard.meetingYears.node-'~nid, {'node':nid, 'year':year}) }}">
 		Meetings &amp; Documents
 	</a>
 	{% if committee.info.calendarId %}

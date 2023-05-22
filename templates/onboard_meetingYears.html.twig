@@ -6,11 +6,57 @@
  * Available variables
  * - decades:  The available years of legislation, organized by decade
  * - node:     The node object for the board page in Drupal
+ * - meetings: The JSON data from OnBoardService::meetings()
  *
- * @copyright 2017 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2017-2023 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
+<section class="meetings">
+    <table>
+        <thead>
+            <tr><th scope="col"></th>
+                <th scope="col">Downloads</th>
+            </tr>
+        </thead>
+
+         <tbody>
+            {% for date, day in meetings %}
+            {% for event_id, meeting in day %}
+                <tr>
+                    <th scope="row">
+                        <div>
+                        {% if meeting.start %}{{ meeting.start|date("F j g:i a") }}
+                        {% else %}{{ date|date("F j") }}
+                        {% endif %}
+                        </div>
+                        <div>{{ meeting.summary }}</div>
+                    </th>
+                    <td>
+                        {% if meeting.files %}
+                            {% for type, files in meeting.files %}
+                                {% for count, file in files %}
+                                    <a href="{{ file.url }}"
+                                       class="download"
+                                       title="Download '{{ file.title }}' PDF">
+                                        {{ file.type }}
+
+                                        {% if loop.index > 1%}
+                                            <small>&nbsp;({{ loop.index }})</small>
+                                        {% endif %}
+                                    </a>
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            {{ emptyHolder }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
 <section class="meetings archive">
     {% set route = 'onboard.meetingList.node-' ~ node.id %}
     {% for d, years in decades %}
