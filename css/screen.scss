@@ -491,6 +491,10 @@ footer#main {
 table tbody tr {
     &:nth-child(even) th { background-color: silver; }
 
+    &.today {
+        th, td { background-color: $color-mayor-sushi; }
+    }
+
     td a.download {
         position: relative;
         display: flex;

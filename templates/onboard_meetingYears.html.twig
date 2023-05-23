@@ -6,22 +6,63 @@
  * Available variables
  * - decades:  The available years of legislation, organized by decade
  * - node:     The node object for the board page in Drupal
- * - meetings: The JSON data from OnBoardService::meetings()
+ * - upcoming: JSON data for upcoming meetings from OnBoardService::meetings()
+ * - past:     JSON data for     past meetings from OnBoardService::meetings()
  *
  * @copyright 2017-2023 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
 <section class="meetings">
+    {% if upcoming %}
     <table>
         <thead>
-            <tr><th scope="col"></th>
-                <th scope="col">Downloads</th>
+            <tr><th scope="col">Upcoming</th>
+                <th scope="col">Documents</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set today = 'now'|date('Y-m-d') %}
+            {% for date, day in upcoming %}
+                {% for event_id, meeting in day %}
+                {% if date == today %}<tr class="today">{% else %}<tr>{% endif %}
+                    <th scope="row">
+                        <div>
+                        {% if meeting.start %}{{ meeting.start|date("F j g:i a") }}
+                        {% else %}{{ date|date("F j") }}
+                        {% endif %}
+                        </div>
+                        <div>{{ meeting.summary }}</div>
+                    </th>
+                    <td>{% if meeting.files %}
+                            {% for type, files in meeting.files %}
+                                {% for count, file in files %}
+                                <a href="{{ file.url }}" class="download" title="Download '{{ file.title }}' PDF">
+                                    {{ file.type }}
+                                    {% if loop.index > 1%}<small>&nbsp;({{ loop.index }})</small>{% endif %}
+                                </a>
+                                {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            {{ emptyHolder }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% if past %}
+    <table>
+        <thead>
+            <tr><th scope="col">Past 90 days</th>
+                <th scope="col">Documents</th>
             </tr>
         </thead>
 
          <tbody>
-            {% for date, day in meetings %}
+            {% for date, day in past %}
             {% for event_id, meeting in day %}
                 <tr>
                     <th scope="row">
@@ -40,7 +81,6 @@
                                        class="download"
                                        title="Download '{{ file.title }}' PDF">
                                         {{ file.type }}
-
                                         {% if loop.index > 1%}
                                             <small>&nbsp;({{ loop.index }})</small>
                                         {% endif %}
@@ -56,20 +96,20 @@
             {% endfor %}
         </tbody>
     </table>
-</section>
-<section class="meetings archive">
+    {% endif %}
+
     {% set route = 'onboard.meetingList.node-' ~ node.id %}
+    {% set y = 'now'|date('Y') %}
+    <a class="button" href="{{ path(route, {'node':node.id, 'year':y }) }}">More {{ y }}</a>
+</section>
+
+<section class="meetings archive">
     {% for d, years in decades %}
         <div>
             <h3>{{ d }}'s</h3>
-            <ul>
-                {% for y, count in years %}
-                <li>
-                    <a  href="{{ path(route, {'node':node.id,
-                                             'year':y}) }}"
-                        title="Meetings for {{y}}">
-                        {{ y }}
-                        <small>({{ count }})</small>
+            <ul>{% for y, count in years %}
+                <li><a href="{{ path(route, {'node':node.id, 'year':y}) }}" title="Meetings for {{y}}">
+                        {{ y }} <small>({{ count }})</small>
                     </a>
                 </li>
                 {% endfor %}
