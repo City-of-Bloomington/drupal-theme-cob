@@ -29,17 +29,13 @@ sup, sub, small {
 dl { border: none; }
 
 b, strong {
-    // via issue
     // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
     -webkit-font-smoothing: antialiased;
     color: black;
 }
 
 #alerts {
-    margin: 0;
-    padding: 0;
-    // background-color: $color-footer;
-    // color: $color-content-background;
+    margin: 0; padding: 0;
 
     a, div.alert {
         display: flex;
@@ -57,7 +53,6 @@ b, strong {
         &:last-child { border-bottom: none; }
 
         h2, span, p {
-            // color: $color-content-background;
             font-family: $fontIBM;
         }
 
@@ -85,7 +80,6 @@ b, strong {
 
         &.info {
             background-color: $color-mayor-sushi;
-            // background-color: rgb(67, 152, 70);
 
             svg {
                 path {
@@ -104,7 +98,6 @@ b, strong {
 
         &.warning {
             background-color: $color-mayor-school-bus-yellow;
-            // background-color: rgb(255, 186, 10);
 
             svg {
                 path {
@@ -119,7 +112,6 @@ b, strong {
 
         &.severe {
             background-color: $color-mayor-pomegranate;
-            // background-color: rgb(201, 40, 19);
 
             h2, span, a, p { color: white; }
 
@@ -324,28 +316,6 @@ b, strong {
 
 .dialog-off-canvas-main-canvas > footer#main,
 footer#main {
-// background-color: $color-footer;
-// color: $color-content-background;
-// padding: $size-gutter;
-
-// a {
-//   font-size: $font-size-big;
-//   color: $color-content-background;
-//   display: block;
-//   text-align: left;
-// }
-// address {
-//   text-align: left;
-// }
-
-// @media all and (min-width: $viewport-medium) {
-//   .container {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//   }
-// }
-
     border-top: 1px solid $color-grey;
     background: $color-mayor-biscay;
     margin: 0;
@@ -517,14 +487,11 @@ footer#main {
     }
 }
 
-// Table styles specific for onboard module,
-// but general enough they could apply to other areas.
+// OnBoard Table Styles
 table {
     tbody {
         tr {
-            &:nth-child(even) {
-                th { background-color: silver; }
-            }
+            &:nth-child(even) th { background-color: silver; }
 
             td {
                 a {
@@ -534,7 +501,7 @@ table {
                         position: relative;
                         display: flex;
                         align-items: center;
-                        margin: 0 0 ($space-xxs + 1) 0; // 5px
+                        margin:  0 0 ($space-xxs + 1) 0; // 5px
                         padding: 0 0 0 ($space-s + 4); // 20px
 
                         &:last-of-type { margin: 0; }
