@@ -488,6 +488,7 @@ footer#main {
 }
 
 // OnBoard Table Styles
+table col.documents { width: 150px; }
 table tbody tr {
     &:nth-child(even) th { background-color: silver; }
 

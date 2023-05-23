@@ -4,9 +4,6 @@ section {
         margin: 0;
 
         header {
-            display: flex;
-            align-items: center;
-
             a:hover { color: $color-heading; }
 
             .field-group {
@@ -18,7 +15,7 @@ section {
 
         tbody th { text-align: left; }
 
-        &.archive {
+        &.archive > div {
             display: flex;
             flex-wrap: wrap;
 

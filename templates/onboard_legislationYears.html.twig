@@ -13,6 +13,7 @@
  */
 #}
 <section class="legislation archive">
+    <div>
     {% set route = 'onboard.legislationList.node-' ~ node.id %}
     {% for d, years in decades %}
         <div>
@@ -32,4 +33,5 @@
             </ul>
         </div>
     {% endfor %}
+    </div>
 </section>
