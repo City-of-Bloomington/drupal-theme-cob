@@ -1,81 +1,63 @@
 section {
-  &.meetings,
-  &.legislation {
-    margin: 0;
+    &.meetings,
+    &.legislation {
+        margin: 0;
 
-    header {
-      display: flex;
-      align-items: center;
+        header {
+            display: flex;
+            align-items: center;
 
-      a {
-        &:hover {
-          color: $color-heading;
-        }
-      }
+            a:hover { color: $color-heading; }
 
-      .field-group {
-        margin: 0 $space-l 0 0;
-        padding: 0 $space-l 0 0;
-        border-right: 1px solid $silver-chalice;
-      }
-    }
-
-    tbody th { text-align: left; }
-
-    &.archive {
-      display: flex;
-      flex-wrap: wrap;
-
-      h3 {
-        margin: 0 0 $space-s 0;
-        color: $color-heading;
-      }
-
-      div {
-        flex: 0 0 (100%/7);
-        margin: 0 0 ($space-l * 2) 0; // 30px
-      }
-
-      ul {
-        li {
-          margin: 0 0 ($space-s / 2) 0; // 2.5px
-
-          &:last-of-type {
-            margin: 0;
-          }
-
-          a {
-            &:hover,
-            &:focus {
-              color: $color-heading;
-
-              small {
-                color: $color-heading;
-              }
+            .field-group {
+                margin:  0 $space-l 0 0;
+                padding: 0 $space-l 0 0;
+                border-right: 1px solid $silver-chalice;
             }
-          }
-
-          small {
-            color: lighten($mine-shaft, 30%);
-          }
         }
-      }
-    }
 
-    @media (max-width: $viewport-medium) {
-      &.archive {
-        div {
-          flex: 0 0 50%;
-        }
-      }
-    }
+        tbody th { text-align: left; }
 
-    @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-      &.archive {
-        div {
-          flex: 0 0 25%;
+        &.archive {
+            display: flex;
+            flex-wrap: wrap;
+
+            h3 {
+                margin: 0 0 $space-s 0;
+                color: $color-heading;
+            }
+
+            div {
+                flex: 0 0 (100%/7);
+                margin: 0 0 ($space-l * 2) 0; // 30px
+            }
+
+            ul li {
+                margin: 0 0 ($space-s / 2) 0; // 2.5px
+
+                &:last-of-type { margin: 0; }
+
+                a:hover, a:focus {
+                    color: $color-heading;
+                    small { color: $color-heading; }
+                }
+
+                small {
+                    color: lighten($mine-shaft, 30%);
+                }
+            }
         }
-      }
+
+        @media (max-width: $viewport-medium) {
+            &.archive {
+                div { flex: 0 0 50%; }
+            }
+        }
+
+        @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+            &.archive {
+                div { flex: 0 0 25%; }
+            }
+        }
     }
-  }
 }
