@@ -4,6 +4,7 @@ section {
         margin: 0;
 
         header {
+            text-align: left !important;
             a:hover { color: $color-heading; }
 
             .field-group {
