@@ -59,7 +59,7 @@
 			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
 		</a>
 		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor Kerry Thomson</a>
-		
+
 		<nav id="navigation" role="navigation" aria-labelledby="navigation">
 			<ul>
 				<li>
@@ -68,7 +68,21 @@
 			</ul>
 		</nav>
 	</div>
-
+	<style type="text/css">
+      #bhm {
+		width: 100%; height: 160px;
+		background-size: cover;
+		background-position: center center;
+		background-image:url('{{ base_path }}/themes/contrib/cob/css/images/black-history-month.png');
+      }
+      #bhm a {
+		display: block;
+		height: 100%; width: 100%;
+      }
+	</style>
+	<div id="bhm">
+		<a href="https://sites.google.com/bloomington.in.gov/cobbhm"></a>
+	</div>
 	<nav id="header-icon-nav">
 		<div class="container">
 			<a class="services" title="Top Services" href="{{ base_path }}services">
