@@ -69,19 +69,26 @@
 		</nav>
 	</div>
 	<style type="text/css">
-      #bhm {
+      #eclipse {
 		width: 100%; height: 160px;
 		background-size: cover;
 		background-position: center center;
-		background-image:url('{{ base_path }}/themes/contrib/cob/css/images/black-history-month.png');
       }
-      #bhm a {
+      #eclipse a {
 		display: block;
 		height: 100%; width: 100%;
       }
+      #eclipse {
+		background-image:url('/themes/contrib/cob/css/images/eclipse-s.jpg');
+      }
+      @media(min-width: 640px) {
+		#eclipse {
+			background-image:url('/themes/contrib/cob/css/images/eclipse-l.jpg');
+		}
+      }
 	</style>
-	<div id="bhm">
-		<a href="https://sites.google.com/bloomington.in.gov/cobbhm"></a>
+	<div id="eclipse">
+		<a href="/eclipse"></a>
 	</div>
 	<nav id="header-icon-nav">
 		<div class="container">
@@ -101,11 +108,9 @@
 			</a>
 
 			<a class="meetings" title="News &amp; Events" href="{{ base_path }}calendars">
-
 				<span>Meetings &amp; Events</span>
 				<span>Events</span>
 			</a>
-
 
 			<a class="city" title="City Government" href="{{ base_path }}city">
 				<span>City Government</span>
