@@ -536,7 +536,6 @@ function _cob_contactInfoFromNode(Node $node)
     static $info = [];
     $nid = $node->nid->value;
 
-
     // If the NID has been set, then we've already attempted a lookup.
     // If it's there, and it is empty, then the lookup returned no results.
     // Don't waste time doing another lengthy lookup, just to get empty
@@ -558,11 +557,6 @@ function _cob_contactInfoFromNode(Node $node)
         }
     }
 
-    if ($node->hasField( 'field_directory_dn')) {
-        $dn = $node->get('field_directory_dn')->value;
-        if ($dn) { _cob_contactInfoForDn($dn, $info[$nid]); }
-    }
-
     $map = [
         'email'    => 'field_email',
         'phone'    => 'field_phone',
@@ -579,6 +573,11 @@ function _cob_contactInfoFromNode(Node $node)
     if (!empty($info[$nid]['zip'])) {
         if (empty($info[$nid]['city' ])) { $info[$nid]['city' ] = 'Bloomington'; }
         if (empty($info[$nid]['state'])) { $info[$nid]['state'] = 'IN';          }
+    }
+
+    if ($node->hasField( 'field_directory_dn')) {
+        $dn = $node->get('field_directory_dn')->value;
+        if ($dn) { _cob_contactInfoForDn($dn, $info[$nid]); }
     }
 
     if ($node->hasField('field_location')) {
