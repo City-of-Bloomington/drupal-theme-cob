@@ -44,6 +44,7 @@
                 <tr><th>Good with cats</th>
                     <td>{% if     animal.ISGOODWITHCATS == 0 %}Yes
                         {% elseif animal.ISGOODWITHCATS == 1 %}No
+                        {% elseif animal.ISGOODWITHCATS == 3 %}Selective
                         {% else %}Unknown
                         {% endif %}
                     </td>
@@ -51,6 +52,7 @@
                 <tr><th>Good with dogs</th>
                     <td>{% if     animal.ISGOODWITHDOGS == 0 %}Yes
                         {% elseif animal.ISGOODWITHDOGS == 1 %}No
+                        {% elseif animal.ISGOODWITHDOGS == 3 %}Selective
                         {% else %}Unknown
                         {% endif %}
                     </td>
@@ -58,6 +60,8 @@
                 <tr><th>Good with children</th>
                     <td>{% if     animal.ISGOODWITHCHILDREN == 0 %}Yes
                         {% elseif animal.ISGOODWITHCHILDREN == 1 %}No
+                        {% elseif animal.ISGOODWITHCHILDREN == 5 %}Over 5
+                        {% elseif animal.ISGOODWITHCHILDREN == 12%}Over 12
                         {% else %}Unknown
                         {% endif %}
                     </td>
@@ -65,6 +69,7 @@
                 <tr><th>Housetrained</th>
                     <td>{% if     animal.ISHOUSETRAINED == 0 %}Yes
                         {% elseif animal.ISHOUSETRAINED == 1 %}No
+                        {% elseif animal.ISHOUSETRAINED == 3 %}Selective
                         {% else %}Unknown
                         {% endif %}
                     </td>
