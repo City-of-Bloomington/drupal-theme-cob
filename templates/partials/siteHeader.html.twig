@@ -18,11 +18,17 @@
 				</fieldset>
 			</form>
 
-			{# <nav id="navigation" role="navigation" aria-labelledby="navigation">
-                <ul><li><a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li></ul>
-               </nav> #}
+			<nav id="navigation" role="navigation" aria-labelledby="navigation">
+                <ul><li><button type="button" class="menu"
+                                onclick="document.getElementById('megamenu').classList.toggle('visually-hidden');">
+                                Menu
+						</button>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
+	{% include '@cob/partials/megamenu.html.twig' %}
 
 	<nav id="header-icon-nav">
 		<div class="container">

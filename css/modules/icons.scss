@@ -22,6 +22,15 @@ form#search-block-form {
   background-size: 1.25em;
 }
 
+.menu-container button.menu {
+    overflow: hidden;
+    text-indent: -10em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px 15px;
+    background-image: url("images/fa-svg/white/bars.svg");
+}
+
 #services-section,
 #government-section {
   a {
