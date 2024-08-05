@@ -33,9 +33,13 @@ function toggleMenu(id) {
 
 for (const k in hover_menus) {
     const link = document.getElementById(k);
-    link.addEventListener('mouseover', debounce((e)=>{
+    link.addEventListener('click', (e)=>{
+        e.preventDefault();
         toggleMenu(hover_menus[e.target.getAttribute('id')]);
-    }, 200));
+    });
+    // link.addEventListener('mouseover', debounce((e)=>{
+    //     toggleMenu(hover_menus[e.target.getAttribute('id')]);
+    // }, 200));
 }
 
 (function() {
