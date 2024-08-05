@@ -1,4 +1,15 @@
 "use strict";
+const debounce = (f, d) => {
+    let timer = null;
+
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            f(...args);
+        }, d);
+    }
+};
+
 const hover_menus = {
     services_link: 'services-dropdown',
     info_link:     'info-dropdown',
@@ -22,9 +33,9 @@ function toggleMenu(id) {
 
 for (const k in hover_menus) {
     const link = document.getElementById(k);
-    link.addEventListener('mouseover', (e)=>{
+    link.addEventListener('mouseover', debounce((e)=>{
         toggleMenu(hover_menus[e.target.getAttribute('id')]);
-    });
+    }, 200));
 }
 
 (function() {
