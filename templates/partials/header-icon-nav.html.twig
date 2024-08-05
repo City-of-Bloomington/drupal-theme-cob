@@ -1,0 +1,37 @@
+{#
+ * @copyright 2024 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ #}
+<nav id="header-icon-nav">
+    <div class="container">
+        <a class="services" id="services_link" title="Top Services" href="{{ base_path }}services">
+            <span>Services</span>
+            <span>Services</span>
+        </a>
+
+        <a class="info" id="info_link" title="Information &amp; Guides" href="{{ base_path }}about">
+            <span>Information</span>
+            <span>Info</span>
+        </a>
+
+        <a class="news" id="news_link" title="News &amp; Events" href="{{ base_path }}news">
+            <span>News</span>
+            <span>News</span>
+        </a>
+
+        <a class="meetings" id="meetings_link" title="News &amp; Events" href="{{ base_path }}calendars">
+            <span>Meetings &amp; Events</span>
+            <span>Events</span>
+        </a>
+
+        <a class="city" id="city_link" title="City Government" href="{{ base_path }}city">
+            <span>City Government</span>
+            <span>Govt.</span>
+        </a>
+    </div>
+</nav>
+{% include '@cob/menus/services.html.twig' %}
+{% include '@cob/menus/info.html.twig'     %}
+{% include '@cob/menus/news.html.twig'     %}
+{% include '@cob/menus/meetings.html.twig' %}
+{% include '@cob/menus/city.html.twig'     %}

@@ -5,8 +5,14 @@
   background: white;
   border-top: 4px solid $color-mayor-biscay;
 
-  #megamenu {
-    z-index: 1; position: relative;
+  #mobile-dropdown {
+    width: 100%; height: auto;
+    background-color: $color-content-background;
+  }
+
+  .megamenu {
+    z-index: 1; position: absolute;
+    top: 232px; left: 0;
     width: 100%; height: auto;
     background-color: $color-content-background;
   }
@@ -17,7 +23,6 @@
     align-items: center;
     width: 100%;
     padding: 15px 20px;
-
 
     a {
       &.logo {

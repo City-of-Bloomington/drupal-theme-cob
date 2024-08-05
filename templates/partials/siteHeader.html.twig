@@ -19,47 +19,11 @@
 			</form>
 
 			<nav id="navigation" role="navigation" aria-labelledby="navigation">
-                <ul><li><button type="button" class="menu"
-                                onclick="document.getElementById('megamenu').classList.toggle('visually-hidden');">
-                                Menu
-						</button>
-					</li>
-				</ul>
+                <ul><li><button type="button" class="menu">Menu</button></li></ul>
 			</nav>
 		</div>
 	</div>
-	{% include '@cob/partials/megamenu.html.twig' %}
-
-	<nav id="header-icon-nav">
-		<div class="container">
-			<a class="services" title="Top Services" href="{{ base_path }}services">
-				<span>Services</span>
-				<span>Services</span>
-			</a>
-
-			<a class="info" title="Information &amp; Guides" href="{{ base_path }}about">
-				<span>Information</span>
-				<span>Info</span>
-			</a>
-
-			<a class="news" title="News &amp; Events" href="{{ base_path }}news">
-				<span>News</span>
-				<span>News</span>
-			</a>
-
-			<a class="meetings" title="News &amp; Events" href="{{ base_path }}calendars">
-
-
-				<span>Meetings &amp; Events</span>
-				<span>Events</span>
-			</a>
-
-
-			<a class="city" title="City Government" href="{{ base_path }}city">
-				<span>City Government</span>
-				<span>Govt.</span>
-			</a>
-		</div>
-	</nav>
+	{% include '@cob/menus/megamenu.html.twig' %}
+	{% include '@cob/partials/header-icon-nav.html.twig' %}
 </header>
 {{ page.primary_menu }}
