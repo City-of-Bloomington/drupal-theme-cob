@@ -1,58 +1,58 @@
-.button {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  margin-bottom: $size-gutter;
-  border-radius: 3px;
-  border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
-  background-color: $color-mayor-sushi;
-  color: white;
-  width: fit-content;
-  font-size: $font-size-small;
+// .button {
+//   display: flex;
+//   align-items: center;
+//   padding: 15px;
+//   margin-bottom: $size-gutter;
+//   border-radius: 3px;
+//   border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
+//   background-color: $color-mayor-sushi;
+//   color: white;
+//   width: fit-content;
+//   font-size: $font-size-small;
 
-  &:hover,
-  &:focus {
-    background-color: darken($color-mayor-sushi, 5);
-  }
-}
+//   &:hover,
+//   &:focus {
+//     background-color: darken($color-mayor-sushi, 5);
+//   }
+// }
 
-.btn {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  border-radius: 3px;
-  border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
-  background-color: $color-mayor-sushi;
-  color: white;
-  width: fit-content;
-  font-size: $font-size-small;
+// .btn {
+//   display: flex;
+//   align-items: center;
+//   padding: 15px;
+//   border-radius: 3px;
+//   border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
+//   background-color: $color-mayor-sushi;
+//   color: white;
+//   width: fit-content;
+//   font-size: $font-size-small;
 
-  &:hover,
-  &:focus {
-    background-color: darken($color-mayor-sushi, 5);
-  }
+//   &:hover,
+//   &:focus {
+//     background-color: darken($color-mayor-sushi, 5);
+//   }
 
-  &.more {
-    // background-color: $color-fern;
-    background-color: $color-mayor-sushi;
-    border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
-    color: white;
-    width: fit-content;
-    font-size: $font-size-small;
+//   &.more {
+//     // background-color: $color-fern;
+//     background-color: $color-mayor-sushi;
+//     border: 1px solid darken($color: $color-mayor-sushi, $amount: 1);
+//     color: white;
+//     width: fit-content;
+//     font-size: $font-size-small;
 
-    &:hover,
-    &:focus {
-      // background-color: darken($color-fern, 5);
-      background-color: darken($color-mayor-sushi, 5);
-    }
-  }
+//     &:hover,
+//     &:focus {
+//       // background-color: darken($color-fern, 5);
+//       background-color: darken($color-mayor-sushi, 5);
+//     }
+//   }
 
-  &.visit-cal {
-    &.top {
-      margin: 0 0 45px 0;
-    }
-  }
-}
+//   &.visit-cal {
+//     &.top {
+//       margin: 0 0 45px 0;
+//     }
+//   }
+// }
 
 .button-group {
   display: flex;

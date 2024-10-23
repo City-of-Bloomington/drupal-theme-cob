@@ -1,35 +1,35 @@
-form#header-search,
-form#search-block-form {
-  input[type="submit"] {
-    overflow: hidden;
-    text-indent: -10em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 15px 15px;
-    background-image: url("images/fa-svg/white/search.svg");
+// form#header-search,
+// form#search-block-form {
+//   input[type="submit"] {
+//     overflow: hidden;
+//     text-indent: -10em;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: 15px 15px;
+//     background-image: url("images/fa-svg/white/search.svg");
 
-    &:hover,
-    &:focus {
-      background-color: darken($color: $color-fern, $amount: 5);
-    }
-  }
-}
+//     &:hover,
+//     &:focus {
+//       background-color: darken($color: $color-fern, $amount: 5);
+//     }
+//   }
+// }
 
-form#header-search {
-  background-size: 1.15em;
-}
-form#search-block-form {
-  background-size: 1.25em;
-}
+// form#header-search {
+//   background-size: 1.15em;
+// }
+// form#search-block-form {
+//   background-size: 1.25em;
+// }
 
-.menu-container button.menu {
-    overflow: hidden;
-    text-indent: -10em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 15px 15px;
-    background-image: url("images/fa-svg/white/bars.svg");
-}
+// .menu-container button.menu {
+//     overflow: hidden;
+//     text-indent: -10em;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: 15px 15px;
+//     background-image: url("images/fa-svg/white/bars.svg");
+// }
 
 #services-section,
 #government-section {
