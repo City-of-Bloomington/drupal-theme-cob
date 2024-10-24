@@ -1,263 +1,263 @@
-// .front #news-section .hasImage .summary {
-//   display: none;
-// }
+.front #news-section .hasImage .summary {
+  display: none;
+}
 
-// News and Success are content types in Drupal
-// #news-section,
-// #success-section {
-//   * {
-//     box-sizing: border-box;
-//   }
+News and Success are content types in Drupal
+#news-section,
+#success-section {
+  * {
+    box-sizing: border-box;
+  }
 
-// form {
-//   display: flex;
-//   align-items: center;
-//   margin: 0 0 ($size-gutter * 1.5) 0;
-//   padding: 0 0 $size-gutter 0;
-//   border-bottom: 1px solid $color-divider;
+form {
+  display: flex;
+  align-items: center;
+  margin: 0 0 ($size-gutter * 1.5) 0;
+  padding: 0 0 $size-gutter 0;
+  border-bottom: 1px solid $color-divider;
 
-//   > div {
-//     margin: 0 ($size-gutter * 2) 0 0;
+  > div {
+    margin: 0 ($size-gutter * 2) 0 0;
 
-//     &:last-of-type {
-//       margin: 0;
-//     }
-//   }
+    &:last-of-type {
+      margin: 0;
+    }
+  }
 
-//   .button {
-//     padding: $size-gutter ($size-gutter * 2);
-//     margin: 0;
-//   }
-// }
+  .button {
+    padding: $size-gutter ($size-gutter * 2);
+    margin: 0;
+  }
+}
 
-//   .container {
-//     padding: 0;
+  .container {
+    padding: 0;
 
-//     > div {
-//       overflow: auto;
-//       display: flex;
-//       flex-wrap: wrap;
-//     }
-//   }
+    > div {
+      overflow: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 
-//   aside {
-//     width: 320px;
-//     margin-left: auto;
-//   }
+  aside {
+    width: 320px;
+    margin-left: auto;
+  }
 
-//   // News and Success are content types in Drupal
-//   .news,
-//   .success {
-//     width: 710px;
+  // News and Success are content types in Drupal
+  .news,
+  .success {
+    width: 710px;
 
-//     .results {
-//       margin: 0 0 ($size-gutter * 2) 0;
-//       display: flex;
-//       flex-wrap: wrap;
-//       align-content: stretch;
+    .results {
+      margin: 0 0 ($size-gutter * 2) 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
 
-//       a {
-//         margin: 0 0 ($size-gutter * 2) 0;
+      a {
+        margin: 0 0 ($size-gutter * 2) 0;
 
-//         &:nth-last-child(-n + 2) {
-//           margin: 0;
-//         }
-//       }
-//     }
-//   }
+        &:nth-last-child(-n + 2) {
+          margin: 0;
+        }
+      }
+    }
+  }
 
-//   @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-//     .container {
-//       padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+  @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+    .container {
+      padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
-//       > div {
-//         flex-direction: column-reverse;
-//       }
-//     }
+      > div {
+        flex-direction: column-reverse;
+      }
+    }
 
-//     aside {
-//       margin-top: 20px;
-//       width: 100%;
+    aside {
+      margin-top: 20px;
+      width: 100%;
 
-//       .events {
-//         display: grid;
-//         grid-template-columns: 1fr 1fr;
-//         grid-gap: 0.5em;
-//       }
-//     }
-//   }
+      .events {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5em;
+      }
+    }
+  }
 
-//   @media (max-width: $viewport-medium) {
-//     form {
-//       align-items: flex-end;
-//     }
+  @media (max-width: $viewport-medium) {
+    form {
+      align-items: flex-end;
+    }
 
-//     .container {
-//       padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
+    .container {
+      padding: ($size-gutter * 2) ($size-gutter * 2) 0 ($size-gutter * 2);
 
-//       > div {
-//         flex-direction: column-reverse;
-//       }
-//     }
+      > div {
+        flex-direction: column-reverse;
+      }
+    }
 
-//     aside {
-//       width: 100%;
-//     }
-//   }
-// }
+    aside {
+      width: 100%;
+    }
+  }
+}
 
-// @media (min-width: $viewport-large) {
-//   .front #news-section .results a {
-//     &:first-of-type {
-//       width: 100%;
+@media (min-width: $viewport-large) {
+  .front #news-section .results a {
+    &:first-of-type {
+      width: 100%;
 
-//       .hasImage .summary {
-//         display: block;
-//       }
-//     }
+      .hasImage .summary {
+        display: block;
+      }
+    }
 
-//     &:not(:first-child) {
-//       display: flex;
-//       width: 50%;
+    &:not(:first-child) {
+      display: flex;
+      width: 50%;
 
-//       &:nth-child(even) {
-//         padding-right: 0.25em;
-//       }
-//       &:nth-child(odd) {
-//         padding-left: 0.25em;
-//       }
-//     }
-//   }
-// }
+      &:nth-child(even) {
+        padding-right: 0.25em;
+      }
+      &:nth-child(odd) {
+        padding-left: 0.25em;
+      }
+    }
+  }
+}
 
-// @media (min-width: $viewport-medium) and (max-width: $viewport-large) {
-//   :not(.front) #news-section .news,
-//   :not(.front) #success-section .success {
-//     width: 100%;
+@media (min-width: $viewport-medium) and (max-width: $viewport-large) {
+  :not(.front) #news-section .news,
+  :not(.front) #success-section .success {
+    width: 100%;
 
-//     .results a {
-//       width: 100%;
-//     }
-//   }
+    .results a {
+      width: 100%;
+    }
+  }
 
-//   .front #news-section {
-//     .news {
-//       width: 100%;
-//       float: none;
+  .front #news-section {
+    .news {
+      width: 100%;
+      float: none;
 
-//       .results a {
-//         &:first-of-type {
-//           width: 100%;
-//           .hasImage .summary {
-//             display: block;
-//           }
-//         }
+      .results a {
+        &:first-of-type {
+          width: 100%;
+          .hasImage .summary {
+            display: block;
+          }
+        }
 
-//         &:not(:first-child) {
-//           display: flex;
-//           width: 50%;
+        &:not(:first-child) {
+          display: flex;
+          width: 50%;
 
-//           &:nth-child(even) {
-//             padding-right: 0.25em;
-//           }
-//           &:nth-child(odd) {
-//             padding-left: 0.25em;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+          &:nth-child(even) {
+            padding-right: 0.25em;
+          }
+          &:nth-child(odd) {
+            padding-left: 0.25em;
+          }
+        }
+      }
+    }
+  }
+}
 
-// @media (max-width: $viewport-medium) {
-//   :not(.front) #news-section .news,
-//   :not(.front) #success-section .success {
-//     width: 100%;
+@media (max-width: $viewport-medium) {
+  :not(.front) #news-section .news,
+  :not(.front) #success-section .success {
+    width: 100%;
 
-//     .results a {
-//       width: 100%;
-//       .hasImage .summary {
-//         display: none;
-//       }
-//     }
-//   }
+    .results a {
+      width: 100%;
+      .hasImage .summary {
+        display: none;
+      }
+    }
+  }
 
-//   .front #news-section .news {
-//     width: 100%;
-//     float: none;
+  .front #news-section .news {
+    width: 100%;
+    float: none;
 
-//     .results a {
-//       width: 100%;
-//     }
-//   }
-// }
+    .results a {
+      width: 100%;
+    }
+  }
+}
 
-// article.news.teaser,
-// article.success.teaser {
-//   position: relative;
-//   height: 214px;
-//   overflow: hidden;
-//   margin: 0;
-//   padding: ($size-gutter * 2) $size-gutter $size-gutter $size-gutter;
-//   border-color: $color-divider;
-//   border-style: solid;
-//   border-width: 0 1px 1px 1px;
+article.news.teaser,
+article.success.teaser {
+  position: relative;
+  height: 214px;
+  overflow: hidden;
+  margin: 0;
+  padding: ($size-gutter * 2) $size-gutter $size-gutter $size-gutter;
+  border-color: $color-divider;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
 
-//   &:before {
-//     z-index: 1;
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: -1px;
-//     width: calc(100% + 2px);
-//     height: 8px;
-//     background-color: $color-header;
-//   }
+  &:before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 8px;
+    background-color: $color-header;
+  }
 
-//   header {
-//     margin: 0 0 0.5em 0;
+  header {
+    margin: 0 0 0.5em 0;
 
-//     time {
-//       font-family: $font-family-heading;
-//       font-weight: bold;
-//       color: $dark-slate;
-//     }
+    time {
+      font-family: $font-family-heading;
+      font-weight: bold;
+      color: $dark-slate;
+    }
 
-//     h3 {
-//       position: relative;
-//       line-height: $font-size-big;
-//       font-size: $font-size-big;
-//       font-weight: bold;
-//       font-family: $font-family-heading;
-//       color: $color-link;
-//     }
-//   }
+    h3 {
+      position: relative;
+      line-height: $font-size-big;
+      font-size: $font-size-big;
+      font-weight: bold;
+      font-family: $font-family-heading;
+      color: $color-link;
+    }
+  }
 
-//   .summary {
-//     color: $color-text-default;
-//     position: relative;
-//     line-height: $font-size-big;
-//   }
+  .summary {
+    color: $color-text-default;
+    position: relative;
+    line-height: $font-size-big;
+  }
 
-//   &.hasImage {
-//     padding-left: 148px;
+  &.hasImage {
+    padding-left: 148px;
 
-//     img {
-//       width: 140px;
-//       position: absolute;
-//       top: 8px; // accounts for the faux :before border top
-//       left: 0;
-//       height: auto;
-//     }
+    img {
+      width: 140px;
+      position: absolute;
+      top: 8px; // accounts for the faux :before border top
+      left: 0;
+      height: auto;
+    }
 
-//     header {
-//       h3 {
-//         position: relative;
-//         max-height: 120px;
-//       }
-//     }
-//   }
-// }
+    header {
+      h3 {
+        position: relative;
+        max-height: 120px;
+      }
+    }
+  }
+}
 
 .news-section-new {
   &.home {
