@@ -2,12 +2,15 @@
  * @copyright 2024 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  #}
-<nav class="dropdown-menu">
-    <h3><a href="{{ base_path }}city">Government</a></h3>
-    <ul><li><a href="{{ base_path }}mayor">Mayor Kerry Thomson</a></li>
-        <li><a href="{{ base_path }}council">City Council</a></li>
-        <li><a href="{{ base_path }}clerk">City Clerk</a></li>
-        <li><a href="{{ base_path }}boards">Boards &amp; Commissions</a></li>
-        <li><a href="{{ base_path }}departments">Departments</a></li>
-    </ul>
-</nav>
+<ul class="dropdown-menu">
+    <li>
+        <a class="dropdown-item" href="{{ base_path }}city">Government</a>
+        <ul>
+            <li><a class="dropdown-item" href="{{ base_path }}mayor">Mayor Kerry Thomson</a></li>
+            <li><a class="dropdown-item" href="{{ base_path }}council">City Council</a></li>
+            <li><a class="dropdown-item" href="{{ base_path }}clerk">City Clerk</a></li>
+            <li><a class="dropdown-item" href="{{ base_path }}boards">Boards &amp; Commissions</a></li>
+            <li><a class="dropdown-item" href="{{ base_path }}departments">Departments</a></li>
+        </ul>
+    </li>
+</ul>
