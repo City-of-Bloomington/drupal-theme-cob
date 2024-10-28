@@ -22,20 +22,23 @@
         <div class="collapse navbar-collapse mb-1" id="nav-menu">
             <ul class="navbar-nav flex-grow-1 justify-content-center">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
+                    <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
                     {% include '@cob/menus/residents.html.twig' %}
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
+                    <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
                     {% include '@cob/menus/visitors.html.twig'     %}
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
+                    <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
                     {% include '@cob/menus/business.html.twig'     %}
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
+                    <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
                     {% include '@cob/menus/government.html.twig' %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-4 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Connect</a>
                 </li>
             </ul>
             <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
