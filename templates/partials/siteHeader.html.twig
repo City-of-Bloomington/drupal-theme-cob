@@ -19,7 +19,37 @@
         <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
             Menu
         </button>
-        <div class="collapse navbar-collapse mb-1 justify-content-end" id="nav-menu">
+        <div class="collapse navbar-collapse mb-1" id="nav-menu">
+            <ul class="navbar-nav flex-grow-1 justify-content-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
+                    {% include '@cob/menus/residents.html.twig' %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
+                    {% include '@cob/menus/visitors.html.twig'     %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
+                    {% include '@cob/menus/business.html.twig'     %}
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
+                    {% include '@cob/menus/government.html.twig' %}
+                </li>
+            </ul>
+            <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
+                <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+</header>
+{{ page.primary_menu }}
+
+
+        {# <div class="collapse navbar-collapse mb-1 justify-content-end" id="nav-menu">
             <div class="d-flex align-items-end flex-md-row flex-column">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown align-self-end">
@@ -43,9 +73,4 @@
                     <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
                     <button type="submit">Search</button>
                 </form>
-            </div>
-        </div>
-    </div>
-</nav>
-</header>
-{{ page.primary_menu }}
+            </div> #}
