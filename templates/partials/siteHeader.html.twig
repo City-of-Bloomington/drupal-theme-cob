@@ -3,78 +3,107 @@
 {% endif %}
 
 <header id="nav-collapses">
-<nav class="navbar navbar-expand-md shadow-sm">
-    <div class="container-fluid">
-        <div class="navbar-brand d-xl-none">
-            <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
-                <img src="https://bloomington.in.gov/static/snowflake-blue.svg" alt="City of Bloomington Logo" height="55" class="d-inline-block align-text-center">
-            </a>
-        </div>
-        <div class="navbar-brand d-none d-xl-block">
-            <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
-                <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" style="padding-right:5%;" height="55" class="d-inline-block align-text-center">
-				Mayor Kerry Thomson
-			</a>
-        </div>
-        <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-        </button>
-        <div class="collapse navbar-collapse mb-1" id="nav-menu">
-            <ul class="navbar-nav flex-grow-1 justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_residents"  data-bs-target="#collapse_residents"  aria-controls="collapse_residents">Residents</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_visitors"   data-bs-target="#collapse_visitors"   aria-controls="collapse_visitors">Visitors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_business"   data-bs-target="#collapse_business"   aria-controls="collapse_business">Business</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_government" data-bs-target="#collapse_government" aria-controls="collapse_government">Government</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_connect"    data-bs-target="#collapse_connect"    aria-controls="collapse_connect">Connect</a>
-                </li>
-            </ul>
-            <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
-                <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
-{% include '@cob/menus/residents.html.twig'  %}
-{% include '@cob/menus/visitors.html.twig'   %}
-{% include '@cob/menus/business.html.twig'   %}
-{% include '@cob/menus/government.html.twig' %}
-{% include '@cob/menus/connect.html.twig' %}
-</header>
-{{ page.primary_menu }}
+    <nav class="navbar navbar-expand-md shadow-sm">
+        <div class="container-fluid">
+            <div class="navbar-brand d-xl-none">
+                <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
+                    <img src="https://bloomington.in.gov/static/snowflake-blue.svg" alt="City of Bloomington Logo" height="55" class="d-inline-block align-text-center">
+                </a>
+            </div>
+            <div class="navbar-brand d-none d-xl-block">
+                <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
+                    <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" style="padding-right:5%;" height="55" class="d-inline-block align-text-center">
+                    Mayor Kerry Thomson
+                </a>
+            </div>
+            <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav-menu" aria-controls="mobile-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+            </button>
 
-{# Add mobile version using this markup (requires d-none on the markup above) #}
-        {# <div class="collapse navbar-collapse mb-1 justify-content-end" id="nav-menu">
-            <div class="d-flex align-items-end flex-md-row flex-column">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown align-self-end">
-						<a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
-                        {% include '@cob/menus/residents.html.twig' %}
+            <div class="collapse navbar-collapse mb-1">
+                <ul class="navbar-nav flex-grow-1 justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_residents"  data-bs-target="#collapse_residents"  aria-controls="collapse_residents">Residents</a>
                     </li>
-                    <li class="nav-item dropdown align-self-end">
-                        <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
-                        {% include '@cob/menus/visitors.html.twig'     %}
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_visitors"   data-bs-target="#collapse_visitors"   aria-controls="collapse_visitors">Visitors</a>
                     </li>
-					<li class="nav-item dropdown align-self-end">
-                        <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
-                        {% include '@cob/menus/business.html.twig'     %}
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_business"   data-bs-target="#collapse_business"   aria-controls="collapse_business">Business</a>
                     </li>
-					<li class="nav-item dropdown align-self-end">
-                        <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
-                        {% include '@cob/menus/government.html.twig' %}
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_government" data-bs-target="#collapse_government" aria-controls="collapse_government">Government</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_connect"    data-bs-target="#collapse_connect"    aria-controls="collapse_connect">Connect</a>
                     </li>
                 </ul>
                 <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
                     <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
                     <button type="submit">Search</button>
                 </form>
-            </div> #}
+            </div>
+
+            <div class="collapse navbar-expand mb-1 justify-content-end" id="mobile-nav-menu">
+                <div class="d-flex align-items-end flex-md-row flex-column">
+                    <ul class="navbar-nav">
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}welcome">Residents</a>
+                        </li>
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}about">Visitors</a>
+                        </li>
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}business">Business</a>
+                        </li>
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}city">Government</a>
+                        </li>
+                        <li class="nav-item align-self-end">
+                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}contact">Connect</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
+                        <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    {% include '@cob/menus/residents.html.twig'  %}
+    {% include '@cob/menus/visitors.html.twig'   %}
+    {% include '@cob/menus/business.html.twig'   %}
+    {% include '@cob/menus/government.html.twig' %}
+    {% include '@cob/menus/connect.html.twig'    %}
+</header>
+{{ page.primary_menu }}
+
+{# Add mobile version using this markup (requires d-none on the markup above) #}
+<div class="collapse navbar-collapse mb-1 justify-content-end" id="nav-menu">
+    <div class="d-flex align-items-end flex-md-row flex-column">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown align-self-end">
+                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
+                {% include '@cob/menus/residents.html.twig' %}
+            </li>
+            <li class="nav-item dropdown align-self-end">
+                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
+                {% include '@cob/menus/visitors.html.twig'     %}
+            </li>
+            <li class="nav-item dropdown align-self-end">
+                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
+                {% include '@cob/menus/business.html.twig'     %}
+            </li>
+            <li class="nav-item dropdown align-self-end">
+                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
+                {% include '@cob/menus/government.html.twig' %}
+            </li>
+        </ul>
+        <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
+            <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
