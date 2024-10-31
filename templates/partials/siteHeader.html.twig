@@ -16,9 +16,6 @@
                     Mayor Kerry Thomson
                 </a>
             </div>
-            <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav-menu" aria-controls="mobile-nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-            </button>
 
             <div class="collapse navbar-collapse mb-1">
                 <ul class="navbar-nav flex-grow-1 justify-content-center">
@@ -38,32 +35,35 @@
                         <a class="nav-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_connect"    data-bs-target="#collapse_connect"    aria-controls="collapse_connect">Connect</a>
                     </li>
                 </ul>
-                <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
+                <form class="d-flex" id="search-block-form" method="get" action="/search">
                     <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
                     <button type="submit">Search</button>
                 </form>
             </div>
-
-            <div class="collapse navbar-expand mb-1 justify-content-end" id="mobile-nav-menu">
-                <div class="d-flex align-items-end flex-md-row flex-column">
+            
+            <div class="d-md-none">
+                <button class="navbar-toggler mb-1 p-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav-menu" aria-expanded="false" aria-label="Toggle Mobile Navigation">
+                    Menu
+                </button>
+                <div class="collapse navbar-collapse" id="mobile-nav-menu">
                     <ul class="navbar-nav">
-                        <li class="nav-item align-self-end">
-                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}welcome">Residents</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ base_path }}welcome">Residents</a>
                         </li>
-                        <li class="nav-item align-self-end">
-                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}about">Visitors</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ base_path }}about">Visitors</a>
                         </li>
-                        <li class="nav-item align-self-end">
-                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}business">Business</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ base_path }}business">Business</a>
                         </li>
-                        <li class="nav-item align-self-end">
-                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}city">Government</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ base_path }}city">Government</a>
                         </li>
-                        <li class="nav-item align-self-end">
-                            <a class="nav-link fs-5 fw-bold" href="{{ base_path }}contact">Connect</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ base_path }}contact">Connect</a>
                         </li>
                     </ul>
-                    <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
+                    <form class="d-flex" id="search-block-form" method="get" action="/search">
                         <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
                         <button type="submit">Search</button>
                     </form>
@@ -79,31 +79,3 @@
     {% include '@cob/menus/connect.html.twig'    %}
 </header>
 {{ page.primary_menu }}
-
-{# Add mobile version using this markup (requires d-none on the markup above) #}
-<div class="collapse navbar-collapse mb-1 justify-content-end" id="nav-menu">
-    <div class="d-flex align-items-end flex-md-row flex-column">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown align-self-end">
-                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Residents</a>
-                {% include '@cob/menus/residents.html.twig' %}
-            </li>
-            <li class="nav-item dropdown align-self-end">
-                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Visitors</a>
-                {% include '@cob/menus/visitors.html.twig'     %}
-            </li>
-            <li class="nav-item dropdown align-self-end">
-                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Business</a>
-                {% include '@cob/menus/business.html.twig'     %}
-            </li>
-            <li class="nav-item dropdown align-self-end">
-                <a class="nav-link dropdown-toggle fs-5 fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Government</a>
-                {% include '@cob/menus/government.html.twig' %}
-            </li>
-        </ul>
-        <form class="d-flex"id="search-block-form" method="get" action="{{ base_path }}search">
-            <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
-            <button type="submit">Search</button>
-        </form>
-    </div>
-</div>
