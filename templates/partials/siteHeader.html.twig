@@ -2,15 +2,15 @@
 	<div id="alerts">{{ alerts }}</div>
 {% endif %}
 
-<header id="nav-collapses">
+<header class="d-none d-lg-block" id="nav-collapses">
     <nav class="navbar navbar-expand-md shadow-sm">
         <div class="container-fluid">
-            <div class="navbar-brand d-xl-none">
+            <div class="navbar-brand d-xxl-none">
                 <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
                     <img src="https://bloomington.in.gov/static/snowflake-blue.svg" alt="City of Bloomington Logo" height="55" class="d-inline-block align-text-center">
                 </a>
             </div>
-            <div class="navbar-brand d-none d-xl-block">
+            <div class="navbar-brand d-none d-xxl-block">
                 <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
                     <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" style="padding-right:5%;" height="55" class="d-inline-block align-text-center">
                     Mayor Kerry Thomson
@@ -40,35 +40,6 @@
                     <button type="submit">Search</button>
                 </form>
             </div>
-            
-            <div class="d-md-none">
-                <button class="navbar-toggler mb-1 p-3" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav-menu" aria-expanded="false" aria-label="Toggle Mobile Navigation">
-                    Menu
-                </button>
-                <div class="collapse navbar-collapse" id="mobile-nav-menu">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ base_path }}welcome">Residents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ base_path }}about">Visitors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ base_path }}business">Business</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ base_path }}city">Government</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ base_path }}contact">Connect</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" id="search-block-form" method="get" action="/search">
-                        <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
-                        <button type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
 
         </div>
     </nav>
@@ -77,5 +48,49 @@
     {% include '@cob/menus/business.html.twig'   %}
     {% include '@cob/menus/government.html.twig' %}
     {% include '@cob/menus/connect.html.twig'    %}
+</header>
+
+<header class="d-lg-none">
+    <nav class="navbar navbar-expand-md shadow-sm">
+        <div class="container-fluid">
+            <div class="navbar-brand d-lg-none">
+                <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
+                    <img src="https://bloomington.in.gov/static/snowflake-blue.svg" alt="City of Bloomington Logo" height="55" class="d-inline-block align-text-center">
+                </a>
+            </div>
+            <div class="navbar-brand d-none d-lg-block">
+                <a class="navbar-brand"  href="https://bloomington.in.gov/" aria-label="Official Homepage of the City of Bloomington, Indiana">
+                    <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" style="padding-right:5%;" height="55" class="d-inline-block align-text-center">
+                    Mayor Kerry Thomson
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav-menu" aria-controls="mobile-nav-menu" aria-expanded="false" aria-label="Toggle Mobile Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mobile-nav-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ base_path }}welcome">Residents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ base_path }}about">Visitors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ base_path }}business">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ base_path }}city">Government</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ base_path }}contact">Connect</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search-block-form" method="get" action="/search">
+                    <input id="query" name="query" type="search" class="form-control me-2" placeholder="Search" aria-label="Search" />
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </header>
 {{ page.primary_menu }}
