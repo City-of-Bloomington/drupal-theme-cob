@@ -2,7 +2,7 @@
 	<div id="alerts">{{ alerts }}</div>
 {% endif %}
 
-<header class="d-none d-lg-block" id="nav-collapses">
+<header class="d-none d-lg-block">
     <nav class="navbar navbar-expand-md shadow-sm">
         <div class="container-fluid">
             <div class="navbar-brand d-xxl-none">
@@ -18,51 +18,51 @@
             </div>
 
             <div class="collapse navbar-collapse mb-1">
-                <ul class="navbar-nav flex-grow-1 justify-content-center">
+                <ul id="nav-collapses" class="navbar-nav flex-grow-1 justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link icon-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_residents"  data-bs-target="#collapse_residents"  aria-controls="collapse_residents">
+                        <a class="nav-link icon-link icon-link-hover fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_residents"  data-bs-target="#collapse_residents"  aria-controls="collapse_residents">
                             Residents
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-down-fill fs-6 mt-1">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
                             </svg>
                         </a>
-
+                        {% include '@cob/menus/residents.html.twig'  %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link icon-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_visitors"   data-bs-target="#collapse_visitors"   aria-controls="collapse_visitors">
+                        <a class="nav-link icon-link icon-link-hover fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_visitors"   data-bs-target="#collapse_visitors"   aria-controls="collapse_visitors">
                             Visitors
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-down-fill fs-6 mt-1">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
                             </svg>
                         </a>
-
+                        {% include '@cob/menus/visitors.html.twig'   %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link icon-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_business"   data-bs-target="#collapse_business"   aria-controls="collapse_business">
+                        <a class="nav-link icon-link icon-link-hover fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_business"   data-bs-target="#collapse_business"   aria-controls="collapse_business">
                             Business
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-down-fill fs-6 mt-1">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
                             </svg>
                         </a>
-
+                        {% include '@cob/menus/business.html.twig'   %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link icon-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_government" data-bs-target="#collapse_government" aria-controls="collapse_government">
+                        <a class="nav-link icon-link icon-link-hover fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_government" data-bs-target="#collapse_government" aria-controls="collapse_government">
                             Government
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-down-fill fs-6 mt-1">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
                             </svg>
                         </a>
-
+                        {% include '@cob/menus/government.html.twig' %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link icon-link fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_connect"    data-bs-target="#collapse_connect"    aria-controls="collapse_connect">
+                        <a class="nav-link icon-link icon-link-hover fs-4 fw-bold" role="button" data-bs-toggle="collapse" aria-expanded="false" href="#collapse_connect"    data-bs-target="#collapse_connect"    aria-controls="collapse_connect">
                             Connect
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-down-fill fs-6 mt-1">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
                             </svg>
                         </a>
-
+                        {% include '@cob/menus/connect.html.twig'    %}
                     </li>
                 </ul>
                 <form class="d-flex" id="search-block-form" method="get" action="/search">
@@ -70,14 +70,8 @@
                     <button type="submit">Search</button>
                 </form>
             </div>
-
         </div>
     </nav>
-    {% include '@cob/menus/residents.html.twig'  %}
-    {% include '@cob/menus/visitors.html.twig'   %}
-    {% include '@cob/menus/business.html.twig'   %}
-    {% include '@cob/menus/government.html.twig' %}
-    {% include '@cob/menus/connect.html.twig'    %}
 </header>
 
 <header class="d-lg-none">
