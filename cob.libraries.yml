@@ -15,4 +15,3 @@ cob:
       css/screen.css: { }
   js:
     js/cob.js: { }
-    js/annex.js: { }
