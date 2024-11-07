@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017-2021 City of Bloomington, Indiana
+ * @copyright 2017-2024 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -52,6 +52,7 @@ function cob_preprocess(&$vars, $hook)
                 $location_id = $vars['program']['location_id'];
 
                 $query = \Drupal::entityQuery('node')
+                    ->accessCheck(true)
                     ->condition('status', 1)
                     ->condition('type', 'location')
                     ->condition('field_promt_id', $location_id);
@@ -118,6 +119,7 @@ function cob_preprocess_page__front(&$vars)
 
 
     $query   = \Drupal::entityQuery('node')
+                ->accessCheck(true)
                 ->condition('type', 'news')
                 ->condition('status',  1)
                 ->sort('created', 'desc')
@@ -188,6 +190,7 @@ function cob_preprocess_page(&$vars)
     }
 
     $query   = \Drupal::entityQuery('node')
+            ->accessCheck(true)
             ->condition('type', 'alert')
             ->condition('status',  1)
             ->sort('created', 'desc')
@@ -240,6 +243,7 @@ function cob_preprocess_node(&$vars)
             // Engineering Projects
             case 573:
                 $query = \Drupal::entityQuery('node')
+                       ->accessCheck(true)
                        ->condition('type', 'project_page')
                        ->condition('field_active',  true)
                        ->sort('created', 'desc');
@@ -249,6 +253,7 @@ function cob_preprocess_node(&$vars)
             // Utilities Projects
             case 5519:
                 $query = \Drupal::entityQuery('node')
+                       ->accessCheck(true)
                        ->condition('type', 'utilities_project_page')
                        ->condition('field_active',  true)
                        ->sort('created', 'desc');
@@ -267,20 +272,24 @@ function cob_preprocess_node(&$vars)
                 $builder = $manager->getViewBuilder('node');
 
                 // Active Boards that are not part of the City Council
-                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission' )
-                                                       ->condition('field_active', true )
-                                                       ->condition('field_department', DEPARTMENT_COUNCIL, '<>')
-                                                       ->sort('title');
+                $query   = \Drupal::entityQuery('node')
+                            ->accessCheck(true)
+                            ->condition('type', 'board_commission' )
+                            ->condition('field_active', true )
+                            ->condition('field_department', DEPARTMENT_COUNCIL, '<>')
+                            ->sort('title');
                 $nodes   = $storage->loadMultiple($query->execute());
                 __cob_add_onboard_flags_to_nodes($nodes, $committees);
 
                 $vars['boards_active'] = $builder->viewMultiple($nodes, 'info_card');
 
                 // City Council boards that are active
-                $query = \Drupal::entityQuery('node')->condition('type', 'board_commission')
-                                                     ->condition('field_active',       true)
-                                                     ->condition('field_department', DEPARTMENT_COUNCIL)
-                                                     ->sort('title');
+                $query = \Drupal::entityQuery('node')
+                            ->accessCheck(true)
+                            ->condition('type', 'board_commission')
+                            ->condition('field_active',       true)
+                            ->condition('field_department', DEPARTMENT_COUNCIL)
+                            ->sort('title');
                 // move the city council to the first item in the list
                 $nodes   = $storage->loadMultiple($query->execute());
                 $ci      = null;
@@ -299,9 +308,11 @@ function cob_preprocess_node(&$vars)
                 foreach (OnBoardService::committee_list(['current' => 0]) as $c) {
                     $committees[$c['id']] = $c;
                 }
-                $query   = \Drupal::entityQuery('node')->condition('type', 'board_commission')
-                                                       ->condition('field_active',  false)
-                                                       ->sort('title');
+                $query   = \Drupal::entityQuery('node')
+                            ->accessCheck(true)
+                            ->condition('type', 'board_commission')
+                            ->condition('field_active',  false)
+                            ->sort('title');
                 $nodes   = $storage->loadMultiple($query->execute());
                 __cob_add_onboard_flags_to_nodes($nodes, $committees);
                 $vars['boards_inactive'] = $builder->viewMultiple($nodes, 'info_card');
