@@ -25,6 +25,7 @@
             <label>View Year:</label>
             <select type="select"
                     onchange="javascript:location.href = this.value;">
+                    <option value=""></option>
 
                 {% for y, count in years %}
                     {% set optionValue =  path(routeList, {'node': node.id,
