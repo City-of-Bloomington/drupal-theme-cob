@@ -13,5 +13,7 @@ cob:
   css:
     theme:
       css/screen.css: { }
+  dependencies:
+    - cob/fn1
   js:
     js/cob.js: { }
