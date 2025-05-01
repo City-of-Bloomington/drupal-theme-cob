@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017-2024 City of Bloomington, Indiana
+ * @copyright 2017-2025 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -530,6 +530,18 @@ function cob_preprocess_field__field_hours(&$vars)
 function cob_form_search_block_form_alter(&$form, &$form_state)
 {
     $form['keys']['#attributes']['placeholder'][] = 'Search...';
+}
+
+function cob_form_user_login_form_alter(&$form, &$form_state)
+{
+    $form['openid_connect_client_adfs_login']['#value'] = 'Login';
+}
+
+function cob_preprocess_block__user_login_block(&$vars, $hook)
+{
+    if (isset($vars['content']['user_links'])) {
+        unset($vars['content']['user_links']);
+    }
 }
 
 /**

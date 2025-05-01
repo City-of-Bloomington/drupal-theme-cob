@@ -25,8 +25,8 @@
 					<li><a href="https://apps.bloomington.in.gov/kb" title="City Intranet">City Intranet</a></li>
 					<li>{% if logged_in %}
                         <a href="{{ base_path }}user/logout">Logout</a>
-						{% else %}
-                        <a href="{{ base_path }}openid-connect/adfs/initiate?iss={{ url('<front>') }}">Login</a>
+                        {% else %}
+                        {{ page.footer }}
 						{% endif %}
 					</li>
 					<li><address>
