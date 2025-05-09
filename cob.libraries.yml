@@ -1,19 +1,20 @@
-fn1:
-  remote: https://github.com/City-of-Bloomington/factory-number-one
-  version: 0.3
-  license:
-    name: AGPL
-    url: https://github.com/City-of-Bloomington/factory-number-one/LICENSE
-    gpl-compatible: true
+---
+uswds:
+  remote:  'https://github.com/uswds/uswds'
+  license: 'MIT'
+  url:     'https://github.com/uswds/uswds/blob/develop/LICENSE.md'
   css:
     theme:
-      //bloomington.in.gov/static/fn1-releases/refactor/css/default.css: { type: external, minified: true }
+      '/static/uswds/dist/css/uswds.min.css':
+        type:     'external'
+        minified: 'true'
 cob:
   version: 0.x
   css:
     theme:
       css/screen.css: { }
   dependencies:
-    - cob/fn1
+    - 'cob/uswds'
   js:
     js/cob.js: { }
+...

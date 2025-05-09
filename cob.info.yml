@@ -3,9 +3,9 @@ name: 'COB'
 type: 'theme'
 description: 'City of Bloomington Theme'
 package: 'COB'
-core_version_requirement: '^9||^10||^11'
+core_version_requirement: '^11'
 base theme: false
 libraries:
-  - 'cob/fn1'
+  - 'cob/uswds'
   - 'cob/cob'
 ...
