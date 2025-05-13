@@ -8,6 +8,13 @@ uswds:
       '/static/uswds/dist/css/uswds.min.css':
         type:     'external'
         minified: 'true'
+  js:
+    '/static/uswds/dist/js/uswds-init.min.js':
+      type:     'external'
+      minified: 'true'
+    '/static/uswds/dist/js/uswds.min.js':
+      type:     'external'
+      minified: 'true'
 cob:
   version: 0.x
   css:

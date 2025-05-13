@@ -48,53 +48,67 @@
 
 {{ page.highlighted }}
 
-
+{% include '@cob/partials/gov-banner.html.twig' %}
 {% if alerts %}
-	<div id="alerts">{{ alerts }}</div>
+{{ alerts }}
 {% endif %}
 
-<header id="homepage">
-	<div class="menu-container">
-		<a href="{{ base_path }}" title="City of Bloomington" class="logo">
-			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
-		</a>
-		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor Kerry Thomson</a>
-
-		<nav id="navigation" role="navigation" aria-labelledby="navigation">
-			<ul>
-				<li>
-					<a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback" target="_blank">Feedback</a>
-				</li>
-			</ul>
-		</nav>
+<header class="usa-header usa-header--basic">
+	<div class="usa-nav-container">
+        <div class="usa-navbar">
+            <div class="usa-logo">
+                <a class="grid-row" href="{{ base_path }}" title="City of Bloomington, Indiana>">
+                    <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" class="grid-col-auto maxh-5 margin-right-105">
+                    <em class="usa-logo__text font-sans-lg grid-col-auto margin-y-auto">Mayor Kerry Thomson</em>
+                </a>
+            </div>
+        </div>
 	</div>
-	<nav id="header-icon-nav">
-		<div class="container">
-			<a class="services" title="Top Services" href="{{ base_path }}services">
-				<span>Services</span>
-				<span>Services</span>
-			</a>
 
-			<a class="info" title="Information &amp; Guides" href="{{ base_path }}about">
-				<span>Information</span>
-				<span>Info</span>
-			</a>
+	<nav class="usa-section usa-section--dark">
+        <div class="grid-container">
+            <div class="grid-row">
+                <a class="usa-card grid-col-2" title="Top Services" href="{{ base_path }}services">
+                    <div class="usa-card__container">
+                        <div class="usa-card__header">
+                            <span class="usa-card__heading">Services</span>
+                        </div>
+                    </div>
+                </a>
 
-			<a class="news" title="News &amp; Events" href="{{ base_path }}news">
-				<span>News</span>
-				<span>News</span>
-			</a>
+                <a class="usa-card grid-col-2" title="Information &amp; Guides" href="{{ base_path }}about">
+                    <div class="usa-card__container">
+                        <div class="usa-card__header">
+                            <span class="usa-card__heading">Information</span>
+                        </div>
+                    </div>
+                </a>
 
-			<a class="meetings" title="News &amp; Events" href="{{ base_path }}calendars">
-				<span>Meetings &amp; Events</span>
-				<span>Events</span>
-			</a>
+                <a class="usa-card grid-col-2" title="News &amp; Events" href="{{ base_path }}news">
+                    <div class="usa-card__container">
+                        <div class="usa-card__header">
+                            <span class="usa-card__heading">News</span>
+                        </div>
+                    </div>
+                </a>
 
-			<a class="city" title="City Government" href="{{ base_path }}city">
-				<span>City Government</span>
-				<span>Govt.</span>
-			</a>
-		</div>
+                <a class="usa-card grid-col-2" title="News &amp; Events" href="{{ base_path }}calendars">
+                    <div class="usa-card__container">
+                        <div class="usa-card__header">
+                            <span class="usa-card__heading">Events</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="usa-card grid-col-2" title="City Government" href="{{ base_path }}city">
+                    <div class="usa-card__container">
+                        <div class="usa-card__header">
+                            <span class="usa-card__heading">Government</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
 	</nav>
 </header>
 {{ page.primary_menu }}
