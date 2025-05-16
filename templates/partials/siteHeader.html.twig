@@ -1,59 +1,68 @@
 {% if alerts %}
 {{ alerts }}
 {% endif %}
-
-<header>
-	<div class="menu-container">
-		<a href="{{ base_path }}" title="City of Bloomington" class="logo">
-			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
-		</a>
-		<a href="{{ base_path }}" title="City of Bloomington, Indiana" class="name">Mayor Kerry Thomson</a>
-
-		<div class="nav-items non-home">
-			<form id="header-search" method="get" action="{{ base_path }}search">
-				<fieldset>
-					<label for="query" class="visually-hidden">Search</label>
-					<input id="query" name="query" type="search" class="form-search" title="Enter the terms you wish to search for." placeholder="Search the City of Bloomington" size="15" maxlength="128"/>
-					<input type="submit" class="button" value="Search"/>
-				</fieldset>
-			</form>
-
-			{# <nav id="navigation" role="navigation" aria-labelledby="navigation">
-                <ul><li><a href="{{ base_path }}ureport/miscellaneous/53" title="Feedback">Feedback</a></li></ul>
-               </nav> #}
-		</div>
+<header class="usa-header usa-header--basic">
+	<div class="usa-nav-container">
+        <div class="usa-navbar">
+            <div class="usa-logo">
+                <a class="grid-row" href="{{ base_path }}" title="City of Bloomington, Indiana>">
+                    <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington Logo" class="grid-col-auto maxh-5 margin-right-105">
+                    <em class="usa-logo__text font-sans-lg grid-col-auto margin-y-auto">Mayor Kerry Thomson</em>
+                </a>
+            </div>
+        </div>
+        <div class="usa-nav">
+			<section>
+				<form class="usa-search usa-search--small" role="search" method="get" action="{{ base_path }}search">
+					<label for="query" class="usa-sr-only">Search</label>
+					<input  id="query" name="query" type="search" class="usa-input" />
+					<button class="usa-button" type="submit">
+						<img class="usa-search__submit-icon" src="/static/uswds/dist/img/usa-icons-bg/search--white.svg" alt="Search" />
+					</button>
+				</form>
+			</section>
+        </div>
 	</div>
 
-	<nav id="header-icon-nav">
-		<div class="container">
-			<a class="services" title="Top Services" href="{{ base_path }}services">
-				<span>Services</span>
-				<span>Services</span>
-			</a>
+	<nav class="usa-section usa-section--dark">
+        <div class="grid-container">
+            <div class="grid-row">
+                <a class="grid-col-2" title="Top Services" href="{{ base_path }}services">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+					</svg>
+					Services
+                </a>
 
-			<a class="info" title="Information &amp; Guides" href="{{ base_path }}about">
-				<span>Information</span>
-				<span>Info</span>
-			</a>
+                <a class="grid-col-2" title="Information &amp; Guides" href="{{ base_path }}about">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#info_outline"></use>
+					</svg>
+					Information
+                </a>
 
-			<a class="news" title="News &amp; Events" href="{{ base_path }}news">
-				<span>News</span>
-				<span>News</span>
-			</a>
+                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}news">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+					</svg>
+					News
+                </a>
 
-			<a class="meetings" title="News &amp; Events" href="{{ base_path }}calendars">
+                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}calendars">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#event"></use>
+					</svg>
+					Events
+                </a>
 
-
-				<span>Meetings &amp; Events</span>
-				<span>Events</span>
-			</a>
-
-
-			<a class="city" title="City Government" href="{{ base_path }}city">
-				<span>City Government</span>
-				<span>Govt.</span>
-			</a>
-		</div>
+                <a class="grid-col-2" title="City Government" href="{{ base_path }}city">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#account_balance"></use>
+					</svg>
+					Government
+                </a>
+            </div>
+        </div>
 	</nav>
 </header>
 {{ page.primary_menu }}

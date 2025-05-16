@@ -10,12 +10,15 @@
  */
 #}
 {% if breadcrumb %}
-<nav role="navigation" aria-labelledby="system-breadcrumb">
-    <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+<nav    class="usa-breadcrumb" aria-label="Breadcrumbs">
+    <ol class="usa-breadcrumb__list">
     {% for item in breadcrumb %}
         {% if item.text != 'Home' %}
-        <a href="{{ item.url }}">{{ item.text }}</a>
+        <li  class="usa-breadcrumb__list-item">
+          <a class="usa-breadcrumb__link" href="{{ item.url }}">{{ item.text }}</a>
+        </li>
         {% endif %}
     {% endfor %}
+    </ol>
 </nav>
 {% endif %}

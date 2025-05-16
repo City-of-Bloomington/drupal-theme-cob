@@ -68,44 +68,39 @@
 	<nav class="usa-section usa-section--dark">
         <div class="grid-container">
             <div class="grid-row">
-                <a class="usa-card grid-col-2" title="Top Services" href="{{ base_path }}services">
-                    <div class="usa-card__container">
-                        <div class="usa-card__header">
-                            <span class="usa-card__heading">Services</span>
-                        </div>
-                    </div>
+                <a class="grid-col-2" title="Top Services" href="{{ base_path }}services">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+					</svg>
+					Services
                 </a>
 
-                <a class="usa-card grid-col-2" title="Information &amp; Guides" href="{{ base_path }}about">
-                    <div class="usa-card__container">
-                        <div class="usa-card__header">
-                            <span class="usa-card__heading">Information</span>
-                        </div>
-                    </div>
+                <a class="grid-col-2" title="Information &amp; Guides" href="{{ base_path }}about">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#info_outline"></use>
+					</svg>
+					Information
                 </a>
 
-                <a class="usa-card grid-col-2" title="News &amp; Events" href="{{ base_path }}news">
-                    <div class="usa-card__container">
-                        <div class="usa-card__header">
-                            <span class="usa-card__heading">News</span>
-                        </div>
-                    </div>
+                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}news">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+					</svg>
+					News
                 </a>
 
-                <a class="usa-card grid-col-2" title="News &amp; Events" href="{{ base_path }}calendars">
-                    <div class="usa-card__container">
-                        <div class="usa-card__header">
-                            <span class="usa-card__heading">Events</span>
-                        </div>
-                    </div>
+                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}calendars">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#event"></use>
+					</svg>
+					Events
                 </a>
 
-                <a class="usa-card grid-col-2" title="City Government" href="{{ base_path }}city">
-                    <div class="usa-card__container">
-                        <div class="usa-card__header">
-                            <span class="usa-card__heading">Government</span>
-                        </div>
-                    </div>
+                <a class="grid-col-2" title="City Government" href="{{ base_path }}city">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#account_balance"></use>
+					</svg>
+					Government
                 </a>
             </div>
         </div>
@@ -113,23 +108,19 @@
 </header>
 {{ page.primary_menu }}
 
-<main class="front">
+<main>
 	<a id="main-content" tabindex="-1"></a>
 	{# link is in html.html.twig #}
 
-	<section id="block-searchform" role="search">
-		<div class="container">
-			<form id="search-block-form" method="get" action="{{ base_path }}search">
-				<fieldset>
-					<label for="query" class="visually-hidden">Search</label>
-					<input id="query" name="query" type="search" class="form-search" title="Enter the terms you wish to search for." placeholder="Search the City of Bloomington" size="15" maxlength="128"/>
-					<input type="submit" class="button" value="Search"/>
-				</fieldset>
-			</form>
-		</div>
+	<section>
+		<form class="usa-search usa-search--big" role="search" method="get" action="{{ base_path }}search">
+			<label for="query" class="usa-sr-only">Search</label>
+			<input  id="query" name="query" type="search" class="usa-input" />
+			<button class="usa-button" type="submit">
+				<img class="usa-search__submit-icon" src="/static/uswds/dist/img/usa-icons-bg/search--white.svg" alt="Search" />
+			</button>
+		</form>
 	</section>
-	{# <div id="banner"></div>#}
-
 
 	{{ page.help }}
 
@@ -139,48 +130,70 @@
 		</div>
 	</div>
 
+	<nav class="usa-section usa-section--dark">
+        <div class="grid-container">
+			<header><h2>Top Services</h2></header>
+            <div class="grid-row">
+				<a href="{{ base_path }}contact" class="grid-col-2" title="Contact Us">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#forum"></use>
+					</svg>
+					Contact Us
+				</a>
+
+				<a href="https://bloomington.in.gov/ureport" class="grid-col-2" title="Report Issue">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#announcement"></use>
+					</svg>
+					Report Issue via uReport
+				</a>
+
+				<a href="https://api.recollect.net/r/area/bloomingtonin" class="grid-col-2" title="Trash/Recycle">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#delete"></use>
+					</svg>
+					Trash/Recycle
+				</a>
+
+				<a href="https://bloomington.in.gov/mybloomington" class="grid-col-2" title="My Bloomington">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#location_on"></use>
+					</svg>
+					My Bloomington
+				</a>
+            </div>
+            <div class="grid-row">
+				<a href="{{ base_path }}animal-shelter" class="grid-col-2" title="Adopt a Pet">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#pets"></use>
+					</svg>
+					Adopt a Pet
+				</a>
+
+				<a href="{{ base_path }}utilities/pay-bill" class="grid-col-2" title="Pay Water Bill">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#attach_money"></use>
+					</svg>
+					Pay Water Bill
+				</a>
+
+				<a href="{{ base_path }}transportation" class="grid-col-2" title="Getting Around Bloomington">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#directions_walk"></use>
+					</svg>
+					Getting Around
+				</a>
+
+				<a href="{{ base_path }}parks" class="grid-col-2" title="Parks and Recreation">
+					<svg class="usa-icon" aria-hidden="true" role="img">
+						<use href="/static/uswds/dist/img/sprite.svg#park"></use>
+					</svg>
+					Parks and Recreation
+				</a>
+            </div>
+		</div>
+	</nav>
 	<div id="content">
-		<section id="services-section">
-			<div class="container">
-				<header>
-					<h2>Top Services</h2>
-				</header>
-				<nav>
-					<a href="{{ base_path }}contact"
-						 class="contact-us"
-						 title="Contact Us">Contact Us</a>
-
-					<a href="https://bloomington.in.gov/ureport"
-						 class="report"
-						 title="Report Issue">Report Issue via uReport</a>
-
-					<a href="https://api.recollect.net/r/area/bloomingtonin"
-						 class="trash-recycle"
-						 title="Trash/Recycle">Trash/Recycle</a>
-
-					<a href="https://bloomington.in.gov/mybloomington"
-						 class="myBloomington"
-						 title="My Bloomington">My Bloomington</a>
-
-					<a href="{{ base_path }}animal-shelter"
-						 class="adopt-pet"
-						 title="Adopt a Pet">Adopt a Pet</a>
-
-					<a href="{{ base_path }}utilities/pay-bill"
-						 class="water"
-						 title="Pay Water Bill">Pay Water Bill</a>
-
-					<a href="{{ base_path }}transportation"
-						 class="around-bloomington"
-						 title="Getting Around Bloomington">Getting Around</a>
-
-					<a href="{{ base_path }}parks"
-						 class="parks"
-						 title="Parks and Recreation">Parks and Recreation</a>
-				</nav>
-			</div>
-		</section>
-
 		<section class="news-section-new home">
 			<div class="container">
 				<header>
