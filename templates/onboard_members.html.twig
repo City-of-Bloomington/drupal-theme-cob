@@ -21,14 +21,10 @@
             <div class="member">
             {% endif %}
 
-                <h3>{{ seat.member_firstname }}
-                    {{ seat.member_lastname }}
-                    {% if  seat.member_offices %}
-                        <div>{{ seat.member_offices }}</div>
-                    {% endif %}
+                <h3>{{ seat.member_firstname }} {{ seat.member_lastname }}
+                    {% if seat.offices %}<div>{{ seat.offices|join(', ') }}</div>{% endif %}
                 </h3>
-                <dl>
-                    {% if committee_name == "City Council" %}
+                <dl>{% if seat.committee_name == "City Council" %}
                         <dt>Elected By:</dt>
                         <dd>{{ seat.seat_name }}</dd>
                     {% elseif seat.appointer_name %}
@@ -40,13 +36,18 @@
                         </dd>
                     {% endif %}
 
-                    {% if seat.member_termEnd %}
-                        <dt>Term Expires:</dt>
-                        <dd>{{ seat.member_termEnd }}</dd>
-                    {% else %}
-                        <dt>Member Since:</dt>
-                        <dd>{{ seat.member_startDate }}</dd>
+                    {% if seat.seat_type == 'termed' %}
+                        <dt>Term:</dt>
+                        <dd>{{ seat.member_termStart|date('n/j/Y') }} -
+                            {{ seat.member_termEnd  |date('n/j/Y') }}
+                        </dd>
                     {% endif %}
+
+                        <dt>Membership:</dt>
+                        <dd>{{ seat.member_startDate|date('n/j/Y') }} -
+                            {{ seat.member_endDate ? seat.member_endDate|date('n/j/Y') : '' }}
+                        </dd>
+
                     {% if seat.committee_alternates %}
                         <dt>Alternate:</dt>
                         {% if seat.alternate_id %}
@@ -69,19 +70,17 @@
         <div class="member">
             <h3>Vacant
                 {% if seat.member_firstname %}
-                    ({{ seat.member_firstname }}
-                        {{ seat.member_lastname  }})
+                ({{ seat.member_firstname }} {{ seat.member_lastname  }})
                 {% endif %}
             </h3>
-            <dl>
-                {% if seat.appointer_name %}
+            <dl>{% if seat.appointer_name %}
                 <dt>Appointed By:</dt>
                 <dd>{{ seat.appointer_name }}</dd>
                 {% endif %}
 
                 {% if seat.term_id %}
-                <dt>Term Expires</dt>
-                <dd>{{ seat.term_endDate }}</dd>
+                <dt>Term:</dt>
+                <dd>{{ seat.termStart|date('n/j/Y') }} - {{ seat.termEnd|date('n/j/Y') }}</dd>
                 {% endif %}
             </dl>
             {% if seat.seat_takesApplications %}
