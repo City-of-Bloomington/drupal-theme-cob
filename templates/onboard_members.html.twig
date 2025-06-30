@@ -43,11 +43,6 @@
                         </dd>
                     {% endif %}
 
-                        <dt>Membership:</dt>
-                        <dd>{{ seat.member_startDate|date('n/j/Y') }} -
-                            {{ seat.member_endDate ? seat.member_endDate|date('n/j/Y') : '' }}
-                        </dd>
-
                     {% if seat.committee_alternates %}
                         <dt>Alternate:</dt>
                         {% if seat.alternate_id %}
