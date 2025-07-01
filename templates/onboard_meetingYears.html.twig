@@ -42,7 +42,7 @@
                         {% endif %}
                         {% if date == today %}( TODAY ){% endif %}
                         </div>
-                        <div>{{ meeting.summary }}</div>
+                        <div>{{ meeting.title }}</div>
                     </th>
                     <td>{% if meeting.files %}
                             {% for type, files in meeting.files %}
@@ -85,7 +85,7 @@
                         {% else %}{{ date|date("F j") }}
                         {% endif %}
                         </div>
-                        <div>{{ meeting.summary }}</div>
+                        <div>{{ meeting.title }}</div>
                     </th>
                     <td>
                         {% if meeting.files %}
