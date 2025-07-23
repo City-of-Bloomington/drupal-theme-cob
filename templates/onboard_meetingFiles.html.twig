@@ -45,7 +45,6 @@
        to submit an ADA support request.
     </p>
 
-
     <table>
         <thead>
             <tr><th scope="col"></th>
@@ -55,7 +54,8 @@
 
          <tbody>
             {% for date, day in meetings %}
-            {% for event_id, meeting in day %}
+            {% for time, tm in day %}
+            {% for meeting in tm %}
                 <tr>
                     <th scope="row">
                         <div>
@@ -85,6 +85,7 @@
                         {% endif %}
                     </td>
                 </tr>
+            {% endfor %}
             {% endfor %}
             {% endfor %}
         </tbody>

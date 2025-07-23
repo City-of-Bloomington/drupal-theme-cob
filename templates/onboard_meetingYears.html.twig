@@ -32,8 +32,10 @@
         </thead>
         <tbody>
             {% set today = 'now'|date('Y-m-d') %}
+
             {% for date, day in upcoming %}
-                {% for event_id, meeting in day %}
+            {% for time, tm in day %}
+            {% for meeting in tm %}
                 {% if date == today %}<tr class="today">{% else %}<tr>{% endif %}
                     <th scope="row">
                         <div>
@@ -58,7 +60,8 @@
                         {% endif %}
                     </td>
                 </tr>
-                {% endfor %}
+            {% endfor %}
+            {% endfor %}
             {% endfor %}
         </tbody>
     </table>
@@ -77,7 +80,8 @@
 
          <tbody>
             {% for date, day in past %}
-            {% for event_id, meeting in day %}
+            {% for time, tm in day %}
+            {% for meeting in tm %}
                 <tr>
                     <th scope="row">
                         <div>
@@ -106,6 +110,7 @@
                         {% endif %}
                     </td>
                 </tr>
+            {% endfor %}
             {% endfor %}
             {% endfor %}
         </tbody>
