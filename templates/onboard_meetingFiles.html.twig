@@ -9,7 +9,7 @@
  * - years:    The available years of meetingFiles we have for the committee
  * - node:     The node object for the board page in Drupal
  *
- * @copyright 2017-2022 City of Bloomington, Indiana
+ * @copyright 2017-2025 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
@@ -45,7 +45,6 @@
        to submit an ADA support request.
     </p>
 
-
     <table>
         <thead>
             <tr><th scope="col"></th>
@@ -55,7 +54,8 @@
 
          <tbody>
             {% for date, day in meetings %}
-            {% for event_id, meeting in day %}
+            {% for time, tm in day %}
+            {% for meeting in tm %}
                 <tr>
                     <th scope="row">
                         <div>
@@ -63,7 +63,7 @@
                         {% else %}{{ date|date("F j") }}
                         {% endif %}
                         </div>
-                        <div>{{ meeting.summary }}</div>
+                        <div>{{ meeting.title }}</div>
                     </th>
                     <td>
                         {% if meeting.files %}
@@ -85,6 +85,7 @@
                         {% endif %}
                     </td>
                 </tr>
+            {% endfor %}
             {% endfor %}
             {% endfor %}
         </tbody>

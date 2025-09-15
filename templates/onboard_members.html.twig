@@ -4,92 +4,86 @@
  * Displays the list of Members for a Committee
  *
  * Available variables
- * - committee:   JSON object from OnBoard containing committee information
+ * - members:     JSON from OnBoard
  * - nid:         The current node ID
  * - onboard_url: The base url for OnBoard
  *
- * @copyright 2018 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2018-2025 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
 <div class="seats">
-	{% for seat in committee.seats %}
-		{% if not seat.vacant %}
-			{% if seat.currentMember.website %}
-				<a class="member" href="{{ seat.currentMember.website }}">
-				{% else %}
-					<div class="member">
-					{% endif %}
-					<h3>{{ seat.currentMember.firstname }}
-						{{ seat.currentMember.lastname }}
-						{% if  seat.currentMember.offices %}
-							<div>{{ seat.currentMember.offices }}</div>
-						{% endif %}
-					</h3>
-					<dl>
-						{% if committee.info.name == "City Council" %}
-							<dt>Elected By:</dt>
-							<dd>{{ seat.name }}</dd>
-						{% elseif seat.appointedBy %}
-							<dt>Appointed By:</dt>
-							<dd>{{ seat.appointedBy }}
-								{% if not seat.voting %}
-									(non-voting)
-								{% endif %}
-							</dd>
-						{% endif %}
+	{% for seat in members %}
+		{% if seat.member_id and not seat.carryOver %}
+			{% if seat.member_website %}
+            <a class="member" href="{{ seat.member_website }}">
+            {% else %}
+            <div class="member">
+            {% endif %}
 
-						{% if seat.currentMember.termEndDate %}
-							<dt>Term Expires:</dt>
-							<dd>{{ seat.currentMember.termEndDate }}</dd>
-						{% else %}
-							<dt>Member Since:</dt>
-							<dd>{{ seat.currentMember.termStartDate ?? seat.currentMember.startDate }}</dd>
-						{% endif %}
-						{% if committee.info.alternates %}
-							<dt>Alternate:</dt>
-							{% if seat.currentAlternate %}
-							<dd>{{ seat.currentAlternate.firstname }}
-								{{ seat.currentAlternate.lastname  }}
-							</dd>
-							{% else %}
-							<dd>Vacant</dd>
-							{% endif %}
-						{% endif %}
+                <h3>{{ seat.member_firstname }} {{ seat.member_lastname }}
+                    {% if seat.offices %}<div>{{ seat.offices|join(', ') }}</div>{% endif %}
+                </h3>
+                <dl>{% if seat.committee_name == "City Council" %}
+                        <dt>Elected By:</dt>
+                        <dd>{{ seat.seat_name }}</dd>
+                    {% elseif seat.appointer_name %}
+                        <dt>Appointed By:</dt>
+                        <dd>{{ seat.appointer_name }}
+                            {% if not seat.seat_voting %}
+                                (non-voting)
+                            {% endif %}
+                        </dd>
+                    {% endif %}
 
-					</dl>
-					{% if seat.currentMember.website %}
-					</a>
+                    {% if seat.seat_type == 'termed' %}
+                        <dt>Term:</dt>
+                        <dd>{{ seat.member_termStart|date('n/j/Y') }} -
+                            {{ seat.member_termEnd  |date('n/j/Y') }}
+                        </dd>
+                    {% endif %}
+
+                    {% if seat.committee_alternates %}
+                        <dt>Alternate:</dt>
+                        {% if seat.alternate_id %}
+                        <dd>{{ seat.alternate_firstname }}
+                            {{ seat.alternate_lastname  }}
+                        </dd>
+                        {% else %}
+                        <dd>Vacant</dd>
+                        {% endif %}
+                    {% endif %}
+                </dl>
+
+            {% if seat.member_website %}
+            </a>
 			{% else %}
-				</div>
-
+            </div>
 			{% endif %}
 
 		{% else %}
-			<div class="member">
-				<h3>Vacant
-					{% if seat.currentMember.firstname %}
-						({{ seat.currentMember.firstname }}
-						{{ seat.currentMember.lastname }})
-					{% endif %}
-				</h3>
-				<dl>
-					{% if seat.appointedBy %}
-						<dt>Appointed By:</dt>
-						<dd>{{ seat.appointedBy }}</dd>
-					{% endif %}
+        <div class="member">
+            <h3>Vacant
+                {% if seat.member_firstname %}
+                ({{ seat.member_firstname }} {{ seat.member_lastname  }})
+                {% endif %}
+            </h3>
+            <dl>{% if seat.appointer_name %}
+                <dt>Appointed By:</dt>
+                <dd>{{ seat.appointer_name }}</dd>
+                {% endif %}
 
-					{% if seat.currentTerm %}
-						<dt>Term Expires</dt>
-						<dd>{{ seat.currentTerm.endDate }}</dd>
-					{% endif %}
-				</dl>
-				{% if seat.takesApplications %}
-					<a href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}" class="button">
-						Vacancy:Apply
-					</a>
-				{% endif %}
-			</div>
+                {% if seat.term_id %}
+                <dt>Term:</dt>
+                <dd>{{ seat.termStart|date('n/j/Y') }} - {{ seat.termEnd|date('n/j/Y') }}</dd>
+                {% endif %}
+            </dl>
+            {% if seat.seat_takesApplications %}
+            <a href="{{ onboard_url }}/applicants/apply?committee_id={{ seat.committee_id }}" class="button">
+                Vacancy:Apply
+            </a>
+            {% endif %}
+        </div>
 		{% endif %}
 	{% endfor %}
 </div>

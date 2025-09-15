@@ -9,12 +9,13 @@
  * - committee:  JSON object from OnBoard containing committee information
  *
  * @see https://developers.google.com/google-apps/calendar/v3/reference/events
- * @copyright 2017 City of Bloomington, Indiana
- * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE.txt
+ * @copyright 2017-2025 City of Bloomington, Indiana
+ * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
 #}
 <div class="events">
 	{% for date, day in meetings %}
-	{% for event_id, event in day %}
+	{% for time, tm in day %}
+	{% for event in tm %}
 		<a href="{{ event.htmlLink }}">
 			<div class="date">
 				<span>{{ event.start | date('M')}}</span>
@@ -23,7 +24,7 @@
 
 			<article>
 				<header>
-					<h2>{{ event.summary  }}</h2>
+					<h2>{{ event.title }}</h2>
 				</header>
 
 				<div class="location">
@@ -52,6 +53,7 @@
 				</div>
 			</article>
 		</a>
+    {% endfor %}
     {% endfor %}
 	{% endfor %}
 </div>

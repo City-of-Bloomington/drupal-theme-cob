@@ -165,15 +165,15 @@ function cob_preprocess_page(&$vars)
         }
         // Boards and Commissions contact info should override any other contact info
         if ($vars['node']->getType() == 'board_commission') {
-            $committee_id = $vars['node']->get('field_committee')->value;
+            $committee_id = (int)$vars['node']->get('field_committee')->value;
             if ($committee_id) {
                 $committee = OnBoardService::committee_info($committee_id);
-                if ($committee['info']['phone'  ]) { $vars['contactInfo']['phone'  ] = $committee['info']['phone'  ]; }
-                if ($committee['info']['email'  ]) { $vars['contactInfo']['email'  ] = $committee['info']['email'  ]; }
-                if ($committee['info']['address']) { $vars['contactInfo']['address'] = $committee['info']['address']; }
-                if ($committee['info']['city'   ]) { $vars['contactInfo']['city'   ] = $committee['info']['city'   ]; }
-                if ($committee['info']['state'  ]) { $vars['contactInfo']['state'  ] = $committee['info']['state'  ]; }
-                if ($committee['info']['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['info']['zip'    ]; }
+                if ($committee['phone'  ]) { $vars['contactInfo']['phone'  ] = $committee['phone'  ]; }
+                if ($committee['email'  ]) { $vars['contactInfo']['email'  ] = $committee['email'  ]; }
+                if ($committee['address']) { $vars['contactInfo']['address'] = $committee['address']; }
+                if ($committee['city'   ]) { $vars['contactInfo']['city'   ] = $committee['city'   ]; }
+                if ($committee['state'  ]) { $vars['contactInfo']['state'  ] = $committee['state'  ]; }
+                if ($committee['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['zip'    ]; }
             }
         }
 

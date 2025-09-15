@@ -8,7 +8,7 @@
  * - nid:         The current node ID
  * - onboard_url: The base url for OnBoard
  *
- * @copyright 2018-2023 City of Bloomington, Indiana
+ * @copyright 2018-2025 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
 #}
 <nav class="button-group">
@@ -16,37 +16,29 @@
 	<a class="button" href="{{ path('onboard.meetingYears.node-'~nid, {'node':nid, 'year':year}) }}">
 		Meetings &amp; Documents
 	</a>
-	{% if committee.info.calendarId %}
-		<a class="button" href="https://calendar.google.com/calendar/embed?src={{ committee.info.calendarId }}&amp;ctz=America/New_York">
-			Calendar
-		</a>
+	{% if committee.calendarId %}
+    <a class="button" href="https://calendar.google.com/calendar/embed?src={{ committee.calendarId }}&amp;ctz=America/New_York">
+        Calendar
+    </a>
 	{% endif %}
-	{% if committee.info.videoArchive %}
-		<a class="button" href="{{ committee.info.videoArchive }}">
-			Video Archive
-		</a>
+	{% if committee.videoArchive %}
+    <a class="button" href="{{ committee.videoArchive }}">
+        Video Archive
+    </a>
 	{% endif %}
-	{% if committee.info.legislative %}
-		<a class="button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
-			Legislation
-		</a>
+	{% if committee.legislative %}
+    <a class="button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
+        Legislation
+    </a>
 	{% endif %}
-	{% if committee.info.reports %}
-		<a class="button" href="{{ path('onboard.reports.node-'~nid, {'node': nid}) }}">
-			Reports
-		</a>
+	{% if committee.reports %}
+    <a class="button" href="{{ path('onboard.reports.node-'~nid, {'node': nid}) }}">
+        Reports
+    </a>
 	{% endif %}
-	{% if committee.info.vacancy %}
-		{% set applyable = false %}
-		{% for seat in committee.seats %}
-			{% if seat.vacant and seat.takesApplications %}
-				{% set applyable = true %}
-			{% endif %}
-		{% endfor %}
-		{% if applyable %}
-			<a class="button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.info.id }}">
-				Vacancy: Apply!
-			</a>
-		{% endif %}
+	{% if committee.vacancy and committee.takesApplications %}
+    <a class="button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.id }}">
+        Vacancy: Apply!
+    </a>
 	{% endif %}
 </nav>
