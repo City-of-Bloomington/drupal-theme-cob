@@ -83,6 +83,6 @@
 		{# <h2{{title_attributes}}>{{ label }}</h2> #}
 		<h2>CITY ALERT</h2>
 		<p>{{ content.field_alert_text.0 }}</p>
-		<p>Click to learn more</p>
+		<p>{% if content.field_url.0 %}Click to learn more{% endif %}</p>
 	</div>
 </a>
