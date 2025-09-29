@@ -1,6 +1,66 @@
 {% if alerts %}
 {{ alerts }}
 {% endif %}
+<header class="usa-header usa-header--basic usa-header--megamenu">
+    <div class="usa-nav-container">
+        <div class="usa-navbar">
+            <div class="usa-logo">
+                <a class="grid-row" href="{{ base_path }}" title="City of Bloomington, Indiana>">
+                    <img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg"
+                         alt="City of Bloomington Logo"
+                       class="grid-col-auto maxh-5 margin-right-105" />
+                    <em class="usa-logo__text font-sans-lg grid-col-auto margin-y-auto">Mayor Kerry Thomson</em>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Top navigation" class="usa-nav">
+        <ul class="usa-nav__primary usa-accordion">
+            <li class="usa-nav__primary-item">
+                <a title="Top Services" href="{{ base_path }}services" class="usa-nav-link">
+                    <svg class="usa-icon" aria-hidden="true" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+                    </svg>
+                    Services
+                </a>
+            </li>
+            <li class="usa-nav__primary-item">
+                <a title="Information &amp; Guides" href="{{ base_path }}about" class="usa-nav-link">
+                    <svg class="usa-icon" aria-hidden="true" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#info_outline"></use>
+                    </svg>
+                    Information
+                </a>
+            </li>
+            <li class="usa-nav__primary-item">
+                <a title="News &amp; Events" href="{{ base_path }}news" class="usa-nav-link">
+                    <svg class="usa-icon" aria-hidden="true" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#settings"></use>
+                    </svg>
+                    News
+                </a>
+            </li>
+            <li class="usa-nav__primary-item">
+                <a title="News &amp; Events" href="{{ base_path }}calendars" class="usa-nav-link">
+                    <svg class="usa-icon" aria-hidden="true" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#event"></use>
+                    </svg>
+                    Events
+                </a>
+            </li>
+            <li class="usa-nav__primary-item">
+                <a title="City Government" href="{{ base_path }}city" class="usa-nav-link">
+                    <svg class="usa-icon" aria-hidden="true" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#account_balance"></use>
+                    </svg>
+                    Government
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
 <header class="usa-header usa-header--basic">
     <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -24,45 +84,5 @@
         </div>
     </div>
 
-    <nav class="usa-section usa-section--dark">
-        <div class="grid-container">
-            <div class="grid-row">
-                <a class="grid-col-2" title="Top Services" href="{{ base_path }}services">
-                    <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use href="/static/uswds/dist/img/sprite.svg#settings"></use>
-                    </svg>
-                    Services
-                </a>
-
-                <a class="grid-col-2" title="Information &amp; Guides" href="{{ base_path }}about">
-                    <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use href="/static/uswds/dist/img/sprite.svg#info_outline"></use>
-                    </svg>
-                    Information
-                </a>
-
-                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}news">
-                    <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use href="/static/uswds/dist/img/sprite.svg#settings"></use>
-                    </svg>
-                    News
-                </a>
-
-                <a class="grid-col-2" title="News &amp; Events" href="{{ base_path }}calendars">
-                    <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use href="/static/uswds/dist/img/sprite.svg#event"></use>
-                    </svg>
-                    Events
-                </a>
-
-                <a class="grid-col-2" title="City Government" href="{{ base_path }}city">
-                    <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use href="/static/uswds/dist/img/sprite.svg#account_balance"></use>
-                    </svg>
-                    Government
-                </a>
-            </div>
-        </div>
-    </nav>
 </header>
 {{ page.primary_menu }}
