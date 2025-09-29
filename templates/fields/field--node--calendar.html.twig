@@ -39,14 +39,14 @@
  */
 #}
 <div class="{{ field_type }}" {{ attributes }}>
-	<a href="https://calendar.google.com/calendar/embed?src={{ items[0].content['#calendarId'] }}&ctz=America/New_York" class="btn more visit-cal top">Visit Full Calendar</a>
+    <a href="https://calendar.google.com/calendar/embed?src={{ items[0].content['#calendarId'] }}&ctz=America/New_York" class="btn more visit-cal top">Visit Full Calendar</a>
 
 
-	{% for item in items %}
-		{% if item.attributes %}
-			<div{{item.attributes}}>{{ item.content }}</div>
-		{% else %}
-			{{ item.content }}
-		{% endif %}
-	{% endfor %}
+    {% for item in items %}
+        {% if item.attributes %}
+            <div{{item.attributes}}>{{ item.content }}</div>
+        {% else %}
+            {{ item.content }}
+        {% endif %}
+    {% endfor %}
 </div>

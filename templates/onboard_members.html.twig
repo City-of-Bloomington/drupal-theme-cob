@@ -13,9 +13,9 @@
  */
 #}
 <div class="seats">
-	{% for seat in members %}
-		{% if seat.member_id and not seat.carryOver %}
-			{% if seat.member_website %}
+    {% for seat in members %}
+        {% if seat.member_id and not seat.carryOver %}
+            {% if seat.member_website %}
             <a class="member" href="{{ seat.member_website }}">
             {% else %}
             <div class="member">
@@ -57,11 +57,11 @@
 
             {% if seat.member_website %}
             </a>
-			{% else %}
+            {% else %}
             </div>
-			{% endif %}
+            {% endif %}
 
-		{% else %}
+        {% else %}
         <div class="member">
             <h3>Vacant
                 {% if seat.member_firstname %}
@@ -84,6 +84,6 @@
             </a>
             {% endif %}
         </div>
-		{% endif %}
-	{% endfor %}
+        {% endif %}
+    {% endfor %}
 </div>

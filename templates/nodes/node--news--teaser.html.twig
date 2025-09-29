@@ -73,20 +73,20 @@
  */
 #}
 <a href="{{ url }}" rel="bookmark">
-	<article class="news teaser{% if content.field_content_image['#items'] %} hasImage{% endif %}">
-		{{ content.field_content_image }}
+    <article class="news teaser{% if content.field_content_image['#items'] %} hasImage{% endif %}">
+        {{ content.field_content_image }}
 
-		<div class="text">
-			<header>
-				{% set isodate = node.getCreatedTime %}
+        <div class="text">
+            <header>
+                {% set isodate = node.getCreatedTime %}
 
-				<h3{{title_attributes}}>{{ label }}</h3>
-				<time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
-			</header>
-			{% if node.body.summary %}
-				<p>{{ node.body.summary }}</p>
-			{% endif %}
-		</div>
+                <h3{{title_attributes}}>{{ label }}</h3>
+                <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
+            </header>
+            {% if node.body.summary %}
+                <p>{{ node.body.summary }}</p>
+            {% endif %}
+        </div>
 
-	</article>
+    </article>
 </a>

@@ -73,14 +73,14 @@
  */
 #}
 <article{{attributes}} class="{{ node.bundle }} {{ view_mode }}">
-	{% if view_mode == 'full' %}
-		<div{{content_attributes}}>
+    {% if view_mode == 'full' %}
+        <div{{content_attributes}}>
 
-			{{ content|without(
+            {{ content|without(
                 'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
                 'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
                 'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
-		</div>
-	{% endif %}
+        </div>
+    {% endif %}
 </article>

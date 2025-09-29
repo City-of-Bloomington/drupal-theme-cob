@@ -29,60 +29,60 @@
 #}
 
 <div class="events">
-	{% for event in events %}
-		<a href="{{ event.htmlLink }}">
-			<div class="date">
-				<span>{{ event.start.dateTime | date('M')}}</span>
-				<span>{{ event.start.dateTime | date('j')}}</span>
-			</div>
+    {% for event in events %}
+        <a href="{{ event.htmlLink }}">
+            <div class="date">
+                <span>{{ event.start.dateTime | date('M')}}</span>
+                <span>{{ event.start.dateTime | date('j')}}</span>
+            </div>
 
-			<article>
-				<header>
-					<h2>{{ event.summary  }}</h2>
-				</header>
+            <article>
+                <header>
+                    <h2>{{ event.summary  }}</h2>
+                </header>
 
-				<div class="location">
-					<p>
-						{% if event.start.dateTime %}
-							<time datetime="{{ event.start.dateTime }}">
-								<span class="weekday">
-									{{ event.start.dateTime | date('l')}}
-								</span>
+                <div class="location">
+                    <p>
+                        {% if event.start.dateTime %}
+                            <time datetime="{{ event.start.dateTime }}">
+                                <span class="weekday">
+                                    {{ event.start.dateTime | date('l')}}
+                                </span>
 
-								<span class="time">
-									-
-									{{  event.start.dateTime | date('g:ia') }}
-									{% if event.end.dateTime %}
-										-
-										{{ event.end.dateTime | date('g:ia') }}
-									{% endif %}
-								</span>
-							</time>
-						{% else %}
-							<time datetime="{{ event.start.date }}">
-								<span class="weekday">
-									{{ event.start.date | date('l')}}
-								</span>
-							</time>
-						{% endif %}
+                                <span class="time">
+                                    -
+                                    {{  event.start.dateTime | date('g:ia') }}
+                                    {% if event.end.dateTime %}
+                                        -
+                                        {{ event.end.dateTime | date('g:ia') }}
+                                    {% endif %}
+                                </span>
+                            </time>
+                        {% else %}
+                            <time datetime="{{ event.start.date }}">
+                                <span class="weekday">
+                                    {{ event.start.date | date('l')}}
+                                </span>
+                            </time>
+                        {% endif %}
 
-					</p>
-					{% if 'zoom' in event.location %}
-						<p>via Zoom</p>
-					{% elseif null == event.location %}
-						<p>Location TBA</p>
-					{% else %}
-						<p>
-							<small>{{ event.location }}</small>
-						</p>
-					{% endif %}
+                    </p>
+                    {% if 'zoom' in event.location %}
+                        <p>via Zoom</p>
+                    {% elseif null == event.location %}
+                        <p>Location TBA</p>
+                    {% else %}
+                        <p>
+                            <small>{{ event.location }}</small>
+                        </p>
+                    {% endif %}
 
-					<p>Click to view this Event</p>
-				</div>
-			</article>
-		</a>
-	{% endfor %}
+                    <p>Click to view this Event</p>
+                </div>
+            </article>
+        </a>
+    {% endfor %}
 </div>
 <div>
-	<a href="https://calendar.google.com/calendar/embed?src={{ calendarId }}&ctz=America/New_York" class="btn more">Visit Full Calendar</a>
+    <a href="https://calendar.google.com/calendar/embed?src={{ calendarId }}&ctz=America/New_York" class="btn more">Visit Full Calendar</a>
 </div>

@@ -49,26 +49,20 @@
 
 {% include '@cob/partials/gov-banner.html.twig' %}
 {% include '@cob/partials/siteHeader.html.twig' %}
-<main>
-	<a id="main-content" tabindex="-1"></a>
-	{# link is in html.html.twig #}
+<main id="main-content">
+    {% include '@cob/partials/banner.html.twig' %}
 
-	{% include '@cob/partials/banner.html.twig' %}
-	{% include '@cob/partials/breadcrumb.html.twig' %}
+    {{ page.help }}
 
-	{{ page.help }}
+    <div class="grid-container">
+        {% include '@cob/partials/breadcrumb.html.twig' %}
+        {% if page.sidebar_first %}
+            <aside class="sidebar_first">
+                {{ page.sidebar_first }}
+            </aside>
+        {% endif %}
 
-
-	<div id="content">
-		<div class="container">
-			{% if page.sidebar_first %}
-				<aside class="sidebar_first">
-					{{ page.sidebar_first }}
-				</aside>
-			{% endif %}
-
-			{{ page.content }}
-		</div>
-	</div>
+        {{ page.content }}
+    </div>
 </main>
 {% include '@cob/partials/footer.html.twig' %}

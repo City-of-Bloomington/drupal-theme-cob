@@ -13,22 +13,22 @@
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
 #}
 <div class="events">
-	{% for date, day in meetings %}
-	{% for time, tm in day %}
-	{% for event in tm %}
-		<a href="{{ event.htmlLink }}">
-			<div class="date">
-				<span>{{ event.start | date('M')}}</span>
-				<span>{{ event.start | date('j')}}</span>
-			</div>
+    {% for date, day in meetings %}
+    {% for time, tm in day %}
+    {% for event in tm %}
+        <a href="{{ event.htmlLink }}">
+            <div class="date">
+                <span>{{ event.start | date('M')}}</span>
+                <span>{{ event.start | date('j')}}</span>
+            </div>
 
-			<article>
-				<header>
-					<h2>{{ event.title }}</h2>
-				</header>
+            <article>
+                <header>
+                    <h2>{{ event.title }}</h2>
+                </header>
 
-				<div class="location">
-					<p>
+                <div class="location">
+                    <p>
                         <time datetime="{{ event.start }}">
                             <span class="weekday">
                                 {{ event.start | date('l')}}
@@ -38,22 +38,22 @@
                                 {{ event.end   | date('g:ia') }}
                             </span>
                         </time>
-					</p>
-					{% if 'zoom' in event.location %}
-						<p>via Zoom</p>
-					{% elseif null == event.location %}
-						<p>Location TBA</p>
-					{% else %}
-						<p>
-							<small>{{ event.location }}</small>
-						</p>
-					{% endif %}
+                    </p>
+                    {% if 'zoom' in event.location %}
+                        <p>via Zoom</p>
+                    {% elseif null == event.location %}
+                        <p>Location TBA</p>
+                    {% else %}
+                        <p>
+                            <small>{{ event.location }}</small>
+                        </p>
+                    {% endif %}
 
-					<p>Click to view this Event</p>
-				</div>
-			</article>
-		</a>
+                    <p>Click to view this Event</p>
+                </div>
+            </article>
+        </a>
     {% endfor %}
     {% endfor %}
-	{% endfor %}
+    {% endfor %}
 </div>
