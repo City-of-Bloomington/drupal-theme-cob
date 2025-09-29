@@ -12,35 +12,27 @@
  * - results array    The node render arrays
  * - events  array    Events from a Google Calendar
  *
- * @copyright 2017-2019 City of Bloomington, Indiana
+ * @copyright 2017-2025 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 #}
 <section class="{{ type }}-section-new">
-	{% if type=='news' %}
-	<p>Read the news as it happens!
-	   Sign up at <a href="https://bton.in/-M!di">https://bton.in/-M!di</a>
-	   to receive City news delivered to your inbox.
-	</p>
-	{% endif %}
-	<div class="{{ type }}">
-		<header>
-			<h2>
-				{% if month %}
-					{{ start|date('F') }}
-				{% endif %}
-				{{ year }}
-				{% if     type == 'news'    %}News Releases
-					{% elseif type == 'success' %}Success Stories
-				{% else %}
-					{{ type }}
-				{% endif %}
-			</h2>
-		</header>
-		{{ form }}
-			<div class="results">
-				{{ results }}
-			</div>
+    <div class="{{ type }}">
+        <header>
+            <h2>
+                {% if month %}
+                    {{ start|date('F') }}
+                {% endif %}
+                {{ year }}
+                {% if     type == 'news'    %}News Releases
+                {% elseif type == 'success' %}Success Stories
+                {% else %}{{ type }}
+                {% endif %}
+            </h2>
+        </header>
+        {{ form }}
+		<div class="results">
+			{{ results }}
 		</div>
-	</div>
+    </div>
 </section>
