@@ -72,21 +72,27 @@
  * @ingroup themeable
  */
 #}
-<a href="{{ url }}" rel="bookmark">
-    <article class="news teaser{% if content.field_content_image['#items'] %} hasImage{% endif %}">
-        {{ content.field_content_image }}
-
-        <div class="text">
-            <header>
-                {% set isodate = node.getCreatedTime %}
-
-                <h3{{title_attributes}}>{{ label }}</h3>
-                <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
-            </header>
-            {% if node.body.summary %}
-                <p>{{ node.body.summary }}</p>
-            {% endif %}
+<article class="usa-card usa-card--flag">
+    <div class="usa-card__container">
+        {% if content.field_content_image['#items'] %}
+        <div class="usa-card__media">
+            <div class="usa-card__img">
+                {{ content.field_content_image }}
+            </div>
         </div>
-
-    </article>
-</a>
+        {% endif %}
+        <header class="usa-card__header">
+            <h3 class="usa-card__heading">
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h3>
+        </header>
+        <div class="usa-card__body">
+            {% set isodate = node.getCreatedTime %}
+            <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
+            {% if node.body.summary %}
+            <p class="summary">{{ node.body.summary }}</p>
+            {% endif %}
+            {{ content.field_promo_title }}
+        </div>
+    </div>
+</article>
