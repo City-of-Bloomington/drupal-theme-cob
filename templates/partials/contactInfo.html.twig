@@ -1,46 +1,71 @@
 {% if contactInfo %}
-<div class="contactInfo">
-    {% if contactInfo.address %}
-    <dl><dt>Address</dt>
-        <dd>
-            {%- if contactInfo.location_nid %}<a href="{{ path('entity.node.canonical', {'node':contactInfo.location_nid}) }}" class="address" title="Address">{% endif -%}
+<section>
+    <div class="grid-container">
+        <div class="grid-row">
+            {% if contactInfo.address %}
+            <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col">
+                {%- if contactInfo.location_nid %}<a href="{{ path('entity.node.canonical', {'node':contactInfo.location_nid}) }}" class="address" title="Address">{% endif -%}
                 <address>{{ contactInfo.address }}
                     {{ contactInfo.city }} {{ contactInfo.state }} {{ contactInfo.zip }}
                 </address>
-            {%- if contactInfo.location_nid %}</a>{% endif -%}
-        </dd>
-    </dl>
-    {% endif %}
-    {% if contactInfo.phone %}
-    <dl><dt>Phone</dt>
-        <dd><a href="tel:{{ contactInfo.phone }}" class="phone" title="Phone">
-                {{ contactInfo.phone }}
-            </a>
-        </dd>
-    </dl>
-    {% endif %}
-    {% if contactInfo.fax %}
-    <dl><dt>Fax</dt>
-        <dd><a href="tel:{{ contactInfo.fax }}" class="fax" title="Fax">
-                {{ contactInfo.fax }}
-            </a>
-        </dd>
-    </dl>
-    {% endif %}
-    {% if contactInfo.email %}
-    <dl><dt>Email</dt>
-        <dd><a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a></dd>
-    </dl>
-    {% endif %}
-    {% if contactInfo.links.facebook %}
-    <dl><dt>Facebook</dt>
-        <dd><a href="{{ contactInfo.links.facebook }}" class="facebook">Connect on Facebook</a></dd>
-    </dl>
-    {% endif %}
-    {% if contactInfo.links.twitter  %}
-    <dl><dt>Twitter</dt>
-        <dd><a href="{{ contactInfo.links.twitter }}" class="twitter">Follow us on Twitter</a></dd>
-    </dl>
-    {% endif %}
-</div>
+                {%- if contactInfo.location_nid %}</a>{% endif -%}
+            </div>
+            {% endif %}
+
+            {% if contactInfo.phone %}
+            <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col">
+                <a href="tel:{{ contactInfo.phone }}" class="usa-link">
+                    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#phone"></use>
+                    </svg>
+                    {{ contactInfo.phone }}
+                </a>
+            </div>
+            {% endif %}
+
+            {% if contactInfo.fax %}
+            <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col">
+                <a href="tel:{{ contactInfo.fax }}" class="usa-link">
+                    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#fax"></use>
+                    </svg>
+                    {{ contactInfo.fax }}
+                </a>
+            </div>
+            {% endif %}
+
+            {% if contactInfo.email %}
+            <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col">
+                <a href="mailto:{{ contactInfo.email }}" class="usa-link">
+                    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#mail"></use>
+                    </svg>
+                    {{ contactInfo.email }}
+                </a>
+            </div>
+            {% endif %}
+
+            {% if contactInfo.links.facebook or contactInfo.links.twitter %}
+            <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col">
+                {% if contactInfo.links.facebook %}
+                <a href="{{ contactInfo.links.facebook }}" class="usa-link">
+                    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#facebook"></use>
+                    </svg>
+                    Connect on Facebook
+                </a>
+                {% endif %}
+                {% if contactInfo.links.twitter %}
+                <a href="{{ contactInfo.links.twitter }}" class="usa-link">
+                    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+                        <use href="/static/uswds/dist/img/sprite.svg#twitter"></use>
+                    </svg>
+                    Follow us on Twitter
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
 {% endif %}

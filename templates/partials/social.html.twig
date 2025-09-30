@@ -1,0 +1,24 @@
+<ul class="usa-list usa-list--unstyled display-inline-flex">
+    <li>Share:</li>
+    <li><a class="usa-link" target="_blank"
+            href="https://www.facebook.com/sharer.php?u={{ url("<current>") }}">
+            <svg class="usa-icon" role="img" alt="Share on Facebook">
+                <use href="/static/uswds/dist/img/sprite.svg#facebook"></use>
+            </svg>
+        </a>
+    </li>
+    <li><a class="usa-link" target="_blank"
+            href="https://twitter.com/intent/tweet?text={{ page.title|url_encode }}&amp;url={{ url("<current>") }}">
+            <svg class="usa-icon" role="img" alt="Share on Twitter">
+                <use href="/static/uswds/dist/img/sprite.svg#twitter"></use>
+            </svg>
+        </a>
+    </li>
+    <li><a class="usa-link" target="_blank"
+            href="mailto:?subject={{ page.title|url_encode }}&amp;body={{ url("<current>") }}">
+            <svg class="usa-icon" role="img" alt="Email this page">
+                <use href="/static/uswds/dist/img/sprite.svg#mail"></use>
+            </svg>
+        </a>
+    </li>
+</ul>

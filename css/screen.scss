@@ -1,9 +1,8 @@
-#hero {
-    min-height: 400px;
+#banner {
+    min-height: 320px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-image: url('images/cover-2.jpg');
     position: relative;
 
     > div {
@@ -25,4 +24,24 @@
     background-color: transparent;
     border: none; padding: 0;
     text-decoration: none;
+}
+/**
+ * View/Edit/Delete buttons on content pages
+ *
+ * These are internal Drupal links.  We do not have a way to template them.
+ */
+#block-cob-local-tasks {
+    margin:1em 0;
+
+    a {
+        font-family: sans-serif;
+        text-decoration: none;
+        background-color: #005ea2; // primary
+        color: #ffffff;
+        padding: .75rem 1.25rem;   // usa-button
+        border-radius: .25rem;     // usa-button
+
+        &:active, &:hover { background-color: #1a4480; } // primary-dark
+        &.is-active       { background-color: #162e51; } // primary-darker
+    }
 }

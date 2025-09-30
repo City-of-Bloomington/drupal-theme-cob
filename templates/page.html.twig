@@ -45,17 +45,18 @@
  * @ingroup themeable
  */
 #}
-{{ page.highlighted }}
 
 {% include '@cob/partials/gov-banner.html.twig' %}
 {% include '@cob/partials/siteHeader.html.twig' %}
 <main id="main-content">
     {% include '@cob/partials/banner.html.twig' %}
-
+    {{ page.highlighted }}
     {{ page.help }}
 
     <div class="grid-container">
-        {% include '@cob/partials/breadcrumb.html.twig' %}
+        {% if page.breadcrumb %}{{ page.breadcrumb }}{% endif %}
+        {% include '@cob/partials/social.html.twig' %}
+        {% include '@cob/partials/contactInfo.html.twig' %}
         {% if page.sidebar_first %}
             <aside class="sidebar_first">
                 {{ page.sidebar_first }}
