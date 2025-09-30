@@ -54,7 +54,9 @@
     {{ page.help }}
 
     <div class="grid-container">
-        {% include '@cob/partials/breadcrumb.html.twig' %}
+        {% if page.breadcrumb %}{{ page.breadcrumb }}{% endif %}
+        {% include '@cob/partials/social.html.twig' %}
+        {% include '@cob/partials/contactInfo.html.twig' %}
         {% if page.sidebar_first %}
             <aside class="sidebar_first">
                 {{ page.sidebar_first }}

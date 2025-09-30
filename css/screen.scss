@@ -20,3 +20,24 @@
     background-color: transparent;
     img { object-fit: contain; }
 }
+
+/**
+ * View/Edit/Delete buttons on content pages
+ *
+ * These are internal Drupal links.  We do not have a way to template them.
+ */
+#block-cob-local-tasks {
+    margin:1em 0;
+
+    a {
+        font-family: sans-serif;
+        text-decoration: none;
+        background-color: #005ea2; // primary
+        color: #ffffff;
+        padding: .75rem 1.25rem;   // usa-button
+        border-radius: .25rem;     // usa-button
+
+        &:active, &:hover { background-color: #1a4480; } // primary-dark
+        &.is-active       { background-color: #162e51; } // primary-darker
+    }
+}
