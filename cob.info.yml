@@ -8,4 +8,15 @@ base theme: false
 libraries:
   - 'cob/uswds'
   - 'cob/cob'
+regions:
+  header:         'Header'
+  primary_menu:   'Primary menu'
+  secondary_menu: 'Secondary menu'
+  highlighted:    'Highlighted'
+  help:           'Help'
+  breadcrumb:     'Breadcrumb'
+  content:        'Content'
+  sidebar_first:  'Left sidebar'
+  sidebar_second: 'Right sidebar'
+  footer:         'Footer'
 ...

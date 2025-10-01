@@ -175,8 +175,47 @@ function cob_preprocess_page(&$vars)
                 if ($committee['state'  ]) { $vars['contactInfo']['state'  ] = $committee['state'  ]; }
                 if ($committee['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['zip'    ]; }
             }
+            $start = new \DateTime();
+            $end   = new \DateTime();
+            $end->add(new \DateInterval("P60D"));
+
+            // Board Meetings must be available to render in sidebar_second
+            $nid = (int)$vars['node']->get('nid')->value;
+            switch ($nid) {
+                case BOARD_COUNCIL:
+                    $calendar_id = 'bloomington.in.gov_7rki30ccsun4vk4stoq2n4nreg@group.calendar.google.com';
+                    $events      = GoogleGateway::events($calendar_id, $start, $end, true, 4);
+                    $vars['meetings'] = [
+                        '#theme'      => 'calendar_events',
+                        '#events'     => $events,
+                        '#calendarId' => $calendar_id
+                    ];
+                break;
+                default:
+                    $committee_id = $vars['node']->get('field_committee')->value;
+                    if ($committee_id) {
+                        $committee    = OnBoardService::committee_info($committee_id);
+                        $meetings     = OnBoardService::meetings($committee_id,  null, $start, $end, 4);
+                        $vars['meetings'] = [
+                            '#theme'     => 'onboard_upcoming_meetings',
+                            '#meetings'  => $meetings,
+                            '#committee' => $committee,
+                            '#nid'       => $nid
+                        ];
+                    }
+            }
         }
 
+        // Pull out node fields to render in sidebar_second.  These fields will
+        // be rendered in the order listed here.
+        $fields = ['aside_title', 'aside', 'content_image', 'calendar', 'coordinates', 'hours'];
+        $valid  = array_keys($vars['node']->getFields());
+        foreach ($fields as $f) {
+            if (in_array("field_$f", $valid)) {
+                $$f = $vars['node']->get("field_$f");
+                if ($$f) { $vars[$f] = $$f->view(); }
+            }
+        }
     }
     else {
         $route = \Drupal::routeMatch()->getRouteName();
@@ -321,38 +360,6 @@ function cob_preprocess_node(&$vars)
                 $vars['events'] = _cob_events('bloomington.in.gov_r7b1mkrme1r8uhl3b5amhb50bc@group.calendar.google.com', 30, 24);
             break;
         }
-
-        if ($vars['node']->getType() == 'board_commission') {
-            $start = new \DateTime();
-            $end   = new \DateTime();
-            $end->add(new \DateInterval("P60D"));
-
-            switch ($nid) {
-                case BOARD_COUNCIL:
-                    $calendar_id = 'bloomington.in.gov_7rki30ccsun4vk4stoq2n4nreg@group.calendar.google.com';
-                    $events      = GoogleGateway::events($calendar_id, $start, $end, true, 4);
-                    $vars['meetings'] = [
-                        '#theme'      => 'calendar_events',
-                        '#events'     => $events,
-                        '#calendarId' => $calendar_id
-                    ];
-                break;
-                default:
-                    $committee_id = $vars['node']->get('field_committee')->value;
-                    if ($committee_id) {
-                        $committee    = OnBoardService::committee_info($committee_id);
-                        $meetings     = OnBoardService::meetings($committee_id,  null, $start, $end, 4);
-                        $vars['meetings'] = [
-                            '#theme'     => 'onboard_upcoming_meetings',
-                            '#meetings'  => $meetings,
-                            '#committee' => $committee,
-                            '#nid'       => $nid
-                        ];
-                    }
-            }
-        }
-
-        $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
     }
 }
 
@@ -713,28 +720,6 @@ function _cob_renderNodeById($nid, string $viewMode): array
     return is_array($nid)
         ? $builder->viewMultiple($storage->loadMultiple($nid), $viewMode)
         : $builder->view        ($storage->load        ($nid), $viewMode);
-}
-
-
-/**
- * @param  string $region
- * @return array           An array of the themed blocks in the region
- */
-function _cob_renderRegion(string $region): array
-{
-    static $manager;
-    static $builder;
-    static $storage;
-
-    if (!$manager) {
-        $manager = \Drupal::entityTypeManager();
-        $builder = $manager->getViewBuilder('block');
-        $storage = $manager->getStorage('block');
-    }
-
-    $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>$region]);
-    uasort($blocks, 'Drupal\block\Entity\Block::sort');
-    return $builder->viewMultiple($blocks);
 }
 
 /**

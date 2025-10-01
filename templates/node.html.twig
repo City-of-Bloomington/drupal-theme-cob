@@ -101,44 +101,11 @@
     {% if view_mode == 'full' %}
         <div id="intro">
             <div>
-                {{ regions.secondary_menu }}
                 {{ content.field_contacts }}
                 {{ content.body }}
                 {{ content.field_video }}
                 {{ content.field_call_to_action }}
             </div>
-
-            {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-            {% set content_image %}{{ content.field_content_image }}{% endset %}
-            {% set coordinates %}{{ content.field_coordinates }}{% endset %}
-            {% set aside %}{{ content.field_aside }}{% endset %}
-            {% set hours %}{{ content.field_hours }}{% endset %}
-            {% if content_image
-           or coordinates
-           or aside
-           or hours
-           or upcoming_events
-           or meetings
-        %}
-                <aside>
-                    {% if aside %}
-                        {{ content.field_aside_title }}
-                        {{ content.field_aside       }}
-                    {% endif %}
-                    {{ content_image   }}
-                    {{ upcoming_events }}
-                    {{ coordinates     }}
-                    {{ hours           }}
-                    {% if meetings %}
-                        <section id="block-committeemeetings">
-                            <header>
-                                <h2>Meetings</h2>
-                            </header>
-                            <div>{{ meetings }}</div>
-                        </section>
-                    {% endif %}
-                </aside>
-            {% endif %}
         </div>
         <div{{content_attributes}}>
             {{ content|without(
