@@ -38,21 +38,15 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  ]
-%}
 {% block paragraph %}
-<article{{ attributes.addClass(classes) }}>
-  <a href="{{ content.field_info_link.0['#url'] }}">
-    <header>
-      <h3>{{ title }}</h3>
-    </header>
-
-    <p>{{ text }}</p>
-  </a>
-</article>
+<li class="usa-card grid-col-12 desktop:grid-col-4">
+    <a class="usa-card__container" href="{{ content.field_info_link.0['#url'] }}">
+        <header class="usa-card__header">
+            <h3 class="usa-card__heading">{{ title }}</h3>
+        </header>
+        <div class="usa-card__body">
+            <p>{{ text }}</p>
+        </div>
+    </a>
+</li>
 {% endblock paragraph %}
