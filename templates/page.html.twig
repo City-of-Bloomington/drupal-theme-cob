@@ -72,10 +72,10 @@
 
         <div class="grid-row">
             {% if page.sidebar_first %}
-            <aside class="grid-col-3">{{ page.sidebar_first }}</aside>
+            <aside class="tablet:grid-col-3">{{ page.sidebar_first }}</aside>
             {% endif %}
 
-            <div class="grid-col-auto">
+            <div class="grid-col-auto tablet:grid-col-8">
             {{ page.content }}
             </div>
 
@@ -87,7 +87,7 @@
                or calendar
                or meetings
             %}
-            <aside class="grid-col-3">
+            <aside class="tablet:grid-col-3">
                 {{ aside_title   }}
                 {{ aside         }}
                 {{ content_image }}
