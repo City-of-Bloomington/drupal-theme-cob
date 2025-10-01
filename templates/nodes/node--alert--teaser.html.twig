@@ -77,7 +77,9 @@
         <h2 class="usa-alert__heading">CITY ALERT</h2>
         <p  class="usa-alert__text">{{ content.field_alert_text.0 }}</p>
         <p  class="usa-alert__text">
+			{% if content.field_url.0 %}
             <a href="{{ content.field_url[0]['#url']['#uri'] }}">{{ content.field_url[0]['#title'] }}</a>
+            {% endif %}
         </p>
     </div>
 </div>
