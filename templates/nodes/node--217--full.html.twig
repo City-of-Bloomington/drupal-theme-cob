@@ -65,67 +65,64 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
 <article{{ attributes }} class="{{ node.bundle }} {{ view_mode }}">
-    <div id="intro">
-        <div>
-            {{ content.field_contacts }}
-            {{ content.body }}
-            {{ content.field_call_to_action }}
-            {{ content.field_video_embed }}
-            <nav>
-                <a href="#active">City Boards and Commissions</a>
-                <a href="#council">City Council and Council Standing Committees</a>
-                <a href="#inactive">Inactive Boards</a>
-            </nav>
-            <section>
-                <header><h2><a id="active">City Boards and Commissions</a></h2></header>
-                <div class="boards-list">
+    <div class="grid-container">
+        <section class="grid-row">
+            <div class="grid-col-auto tablet:grid-col-8">
+                {{ content.field_contacts }}
+                {{ content.body }}
+                {{ content.field_video }}
+                {{ content.field_call_to_action }}
+                <nav>
+                    <a href="#active">City Boards and Commissions</a>
+                    <a href="#council">City Council and Council Standing Committees</a>
+                    <a href="#inactive">Inactive Boards</a>
+                </nav>
+                <section>
+                    <header><h2><a id="active">City Boards and Commissions</a></h2></header>
                     {{ boards_active }}
-                </div>
-            </section>
+                </section>
 
-            <section>
-                <header><h2><a id="council">City Council and Council Standing Committees</a></h2></header>
-                <div class="boards-list">
+                <section>
+                    <header><h2><a id="council">City Council and Council Standing Committees</a></h2></header>
                     {{ boards_council }}
-                </div>
-            </section>
+                </section>
 
-            <section>
-                <header><h2><a id="inactive">Inactive Boards</a></h2></header>
-                <div class="boards-list">
+                <section>
+                    <header><h2><a id="inactive">Inactive Boards</a></h2></header>
                     {{ boards_inactive }}
-                </div>
-            </section>
-        </div>
-
-        <aside>
-            {% if content.field_aside %}
-            {{ content.field_aside_title   }}
-            {{ content.field_aside         }}
-            {% endif %}
-            {{ content.field_content_image }}
-            <div class="calendar_calendar">
-                <header><h2>Calendar</h2></header>
-                {{ events }}
+                </section>
             </div>
-            {{ content.field_coordinates   }}
-            {{ content.field_hours         }}
-            {{ regions.sidebar_second      }}
-        </aside>
-    </div>
-    <div{{ content_attributes }}>
+            {% if content.field_content_image
+               or content.field_coordinates
+               or content.field_aside
+               or content.field_hours
+               or content.field_calendar
+               or content.field_meetings
+            %}
+            <aside class="tablet:grid-col-3">
+                {{ content.field_aside_title   }}
+                {{ content.field_aside         }}
+                {{ content.field_content_image }}
+                {{ content.field_calendar      }}
+                {{ content.field_coordinates   }}
+                {{ content.field_hours         }}
+                {% if meetings %}
+                <section>
+                    <header><h2>Meetings</h2></header>
+                    <div>{{ meetings }}</div>
+                </section>
+                {% endif %}
+            </aside>
+            {% endif %}
+        </section>
         {{ content|without(
-                'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video_embed',
-                'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
+            'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
+            'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video_embed',
+            'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
     </div>
 </article>

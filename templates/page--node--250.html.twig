@@ -49,103 +49,146 @@
 {% include '@cob/partials/siteHeader.html.twig' %}
 <main>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
     {% include '@cob/partials/banner.html.twig' %}
-    {% include '@cob/partials/breadcrumb.html.twig' %}
     {{ page.highlighted }}
     {{ page.help }}
-
-    <div id="content" class="parks-page">
-        <section id="activities" class="divided dark">
-            <div class="container">
-                <header>
-                    <h2>Activities &amp; Programs</h2>
-                </header>
-                <div id="categories">
-                    <article class="info-card">
-                        <a href="{{ base_path }}recreation/sports">
-                            <header><h3>Sports</h3></header>
-                        </a>
-                    </article>
-                    <article class="info-card">
-                        <a href="{{ base_path }}recreation/fitness">
-                            <header><h3>Fitness</h3></header>
-                        </a>
-                    </article>
-                    <article class="info-card">
-                        <a href="{{ base_path }}recreation/recreation">
-                            <header><h3>Recreation</h3></header>
-                        </a>
-                    </article>
-                    <article class="info-card">
-                        <a href="{{ base_path }}recreation/camps">
-                            <header><h3>Camps</h3></header>
-                        </a>
-                    </article>
-                </div>
-                <div>
-                    <header>
-                        <h3>Find Activities</h3>
-                        <p> Search for specific activities and programs by filtering on
-                            type, age, or location.  Find the exact activities you are
-                            interested in.
-                        </p>
-                    </header>
-                    {{ program_search_form }}
-                </div>
-            </div>
-        </section>
-        {{ rentals  }}
-        <section class="location promo hasImage">
-            <div class="container">
-                <div>
-                    <div class="entity_reference">
-                        <div><img src="{{ base_path }}{{ directory }}/css/images/cascades.jpg"
-                                alt="Cascades Clubhouse and putting green at Cascades Golf Course">
-                        </div>
-                    </div>
-
-                    <div>
-                        <header>
-                            <h2><a href="https://cascadesgolfcourse.org"><span>Cascades Golf Course</span></a></h2>
-                        </header>
-                        <p class="summary">
-                            27-hole golf club with a pro shop, locker rooms, and banquet facility.
-                        </p>
-                        <div class="promo_title">
-                            <a href="https://cascadesgolfcourse.org" class="btn more">Find out more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {{ tlrc }}
-        <div class="container">
-            {{ page.content }}
-        </div>
-        <section id="stats">
-            <div class="container">
-                <a href="{{base_path}}parks/trails"     ><div class="count">11</div><div>trails</div></a>
-                <a href="{{base_path}}parks/parks"      ><div class="count">32</div><div>parks</div></a>
-                <a href="{{base_path}}parks/pools"      ><div class="count"> 2</div><div>pools</div></a>
-                <a href="{{base_path}}parks/facilities" ><div class="count"> 4</div><div>sports complexes</div></a>
-                <a href="https://cascadesgolfcourse.org"><div class="count"> 1</div><div>golf course</div></a>
-                <a href="{{base_path}}parks/facilities/frank-southern"><div class="count"> 1</div><div>ice arena</div></a>
-            </div>
-        </section>
-        <section id="events" class="divided">
-            <div class="container">
-                {{ events }}
-            </div>
-        </section>
-        <section id="related-links" class="divided">
-            <div class="container">
-                <header>
-                    <h2>Related Categories</h2>
-                </header>
-                <div>{{ related }}</div>
-            </div>
-        </section>
+    <div class="grid-container">
+        {% if page.breadcrumb %}{{ page.breadcrumb }}{% endif %}
+        {% include '@cob/partials/social.html.twig' %}
+        {% include '@cob/partials/contactInfo.html.twig' %}
     </div>
+    <section class="usa-section usa-section--dark">
+        <div class="grid-container">
+            <header><h2>Activities &amp; Programs</h2></header>
+            <div class="usa-card-group grid-row">
+                <article class="usa-card grid-col-5 desktop:grid-col-3">
+                    <a class="usa-card__container" href="{{ base_path }}recreation/sports">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">Sports</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col-5 desktop:grid-col-3">
+                    <a class="usa-card__container" href="{{ base_path }}recreation/fitness">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">Fitness</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col-5 desktop:grid-col-3">
+                    <a class="usa-card__container" href="{{ base_path }}recreation/recreation">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">Recreation</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col-5 desktop:grid-col-3">
+                    <a class="usa-card__container" href="{{ base_path }}recreation/camps">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">Camp</h3>
+                        </header>
+                    </a>
+                </article>
+            </div>
+            <div class="grid-row">
+                <header>
+                    <h3>Find Activities</h3>
+                    <p> Search for specific activities and programs by filtering on
+                        type, age, or location.  Find the exact activities you are
+                        interested in.
+                    </p>
+                </header>
+                {{ program_search_form }}
+            </div>
+        </div>
+    </section>
+    <section class="usa-section usa-card-group">
+        <div class="grid-container">
+            {{ rentals  }}
+            <article class="usa-card usa-card--flag">
+                <div class="usa-card__container">
+                    <div class="usa-card__media">
+                        <div class="usa-card__img">
+                            <img src="{{ base_path }}{{ directory }}/css/images/cascades.jpg"
+                                 alt="Cascades Clubhouse and putting green at Cascades Golf Course" />
+                        </div>
+                    </div>
+                    <header class="usa-card__header">
+                        <h2 class="usa-card__heading">
+                            <a href="https://cascadesgolfcourse.org">Cascades Golf Course</a>
+                        </h2>
+                    </header>
+                    <div class="usa-card__body">
+                        <p>27-hole golf club with a pro shop, locker rooms, and banquet facility.</p>
+                    </div>
+                </div>
+            </article>
+            {{ tlrc }}
+        </div>
+    </section>
+
+    <section class="usa-section grid-container">
+        <div>{{ page.content }}</div>
+    </section>
+
+    <section class="usa-section usa-section--dark">
+        <div class="grid-container">
+            <div class="usa-card-group grid-row">
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="{{base_path}}parks/trails">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">11<br />trails</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="{{base_path}}parks/parks">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">32<br />parks</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="{{base_path}}parks/pools">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">2<br />pools</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="{{base_path}}parks/facilities">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">4<br />sports complexes</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="https://cascadesgolfcourse.org">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">1<br />golf course</h3>
+                        </header>
+                    </a>
+                </article>
+                <article class="usa-card grid-col">
+                    <a class="usa-card__container" href="{{base_path}}parks/facilities/frank-southern">
+                        <header class="usa-card__header">
+                            <h3 class="usa-card__heading">1<br />ice arena</h3>
+                        </header>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="usa-section">
+        <div class="grid-container">
+            {{ events }}
+        </div>
+    </section>
+    <section class="usa-section">
+        <div class="grid-container">
+            <header><h2>Related Categories</h2></header>
+            {{ related }}
+        </div>
+    </section>
 </main>
 {% include '@cob/partials/footer.html.twig' %}

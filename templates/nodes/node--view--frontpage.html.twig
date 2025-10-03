@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a node.
+ * Theme for rendering a promoted node on the home page
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -65,25 +65,9 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
-{# {% for item in items %}
-    {{ item.content }}
-{% endfor %} #}
-
 <a href="{{ url }}">
     <h2>{{ label }}</h2>
-
-    {# {% if node.body.summary %}
-                <p>{{ node.body.summary }}</p>
-              {% else %}
-                <p>Summary missing...</p>
-              {% endif %}
-
-              <p>Click to learn more</p> #}
 </a>

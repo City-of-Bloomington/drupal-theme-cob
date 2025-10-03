@@ -65,22 +65,31 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
-<article{{attributes}} class="{{ node.bundle }} {{ view_mode }}">
-    {% if view_mode == 'full' %}
-        <div{{content_attributes}}>
-
-            {{ content|without(
-                'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
-                'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
-        }}
+<article class="usa-card usa-card--flag">
+    <div class="usa-card__container">
+        {% if content.field_content_image['#items'] %}
+        <div class="usa-card__media">
+            <div class="usa-card__img">
+                {{ content.field_content_image }}
+            </div>
         </div>
-    {% endif %}
+        {% endif %}
+        <header class="usa-card__header">
+            <h2 class="usa-card__heading">
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h2>
+        </header>
+        <div class="usa-card__body">
+            {% if node.body.summary %}
+            <p class="summary">
+                {{ node.body.summary }}
+            </p>
+            {% else %}
+            {{ content.body }}
+            {% endif %}
+        </div>
+    </div>
 </article>

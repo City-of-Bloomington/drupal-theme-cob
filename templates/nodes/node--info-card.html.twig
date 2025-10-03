@@ -65,32 +65,18 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
-<article{{ attributes }} class="info-card">
-  <a href="{{ url }}" rel="bookmark">
-
-    {% set video %}{{ content.field_video }}{% endset %}
-    {%  if video %}<div class="entity_reference">{{ video }}</div>{% endif %}
-
-    {% set field_date %}{{ content.field_date }}{% endset %}
-    {% if field_date %}
-      <date>{{ field_date }}</date>
-    {% endif %}
-
-    <header>
-      <h3{{ title_attributes }}>{{ label }}</h3>
-      {% if node.vacancies %}<span>(Vacancy)</span>{% endif %}
-      {% if node.committeeType=="seated" and not node.takesApplications %}<span>(No Public Appointments)</span>{% endif %}
-    </header>
-
-    {% if node.body.summary %}
-      <p>{{ node.body.summary }}</p>
-    {% endif %}
-  </a>
+<article class="usa-card grid-col-12 desktop:grid-col-4">
+    <a class="usa-card__container" href="{{ url }}">
+        <header class="usa-card__header">
+            <h3 class="usa-card__heading">{{ label }}</h3>
+        </header>
+        {% if node.body.summary %}
+        <div class="usa-card__body">
+            <p>{{ node.body.summary }}</p>
+        </div>
+        {% endif %}
+    </a>
 </article>

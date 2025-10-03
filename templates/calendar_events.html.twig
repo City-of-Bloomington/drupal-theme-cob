@@ -27,62 +27,55 @@
  * along with the calendar module.  If not, see <https://www.gnu.org/licenses/old-licenses/gpl-2.0/>.
  */
 #}
-
-<div class="events">
+<ul class="usa-card-group">
     {% for event in events %}
-        <a href="{{ event.htmlLink }}">
-            <div class="date">
-                <span>{{ event.start.dateTime | date('M')}}</span>
-                <span>{{ event.start.dateTime | date('j')}}</span>
-            </div>
-
+    <li class="usa-card">
+        <a class="usa-card__container" href="{{ event.htmlLink }}">
             <article>
-                <header>
-                    <h2>{{ event.summary  }}</h2>
+                <header class="usa-card__header">
+                    <h2 class="usa-card__heading">
+                        {{ event.start.dateTime | date('M j') }}<br />
+                        {{ event.summary  }}
+                    </h2>
                 </header>
-
-                <div class="location">
+                <div class="usa-card__body">
                     <p>
-                        {% if event.start.dateTime %}
-                            <time datetime="{{ event.start.dateTime }}">
-                                <span class="weekday">
-                                    {{ event.start.dateTime | date('l')}}
-                                </span>
+                    {% if event.start.dateTime %}
+                        <time datetime="{{ event.start.dateTime }}">
+                            <span class="weekday">
+                                {{ event.start.dateTime | date('l')}}
+                            </span>
 
-                                <span class="time">
+                            <span class="time">
+                                -
+                                {{  event.start.dateTime | date('g:ia') }}
+                                {% if event.end.dateTime %}
                                     -
-                                    {{  event.start.dateTime | date('g:ia') }}
-                                    {% if event.end.dateTime %}
-                                        -
-                                        {{ event.end.dateTime | date('g:ia') }}
-                                    {% endif %}
-                                </span>
-                            </time>
-                        {% else %}
-                            <time datetime="{{ event.start.date }}">
-                                <span class="weekday">
-                                    {{ event.start.date | date('l')}}
-                                </span>
-                            </time>
-                        {% endif %}
-
+                                    {{ event.end.dateTime | date('g:ia') }}
+                                {% endif %}
+                            </span>
+                        </time>
+                    {% else %}
+                        <time datetime="{{ event.start.date }}">
+                            <span class="weekday">
+                                {{ event.start.date | date('l')}}
+                            </span>
+                        </time>
+                    {% endif %}
                     </p>
                     {% if 'zoom' in event.location %}
-                        <p>via Zoom</p>
+                    <p>via Zoom</p>
                     {% elseif null == event.location %}
-                        <p>Location TBA</p>
+                    <p>Location TBA</p>
                     {% else %}
-                        <p>
-                            <small>{{ event.location }}</small>
-                        </p>
+                    <p>{{ event.location }}</p>
                     {% endif %}
-
-                    <p>Click to view this Event</p>
                 </div>
             </article>
         </a>
+    </li>
     {% endfor %}
-</div>
+</ul>
 <div>
-    <a href="https://calendar.google.com/calendar/embed?src={{ calendarId }}&ctz=America/New_York" class="btn more">Visit Full Calendar</a>
+    <a href="https://calendar.google.com/calendar/embed?src={{ calendarId }}&ctz=America/New_York" class="usa-button">Visit Full Calendar</a>
 </div>

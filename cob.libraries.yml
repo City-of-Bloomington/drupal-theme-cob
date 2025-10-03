@@ -22,6 +22,4 @@ cob:
       css/screen.css: { }
   dependencies:
     - 'cob/uswds'
-  js:
-    js/cob.js: { }
 ...

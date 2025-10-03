@@ -65,10 +65,6 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
@@ -83,7 +79,7 @@
         {% endif %}
         <header class="usa-card__header">
             <h2 class="usa-card__heading">
-                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                <a href="{{ url }}" rel="bookmark">{{ content.field_promo_title ?? label }}</a>
             </h2>
         </header>
         <div class="usa-card__body">
@@ -94,7 +90,6 @@
             {% else %}
                 {{ content.body }}
             {% endif %}
-            {{ content.field_promo_title }}
         </div>
     </div>
 </article>

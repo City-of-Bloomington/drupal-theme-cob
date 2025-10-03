@@ -65,14 +65,20 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
-<article{{ attributes }} class="{{ node.bundle }} {{ view_mode }}">
+<article{{attributes}} class="{{ node.bundle }} {{ view_mode }}">
+    <div class="last-update">
+        <p>
+            Page last updated on
+            {{ node.changed.value|date('F j, Y') }}
+            at
+            {{ node.changed.value|date('g:i a') }}
+        </p>
+    </div>
+
+
     {% if display_submitted or not page %}
     <header>
         {{ title_prefix }}
@@ -81,75 +87,74 @@
             <time datetime="{{ isodate|date('c') }}">{{ isodate|date('F j, Y') }}</time>
         {% endif %}
         {% if not page %}
-        <h2{{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+            <h2{{title_attributes}}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h2>
         {% endif %}
         {{ title_suffix }}
     </header>
     {% endif %}
-    <div id="intro">
-        <div>
-            {{ regions.secondary_menu }}
-            {{ content.field_contacts }}
-            {{ content.body }}
-            {{ content.field_video_embed }}
-            {{ content.field_call_to_action }}
+    {% if view_mode == 'full' %}
+    <div class="grid-container">
+        <section class="grid-row">
+            <div class="grid-col-auto tablet:grid-col-8">
+                {{ content.field_contacts }}
+                {{ content.body }}
+                {{ content.field_video }}
+                {{ content.field_call_to_action }}
+            </div>
+            {% if content.field_content_image
+               or content.field_coordinates
+               or content.field_aside
+               or content.field_hours
+               or content.field_calendar
+               or content.field_meetings
+            %}
+            <aside class="tablet:grid-col-3">
+                {{ content.field_aside_title   }}
+                {{ content.field_aside         }}
+                {{ content.field_content_image }}
+                {{ content.field_calendar      }}
+                {{ content.field_coordinates   }}
+                {{ content.field_hours         }}
+                {% if meetings %}
+                <section>
+                    <header><h2>Meetings</h2></header>
+                    <div>{{ meetings }}</div>
+                </section>
+                {% endif %}
+            </aside>
+            {% endif %}
+        </section>
+        <section class="grid-container">
+            <header><h2>Connect to Resources</h2></header>
+            <form method="get" target="_blank" id="bertha-pilot-form" action="https://helpingbloomingtonmonroe.findhelp.com/search/text">
+                <input name="term"    placeholder="Keyword"  required="true" />
+                <input name="postal"  placeholder="Zip code" requried="true" pattern="\d{5}" maxlength="5" style="width:5em" />
+                <button type="submit" class="search-btn">Search</button>
+            </form>
         </div>
-
-        {% set upcoming_events %}{{ content.field_calendar }}{% endset %}
-        {% set content_image %}{{ content.field_content_image }}{% endset %}
-        {% set coordinates %}{{ content.field_coordinates }}{% endset %}
-        {% set aside %}{{ content.field_aside }}{% endset %}
-        {% set hours %}{{ content.field_hours }}{% endset %}
-        {% if content_image
-           or coordinates
-           or aside
-           or hours
-           or upcoming_events
-           or meetings
-        %}
-        <aside>
-            {% if aside %}
-            {{ content.field_aside_title }}
-            {{ content.field_aside       }}
-            {% endif %}
-            {{ content_image   }}
-            {{ upcoming_events }}
-            {{ coordinates     }}
-            {{ hours           }}
-            {% if meetings %}
-            <section id="block-committeemeetings">
-                <header><h2>Meetings</h2></header>
-                <div>{{ meetings }}</div>
-            </section>
-            {% endif %}
-        </aside>
-        {% endif %}
-    </div>
-    <div>
-        <h2>Connect to Resources</h2>
-        <form method="get" target="_blank" id="bertha-pilot-form" action="https://helpingbloomingtonmonroe.findhelp.com/search/text">
-            <input name="term"    placeholder="Keyword"  required="true" />
-            <input name="postal"  placeholder="Zip code" requried="true" pattern="\d{5}" maxlength="5" style="width:5em" />
-            <button type="submit" class="search-btn">Search</button>
-        </form>
-    </div>
-
-    <div{{ content_attributes }}>
         {{ content|without(
-                'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
-                'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video_embed',
-                'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
+            'body', 'field_call_to_action', 'field_contacts', 'field_calendar', 'field_aside_title',
+            'field_aside', 'field_location', 'field_department', 'field_related_links', 'field_video',
+            'field_content_image', 'field_coordinates', 'field_hours', 'field_board_or_commission')
         }}
-    </div>
-    {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
-    {% if  related_links %}
-    <section id="related-links" class="divided">
-        <div class="container">
-            <header>
-                <h2>Related Categories</h2>
-            </header>
-            <div>{{ related_links }}</div>
-        </div>
-    </nav>
+
+        {% if projects %}
+        <section class="usa-card-group">
+            {{ projects }}
+        </section>
+        {% endif %}
+
+        {% set related_links %}{{ content.field_board_or_commission }}{{ content.field_location }}{{ content.field_department }}{{ content.field_related_links }}{% endset %}
+        {% if  related_links %}
+        <section>
+            <header><h2>Related Categories</h2></header>
+            {{ related_links }}
+        </section>
+        {% endif %}
+
+    {% else %}
+    {{ content }}
     {% endif %}
 </article>

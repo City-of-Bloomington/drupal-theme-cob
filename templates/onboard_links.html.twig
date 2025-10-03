@@ -11,33 +11,33 @@
  * @copyright 2018-2025 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
 #}
-<nav class="button-group">
+<nav>
     {% set year  = 'now'|date('Y') %}
-    <a class="button" href="{{ path('onboard.meetingYears.node-'~nid, {'node':nid, 'year':year}) }}">
+    <a class="usa-button" href="{{ path('onboard.meetingYears.node-'~nid, {'node':nid, 'year':year}) }}">
         Meetings &amp; Documents
     </a>
     {% if committee.calendarId %}
-    <a class="button" href="https://calendar.google.com/calendar/embed?src={{ committee.calendarId }}&amp;ctz=America/New_York">
+    <a class="usa-button" href="https://calendar.google.com/calendar/embed?src={{ committee.calendarId }}&amp;ctz=America/New_York">
         Calendar
     </a>
     {% endif %}
     {% if committee.videoArchive %}
-    <a class="button" href="{{ committee.videoArchive }}">
+    <a class="usa-button" href="{{ committee.videoArchive }}">
         Video Archive
     </a>
     {% endif %}
     {% if committee.legislative %}
-    <a class="button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
+    <a class="usa-button" href="{{ path('onboard.legislationTypes.node-'~nid, {'node': nid}) }}">
         Legislation
     </a>
     {% endif %}
     {% if committee.reports %}
-    <a class="button" href="{{ path('onboard.reports.node-'~nid, {'node': nid}) }}">
+    <a class="usa-button" href="{{ path('onboard.reports.node-'~nid, {'node': nid}) }}">
         Reports
     </a>
     {% endif %}
     {% if committee.vacancy and committee.takesApplications %}
-    <a class="button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.id }}">
+    <a class="usa-button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.id }}">
         Vacancy: Apply!
     </a>
     {% endif %}

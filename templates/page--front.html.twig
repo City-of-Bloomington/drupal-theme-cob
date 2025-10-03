@@ -46,13 +46,11 @@
  */
 #}
 
-{{ page.highlighted }}
 
 {% include '@cob/partials/gov-banner.html.twig' %}
 {% if alerts %}
 {{ alerts }}
 {% endif %}
-
 <header class="usa-header usa-header--basic usa-header--megamenu">
     <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -113,7 +111,6 @@
     </nav>
 </header>
 {{ page.primary_menu }}
-
 <main id="main-content">{# link is in html.html.twig #}
     <section id="banner" style="background-image: url('{{ base_path }}{{ directory }}/css/images/cover-2.jpg')">
         <div>
@@ -132,6 +129,7 @@
         </div>
     </section>
 
+    {{ page.highlighted }}
     {{ page.help }}
 
     <div class="grid-container">
@@ -213,9 +211,7 @@
     <section>
         <div class="grid-container">
             <header><h2>Events</h2></header>
-            <div>
-                {{ events }}
-            </div>
+            {{ events }}
         </div>
     </section>
 

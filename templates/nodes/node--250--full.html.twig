@@ -65,35 +65,36 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- *
  * @ingroup themeable
  */
 #}
 <article id="parks-guide-page"{{ attributes }}>
-    <div id="intro">
-        <div>
+    <section class="grid-row">
+        <div class="grid-col-auto tablet:grid-col-8">
+            {{ content.field_contacts }}
             {{ content.body }}
+            {{ content.field_video }}
             {{ content.field_call_to_action }}
         </div>
-
         {% if content.field_content_image
-           or content.field_coordinates
-           or content.field_aside
-           or content.field_hours
+            or content.field_coordinates
+            or content.field_aside
+            or content.field_hours
+            or content.field_meetings
         %}
-        <aside>
-            {% if content.field_aside %}
+        <aside class="tablet:grid-col-3">
             {{ content.field_aside_title   }}
             {{ content.field_aside         }}
-            {% endif %}
             {{ content.field_content_image }}
-            {{ upcoming_events             }}
             {{ content.field_coordinates   }}
             {{ content.field_hours         }}
+            {% if meetings %}
+            <section>
+                <header><h2>Meetings</h2></header>
+                <div>{{ meetings }}</div>
+            </section>
+            {% endif %}
         </aside>
         {% endif %}
-    </div>
+    </section>
 </article>

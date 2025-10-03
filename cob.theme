@@ -14,9 +14,19 @@ use Drupal\directory\DirectoryService;
 use Drupal\interactivemap\MapGateway;
 use Drupal\onboard\OnBoardService;
 
-// Some node_ids for pages in the site
+// Some node_ids for special pages in the site
 const DEPARTMENT_COUNCIL = 2796;
 const BOARD_COUNCIL      =   47;
+const BOARDS_COMMISSIONS =  217;
+const ABOUT              =  223;
+const MAYOR              =  608;
+const PARKS_HOME         =  250;
+const PARKS_TLRC         =  502;
+const PARKS_RENTALS      =  368;
+const PARKS_CASCADES     =  553;
+const PROJECTS_ENG       =  573;
+const PROJECTS_UTIL      = 5519;
+const ANIMAL_SHELTER     =  204;
 
 /**
  * Prepare contact information for various modules
@@ -70,7 +80,7 @@ function cob_preprocess(&$vars, $hook)
         case 'asm_lf_animal':
         case 'asm_lf_animals':
             $route = $hook;
-            $location = \Drupal::entityTypeManager()->getStorage('node')->load(204);
+            $location = \Drupal::entityTypeManager()->getStorage('node')->load(ANIMAL_SHELTER);
             $vars['base_path'] = base_path();
         break;
 
@@ -125,11 +135,8 @@ function cob_preprocess_page__front(&$vars)
                 ->sort('created', 'desc')
                 ->range(0, 5);
     $vars['news' ] = _cob_renderNodesByQuery($query, 'teaser');
-    $vars['about'] = _cob_renderNodeById(223, 'promo');
-    $vars['mayor'] = _cob_renderNodeById(608, 'promo');
-
-    // Pothole dataset query
-    #$vars['pothole_count'] = __cob_latestPotholeCount();
+    $vars['about'] = _cob_renderNodeById(ABOUT, 'promo');
+    $vars['mayor'] = _cob_renderNodeById(MAYOR, 'promo');
 }
 
 function cob_preprocess_page(&$vars)
@@ -148,13 +155,13 @@ function cob_preprocess_page(&$vars)
         $vars['available_messages'] = !empty(\Drupal::messenger()->all());
 
         // Custom content for the Parks and Rec landing page
-        if ((int)$vars['node']->get('nid')->value === 250) {
+        if ((int)$vars['node']->get('nid')->value === PARKS_HOME) {
             $vars['program_search_form'] = \Drupal::formBuilder()->getForm('Drupal\promt\Form\ProgramSearchForm');
             $vars['events'    ] = $vars['node']->field_calendar  ->view('full');
             $vars['related'   ] = $vars['node']->field_department->view('full');
-            $vars['tlrc'      ] = _cob_renderNodeById(502, 'promo');
-            $vars['rentals'   ] = _cob_renderNodeById(368, 'promo');
-            $vars['cascades'  ] = _cob_renderNodeById(553, 'promo');
+            $vars['tlrc'      ] = _cob_renderNodeById(PARKS_TLRC,     'promo');
+            $vars['rentals'   ] = _cob_renderNodeById(PARKS_RENTALS,  'promo');
+            $vars['cascades'  ] = _cob_renderNodeById(PARKS_CASCADES, 'promo');
         }
         // Don't display committee members on pages rendered by the onboard module
         $m = \Drupal::routeMatch()->getRouteName();
@@ -242,8 +249,7 @@ function cob_preprocess_node(&$vars)
     if ($vars['view_mode'] == 'full') {
         $nid     = (int)$vars['node']->get('nid' )->value;
         switch ($nid) {
-            // Engineering Projects
-            case 573:
+            case PROJECTS_ENG:
                 $query = \Drupal::entityQuery('node')
                        ->accessCheck(true)
                        ->condition('type', 'project_page')
@@ -252,18 +258,16 @@ function cob_preprocess_node(&$vars)
                 $vars['projects'] = _cob_renderNodesByQuery($query, 'info_card');
             break;
 
-            // Utilities Projects
-            case 5519:
+            case PROJECTS_UTIL:
                 $query = \Drupal::entityQuery('node')
                        ->accessCheck(true)
                        ->condition('type', 'utilities_project_page')
                        ->condition('field_active',  true)
                        ->sort('created', 'desc');
-                $vars['utilities_projects'] = _cob_renderNodesByQuery($query, 'info_card');
+                $vars['projects'] = _cob_renderNodesByQuery($query, 'info_card');
             break;
 
-            // Boards
-            case 217:
+            case BOARDS_COMMISSIONS:
                 $committees = [];
                 foreach (OnBoardService::committee_list() as $c) {
                     $committees[$c['id']] = $c;
@@ -348,6 +352,7 @@ function cob_preprocess_node(&$vars)
                         ];
                     }
             }
+            $vars['regions']['secondary_menu'] = _cob_renderRegion('secondary_menu');
         }
     }
 }
@@ -410,7 +415,7 @@ function cob_preprocess_field__entity_reference(&$vars)
     foreach ($vars['items'] as $i=>$item) {
         if (!empty($item['content']['#type']) && $item['content']['#type'] == 'link') {
             $vars['items'][$i]['content']['#title'] = "{$vars['element']['#title']}: {$item['content']['#title']}";
-            $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+            $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'usa-button';
         }
     }
 }
@@ -424,7 +429,7 @@ function cob_preprocess_field__field_promo_title(&$vars)
 
     foreach ($vars['items'] as $i=>$item) {
         $vars['items'][$i]['content'] = [
-            '#markup' => "<a href=\"$url\" class=\"btn more\">{$item['content']['#context']['value']}</a>"
+            '#markup' => "<a href=\"$url\" class=\"usa-link\">{$item['content']['#context']['value']}</a>"
         ];
 
     }
@@ -457,7 +462,7 @@ function cob_preprocess_field__link(&$vars)
 
     // All link fields are going to be styled as some type of button
     foreach ($vars['items'] as $i=>$item) {
-        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'button';
+        $vars['items'][$i]['content']['#options']['attributes']['class'][] = 'usa-button';
     }
 }
 
@@ -712,41 +717,22 @@ function _cob_renderNodeById($nid, string $viewMode): array
 }
 
 /**
- * Downloads and processes a Google spreadheet for pothole counts
+ * @param  string $region
+ * @return array           An array of the themed blocks in the region
  */
-function __cob_latestPotholeCount(): int
+function _cob_renderRegion(string $region): array
 {
-    $csv  = '/tmp/potholes.csv';
-    $url  = 'https://docs.google.com/spreadsheets/d/14qN0YTLU4klEhr9H58Eu2zzTMi2bCnjGC4fJ59e-phs/export?format=csv&gid=1274323447';
-    $year = '2020';
+    static $manager;
+    static $builder;
+    static $storage;
 
-    if (is_file($csv)) {
-        $yesterday    = new \DateTime('yesterday');
-        $lastModified = new \DateTime();
-        $lastModified->setTimestamp(filemtime($csv));
-
-        if ($lastModified < $yesterday) { unlink($csv); }
+    if (!$manager) {
+        $manager = \Drupal::entityTypeManager();
+        $builder = $manager->getViewBuilder('block');
+        $storage = $manager->getStorage('block');
     }
 
-    if (!is_file($csv)) {
-        $client   = \Drupal::httpClient(['timeout' => 5]);
-        $response = $client->get($url);
-        if ($response) { file_put_contents($csv, $response->getBody()); }
-        else           { return 0; }
-    }
-
-    $data = fopen($csv, 'r');
-    $count = 0;
-    $i     = 0;
-    while ($row = fgetcsv($data)) {
-        if ($i == 0) { $i++; continue; }
-
-        if (!empty($row[0]) && !empty($row[1])) {
-            $date = new \DateTime($row[0]);
-            if ($date->format('Y') == $year) {
-                $count += (int)$row[1];
-            }
-        }
-    }
-    return $count;
+    $blocks = $storage->loadByProperties(['theme'=>'cob', 'region'=>$region]);
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+    return $builder->viewMultiple($blocks);
 }
