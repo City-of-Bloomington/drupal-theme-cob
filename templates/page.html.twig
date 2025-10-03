@@ -70,38 +70,17 @@
         {% include '@cob/partials/social.html.twig' %}
         {% include '@cob/partials/contactInfo.html.twig' %}
 
-        <div class="grid-row">
+        <div>
             {% if page.sidebar_first %}
-            <aside class="tablet:grid-col-3">{{ page.sidebar_first }}</aside>
+            <aside>{{ page.sidebar_first }}</aside>
             {% endif %}
 
-            <div class="grid-col-auto tablet:grid-col-8">
+            <div>
             {{ page.content }}
             </div>
 
-            {% if page.sidebar_second
-               or content_image
-               or coordinates
-               or aside
-               or hours
-               or calendar
-               or meetings
-            %}
-            <aside class="tablet:grid-col-3">
-                {{ aside_title   }}
-                {{ aside         }}
-                {{ content_image }}
-                {{ calendar      }}
-                {{ coordinates   }}
-                {{ hours         }}
-                {% if meetings %}
-                <section>
-                    <header><h2>Meetings</h2></header>
-                    <div>{{ meetings }}</div>
-                </section>
-                {% endif %}
-                {{ page.sidebar_second }}
-            </aside>
+            {% if page.sidebar_second %}
+            <aside>{{ page.sidebar_first }}</aside>
             {% endif %}
         </div>
     </div>

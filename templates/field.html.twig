@@ -38,16 +38,12 @@
  * @ingroup themeable
  */
 #}
-<div class="{{ field_type }}"{{ attributes }}>
+<div class="grid-row {{ field_type }}"{{ attributes }}>
     {% if not label_hidden %}
     <header><h2{{ title_attributes }}>{{ label }}</h2></header>
     {% endif %}
 
     {% for item in items %}
-        {% if item.attributes %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-        {% else %}
-        {{ item.content }}
-        {% endif %}
+    {{ item.content }}
     {% endfor %}
 </div>

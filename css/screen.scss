@@ -14,11 +14,10 @@
 }
 
 
+.usa-card__header    { text-align: center; }
 .usa-card__container { background-color: transparent; }
-.usa-card__img, aside {
-    background-color: transparent;
-    img { object-fit: contain; }
-}
+.usa-card__img       { background-color: transparent; }
+img { height: auto; object-fit: contain; }
 
 #edit-openid-connect-client-adfs-login {
     background-color: transparent;

@@ -39,7 +39,7 @@
  */
 #}
 {% block paragraph %}
-<li class="usa-card grid-col-12 desktop:grid-col-4">
+<div class="usa-card grid-col-12 desktop:grid-col-4">
     <a class="usa-card__container" href="{{ content.field_info_link.0['#url'] }}">
         <header class="usa-card__header">
             <h3 class="usa-card__heading">{{ title }}</h3>
@@ -48,5 +48,5 @@
             <p>{{ text }}</p>
         </div>
     </a>
-</li>
+</div>
 {% endblock paragraph %}
