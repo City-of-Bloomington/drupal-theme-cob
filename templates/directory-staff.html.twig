@@ -1,0 +1,30 @@
+<section class="usa-card-group">
+    {% for person in department.people %}
+    <div class="usa-card grid-col-12 desktop:grid-col-4">
+        <div class="usa-card__container">
+            <header class="usa-card__header">
+                <h3>{% if person.displayname %}
+                    {{ person.displayname }}
+                    {% else %}
+                    {{ person.firstname }} {{ person.lastname }}
+                    {% endif %}
+                </h3>
+            </header>
+            <div class="usa-card__body">
+                {% if person.title %}
+                <div>{{ person.title }}</div>
+                {% endif %}
+                {% if person.email %}
+                <div><a href="mailto:{{ person.email }}">{{ person.email }}</a></div>
+                {% endif %}
+                {% if person.pager %}
+                <div><a href="tel:{{ person.pager }}" class="phone" title="Phone">
+                        {{ person.pager }}
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
