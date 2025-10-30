@@ -37,7 +37,7 @@
     </a>
 	{% endif %}
 	{% if committee.vacancy and committee.takesApplications %}
-    <a class="button" href="{{ onboard_url }}/applicants/apply?committee_id={{ committee.id }}">
+    <a class="button" href="{{ onboard_url }}/committees/{{ committee.id }}/apply">
         Vacancy: Apply!
     </a>
 	{% endif %}
