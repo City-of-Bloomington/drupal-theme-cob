@@ -9,7 +9,6 @@ $font-size-normal: 1.125rem;
 $font-size-small: 1rem;
 $font-size-smaller: 0.875rem;
 $font-weight-bold: 900;
-$color-heading: $dodger-blue;
 $size-sidebar-maxwidth: 340px;
 $space-s: 5px;
 $space-l: ($space-s * 3);
@@ -64,8 +63,6 @@ $line-height-s: 1.3;
 $line-height-xs: 1;
 
 $border-default: 1px solid $color-grey-light;
-$text-color: darken($color-grey, 55%);
-$color-fern: #4caf50;
 
 @mixin visuallyHidden() {
   border: 0;

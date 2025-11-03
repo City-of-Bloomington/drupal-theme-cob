@@ -2,8 +2,6 @@
  * @see https://en.wikipedia.org/wiki/Web_colors
  *
  */
-
-
 // Blues
 $biscay:           #183365;
 $azure:            #315da6;
@@ -50,93 +48,101 @@ $gin-fizz:         #fffae3;
 $vista-white:      #fcf7f8;
 $wafer:            #eee4e1;
 
+// New Mayor Colors
+$color-mayor-biscay:            #182d5a;
+$color-mayor-eminence:          #662d91;
+$color-mayor-sushi:             #8dc63f;
+$color-mayor-curious-blue:      #27aae1;
+$color-mayor-tree-poppy:        #f7941d;
+$color-mayor-shakespeare:       #3fc1cb;
+$color-mayor-school-bus-yellow: #fbd801;
+$color-mayor-natural-gray:      #939291;
+$color-mayor-abbey:             #4a4a4b;
+$color-mayor-pomegranate:       #eb3b24;
+$color-mayor-fun-blue:          #1e5aae;
+
+$color-orange-lighter: rgb(255, 235, 194);
+$color-orange-light:   rgb(255, 218, 143);
+$color-orange:         rgb(255, 201, 92);
+$color-orange-dark:    rgb(255, 184, 41);
+$color-orange-darker:  rgb(245, 163, 0);
+
+$color-ucla-gold-lighter: rgb(255, 219, 128);
+$color-ucla-gold-light:   rgb(255, 204, 77);
+$color-ucla-gold:         rgb(255, 186, 10);
+$color-ucla-gold-dark:    rgb(230, 164, 0);
+$color-ucla-gold-darker:  rgb(179, 128, 0);
+
+$color-vermilion-lighter: rgb(244, 151, 138);
+$color-vermilion-light:   rgb(239, 101, 82);
+$color-vermilion-dark:    rgb(201, 40, 19);
+$color-vermilion-darker:  rgb(154, 31, 14);
+
+$color-bleu-de-france-lighter: rgb(132, 189, 246);
+$color-bleu-de-france-light:   rgb(84, 163, 242);
+$color-bleu-de-france:         rgb(37, 138, 239);
+$color-bleu-de-france-dark:    rgb(16, 112, 209);
+$color-bleu-de-france-darker:  rgb(12, 87, 161);
+
+
+$color-green-lighter: rgb(166, 216, 168);
+$color-green-light:   rgb(124, 197, 126);
+$color-green:         rgb(76, 174, 79);
+$color-green-dark:    rgb(67, 152, 70);
+$color-green-darker:  rgb(51, 117, 54);
+
+$color-blue-lighter: rgb(142, 181, 236);
+$color-blue-light:   rgb(98, 152, 228);
+$color-blue:         rgb(30, 90, 174);
+$color-blue-dark:    rgb(27, 81, 157);
+$color-blue-darker:  rgb(24, 72, 140);
+
+$color-grey-lighter: rgb(242, 242, 242);
+$color-grey-light:   rgb(230, 230, 230);
+$color-grey:         rgb(219, 219, 219);
+$color-grey-dark:    rgb(191, 191, 191);
+$color-grey-darker:  rgb(166, 166, 166);
+
+$color-fern: #4caf50;
+$color-silver:    rgb(127, 136, 145);
+$color-red:       rgb(163, 22, 33);
+$color-cloud:     rgb(233, 243, 253);
+$color-brown:     rgb(121, 85, 72);
+$color-slate:     rgb(33, 33, 33);
+$color-vermilion: rgb(235, 59, 36);
+
+$text-color: darken($color-grey, 55%);
 
 // Foreground colors
-$color-text-default: $mine-shaft;
+$color-text-default:   $mine-shaft;
 $color-text-secondary: $silver-chalice;
-$color-link: $biscay;
-$color-heading: $mine-shaft;
-$color-divider: $silver;
+$color-link:           $biscay;
+$color-heading:        $color-mayor-biscay;
+$color-divider:        $silver;
 
 // Background colors
-$color-content-background: $white;
+$color-content-background:  $white;
 $color-selected-background: $havelock-blue;
 
-$color-nav1: $biscay;
-$color-header: $biscay;
+$color-nav1:          $biscay;
+$color-header:        $biscay;
 $color-header-border: $azure;
-$color-footer: $dark-slate;
-$color-error: $sunglo;
-$color-alert: $california;
-$color-action: $fern;
-$color-action-hover: $deyork;
-$color-accent: $red;
+$color-footer:        $dark-slate;
+$color-error:         $sunglo;
+$color-alert:         $california;
+$color-action:        $fern;
+$color-action-hover:  $deyork;
+$color-accent:        $dodger-blue;
 
 // Special widget colors
-$color-background-field: $sail;
+$color-background-field:           $sail;
 $color-background-field-highlight: $gin-fizz;
-$color-border-input: $silver-chalice;
-$color-border-input-highlight: $mine-shaft;
-$color-border-table: $wafer;
+$color-border-input:               $silver-chalice;
+$color-border-input-highlight:     $mine-shaft;
+$color-border-table:               $wafer;
 
-$color-table-background: $gainsboro;
-$color-table-background-alt: $silver;
+$color-table-background:        $gainsboro;
+$color-table-background-alt:    $silver;
 $color-table-header-background: $biscay;
 
 $color-shadow: rgba(0, 0, 0, 0.5);
-
-
-
-// New Mayor Colors
-$color-mayor-biscay: #182d5a;
-$color-mayor-eminence: #662d91;
-$color-mayor-sushi: #8dc63f;
-$color-mayor-curious-blue: #27aae1;
-$color-mayor-tree-poppy: #f7941d;
-$color-mayor-shakespeare: #3fc1cb;
-$color-mayor-school-bus-yellow: #fbd801;
-$color-mayor-natural-gray: #939291;
-$color-mayor-abbey: #4a4a4b;
-$color-mayor-pomegranate: #eb3b24;
-$color-mayor-fun-blue: #1e5aae;
-
-$color-ucla-gold: rgb(255, 186, 10);
-$color-orange-light: rgb(255, 218, 143);
-$color-ucla-gold-darker: rgb(179, 128, 0);
-$color-vermilion-lighter: rgb(244, 151, 138);
-$color-vermilion-darker: rgb(154, 31, 14);
-$color-ucla-gold-lighter: rgb(255, 219, 128);
-$color-bleu-de-france-dark: rgb(16, 112, 209);
-$color-grey-darker: rgb(166, 166, 166);
-$color-bleu-de-france-light: rgb(84, 163, 242);
-$color-green: rgb(76, 174, 79);
-$color-silver: rgb(127, 136, 145);
-$color-orange: rgb(255, 201, 92);
-$color-orange-dark: rgb(255, 184, 41);
-$color-green-lighter: rgb(166, 216, 168);
-$color-blue-darker: rgb(24, 72, 140);
-$color-blue-light: rgb(98, 152, 228);
-$color-green-dark: rgb(67, 152, 70);
-$color-orange-lighter: rgb(255, 235, 194);
-$color-bleu-de-france: rgb(37, 138, 239);
-$color-grey-light: rgb(230, 230, 230);
-$color-bleu-de-france-darker: rgb(12, 87, 161);
-$color-bleu-de-france-lighter: rgb(132, 189, 246);
-$color-red: rgb(163, 22, 33);
-$color-ucla-gold-dark: rgb(230, 164, 0);
-$color-vermilion-light: rgb(239, 101, 82);
-$color-vermilion-dark: rgb(201, 40, 19);
-$color-blue: rgb(30, 90, 174);
-$color-ucla-gold-light: rgb(255, 204, 77);
-$color-orange-darker: rgb(245, 163, 0);
-$color-cloud: rgb(233, 243, 253);
-$color-blue-lighter: rgb(142, 181, 236);
-$color-brown: rgb(121, 85, 72);
-$color-grey-dark: rgb(191, 191, 191);
-$color-grey: rgb(219, 219, 219);
-$color-green-darker: rgb(51, 117, 54);
-$color-slate: rgb(33, 33, 33);
-$color-green-light: rgb(124, 197, 126);
-$color-grey-lighter: rgb(242, 242, 242);
-$color-blue-dark: rgb(27, 81, 157);
-$color-vermilion: rgb(235, 59, 36);
