@@ -44,8 +44,7 @@ $card-width: 320px;
     article { margin: 0; height: 100%; }
 
     a {
-        background-color: $color-grey-lighter;
-        color: $color-text-default;
+        background-color: $color-table-background;
         display: block;
         box-sizing: border-box;
         padding: $size-gutter * 2;
@@ -54,9 +53,6 @@ $card-width: 320px;
 
         &:hover {
             background-color: $color-selected-background;
-            color: $color-content-background;
-
-            header h3, p { color: $color-content-background; }
 
             .entity_reference > .entity_reference > div,
             .video_embed_field > div {
@@ -107,7 +103,6 @@ $card-width: 320px;
 
         header h3 {
             vertical-align: top;
-            color: darken($dark-slate, 5%);
             font-family: $font-family-default;
             font-size: $font-size-medium;
             line-height: $font-size-bigger;
@@ -115,7 +110,7 @@ $card-width: 320px;
         }
 
         p {
-            color: $dark-slate;
+            color: $color-text-default;
 
             &:last-of-type { margin-bottom: 0; }
         }
