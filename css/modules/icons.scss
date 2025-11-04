@@ -6,7 +6,7 @@ form#search-block-form {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 15px 15px;
-    background-image: url("images/fa-svg/white/search.svg");
+    background-image: url("images/fa-svg/dark-slate/search.svg");
 
     &:hover,
     &:focus { background-color: darken($color: $color-fern, $amount: 5); }

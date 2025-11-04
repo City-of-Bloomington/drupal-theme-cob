@@ -30,23 +30,6 @@
 
       &:last-of-type { margin: 0; }
     }
-
-    .button {
-      font-family: $fontIBM;
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      border-radius: 3px;
-      background-color: $color-fern;
-      border: none;
-      color: white;
-      width: fit-content;
-      font-size: $font-size-small;
-      margin: 0;
-
-      &:hover,
-      &:focus { background-color: darken($color-fern, 5); }
-    }
   }
 
   .news {
