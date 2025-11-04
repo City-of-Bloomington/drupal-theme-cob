@@ -1,4 +1,68 @@
-@import "vars-fn1";
+/**
+ * Urls are relative to screen.css
+ */
+$url-logo: "";
+$url-header-background: "";
+
+$viewport-small: (350px);
+$viewport-medium: (640px);
+$viewport-large: (1080px);
+
+$size-gutter: 0.5em;
+
+// Breakpoint mixins
+@mixin smallViewport {
+  @media all and (min-width: #{$viewport-small}) {
+    @content;
+  }
+}
+@mixin mediumViewport {
+  @media all and (min-width: $viewport-medium) {
+    @content;
+  }
+}
+@mixin largeViewport {
+  @media all and (min-width: $viewport-large) {
+    @content;
+  }
+}
+
+@mixin visuallyHidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+//Typefaces
+@import "https://fonts.googleapis.com/css?family=Lora";
+@import "https://fonts.googleapis.com/css?family=Roboto";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap");
+$fontIBM: "IBM Plex Sans", sans-serif;
+
+$serif: "Lora", serif;
+$sans: "Roboto", sans-serif;
+
+$font-family-default: $fontIBM;
+$font-family-heading: $fontIBM;
+$font-family-nav: $sans;
+$font-weight-heading: 700;
+
+//Font Sizes
+$font-size-huge: 2.8125rem;
+
 //Font Sizes
 $font-size-biggest: 3.75rem;
 $font-size-bigger-alt: 2.5rem;
