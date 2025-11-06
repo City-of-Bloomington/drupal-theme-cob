@@ -5,14 +5,14 @@
   margin-bottom: $size-gutter;
   border-radius: 3px;
   border: none;
-  background-color: $color-mayor-sushi;
-  color: $color-link;
+  background-color: $color-action;
+  color: $color-content-background;
   width: fit-content;
   font-size: $font-size-small;
 
   &:hover,
   &:focus {
-    background-color: darken($color-mayor-sushi, 5);
+    background-color: darken($color-action, 5);
   }
 }
 
@@ -22,26 +22,26 @@
   padding: 15px;
   border-radius: 3px;
   border: none;
-  background-color: $color-mayor-sushi;
-  color: $color-link;
+  background-color: $color-action;
+  color: $color-content-background;
   width: fit-content;
   font-size: $font-size-small;
 
   &:hover,
   &:focus {
-    background-color: darken($color-mayor-sushi, 5);
+    background-color: darken($color-action, 5);
   }
 
   &.more {
-    background-color: $color-mayor-sushi;
+    background-color: $color-action;
     border: none;
-    color: $color-link;
+    color: $color-content-background;
     width: fit-content;
     font-size: $font-size-small;
 
     &:hover,
     &:focus {
-      background-color: darken($color-mayor-sushi, 5);
+      background-color: darken($color-action, 5);
     }
   }
 

@@ -79,7 +79,7 @@ b, strong {
         }
 
         &.info {
-            background-color: $color-mayor-sushi;
+            background-color: $color-action;
 
             svg {
                 path { fill: $color-text-secondary; }
@@ -88,7 +88,7 @@ b, strong {
             h2, span, a, p { color: $color-text-secondary; }
 
             &:hover, &:focus {
-                background-color: darken($color-mayor-sushi, 5%);
+                background-color: darken($color-action, 5%);
             }
         }
 
@@ -479,7 +479,7 @@ table tbody tr {
     &:nth-child(even) th { background-color: silver; }
 
     &.today {
-        th, td { background-color: $color-mayor-sushi; }
+        th, td { background-color: $color-action; }
     }
 
     td a.download {

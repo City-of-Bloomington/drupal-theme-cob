@@ -7,11 +7,11 @@ $biscay:           #183365;
 $azure:            #315da6;
 $sail:             #c9e5f7;
 $havelock-blue:    #4990e2;
-$dodger-blue:      #3f9dff;
+$dodger-blue:      #1e90ff;
+$royal-blue:       #4169e1;
 
 // Greens
-$fern:             #4caf50;
-$deyork:           #77cc7d;
+$green:            #008000;
 
 // Oranges
 $california:       #ff9800;
@@ -43,13 +43,11 @@ $color-blue:         rgb(30, 90, 174);
 
 $color-grey-lighter: #f2f2f2;
 
-$color-fern: #4caf50;
-
 // Foreground colors
 $color-text-default:   $mine-shaft;
 $color-text-secondary: $dark-slate;
 $color-link:           $biscay;
-$color-heading:        $color-mayor-biscay;
+$color-heading:        $royal-blue;
 $color-divider:        $silver;
 
 // Background colors
@@ -62,8 +60,7 @@ $color-header-border: $azure;
 $color-footer:        $dark-slate;
 $color-error:         $sunglo;
 $color-alert:         $california;
-$color-action:        $fern;
-$color-action-hover:  $deyork;
+$color-action:        $green;
 $color-accent:        $dodger-blue;
 
 // Special widget colors

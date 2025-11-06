@@ -5,7 +5,7 @@
  * This should control how we display the way HTML that users type.
  */
 #intro nav a {
-    display: block; color: $color-link;
+    display: block; color: $color-content-background;
     font-weight: $font-weight-bold;
     font-family: $font-family-heading;
 }
@@ -28,22 +28,6 @@
   ol {
     list-style: decimal outside;
     margin-left: 1em;
-  }
-
-  &.search-results {
-    .views-field-title {
-      font-size: $font-size-big;
-      font-weight: $font-weight-bold;
-      font-family: $font-family-heading;
-      margin: 0 0 $size-gutter 0;
-    }
-    .views-row {
-      margin-bottom: $size-gutter * 4;
-      a {
-        display: block;
-        color: $color-action;
-      }
-    }
   }
 
   .text_with_summary a,

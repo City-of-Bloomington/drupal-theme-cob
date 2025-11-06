@@ -99,7 +99,7 @@
             -moz-border-radius-topright: 3px;
             -moz-border-radius-bottomright: 3px;
 
-            &:hover, &:focus { background-color: darken($color-mayor-sushi, 5); }
+            &:hover, &:focus { background-color: darken($color-action, 5); }
         }
 
         @media (max-width: 767px) {
