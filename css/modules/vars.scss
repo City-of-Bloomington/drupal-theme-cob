@@ -123,7 +123,7 @@ $line-height-m: 1.6;
 $line-height-s: 1.3;
 $line-height-xs: 1;
 
-$border-default: 1px solid $color-grey-light;
+$border-default: 1px solid $color-table-background;
 
 @mixin visuallyHidden() {
   border: 0;

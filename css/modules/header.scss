@@ -213,7 +213,7 @@
       &[type="search"] {
         font-family: $fontIBM;
         font-size: $font-size-small;
-        color: $text-color;
+        color: $color-text-secondary;
         width: 275px;
         height: 30px;
         border: none;
@@ -228,7 +228,7 @@
         border-left: 1px solid #dbdbdb;
         border-bottom: 1px solid #dbdbdb;
 
-        &::placeholder { color: lighten($text-color, 5%); }
+        &::placeholder { color: $color-text-secondary; }
       }
 
       &[type="submit"] {

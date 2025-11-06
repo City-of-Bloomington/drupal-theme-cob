@@ -82,14 +82,10 @@ b, strong {
             background-color: $color-mayor-sushi;
 
             svg {
-                path {
-                    fill: $text-color;
-                }
+                path { fill: $color-text-secondary; }
             }
 
-            h2, span, a, p {
-                color: $text-color;
-            }
+            h2, span, a, p { color: $color-text-secondary; }
 
             &:hover, &:focus {
                 background-color: darken($color-mayor-sushi, 5%);
@@ -100,12 +96,10 @@ b, strong {
             background-color: $color-mayor-school-bus-yellow;
 
             svg {
-                path {
-                    fill: $text-color;
-                }
+                path { fill: $color-text-secondary; }
             }
 
-            h2, span, a, p { color: $text-color; }
+            h2, span, a, p { color: $color-text-secondary; }
 
             &:hover, &:focus { background-color: darken($color-mayor-school-bus-yellow, 5%); }
         }
@@ -311,7 +305,7 @@ b, strong {
 
 .dialog-off-canvas-main-canvas > footer#main,
 footer#main {
-    border-top: 1px solid $color-grey;
+    border-top: 1px solid $color-table-background;
     background: $color-mayor-biscay;
     margin: 0;
     padding: 30px 0;
@@ -476,10 +470,7 @@ footer#main {
         }
     }
 
-    p {
-        color: $text-color;
-        margin: 0 0 20px 0;
-    }
+    p { color: $color-text-secondary; margin: 0 0 20px 0; }
 }
 
 // OnBoard Table Styles
