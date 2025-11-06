@@ -32,7 +32,6 @@ $card-width: 320px;
 .info-card-view > .rows > div,
 .paragraph--type--info-card {
     height: auto;
-    //   background-color: $color-table-background;
     color: $color-text-default;
     margin-bottom: $size-gutter * 4;
     flex-basis: $card-width;

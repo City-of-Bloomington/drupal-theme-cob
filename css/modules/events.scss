@@ -1,85 +1,3 @@
-// #block-upcomingevents,
-// #block-committeemeetings,
-// .onboard_meetings,
-// .calendar_calendar {
-
-//     article {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: start;
-//         height: 158px;
-//         min-width: 320px;
-//         overflow: hidden;
-//         border: 1px solid $color-divider;
-
-//         .month, .monthDate {
-//             font-size: $font-size-bigger;
-//             font-weight: bold;
-//         }
-
-//         .time {
-//             margin: ($size-gutter * .5);
-//             font-size: $font-size-smaller;
-//         }
-
-//         .weekday { }
-//         .summary {
-//             position: relative;
-//             margin: 0 0 10px 0;
-//             line-height: $font-size-big;
-//             font-size: $font-size-big;
-//             font-weight: bold;
-//             font-family: "Lora", serif;
-//             color: $biscay;
-//         }
-
-//         h4 { margin:0; }
-
-//         header {
-//             flex:0 0 140px;
-//             height:100%;
-//             background-color: $color-alert;
-//             color: $color-content-background;
-//             font-family: $font-family-heading;
-
-//             time {
-//                 height:100%;
-//                 display:flex;
-//                 flex-direction:column;
-//                 justify-content:center;
-
-//                 span {
-//                     display:block;
-//                     text-align:center;
-//                 }
-//             }
-//         }
-
-//         > div {
-//             line-height: 1.5em;
-//             padding: $size-gutter;
-
-//             time {
-//                 display: block;
-//                 margin: 0 0 10px 0;
-//                 color: $dark-slate;
-//                 font-size:  $font-size-small;
-//             }
-
-//             .location {
-//                 font-size: $font-size-smaller;
-//                 line-height: $font-size-smaller;
-//             }
-
-//             span {
-//                 display: block;
-//                 height: 3em;
-//                 overflow: hidden;
-//             }
-//         }
-//     }
-// }
-
 #block-upcomingevents,
 #block-committeemeetings,
 .onboard_meetings,
@@ -121,11 +39,6 @@
 
       position: relative;
       margin: 15px 0 30px 15px;
-
-      // background: #635380;
-      // border: 2px solid #635380;
-      // background: $color-mayor-eminence;
-      // border: 2px solid $color-mayor-eminence;
 
       background: white;
       border: 2px solid darken($color: #f8f8f8, $amount: 5);
@@ -173,8 +86,6 @@
 
       &:hover,
       &:focus {
-        // background-color: transparent;
-        // border: 2px solid darken(#635380, 5);
         border: 2px solid $color-mayor-eminence;
         -webkit-box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.25);
         box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.25);
