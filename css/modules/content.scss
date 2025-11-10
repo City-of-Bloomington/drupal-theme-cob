@@ -5,7 +5,9 @@
  * This should control how we display the way HTML that users type.
  */
 #intro nav a {
-    display: block; color: $color-content-background;
+    &.button { color: $color-content-background; }
+
+    display: block; color: $color-link;
     font-weight: $font-weight-bold;
     font-family: $font-family-heading;
 }
