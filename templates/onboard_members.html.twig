@@ -43,6 +43,9 @@
                         </dd>
                     {% endif %}
 
+                        <dt>Appointment Date:</dt>
+                        <dd>{{ seat.member_startDate|date('n/j/Y') }}</dd>
+
                     {% if seat.committee_alternates %}
                         <dt>Alternate:</dt>
                         {% if seat.alternate_id %}
