@@ -82,7 +82,7 @@
                 {% endif %}
             </dl>
             {% if seat.seat_takesApplications %}
-            <a href="{{ onboard_url }}/applicants/apply?committee_id={{ seat.committee_id }}" class="button">
+            <a href="{{ onboard_url }}/committees/{{ seat.committee_id }}/apply" class="button">
                 Vacancy:Apply
             </a>
             {% endif %}
