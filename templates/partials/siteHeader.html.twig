@@ -5,13 +5,14 @@
 <header>
 	<div class="menu-container">
 		<a href="{{ base_path }}" title="City of Bloomington" class="logo">
-			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington">
+			<img src="{{ base_path }}{{ directory }}/css/images/cob-logo-horizontal.svg" alt="City of Bloomington" />
 		</a>
 		<a href="{{ base_path }}mayor" title="City of Bloomington, Indiana" class="name">Mayor Kerry Thomson</a>
 
 		<div class="nav-items non-home">
 			<form id="header-search" method="get" action="{{ base_path }}search">
 				<fieldset>
+					<legend>Search</legend>
 					<label for="query" class="visually-hidden">Search</label>
 					<input id="query" name="query" type="search" class="form-search" title="Enter the terms you wish to search for." placeholder="Search the City of Bloomington" size="15" maxlength="128"/>
 					<input type="submit" class="button" value="Search"/>
