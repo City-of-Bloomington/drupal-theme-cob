@@ -125,7 +125,7 @@ $line-height-xs: 1;
 
 $border-default: 1px solid $color-table-background;
 
-@mixin visuallyHidden() {
+@mixin visuallyHidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
