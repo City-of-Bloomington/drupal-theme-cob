@@ -28,12 +28,6 @@ sup, sub, small {
 
 dl { border: none; }
 
-b, strong {
-    // https://github.com/City-of-Bloomington/drupal-theme-cob/issues/62
-    -webkit-font-smoothing: antialiased;
-    color: black;
-}
-
 #alerts {
     margin: 0; padding: 0;
 
