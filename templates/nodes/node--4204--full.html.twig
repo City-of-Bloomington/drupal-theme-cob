@@ -128,8 +128,14 @@
     <div>
         <h2>Connect to Resources</h2>
         <form method="get" target="_blank" id="bertha-pilot-form" action="https://helpingbloomingtonmonroe.findhelp.com/search/text">
-            <input name="term"    placeholder="Keyword"  required="true" />
-            <input name="postal"  placeholder="Zip code" requried="true" pattern="\d{5}" maxlength="5" style="width:5em" />
+            <div><label>Keyword
+                    <input name="term"    placeholder="Keyword"  required="true" />
+                 </label>
+            </div>
+            <div><label>Zip Code
+                    <input name="postal"  placeholder="Zip code" requried="true" pattern="\d{5}" maxlength="5" style="width:5em" />
+                 </label>
+            </div>
             <button type="submit" class="button">Search</button>
         </form>
     </div>
