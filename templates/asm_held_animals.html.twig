@@ -49,9 +49,9 @@
         </table>
         {% if a.WEBSITEMEDIAID %}
             {% if proxy %}
-                <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" />
+                <img src="{{ path('asm.media', {'media_id': a.WEBSITEMEDIAID}) }}" alt="{{ a.ANIMALNAME }}" />
             {% else %}
-                <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ a.WEBSITEMEDIAID }}.jpg" />
+                <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ a.WEBSITEMEDIAID }}.jpg" alt="{{ a.ANIMALNAME }}" />
             {% endif %}
         {% endif %}
         <p>{{ a.DISPLAYLOCATIONNAME }}</p>

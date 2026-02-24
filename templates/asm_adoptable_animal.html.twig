@@ -87,9 +87,9 @@
             <div>
             {% for n in 1..animal.WEBSITEIMAGECOUNT %}
                 {% if proxy %}
-                    <img src="{{ path('asm.image', {'animal_id': animal.ID, 'imagenum': n}) }}" />
+                    <img src="{{ path('asm.image', {'animal_id': animal.ID, 'imagenum': n}) }}" alt="{{ animal.ANIMALNAME }}" />
                 {% else %}
-                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ animal.ID }};imagenum=n" />
+                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ animal.ID }};imagenum=n" alt="{{ animal.ANIMALNAME }}" />
                 {% endif %}
             {% endfor %}
             </div>

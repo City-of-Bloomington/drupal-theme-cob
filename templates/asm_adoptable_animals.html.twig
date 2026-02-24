@@ -51,12 +51,12 @@
             <header><h3>{{ a.ANIMALNAME }}</h3></header>
             {% if a.WEBSITEIMAGECOUNT %}
                 {% if proxy %}
-                    <img src="{{ path('asm.image', {'animal_id': a.ID}) }}" />
+                    <img src="{{ path('asm.image', {'animal_id': a.ID}) }}" alt="{{ a.ANIMALNAME }}" />
                 {% else %}
-                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" />
+                    <img src="{{ asm_url }}/service?method=animal_image;animalid={{ a.ID }}" alt="{{ a.ANIMALNAME }}" />
                 {% endif %}
             {% else %}
-                <img src="{{ base_path }}{{ directory }}/css/images/shelter.svg" />
+                <img src="{{ base_path }}{{ directory }}/css/images/shelter.svg" alt="No picture available" />
             {% endif %}
         </a>
     </article>

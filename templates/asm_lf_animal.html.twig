@@ -42,9 +42,9 @@
         <aside>
             <div>
             {% if proxy %}
-                <img src="{{ path('asm.media', {'media_id': animal.WEBSITEMEDIAID}) }}" />
+                <img src="{{ path('asm.media', {'media_id': animal.WEBSITEMEDIAID}) }}" alt="{{ animal.ANIMALNAME }}" />
             {% else %}
-                <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ animal.WEBSITEMEDIAID }}.jpg" />
+                <img src="{{ asm_url }}/service?method=dbfs_image&amp;title={{ animal.WEBSITEMEDIAID }}.jpg" alt="{{ animal.ANIMALNAME }}" />
             {% endif %}
             </div>
         </aside>
