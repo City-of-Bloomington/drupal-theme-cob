@@ -615,6 +615,18 @@ function _cob_contactInfoFromNode(Node $node)
         }
     }
 
+    if ($node->hasField('field_division')) {
+        $d = $node->get('field_division')->entity;
+        if ($d) {
+            $info[$nid]['division_nid'] = $d->get('nid')->value;
+
+            $di = _cob_contactInfoFromNode($d);
+            foreach ($di as $k=>$v) {
+                if (empty($info[$nid][$k])) { $info[$nid][$k] = $v; }
+            }
+        }
+    }
+
     if ($node->hasField('field_department')) {
         $d = $node->get('field_department')->entity;
         if ($d) {
