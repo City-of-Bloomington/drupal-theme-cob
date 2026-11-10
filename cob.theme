@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2017-2025 City of Bloomington, Indiana
+ * @copyright 2017-2026 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 use Drupal\image\Entity\ImageStyle;
@@ -11,7 +11,6 @@ use Drupal\core\Url;
 
 use Drupal\calendar\GoogleGateway;
 use Drupal\directory\DirectoryService;
-use Drupal\interactivemap\MapGateway;
 use Drupal\onboard\OnBoardService;
 
 // Some node_ids for pages in the site
@@ -163,20 +162,6 @@ function cob_preprocess_page(&$vars)
                 unset($vars['page']['content']['committeemembers']);
             }
         }
-        // Boards and Commissions contact info should override any other contact info
-        if ($vars['node']->getType() == 'board_commission') {
-            $committee_id = (int)$vars['node']->get('field_committee')->value;
-            if ($committee_id) {
-                $committee = OnBoardService::committee_info($committee_id);
-                if ($committee['phone'  ]) { $vars['contactInfo']['phone'  ] = $committee['phone'  ]; }
-                if ($committee['email'  ]) { $vars['contactInfo']['email'  ] = $committee['email'  ]; }
-                if ($committee['address']) { $vars['contactInfo']['address'] = $committee['address']; }
-                if ($committee['city'   ]) { $vars['contactInfo']['city'   ] = $committee['city'   ]; }
-                if ($committee['state'  ]) { $vars['contactInfo']['state'  ] = $committee['state'  ]; }
-                if ($committee['zip'    ]) { $vars['contactInfo']['zip'    ] = $committee['zip'    ]; }
-            }
-        }
-
     }
     else {
         $route = \Drupal::routeMatch()->getRouteName();
@@ -550,11 +535,8 @@ function cob_preprocess_block__user_login_block(&$vars, $hook)
  * This function will cache the results by NodeID.  The contactInfo
  * queries are extensive, and can be slow.  We don't want to do this
  * more than once.
- *
- * @param Node $node
- * @return array
  */
-function _cob_contactInfoFromNode(Node $node)
+function _cob_contactInfoFromNode(Node $node): array
 {
     static $info = [];
     $nid = $node->nid->value;
@@ -603,13 +585,35 @@ function _cob_contactInfoFromNode(Node $node)
         if ($dn) { _cob_contactInfoForDn($dn, $info[$nid]); }
     }
 
-    if ($node->hasField('field_location')) {
-        $l = $node->get('field_location')->entity;
-        if ($l) {
-            $info[$nid]['location_nid'] = $l->get('nid')->value;
+    if ($node->hasField('field_committee')) {
+        $id = (int)$node->get('field_committee')->value;
+        if ($id) {
+            $c = OnBoardService::committee_info($id);
+            foreach (array_keys($map) as $k) {
+                if (empty($info[$nid][$k]) && $c[$k]) { $info[$nid][$k] = $c[$k]; }
+            }
+        }
+    }
 
-            $li = _cob_contactInfoFromNode($l);
-            foreach ($li as $k=>$v) {
+    if ($node->hasField('field_board_or_commission')) {
+        $d = $node->get('field_board_or_commission')->entity;
+        if ($d) {
+            $info[$nid]['board_or_commission_nid'] = $d->get('nid')->value;
+
+            $di = _cob_contactInfoFromNode($d);
+            foreach ($di as $k=>$v) {
+                if (empty($info[$nid][$k])) { $info[$nid][$k] = $v; }
+            }
+        }
+    }
+
+    if ($node->hasField('field_location')) {
+        $d = $node->get('field_location')->entity;
+        if ($d) {
+            $info[$nid]['location_nid'] = $d->get('nid')->value;
+
+            $di = _cob_contactInfoFromNode($d);
+            foreach ($di as $k=>$v) {
                 if (empty($info[$nid][$k])) { $info[$nid][$k] = $v; }
             }
         }
